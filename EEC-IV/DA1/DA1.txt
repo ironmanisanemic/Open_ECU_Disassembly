@@ -1089,7 +1089,7 @@ Sub0029:
 8 2a24: d7,11                jne   2a37               if (Rba != 0) goto 2a37;
 8 2a26: 8b,01,4e,03,b8       cmpw  Rb8,[34e]                               
 8 2a2b: d9,0a                jgtu  2a37               if ((uns) [PIP_HI_E_TIME] > [34e]) goto 2a37;
-8 2a2d: b3,f2,4a,54          ldb   R54,[Rf2+4a]       R54 = [INJECTOR_FIRE_METHOD];
+8 2a2d: b3,f2,4a,54          ldb   R54,[Rf2+4a]       R54 = [Sc0130];      
 8 2a31: 39,54,03             jb    B1,R54,2a37        if (B1_R54) goto 2a37;
 8 2a34: 71,f7,51             an2b  R51,f7             [FLAGS_51] &= f7;    
 8 2a37: c3,01,90,02,7e       stw   [290],R7e          [290] = [EVENT_TIME];
@@ -1188,18 +1188,18 @@ Sub0029:
 8 2b59: 91,01,c9             orrb  Rc9,1              Rc9 |= 1;            
 8 2b5c: a3,01,ec,02,bc       ldw   Rbc,[2ec]          Rbc = [2ec];         
 8 2b61: 9b,f0,40,cc          cmpb  Rcc,[Rf0+40]                            
-8 2b65: df,02                je    2b69               if (Rcc == [NUM_CYL]) goto 2b69;
+8 2b65: df,02                je    2b69               if (Rcc == [Sc0037]) goto 2b69;
 8 2b67: 20,1b                sjmp  2b84               goto 2b84;           
 
 8 2b69: 91,50,51             orrb  R51,50             [FLAGS_51] |= 50;    
-8 2b6c: a3,f2,44,54          ldw   R54,[Rf2+44]       R54 = [NUM_PIP_BETWEEN_INJECTOR_OUTPUTS];
+8 2b6c: a3,f2,44,54          ldw   R54,[Rf2+44]       R54 = [Sc0125];      
 8 2b70: 8b,f0,40,54          cmpw  R54,[Rf0+40]                            
-8 2b74: df,03                je    2b79               if (R54 == [NUM_CYL]) goto 2b79;
+8 2b74: df,03                je    2b79               if (R54 == [Sc0037]) goto 2b79;
 8 2b76: 71,ef,51             an2b  R51,ef             <SYNC_UP_FUEL> = 0;  
 8 2b79: 11,cc                clrb  Rcc                Rcc = 0;             
 8 2b7b: ac,cc,5c             ldzbw R5c,Rcc            R5c = (uns)Rcc;      
 8 2b7e: 8b,f0,40,5c          cmpw  R5c,[Rf0+40]                            
-8 2b82: d3,05                jnc   2b89               if ((uns) R5c < [NUM_CYL]) goto 2b89;
+8 2b82: d3,05                jnc   2b89               if ((uns) R5c < [Sc0037]) goto 2b89;
 8 2b84: 11,cc                clrb  Rcc                Rcc = 0;             
 8 2b86: 71,2f,51             an2b  R51,2f             [FLAGS_51] &= 2f;    
 8 2b89: ef,30,00             call  2bbc               Sub0030();           
@@ -1240,7 +1240,7 @@ Sub0030:
 Sub0031:
 8 2be2: 71,bf,8b             an2b  R8b,bf             [FLAGS_8B] &= bf;    
 8 2be5: 3e,94,13             jb    B6,R94,2bfb        if (B6_[FLAGS_94]) goto 2bfb;
-8 2be8: b3,f0,05,54          ldb   R54,[Rf0+5]        R54 = [PIP_PER_REV]; 
+8 2be8: b3,f0,05,54          ldb   R54,[Rf0+5]        R54 = [Sc0005];      
 8 2bec: 19,04,54             shlb  R54,4              R54 = R54 * 10;      
 8 2bef: 98,54,cc             cmpb  Rcc,R54                                 
 8 2bf2: df,06                je    2bfa               if (Rcc == R54) goto 2bfa;
@@ -1252,14 +1252,14 @@ Sub0031:
 8 2bfe: 11,cc                clrb  Rcc                Rcc = 0;             
 8 2c00: 38,2b,06             jb    B0,R2b,2c09        if (<UNDERSPEED> == 1) goto 2c09;
 8 2c03: 9b,f0,40,54          cmpb  R54,[Rf0+40]                            
-8 2c07: df,04                je    2c0d               if (R54 == [NUM_CYL]) goto 2c0d;
+8 2c07: df,04                je    2c0d               if (R54 == [Sc0037]) goto 2c0d;
 8 2c09: 71,2f,51             an2b  R51,2f             [FLAGS_51] &= 2f;    
 8 2c0c: f0                   ret                      return;              
 
 8 2c0d: 91,50,51             orrb  R51,50             [FLAGS_51] |= 50;    
-8 2c10: a3,f2,44,54          ldw   R54,[Rf2+44]       R54 = [NUM_PIP_BETWEEN_INJECTOR_OUTPUTS];
+8 2c10: a3,f2,44,54          ldw   R54,[Rf2+44]       R54 = [Sc0125];      
 8 2c14: 8b,f0,40,54          cmpw  R54,[Rf0+40]                            
-8 2c18: d7,01                jne   2c1b               if (R54 != [NUM_CYL]) goto 2c1b;
+8 2c18: d7,01                jne   2c1b               if (R54 != [Sc0037]) goto 2c1b;
 8 2c1a: f0                   ret                      return;              
 
 8 2c1b: 71,ef,51             an2b  R51,ef             <SYNC_UP_FUEL> = 0;  
@@ -1335,7 +1335,7 @@ Sub0033:
 8 2cf0: 88,56,58             cmpw  R58,R56                                 
 8 2cf3: da,03                jle   2cf8               if ((sig) R58 <= R56) goto 2cf8;
 8 2cf5: a0,56,58             ldw   R58,R56            R58 = R56;           
-8 2cf8: af,f0,05,5a          ldzbw R5a,[Rf0+5]        R5a = (uns)[PIP_PER_REV];
+8 2cf8: af,f0,05,5a          ldzbw R5a,[Rf0+5]        R5a = (uns)[Sc0005]; 
 8 2cfc: a3,5b,48,2c,5a       ldw   R5a,[R5a+2c48]     R5a = [R5a+OSt8_004_2c48];
 8 2d01: 45,28,00,5a,56       ad3w  R56,R5a,28         R56 = R5a + 28;      
 8 2d06: 68,58,56             sb2w  R56,R58            R56 -= R58;          
@@ -1472,7 +1472,7 @@ Sub0035:
 
 8 2e9d: 91,20,51             orrb  R51,20             [FLAGS_51] |= 20;    
 8 2ea0: 9b,f5,d3,01,00       cmpb  0,[Rf4+1d3]                             
-8 2ea5: df,0a                je    2eb1               if (0 == [ACCELPUMP_TAR]) goto 2eb1;
+8 2ea5: df,0a                je    2eb1               if (0 == [?ACCELPUMP_TAR?]) goto 2eb1;
 8 2ea7: 8b,01,b4,01,00       cmpw  0,[1b4]                                 
 8 2eac: df,03                je    2eb1               if (0 == [1b4]) goto 2eb1;
 8 2eae: 91,02,51             orrb  R51,2              [FLAGS_51] |= 2;     
@@ -1523,11 +1523,11 @@ Sub0035:
 8 2f2c: ac,cc,54             ldzbw R54,Rcc            R54 = (uns)Rcc;      
 8 2f2f: 68,56,54             sb2w  R54,R56            R54 -= R56;          
 8 2f32: db,04                jc    2f38               if (R54 >= 0) goto 2f38;
-8 2f34: 67,f0,40,54          ad2w  R54,[Rf0+40]       R54 += [NUM_CYL];    
+8 2f34: 67,f0,40,54          ad2w  R54,[Rf0+40]       R54 += [Sc0037];     
 8 2f38: af,5b,1e,03,56       ldzbw R56,[R5a+31e]      R56 = (uns)[R5a+31e];
 8 2f3d: 68,54,56             sb2w  R56,R54            R56 -= R54;          
 8 2f40: db,04                jc    2f46               if (R56 >= 0) goto 2f46;
-8 2f42: 67,f0,40,56          ad2w  R56,[Rf0+40]       R56 += [NUM_CYL];    
+8 2f42: 67,f0,40,56          ad2w  R56,[Rf0+40]       R56 += [Sc0037];     
 8 2f46: 99,30,56             cmpb  R56,30                                  
 8 2f49: d1,08                jleu  2f53               if ((uns) R56 <= 30) goto 2f53;
 8 2f4b: 75,02,58             ad2b  R58,2              R58 += 2;            
@@ -1565,14 +1565,14 @@ Sub0035:
 8 2f98: 36,51,2e             jnb   B6,R51,2fc9        if (<SYN_FLAG> == 0) goto 2fc9;
 8 2f9b: ac,cc,54             ldzbw R54,Rcc            R54 = (uns)Rcc;      
 8 2f9e: 9b,f0,40,54          cmpb  R54,[Rf0+40]                            
-8 2fa2: d7,09                jne   2fad               if (R54 != [NUM_CYL]) goto 2fad;
+8 2fa2: d7,09                jne   2fad               if (R54 != [Sc0037]) goto 2fad;
 8 2fa4: 9b,01,1c,03,00       cmpb  0,[31c]                                 
 8 2fa9: d7,12                jne   2fbd               if (0 != [31c]) goto 2fbd;
 8 2fab: 20,26                sjmp  2fd3               goto 2fd3;           
 
 8 2fad: 09,01,54             shlw  R54,1              R54 = R54 * 2;       
 8 2fb0: 8b,f0,40,54          cmpw  R54,[Rf0+40]                            
-8 2fb4: d7,07                jne   2fbd               if (R54 != [NUM_CYL]) goto 2fbd;
+8 2fb4: d7,07                jne   2fbd               if (R54 != [Sc0037]) goto 2fbd;
 8 2fb6: 9b,01,1c,03,00       cmpb  0,[31c]                                 
 8 2fbb: d7,16                jne   2fd3               if (0 != [31c]) goto 2fd3;
 8 2fbd: 71,7f,e7             an2b  Re7,7f             Re7 &= 7f;           
@@ -1880,7 +1880,7 @@ Sub0040:
 8 3384: 37,99,6d             jnb   B7,R99,33f4        if (!B7_R99) goto 33f4;
 8 3387: 38,0a,76             jb    B0,R0a,3400        if (B0_[HSI_DATA]) goto 3400;
 8 338a: 37,e4,46             jnb   B7,Re4,33d3        if (!B7_Re4) goto 33d3;
-8 338d: b3,f7,09,01,58       ldb   R58,[Rf6+109]      R58 = [TRANS_STRAT]; 
+8 338d: b3,f7,09,01,58       ldb   R58,[Rf6+109]      R58 = [Sc0268];      
 8 3392: 39,58,3e             jb    B1,R58,33d3        if (B1_R58) goto 33d3;
 8 3395: 30,58,1b             jnb   B0,R58,33b3        if (!B0_R58) goto 33b3;
 8 3398: 34,ee,38             jnb   B4,Ree,33d3        if (<SHIFT_LIGHT_MAX_TIME> == 0) goto 33d3;
@@ -2240,14 +2240,14 @@ TabCore - Table Reader Core:
 
 CHECK_TIMERS:
 8 371b: 9b,f0,02,ad          cmpb  Rad,[Rf0+2]                             
-8 371f: de,07                jlt   3728               if ((sig) [TCSTRT] < [HOT_START_ECT_MIN]) goto 3728;
+8 371f: de,07                jlt   3728               if ((sig) [TCSTRT] < [CTHIGH]) goto 3728;
 8 3721: 9a,30,ca             cmpb  Rca,[R30]                               
 8 3724: d3,2a                jnc   3750               if ((uns) [ATMR1] < [R30]) goto 3750;
 8 3726: 20,26                sjmp  374e               goto 374e;           
 
 8 3728: 07,30                incw  R30                R30++;               
 8 372a: 9b,f0,03,ad          cmpb  Rad,[Rf0+3]                             
-8 372e: da,0e                jle   373e               if ((sig) [TCSTRT] <= [COLD_START_ECT_MAX]) goto 373e;
+8 372e: da,0e                jle   373e               if ((sig) [TCSTRT] <= [CTLOW]) goto 373e;
 8 3730: 9a,30,ca             cmpb  Rca,[R30]                               
 8 3733: d3,1b                jnc   3750               if ((uns) [ATMR1] < [R30]) goto 3750;
 8 3735: 07,30                incw  R30                R30++;               
@@ -2357,7 +2357,7 @@ UPDATE_WOT:
 
 UPDATE_AD:
 8 381e: 9b,f7,09,01,00       cmpb  0,[Rf6+109]                             
-8 3823: d7,50                jne   3875               if (0 != [TRANS_STRAT]) goto 3875;
+8 3823: d7,50                jne   3875               if (0 != [Sc0268]) goto 3875;
 8 3825: 11,16                clrb  R16                R16 = 0;             
 8 3827: 30,e5,03             jnb   B0,Re5,382d        if (!B0_Re5) goto 382d;
 8 382a: b1,01,16             ldb   R16,1              R16 = 1;             
@@ -2422,7 +2422,7 @@ UPDATE_AD:
 8 38dd: b0,b1,39             ldb   R39,Rb1            R39 = [ACT];         
 8 38e0: 3f,2c,1c             jb    B7,R2c,38ff        if (<CRANKING> == 1) goto 38ff;
 8 38e3: 9b,f0,02,ad          cmpb  Rad,[Rf0+2]                             
-8 38e7: d3,08                jnc   38f1               if ((uns) [TCSTRT] < [HOT_START_ECT_MIN]) goto 38f1;
+8 38e7: d3,08                jnc   38f1               if ((uns) [TCSTRT] < [CTHIGH]) goto 38f1;
 8 38e9: 9b,fe,02,ca          cmpb  Rca,[Rfe+2]                             
 8 38ed: d3,10                jnc   38ff               if ((uns) [ATMR1] < [Sc0439]) goto 38ff;
 8 38ef: 20,06                sjmp  38f7               goto 38f7;           
@@ -2675,7 +2675,7 @@ UPDATE_AD:
 8 3be9: d1,02                jleu  3bed               if ((uns) R32 <= [Sc0349]) goto 3bed;
 8 3beb: 11,b5                clrb  Rb5                [THROTTLE_ANGLE_RATE] = 0;
 8 3bed: 9b,f5,d4,01,b5       cmpb  Rb5,[Rf4+1d4]                           
-8 3bf2: d1,14                jleu  3c08               if ((uns) [THROTTLE_ANGLE_RATE] <= [ACCELPUMP_TAR]) goto 3c08;
+8 3bf2: d1,14                jleu  3c08               if ((uns) [THROTTLE_ANGLE_RATE] <= [AETAR]) goto 3c08;
 8 3bf4: 5b,01,09,02,b2,32    sb3b  R32,Rb2,[209]      R32 = [LOAD] - [AE_LOAD];
 8 3bfa: d3,0c                jnc   3c08               if (R32 < 0) goto 3c08;
 8 3bfc: 9b,f5,d5,01,32       cmpb  R32,[Rf4+1d5]                           
@@ -2800,7 +2800,7 @@ UPDATE_RPM:
 8 3d0c: 20,af                sjmp  3dbd               goto 3dbd;           
 
 8 3d0e: 71,f7,4e             an2b  R4e,f7             <NEW_RPM> = 0;       
-8 3d11: af,f0,05,30          ldzbw R30,[Rf0+5]        R30 = (uns)[PIP_PER_REV];
+8 3d11: af,f0,05,30          ldzbw R30,[Rf0+5]        R30 = (uns)[Sc0005]; 
 8 3d15: a3,31,aa,3c,36       ldw   R36,[R30+3caa]     R36 = [R30+OSt8_005_3caa];
 8 3d1a: a3,31,b0,3c,34       ldw   R34,[R30+3cb0]     R34 = [R30+OSt8_006_3cb0];
 8 3d1f: 9b,f0,13,00          cmpb  0,[Rf0+13]                              
@@ -2847,7 +2847,7 @@ UPDATE_RPM:
 8 3db1: a3,fc,1a,36          ldw   R36,[Rfc+1a]       R36 = [Sc0379];      
 8 3db5: ef,de,f8             call  3696               Srolav1T();          
 8 3db8: c3,01,18,03,3e       stw   [318],R3e          [RPM_FILTER_2] = R3e;
-8 3dbd: af,f0,05,42          ldzbw R42,[Rf0+5]        R42 = (uns)[PIP_PER_REV];
+8 3dbd: af,f0,05,42          ldzbw R42,[Rf0+5]        R42 = (uns)[Sc0005]; 
 8 3dc1: a3,43,c2,3c,32       ldw   R32,[R42+3cc2]     R32 = [R42+OSt8_008_3cc2];
 8 3dc6: 9b,f0,13,00          cmpb  0,[Rf0+13]                              
 8 3dca: df,05                je    3dd1               if (0 == [Sc0012]) goto 3dd1;
@@ -2862,9 +2862,9 @@ UPDATE_RPM:
 8 3dee: 8b,f0,0c,00          cmpw  0,[Rf0+c]                               
 8 3df2: d6,03                jge   3df7               if ((sig) 0 >= [MHPFD]) goto 3df7;
 8 3df4: 71,f7,25             an2b  R25,f7             [FLAGS_25] &= f7;    
-8 3df7: a3,f2,44,32          ldw   R32,[Rf2+44]       R32 = [NUM_PIP_BETWEEN_INJECTOR_OUTPUTS];
+8 3df7: a3,f2,44,32          ldw   R32,[Rf2+44]       R32 = [Sc0125];      
 8 3dfb: 08,04,32             shrw  R32,4              R32 = R32 / 10;      
-8 3dfe: 7f,f2,4a,32          ml2b  R32,[Rf2+4a]       R32 *= [INJECTOR_FIRE_METHOD];
+8 3dfe: 7f,f2,4a,32          ml2b  R32,[Rf2+4a]       R32 *= [Sc0130];     
 8 3e02: 9f,f2,49,32          divb  R32,[Rf2+49]       R32 = R32W / [Sc0129];
 8 3e06: c7,01,52,03,32       stb   [352],R32          [352] = R32;         
 8 3e0b: f0                   ret                      return;              
@@ -3130,8 +3130,8 @@ UPDATE_EGR:
 8 4167: f0                   ret                      return;              
 
 Sub0065:
-8 4168: b3,fa,68,38          ldb   R38,[Rfa+68]       R38 = [LUG_MODE_MAP_TO_BP_MIN];
-8 416c: 57,fa,69,38,3a       ad3b  R3a,R38,[Rfa+69]   [GENERAL_3A] = R38 + [LUG_MODE_MAP_TO_BP_MIN_HYST];
+8 4168: b3,fa,68,38          ldb   R38,[Rfa+68]       R38 = [Sc0333];      
+8 416c: 57,fa,69,38,3a       ad3b  R3a,R38,[Rfa+69]   [GENERAL_3A] = R38 + [Sc0334];
 8 4171: d3,03                jnc   4176               if ([GENERAL_3A] <= ff) goto 4176;
 8 4173: b1,7f,3a             ldb   R3a,7f             [GENERAL_3A] = 7f;   
 8 4176: 98,9f,3a             cmpb  R3a,R9f                                 
@@ -3146,15 +3146,15 @@ Sub0065:
 8 418b: 34,c9,32             jnb   B4,Rc9,41c0        if (!B4_Rc9) goto 41c0;
 8 418e: 38,9e,2f             jb    B0,R9e,41c0        if (B0_[AT_PT]) goto 41c0;
 8 4191: 9b,fa,64,b0          cmpb  Rb0,[Rfa+64]                            
-8 4195: da,29                jle   41c0               if ((sig) [ECT] <= [LUG_MODE_ECT_MIN]) goto 41c0;
+8 4195: da,29                jle   41c0               if ((sig) [ECT] <= [Sc0329]) goto 41c0;
 8 4197: 9b,fa,65,b0          cmpb  Rb0,[Rfa+65]                            
-8 419b: d6,23                jge   41c0               if ((sig) [ECT] >= [LUG_MODE_ECT_MAX]) goto 41c0;
-8 419d: b3,fa,67,38          ldb   R38,[Rfa+67]       R38 = [LUG_MODE_TIME_MIN];
+8 419b: d6,23                jge   41c0               if ((sig) [ECT] >= [Sc0330]) goto 41c0;
+8 419d: b3,fa,67,38          ldb   R38,[Rfa+67]       R38 = [Sc0332];      
 8 41a1: 9b,01,72,01,38       cmpb  R38,[172]                               
 8 41a6: d9,18                jgtu  41c0               if ((uns) R38 > [LUG_TIMER]) goto 41c0;
 8 41a8: 39,e7,06             jb    B1,Re7,41b1        if (B1_Re7) goto 41b1;
 8 41ab: 9b,fa,66,ca          cmpb  Rca,[Rfa+66]                            
-8 41af: d1,0f                jleu  41c0               if ((uns) [ATMR1] <= [LUG_MODE_STARTUP_DELAY]) goto 41c0;
+8 41af: d1,0f                jleu  41c0               if ((uns) [ATMR1] <= [Sc0331]) goto 41c0;
 8 41b1: 9b,fa,6a,b1          cmpb  Rb1,[Rfa+6a]                            
 8 41b5: da,09                jle   41c0               if ((sig) [ACT] <= [Sc0335]) goto 41c0;
 8 41b7: 9b,fa,6b,b1          cmpb  Rb1,[Rfa+6b]                            
@@ -3296,7 +3296,7 @@ Sub0067:
 Sub0068:
 8 4344: b3,fa,09,38          ldb   R38,[Rfa+9]        R38 = [Sc0326];      
 8 4348: 38,9e,0b             jb    B0,R9e,4356        if (B0_[AT_PT]) goto 4356;
-8 434b: 45,07,00,fe,32       ad3w  R32,Rfe,7          R32 = Fc106;         
+8 434b: 45,07,00,fe,32       ad3w  R32,Rfe,7          R32 = Fc105;         
 8 4350: b0,9f,34             ldb   R34,R9f            R34 = [LOAD];        
 8 4353: ef,a0,f2             call  35f6               USByteLU();          
 8 4356: 01,30                clrw  R30                R30 = 0;             
@@ -3419,7 +3419,7 @@ Sub0068:
 8 44cb: 45,3e,03,f0,32       ad3w  R32,Rf0,33e        R32 = ???IGN_EXPECTED_PIP???;
 8 44d0: b0,41,34             ldb   R34,R41            R34 = R41;           
 8 44d3: ef,23,f1             call  35f9               UUByteLU();          
-8 44d6: 7f,f0,05,38          ml2b  R38,[Rf0+5]        R38 *= [PIP_PER_REV];
+8 44d6: 7f,f0,05,38          ml2b  R38,[Rf0+5]        R38 *= [Sc0005];     
 8 44da: 6c,38,3c             ml2w  R3c,R38            R3c *= R38;          
 8 44dd: 88,00,3e             cmpw  R3e,0                                   
 8 44e0: df,03                je    44e5               if (R3e == 0) goto 44e5;
@@ -3498,7 +3498,7 @@ Sub0070:
 8 45c3: a0,ae,34             ldw   R34,Rae            R34 = [RPM];         
 8 45c6: ef,85,f0             call  364e               UUWordLU();          
 8 45c9: 7c,38,42             ml2b  R42,R38            R42 *= R38;          
-8 45cc: 45,de,00,f6,32       ad3w  R32,Rf6,de         R32 = ALTITUDE_MULTI_V_BP_LUGGING???;
+8 45cc: 45,de,00,f6,32       ad3w  R32,Rf6,de         R32 = ???SPARK_V_BP_V_ALTITUDE_LUGGING???;
 8 45d1: b3,01,32,01,34       ldb   R34,[132]          R34 = [MAP];         
 8 45d6: ef,20,f0             call  35f9               UUByteLU();          
 8 45d9: b0,38,30             ldb   R30,R38            R30 = R38;           
@@ -3521,7 +3521,7 @@ Sub0070:
 
 8 460a: 32,26,2d             jnb   B2,R26,463a        if (!B2_R26) goto 463a;
 8 460d: 9b,f0,03,ad          cmpb  Rad,[Rf0+3]                             
-8 4611: da,27                jle   463a               if ((sig) [TCSTRT] <= [COLD_START_ECT_MAX]) goto 463a;
+8 4611: da,27                jle   463a               if ((sig) [TCSTRT] <= [CTLOW]) goto 463a;
 8 4613: 9b,fb,aa,00,ad       cmpb  Rad,[Rfa+aa]                            
 8 4618: d6,20                jge   463a               if ((sig) [TCSTRT] >= [Sc0338]) goto 463a;
 8 461a: 9b,fe,14,ca          cmpb  Rca,[Rfe+14]                            
@@ -3705,7 +3705,7 @@ FRACTIONAL_TO_RATIO_CALC:
 8 484d: bf,fa,09,38          ldsbw R38,[Rfa+9]        R38 = (sig)[Sc0326]; 
 8 4851: 0a,01,38             asrw  R38,1              R38 = R38 / 2;       
 8 4854: 38,9e,10             jb    B0,R9e,4867        if (B0_[AT_PT]) goto 4867;
-8 4857: 45,07,00,fe,32       ad3w  R32,Rfe,7          R32 = Fc106;         
+8 4857: 45,07,00,fe,32       ad3w  R32,Rfe,7          R32 = Fc105;         
 8 485c: b0,9f,34             ldb   R34,R9f            R34 = [LOAD];        
 8 485f: ef,94,ed             call  35f6               USByteLU();          
 8 4862: 1a,01,38             asrb  R38,1              R38 = R38 / 2;       
@@ -3892,7 +3892,7 @@ Sub0075:
 
 8 4aa8: 31,e6,16             jnb   B1,Re6,4ac1        if (!B1_[FLAGS_E6]) goto 4ac1;
 8 4aab: 71,fd,e6             an2b  Re6,fd             [FLAGS_E6] &= fd;    
-8 4aae: 45,f3,01,fa,32       ad3w  R32,Rfa,1f3        R32 = Fc104;         
+8 4aae: 45,f3,01,fa,32       ad3w  R32,Rfa,1f3        R32 = Fc103;         
 8 4ab3: b0,b0,34             ldb   R34,Rb0            R34 = [ECT];         
 8 4ab6: ef,35,eb             call  35ee               SUByteLU();          
 8 4ab9: b0,38,30             ldb   R30,R38            R30 = R38;           
@@ -3910,7 +3910,7 @@ Sub0076:
 8 4ad8: f0                   ret                      return;              
 
 Sub0077:
-8 4ad9: a3,f2,44,30          ldw   R30,[Rf2+44]       R30 = [NUM_PIP_BETWEEN_INJECTOR_OUTPUTS];
+8 4ad9: a3,f2,44,30          ldw   R30,[Rf2+44]       R30 = [Sc0125];      
 8 4add: 09,01,30             shlw  R30,1              R30 = R30 * 2;       
 8 4ae0: 99,02,31             cmpb  R31,2                                   
 8 4ae3: d1,06                jleu  4aeb               if ((uns) R31 <= 2) goto Sub0078;
@@ -3921,7 +3921,7 @@ Sub0078:
 8 4aeb: 09,06,30             shlw  R30,6              R30 = R30 * 40;      
 8 4aee: b3,f2,48,34          ldb   R34,[Rf2+48]       R34 = [Sc0128];      
 8 4af2: 7f,f2,49,34          ml2b  R34,[Rf2+49]       R34 *= [Sc0129];     
-8 4af6: 7f,f0,05,34          ml2b  R34,[Rf0+5]        R34 *= [PIP_PER_REV];
+8 4af6: 7f,f0,05,34          ml2b  R34,[Rf0+5]        R34 *= [Sc0005];     
 8 4afa: 6c,ae,34             ml2w  R34,Rae            R34 *= [RPM];        
 8 4afd: 0c,05,34             shrdw R34,5              R34L = R34L / 20;    
 8 4b00: 88,00,36             cmpw  R36,0                                   
@@ -3940,12 +3940,12 @@ Sub0079:
 
 CALC_FUEL:
 8 4b1e: 8b,f4,6e,ae          cmpw  Rae,[Rf4+6e]                            
-8 4b22: d1,05                jleu  4b29               if ((uns) [RPM] <= [REV_LIMIT_NO_FUEL]) goto 4b29;
+8 4b22: d1,05                jleu  4b29               if ((uns) [RPM] <= [Sc0216]) goto 4b29;
 8 4b24: 91,02,e8             orrb  Re8,2              [FLAGS_E8] |= 2;     
 8 4b27: 20,10                sjmp  4b39               goto 4b39;           
 
-8 4b29: a3,f4,6e,42          ldw   R42,[Rf4+6e]       R42 = [REV_LIMIT_NO_FUEL];
-8 4b2d: 6b,f4,70,42          sb2w  R42,[Rf4+70]       R42 -= [REV_LIMIT_NO_FUEL_HYST];
+8 4b29: a3,f4,6e,42          ldw   R42,[Rf4+6e]       R42 = [Sc0216];      
+8 4b2d: 6b,f4,70,42          sb2w  R42,[Rf4+70]       R42 -= [Sc0217];     
 8 4b31: 88,ae,42             cmpw  R42,Rae                                 
 8 4b34: d1,03                jleu  4b39               if ((uns) R42 <= [RPM]) goto 4b39;
 8 4b36: 71,fd,e8             an2b  Re8,fd             [FLAGS_E8] &= fd;    
@@ -4025,7 +4025,7 @@ Sub0082:
 8 4c03: 47,01,ae,01,30,40    ad3w  R40,R30,[1ae]      R40 = R30 + [1ae];   
 8 4c09: c3,01,b2,01,40       stw   [1b2],R40          [1b2] = R40;         
 8 4c0e: 9b,f5,d3,01,00       cmpb  0,[Rf4+1d3]                             
-8 4c13: df,0b                je    4c20               if (0 == [ACCELPUMP_TAR]) goto 4c20;
+8 4c13: df,0b                je    4c20               if (0 == [?ACCELPUMP_TAR?]) goto 4c20;
 8 4c15: a3,01,b4,01,30       ldw   R30,[1b4]          R30 = [1b4];         
 8 4c1a: 08,01,30             shrw  R30,1              R30 = R30 / 2;       
 8 4c1d: 64,30,36             ad2w  R36,R30            R36 += R30;          
@@ -4068,7 +4068,7 @@ Sub0082:
 8 4c8c: a0,3e,1e             ldw   R1e,R3e            R1e = R3e;           
 8 4c8f: 01,1c                clrw  R1c                R1c = 0;             
 8 4c91: 0c,04,1c             shrdw R1c,4              R1cL = R1cL / 10;    
-8 4c94: af,f0,05,18          ldzbw R18,[Rf0+5]        R18 = (uns)[PIP_PER_REV];
+8 4c94: af,f0,05,18          ldzbw R18,[Rf0+5]        R18 = (uns)[Sc0005]; 
 8 4c98: 6c,ae,18             ml2w  R18,Rae            R18 *= [RPM];        
 8 4c9b: 0c,03,18             shrdw R18,3              R18L = R18L / 8;     
 8 4c9e: 8c,18,1c             divw  R1c,R18            R1c = R1cL / R18;    
@@ -4114,8 +4114,8 @@ Sub0083:
 8 4d0b: 0c,0a,34             shrdw R34,a              R34L = R34L / 400;   
 8 4d0e: 8c,b8,34             divw  R34,Rb8            R34 = R34L / [PIP_HI_E_TIME];
 8 4d11: 8b,f2,44,34          cmpw  R34,[Rf2+44]                            
-8 4d15: d3,10                jnc   4d27               if ((uns) R34 < [NUM_PIP_BETWEEN_INJECTOR_OUTPUTS]) goto 4d27;
-8 4d17: a3,f2,44,34          ldw   R34,[Rf2+44]       R34 = [NUM_PIP_BETWEEN_INJECTOR_OUTPUTS];
+8 4d15: d3,10                jnc   4d27               if ((uns) R34 < [Sc0125]) goto 4d27;
+8 4d17: a3,f2,44,34          ldw   R34,[Rf2+44]       R34 = [Sc0125];      
 8 4d1b: 05,34                decw  R34                R34--;               
 8 4d1d: 4c,b8,34,30          ml3w  R30,R34,Rb8        R30 = R34 * [PIP_HI_E_TIME];
 8 4d21: 0c,06,30             shrdw R30,6              R30L = R30L / 40;    
@@ -4165,7 +4165,7 @@ Sub0083:
 8 4d8f: 20,2d                                         Unknown Operation/Structure
 
 8 4d91: ef,74,02             call  5008               Sub0087();           
-8 4d94: 6f,f3,9e,00,40       ml2w  R40,[Rf2+9e]       R40 *= [INJECTOR_TIMING_EDGE];
+8 4d94: 6f,f3,9e,00,40       ml2w  R40,[Rf2+9e]       R40 *= [Sc0133];     
 8 4d99: 01,32                clrw  R32                R32 = 0;             
 8 4d9b: a3,01,b6,01,30       ldw   R30,[1b6]          R30 = [1b6];         
 8 4da0: 65,80,02,30          ad2w  R30,280            R30 += 280;          
@@ -4173,10 +4173,10 @@ Sub0083:
 8 4da8: d1,04                jleu  4dae               if ((uns) R30 <= b400) goto 4dae;
 8 4daa: 69,00,b4,30          sb2w  R30,b400           R30 -= b400;         
 8 4dae: 0d,01,30             shldw R30,1              R30L = R30L * 2;     
-8 4db1: 8f,f0,42,30          divw  R30,[Rf0+42]       R30 = R30L / [IGN_DEG_PER_PIP];
+8 4db1: 8f,f0,42,30          divw  R30,[Rf0+42]       R30 = R30L / [Sc0038];
 8 4db5: 68,40,30             sb2w  R30,R40            R30 -= R40;          
 8 4db8: db,04                jc    4dbe               if (R30 >= 0) goto 4dbe;
-8 4dba: 67,f0,40,30          ad2w  R30,[Rf0+40]       R30 += [NUM_CYL];    
+8 4dba: 67,f0,40,30          ad2w  R30,[Rf0+40]       R30 += [Sc0037];     
 8 4dbe: 3f,51,02             jb    B7,R51,4dc3        if (<FUEL_IN_SYNC> == 1) goto 4dc3;
 8 4dc1: 20,60                sjmp  4e23               goto 4e23;           
 
@@ -4185,7 +4185,7 @@ Sub0083:
 
 8 4dc8: 11,36                clrb  R36                R36 = 0;             
 8 4dca: af,17,1e,03,34       ldzbw R34,[R16+31e]      R34 = (uns)[R16+31e];
-8 4dcf: af,f0,05,38          ldzbw R38,[Rf0+5]        R38 = (uns)[PIP_PER_REV];
+8 4dcf: af,f0,05,38          ldzbw R38,[Rf0+5]        R38 = (uns)[Sc0005]; 
 8 4dd3: 6f,39,b4,4e,34       ml2w  R34,[R38+4eb4]     R34 *= [R38+OSt8_010_4eb4];
 8 4dd8: 6f,39,b4,4e,30       ml2w  R30,[R38+4eb4]     R30 *= [R38+OSt8_010_4eb4];
 8 4ddd: 0c,06,34             shrdw R34,6              R34L = R34L / 40;    
@@ -4194,7 +4194,7 @@ Sub0083:
 8 4de6: b8,00,36             sbbb  R36,0              R36 -= 0 - CY;       
 8 4de9: d6,02                jge   4ded               if ((sig) R36 >= 0) goto 4ded;
 8 4deb: 03,30                negw  R30                R30 = -R30;          
-8 4ded: a3,f0,40,32          ldw   R32,[Rf0+40]       R32 = [NUM_CYL];     
+8 4ded: a3,f0,40,32          ldw   R32,[Rf0+40]       R32 = [Sc0037];      
 8 4df1: 09,07,32             shlw  R32,7              R32 = R32 * 80;      
 8 4df4: 88,30,32             cmpw  R32,R30                                 
 8 4df7: db,04                jc    4dfd               if ((uns) R32 >= R30) goto 4dfd;
@@ -4223,7 +4223,7 @@ Sub0083:
 8 4e38: 37,e7,57             jnb   B7,Re7,4e92        if (!B7_Re7) goto 4e92;
 8 4e3b: 32,51,59             jnb   B2,R51,4e97        if (!B2_[FLAGS_51]) goto 4e97;
 8 4e3e: af,f2,06,42          ldzbw R42,[Rf2+6]        R42 = (uns)[Sc0124]; 
-8 4e42: a3,f2,44,32          ldw   R32,[Rf2+44]       R32 = [NUM_PIP_BETWEEN_INJECTOR_OUTPUTS];
+8 4e42: a3,f2,44,32          ldw   R32,[Rf2+44]       R32 = [Sc0125];      
 8 4e46: 88,42,32             cmpw  R32,R42                                 
 8 4e49: d9,02                jgtu  4e4d               if ((uns) R32 > R42) goto 4e4d;
 8 4e4b: 01,42                clrw  R42                R42 = 0;             
@@ -4238,8 +4238,8 @@ Sub0083:
 8 4e65: 38,40,11             jb    B0,R40,4e79        if (B0_R40) goto 4e79;
 8 4e68: 75,01,32             ad2b  R32,1              R32 += 1;            
 8 4e6b: 8b,f0,40,32          cmpw  R32,[Rf0+40]                            
-8 4e6f: d3,0f                jnc   4e80               if ((uns) R32 < [NUM_CYL]) goto 4e80;
-8 4e71: a3,f0,40,32          ldw   R32,[Rf0+40]       R32 = [NUM_CYL];     
+8 4e6f: d3,0f                jnc   4e80               if ((uns) R32 < [Sc0037]) goto 4e80;
+8 4e71: a3,f0,40,32          ldw   R32,[Rf0+40]       R32 = [Sc0037];      
 8 4e75: 05,32                decw  R32                R32--;               
 8 4e77: 20,07                sjmp  4e80               goto 4e80;           
 
@@ -4260,7 +4260,7 @@ Sub0083:
 8 4e99: 71,f7,51             an2b  R51,f7             [FLAGS_51] &= f7;    
 8 4e9c: b1,02,30             ldb   R30,2              R30 = 2;             
 8 4e9f: 9b,f2,4a,30          cmpb  R30,[Rf2+4a]                            
-8 4ea3: df,03                je    4ea8               if (R30 == [INJECTOR_FIRE_METHOD]) goto 4ea8;
+8 4ea3: df,03                je    4ea8               if (R30 == [Sc0130]) goto 4ea8;
 8 4ea5: 37,2c,0d             jnb   B7,R2c,4eb5        if (<CRANKING> == 0) goto 4eb5;
 8 4ea8: 91,08,51             orrb  R51,8              [FLAGS_51] |= 8;     
 8 4eab: c7,01,1c,03,00       stb   [31c],0            [31c] = 0;           
@@ -4515,7 +4515,7 @@ Sub0089:
 8 5171: 88,18,1a             cmpw  R1a,R18                                 
 8 5174: da,03                jle   5179               if ((sig) R1a <= R18) goto 5179;
 8 5176: 71,fe,eb             an2b  Reb,fe             Reb &= fe;           
-8 5179: 45,fe,00,fa,32       ad3w  R32,Rfa,fe         R32 = Fc101;         
+8 5179: 45,fe,00,fa,32       ad3w  R32,Rfa,fe         R32 = Fc100;         
 8 517e: a0,ae,34             ldw   R34,Rae            R34 = [RPM];         
 8 5181: ef,ca,e4             call  364e               UUWordLU();          
 8 5184: a0,38,40             ldw   R40,R38            R40 = R38;           
@@ -4579,7 +4579,7 @@ DO_ACCELPUMP:
 8 5231: 20,87                sjmp  52ba               goto 52ba;           
 
 8 5233: 9b,f5,d4,01,b5       cmpb  Rb5,[Rf4+1d4]                           
-8 5238: d1,f7                jleu  5231               if ((uns) [THROTTLE_ANGLE_RATE] <= [ACCELPUMP_TAR]) goto 5231;
+8 5238: d1,f7                jleu  5231               if ((uns) [THROTTLE_ANGLE_RATE] <= [AETAR]) goto 5231;
 8 523a: 35,29,0f             jnb   B5,R29,524c        if (<AEO_FLAG> == 0) goto 524c;
 8 523d: 5b,01,09,02,b2,42    sb3b  R42,Rb2,[209]      R42 = [LOAD] - [AE_LOAD];
 8 5243: d3,07                jnc   524c               if (R42 < 0) goto 524c;
@@ -4623,7 +4623,7 @@ DO_ACCELPUMP:
 8 52c4: 88,3a,00             cmpw  0,R3a                                   
 8 52c7: d7,0a                jne   52d3               if (0 != [GENERAL_3A]) goto 52d3;
 8 52c9: 9b,f5,d3,01,00       cmpb  0,[Rf4+1d3]                             
-8 52ce: d7,03                jne   52d3               if (0 != [ACCELPUMP_TAR]) goto 52d3;
+8 52ce: d7,03                jne   52d3               if (0 != [?ACCELPUMP_TAR?]) goto 52d3;
 8 52d0: 91,80,4b             orrb  R4b,80             R4b |= 80;           
 8 52d3: 20,0c                sjmp  52e1               goto 52e1;           
 
@@ -4632,7 +4632,7 @@ DO_ACCELPUMP:
 8 52dc: a3,01,b4,01,3a       ldw   R3a,[1b4]          [GENERAL_3A] = [1b4];
 8 52e1: c3,01,b4,01,3a       stw   [1b4],R3a          [1b4] = [GENERAL_3A];
 8 52e6: 9b,f5,d3,01,00       cmpb  0,[Rf4+1d3]                             
-8 52eb: d7,6f                jne   535c               if (0 != [ACCELPUMP_TAR]) goto 535c;
+8 52eb: d7,6f                jne   535c               if (0 != [?ACCELPUMP_TAR?]) goto 535c;
 8 52ed: 3f,2c,6a             jb    B7,R2c,535a        if (<CRANKING> == 1) goto 535a;
 8 52f0: 99,07,3b             cmpb  R3b,7                                   
 8 52f3: d1,03                jleu  52f8               if ((uns) [GENERAL_3B] <= 7) goto 52f8;
@@ -4817,7 +4817,7 @@ UPDATE_FUEL_PUMP:
 
 Sub0095:
 8 551b: 3f,2c,2c             jb    B7,R2c,554a        if (<CRANKING> == 1) goto 554a;
-8 551e: 45,15,00,fe,30       ad3w  R30,Rfe,15         R30 = St0011;        
+8 551e: 45,15,00,fe,30       ad3w  R30,Rfe,15         R30 = St0012;        
 8 5523: ef,f5,e1             call  371b               CHECK_TIMERS();      
 8 5526: db,22                jc    554a               if (R30 > ffff) goto 554a;
 8 5528: 38,9e,1f             jb    B0,R9e,554a        if (B0_[AT_PT]) goto 554a;
@@ -4951,7 +4951,7 @@ Sub0096:
 8 56b1: 71,7f,24             an2b  R24,7f             [REG_24] &= 7f;      
 8 56b4: b3,f8,68,38          ldb   R38,[Rf8+68]       R38 = [Sc0303];      
 8 56b8: 9b,f0,03,ad          cmpb  Rad,[Rf0+3]                             
-8 56bc: d2,10                jgt   56ce               if ((sig) [TCSTRT] > [COLD_START_ECT_MAX]) goto 56ce;
+8 56bc: d2,10                jgt   56ce               if ((sig) [TCSTRT] > [CTLOW]) goto 56ce;
 8 56be: 30,28,12             jnb   B0,R28,56d3        if (!B0_[FLAGS_28]) goto 56d3;
 8 56c1: 91,80,24             orrb  R24,80             [REG_24] |= 80;      
 8 56c4: 9b,01,56,02,38       cmpb  R38,[256]                               
@@ -5257,11 +5257,11 @@ UPDATE_SPARK:
 8 5a49: a3,01,7c,02,a6       ldw   Ra6,[27c]          Ra6 = [RPMSCALE];    
 8 5a4e: a3,01,84,02,a8       ldw   Ra8,[284]          Ra8 = [RPMX4];       
 8 5a53: 01,18                clrw  R18                R18 = 0;             
-8 5a55: b3,f7,09,01,16       ldb   R16,[Rf6+109]      R16 = [TRANS_STRAT]; 
+8 5a55: b3,f7,09,01,16       ldb   R16,[Rf6+109]      R16 = [Sc0268];      
 8 5a5a: 98,00,16             cmpb  R16,0                                   
 8 5a5d: d7,17                jne   5a76               if (R16 != 0) goto 5a76;
 8 5a5f: b3,01,5c,01,34       ldb   R34,[15c]          R34 = [MPH];         
-8 5a64: 7f,f1,d1,01,34       ml2b  R34,[Rf0+1d1]      R34 *= [RPM_TO_MPH_RATIO_1ST_GEAR];
+8 5a64: 7f,f1,d1,01,34       ml2b  R34,[Rf0+1d1]      R34 *= [Sc0070];     
 8 5a69: a0,ae,36             ldw   R36,Rae            R36 = [RPM];         
 8 5a6c: 08,03,36             shrw  R36,3              R36 = R36 / 8;       
 8 5a6f: 88,36,34             cmpw  R34,R36                                 
@@ -5270,7 +5270,7 @@ UPDATE_SPARK:
 
 8 5a76: 99,02,16             cmpb  R16,2                                   
 8 5a79: d7,20                jne   5a9b               if (R16 != 2) goto 5a9b;
-8 5a7b: b3,fb,19,01,34       ldb   R34,[Rfa+119]      R34 = [LUG_MODE_TIMER_LIMIT];
+8 5a7b: b3,fb,19,01,34       ldb   R34,[Rfa+119]      R34 = [Sc0357];      
 8 5a80: 9b,01,72,01,34       cmpb  R34,[172]                               
 8 5a85: d1,14                jleu  5a9b               if ((uns) R34 <= [LUG_TIMER]) goto 5a9b;
 8 5a87: a0,a6,30             ldw   R30,Ra6            R30 = Ra6;           
@@ -5290,22 +5290,22 @@ UPDATE_SPARK:
 8 5ab3: a0,ae,34             ldw   R34,Rae            R34 = [RPM];         
 8 5ab6: ef,8f,db             call  3648               SSWordLU();          
 8 5ab9: 64,38,42             ad2w  R42,R38            R42 += R38;          
-8 5abc: 67,f7,a2,00,42       ad2w  R42,[Rf6+a2]       R42 += [CLOSED_THROTTLE_SPARK_ADDER];
-8 5ac1: a3,fd,8c,00,38       ldw   R38,[Rfc+8c]       R38 = [STARTUP_KICK_RPM_MIN];
+8 5abc: 67,f7,a2,00,42       ad2w  R42,[Rf6+a2]       R42 += [Sc0254];     
+8 5ac1: a3,fd,8c,00,38       ldw   R38,[Rfc+8c]       R38 = [Sc0382];      
 8 5ac6: 88,38,ae             cmpw  Rae,R38                                 
 8 5ac9: d1,03                jleu  5ace               if ((uns) [RPM] <= R38) goto 5ace;
 8 5acb: 91,08,c9             orrb  Rc9,8              Rc9 |= 8;            
-8 5ace: 6b,f1,ce,01,38       sb2w  R38,[Rf0+1ce]      R38 -= [STARTUP_KICK_RPM_MIN_HYST];
+8 5ace: 6b,f1,ce,01,38       sb2w  R38,[Rf0+1ce]      R38 -= [Sc0068];     
 8 5ad3: 88,38,ae             cmpw  Rae,R38                                 
 8 5ad6: db,03                jc    5adb               if ((uns) [RPM] >= R38) goto 5adb;
 8 5ad8: 71,f7,c9             an2b  Rc9,f7             Rc9 &= f7;           
 8 5adb: 33,c9,24             jnb   B3,Rc9,5b02        if (!B3_Rc9) goto 5b02;
-8 5ade: 45,f4,00,f6,32       ad3w  R32,Rf6,f4         R32 = Fc082;         
+8 5ade: 45,f4,00,f6,32       ad3w  R32,Rf6,f4         R32 = Fc081;         
 8 5ae3: b0,ad,34             ldb   R34,Rad            R34 = [TCSTRT];      
 8 5ae6: ef,05,db             call  35ee               SUByteLU();          
 8 5ae9: 98,38,ca             cmpb  Rca,R38                                 
 8 5aec: db,14                jc    5b02               if ((uns) [ATMR1] >= R38) goto 5b02;
-8 5aee: 45,8c,00,f8,32       ad3w  R32,Rf8,8c         R32 = CT_SPARK_SUBTRACT_V_BP;
+8 5aee: 45,8c,00,f8,32       ad3w  R32,Rf8,8c         R32 = Fc090;         
 8 5af3: b3,01,32,01,34       ldb   R34,[132]          R34 = [MAP];         
 8 5af8: ef,fb,da             call  35f6               USByteLU();          
 8 5afb: 16,38                sexb  R38                R38W = (int)R38;     
@@ -5313,7 +5313,7 @@ UPDATE_SPARK:
 8 5b00: 20,18                sjmp  5b1a               goto 5b1a;           
 
 8 5b02: 3e,e4,15             jb    B6,Re4,5b1a        if (B6_Re4) goto 5b1a;
-8 5b05: 67,fb,16,01,42       ad2w  R42,[Rfa+116]      R42 += [SPARK_ADDER_NEUTRAL];
+8 5b05: 67,fb,16,01,42       ad2w  R42,[Rfa+116]      R42 += [Sc0355];     
 8 5b0a: b3,01,73,01,34       ldb   R34,[173]          R34 = [173];         
 8 5b0f: 45,e6,01,f0,32       ad3w  R32,Rf0,1e6        R32 = CT_SPARK_SUBTR_NEUTRAL;
 8 5b14: ef,e2,da             call  35f9               UUByteLU();          
@@ -5329,7 +5329,7 @@ UPDATE_SPARK:
 8 5b32: a0,ae,34             ldw   R34,Rae            R34 = [RPM];         
 8 5b35: ef,16,db             call  364e               UUWordLU();          
 8 5b38: a0,38,42             ldw   R42,R38            R42 = R38;           
-8 5b3b: 45,ea,00,f6,32       ad3w  R32,Rf6,ea         R32 = SPARK_WOT_V_BP;
+8 5b3b: 45,ea,00,f6,32       ad3w  R32,Rf6,ea         R32 = ???SPARK_WOT_V_BP;
 8 5b40: b3,01,32,01,34       ldb   R34,[132]          R34 = [MAP];         
 8 5b45: ef,ae,da             call  35f6               USByteLU();          
 8 5b48: 16,38                sexb  R38                R38W = (int)R38;     
@@ -5339,7 +5339,7 @@ UPDATE_SPARK:
 8 5b55: ef,9b,da             call  35f3               SSByteLU();          
 8 5b58: 16,38                sexb  R38                R38W = (int)R38;     
 8 5b5a: 64,38,42             ad2w  R42,R38            R42 += R38;          
-8 5b5d: 67,f7,a6,00,42       ad2w  R42,[Rf6+a6]       R42 += [WOT_SPARK_ADDER];
+8 5b5d: 67,f7,a6,00,42       ad2w  R42,[Rf6+a6]       R42 += [Sc0256];     
 8 5b62: 68,18,42             sb2w  R42,R18            R42 -= R18;          
 8 5b65: 21,29                sjmp  5c90               goto 5c90;           
 
@@ -5358,10 +5358,10 @@ UPDATE_SPARK:
 8 5b8f: a0,a6,30             ldw   R30,Ra6            R30 = Ra6;           
 8 5b92: a0,a8,32             ldw   R32,Ra8            R32 = Ra8;           
 8 5b95: ad,0a,34             ldzbw R34,a              R34 = (uns)a;        
-8 5b98: 45,98,01,fa,38       ad3w  R38,Rfa,198        R38 = SPARK_ALTITUDE_TABLE;
+8 5b98: 45,98,01,fa,38       ad3w  R38,Rfa,198        R38 = SPARK_?BORDERLINE?_TABLE;
 8 5b9d: ef,36,db             call  36d6               UTabLU();            
 8 5ba0: ac,3b,3c             ldzbw R3c,R3b            R3c = (uns)[GENERAL_3B];
-8 5ba3: 45,de,00,f6,32       ad3w  R32,Rf6,de         R32 = ALTITUDE_MULTI_V_BP_LUGGING???;
+8 5ba3: 45,de,00,f6,32       ad3w  R32,Rf6,de         R32 = ???SPARK_V_BP_V_ALTITUDE_LUGGING???;
 8 5ba8: b3,01,32,01,34       ldb   R34,[132]          R34 = [MAP];         
 8 5bad: ef,49,da             call  35f9               UUByteLU();          
 8 5bb0: 11,39                clrb  R39                R39 = 0;             
@@ -5377,31 +5377,31 @@ UPDATE_SPARK:
 8 5bcf: 01,3a                clrw  R3a                [GENERAL_3A] = 0;    
 8 5bd1: b3,01,72,01,39       ldb   R39,[172]          R39 = [LUG_TIMER];   
 8 5bd6: 11,38                clrb  R38                R38 = 0;             
-8 5bd8: af,fb,19,01,36       ldzbw R36,[Rfa+119]      R36 = (uns)[LUG_MODE_TIMER_LIMIT];
+8 5bd8: af,fb,19,01,36       ldzbw R36,[Rfa+119]      R36 = (uns)[Sc0357]; 
 8 5bdd: 8c,36,38             divw  R38,R36            R38 = R38L / R36;    
 8 5be0: 08,01,38             shrw  R38,1              R38 = R38 / 2;       
 8 5be3: 29,11                scall 5cf6               Sub0101();           
 8 5be5: 44,34,3c,42          ad3w  R42,R3c,R34        R42 = R3c + R34;     
 8 5be9: b3,01,9a,01,34       ldb   R34,[19a]          R34 = [19a];         
-8 5bee: 45,76,00,fe,32       ad3w  R32,Rfe,76         R32 = PART_THROTTLE_SPARK_ADDER_EGR;
+8 5bee: 45,76,00,fe,32       ad3w  R32,Rfe,76         R32 = Fc107;         
 8 5bf3: ef,00,da             call  35f6               USByteLU();          
 8 5bf6: 16,38                sexb  R38                R38W = (int)R38;     
 8 5bf8: 64,38,42             ad2w  R42,R38            R42 += R38;          
 8 5bfb: b0,ad,40             ldb   R40,Rad            R40 = [TCSTRT];      
 8 5bfe: 9b,f0,03,40          cmpb  R40,[Rf0+3]                             
-8 5c02: da,10                jle   5c14               if ((sig) R40 <= [COLD_START_ECT_MAX]) goto 5c14;
+8 5c02: da,10                jle   5c14               if ((sig) R40 <= [CTLOW]) goto 5c14;
 8 5c04: 45,aa,00,f6,32       ad3w  R32,Rf6,aa         R32 = WOT_SPARK_ADDER_V_ECT;
 8 5c09: b0,b0,34             ldb   R34,Rb0            R34 = [ECT];         
 8 5c0c: ef,e4,d9             call  35f3               SSByteLU();          
 8 5c0f: bc,38,3c             ldsbw R3c,R38            R3c = (sig)R38;      
 8 5c12: 20,13                sjmp  5c27               goto 5c27;           
 
-8 5c14: 45,b8,00,f6,32       ad3w  R32,Rf6,b8         R32 = COLD_START_PT_SPARK_MULT_FOR_MAP_TO_BP;
-8 5c19: b3,f1,d0,01,36       ldb   R36,[Rf0+1d0]      R36 = [SPARK_ACT_FRACTION];
+8 5c14: 45,b8,00,f6,32       ad3w  R32,Rf6,b8         R32 = St0010;        
+8 5c19: b3,f1,d0,01,36       ldb   R36,[Rf0+1d0]      R36 = [Sc0069];      
 8 5c1e: ef,d2,ea             call  46f3               FRACTIONAL_TO_RATIO_CALC();
 8 5c21: ef,24,da             call  3648               SSWordLU();          
 8 5c24: a0,38,3c             ldw   R3c,R38            R3c = R38;           
-8 5c27: 45,1e,01,fa,32       ad3w  R32,Rfa,11e        R32 = PT_SPARK_MULTI_FOR_MAP_TO_BP;
+8 5c27: 45,1e,01,fa,32       ad3w  R32,Rfa,11e        R32 = Fc101;         
 8 5c2c: b0,9f,34             ldb   R34,R9f            R34 = [LOAD];        
 8 5c2f: ef,c7,d9             call  35f9               UUByteLU();          
 8 5c32: 11,39                clrb  R39                R39 = 0;             
@@ -5422,13 +5422,13 @@ UPDATE_SPARK:
 8 5c65: af,01,5d,02,38       ldzbw R38,[25d]          R38 = (uns)[25d];    
 8 5c6a: 28,8a                scall 5cf6               Sub0101();           
 8 5c6c: 64,3c,42             ad2w  R42,R3c            R42 += R3c;          
-8 5c6f: 45,d4,00,f6,32       ad3w  R32,Rf6,d4         R32 = PT_SPARK_ADDER_V_ACT;
+8 5c6f: 45,d4,00,f6,32       ad3w  R32,Rf6,d4         R32 = ???SPARK_PT_V_ACT;
 8 5c74: b0,b1,34             ldb   R34,Rb1            R34 = [ACT];         
 8 5c77: ef,79,d9             call  35f3               SSByteLU();          
 8 5c7a: 16,38                sexb  R38                R38W = (int)R38;     
 8 5c7c: 44,38,42,3c          ad3w  R3c,R42,R38        R3c = R42 + R38;     
 8 5c80: 68,18,3c             sb2w  R3c,R18            R3c -= R18;          
-8 5c83: af,fb,18,01,38       ldzbw R38,[Rfa+118]      R38 = (uns)[PT_SPARK_MULT];
+8 5c83: af,fb,18,01,38       ldzbw R38,[Rfa+118]      R38 = (uns)[Sc0356]; 
 8 5c88: 28,6c                scall 5cf6               Sub0101();           
 8 5c8a: 47,f7,a4,00,3c,42    ad3w  R42,R3c,[Rf6+a4]   R42 = R3c + [PART_THROTTLE_SPARK_ADDER];
 8 5c90: 32,29,10             jnb   B2,R29,5ca3        if (<HSP_FLAG> == 0) goto 5ca3;
@@ -5447,7 +5447,7 @@ UPDATE_SPARK:
 8 5cbe: 71,bf,ec             an2b  Rec,bf             <LUG_TIMER_DOWN> = 0;
 8 5cc1: b3,01,72,01,38       ldb   R38,[172]          R38 = [LUG_TIMER];   
 8 5cc6: 9b,fb,19,01,38       cmpb  R38,[Rfa+119]                           
-8 5ccb: d3,03                jnc   5cd0               if ((uns) R38 < [LUG_MODE_TIMER_LIMIT]) goto 5cd0;
+8 5ccb: d3,03                jnc   5cd0               if ((uns) R38 < [Sc0357]) goto 5cd0;
 8 5ccd: 71,7f,ec             an2b  Rec,7f             <LUG_TIMER_UP> = 0;  
 8 5cd0: 38,24,22             jb    B0,R24,5cf5        if (<WOT_FLAG> == 1) goto 5cf5;
 8 5cd3: 45,d2,01,f0,32       ad3w  R32,Rf0,1d2        R32 = DASHPOT_MAX_CLIP_RPM;
@@ -5455,7 +5455,7 @@ UPDATE_SPARK:
 8 5cdb: ef,70,d9             call  364e               UUWordLU();          
 8 5cde: 98,38,9f             cmpb  R9f,R38                                 
 8 5ce1: d9,12                jgtu  5cf5               if ((uns) [LOAD] > R38) goto 5cf5;
-8 5ce3: b3,f8,69,38          ldb   R38,[Rf8+69]       R38 = [LUG_MODE_TIMER_RESET_SW];
+8 5ce3: b3,f8,69,38          ldb   R38,[Rf8+69]       R38 = [Sc0304];      
 8 5ce7: 30,38,05             jnb   B0,R38,5cef        if (!B0_R38) goto 5cef;
 8 5cea: c7,01,72,01,00       stb   [172],0            [LUG_TIMER] = 0;     
 8 5cef: 71,7f,ec             an2b  Rec,7f             <LUG_TIMER_UP> = 0;  
@@ -5624,13 +5624,13 @@ UPDATE_IDLE:
 8 5ed4: 9b,01,99,01,3a       cmpb  R3a,[199]                               
 8 5ed9: d3,0f                jnc   5eea               if ((uns) [GENERAL_3A] < [199]) goto 5eea;
 8 5edb: 9b,f7,09,01,00       cmpb  0,[Rf6+109]                             
-8 5ee0: d7,0b                jne   5eed               if (0 != [TRANS_STRAT]) goto 5eed;
+8 5ee0: d7,0b                jne   5eed               if (0 != [Sc0268]) goto 5eed;
 8 5ee2: 31,e5,08             jnb   B1,Re5,5eed        if (!B1_Re5) goto 5eed;
 8 5ee5: 30,e5,02             jnb   B0,Re5,5eea        if (!B0_Re5) goto 5eea;
 8 5ee8: 03,18                negw  R18                R18 = -R18;          
 8 5eea: 64,18,16             ad2w  R16,R18            R16 += R18;          
 8 5eed: 9b,f7,09,01,00       cmpb  0,[Rf6+109]                             
-8 5ef2: d7,08                jne   5efc               if (0 != [TRANS_STRAT]) goto 5efc;
+8 5ef2: d7,08                jne   5efc               if (0 != [Sc0268]) goto 5efc;
 8 5ef4: 30,e5,05             jnb   B0,Re5,5efc        if (!B0_Re5) goto 5efc;
 8 5ef7: 45,89,01,f6,32       ad3w  R32,Rf6,189        R32 = ISC_IDLE_AIR_NEUTRAL;
 8 5efc: a0,40,34             ldw   R34,R40            R34 = R40;           
@@ -6395,7 +6395,7 @@ UPDATE_AIR_MANAGEMENT:
 8 67da: 71,bf,47             an2b  R47,bf             <IAC> = 0;           
 8 67dd: 20,67                sjmp  6846               goto 6846;           
 
-8 67df: 45,d4,00,fe,30       ad3w  R30,Rfe,d4         R30 = St0012;        
+8 67df: 45,d4,00,fe,30       ad3w  R30,Rfe,d4         R30 = St0013;        
 8 67e4: ef,34,cf             call  371b               CHECK_TIMERS();      
 8 67e7: db,54                jc    683d               if (R30 > ffff) goto 683d;
 8 67e9: 30,24,0c             jnb   B0,R24,67f8        if (<WOT_FLAG> == 0) goto 67f8;
@@ -6428,7 +6428,7 @@ UPDATE_AIR_MANAGEMENT:
 8 6846: f0                   ret                      return;              
 
 Sub0110:
-8 6847: 45,d9,00,fe,30       ad3w  R30,Rfe,d9         R30 = St0013;        
+8 6847: 45,d9,00,fe,30       ad3w  R30,Rfe,d9         R30 = St0014;        
 8 684c: ef,cc,ce             call  371b               CHECK_TIMERS();      
 8 684f: d3,05                jnc   6856               if (R30 <= ffff) goto 6856;
 8 6851: 91,04,c9             orrb  Rc9,4              Rc9 |= 4;            
@@ -6646,7 +6646,7 @@ Sub0113:
 8 6a9c: 71,fb,24             an2b  R24,fb             [REG_24] &= fb;      
 8 6a9f: c7,01,78,01,00       stb   [178],0            [178] = 0;           
 8 6aa4: 9b,f0,04,b0          cmpb  Rb0,[Rf0+4]                             
-8 6aa8: da,08                jle   6ab2               if ((sig) [ECT] <= [ENGINE_WARM_ECT]) goto 6ab2;
+8 6aa8: da,08                jle   6ab2               if ((sig) [ECT] <= [Sc0004]) goto 6ab2;
 8 6aaa: 3e,24,05             jb    B6,R24,6ab2        if (B6_[REG_24]) goto 6ab2;
 8 6aad: 91,40,24             orrb  R24,40             [REG_24] |= 40;      
 8 6ab0: 11,cb                clrb  Rcb                [ATMR2] = 0;         
@@ -6672,7 +6672,7 @@ Sub0113:
 8 6aef: 71,7f,ea             an2b  Rea,7f             [FLAGS_EA] &= 7f;    
 8 6af2: 91,08,ea             orrb  Rea,8              [FLAGS_EA] |= 8;     
 8 6af5: 9b,f0,02,b0          cmpb  Rb0,[Rf0+2]                             
-8 6af9: da,30                jle   6b2b               if ((sig) [ECT] <= [HOT_START_ECT_MIN]) goto 6b2b;
+8 6af9: da,30                jle   6b2b               if ((sig) [ECT] <= [CTHIGH]) goto 6b2b;
 8 6afb: 37,9e,2d             jnb   B7,R9e,6b2b        if (<CL_THROTTLE> == 0) goto 6b2b;
 8 6afe: 3e,e4,2a             jb    B6,Re4,6b2b        if (B6_Re4) goto 6b2b;
 8 6b01: 31,24,27             jnb   B1,R24,6b2b        if (!B1_[REG_24]) goto 6b2b;
@@ -6732,7 +6732,7 @@ Sub0113:
 8 6ba5: 34,25,05             jnb   B4,R25,6bad        if (!B4_[FLAGS_25]) goto 6bad;
 8 6ba8: c7,01,7f,01,00       stb   [17f],0            [17f] = 0;           
 8 6bad: 71,7f,e6             an2b  Re6,7f             [FLAGS_E6] &= 7f;    
-8 6bb0: 45,a4,00,fa,30       ad3w  R30,Rfa,a4         R30 = St0010;        
+8 6bb0: 45,a4,00,fa,30       ad3w  R30,Rfa,a4         R30 = St0011;        
 8 6bb5: ef,63,cb             call  371b               CHECK_TIMERS();      
 8 6bb8: db,59                jc    6c13               if (R30 > ffff) goto 6c13;
 8 6bba: 38,9e,56             jb    B0,R9e,6c13        if (B0_[AT_PT]) goto 6c13;
@@ -7028,7 +7028,7 @@ TIMER_LIST:
 
 Sub0115:
 8 6fa7: 9b,f7,09,01,00       cmpb  0,[Rf6+109]                             
-8 6fac: df,01                je    6faf               if (0 == [TRANS_STRAT]) goto 6faf;
+8 6fac: df,01                je    6faf               if (0 == [Sc0268]) goto 6faf;
 8 6fae: f0                   ret                      return;              
 
 8 6faf: a3,01,b4,07,38       ldw   R38,[7b4]          R38 = [7b4];         
@@ -7175,11 +7175,11 @@ Sub0115:
 8 7157: de,47                jlt   71a0               if ((sig) R38 < 0) goto 71a0;
 8 7159: ac,38,3a             ldzbw R3a,R38            [GENERAL_3A] = (uns)R38;
 8 715c: b3,01,3a,01,34       ldb   R34,[13a]          R34 = [13a];         
-8 7161: 45,1e,01,f6,32       ad3w  R32,Rf6,11e        R32 = Fc084;         
+8 7161: 45,1e,01,f6,32       ad3w  R32,Rf6,11e        R32 = Fc083;         
 8 7166: ef,90,c4             call  35f9               UUByteLU();          
 8 7169: b0,38,30             ldb   R30,R38            R30 = R38;           
 8 716c: b3,01,3a,01,34       ldb   R34,[13a]          R34 = [13a];         
-8 7171: 45,0a,01,f6,32       ad3w  R32,Rf6,10a        R32 = Fc083;         
+8 7171: 45,0a,01,f6,32       ad3w  R32,Rf6,10a        R32 = Fc082;         
 8 7176: ef,80,c4             call  35f9               UUByteLU();          
 8 7179: 78,38,30             sb2b  R30,R38            R30 -= R38;          
 8 717c: db,04                jc    7182               if (R30 >= 0) goto 7182;
@@ -7324,7 +7324,7 @@ Sub0115:
 
 UPDATE_SHIFT_LIGHT:
 8 732b: 37,99,0a             jnb   B7,R99,7338        if (!B7_R99) goto 7338;
-8 732e: b3,f7,09,01,30       ldb   R30,[Rf6+109]      R30 = [TRANS_STRAT]; 
+8 732e: b3,f7,09,01,30       ldb   R30,[Rf6+109]      R30 = [Sc0268];      
 8 7333: 30,30,67             jnb   B0,R30,739d        if (!B0_R30) goto 739d;
 8 7336: 20,07                sjmp  733f               goto 733f;           
 
@@ -7382,7 +7382,7 @@ UPDATE_THERMACTOR:
 
 Sub0118:
 8 73d4: 9b,f0,05,bb          cmpb  Rbb,[Rf0+5]                             
-8 73d8: d1,0a                jleu  73e4               if ((uns) Rbb <= [PIP_PER_REV]) goto 73e4;
+8 73d8: d1,0a                jleu  73e4               if ((uns) Rbb <= [Sc0005]) goto 73e4;
 8 73da: b1,01,bb             ldb   Rbb,1              Rbb = 1;             
 8 73dd: c0,be,b8             stw   Rbe,Rb8            Rbe = [PIP_HI_E_TIME];
 8 73e0: c0,c0,bc             stw   Rc0,Rbc            Rc0 = Rbc;           
@@ -7390,7 +7390,7 @@ Sub0118:
 
 8 73e4: 17,bb                incb  Rbb                Rbb++;               
 8 73e6: 9b,f0,05,bb          cmpb  Rbb,[Rf0+5]                             
-8 73ea: d1,68                jleu  7454               if ((uns) Rbb <= [PIP_PER_REV]) goto 7454;
+8 73ea: d1,68                jleu  7454               if ((uns) Rbb <= [Sc0005]) goto 7454;
 8 73ec: 48,be,b8,54          sb3w  R54,Rb8,Rbe        R54 = [PIP_HI_E_TIME] - Rbe;
 8 73f0: db,02                jc    73f4               if (R54 >= 0) goto 73f4;
 8 73f2: 03,54                negw  R54                R54 = -R54;          
@@ -7714,7 +7714,7 @@ Sub0127:
 
 Sub0128:
 8 774f: a1,10,55,d2          ldw   Rd2,5510           Rd2 = 5510;          
-8 7753: 7b,f0,05,d2          sb2b  Rd2,[Rf0+5]        Rd2 -= [PIP_PER_REV];
+8 7753: 7b,f0,05,d2          sb2b  Rd2,[Rf0+5]        Rd2 -= [Sc0005];     
 8 7757: 08,d2,d2             shrw  Rd2,d2             Rd2 = Rd2 >> Rd2;    
 8 775a: 28,09                scall 7765               Sub0129();           
 8 775c: 20,7c                sjmp  77da               goto 77da;           
@@ -9393,17 +9393,13 @@ Rf0_EndAddr - Rbase Rf0 end next address:
 8 8e00: 7c,91             Rf0 Rf0_EndAddr     word      917c               37244
 
 
-HOT_START_ECT_MIN:
-8 8e02: 55                Rf0+2 HOT_START_ECT_MIN    byte        55              170.00
+CTHIGH:
+8 8e02: 55                Rf0+2 CTHIGH        byte        55                  85
 
-COLD_START_ECT_MAX:
-8 8e03: 1c                Rf0+3 COLD_START_ECT_MAX    byte        1c               56.00
-
-ENGINE_WARM_ECT:
-8 8e04: 3a                Rf0+4 ENGINE_WARM_ECT    byte        3a              116.00
-
-PIP_PER_REV:
-8 8e05: 08                Rf0+5 PIP_PER_REV    byte         8                   8
+CTLOW:
+8 8e03: 1c                Rf0+3 CTLOW         byte        1c                  28
+8 8e04: 3a                Rf0+4 Sc0004        byte        3a                  58
+8 8e05: 08                Rf0+5 Sc0005        byte         8                   8
 8 8e06: b8                Rf0+6 Sc0006        byte        b8                 184
 
 
@@ -9479,12 +9475,8 @@ TPS_HYST:
 8 8e3a: 66,a6             Rf0+3a Sc0034       word      a666               42598
 8 8e3c: 00,60             Rf0+3c Sc0035       word      6000               24576
 8 8e3e: 8f,02             Rf0+3e Sc0036       word       28f                 655
-
-NUM_CYL:
-8 8e40: 00,01             Rf0+40 NUM_CYL      word       100                8.00
-
-IGN_DEG_PER_PIP:
-8 8e42: 68,01             Rf0+42 IGN_DEG_PER_PIP    word       168                 360
+8 8e40: 00,01             Rf0+40 Sc0037       word       100                 256
+8 8e42: 68,01             Rf0+42 Sc0038       word       168                 360
 
 FUEL_INJ_OFFSET_V_VOLTS:
 8 8e44: ff,1d,e0          func                  ff,     e01d                 255,    57373
@@ -9686,16 +9678,10 @@ MFA_EGR_MULT:
 8 8fc6: 00,00,00,00       table        0,  0,  0,  0          0,   0,   0,   0        
 8 8fca: 00,00,00,00       table        0,  0,  0,  0          0,   0,   0,   0        
 
+8 8fce: e8,03             Rf0+1ce Sc0068      word       3e8                1000
 
-STARTUP_KICK_RPM_MIN_HYST:
-8 8fce: e8,03             Rf0+1ce STARTUP_KICK_RPM_MIN_HYST    word       3e8              250.00
-
-
-SPARK_ACT_FRACTION:
-8 8fd0: 00                Rf0+1d0 SPARK_ACT_FRACTION    byte         0              0.0000
-
-RPM_TO_MPH_RATIO_1ST_GEAR:
-8 8fd1: ff                Rf0+1d1 RPM_TO_MPH_RATIO_1ST_GEAR    byte        ff               63.75
+8 8fd0: 00                Rf0+1d0 Sc0069      byte         0                   0
+8 8fd1: ff                Rf0+1d1 Sc0070      byte        ff                 255
 
 DASHPOT_MAX_CLIP_RPM:
 8 8fd2: ff,ff,0d,00       func                ffff,        d               65535,       13
@@ -9977,17 +9963,13 @@ HIGH_SPEED_FUEL_MULT:
 8 91b8: 00,00,fa,fe       func                   0,     fefa                   0,    65274
 8 91bc: 00,00,fa,fe       func                   0,     fefa                   0,    65274
 
-
-NUM_PIP_BETWEEN_INJECTOR_OUTPUTS:
-8 91c0: 00,01             Rf2+44 NUM_PIP_BETWEEN_INJECTOR_OUTPUTS    word       100                8.00
+8 91c0: 00,01             Rf2+44 Sc0125       word       100                 256
 
 8 91c2: 02                Rf2+46 Sc0126       byte         2                   2
 8 91c3: 00                Rf2+47 Sc0127       byte         0                   0
 8 91c4: 01                Rf2+48 Sc0128       byte         1                   1
 8 91c5: 08                Rf2+49 Sc0129       byte         8                   8
-
-INJECTOR_FIRE_METHOD:
-8 91c6: 01                Rf2+4a INJECTOR_FIRE_METHOD    byte         1                   1
+8 91c6: 01                Rf2+4a Sc0130       byte         1                   1
 
 
 8 91c7: ff                                    Unknown Calibration                                    ff                                           255
@@ -10022,13 +10004,7 @@ Ynorm_FUEL_03:
 8 9218: 00                Rf2+9c Sc0131       byte         0                   0
 8 9219: 74                Rf2+9d Sc0132       byte        74                 116
 
-INJECTOR_TIMING_EDGE:
-8 921a: 01                Rf2+9e INJECTOR_TIMING_EDGE    byte         1                   1
-
-
-8 921b: 00                                    Unknown Calibration                                     0                                             0
-
-
+8 921a: 01,00             Rf2+9e Sc0133       word         1                   1
 8 921c: 00,80             Rf2+a0 Sc0134       word      8000               32768
 
 Ynorm_INJ_DELAY_FUEL:
@@ -10597,12 +10573,8 @@ VE_TABLE:
 8 9631: ff                                    Unknown Calibration                                    ff                                           255
 
 
-
-REV_LIMIT_NO_FUEL:
-8 9632: e0,60             Rf4+6e REV_LIMIT_NO_FUEL    word      60e0             6200.00
-
-REV_LIMIT_NO_FUEL_HYST:
-8 9634: 90,01             Rf4+70 REV_LIMIT_NO_FUEL_HYST    word       190              100.00
+8 9632: e0,60             Rf4+6e Sc0216       word      60e0               24800
+8 9634: 90,01             Rf4+70 Sc0217       word       190                 400
 
 BASE_FUEL_COLD_ENRICHMENT_DELAY_TABLE:
 8 9636: 25,1f,1b,0f,0f,0f,0f,0b,0f,1a       table       25, 1f, 1b,  f,  f,  f,  f,  b,  f, 1a           0.29,    0.24,    0.21,    0.12,    0.12,    0.12,    0.12,    0.09,    0.12,    0.20
@@ -10664,10 +10636,10 @@ INJECTOR_DELAY_TABLE:
 8 9796: 60                Rf4+1d2 Sc0220      byte        60                  96
 
 
-ACCELPUMP_TAR:
-8 9797: 01,14             Rf4+1d3 ACCELPUMP_TAR    word      1401               10.00
-        Inc   ACCELPUMP_TAR:
-        Inc   8 9798: 14      Rf4+1d4 ACCELPUMP_TAR    byte        14               10.00
+?ACCELPUMP_TAR?:
+8 9797: 01,14             Rf4+1d3 ?ACCELPUMP_TAR?    word      1401               10.00
+        Inc   AETAR:
+        Inc   8 9798: 14      Rf4+1d4 AETAR       byte        14                  20
 
 
 AEACLD:
@@ -10920,15 +10892,11 @@ Fc076 - Function 076:
 8 9994: 00,80,52,f8       func                8000,     f852              -32768,    -1966
 8 9998: 00,80,52,f8       func                8000,     f852              -32768,    -1966
 
-
-CLOSED_THROTTLE_SPARK_ADDER:
-8 999c: 00,00             Rf6+a2 CLOSED_THROTTLE_SPARK_ADDER    word         0                0.00
+8 999c: 00,00             Rf6+a2 Sc0254       word         0                   0
 
 PART_THROTTLE_SPARK_ADDER:
 8 999e: 00,00             Rf6+a4 PART_THROTTLE_SPARK_ADDER    word         0                   0
-
-WOT_SPARK_ADDER:
-8 99a0: 00,00             Rf6+a6 WOT_SPARK_ADDER    word         0                0.00
+8 99a0: 00,00             Rf6+a6 Sc0256       word         0                   0
 
 8 99a2: 00                Rf6+a8 Sc0257       byte         0                   0
 8 99a3: a8                Rf6+a9 Sc0258       byte        a8                 168
@@ -10943,38 +10911,39 @@ WOT_SPARK_ADDER_V_ECT:
 8 99b0: 80,14                                 Unknown Calibration                                80, 14                                      128,  20
 
 
-COLD_START_PT_SPARK_MULT_FOR_MAP_TO_BP:
-8 99b2: ff,7f,f0,ff       func                7fff,     fff0              255.99,   -0.125
-8 99b6: 80,3e,f0,ff       func                3e80,     fff0              125.00,   -0.125
-8 99ba: 40,38,f4,ff       func                3840,     fff4              112.50,   -0.094
-8 99be: c0,35,00,00       func                35c0,        0              107.50,    0.000
-8 99c2: 00,1e,00,00       func                1e00,        0               60.00,    0.000
-8 99c6: 00,19,18,00       func                1900,       18               50.00,    0.188
-8 99ca: 00,80,18,00       func                8000,       18             -256.00,    0.188
+St0010 - Structure 010:
+8 99b2: ff      struct     ff
 
-PT_SPARK_ADDER_V_ACT:
-8 99ce: 7f,f8             func                  7f,       f8              254.00,    -2.00
-8 99d0: 5f,f8             func                  5f,       f8              190.00,    -2.00
-8 99d2: 50,00             func                  50,        0              160.00,     0.00
-8 99d4: 80,00             func                  80,        0             -256.00,     0.00
-8 99d6: 80,00             func                  80,        0             -256.00,     0.00
 
-ALTITUDE_MULTI_V_BP_LUGGING??? - ALTITUDE_MULTI_V_BP:
-8 99d8: ff,00             func                  ff,        0               15.94,     0.00
-8 99da: de,00             func                  de,        0               13.88,     0.00
-8 99dc: d4,80             func                  d4,       80               13.25,     1.00
-8 99de: bc,80             func                  bc,       80               11.75,     1.00
-8 99e0: 60,9a             func                  60,       9a                6.00,     1.20
-8 99e2: 00,9a             func                   0,       9a                0.00,     1.20
+8 99b3: 7f,f0,ff,80,3e,f0,ff,40               Unknown Calibration        7f, f0, ff, 80, 3e, f0, ff, 40        127, 240, 255, 128,  62, 240, 255,  64
+8 99bb: 38,f4,ff,c0,35,00,00,00               Unknown Calibration        38, f4, ff, c0, 35,  0,  0,  0         56, 244, 255, 192,  53,   0,   0,   0
+8 99c3: 1e,00,00,00,19,18,00,00               Unknown Calibration        1e,  0,  0,  0, 19, 18,  0,  0         30,   0,   0,   0,  25,  24,   0,   0
+8 99cb: 80,18,00                              Unknown Calibration                            80, 18,  0                                 128,  24,   0
 
-SPARK_WOT_V_BP:
-8 99e4: ff,00             func                  ff,        0               31.88,     0.00
-8 99e6: de,00             func                  de,        0               27.75,     0.00
-8 99e8: d4,10             func                  d4,       10               26.50,     4.00
-8 99ea: bc,10             func                  bc,       10               23.50,     4.00
-8 99ec: 00,30             func                   0,       30                0.00,    12.00
 
-Fc082 - Function 082:
+???SPARK_PT_V_ACT:
+8 99ce: 7f,f8             func                  7f,       f8                 127,       -8
+8 99d0: 5f,f8             func                  5f,       f8                  95,       -8
+8 99d2: 50,00             func                  50,        0                  80,        0
+8 99d4: 80,00             func                  80,        0                -128,        0
+8 99d6: 80,00             func                  80,        0                -128,        0
+
+???SPARK_V_BP_V_ALTITUDE_LUGGING???:
+8 99d8: ff,00             func                  ff,        0                 255,        0
+8 99da: de,00             func                  de,        0                 222,        0
+8 99dc: d4,80             func                  d4,       80                 212,      128
+8 99de: bc,80             func                  bc,       80                 188,      128
+8 99e0: 60,9a             func                  60,       9a                  96,      154
+8 99e2: 00,9a             func                   0,       9a                   0,      154
+
+???SPARK_WOT_V_BP:
+8 99e4: ff,00             func                  ff,        0                 255,        0
+8 99e6: de,00             func                  de,        0                 222,        0
+8 99e8: d4,10             func                  d4,       10                 212,       16
+8 99ea: bc,10             func                  bc,       10                 188,       16
+8 99ec: 00,30             func                   0,       30                   0,       48
+
+Fc081 - Function 081:
 8 99ee: 7f,01             func                  7f,        1                 127,        1
 8 99f0: 33,01             func                  33,        1                  51,        1
 8 99f2: 2d,1e             func                  2d,       1e                  45,       30
@@ -10995,11 +10964,11 @@ TIPHS:
 8 9a00: ff                Rf6+106 Sc0265      byte        ff                 255
 8 9a01: 03                Rf6+107 Sc0266      byte         3                   3
 8 9a02: 04                Rf6+108 Sc0267      byte         4                   4
+                                                         B7 B6 B5 B4 B3 B2 B1 B0
+                                                          0  0  0  0  0  0  0  1
+8 9a03: 01                Rf6+109 Sc0268      byte         1                   1
 
-TRANS_STRAT:
-8 9a03: 01                Rf6+109 TRANS_STRAT    byte         1                   1
-
-Fc083 - Function 083:
+Fc082 - Function 082:
 8 9a04: ff,78             func                  ff,       78                 255,      120
 8 9a06: 69,78             func                  69,       78                 105,      120
 8 9a08: 0e,46             func                   e,       46                  14,       70
@@ -11011,7 +10980,7 @@ Fc083 - Function 083:
 8 9a14: 00,46             func                   0,       46                   0,       70
 8 9a16: 00,46             func                   0,       46                   0,       70
 
-Fc084 - Function 084:
+Fc083 - Function 083:
 8 9a18: ff,6e             func                  ff,       6e                 255,      110
 8 9a1a: 69,6e             func                  69,       6e                 105,      110
 8 9a1c: 0e,36             func                   e,       36                  14,       54
@@ -11156,9 +11125,9 @@ EGRDCOFF:
 8 9b16: cd,2c             Rf8+66 EGRDCOFF     word      2ccd               11469
 
 8 9b18: 0a                Rf8+68 Sc0303       byte         a                  10
-
-LUG_MODE_TIMER_RESET_SW:
-8 9b19: 01                Rf8+69 LUG_MODE_TIMER_RESET_SW    byte         1                   1
+                                                         B7 B6 B5 B4 B3 B2 B1 B0
+                                                          0  0  0  0  0  0  0  1
+8 9b19: 01                Rf8+69 Sc0304       byte         1                   1
 
 CT_SPARK:
 8 9b1a: ff,7f,88,00       func                7fff,       88               32767,      136
@@ -11177,13 +11146,13 @@ CT_SPARK_ADDER_V_ECT:
 8 9b3a: 80,28                                 Unknown Calibration                                80, 28                                      128,  40
 
 
-CT_SPARK_SUBTRACT_V_BP:
-8 9b3c: ff,24             func                  ff,       24               15.94,     9.00
-8 9b3e: c0,24             func                  c0,       24               12.00,     9.00
-8 9b40: 00,00             func                   0,        0                0.00,     0.00
-8 9b42: 00,00             func                   0,        0                0.00,     0.00
-8 9b44: 00,00             func                   0,        0                0.00,     0.00
-8 9b46: 00,00             func                   0,        0                0.00,     0.00
+Fc090 - Function 090:
+8 9b3c: ff,24             func                  ff,       24                 255,       36
+8 9b3e: c0,24             func                  c0,       24                 192,       36
+8 9b40: 00,00             func                   0,        0                   0,        0
+8 9b42: 00,00             func                   0,        0                   0,        0
+8 9b44: 00,00             func                   0,        0                   0,        0
+8 9b46: 00,00             func                   0,        0                   0,        0
 
 8 9b48: 48,0d             Rf8+98 Sc0305       word       d48                3400
 8 9b4a: 20,03             Rf8+9a Sc0306       word       320                 800
@@ -11280,24 +11249,12 @@ WOT_FUEL_MULT:
 8 9bf4: 00,00,80,00       func                   0,       80                   0,      128
 8 9bf8: 00,00,80,00       func                   0,       80                   0,      128
 
-
-LUG_MODE_ECT_MIN:
-8 9bfc: 3c                Rfa+64 LUG_MODE_ECT_MIN    byte        3c              120.00
-
-LUG_MODE_ECT_MAX:
-8 9bfd: 6e                Rfa+65 LUG_MODE_ECT_MAX    byte        6e              220.00
-
-LUG_MODE_STARTUP_DELAY:
-8 9bfe: 0a                Rfa+66 LUG_MODE_STARTUP_DELAY    byte         a                  10
-
-LUG_MODE_TIME_MIN:
-8 9bff: f8                Rfa+67 LUG_MODE_TIME_MIN    byte        f8               31.00
-
-LUG_MODE_MAP_TO_BP_MIN:
-8 9c00: 7f                Rfa+68 LUG_MODE_MAP_TO_BP_MIN    byte        7f               99.22
-
-LUG_MODE_MAP_TO_BP_MIN_HYST:
-8 9c01: 2a                Rfa+69 LUG_MODE_MAP_TO_BP_MIN_HYST    byte        2a               33.60
+8 9bfc: 3c                Rfa+64 Sc0329       byte        3c                  60
+8 9bfd: 6e                Rfa+65 Sc0330       byte        6e                 110
+8 9bfe: 0a                Rfa+66 Sc0331       byte         a                  10
+8 9bff: f8                Rfa+67 Sc0332       byte        f8                 248
+8 9c00: 7f                Rfa+68 Sc0333       byte        7f                 127
+8 9c01: 2a                Rfa+69 Sc0334       byte        2a                  42
 8 9c02: 3c                Rfa+6a Sc0335       byte        3c                  60
 8 9c03: 6e                Rfa+6b Sc0336       byte        6e                 110
 
@@ -11319,7 +11276,7 @@ LUG_MODE_MAP_TO_BP_MIN_HYST:
 8 9c34: 00,00,80,00       func                   0,       80                   0,      128
 8 9c38: 00,00,80,00       func                   0,       80                   0,      128
 
-St0010 - Structure 010:
+St0011 - Structure 011:
 8 9c3c: 00      struct     0
 
 
@@ -11365,7 +11322,7 @@ ACCEL_PUMP_FUEL_TABLE:
 8 9c92: 58,02             Rfa+fa Sc0353       word       258                 600
 8 9c94: 73,00             Rfa+fc Sc0354       word        73                 115
 
-Fc101 - Function 101:
+Fc100 - Function 100:
 8 9c96: ff,ff,00,00       func                ffff,        0               65535,        0
 8 9c9a: 68,10,00,00       func                1068,        0                4200,        0
 8 9c9e: a0,0f,80,00       func                 fa0,       80                4000,      128
@@ -11373,26 +11330,20 @@ Fc101 - Function 101:
 8 9ca6: 00,00,80,00       func                   0,       80                   0,      128
 8 9caa: 00,00,80,00       func                   0,       80                   0,      128
 
+8 9cae: 00,00             Rfa+116 Sc0355      word         0                   0
 
-SPARK_ADDER_NEUTRAL:
-8 9cae: 00,00             Rfa+116 SPARK_ADDER_NEUTRAL    word         0                0.00
-
-
-PT_SPARK_MULT:
-8 9cb0: 80                Rfa+118 PT_SPARK_MULT    byte        80                1.00
-
-LUG_MODE_TIMER_LIMIT:
-8 9cb1: 20                Rfa+119 LUG_MODE_TIMER_LIMIT    byte        20                4.00
+8 9cb0: 80                Rfa+118 Sc0356      byte        80                 128
+8 9cb1: 20                Rfa+119 Sc0357      byte        20                  32
 
 8 9cb2: 10,03             Rfa+11a Sc0358      word       310                 784
 8 9cb4: 10,03             Rfa+11c Sc0359      word       310                 784
 
-PT_SPARK_MULTI_FOR_MAP_TO_BP:
-8 9cb6: ff,80             func                  ff,       80              200.00,     1.00
-8 9cb8: 00,80             func                   0,       80                0.00,     1.00
-8 9cba: 00,80             func                   0,       80                0.00,     1.00
-8 9cbc: 00,80             func                   0,       80                0.00,     1.00
-8 9cbe: 00,80             func                   0,       80                0.00,     1.00
+Fc101 - Function 101:
+8 9cb6: ff,80             func                  ff,       80                 255,      128
+8 9cb8: 00,80             func                   0,       80                   0,      128
+8 9cba: 00,80             func                   0,       80                   0,      128
+8 9cbc: 00,80             func                   0,       80                   0,      128
+8 9cbe: 00,80             func                   0,       80                   0,      128
 
 WOT_SPARK:
 8 9cc0: ff,ff,68,00       func                ffff,       68               65535,      104
@@ -11414,7 +11365,7 @@ SPARK_LOAD_INCREASE_TEMP_TABLE:
 8 9d1c: 18,1c,20,24,28,30,3c,40,40,40       table       18, 1c, 20, 24, 28, 30, 3c, 40, 40, 40           6.00,    7.00,    8.00,    9.00,   10.00,   12.00,   15.00,   16.00,   16.00,   16.00
 8 9d26: 18,18,18,18,18,24,32,38,3c,40       table       18, 18, 18, 18, 18, 24, 32, 38, 3c, 40           6.00,    6.00,    6.00,    6.00,    6.00,    9.00,   12.50,   14.00,   15.00,   16.00
 
-SPARK_ALTITUDE_TABLE:
+SPARK_?BORDERLINE?_TABLE - SPARK_ALTITUDE_TABLE:
 8 9d30: 58,58,58,64,70,80,88,88,88,88       table       58, 58, 58, 64, 70, 80, 88, 88, 88, 88          22.00,   22.00,   22.00,   25.00,   28.00,   32.00,   34.00,   34.00,   34.00,   34.00
 8 9d3a: 70,70,74,74,78,78,78,78,78,78       table       70, 70, 74, 74, 78, 78, 78, 78, 78, 78          28.00,   28.00,   29.00,   29.00,   30.00,   30.00,   30.00,   30.00,   30.00,   30.00
 8 9d44: 70,70,70,78,80,80,78,74,70,70       table       70, 70, 70, 78, 80, 80, 78, 74, 70, 70          28.00,   28.00,   28.00,   30.00,   32.00,   32.00,   30.00,   29.00,   28.00,   28.00
@@ -11442,7 +11393,7 @@ NTIP:
 8 9d88: 00,40,40                              Unknown Calibration                             0, 40, 40                                   0,  64,  64
 
 
-Fc104 - Function 104:
+Fc103 - Function 103:
 8 9d8b: 7f,f3             func                  7f,       f3                 127,      243
 8 9d8d: 5a,f3             func                  5a,       f3                  90,      243
 8 9d8f: 2d,b3             func                  2d,       b3                  45,      179
@@ -11503,9 +11454,7 @@ EGR_FLOW_RATE_ALTITUDE_TABLE:
 8 9e14: 00,00,04,04,08,08,08,03,00,00       table        0,  0,  4,  4,  8,  8,  8,  3,  0,  0           0.00,    0.00,    1.00,    1.00,    2.00,    2.00,    2.00,    0.75,    0.00,    0.00
 8 9e1e: 00,00,00,00,00,00,00,00,00,00       table        0,  0,  0,  0,  0,  0,  0,  0,  0,  0           0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
 
-
-STARTUP_KICK_RPM_MIN:
-8 9e28: 68,10             Rfc+8c STARTUP_KICK_RPM_MIN    word      1068             1050.00
+8 9e28: 68,10             Rfc+8c Sc0382       word      1068                4200
 
 KACRAT:
 8 9e2a: 80,02             Rfc+8e KACRAT       word       280                 640
@@ -11601,7 +11550,7 @@ Rfe_EndAddr - Rbase Rfe end next address:
 8 9e8c: 00,00,03                              Unknown Calibration                             0,  0,  3                                   0,   0,   3
 
 
-Fc106 - Function 106:
+Fc105 - Function 105:
 8 9e8f: ff,00             func                  ff,        0                 255,        0
 8 9e91: 73,00             func                  73,        0                 115,        0
 8 9e93: 40,31             func                  40,       31                  64,       49
@@ -11613,7 +11562,7 @@ Fc106 - Function 106:
 8 9e9b: 7d                Rfe+13 Sc0443       byte        7d                 125
 8 9e9c: 26                Rfe+14 Sc0444       byte        26                  38
 
-St0011 - Structure 011:
+St0012 - Structure 012:
 8 9e9d: 1e      struct     1e
 
 
@@ -11636,12 +11585,12 @@ EGR_FLOW_RATE_SEALEVEL_TABLE:
 8 9eea: 00,04,0a,10,10,10,10,10,0c,04       table        0,  4,  a, 10, 10, 10, 10, 10,  c,  4           0.00,    1.00,    2.50,    4.00,    4.00,    4.00,    4.00,    4.00,    3.00,    1.00
 8 9ef4: 00,00,00,00,00,00,00,00,00,00       table        0,  0,  0,  0,  0,  0,  0,  0,  0,  0           0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
 
-PART_THROTTLE_SPARK_ADDER_EGR:
-8 9efe: ff,3c             func                  ff,       3c             6375.00,    15.00
-8 9f00: 3c,3c             func                  3c,       3c             1500.00,    15.00
-8 9f02: 00,00             func                   0,        0                0.00,     0.00
-8 9f04: 00,00             func                   0,        0                0.00,     0.00
-8 9f06: 00,00             func                   0,        0                0.00,     0.00
+Fc107 - Function 107:
+8 9efe: ff,3c             func                  ff,       3c                 255,       60
+8 9f00: 3c,3c             func                  3c,       3c                  60,       60
+8 9f02: 00,00             func                   0,        0                   0,        0
+8 9f04: 00,00             func                   0,        0                   0,        0
+8 9f06: 00,00             func                   0,        0                   0,        0
 
 SPARK_SEALEVEL_TABLE:
 8 9f08: 58,58,58,60,60,6c,78,88,90,90       table       58, 58, 58, 60, 60, 6c, 78, 88, 90, 90          22.00,   22.00,   22.00,   24.00,   24.00,   27.00,   30.00,   34.00,   36.00,   36.00
@@ -11656,14 +11605,14 @@ SPARK_SEALEVEL_TABLE:
 8 9f58: 90,01             Rfe+d0 Sc0445       word       190                 400
 8 9f5a: a0,0f             Rfe+d2 Sc0446       word       fa0                4000
 
-St0012 - Structure 012:
+St0013 - Structure 013:
 8 9f5c: 25      struct     25
 
 
 8 9f5d: 61,00,00,00                           Unknown Calibration                        61,  0,  0,  0                             97,   0,   0,   0
 
 
-St0013 - Structure 013:
+St0014 - Structure 014:
 8 9f61: a5      struct     a5
 
 
