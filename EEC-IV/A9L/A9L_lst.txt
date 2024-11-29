@@ -1029,7 +1029,7 @@
 21b0: 41,41               vect  4141,            Check_spd_lim                     # Check for RPM and Speed limiters
 21b2: a1,41               vect  41a1,            Update_clolp                      # Update closed loop flags
 21b4: 00,47               vect  4700,            Adapt?                            # Adaptive something
-21b6: d7,4a               vect  4ad7,            Calc_Fuel
+21b6: d7,4a               vect  4ad7,            Calc_Fuel#
 21b8: ee,50               vect  50ee,            Update_fpump#                      # Update fuel pump enable
 21ba: 36,51               vect  5136,            Calc_EVP                          # EVP something - large function
 21bc: d9,54               vect  54d9,            Calc_EGR#                          # EGR stuff
