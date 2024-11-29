@@ -228,7 +228,7 @@ Sub0003:
 8 2167: ef,94,67             call  88fe               Sub0182();           
 8 216a: ef,f1,00             call  225e               Sub0005();           
 8 216d: c7,01,09,02,b2       stb   [209],Rb2          [AE_LOAD] = [LOAD];  
-8 2172: b3,f1,d7,00,b3       ldb   Rb3,[Rf0+d7]       Rb3 = [Sc0046];      
+8 2172: b3,f1,d7,00,b3       ldb   Rb3,[Rf0+d7]       Rb3 = [DFSO_OPEN_LOOP_DELAY_IN_PIPS];
 8 2177: a3,f6,02,20          ldw   R20,[Rf6+2]        R20 = [TPS_INITAL_VALUE];
 8 217b: c3,01,24,01,20       stw   [124],R20          [TPS_INITAL_VALUE] = R20;
 8 2180: c3,01,1c,02,20       stw   [21c],R20          [THROTTLE_BART] = R20;
@@ -2424,7 +2424,7 @@ UPDATE_AD:
 8 38e3: 9b,f0,02,ad          cmpb  Rad,[Rf0+2]                             
 8 38e7: d3,08                jnc   38f1               if ((uns) [TCSTRT] < [HOT_START_ECT_MIN]) goto 38f1;
 8 38e9: 9b,fe,02,ca          cmpb  Rca,[Rfe+2]                             
-8 38ed: d3,10                jnc   38ff               if ((uns) [ATMR1] < [Sc0439]) goto 38ff;
+8 38ed: d3,10                jnc   38ff               if ((uns) [ATMR1] < [HEGO_HOT_START_DELAY_WARM_FLG]) goto 38ff;
 8 38ef: 20,06                sjmp  38f7               goto 38f7;           
 
 8 38f1: 9b,fe,03,ca          cmpb  Rca,[Rfe+3]                             
@@ -3156,11 +3156,11 @@ Sub0065:
 8 41ab: 9b,fa,66,ca          cmpb  Rca,[Rfa+66]                            
 8 41af: d1,0f                jleu  41c0               if ((uns) [ATMR1] <= [LUG_MODE_STARTUP_DELAY]) goto 41c0;
 8 41b1: 9b,fa,6a,b1          cmpb  Rb1,[Rfa+6a]                            
-8 41b5: da,09                jle   41c0               if ((sig) [ACT] <= [Sc0335]) goto 41c0;
+8 41b5: da,09                jle   41c0               if ((sig) [ACT] <= [LUG_MODE_ACT_MIN]) goto 41c0;
 8 41b7: 9b,fa,6b,b1          cmpb  Rb1,[Rfa+6b]                            
-8 41bb: d6,03                jge   41c0               if ((sig) [ACT] >= [Sc0336]) goto 41c0;
+8 41bb: d6,03                jge   41c0               if ((sig) [ACT] >= [LUG_MODE_ACT_MAX]) goto 41c0;
 8 41bd: 91,10,e7             orrb  Re7,10             Re7 |= 10;           
-8 41c0: 45,02,00,fe,30       ad3w  R30,Rfe,2          R30 = Sc0439;        
+8 41c0: 45,02,00,fe,30       ad3w  R30,Rfe,2          R30 = HEGO_HOT_START_DELAY_WARM_FLG;
 8 41c5: ef,53,f5             call  371b               CHECK_TIMERS();      
 8 41c8: db,1f                jc    41e9               if (R30 > ffff) goto 41e9;
 8 41ca: b3,01,ce,01,34       ldb   R34,[1ce]          R34 = [1ce];         
@@ -3176,24 +3176,24 @@ Sub0065:
 8 41ee: 9b,fa,02,34          cmpb  R34,[Rfa+2]                             
 8 41f2: d1,03                jleu  41f7               if ((uns) R34 <= [Sc0319]) goto 41f7;
 8 41f4: 71,fb,e7             an2b  Re7,fb             Re7 &= fb;           
-8 41f7: b3,fa,06,30          ldb   R30,[Rfa+6]        R30 = [Sc0323];      
+8 41f7: b3,fa,06,30          ldb   R30,[Rfa+6]        R30 = [CLOSED_LOOP_MAP_MIN];
 8 41fb: 98,30,b2             cmpb  Rb2,R30                                 
 8 41fe: d1,05                jleu  4205               if ((uns) [LOAD] <= R30) goto 4205;
 8 4200: 91,08,ed             orrb  Red,8              [FLAGS_ED] |= 8;     
 8 4203: 20,0e                sjmp  4213               goto 4213;           
 
-8 4205: 7b,fa,07,30          sb2b  R30,[Rfa+7]        R30 -= [Sc0324];     
+8 4205: 7b,fa,07,30          sb2b  R30,[Rfa+7]        R30 -= [CLOSED_LOOP_MAP_MIN_HYST];
 8 4209: d3,08                jnc   4213               if (R30 < 0) goto 4213;
 8 420b: 98,30,b2             cmpb  Rb2,R30                                 
 8 420e: db,03                jc    4213               if ((uns) [LOAD] >= R30) goto 4213;
 8 4210: 71,f7,ed             an2b  Red,f7             [FLAGS_ED] &= f7;    
-8 4213: b3,fa,03,30          ldb   R30,[Rfa+3]        R30 = [Sc0320];      
+8 4213: b3,fa,03,30          ldb   R30,[Rfa+3]        R30 = [OPEN_LOOP_HIGH_LOAD_OVER_BP_MIN];
 8 4217: 98,30,9f             cmpb  R9f,R30                                 
 8 421a: db,05                jc    4221               if ((uns) [LOAD] >= R30) goto 4221;
 8 421c: 91,10,25             orrb  R25,10             [FLAGS_25] |= 10;    
 8 421f: 20,11                sjmp  4232               goto 4232;           
 
-8 4221: 77,fa,04,30          ad2b  R30,[Rfa+4]        R30 += [Sc0321];     
+8 4221: 77,fa,04,30          ad2b  R30,[Rfa+4]        R30 += [OPEN_LOOP_HIGH_LOAD_MAP_OVER_BP_MIN_HYST];
 8 4225: d3,03                jnc   422a               if (R30 <= ff) goto 422a;
 8 4227: b1,ff,30             ldb   R30,ff             R30 = ff;            
 8 422a: 98,30,9f             cmpb  R9f,R30                                 
@@ -3202,20 +3202,20 @@ Sub0065:
 8 4232: 37,9e,0c             jnb   B7,R9e,4241        if (<CL_THROTTLE> == 0) goto 4241;
 8 4235: b3,01,73,01,30       ldb   R30,[173]          R30 = [173];         
 8 423a: 9b,fb,ef,01,30       cmpb  R30,[Rfa+1ef]                           
-8 423f: d9,45                jgtu  4286               if ((uns) R30 > [Sc0364]) goto 4286;
+8 423f: d9,45                jgtu  4286               if ((uns) R30 > [CLOSED_LOOP_IDLE_FUEL_MAX_TIME]) goto 4286;
 8 4241: 33,ed,42             jnb   B3,Red,4286        if (!B3_[FLAGS_ED]) goto 4286;
 8 4244: 32,e7,3f             jnb   B2,Re7,4286        if (!B2_Re7) goto 4286;
-8 4247: b3,f1,d7,00,34       ldb   R34,[Rf0+d7]       R34 = [Sc0046];      
+8 4247: b3,f1,d7,00,34       ldb   R34,[Rf0+d7]       R34 = [DFSO_OPEN_LOOP_DELAY_IN_PIPS];
 8 424c: 9b,01,b3,00,34       cmpb  R34,Rb3                                 
 8 4251: d7,33                jne   4286               if (R34 != Rb3) goto 4286;
 8 4253: 36,25,30             jnb   B6,R25,4286        if (<CHECK_AIR_FLAG> == 0) goto 4286;
 8 4256: 30,e6,07             jnb   B0,Re6,4260        if (!B0_[FLAGS_E6]) goto 4260;
 8 4259: 9b,fb,a9,00,00       cmpb  0,[Rfa+a9]                              
-8 425e: d7,26                jne   4286               if (0 != [Sc0337]) goto 4286;
+8 425e: d7,26                jne   4286               if (0 != [MFA_MODE_ENABLE]) goto 4286;
 8 4260: 3c,25,0b             jb    B4,R25,426e        if (B4_[FLAGS_25]) goto 426e;
 8 4263: b3,01,7f,01,30       ldb   R30,[17f]          R30 = [17f];         
 8 4268: 9b,fa,05,30          cmpb  R30,[Rfa+5]                             
-8 426c: d9,18                jgtu  4286               if ((uns) R30 > [Sc0322]) goto 4286;
+8 426c: d9,18                jgtu  4286               if ((uns) R30 > [OPEN_LOOP_HIGH_LOAD_TIME_DELAY]) goto 4286;
 8 426e: 3a,29,15             jb    B2,R29,4286        if (<HSP_FLAG> == 1) goto 4286;
 8 4271: 3c,e7,12             jb    B4,Re7,4286        if (B4_Re7) goto 4286;
 8 4274: 32,ed,03             jnb   B2,Red,427a        if (!B2_[FLAGS_ED]) goto 427a;
@@ -3537,7 +3537,7 @@ Sub0070:
 
 8 463a: 30,e6,40             jnb   B0,Re6,467d        if (!B0_[FLAGS_E6]) goto 467d;
 8 463d: 9b,fb,a9,00,00       cmpb  0,[Rfa+a9]                              
-8 4642: df,39                je    467d               if (0 == [Sc0337]) goto 467d;
+8 4642: df,39                je    467d               if (0 == [MFA_MODE_ENABLE]) goto 467d;
 8 4644: a3,01,7e,02,30       ldw   R30,[27e]          R30 = [27e];         
 8 4649: a3,01,82,02,32       ldw   R32,[282]          R32 = [282];         
 8 464e: ad,04,34             ldzbw R34,4              R34 = (uns)4;        
@@ -4403,7 +4403,7 @@ Sub0087:
 
 8 501d: 30,e6,22             jnb   B0,Re6,5042        if (!B0_[FLAGS_E6]) goto 5042;
 8 5020: 9b,fb,a9,00,00       cmpb  0,[Rfa+a9]                              
-8 5025: df,1b                je    5042               if (0 == [Sc0337]) goto 5042;
+8 5025: df,1b                je    5042               if (0 == [MFA_MODE_ENABLE]) goto 5042;
 8 5027: a3,01,7e,02,30       ldw   R30,[27e]          R30 = [27e];         
 8 502c: a3,01,82,02,32       ldw   R32,[282]          R32 = [282];         
 8 5031: ad,04,34             ldzbw R34,4              R34 = (uns)4;        
@@ -4553,12 +4553,12 @@ Sub0089:
 8 51ec: bd,c0,1a             ldsbw R1a,c0             R1a = (sig)c0;       
 8 51ef: 88,1a,aa             cmpw  Raa,R1a                                 
 8 51f2: d1,07                jleu  51fb               if ((uns) [TPS] <= R1a) goto 51fb;
-8 51f4: b3,f1,d7,00,b3       ldb   Rb3,[Rf0+d7]       Rb3 = [Sc0046];      
+8 51f4: b3,f1,d7,00,b3       ldb   Rb3,[Rf0+d7]       Rb3 = [DFSO_OPEN_LOOP_DELAY_IN_PIPS];
 8 51f9: 20,2c                sjmp  5227               goto 5227;           
 
 8 51fb: 11,1c                clrb  R1c                R1c = 0;             
 8 51fd: b0,b3,1d             ldb   R1d,Rb3            R1d = Rb3;           
-8 5200: 9f,f1,d7,00,1c       divb  R1c,[Rf0+d7]       R1c = R1cW / [Sc0046];
+8 5200: 9f,f1,d7,00,1c       divb  R1c,[Rf0+d7]       R1c = R1cW / [DFSO_OPEN_LOOP_DELAY_IN_PIPS];
 8 5205: dd,20                jv    5227               if (OV) goto 5227;   
 8 5207: 8b,fb,fc,00,40       cmpw  R40,[Rfa+fc]                            
 8 520c: db,05                jc    5213               if ((uns) R40 >= [Sc0354]) goto 5213;
@@ -6679,7 +6679,7 @@ Sub0113:
 8 6b04: 91,10,2c             orrb  R2c,10             [FLAGS_2C] |= 10;    
 8 6b07: 91,80,ea             orrb  Rea,80             [FLAGS_EA] |= 80;    
 8 6b0a: 71,f7,ea             an2b  Rea,f7             [FLAGS_EA] &= f7;    
-8 6b0d: b3,fb,ef,01,38       ldb   R38,[Rfa+1ef]      R38 = [Sc0364];      
+8 6b0d: b3,fb,ef,01,38       ldb   R38,[Rfa+1ef]      R38 = [CLOSED_LOOP_IDLE_FUEL_MAX_TIME];
 8 6b12: 77,f5,56,02,38       ad2b  R38,[Rf4+256]      R38 += [Sc0235];     
 8 6b17: d3,03                jnc   6b1c               if (R38 <= ff) goto 6b1c;
 8 6b19: b1,ff,38             ldb   R38,ff             R38 = ff;            
@@ -6718,7 +6718,7 @@ Sub0113:
 8 6b7d: d3,03                jnc   6b82               if ((uns) R3e < R38) goto 6b82;
 8 6b7f: 71,bf,27             an2b  R27,bf             [FLAGS_27] &= bf;    
 8 6b82: b3,fd,94,00,38       ldb   R38,[Rfc+94]       R38 = [Sc0387];      
-8 6b87: 57,fa,04,38,3a       ad3b  R3a,R38,[Rfa+4]    [GENERAL_3A] = R38 + [Sc0321];
+8 6b87: 57,fa,04,38,3a       ad3b  R3a,R38,[Rfa+4]    [GENERAL_3A] = R38 + [OPEN_LOOP_HIGH_LOAD_MAP_OVER_BP_MIN_HYST];
 8 6b8c: db,0a                jc    6b98               if ([GENERAL_3A] > ff) goto 6b98;
 8 6b8e: 98,3a,9f             cmpb  R9f,R3a                                 
 8 6b91: d1,05                jleu  6b98               if ((uns) [LOAD] <= [GENERAL_3A]) goto 6b98;
@@ -9549,7 +9549,9 @@ SPARK_EGR_ADDER_V_BP:
 8 8ed3: 00,00,00          func                   0,        0                   0,        0
 
 8 8ed6: 10                Rf0+d6 Sc0045       byte        10                  16
-8 8ed7: 04                Rf0+d7 Sc0046       byte         4                   4
+
+DFSO_OPEN_LOOP_DELAY_IN_PIPS:
+8 8ed7: 04                Rf0+d7 DFSO_OPEN_LOOP_DELAY_IN_PIPS    byte         4                   4
 8 8ed8: 02                Rf0+d8 Sc0047       byte         2                   2
 8 8ed9: 04                Rf0+d9 Sc0048       byte         4                   4
 
@@ -11239,11 +11241,21 @@ Rfa_EndAddr - Rbase Rfa end next address:
 8 9b98: 9c,9d             Rfa Rfa_EndAddr     word      9d9c               40348
 
 8 9b9a: ff                Rfa+2 Sc0319        byte        ff                 255
-8 9b9b: 6d                Rfa+3 Sc0320        byte        6d                 109
-8 9b9c: 08                Rfa+4 Sc0321        byte         8                   8
-8 9b9d: 0c                Rfa+5 Sc0322        byte         c                  12
-8 9b9e: 10                Rfa+6 Sc0323        byte        10                  16
-8 9b9f: 08                Rfa+7 Sc0324        byte         8                   8
+
+OPEN_LOOP_HIGH_LOAD_OVER_BP_MIN:
+8 9b9b: 6d                Rfa+3 OPEN_LOOP_HIGH_LOAD_OVER_BP_MIN    byte        6d               85.16
+
+OPEN_LOOP_HIGH_LOAD_MAP_OVER_BP_MIN_HYST:
+8 9b9c: 08                Rfa+4 OPEN_LOOP_HIGH_LOAD_MAP_OVER_BP_MIN_HYST    byte         8               6.250
+
+OPEN_LOOP_HIGH_LOAD_TIME_DELAY:
+8 9b9d: 0c                Rfa+5 OPEN_LOOP_HIGH_LOAD_TIME_DELAY    byte         c                1.50
+
+CLOSED_LOOP_MAP_MIN:
+8 9b9e: 10                Rfa+6 CLOSED_LOOP_MAP_MIN    byte        10              1.0000
+
+CLOSED_LOOP_MAP_MIN_HYST:
+8 9b9f: 08                Rfa+7 CLOSED_LOOP_MAP_MIN_HYST    byte         8                0.50
 8 9ba0: 8b                Rfa+8 Sc0325        byte        8b                 139
 8 9ba1: 00                Rfa+9 Sc0326        byte         0                   0
 8 9ba2: 80                Rfa+a Sc0327        byte        80                 128
@@ -11298,8 +11310,12 @@ LUG_MODE_MAP_TO_BP_MIN:
 
 LUG_MODE_MAP_TO_BP_MIN_HYST:
 8 9c01: 2a                Rfa+69 LUG_MODE_MAP_TO_BP_MIN_HYST    byte        2a               33.60
-8 9c02: 3c                Rfa+6a Sc0335       byte        3c                  60
-8 9c03: 6e                Rfa+6b Sc0336       byte        6e                 110
+
+LUG_MODE_ACT_MIN:
+8 9c02: 3c                Rfa+6a LUG_MODE_ACT_MIN    byte        3c              120.00
+
+LUG_MODE_ACT_MAX:
+8 9c03: 6e                Rfa+6b LUG_MODE_ACT_MAX    byte        6e              220.00
 
 ???SPARK_SEALEVEL_LUG_MULT:
 8 9c04: ff,ff,80,00       func                ffff,       80               65535,      128
@@ -11326,7 +11342,9 @@ St0010 - Structure 010:
 8 9c3d: bd,00,00,fe                           Unknown Calibration                        bd,  0,  0, fe                            189,   0,   0, 254
 
 
-8 9c41: 01                Rfa+a9 Sc0337       byte         1                   1
+
+MFA_MODE_ENABLE:
+8 9c41: 01                Rfa+a9 MFA_MODE_ENABLE    byte         1                   1
 8 9c42: 7f                Rfa+aa Sc0338       byte        7f                 127
 
 
@@ -11436,7 +11454,9 @@ NTIP:
 8 9d84: 55,00             Rfa+1ec Sc0362      word        55                  85
 
 8 9d86: 0a                Rfa+1ee Sc0363      byte         a                  10
-8 9d87: ff                Rfa+1ef Sc0364      byte        ff                 255
+
+CLOSED_LOOP_IDLE_FUEL_MAX_TIME:
+8 9d87: ff                Rfa+1ef CLOSED_LOOP_IDLE_FUEL_MAX_TIME    byte        ff                 255
 
 
 8 9d88: 00,40,40                              Unknown Calibration                             0, 40, 40                                   0,  64,  64
@@ -11594,7 +11614,9 @@ IDLE_SPEED_MAX_RPM:
 Rfe_EndAddr - Rbase Rfe end next address:
 8 9e88: 92,9f             Rfe Rfe_EndAddr     word      9f92               40850
 
-8 9e8a: 28                Rfe+2 Sc0439        byte        28                  40
+
+HEGO_HOT_START_DELAY_WARM_FLG:
+8 9e8a: 28                Rfe+2 HEGO_HOT_START_DELAY_WARM_FLG    byte        28                  40
 8 9e8b: 64                Rfe+3 Sc0440        byte        64                 100
 
 
