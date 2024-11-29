@@ -392,7 +392,7 @@ SUBROUTINE_TASKLIST:
 8 2320: 68,41                4168  Bank 8 Vector      Sub0065
 8 2322: 0b,47                470b  Bank 8 Vector      ?ADAPTIVE_CALC?
 8 2324: 2c,52                522c  Bank 8 Vector      DO_ACCELPUMP
-8 2326: 1e,4b                4b1e  Bank 8 Vector      ?FUEL_CALC?
+8 2326: 1e,4b                4b1e  Bank 8 Vector      CALC_FUEL
 8 2328: 08,55                5508  Bank 8 Vector      UPDATE_FUEL_PUMP
 8 232a: 52,55                5552  Bank 8 Vector      Sub0096
 8 232c: 47,59                5947  Bank 8 Vector      CALC_EGR
@@ -419,7 +419,7 @@ SUBROUTINE_TASKLIST:
 8 2356: e4,86                86e4  Bank 8 Vector      SET_IGNITION_TIMERS
 8 2358: 3b,6a                6a3b  Bank 8 Vector      Sub0113
 8 235a: b4,3f                3fb4  Bank 8 Vector      UPDATE_EGR
-8 235c: 1e,4b                4b1e  Bank 8 Vector      ?FUEL_CALC?
+8 235c: 1e,4b                4b1e  Bank 8 Vector      CALC_FUEL
 8 235e: 08,55                5508  Bank 8 Vector      UPDATE_FUEL_PUMP
 8 2360: b9,76                76b9  Bank 8 Vector      DO_SELF_TEST
 8 2362: eb,22                22eb  Bank 8 Vector      SET_TASKLIST
@@ -3447,8 +3447,8 @@ Sub0070:
 8 4519: c3,17,f6,01,36       stw   [R16+1f6],R36      [R16+LAMBSE1] = R36; 
 8 451e: f0                   ret                      return;              
 
-?SPARK_CALC?:
-8 451f: 45,1e,04,f2,32       ad3w  R32,Rf2,41e        R32 = Xnorm_FUEL_04; 
+?FUEL_AND_SPARK_LOOKUP?:
+8 451f: 45,1e,04,f2,32       ad3w  R32,Rf2,41e        R32 = Xnorm_FUEL;    
 8 4524: b3,f4,6b,36          ldb   R36,[Rf4+6b]       R36 = [Sc0214];      
 8 4528: 29,c9                scall 46f3               FRACTIONAL_TO_RATIO_CALC();
 8 452a: ef,16,f1             call  3643               SUWordLU();          
@@ -3464,7 +3464,7 @@ Sub0070:
 8 454e: b0,b1,34             ldb   R34,Rb1            R34 = [ACT];         
 8 4551: ef,9f,f0             call  35f3               SSByteLU();          
 8 4554: 5c,3b,38,3c          ml3b  R3c,R38,R3b        R3c = R38 * [GENERAL_3B];
-8 4558: 45,1e,04,f2,32       ad3w  R32,Rf2,41e        R32 = Xnorm_FUEL_04; 
+8 4558: 45,1e,04,f2,32       ad3w  R32,Rf2,41e        R32 = Xnorm_FUEL;    
 8 455d: b3,f4,6c,36          ldb   R36,[Rf4+6c]       R36 = [Sc0215];      
 8 4561: 29,90                scall 46f3               FRACTIONAL_TO_RATIO_CALC();
 8 4563: ef,dd,f0             call  3643               SUWordLU();          
@@ -3938,7 +3938,7 @@ Sub0079:
 8 4b1a: a0,32,3a             ldw   R3a,R32            [GENERAL_3A] = R32;  
 8 4b1d: f0                   ret                      return;              
 
-?FUEL_CALC?:
+CALC_FUEL:
 8 4b1e: 8b,f4,6e,ae          cmpw  Rae,[Rf4+6e]                            
 8 4b22: d1,05                jleu  4b29               if ((uns) [RPM] <= [Sc0216]) goto 4b29;
 8 4b24: 91,02,e8             orrb  Re8,2              [FLAGS_E8] |= 2;     
@@ -3991,7 +3991,7 @@ Sub0079:
 8 4ba6: 21,57                                         Unknown Operation/Structure
 
 8 4ba8: 32,ed,05             jnb   B2,Red,4bb0        if (!B2_[FLAGS_ED]) goto 4bb0;
-8 4bab: ef,71,f9             call  451f               ?SPARK_CALC?();      
+8 4bab: ef,71,f9             call  451f               ?FUEL_AND_SPARK_LOOKUP?();
 8 4bae: 20,03                sjmp  4bb3               goto 4bb3;           
 
 8 4bb0: ef,e9,f6             call  429c               Sub0066();           
@@ -4693,7 +4693,7 @@ Sub0091:
 8 5393: c3,01,c6,01,00       stw   [1c6],0            [1c6] = 0;           
 8 5398: 20,ec                sjmp  5486               goto 5486;           
 
-8 539a: 45,1e,04,f2,32       ad3w  R32,Rf2,41e        R32 = Xnorm_FUEL_04; 
+8 539a: 45,1e,04,f2,32       ad3w  R32,Rf2,41e        R32 = Xnorm_FUEL;    
 8 539f: af,f5,d2,01,36       ldzbw R36,[Rf4+1d2]      R36 = (uns)[Sc0220]; 
 8 53a4: ef,4c,f3             call  46f3               FRACTIONAL_TO_RATIO_CALC();
 8 53a7: ef,99,e2             call  3643               SUWordLU();          
@@ -4809,10 +4809,10 @@ UPDATE_FUEL_PUMP:
 8 5508: a3,01,6e,01,14       ldw   R14,[16e]          [HSO_IPEND2] = [TSL_PIP];
 8 550d: 89,00,04,14          cmpw  R14,400                                 
 8 5511: d3,04                jnc   5517               if ((uns) [HSO_IPEND2] < 400) goto 5517;
-8 5513: 71,7f,46             an2b  R46,7f             [FLAGS_46] &= 7f;    
+8 5513: 71,7f,46             an2b  R46,7f             <FUEL_PUMP_ON> = 0;  
 8 5516: f0                   ret                      return;              
 
-8 5517: 91,80,46             orrb  R46,80             [FLAGS_46] |= 80;    
+8 5517: 91,80,46             orrb  R46,80             <FUEL_PUMP_ON> = 1;  
 8 551a: f0                   ret                      return;              
 
 Sub0095:
@@ -5923,7 +5923,7 @@ UPDATE_IDLE:
 8 628c: 8b,fd,aa,00,34       cmpw  R34,[Rfc+aa]                            
 8 6291: db,05                jc    6298               if ((uns) R34 >= [Sc0401]) goto 6298;
 8 6293: a3,fd,aa,00,34       ldw   R34,[Rfc+aa]       R34 = [Sc0401];      
-8 6298: 45,ea,02,f2,32       ad3w  R32,Rf2,2ea        R32 = Xnorm_FUEL_04; 
+8 6298: 45,ea,02,f2,32       ad3w  R32,Rf2,2ea        R32 = Fc052;         
 8 629d: ef,ae,d3             call  364e               UUWordLU();          
 8 62a0: a0,38,40             ldw   R40,R38            R40 = R38;           
 8 62a3: b3,ff,08,01,38       ldb   R38,[Rfe+108]      R38 = [Sc0462];      
@@ -8173,7 +8173,7 @@ Sub0142:
 8 7c88: fb                   ei                       enable ints;         
 8 7c89: 91,20,2d             orrb  R2d,20             [WIG_FLAG] |= 20;    
 8 7c8c: 32,2a,08             jnb   B2,R2a,7c97        if (<VIP_ENABLE> == 0) goto 7c97;
-8 7c8f: 3f,46,05             jb    B7,R46,7c97        if (B7_[FLAGS_46]) goto 7c97;
+8 7c8f: 3f,46,05             jb    B7,R46,7c97        if (<FUEL_PUMP_ON> == 1) goto 7c97;
 8 7c92: 91,40,2a             orrb  R2a,40             <NO_START> = 1;      
 8 7c95: 20,80                sjmp  7d17               goto 7d17;           
 
@@ -10339,7 +10339,7 @@ Fc051 - Function 051:
 8 9462: 00,ff             func                   0,       ff                   0,      255
 8 9464: 00,ff             func                   0,       ff                   0,      255
 
-Xnorm_FUEL_04:
+Fc052 - Function 052:
 8 9466: ff,ff,00,80       func                ffff,     8000               65535,    32768
 8 946a: 9a,25,00,80       func                259a,     8000                9626,    32768
 8 946e: f6,24,9a,79       func                24f6,     799a                9462,    31130
@@ -10515,17 +10515,15 @@ TRANS_TYPE:
 8 9599: ff                                    Unknown Calibration                                    ff                                           255
 
 
-Xnorm_FUEL_04:
-8 959a: ff,7f,00,09       func                7fff,      900               32767,     2304
-8 959e: 00,3c,00,09       func                3c00,      900               15360,     2304
-8 95a2: 80,f8,00,00       func                f880,        0               -1920,        0
-8 95a6: 00,80,00,00       func                8000,        0              -32768,        0
-8 95aa: 00,80,00,00       func                8000,        0              -32768,        0
-8 95ae: 00,80,00,00       func                8000,        0              -32768,        0
-
-
-8 95b2: 00,80,00,00,00,80,00,00               Unknown Calibration         0, 80,  0,  0,  0, 80,  0,  0          0, 128,   0,   0,   0, 128,   0,   0
-
+Xnorm_FUEL:
+8 959a: ff,7f,00,09       func                7fff,      900              511.98,     9.00
+8 959e: 00,3c,00,09       func                3c00,      900              240.00,     9.00
+8 95a2: 80,f8,00,00       func                f880,        0              -30.00,     0.00
+8 95a6: 00,80,00,00       func                8000,        0             -512.00,     0.00
+8 95aa: 00,80,00,00       func                8000,        0             -512.00,     0.00
+8 95ae: 00,80,00,00       func                8000,        0             -512.00,     0.00
+8 95b2: 00,80,00,00       func                8000,        0             -512.00,     0.00
+8 95b6: 00,80,00,00       func                8000,        0             -512.00,     0.00
 
 Xnorm_IDLE_ACCELPUMP:
 8 95ba: 7f,60             func                  7f,       60              254.00,     6.00

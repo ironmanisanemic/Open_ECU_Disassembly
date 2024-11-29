@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<S6x version="1.00" generated="2024-11-28 15:22:31">
-  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-11-28T23:22:28.6161881Z" IdentificationStatus="0">
+<S6x version="1.00" generated="2024-11-28 16:18:25">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-11-29T00:18:22.2901644Z" IdentificationStatus="0">
     <Label>Exported</Label>
     <Comments />
     <Header />
@@ -135,15 +135,15 @@
       <Category2 />
       <Category3 />
     </Table>
-    <Table BankNum="8" AddressInt="30262" DuplicateNum="0" AddressBinInt="30262" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="BASE_FUEL_COLD_ENRICHMENT_DELAY_TABLE" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2024-11-09T08:20:05.5188362Z" DateUpdated="2024-11-10T20:31:59.2673632Z" IdentificationStatus="0">
+    <Table BankNum="8" AddressInt="30262" DuplicateNum="0" AddressBinInt="30262" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="BASE_FUEL_COLD_ENRICHMENT_DELAY_TABLE" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2024-11-09T08:20:05.5188362Z" DateUpdated="2024-11-29T00:03:31.9541104Z" IdentificationStatus="0">
       <Label>BASE_FUEL_COLD_ENRICHMENT_DELAY_TABLE</Label>
       <Comments>FN1306-</Comments>
       <CellsScaleExpression>X /128</CellsScaleExpression>
       <ColsScalerAddress>8 30106</ColsScalerAddress>
       <RowsScalerAddress />
       <RowsScalerXdfUniqueId />
-      <ColsUnits>ECT</ColsUnits>
-      <RowsUnits>time_running</RowsUnits>
+      <ColsUnits>DEG F</ColsUnits>
+      <RowsUnits>SECONDS</RowsUnits>
       <CellsUnits />
       <IdentificationDetails />
       <Category>Fuel</Category>
@@ -227,14 +227,14 @@
       <Category2 />
       <Category3 />
     </Table>
-    <Table BankNum="8" AddressInt="31422" DuplicateNum="0" AddressBinInt="31422" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="BASE_FUEL_TABLE" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2024-11-09T08:20:05.5190078Z" DateUpdated="2024-11-15T08:43:21.4066298Z" IdentificationStatus="0">
+    <Table BankNum="8" AddressInt="31422" DuplicateNum="0" AddressBinInt="31422" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="BASE_FUEL_TABLE" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2024-11-09T08:20:05.5190078Z" DateUpdated="2024-11-29T00:03:01.5120691Z" IdentificationStatus="0">
       <Label>BASE_FUEL_TABLE</Label>
-      <Comments>FN1307-</Comments>
+      <Comments />
       <CellsScaleExpression>X /128</CellsScaleExpression>
       <ColsScalerAddress>8 30106</ColsScalerAddress>
       <RowsScalerAddress>8 29180</RowsScalerAddress>
-      <ColsUnits>ECT</ColsUnits>
-      <RowsUnits>MAP</RowsUnits>
+      <ColsUnits>DEG F</ColsUnits>
+      <RowsUnits>%</RowsUnits>
       <CellsUnits />
       <IdentificationDetails />
       <Category>Fuel</Category>
@@ -315,10 +315,10 @@
       <Category2 />
       <Category3 />
     </Table>
-    <Table BankNum="8" AddressInt="32520" DuplicateNum="0" AddressBinInt="32520" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="SPARK_SEALEVEL_TABLE" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2024-11-09T08:20:05.5185614Z" DateUpdated="2024-11-15T08:48:35.4565289Z" IdentificationStatus="0">
+    <Table BankNum="8" AddressInt="32520" DuplicateNum="0" AddressBinInt="32520" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="SPARK_SEALEVEL_TABLE" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2024-11-09T08:20:05.5185614Z" DateUpdated="2024-11-28T23:50:18.7921795Z" IdentificationStatus="0">
       <Label>SPARK_SEALEVEL_TABLE</Label>
       <Comments>FN905A-</Comments>
-      <CellsScaleExpression>X /4</CellsScaleExpression>
+      <CellsScaleExpression>X/4</CellsScaleExpression>
       <ColsScalerAddress />
       <RowsScalerAddress>8 29334</RowsScalerAddress>
       <ColsScalerXdfUniqueId />
@@ -600,15 +600,17 @@
       <InputScaleExpression>X</InputScaleExpression>
       <OutputScaleExpression>X</OutputScaleExpression>
     </Function>
-    <Function BankNum="8" AddressInt="29798" DuplicateNum="0" AddressBinInt="29798" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="12" ShortLabel="Xnorm_FUEL_04" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2024-11-10T11:30:07.4471335Z" DateUpdated="2024-11-10T20:31:59.2642981Z" IdentificationStatus="0">
-      <Label>Xnorm_FUEL_04</Label>
-      <InputScaleExpression>X</InputScaleExpression>
-      <OutputScaleExpression>X</OutputScaleExpression>
-    </Function>
-    <Function BankNum="8" AddressInt="30106" DuplicateNum="0" AddressBinInt="30106" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="true" RowsNumber="6" ShortLabel="Xnorm_FUEL_04" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2024-11-09T08:20:05.5120326Z" DateUpdated="2024-11-10T20:31:59.2643474Z" IdentificationStatus="0">
-      <Label>Xnorm_FUEL_04</Label>
-      <InputScaleExpression>X</InputScaleExpression>
-      <OutputScaleExpression>X</OutputScaleExpression>
+    <Function BankNum="8" AddressInt="30106" DuplicateNum="0" AddressBinInt="30106" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="8" ShortLabel="Xnorm_FUEL" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2024-11-28T23:58:43.2905439Z" DateUpdated="2024-11-29T00:05:34.5071218Z" IdentificationStatus="0">
+      <Label>Xnorm_FUEL</Label>
+      <Comments />
+      <InputScaleExpression>X/64</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits />
+      <OutputUnits />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
     </Function>
     <Function BankNum="8" AddressInt="30138" DuplicateNum="0" AddressBinInt="30138" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="true" SignedOutput="true" RowsNumber="5" ShortLabel="Xnorm_IDLE_ACCELPUMP" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2024-11-09T08:20:05.5125393Z" DateUpdated="2024-11-28T21:38:15.2841956Z" IdentificationStatus="0">
       <Label>Xnorm_IDLE_ACCELPUMP</Label>
@@ -1589,8 +1591,8 @@ ByteHex
       <Category2 />
       <Category3 />
     </Routine>
-    <Routine BankNum="8" AddressInt="9503" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="?SPARK_CALC?" OutputComments="false" DateCreated="2024-11-10T19:54:23.5806137Z" DateUpdated="2024-11-10T20:31:59.2672459Z" IdentificationStatus="0" Skip="false">
-      <Label>?SPARK_CALC?</Label>
+    <Routine BankNum="8" AddressInt="9503" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="?FUEL_AND_SPARK_LOOKUP?" OutputComments="false" DateCreated="2024-11-10T19:54:23.5806137Z" DateUpdated="2024-11-29T00:15:24.4084649Z" IdentificationStatus="0" Skip="false">
+      <Label>?FUEL_AND_SPARK_LOOKUP?</Label>
       <Comments />
       <IdentificationDetails />
       <Category />
@@ -1613,8 +1615,8 @@ ByteHex
       <Category2 />
       <Category3 />
     </Routine>
-    <Routine BankNum="8" AddressInt="11038" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="?FUEL_CALC?" OutputComments="false" DateCreated="2024-11-10T19:56:07.4440888Z" DateUpdated="2024-11-10T20:31:59.2672803Z" IdentificationStatus="0" Skip="false">
-      <Label>?FUEL_CALC?</Label>
+    <Routine BankNum="8" AddressInt="11038" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="CALC_FUEL" OutputComments="false" DateCreated="2024-11-10T19:56:07.4440888Z" DateUpdated="2024-11-29T00:18:22.2901644Z" IdentificationStatus="0" Skip="false">
+      <Label>CALC_FUEL</Label>
       <Comments />
       <IdentificationDetails />
       <Category />
@@ -2364,13 +2366,13 @@ ByteHex
       <Category2 />
       <Category3 />
     </Register>
-    <Register AddressInt="70" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-11T00:06:05.5754002Z" DateUpdated="2024-11-23T03:44:04.6826448Z" IdentificationStatus="0">
+    <Register AddressInt="70" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-11T00:06:05.5754002Z" DateUpdated="2024-11-28T23:38:36.2512488Z" IdentificationStatus="0">
       <Label>FLAGS_46</Label>
       <ByteLabel />
       <WordLabel />
       <Comments />
       <BitFlags>
-        <BitFlag Position="0" Skip="false" ShortLabel="SBS1" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2024-11-23T03:42:55.7507643Z" DateUpdated="2024-11-23T03:44:00.3744181Z" IdentificationStatus="0">
+        <BitFlag Position="0" Skip="false" ShortLabel="SBS1" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2024-11-23T03:42:55.7507643Z" DateUpdated="2024-11-28T23:37:33.3620998Z" IdentificationStatus="0">
           <Label>SBS1</Label>
           <Comments />
           <IdentificationDetails />
@@ -2396,6 +2398,14 @@ ByteHex
         </BitFlag>
         <BitFlag Position="6" Skip="false" ShortLabel="WOT_AC" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2024-11-15T06:06:14.9244833Z" DateUpdated="2024-11-22T09:31:45.4047263Z" IdentificationStatus="0">
           <Label>WOT_AC</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="7" Skip="false" ShortLabel="FUEL_PUMP_ON" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2024-11-28T23:37:33.3650973Z" DateUpdated="2024-11-28T23:38:32.4171786Z" IdentificationStatus="0">
+          <Label>FUEL_PUMP_ON</Label>
           <Comments />
           <IdentificationDetails />
           <Category />
