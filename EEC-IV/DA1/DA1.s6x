@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<S6x version="1.00" generated="2024-11-29 14:20:39">
-  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-11-29T22:19:00.5873815Z" IdentificationStatus="0">
+<S6x version="1.00" generated="2024-11-29 16:51:04">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-11-30T00:51:01.3426455Z" IdentificationStatus="0">
     <Label>Exported</Label>
     <Comments />
     <Header />
@@ -906,6 +906,16 @@
       <Comments>8e05</Comments>
       <ScaleExpression>X </ScaleExpression>
       <Units>NUM_CYL</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28166" DuplicateNum="0" AddressBinInt="28166" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="Sc0006" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-11-29T22:20:41.5752251Z" DateUpdated="2024-11-30T00:51:01.3426455Z" IdentificationStatus="0">
+      <Label>Rf0+6 </Label>
+      <Comments>8e06</Comments>
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
       <IdentificationDetails />
       <Category />
       <Category2 />
