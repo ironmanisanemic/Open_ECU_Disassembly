@@ -267,7 +267,7 @@ Sub0003:
 Sub0004:
 8 21ea: a1,0a,22,30          ldw   R30,220a           R30 = OSt8_001;      
 8 21ee: 9b,f0,13,00          cmpb  0,[Rf0+13]                              
-8 21f2: df,04                je    21f8               if (0 == [Sc0012]) goto 21f8;
+8 21f2: df,04                je    21f8               if (0 == [ALTERNATE_CALIBRATION_SW]) goto 21f8;
 8 21f4: a1,34,22,30          ldw   R30,2234           R30 = OSt8_002;      
 8 21f8: a1,24,03,32          ldw   R32,324            R32 = 324;           
 8 21fc: a2,31,34             ldw   R34,[R30++]        R34 = [R30++];       
@@ -310,7 +310,7 @@ Sub0005:
 8 226c: 91,02,30             orrb  R30,2              R30 |= 2;            
 8 226f: 91,20,36             orrb  R36,20             R36 |= 20;           
 8 2272: 9b,f0,13,00          cmpb  0,[Rf0+13]                              
-8 2276: df,06                je    227e               if (0 == [Sc0012]) goto 227e;
+8 2276: df,06                je    227e               if (0 == [ALTERNATE_CALIBRATION_SW]) goto 227e;
 8 2278: 91,40,36             orrb  R36,40             R36 |= 40;           
 8 227b: 91,60,30             orrb  R30,60             R30 |= 60;           
 8 227e: 9b,f0,14,00          cmpb  0,[Rf0+14]                              
@@ -1184,7 +1184,7 @@ Sub0029:
 8 2b4e: 01,54                clrw  R54                R54 = 0;             
 8 2b50: 8c,5c,54             divw  R54,R5c            R54 = R54L / R5c;    
 8 2b53: 8b,f0,0c,54          cmpw  R54,[Rf0+c]                             
-8 2b57: d1,22                jleu  2b7b               if ((uns) R54 <= [MHPFD]) goto 2b7b;
+8 2b57: d1,22                jleu  2b7b               if ((uns) R54 <= [SIGNATURE_PIP_DUTY_CYCLE]) goto 2b7b;
 8 2b59: 91,01,c9             orrb  Rc9,1              Rc9 |= 1;            
 8 2b5c: a3,01,ec,02,bc       ldw   Rbc,[2ec]          Rbc = [2ec];         
 8 2b61: 9b,f0,40,cc          cmpb  Rcc,[Rf0+40]                            
@@ -1363,10 +1363,10 @@ Sub0033:
 8 2d4c: 09,01,54             shlw  R54,1              R54 = R54 * 2;       
 8 2d4f: b3,01,d7,07,56       ldb   R56,[7d7]          R56 = [7d7];         
 8 2d54: 37,56,38             jnb   B7,R56,2d8f        if (!B7_R56) goto 2d8f;
-8 2d57: a3,f0,0e,56          ldw   R56,[Rf0+e]        R56 = [Sc0009];      
+8 2d57: a3,f0,0e,56          ldw   R56,[Rf0+e]        R56 = [TRANSIENT_SPARK_RPM_MIN];
 8 2d5b: 88,56,ae             cmpw  Rae,R56                                 
 8 2d5e: d9,11                jgtu  2d71               if ((uns) [RPM] > R56) goto 2d71;
-8 2d60: 6b,f0,10,56          sb2w  R56,[Rf0+10]       R56 -= [Sc0010];     
+8 2d60: 6b,f0,10,56          sb2w  R56,[Rf0+10]       R56 -= [TRANSIENT_SPARK_RPM_MIN_HYST];
 8 2d64: d3,08                jnc   2d6e               if (R56 < 0) goto 2d6e;
 8 2d66: 88,56,ae             cmpw  Rae,R56                                 
 8 2d69: db,03                jc    2d6e               if ((uns) [RPM] >= R56) goto 2d6e;
@@ -2509,7 +2509,7 @@ UPDATE_AD:
 8 39eb: 2c,61                scall 364e               UUWordLU();          
 8 39ed: 20,04                sjmp  39f3               goto 39f3;           
 
-8 39ef: af,f0,06,38          ldzbw R38,[Rf0+6]        R38 = (uns)[Sc0006]; 
+8 39ef: af,f0,06,38          ldzbw R38,[Rf0+6]        R38 = (uns)[MAP_DEFAULT];
 8 39f3: c4,b2,38             stb   Rb2,R38            [LOAD] = R38;        
 8 39f6: 09,05,38             shlw  R38,5              R38 = R38 * 20;      
 8 39f9: c3,01,12,02,38       stw   [212],R38          [212] = R38;         
@@ -2646,7 +2646,7 @@ UPDATE_AD:
 8 3b83: 89,89,41,34          cmpw  R34,4189                                
 8 3b87: d9,04                jgtu  3b8d               if ((uns) R34 > 4189) goto 3b8d;
 8 3b89: a1,89,41,34          ldw   R34,4189           R34 = 4189;          
-8 3b8d: 6f,f0,1a,34          ml2w  R34,[Rf0+1a]       R34 *= [Sc0016];     
+8 3b8d: 6f,f0,1a,34          ml2w  R34,[Rf0+1a]       R34 *= [VBAT_SCALING_FACTOR];
 8 3b91: a0,36,34             ldw   R34,R36            R34 = R36;           
 8 3b94: 6f,01,0e,01,34       ml2w  R34,[10e]          R34 *= [V_BAT];      
 8 3b99: 89,e1,1f,36          cmpw  R36,1fe1                                
@@ -2804,7 +2804,7 @@ UPDATE_RPM:
 8 3d15: a3,31,aa,3c,36       ldw   R36,[R30+3caa]     R36 = [R30+OSt8_005_3caa];
 8 3d1a: a3,31,b0,3c,34       ldw   R34,[R30+3cb0]     R34 = [R30+OSt8_006_3cb0];
 8 3d1f: 9b,f0,13,00          cmpb  0,[Rf0+13]                              
-8 3d23: df,0a                je    3d2f               if (0 == [Sc0012]) goto 3d2f;
+8 3d23: df,0a                je    3d2f               if (0 == [ALTERNATE_CALIBRATION_SW]) goto 3d2f;
 8 3d25: a3,31,b6,3c,36       ldw   R36,[R30+3cb6]     R36 = [R30+OSt8_009_3cb6];
 8 3d2a: a3,31,bc,3c,34       ldw   R34,[R30+3cbc]     R34 = [R30+OSt8_007_3cbc];
 8 3d2f: a0,b8,38             ldw   R38,Rb8            R38 = [PIP_HI_E_TIME];
@@ -2817,7 +2817,7 @@ UPDATE_RPM:
 8 3d43: 35,50,0c             jnb   B5,R50,3d52        if (!B5_[FLAGS_50]) goto 3d52;
 8 3d46: 71,df,50             an2b  R50,df             [FLAGS_50] &= df;    
 8 3d49: 8b,f0,08,ae          cmpw  Rae,[Rf0+8]                             
-8 3d4d: d3,03                jnc   3d52               if ((uns) [RPM] < [Sc0007]) goto 3d52;
+8 3d4d: d3,03                jnc   3d52               if ((uns) [RPM] < [STALL_RPM]) goto 3d52;
 8 3d4f: 91,10,29             orrb  R29,10             [FLAGS_29] |= 10;    
 8 3d52: 08,06,36             shrw  R36,6              R36 = R36 / 40;      
 8 3d55: 98,00,37             cmpb  R37,0                                   
@@ -2850,17 +2850,17 @@ UPDATE_RPM:
 8 3dbd: af,f0,05,42          ldzbw R42,[Rf0+5]        R42 = (uns)[PIP_PER_REV];
 8 3dc1: a3,43,c2,3c,32       ldw   R32,[R42+3cc2]     R32 = [R42+OSt8_008_3cc2];
 8 3dc6: 9b,f0,13,00          cmpb  0,[Rf0+13]                              
-8 3dca: df,05                je    3dd1               if (0 == [Sc0012]) goto 3dd1;
+8 3dca: df,05                je    3dd1               if (0 == [ALTERNATE_CALIBRATION_SW]) goto 3dd1;
 8 3dcc: a3,43,c8,3c,32       ldw   R32,[R42+3cc8]     R32 = [R42+OSt8_009_3cc8];
 8 3dd1: c3,01,50,03,32       stw   [350],R32          [350] = R32;         
 8 3dd6: a3,43,ce,3c,32       ldw   R32,[R42+3cce]     R32 = [R42+OSt8_009_3cd6_3cce];
 8 3ddb: 9b,f0,13,00          cmpb  0,[Rf0+13]                              
-8 3ddf: df,05                je    3de6               if (0 == [Sc0012]) goto 3de6;
+8 3ddf: df,05                je    3de6               if (0 == [ALTERNATE_CALIBRATION_SW]) goto 3de6;
 8 3de1: a3,43,d4,3c,32       ldw   R32,[R42+3cd4]     R32 = [R42+OSt8_009_3cd4];
 8 3de6: c3,01,4e,03,32       stw   [34e],R32          [34e] = R32;         
 8 3deb: 91,08,25             orrb  R25,8              [FLAGS_25] |= 8;     
 8 3dee: 8b,f0,0c,00          cmpw  0,[Rf0+c]                               
-8 3df2: d6,03                jge   3df7               if ((sig) 0 >= [MHPFD]) goto 3df7;
+8 3df2: d6,03                jge   3df7               if ((sig) 0 >= [SIGNATURE_PIP_DUTY_CYCLE]) goto 3df7;
 8 3df4: 71,f7,25             an2b  R25,f7             [FLAGS_25] &= f7;    
 8 3df7: a3,f2,44,32          ldw   R32,[Rf2+44]       R32 = [NUM_PIP_BETWEEN_INJECTOR_OUTPUTS];
 8 3dfb: 08,04,32             shrw  R32,4              R32 = R32 / 10;      
@@ -9404,28 +9404,38 @@ ENGINE_WARM_ECT:
 
 PIP_PER_REV:
 8 8e05: 08                Rf0+5 PIP_PER_REV    byte         8                   8
-8 8e06: b8                Rf0+6 Sc0006        byte        b8                 184
+
+MAP_DEFAULT:
+8 8e06: b8                Rf0+6 MAP_DEFAULT    byte        b8               11.50
 
 
 8 8e07: ff                                    Unknown Calibration                                    ff                                           255
 
 
-8 8e08: 20,03             Rf0+8 Sc0007        word       320                 800
+
+STALL_RPM:
+8 8e08: 20,03             Rf0+8 STALL_RPM     word       320              200.00
 
 
 8 8e0a: f9,ff                                 Unknown Calibration                                f9, ff                                      249, 255
 
 
 
-MHPFD:
-8 8e0c: 33,33             Rf0+c MHPFD         word      3333               13107
-8 8e0e: 00,7d             Rf0+e Sc0009        word      7d00               32000
-8 8e10: 90,01             Rf0+10 Sc0010       word       190                 400
+SIGNATURE_PIP_DUTY_CYCLE:
+8 8e0c: 33,33             Rf0+c SIGNATURE_PIP_DUTY_CYCLE    word      3333               13107
+
+TRANSIENT_SPARK_RPM_MIN:
+8 8e0e: 00,7d             Rf0+e TRANSIENT_SPARK_RPM_MIN    word      7d00             8000.00
+
+TRANSIENT_SPARK_RPM_MIN_HYST:
+8 8e10: 90,01             Rf0+10 TRANSIENT_SPARK_RPM_MIN_HYST    word       190              100.00
 
 
 DISABLE_HEGOS:
 8 8e12: 02                Rf0+12 DISABLE_HEGOS    byte         2                   2
-8 8e13: 00                Rf0+13 Sc0012       byte         0                   0
+
+ALTERNATE_CALIBRATION_SW:
+8 8e13: 00                Rf0+13 ALTERNATE_CALIBRATION_SW    byte         0                   0
 8 8e14: 00                Rf0+14 Sc0013       byte         0                   0
 
 
@@ -9440,8 +9450,10 @@ DISABLE_HEGOS:
 
 
 ENGINE_DISPLACEMENT:
-8 8e18: 7b,76             Rf0+18 ENGINE_DISPLACEMENT    word      767b               30331
-8 8e1a: 2c,b3             Rf0+1a Sc0016       word      b32c               45868
+8 8e18: 7b,76             Rf0+18 ENGINE_DISPLACEMENT    word      767b              303.31
+
+VBAT_SCALING_FACTOR:
+8 8e1a: 2c,b3             Rf0+1a VBAT_SCALING_FACTOR    word      b32c            5.596388
 8 8e1c: d8,74             Rf0+1c Sc0017       word      74d8               29912
 8 8e1e: 56,8a             Rf0+1e Sc0018       word      8a56               35414
 8 8e20: 0e,6a             Rf0+20 Sc0019       word      6a0e               27150
