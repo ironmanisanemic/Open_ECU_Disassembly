@@ -1019,7 +1019,7 @@
 219c: e4,3c               vect  3ce4,            Update_MPH#                        # Update (MPH) vehicle speed values
 219e: ac,3d               vect  3dac,            Update_rpm#                        # Update RPM?
 21a0: dd,63               vect  63dd,            Update_AC#                         # Update A/C cutout and idle flags
-21a2: d4,65               vect  65d4,            Set_Timers
+21a2: d4,65               vect  65d4,            Set_Timers#
 21a4: fe,68               vect  68fe,            Update_timers#                     # Update Timers
 21a6: 8f,84               vect  848f,            Set_ign_timers#
 21a8: ca,4c               vect  4cca,            Update_flDOL                      # Update fuel comsumption for DOL
