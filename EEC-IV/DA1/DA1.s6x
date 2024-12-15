@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<S6x version="1.00" generated="2024-12-14 23:54:31">
-  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-12-15T07:54:24.35102Z" IdentificationStatus="0">
+<S6x version="1.00" generated="2024-12-15 10:01:37">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-12-15T18:01:22.3462638Z" IdentificationStatus="0">
     <Label>Exported</Label>
     <Comments />
     <Header />
@@ -711,6 +711,18 @@
       <OutputScaleExpression>X/12800</OutputScaleExpression>
       <InputUnits>AM/BP</InputUnits>
       <OutputUnits>VOLTS</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="29718" DuplicateNum="0" AddressBinInt="29718" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="Fc047" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2024-12-15T08:44:33.0603737Z" DateUpdated="2024-12-15T08:44:56.9929607Z" IdentificationStatus="0">
+      <Label>Function 047</Label>
+      <Comments>Fc047 - Function 047</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits />
+      <OutputUnits />
       <IdentificationDetails />
       <Category />
       <Category2 />
@@ -4072,6 +4084,14 @@ WordHex:1}</StructDef>
     <Routine BankNum="8" AddressInt="18205" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="UPDATE_AIR_MANAGEMENT" OutputComments="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-11-23T02:42:02.0720098Z" IdentificationStatus="0" Skip="false">
       <Label>UPDATE_AIR_MANAGEMENT</Label>
       <Comments>8 671d</Comments>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Routine>
+    <Routine BankNum="8" AddressInt="18503" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="?CALC_CANP?" OutputComments="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-12-15T18:01:22.3461315Z" IdentificationStatus="0" Skip="false">
+      <Label>?CALC_CANP?</Label>
+      <Comments>8 6847</Comments>
       <IdentificationDetails />
       <Category />
       <Category2 />

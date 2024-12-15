@@ -405,7 +405,7 @@ SUBROUTINE_TASKLIST:
 8 2330: 76,75                7576  Bank 8 Vector      UPDATE_KNOCK_RETARD
 8 2332: 7b,69                697b  Bank 8 Vector      UPDATE_FANS
 8 2334: 1d,67                671d  Bank 8 Vector      UPDATE_AIR_MANAGEMENT
-8 2336: 47,68                6847  Bank 8 Vector      Sub0110
+8 2336: 47,68                6847  Bank 8 Vector      ?CALC_CANP?
 8 2338: 08,5d                5d08  Bank 8 Vector      UPDATE_IDLE
 8 233a: 4d,63                634d  Bank 8 Vector      UPDATE_VSC
 8 233c: a7,6f                6fa7  Bank 8 Vector      Sub0115
@@ -4679,11 +4679,7 @@ DO_ACCELPUMP:
 8 5363: f0                   ret                      return;              
 
 ?TRANSIENT_FUEL?:
-<<<<<<< HEAD
-8 5364: b3,f8,64,18          ldb   R18,[Rf8+64]       R18 = [Sc0296];      
-=======
 8 5364: b3,f8,64,18          ldb   R18,[Rf8+64]       R18 = [TRANSIENT_FUEL_ACCEL_MULTI];
->>>>>>> b9363ae00e39671ef07bb3100df1271dd7a457e0
 8 5368: 3f,2c,25             jb    B7,R2c,5390        if (<CRANKING> == 1) goto 5390;
 8 536b: 38,2b,22             jb    B0,R2b,5390        if (<UNDERSPEED> == 1) goto 5390;
 8 536e: 9b,f8,61,ca          cmpb  Rca,[Rf8+61]                            
@@ -6434,7 +6430,7 @@ UPDATE_AIR_MANAGEMENT:
 8 6843: 91,01,46             orrb  R46,1              <SBS1> = 1;          
 8 6846: f0                   ret                      return;              
 
-Sub0110:
+?CALC_CANP?:
 8 6847: 45,d9,00,fe,30       ad3w  R30,Rfe,d9         R30 = St0013;        
 8 684c: ef,cc,ce             call  371b               CHECK_TIMERS();      
 8 684f: d3,05                jnc   6856               if (R30 <= ffff) goto 6856;
