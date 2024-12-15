@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<S6x version="1.00" generated="2024-12-08 18:01:46">
-  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-12-09T02:01:08.6771928Z" IdentificationStatus="0">
+<S6x version="1.00" generated="2024-12-08 21:46:31">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-12-09T05:46:27.966624Z" IdentificationStatus="0">
     <Label>Exported</Label>
     <Comments />
     <Header />
@@ -2994,6 +2994,14 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Routine>
+    <Routine BankNum="8" AddressInt="7692" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="UPDATE_VE" OutputComments="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-12-09T05:46:10.457447Z" IdentificationStatus="0" Skip="false">
+      <Label>UPDATE_VE</Label>
+      <Comments>8 3e0c</Comments>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Routine>
     <Routine BankNum="8" AddressInt="8116" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="UPDATE_EGR" OutputComments="false" DateCreated="2024-11-10T19:52:57.3244651Z" DateUpdated="2024-11-11T02:49:39.9000031Z" IdentificationStatus="0" Skip="false">
       <Label>UPDATE_EGR</Label>
       <Comments />
@@ -3034,9 +3042,33 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Routine>
+    <Routine BankNum="8" AddressInt="12296" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="?INJ_TIMING?" OutputComments="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-12-09T05:16:05.8034854Z" IdentificationStatus="0" Skip="false">
+      <Label>?INJ_TIMING?</Label>
+      <Comments>8 5008</Comments>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Routine>
+    <Routine BankNum="8" AddressInt="12506" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="?DFSO?" OutputComments="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-12-09T05:39:38.5436751Z" IdentificationStatus="0" Skip="false">
+      <Label>?DFSO?</Label>
+      <Comments>8 50da</Comments>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Routine>
     <Routine BankNum="8" AddressInt="12844" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="DO_ACCELPUMP" OutputComments="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-11-15T08:59:35.2060229Z" IdentificationStatus="0" Skip="false">
       <Label>DO_ACCELPUMP</Label>
       <Comments>8 522c</Comments>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Routine>
+    <Routine BankNum="8" AddressInt="13156" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="?TRANSIENT_FUEL?" OutputComments="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-12-09T05:37:41.0560928Z" IdentificationStatus="0" Skip="false">
+      <Label>?TRANSIENT_FUEL?</Label>
+      <Comments>8 5364</Comments>
       <IdentificationDetails />
       <Category />
       <Category2 />
@@ -5677,6 +5709,18 @@ WordHex:1}</StructDef>
     </Register>
     <Register AddressInt="636" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-21T06:53:04.1321793Z" DateUpdated="2024-11-21T06:53:20.2618444Z" IdentificationStatus="0">
       <Label>RPMSCALE</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="640" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-12-09T05:43:27.8735173Z" DateUpdated="2024-12-09T05:46:27.9664749Z" IdentificationStatus="0">
+      <Label>VE</Label>
       <ByteLabel />
       <WordLabel />
       <Comments />
