@@ -1,11 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<S6x version="1.00" generated="2024-12-08 21:46:31">
-  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-12-09T05:46:27.966624Z" IdentificationStatus="0">
-=======
 <S6x version="1.00" generated="2024-12-14 23:54:31">
   <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-12-15T07:54:24.35102Z" IdentificationStatus="0">
->>>>>>> b9363ae00e39671ef07bb3100df1271dd7a457e0
     <Label>Exported</Label>
     <Comments />
     <Header />
