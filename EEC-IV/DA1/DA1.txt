@@ -780,7 +780,7 @@ Sub0020:
 8 26d3: d1,03                jleu  26d8               if ((uns) R88 <= [332]) goto 26d8;
 8 26d5: 91,02,4c             orrb  R4c,2              R4c |= 2;            
 8 26d8: 65,86,02,82          ad2w  R82,286            R82 += 286;          
-8 26dc: 65,ee,89,96          ad2w  R96,89ee           R96 += VecLst8_014;  
+8 26dc: 65,ee,89,96          ad2w  R96,89ee           R96 += VecLst8_017;  
 8 26e0: c9,e6,26             push  26e6               push(Sub0021);       
 8 26e3: ca,96                push  [R96]              push([R96]);         
 8 26e5: f0                   ret                      return;              
@@ -941,7 +941,7 @@ IPT_HSI_0 - Interrupt High Speed Input 0:
 8 2875: df,02                je    2879               if (R42 == ff) goto 2879;
 8 2877: 20,11                sjmp  288a               goto 288a;           
 
-8 2879: a1,a8,4f,36          ldw   R36,4fa8           R36 = OSt8_008;      
+8 2879: a1,a8,4f,36          ldw   R36,4fa8           R36 = OSt8_011;      
 8 287d: b1,08,3a             ldb   R3a,8              [GENERAL_3A] = 8;    
 8 2880: 20,48                sjmp  28ca               goto 28ca;           
 
@@ -959,7 +959,7 @@ IPT_HSI_0 - Interrupt High Speed Input 0:
 8 289d: df,da                je    2879               if (R42 == ff) goto 2879;
 8 289f: 99,10,42             cmpb  R42,10                                  
 8 28a2: d7,09                jne   28ad               if (R42 != 10) goto 28ad;
-8 28a4: a1,ae,4f,36          ldw   R36,4fae           R36 = OSt8_009;      
+8 28a4: a1,ae,4f,36          ldw   R36,4fae           R36 = OSt8_012;      
 8 28a8: b1,0a,3a             ldb   R3a,a              [GENERAL_3A] = a;    
 8 28ab: 20,1d                sjmp  28ca               goto 28ca;           
 
@@ -967,7 +967,7 @@ IPT_HSI_0 - Interrupt High Speed Input 0:
 8 28b0: df,02                je    28b4               if (R42 == 11) goto 28b4;
 8 28b2: 20,97                sjmp  294b               goto 294b;           
 
-8 28b4: a1,b4,4f,36          ldw   R36,4fb4           R36 = OSt8_010;      
+8 28b4: a1,b4,4f,36          ldw   R36,4fb4           R36 = OSt8_013;      
 8 28b8: b1,08,3a             ldb   R3a,8              [GENERAL_3A] = 8;    
 8 28bb: 30,a3,0c             jnb   B0,Ra3,28ca        if (!B0_Ra3) goto 28ca;
 8 28be: a3,01,08,09,30       ldw   R30,[908]          R30 = [908];         
@@ -1425,7 +1425,7 @@ Sub0033:
 8 2e06: 37,55,0d             jnb   B7,R55,2e16        if (!B7_R55) goto 2e16;
 8 2e09: 91,08,4c             orrb  R4c,8              R4c |= 8;            
 8 2e0c: af,82,01,96          ldzbw R96,[R82+1]        R96 = (uns)[R82+1];  
-8 2e10: 65,ee,89,96          ad2w  R96,89ee           R96 += VecLst8_014;  
+8 2e10: 65,ee,89,96          ad2w  R96,89ee           R96 += VecLst8_017;  
 8 2e14: ca,96                push  [R96]              push([R96]);         
 8 2e16: f0                   ret                      return;              
 
@@ -1619,7 +1619,7 @@ Sub0035:
 
 8 301d: 79,01,58             sb2b  R58,1              R58 -= 1;            
 8 3020: 5d,16,58,96          ml3b  R96,R58,16         R96 = R58 * 16;      
-8 3024: 65,20,8a,96          ad2w  R96,8a20           R96 += OSt8_016;     
+8 3024: 65,20,8a,96          ad2w  R96,8a20           R96 += OSt8_019;     
 8 3028: 47,96,08,f2,58       ad3w  R58,Rf2,[R96+8]    R58 = Rf2 + [R96+8]; 
 8 302d: af,59,d6,00,58       ldzbw R58,[R58+d6]       R58 = (uns)[R58+FLAGS_D6];
 8 3032: 8b,59,f2,01,00       cmpw  0,[R58+1f2]                             
@@ -2433,7 +2433,7 @@ UPDATE_AD:
 8 38ef: 20,06                sjmp  38f7               goto 38f7;           
 
 8 38f1: 9b,fe,03,ca          cmpb  Rca,[Rfe+3]                             
-8 38f5: d3,08                jnc   38ff               if ((uns) [ATMR1] < [Sc0425]) goto 38ff;
+8 38f5: d3,08                jnc   38ff               if ((uns) [ATMR1] < [HEGO_WARM_START_DELAY_1_WARM_FLAG]) goto 38ff;
 8 38f7: 37,2e,14             jnb   B7,R2e,390e        if (<CFM_FLAG> == 0) goto 390e;
 8 38fa: b3,f1,e3,02,39       ldb   R39,[Rf0+2e3]      R39 = [FAILED_ECT_DEFAULT];
 8 38ff: bc,b0,32             ldsbw R32,Rb0            R32 = (sig)[ECT];    
@@ -2747,39 +2747,39 @@ UPDATE_MPH:
 
 
 OSt8_005 - Other Structure 8 005:
-8 3cb2: 31,01      ostruct     305
-8 3cb4: 00,5a      ostruct   23040
-        Inc   8 3cb6: ostruct   OSt8_009_3cb6 - Other Structure 8 009
-8 3cb6: aa,e6      ostruct   59050
+8 3cb2: 31,01      ostruct    131
+8 3cb4: 00,5a      ostruct   5a00
+        Inc   8 3cb6: ostruct   OSt8_007_3cb6 - Other Structure 8 007
+8 3cb6: aa,e6      ostruct   e6aa
 
 OSt8_006 - Other Structure 8 006:
-8 3cb8: 00,2d      ostruct   11520
-8 3cba: fa,02      ostruct     762
-        Inc   8 3cbc: ostruct   OSt8_005_3cbc - Other Structure 8 005
-8 3cbc: fc,01      ostruct     508
-
-OSt8_009 - Other Structure 8 009:
-8 3cbe: 7d,01      ostruct    17d
-8 3cc0: 80,f0      ostruct   f080
-        Inc   8 3cc2: ostruct   OSt8_006_3cc2 - Other Structure 8 006
-8 3cc2: 55,a0      ostruct   a055
-
-OSt8_005 - Other Structure 8 005:
-8 3cc4: 40,78      ostruct   7840
-8 3cc6: 02,06      ostruct    602
-        Inc   8 3cc8: ostruct   OSt8_007_3cc8 - Other Structure 8 007
-8 3cc8: 02,04      ostruct    402
-
-OSt8_006 - Other Structure 8 006:
-8 3cca: 01,03      ostruct   301
-8 3ccc: 82,07      ostruct   782
-        Inc   8 3cce: ostruct   OSt8_007_3cd6_3cce - Other Structure 8 007 3cd6
-8 3cce: 02,05      ostruct   502
+8 3cb8: 00,2d      ostruct   2d00
+8 3cba: fa,02      ostruct    2fa
+        Inc   8 3cbc: ostruct   OSt8_008_3cbc - Other Structure 8 008
+8 3cbc: fc,01      ostruct    1fc
 
 OSt8_007 - Other Structure 8 007:
+8 3cbe: 7d,01      ostruct    17d
+8 3cc0: 80,f0      ostruct   f080
+        Inc   8 3cc2: ostruct   OSt8_009_3cc2 - Other Structure 8 009
+8 3cc2: 55,a0      ostruct   a055
+
+OSt8_008 - Other Structure 8 008:
+8 3cc4: 40,78      ostruct   7840
+8 3cc6: 02,06      ostruct    602
+        Inc   8 3cc8: ostruct   OSt8_010_3cc8 - Other Structure 8 010
+8 3cc8: 02,04      ostruct    402
+
+OSt8_009 - Other Structure 8 009:
+8 3cca: 01,03      ostruct   301
+8 3ccc: 82,07      ostruct   782
+        Inc   8 3cce: ostruct   OSt8_010_3cd6_3cce - Other Structure 8 010 3cd6
+8 3cce: 02,05      ostruct   502
+
+OSt8_010 - Other Structure 8 010:
 8 3cd0: c1,03      ostruct    3c1
 8 3cd2: 00,14      ostruct   1400
-        Inc   8 3cd4: ostruct   OSt8_007_3cd4 - Other Structure 8 007
+        Inc   8 3cd4: ostruct   OSt8_010_3cd4 - Other Structure 8 010
 8 3cd4: 56,0d      ostruct    d56
 
 
@@ -2810,8 +2810,8 @@ UPDATE_RPM:
 8 3d1a: a3,31,b0,3c,34       ldw   R34,[R30+3cb0]     R34 = [R30+OSt8_006_3cb0];
 8 3d1f: 9b,f0,13,00          cmpb  0,[Rf0+13]                              
 8 3d23: df,0a                je    3d2f               if (0 == [ALTERNATE_CALIBRATION_SW]) goto 3d2f;
-8 3d25: a3,31,b6,3c,36       ldw   R36,[R30+3cb6]     R36 = [R30+OSt8_009_3cb6];
-8 3d2a: a3,31,bc,3c,34       ldw   R34,[R30+3cbc]     R34 = [R30+OSt8_005_3cbc];
+8 3d25: a3,31,b6,3c,36       ldw   R36,[R30+3cb6]     R36 = [R30+OSt8_007_3cb6];
+8 3d2a: a3,31,bc,3c,34       ldw   R34,[R30+3cbc]     R34 = [R30+OSt8_008_3cbc];
 8 3d2f: a0,b8,38             ldw   R38,Rb8            R38 = [PIP_HI_E_TIME];
 8 3d32: ac,ba,3a             ldzbw R3a,Rba            [GENERAL_3A] = (uns)Rba;
 8 3d35: 0f,30,38             norm  R38,R30            R30L = Norm R38L;    
@@ -2853,15 +2853,15 @@ UPDATE_RPM:
 8 3db5: ef,de,f8             call  3696               Srolav1T();          
 8 3db8: c3,01,18,03,3e       stw   [318],R3e          [RPM_FILTER_2] = [FLAGS_3E];
 8 3dbd: af,f0,05,42          ldzbw R42,[Rf0+5]        R42 = (uns)[PIP_PER_REV];
-8 3dc1: a3,43,c2,3c,32       ldw   R32,[R42+3cc2]     R32 = [R42+OSt8_006_3cc2];
+8 3dc1: a3,43,c2,3c,32       ldw   R32,[R42+3cc2]     R32 = [R42+OSt8_009_3cc2];
 8 3dc6: 9b,f0,13,00          cmpb  0,[Rf0+13]                              
 8 3dca: df,05                je    3dd1               if (0 == [ALTERNATE_CALIBRATION_SW]) goto 3dd1;
-8 3dcc: a3,43,c8,3c,32       ldw   R32,[R42+3cc8]     R32 = [R42+OSt8_007_3cc8];
+8 3dcc: a3,43,c8,3c,32       ldw   R32,[R42+3cc8]     R32 = [R42+OSt8_010_3cc8];
 8 3dd1: c3,01,50,03,32       stw   [350],R32          [350] = R32;         
-8 3dd6: a3,43,ce,3c,32       ldw   R32,[R42+3cce]     R32 = [R42+OSt8_007_3cd6_3cce];
+8 3dd6: a3,43,ce,3c,32       ldw   R32,[R42+3cce]     R32 = [R42+OSt8_010_3cd6_3cce];
 8 3ddb: 9b,f0,13,00          cmpb  0,[Rf0+13]                              
 8 3ddf: df,05                je    3de6               if (0 == [ALTERNATE_CALIBRATION_SW]) goto 3de6;
-8 3de1: a3,43,d4,3c,32       ldw   R32,[R42+3cd4]     R32 = [R42+OSt8_007_3cd4];
+8 3de1: a3,43,d4,3c,32       ldw   R32,[R42+3cd4]     R32 = [R42+OSt8_010_3cd4];
 8 3de6: c3,01,4e,03,32       stw   [34e],R32          [34e] = R32;         
 8 3deb: 91,08,25             orrb  R25,8              [FLAGS_25] |= 8;     
 8 3dee: 8b,f0,0c,00          cmpw  0,[Rf0+c]                               
@@ -3530,11 +3530,11 @@ Sub0070:
 8 4613: 9b,fb,aa,00,ad       cmpb  Rad,[Rfa+aa]                            
 8 4618: d6,20                jge   463a               if ((sig) [TCSTRT] >= [STARTUP_FUEL_MULTI_ECT_MAX]) goto 463a;
 8 461a: 9b,fe,14,ca          cmpb  Rca,[Rfe+14]                            
-8 461e: db,1a                jc    463a               if ((uns) [ATMR1] >= [Sc0429]) goto 463a;
+8 461e: db,1a                jc    463a               if ((uns) [ATMR1] >= [STARTUP_FUEL_MULTI_TIME_DELAY]) goto 463a;
 8 4620: 45,30,00,fa,32       ad3w  R32,Rfa,30         R32 = CT_FUEL_MULTI_V_RPM_NEUTRAL;
 8 4625: a0,ae,34             ldw   R34,Rae            R34 = [RPM];         
 8 4628: ef,23,f0             call  364e               UUWordLU();          
-8 462b: 7f,fe,13,38          ml2b  R38,[Rfe+13]       R38 *= [Sc0428];     
+8 462b: 7f,fe,13,38          ml2b  R38,[Rfe+13]       R38 *= [STARTUP_FUEL_MULTI];
 8 462f: 08,07,38             shrw  R38,7              R38 = R38 / 80;      
 8 4632: 30,39,03             jnb   B0,R39,4638        if (!B0_R39) goto 4638;
 8 4635: b1,ff,38             ldb   R38,ff             R38 = ff;            
@@ -3577,7 +3577,7 @@ Sub0070:
 8 46a9: 31,e7,0a             jnb   B1,Re7,46b6        if (!B1_Re7) goto 46b6;
 8 46ac: 3a,e7,07             jb    B2,Re7,46b6        if (B2_Re7) goto 46b6;
 8 46af: 36,2b,04             jnb   B6,R2b,46b6        if (!B6_[FLAGS_2B]) goto 46b6;
-8 46b2: af,fe,12,3e          ldzbw R3e,[Rfe+12]       [FLAGS_3E] = (uns)[Sc0427];
+8 46b2: af,fe,12,3e          ldzbw R3e,[Rfe+12]       [FLAGS_3E] = (uns)[GLOBAL_FUEL_MULTI];
 8 46b6: af,01,96,01,38       ldzbw R38,[196]          R38 = (uns)[196];    
 8 46bb: 7c,3e,38             ml2b  R38,R3e            R38 *= [FLAGS_3E];   
 8 46be: 4c,38,3c,34          ml3w  R34,R3c,R38        R34 = [FLAGS_3C] * R38;
@@ -4365,21 +4365,21 @@ Sub0086:
 8 4fa7: ff                                            Unknown Operation/Structure
 
 
-OSt8_008 - Other Structure 8 008:
+OSt8_011 - Other Structure 8 011:
 8 4fa8: ba,4f      ostruct   4fba
 
 
 8 4faa: 06,50,fc,4f                                   Unknown Operation/Structure
 
 
-OSt8_009 - Other Structure 8 009:
+OSt8_012 - Other Structure 8 012:
 8 4fae: bc,4f      ostruct   4fbc
 
 
 8 4fb0: 08,50,06,50                                   Unknown Operation/Structure
 
 
-OSt8_010 - Other Structure 8 010:
+OSt8_013 - Other Structure 8 013:
 8 4fb4: dc,4f      ostruct   4fdc
 
 
@@ -5222,10 +5222,10 @@ UPDATE_EGR2:
 8 59fe: c7,01,0a,02,00       stb   [20a],0            [EGRCNT] = 0;        
 8 5a03: c7,01,0b,02,00       stb   [20b],0            [EGRPER] = 0;        
 8 5a08: f0                   ret                      return;              
-        Inc   8 5a08: ostruct   OSt8_011_5a08 - Other Structure 8 011
+        Inc   8 5a08: ostruct   OSt8_014_5a08 - Other Structure 8 014
 
 
-OSt8_011 - Other Structure 8 011:
+OSt8_014 - Other Structure 8 014:
 8 5a09: 0a      ostruct    a
 8 5a0a: 17      ostruct   17
 8 5a0b: 2c      ostruct   2c
@@ -5235,7 +5235,7 @@ OSt8_011 - Other Structure 8 011:
 8 5a0f: ad      ostruct   ad
 
 8 5a12: 9b,31,08,5a,d1       cmpb  Rd1,[R30+5a08]                          
-8 5a17: d9,03                jgtu  5a1c               if ((uns) Rd1 > [R30+OSt8_011_5a08]) goto 5a1c;
+8 5a17: d9,03                jgtu  5a1c               if ((uns) Rd1 > [R30+OSt8_014_5a08]) goto 5a1c;
 8 5a19: e0,30,f6             djnz  R30,5a12           R30--; if (R30 !=  0) goto 5a12;
 8 5a1c: 09,0b,30             shlw  R30,b              R30 = R30 * 800;     
 8 5a1f: c7,01,0a,02,31       stb   [20a],R31          [EGRCNT] = R31;      
@@ -5864,7 +5864,7 @@ UPDATE_IDLE:
 8 61ca: 20,b3                sjmp  627f               goto 627f;           
 
 8 61cc: c7,01,74,01,00       stb   [174],0            [174] = 0;           
-8 61d1: a3,ff,06,01,38       ldw   R38,[Rfe+106]      R38 = [Sc0446];      
+8 61d1: a3,ff,06,01,38       ldw   R38,[Rfe+106]      R38 = [ISC_CL_RPM_CORRECTION_TEST_RATE];
 8 61d6: 3d,2a,08             jb    B5,R2a,61e1        if (<SELF_TEST> == 1) goto 61e1;
 8 61d9: 45,c2,00,f4,32       ad3w  R32,Rf4,c2         R32 = ISC_CL_RPM_CORRECTION_RATE;
 8 61de: ef,62,d4             call  3643               SUWordLU();          
@@ -5929,7 +5929,7 @@ UPDATE_IDLE:
 8 6298: 45,ea,02,f2,32       ad3w  R32,Rf2,2ea        R32 = ISC_TRANSFER;  
 8 629d: ef,ae,d3             call  364e               UUWordLU();          
 8 62a0: a0,38,40             ldw   R40,R38            R40 = R38;           
-8 62a3: b3,ff,08,01,38       ldb   R38,[Rfe+108]      R38 = [Sc0447];      
+8 62a3: b3,ff,08,01,38       ldb   R38,[Rfe+108]      R38 = [ISC_SELF_TEST_DC_MULTI];
 8 62a8: 3d,2a,0b             jb    B5,R2a,62b6        if (<SELF_TEST> == 1) goto 62b6;
 8 62ab: b0,b2,34             ldb   R34,Rb2            R34 = [LOAD];        
 8 62ae: 45,57,02,f4,32       ad3w  R32,Rf4,257        R32 = ISC_DC_MULTI_V_MAP;
@@ -6883,15 +6883,15 @@ SET_TIMERS:
 8 6d8f: c7,01,fd,01,00       stb   [1fd],0            [AC_CLUTCH_BRAKE_TIMER] = 0;
 8 6d94: 30,24,05             jnb   B0,R24,6d9c        if (<WOT_FLAG> == 0) goto 6d9c;
 8 6d97: c7,01,08,02,00       stb   [208],0            [RPM_FILTER1] = 0;   
-8 6d9c: a3,ff,d2,00,32       ldw   R32,[Rfe+d2]       R32 = [Sc0431];      
-8 6da1: 67,ff,d0,00,32       ad2w  R32,[Rfe+d0]       R32 += [Sc0430];     
+8 6d9c: a3,ff,d2,00,32       ldw   R32,[Rfe+d2]       R32 = [THERMACTOR_DECEL_UPSTREAM_AIR_MAX_RPM];
+8 6da1: 67,ff,d0,00,32       ad2w  R32,[Rfe+d0]       R32 += [THERMACTOR_DECEL_UPSTREAM_AIR_MAX_RPM_HYST];
 8 6da6: 88,32,ae             cmpw  Rae,R32                                 
 8 6da9: d1,05                jleu  6db0               if ((uns) [RPM] <= R32) goto 6db0;
 8 6dab: 91,04,e8             orrb  Re8,4              [FLAGS_E8] |= 4;     
 8 6dae: 20,0a                sjmp  6dba               goto 6dba;           
 
 8 6db0: 8b,ff,d2,00,ae       cmpw  Rae,[Rfe+d2]                            
-8 6db5: db,03                jc    6dba               if ((uns) [RPM] >= [Sc0431]) goto 6dba;
+8 6db5: db,03                jc    6dba               if ((uns) [RPM] >= [THERMACTOR_DECEL_UPSTREAM_AIR_MAX_RPM]) goto 6dba;
 8 6db7: 71,fb,e8             an2b  Re8,fb             [FLAGS_E8] &= fb;    
 8 6dba: 37,9e,08             jnb   B7,R9e,6dc5        if (<CL_THROTTLE> == 0) goto 6dc5;
 8 6dbd: 32,e8,05             jnb   B2,Re8,6dc5        if (!B2_[FLAGS_E8]) goto 6dc5;
@@ -7542,7 +7542,7 @@ Sub0121:
 8 7522: 28,1c                scall 7540               Sub0122();           
 8 7524: a1,f0,89,96          ldw   R96,89f0           R96 = 89f0;          
 8 7528: 37,99,04             jnb   B7,R99,752f        if (!B7_R99) goto 752f;
-8 752b: a1,00,8a,96          ldw   R96,8a00           R96 = OSt8_015;      
+8 752b: a1,00,8a,96          ldw   R96,8a00           R96 = OSt8_018;      
 8 752f: ef,37,b0             call  2569               Sub0013();           
 8 7532: f0                   ret                      return;              
 
@@ -7713,13 +7713,13 @@ DO_SELF_TEST:
 8 7718: 3b,2a,19             jb    B3,R2a,7734        if (B3_[REG_2A]) goto 7734;
 8 771b: 91,20,2a             orrb  R2a,20             <SELF_TEST> = 1;     
 8 771e: 28,18                scall 7738               Sub0127();           
-8 7720: cb,3b,2c,79          push  [R3a+792c]         push([R3a+VecLst8_013]);
+8 7720: cb,3b,2c,79          push  [R3a+792c]         push([R3a+VecLst8_016]);
 8 7724: f0                   ret                      return;              
 
 8 7725: 37,2a,0f             jnb   B7,R2a,7737        if (<STI_FLAG> == 0) goto 7737;
 8 7728: 3c,2a,09             jb    B4,R2a,7734        if (B4_[REG_2A]) goto 7734;
 8 772b: 28,0b                scall 7738               Sub0127();           
-8 772d: cb,3b,1a,79          push  [R3a+791a]         push([R3a+VecLst8_012]);
+8 772d: cb,3b,1a,79          push  [R3a+791a]         push([R3a+VecLst8_015]);
 8 7731: f0                   ret                      return;              
 
 Sub0126:
@@ -7854,7 +7854,7 @@ SET_EGR_FLAGS:
 
 
 
-VecLst8_012 - Vectors List 8 012:
+VecLst8_015 - Vectors List 8 015:
 8 791a: 5c,7c                7c5c  Bank 8 Vector      Sub0142
 8 791c: 59,83                8359  Bank 8 Vector      Sub0171
 
@@ -7864,7 +7864,7 @@ VecLst8_012 - Vectors List 8 012:
 
 
 
-VecLst8_013 - Vectors List 8 013:
+VecLst8_016 - Vectors List 8 016:
 8 792c: 22,7f                7f22  Bank 8 Vector      Sub0154
 8 792e: 4f,77                774f  Bank 8 Vector      Sub0128
 8 7930: ca,7f                7fca  Bank 8 Vector      Sub0155
@@ -8441,10 +8441,10 @@ Sub0154:
 8 7f8b: 71,bf,e7             an2b  Re7,bf             Re7 &= bf;           
 8 7f8e: f0                   ret                      return;              
 
-8 7f8f: a3,ff,ee,00,1c       ldw   R1c,[Rfe+ee]       R1c = [Sc0440];      
+8 7f8f: a3,ff,ee,00,1c       ldw   R1c,[Rfe+ee]       R1c = [LAMBDA_FOR_SELF_TEST];
 8 7f94: c3,7a,76,1c          stw   [R7a+76],R1c       [R7a+76] = R1c;      
 8 7f98: c3,7a,78,1c          stw   [R7a+78],R1c       [R7a+78] = R1c;      
-8 7f9c: a3,ff,f8,00,3e       ldw   R3e,[Rfe+f8]       [FLAGS_3E] = [Sc0441];
+8 7f9c: a3,ff,f8,00,3e       ldw   R3e,[Rfe+f8]       [FLAGS_3E] = [SELF_TEST_DESIRED_RPM];
 8 7fa1: c3,7b,ce,00,3e       stw   [R7a+ce],R3e       [R7a+ce] = [FLAGS_3E];
 8 7fa6: 71,bf,4f             an2b  R4f,bf             <KNOCK_ENABLED> = 0; 
 8 7fa9: c3,7a,46,00          stw   [R7a+46],0         [R7a+FLAGS_46] = 0;  
@@ -8460,7 +8460,7 @@ Sub0154:
 Sub0155:
 8 7fca: 29,9e                scall 816a               GET_WORD([f0fc]);    
 8 7fcc: fc,f0                                         #args                
-8 7fce: a3,ff,f8,00,32       ldw   R32,[Rfe+f8]       R32 = [Sc0441];      
+8 7fce: a3,ff,f8,00,32       ldw   R32,[Rfe+f8]       R32 = [SELF_TEST_DESIRED_RPM];
 8 7fd3: 09,05,32             shlw  R32,5              R32 = R32 * 20;      
 8 7fd6: 6b,7a,88,32          sb2w  R32,[R7a+88]       R32 -= [R7a+88];     
 8 7fda: d6,02                jge   7fde               if ((sig) R32 >= 0) goto 7fde;
@@ -8599,7 +8599,7 @@ Sub0163:
 8 80f8: 46                                            #args                
 8 80f9: 71,bf,47             an2b  R47,bf             <IAC> = 0;           
 8 80fc: 71,fe,46             an2b  R46,fe             <SBS1> = 0;          
-8 80ff: a3,ff,ee,00,1c       ldw   R1c,[Rfe+ee]       R1c = [Sc0440];      
+8 80ff: a3,ff,ee,00,1c       ldw   R1c,[Rfe+ee]       R1c = [LAMBDA_FOR_SELF_TEST];
 8 8104: c3,7a,76,1c          stw   [R7a+76],R1c       [R7a+76] = R1c;      
 8 8108: c3,7a,78,1c          stw   [R7a+78],R1c       [R7a+78] = R1c;      
 8 810c: b1,0a,38             ldb   R38,a              R38 = a;             
@@ -9252,7 +9252,7 @@ CHECK_KAM:
 
 
 
-VecLst8_014 - Vectors List 8 014:
+VecLst8_017 - Vectors List 8 017:
 8 89ee: d8,8a                8ad8  Bank 8 Vector      Sub0184
 8 89f0: 69,25                2569  Bank 8 Vector      Sub0013
 
@@ -9261,7 +9261,7 @@ VecLst8_014 - Vectors List 8 014:
 8 89fa: 00,c9,0b,5e,33,75                             Unknown Operation/Structure
 
 
-OSt8_015 - Other Structure 8 015:
+OSt8_018 - Other Structure 8 018:
 8 8a00: 69      ostruct   69
 
 
@@ -9271,7 +9271,7 @@ OSt8_015 - Other Structure 8 015:
 8 8a19: 25,00,c5,0c,04,1b,2e                          Unknown Operation/Structure
 
 
-OSt8_016 - Other Structure 8 016:
+OSt8_019 - Other Structure 8 019:
 8 8a20: b6,31      ostruct   31b6
 
 
@@ -11893,7 +11893,9 @@ Rfe_EndAddr - Rbase Rfe end next address:
 
 HEGO_HOT_START_DELAY_WARM_FLG:
 8 9e8a: 28                Rfe+2 HEGO_HOT_START_DELAY_WARM_FLG    byte        28                  40
-8 9e8b: 64                Rfe+3 Sc0425        byte        64                 100
+
+HEGO_WARM_START_DELAY_1_WARM_FLAG:
+8 9e8b: 64                Rfe+3 HEGO_WARM_START_DELAY_1_WARM_FLAG    byte        64                 100
 
 
 8 9e8c: 00,00,03                              Unknown Calibration                             0,  0,  3                                   0,   0,   3
@@ -11907,9 +11909,15 @@ HEGO_DELAY:
 8 9e97: 00,d7             func                   0,       d7                0.00,    53.75
 
 8 9e99: 80                Rfe+11 Sc0426       byte        80                 128
-8 9e9a: 80                Rfe+12 Sc0427       byte        80                 128
-8 9e9b: 7d                Rfe+13 Sc0428       byte        7d                 125
-8 9e9c: 26                Rfe+14 Sc0429       byte        26                  38
+
+GLOBAL_FUEL_MULTI:
+8 9e9a: 80                Rfe+12 GLOBAL_FUEL_MULTI    byte        80              1.0000
+
+STARTUP_FUEL_MULTI:
+8 9e9b: 7d                Rfe+13 STARTUP_FUEL_MULTI    byte        7d              0.9766
+
+STARTUP_FUEL_MULTI_TIME_DELAY:
+8 9e9c: 26                Rfe+14 STARTUP_FUEL_MULTI_TIME_DELAY    byte        26                  38
 
 St0011 - Structure 011:
 8 9e9d: 1e      struct     1e
@@ -11951,8 +11959,12 @@ SPARK_SEALEVEL_TABLE:
 8 9f44: 28,28,28,28,30,34,3c,40,40,40       table       28, 28, 28, 28, 30, 34, 3c, 40, 40, 40          10.00,   10.00,   10.00,   10.00,   12.00,   13.00,   15.00,   16.00,   16.00,   16.00
 8 9f4e: 28,28,28,28,2c,2e,32,38,3c,40       table       28, 28, 28, 28, 2c, 2e, 32, 38, 3c, 40          10.00,   10.00,   10.00,   10.00,   11.00,   11.50,   12.50,   14.00,   15.00,   16.00
 
-8 9f58: 90,01             Rfe+d0 Sc0430       word       190                 400
-8 9f5a: a0,0f             Rfe+d2 Sc0431       word       fa0                4000
+
+THERMACTOR_DECEL_UPSTREAM_AIR_MAX_RPM_HYST:
+8 9f58: 90,01             Rfe+d0 THERMACTOR_DECEL_UPSTREAM_AIR_MAX_RPM_HYST    word       190              100.00
+
+THERMACTOR_DECEL_UPSTREAM_AIR_MAX_RPM:
+8 9f5a: a0,0f             Rfe+d2 THERMACTOR_DECEL_UPSTREAM_AIR_MAX_RPM    word       fa0             1000.00
 
 St0012 - Structure 012:
 8 9f5c: 25      struct     25
@@ -11982,13 +11994,17 @@ St0013 - Structure 013:
 
 8 9f72: 00,60             Rfe+ea Sc0438       word      6000               24576
 8 9f74: 66,a6             Rfe+ec Sc0439       word      a666               42598
-8 9f76: 33,73             Rfe+ee Sc0440       word      7333               29491
+
+LAMBDA_FOR_SELF_TEST:
+8 9f76: 33,73             Rfe+ee LAMBDA_FOR_SELF_TEST    word      7333              0.9000
 
 
 8 9f78: a0,ff,e8,03,7c,00,40,78               Unknown Calibration        a0, ff, e8,  3, 7c,  0, 40, 78        160, 255, 232,   3, 124,   0,  64, 120
 
 
-8 9f80: c8,00             Rfe+f8 Sc0441       word        c8                 200
+
+SELF_TEST_DESIRED_RPM:
+8 9f80: c8,00             Rfe+f8 SELF_TEST_DESIRED_RPM    word        c8             1600.00
 
 
 8 9f82: b0,04,78,ff                           Unknown Calibration                        b0,  4, 78, ff                            176,   4, 120, 255
@@ -11998,9 +12014,13 @@ St0013 - Structure 013:
 8 9f88: 00,f0             Rfe+100 Sc0443      word      f000               -4096
 8 9f8a: 22,00             Rfe+102 Sc0444      word        22                  34
 8 9f8c: 22,00             Rfe+104 Sc0445      word        22                  34
-8 9f8e: 05,00             Rfe+106 Sc0446      word         5                   5
 
-8 9f90: 80                Rfe+108 Sc0447      byte        80                 128
+ISC_CL_RPM_CORRECTION_TEST_RATE:
+8 9f8e: 05,00             Rfe+106 ISC_CL_RPM_CORRECTION_TEST_RATE    word         5                   5
+
+
+ISC_SELF_TEST_DC_MULTI:
+8 9f90: 80                Rfe+108 ISC_SELF_TEST_DC_MULTI    byte        80              1.0000
 
 
 8 9f91: ff                                    Unknown Calibration                                    ff                                           255
@@ -13782,11 +13802,7 @@ L6
 8 fc00 -> fcff                     fill               fc
 8 fd00 -> fdff                     fill               fd
 8 fe00 -> feff                     fill               fe
-8 ff00 -> fffe                     fill               ff
-
-
-OSt8_008 - Other Structure 8 008:
-8 ffff: ff,      ostruct   ff
+8 ff00 -> ffff                     fill               ff
 ╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ║                                                                                                                      ║
 ║                                                  End of Disassembly                                                  ║

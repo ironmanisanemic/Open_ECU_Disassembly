@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<S6x version="1.00" generated="2024-12-15 10:01:37">
-  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-12-15T18:01:22.3462638Z" IdentificationStatus="0">
+<S6x version="1.00" generated="2024-12-28 12:08:59">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-12-28T20:06:41.8189067Z" IdentificationStatus="0">
     <Label>Exported</Label>
     <Comments />
     <Header />
@@ -3758,6 +3758,106 @@
       <Category2 />
       <Category3 />
     </Scalar>
+    <Scalar BankNum="8" AddressInt="32395" DuplicateNum="0" AddressBinInt="32395" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="HEGO_WARM_START_DELAY_1_WARM_FLAG" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-12-28T19:25:33.1245905Z" DateUpdated="2024-12-28T19:30:34.7956975Z" IdentificationStatus="0">
+      <Label>HEGO_WARM_START_DELAY_1_WARM_FLAG</Label>
+      <Comments>9e8b</Comments>
+      <ScaleExpression>X</ScaleExpression>
+      <Units>SECONDS</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="32410" DuplicateNum="0" AddressBinInt="32410" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="GLOBAL_FUEL_MULTI" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="0" Max="2" DateCreated="2024-12-28T19:25:33.1245905Z" DateUpdated="2024-12-28T19:32:29.3297532Z" IdentificationStatus="0">
+      <Label>GLOBAL_FUEL_MULTI</Label>
+      <Comments>9e9a</Comments>
+      <ScaleExpression>X/128</ScaleExpression>
+      <Units>MULTI</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="32411" DuplicateNum="0" AddressBinInt="32411" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="STARTUP_FUEL_MULTI" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="0" Max="2" DateCreated="2024-12-28T19:25:33.1245905Z" DateUpdated="2024-12-28T19:33:46.4251514Z" IdentificationStatus="0">
+      <Label>STARTUP_FUEL_MULTI</Label>
+      <Comments>9e9b</Comments>
+      <ScaleExpression>X/128</ScaleExpression>
+      <Units>MULTI</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="32412" DuplicateNum="0" AddressBinInt="32412" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="STARTUP_FUEL_MULTI_TIME_DELAY" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-12-28T19:25:33.1245905Z" DateUpdated="2024-12-28T19:35:02.1133065Z" IdentificationStatus="0">
+      <Label>STARTUP_FUEL_MULTI_TIME_DELAY</Label>
+      <Comments>9e9c</Comments>
+      <ScaleExpression>X</ScaleExpression>
+      <Units>SECONDS</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="32600" DuplicateNum="0" AddressBinInt="32600" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="THERMACTOR_DECEL_UPSTREAM_AIR_MAX_RPM_HYST" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-12-28T19:25:33.1245905Z" DateUpdated="2024-12-28T19:36:35.6326707Z" IdentificationStatus="0">
+      <Label>THERMACTOR_DECEL_UPSTREAM_AIR_MAX_RPM_HYST</Label>
+      <Comments>9f58</Comments>
+      <ScaleExpression>X/4</ScaleExpression>
+      <Units>RPM</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="32602" DuplicateNum="0" AddressBinInt="32602" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="THERMACTOR_DECEL_UPSTREAM_AIR_MAX_RPM" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-12-28T19:25:33.1245905Z" DateUpdated="2024-12-28T19:37:40.2311367Z" IdentificationStatus="0">
+      <Label>THERMACTOR_DECEL_UPSTREAM_AIR_MAX_RPM</Label>
+      <Comments>9f5a</Comments>
+      <ScaleExpression>X/4</ScaleExpression>
+      <Units>RPM</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="32630" DuplicateNum="0" AddressBinInt="32630" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="LAMBDA_FOR_SELF_TEST" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2024-12-28T19:25:33.1245905Z" DateUpdated="2024-12-28T19:43:53.4718399Z" IdentificationStatus="0">
+      <Label>LAMBDA_FOR_SELF_TEST</Label>
+      <Comments>9f76</Comments>
+      <ScaleExpression>X/32768</ScaleExpression>
+      <Units>LAMBDA</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="32640" DuplicateNum="0" AddressBinInt="32640" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="SELF_TEST_DESIRED_RPM" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-12-28T19:25:33.1245905Z" DateUpdated="2024-12-28T19:45:37.2518647Z" IdentificationStatus="0">
+      <Label>SELF_TEST_DESIRED_RPM</Label>
+      <Comments>9f80</Comments>
+      <ScaleExpression>X/0.125</ScaleExpression>
+      <Units>RPM</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="32654" DuplicateNum="0" AddressBinInt="32654" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="ISC_CL_RPM_CORRECTION_TEST_RATE" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-12-28T19:25:33.1245905Z" DateUpdated="2024-12-28T19:48:46.5892784Z" IdentificationStatus="0">
+      <Label>ISC_CL_RPM_CORRECTION_TEST_RATE</Label>
+      <Comments>9f8e</Comments>
+      <ScaleExpression>X</ScaleExpression>
+      <Units>RATE</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="32656" DuplicateNum="0" AddressBinInt="32656" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="ISC_SELF_TEST_DC_MULTI" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="0" Max="2" DateCreated="2024-12-28T19:25:33.1245905Z" DateUpdated="2024-12-28T19:50:06.5498587Z" IdentificationStatus="0">
+      <Label>ISC_SELF_TEST_DC_MULTI</Label>
+      <Comments>9f90</Comments>
+      <ScaleExpression>X/128</ScaleExpression>
+      <Units>MULTI</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
   </Scalars>
   <Structures>
     <Structure BankNum="8" AddressInt="766" DuplicateNum="0" AddressBinInt="766" Skip="false" Number="70" isCalibrationElement="false" ShortLabel="SUBROUTINE_TASKLIST" OutputComments="false" DateCreated="2024-11-10T22:49:15.7207638Z" DateUpdated="2024-11-10T23:12:14.4174446Z" IdentificationStatus="0">
@@ -3781,33 +3881,6 @@ ByteHex
       <Category2 />
       <Category3 />
     </Structure>
-    <Structure BankNum="8" AddressInt="7346" DuplicateNum="0" AddressBinInt="7346" Skip="false" Number="3" isCalibrationElement="false" ShortLabel="OSt8_005" OutputComments="false" DateCreated="2024-12-01T06:13:47.8515348Z" DateUpdated="2024-12-01T06:28:03.0813281Z" IdentificationStatus="0">
-      <StructDef>Word</StructDef>
-      <Label>Other Structure 8 005</Label>
-      <Comments />
-      <IdentificationDetails />
-      <Category />
-      <Category2 />
-      <Category3 />
-    </Structure>
-    <Structure BankNum="8" AddressInt="7352" DuplicateNum="0" AddressBinInt="7352" Skip="false" Number="3" isCalibrationElement="false" ShortLabel="OSt8_006" OutputComments="false" DateCreated="2024-12-01T06:13:47.8515457Z" DateUpdated="2024-12-01T06:28:28.4045843Z" IdentificationStatus="0">
-      <StructDef>Word</StructDef>
-      <Label>Other Structure 8 006</Label>
-      <Comments />
-      <IdentificationDetails />
-      <Category />
-      <Category2 />
-      <Category3 />
-    </Structure>
-    <Structure BankNum="8" AddressInt="7358" DuplicateNum="0" AddressBinInt="7358" Skip="false" Number="3" isCalibrationElement="false" ShortLabel="OSt8_009" OutputComments="false" DateCreated="2024-11-10T22:49:15.7208204Z" DateUpdated="2024-11-10T22:55:56.2776262Z" IdentificationStatus="0">
-      <StructDef>WordHex</StructDef>
-      <Label>Other Structure 8 009</Label>
-      <Comments />
-      <IdentificationDetails />
-      <Category />
-      <Category2 />
-      <Category3 />
-    </Structure>
     <Structure BankNum="8" AddressInt="20177" DuplicateNum="0" AddressBinInt="20177" Skip="false" Number="51" isCalibrationElement="false" ShortLabel="TIMER_LIST" OutputComments="false" DateCreated="2024-11-11T07:09:59.7637463Z" DateUpdated="2024-12-02T00:19:13.8598178Z" IdentificationStatus="0">
       <StructDef>ByteHex:1
 If(B0:1){
@@ -3825,15 +3898,6 @@ WordHex:1}</StructDef>
       <StructDef>WordHex</StructDef>
       <Label>INIT_LIST</Label>
       <Comments>Structure definition was defaulted</Comments>
-      <IdentificationDetails />
-      <Category />
-      <Category2 />
-      <Category3 />
-    </Structure>
-    <Structure BankNum="8" AddressInt="57343" DuplicateNum="0" AddressBinInt="57343" Skip="false" Number="1" isCalibrationElement="false" ShortLabel="OSt8_008" OutputComments="false" DateCreated="2024-12-01T18:22:02.1425122Z" DateUpdated="2024-12-01T18:22:53.2118001Z" IdentificationStatus="0">
-      <StructDef>WordHex</StructDef>
-      <Label>Other Structure 8 008</Label>
-      <Comments />
       <IdentificationDetails />
       <Category />
       <Category2 />
@@ -4590,8 +4654,8 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Register>
-    <Register AddressInt="42" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-13T07:18:26.9854067Z" DateUpdated="2024-11-14T02:59:54.8159892Z" IdentificationStatus="0">
-      <Label>REG_2A</Label>
+    <Register AddressInt="42" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-13T07:18:26.9854067Z" DateUpdated="2024-12-28T20:06:41.81791Z" IdentificationStatus="0">
+      <Label>FLAGS_2A</Label>
       <ByteLabel />
       <WordLabel />
       <Comments />
