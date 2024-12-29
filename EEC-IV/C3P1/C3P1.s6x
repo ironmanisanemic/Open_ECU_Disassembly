@@ -1,0 +1,1112 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<S6x version="1.00" generated="2024-12-29 13:24:10">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="false" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="2000" XdfBaseOffsetSubtract="true" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+    <Label>C3P1.s6x</Label>
+    <BanksProperties>
+      <BankProperties BankNum="8" AddressBin="00000" />
+    </BanksProperties>
+    <IdentificationDetails />
+  </Properties>
+  <Tables />
+  <Functions />
+  <Scalars />
+  <Structures />
+  <Routines>
+    <Routine BankNum="8" AddressInt="3902" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="KNOCK_HANDLER" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:20:50.0357867Z" IdentificationStatus="0" Skip="false">
+      <Label>KNOCK_HANDLER</Label>
+      <Comments />
+    </Routine>
+    <Routine BankNum="8" AddressInt="7297" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="Read_AD" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:22:39.5373969Z" IdentificationStatus="0" Skip="false">
+      <Label>Read_AD</Label>
+      <Comments />
+    </Routine>
+    <Routine BankNum="8" AddressInt="10437" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="Calc_FFact" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:22:42.174249Z" IdentificationStatus="0" Skip="false">
+      <Label>Calc_FFact</Label>
+      <Comments />
+    </Routine>
+    <Routine BankNum="8" AddressInt="10569" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="TabCore" OutputComments="false" DateCreated="2024-12-29T21:21:06.5968696Z" DateUpdated="2024-12-29T21:21:06.5968701Z" IdentificationStatus="0" Skip="false">
+      <Label>Table Reader Core</Label>
+      <Comments />
+    </Routine>
+    <Routine BankNum="8" AddressInt="11961" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="FRACTIONAL_TO_RATIO_CALC" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:21:12.7046927Z" IdentificationStatus="0" Skip="false">
+      <Label>FRACTIONAL_TO_RATIO_CALC</Label>
+      <Comments />
+    </Routine>
+    <Routine BankNum="8" AddressInt="14920" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="Update_fpump" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:23:03.0940718Z" IdentificationStatus="0" Skip="false">
+      <Label>Update_fpump</Label>
+      <Comments />
+    </Routine>
+    <Routine BankNum="8" AddressInt="15575" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="SCALE_R3C" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:21:17.0847584Z" IdentificationStatus="0" Skip="false">
+      <Label>SCALE_R3C</Label>
+      <Comments />
+    </Routine>
+    <Routine BankNum="8" AddressInt="20209" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="GET_DIAGNOSTIC_VALUES" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:21:27.4233069Z" IdentificationStatus="0" Skip="false">
+      <Label>GET_DIAGNOSTIC_VALUES</Label>
+      <Comments />
+    </Routine>
+    <Routine BankNum="8" AddressInt="20246" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="SAVE_DIAGNOSTIC_VALUES" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:21:30.9038402Z" IdentificationStatus="0" Skip="false">
+      <Label>SAVE_DIAGNOSTIC_VALUES</Label>
+      <Comments />
+    </Routine>
+    <Routine BankNum="8" AddressInt="22725" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="SET_STO" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:21:33.6138748Z" IdentificationStatus="0" Skip="false">
+      <Label>SET_STO</Label>
+      <Comments />
+    </Routine>
+    <Routine BankNum="8" AddressInt="22743" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="GET_BYTES_R1A" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:21:36.4669728Z" IdentificationStatus="0" Skip="false">
+      <Label>GET_BYTES_R1A</Label>
+      <Comments />
+    </Routine>
+    <Routine BankNum="8" AddressInt="23575" ByteArgumentsNum="5" ByteArgumentsNumOverride="false" ShortLabel="Test_IO" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:23:22.2974255Z" IdentificationStatus="0" Skip="false">
+      <Label>Test_IO</Label>
+      <Comments />
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra002" Position="2" Encryption="1" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra003" Position="3" Encryption="1" Word="false" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Routine>
+    <Routine BankNum="8" AddressInt="23971" ByteArgumentsNum="8" ByteArgumentsNumOverride="true" ShortLabel="CHECK_RANGE_TROUBLE_CODE" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:21:42.7232583Z" IdentificationStatus="0" Skip="false">
+      <Label>CHECK_RANGE_TROUBLE_CODE</Label>
+      <Comments />
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra002" Position="2" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra003" Position="3" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra004" Position="4" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Routine>
+    <Routine BankNum="8" AddressInt="24502" ByteArgumentsNum="2" ByteArgumentsNumOverride="false" ShortLabel="GET_WORD" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:21:46.4464234Z" IdentificationStatus="0" Skip="false">
+      <Label>GET_WORD</Label>
+      <Comments />
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Routine>
+    <Routine BankNum="8" AddressInt="25335" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="HW_CHECK" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:21:50.8647495Z" IdentificationStatus="0" Skip="false">
+      <Label>HW_CHECK</Label>
+      <Comments />
+    </Routine>
+    <Routine BankNum="8" AddressInt="25613" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="TEST_RAM" OutputComments="false" DateCreated="2024-12-29T21:21:55.0452188Z" DateUpdated="2024-12-29T21:21:55.0452191Z" IdentificationStatus="0" Skip="false">
+      <Label>TEST_RAM</Label>
+      <Comments />
+    </Routine>
+    <Routine BankNum="8" AddressInt="27979" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="Update_fpump" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:24:03.831811Z" IdentificationStatus="0" Skip="false">
+      <Label>Update_fpump</Label>
+      <Comments />
+    </Routine>
+    <Routine BankNum="8" AddressInt="34247" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="SET_IGNITION_TIMERS" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-12-29T21:22:02.3190851Z" IdentificationStatus="0" Skip="false">
+      <Label>SET_IGNITION_TIMERS</Label>
+      <Comments />
+    </Routine>
+  </Routines>
+  <Operations />
+  <Registers />
+  <OtherAddresses />
+  <Signatures>
+    <Signature UniqueKey="CHT_CLIPW_8065_02" Skip="false" Forced="true" ShortLabel="CHT_CLIPW" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+89,..,..,..
+da,06
+a1,..,..,..
+20,0a
+89,00,ff,..
+d6,04
+a1,..,..,..
+f3
+f0</Signature>
+      <Label>CHT Clip W</Label>
+      <Comments>CHT_CLIPW - CHT Clip W</Comments>
+      <SignatureLabel>CHT ClipW 8065 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="CORE_REG_INIT_8065_01" Skip="false" Forced="true" ShortLabel="CORE_REG_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+a1,#01#,#02#,24
+46,25,00,26
+df,2c
+a2,25,2a
+30,26,03
+c6,27,00
+41,fe,ff,2a,28
+88,20,26
+d7,04
+a1,..,..,26
+88,28,26
+db,07
+17,05
+c2,27,00
+27,eb
+30,2a,04
+c7,2a,ff,00
+27,ce
+a1,#03#,#04#,26
+b2,27,29
+99,ff,29
+df,13
+b2,27,2a
+17,05
+b2,27,28
+b2,27,2b
+c6,28,2b
+e0,2a,f4
+27,e5
+f3
+f0</Signature>
+      <Label>Core Registers Initialization</Label>
+      <Comments>CORE_REG_INIT - Core Registers Initialization</Comments>
+      <SignatureLabel>Core Registers Initialization (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_Registers</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures processing.
+Specific to some strategies which use it for constant registers.</SignatureComments>
+      <InternalStructures>
+        <InternalStructure UniqueKey="Sa002" VariableBankNum="1" VariableAddress="#02##01#" Number="0" ShortLabel="CORE_REG_INIT_ST1" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+          <StructDef>"Reg ", WordHex, "Reg ", WordHex</StructDef>
+          <Label>Core Registers Initialization Structure 1</Label>
+          <Comments>CORE_REG_INIT_ST1 - Core Registers Initialization Structure 1</Comments>
+        </InternalStructure>
+        <InternalStructure UniqueKey="Sa003" VariableBankNum="1" VariableAddress="#04##03#" Number="0" ShortLabel="CORE_REG_INIT_ST2" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+          <StructDef>"Reg ", WordHex, "Reg ", WordHex</StructDef>
+          <Label>Core Registers Initialization Structure 2</Label>
+          <Comments>CORE_REG_INIT_ST2 - Core Registers Initialization Structure 2</Comments>
+        </InternalStructure>
+      </InternalStructures>
+    </Signature>
+    <Signature UniqueKey="ECT_CLIP_8065_01" Skip="false" Forced="true" ShortLabel="ECT_CLIP" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+89,..,..,..
+d6,05
+b1,..,..
+20,09
+89,..,..,..
+da,03
+b1,..,..
+f3
+f0</Signature>
+      <Label>ECT Clip</Label>
+      <Comments>ECT_CLIP - ECT Clip</Comments>
+      <SignatureLabel>ECT Clip 8065 (01 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="ECT_CLIP_8065_02" Skip="false" Forced="true" ShortLabel="ECT_CLIP" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+89,..,..,..
+da,06
+a1,..,..,..
+20,0b
+89,c1,ff,..
+d6,05
+b1,..,..
+11,..
+f3
+f0</Signature>
+      <Label>ECT Clip</Label>
+      <Comments>ECT_CLIP - ECT Clip</Comments>
+      <SignatureLabel>ECT Clip 8065 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="ECT_CLIPW_8065_02" Skip="false" Forced="true" ShortLabel="ECT_CLIPW" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+89,..,..,..
+da,06
+a1,..,..,..
+20,0a
+89,c1,ff,..
+d6,04
+a1,..,..,..
+f3
+f0</Signature>
+      <Label>ECT Clip W</Label>
+      <Comments>ECT_CLIPW - ECT Clip W</Comments>
+      <SignatureLabel>ECT ClipW 8065 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="ECT_INIT_8061_01" Skip="false" Forced="true" ShortLabel="ECT_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for806x="for8061Only">
+      <Signature>c7,..,..,..,..
+b0,..,..
+b3,..,..,..
+fe,5c,..,..,..
+13,..
+75,..,..
+fe,7c,..,..
+64,..,..
+c3,..,..,..,..</Signature>
+      <Label>ECT Initialization</Label>
+      <Comments>ECT_INIT - ECT Initialization</Comments>
+      <SignatureLabel>ECT Initialization 8061 (01 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="ECT_INIT_8061_02" Skip="false" Forced="true" ShortLabel="BASE_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for806x="for8061Only">
+      <Signature>ef,..,..
+3d,..,19
+a3,..,..,..
+8b,..,..,..
+d9,0f
+8b,..,..,..
+d3,09
+ef,..,..
+..,..,..,..
+20,16
+3a,..,..
+9b,..,..,..
+df,05
+b0,..,..
+20,08</Signature>
+      <Label>Base Initialization</Label>
+      <Comments>BASE_INIT - Base Initialization</Comments>
+      <SignatureLabel>ECT Initialization 8061 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDI_CNT_3D_01" Skip="false" Forced="true" ShortLabel="OBDI_COUNT_3D" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>fa
+ff
+a2,..,..
+c2,..,00
+fb45,..,..,..,..
+64,..,..
+5e,..,..,..
+ac,..,..
+68,..,..
+db,..</Signature>
+      <Label>OBDI Count 3 Digits</Label>
+      <Comments>OBDI_COUNT_3D - OBDI Count 3 Digits</Comments>
+      <SignatureLabel>OBDI Count 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Second part for OBDI 3 Digits codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDI_COD_2D_01" Skip="false" Forced="true" ShortLabel="OBDI_CODES_2D" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>af,01,..,..,..
+a0,..,..
+08,03,..
+af,..,..,..,..
+3f,..,..
+af,..,..,..,..
+b2,..,..
+a0,..,..
+9d,08,..
+18,..,..</Signature>
+      <Label>OBDI Codes 2 Digits</Label>
+      <Comments>OBDI_CODES_2D - OBDI Codes 2 Digits</Comments>
+      <SignatureLabel>OBDI Codes 2 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+First part for OBDI 2 Digits codes identification. European version.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDI_COD_3D_01" Skip="false" Forced="true" ShortLabel="OBDI_CODES_3D" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>01,..
+89,..,..,..
+db,..
+88,..,00
+d7,..
+a1,12,05,..
+3e,..,..
+a1,11,01,..
+a0,..,..
+08,03,..
+b3,..,..,..,..
+51,07,..,..
+b1,08,..
+78,..,..18,..,..</Signature>
+      <Label>OBDI Codes 3 Digits</Label>
+      <Comments>OBDI_CODES_3D - OBDI Codes 3 Digits</Comments>
+      <SignatureLabel>OBDI Codes 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+First part for OBDI 3 Digits codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDI_MALFUNC" Skip="false" Forced="true" ShortLabel="MALFUNC" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>ef,..,..
+02
+c3,31,..,..,1a
+89,26,00,30
+db,04
+07,30
+07,30
+f0</Signature>
+      <Label>Malfunction Routine</Label>
+      <Comments>MALFUNC - Malfunction Routine
+1st Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDI Malfunction 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDI 3 Digits registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDI_MALFUNC_BT" Skip="false" Forced="true" ShortLabel="MALFUNC_BT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>ef,..,..
+08
+2.,..
+1c,00
+2.,..
+1e,00
+a2,1a,42
+8a,1c,42
+d3,05
+8a,1e,42
+d1,05
+a0,20,1a
+2f,d2
+f0</Signature>
+      <Label>Malfunction Between Routine</Label>
+      <Comments>MALFUNC_BT - Malfunction Between Routine
+1st Param should be between 2nd and 3rd values (scalar or register)
+2nd Param should be the lowest value for comparison (scalar or register)
+3rd Param should be the highest value for comparison (scalar or register)
+4th Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDI Malfunction Between 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDI 3 Digits registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra002" Position="2" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra003" Position="3" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra004" Position="4" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDI_MALFUNC_EX" Skip="false" Forced="true" ShortLabel="MALFUNC_EX" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>ef,..,..
+0a
+ef,..,..
+1c,00
+ef,..,..
+1e,00
+a2,1a,42
+01,1a
+8a,1d,42
+db,0e
+a1,27,03,1a
+8a,1e,42
+d1,17
+a0,20,1a
+20,12</Signature>
+      <Label>Malfunction Extended Routine</Label>
+      <Comments>MALFUNC_EX - Malfunction Extended Routine
+1st Param should be higher than 2nd and 3rd values (scalar or register)
+2nd Param should be the first lowest value for comparison (scalar or register)
+3rd Param should be the second lowest value for comparison (scalar or register)
+4th &amp; 5th Params are OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDI Malfunction Extended 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDI 3 Digits registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra002" Position="2" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra003" Position="3" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra004" Position="4" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra005" Position="5" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDI_MALFUNC_LW" Skip="false" Forced="true" ShortLabel="MALFUNC_LW" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>2d,..
+06
+71,fd,2c
+20,1e
+f8
+20,01
+f9
+cc,18
+b2,19,1a
+b2,19,1b
+b2,19,1c
+b2,19,1d
+d3,05
+c9,..,..
+20,02</Signature>
+      <Label>Malfunction Lower Routine</Label>
+      <Comments>MALFUNC_LW - Malfunction Lower Routine
+1st Param should be lower than 2nd value (scalar or register)
+2nd Param should be higher than 1st value (scalar or register)
+3rd Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDI Malfunction Lower 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDI 3 Digits registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra002" Position="2" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra003" Position="3" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDI_MALFUNC_SB" Skip="false" Forced="true" ShortLabel="MALFUNC_SB" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>c3,31,..,..,1a
+89,26,00,30
+db,04
+07,30
+07,30
+f0</Signature>
+      <Label>Malfunction Sub Routine</Label>
+      <Comments>MALFUNC_SB - Malfunction Sub Routine
+Used to push an OBD Error Code into a rolling error register.</Comments>
+      <SignatureLabel>OBDI Malfunction Sub 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3>Registers_Args</SignatureCategory3>
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDI 3 Digits registers identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDI_TIM_2D_01" Skip="false" Forced="true" ShortLabel="OBDI_TIMINGS_2D" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>ac,..,..
+64,..,..
+38,..,..
+3a,..,..
+4f,..,..,..,..,..
+0d,..,..
+20,..
+4f,..,..,..,..,..
+0d,06,..
+20,..
+4f,..,..,..,..,..</Signature>
+      <Label>OBDI Timings 2 Digits</Label>
+      <Comments>OBDI_TIMINGS_3D - OBDI Timings 2 Digits</Comments>
+      <SignatureLabel>OBDI Timings 2 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Second part for OBDI 2 Digits codes identification. European version.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_CLEAR_MALF_01" Skip="false" Forced="true" ShortLabel="CLEAR_MALF" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>f2
+2.,..
+00
+f2
+a2,2a,3e
+37,3e,06
+71,7f,3e
+c2,2a,3e
+f3
+f0</Signature>
+      <Label>Clear Malfunction Routine</Label>
+      <Comments>CLEAR_MALF - Clear Malfunction Routine
+1st Param is OBD Error Code to be deleted.</Comments>
+      <SignatureLabel>OBDII Clear Malfunction (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDII registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDII_CLEAR_MALF_02" Skip="false" Forced="true" ShortLabel="CLEAR_MALF" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>f2
+2.,..
+2.,..
+28,0d
+2.,..
+f3
+f0
+f2
+2.,..
+28,04
+2.,..
+f3
+f0
+a2,2a,3e
+37,3e,06
+71,7f,3e
+c2,2a,3e
+f0
+</Signature>
+      <Label>Clear Malfunction Routine</Label>
+      <Comments>CLEAR_MALF - Clear Malfunction Routine
+1st Param is OBD Error Code to be deleted.</Comments>
+      <SignatureLabel>OBDII Clear Malfunction (02 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDII registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDII_MALFUNCTION_01" Skip="false" Forced="true" ShortLabel="MALFUNCTION" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>f2
+2f,de
+00
+f2
+a2,2a,3e
+28,05
+c2,2a,3e
+f3
+f0
+f2
+</Signature>
+      <Label>Malfunction Routine</Label>
+      <Comments>MALFUNCTION - Malfunction Routine
+1st Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDII Malfunction (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDII registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDII_MALFUNCTION_02" Skip="false" Forced="true" ShortLabel="MALFUNCTION" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>f2
+2.,..
+2.,..
+20,03
+f2
+2.,..
+b3,..,..,..,3e
+3.,3e,02
+20,26
+49,..,..,2a,3e
+45,..,..,3e,26
+a2,26,26
+b2,26,26
+99,02,26
+df,0f
+99,01,26
+d7,0c
+a2,2a,3e
+2.,..
+c2,2a,3e
+20,02
+28,04
+2f,..
+f3
+f0
+</Signature>
+      <Label>Malfunction Routine</Label>
+      <Comments>MALFUNCTION - Malfunction Routine
+1st Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDII Malfunction (02 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDII registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDII_MALFUNCTION_02_01" Skip="false" Forced="true" ShortLabel="MALFUNCTION" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>f2
+2.,..
+2.,..
+20,03
+f2
+2.,..
+b0,..,3e
+3.,3e,02
+20,26
+49,..,..,2a,3e
+45,..,..,3e,26
+a2,26,26
+b2,26,26
+99,02,26
+df,0f
+99,01,26
+d7,0c
+a2,2a,3e
+2.,..
+c2,2a,3e
+20,02
+28,04
+2f,..
+f3
+f0
+</Signature>
+      <Label>Malfunction Routine</Label>
+      <Comments>MALFUNCTION - Malfunction Routine
+1st Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDII Malfunction (02bis forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDII registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_FLAGS_02" Skip="false" Forced="true" ShortLabel="OBDII_REG_FLAGS" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>49,..,..,..,..
+08,01,..
+65,..,..,..
+b2,..,..
+99,..,..
+d7,..
+b3,01,..,..,..
+91,..,..
+c7,01,..,..,..
+20,..</Signature>
+      <Label>OBDII Registers Flags</Label>
+      <Comments>OBDII_REG_FLAGS - OBDII Registers Flags</Comments>
+      <SignatureLabel>OBDII Registers Flags Signature (02 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Third part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_FLAGS_02_01" Skip="false" Forced="true" ShortLabel="OBDII_REG_FLAGS" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>49,..,..,..,..
+08,01,..
+65,..,..,..
+99,..,..
+d7,..
+b3,01,..,..,..
+91,..,..
+c7,01,..,..,..
+20,..</Signature>
+      <Label>OBDII Registers Flags</Label>
+      <Comments>OBDII_REG_FLAGS - OBDII Registers Flags</Comments>
+      <SignatureLabel>OBDII Registers Flags Signature (02bis forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Third part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_INIT_01" Skip="false" Forced="true" ShortLabel="OBDII_REG_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>c7,..,..,00
+71,..,..
+c3,..,..,00
+a1,..,..,..
+89,..,..,..
+db,..</Signature>
+      <Label>OBDII Registers Initialization</Label>
+      <Comments>OBDII_REG_INIT - OBDII Registers Initialization</Comments>
+      <SignatureLabel>OBDII Registers Initialization (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+First part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_INIT_01_01" Skip="false" Forced="true" ShortLabel="OBDII_REG_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>c7,..,..,..,00
+71,..,..
+c3,..,..,..,00
+a1,..,..,..
+89,..,..,..
+db,..</Signature>
+      <Label>OBDII Registers Initialization</Label>
+      <Comments>OBDII_REG_INIT - OBDII Registers Initialization</Comments>
+      <SignatureLabel>OBDII Registers Initialization (01bis Forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+First part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_INIT_02" Skip="false" Forced="true" ShortLabel="OBDII_REG_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>f2
+b3,01,..,..,..
+71,7f,..
+c7,01,..,..,..
+c3,01,..,..,00
+c3,01,..,..,00
+c7,01,..,..,00
+b3,01,..,..,..
+71,..,..
+c7,01,..,..,..
+b3,01,..,..,..
+71,..,..
+c7,01,..,..,..
+*
+11,3e
+b1,28,3f
+a1,..,..,2a</Signature>
+      <Label>OBDII Registers Initialization</Label>
+      <Comments>OBDII_REG_INIT - OBDII Registers Initialization</Comments>
+      <SignatureLabel>OBDII Registers Initialization (02 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+First part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_RESET_01" Skip="false" Forced="true" ShortLabel="OBDII_REG_RESET" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>a2,..,..
+3f,..,..
+91,..,..
+c2,..,..
+49,..,..,..,..
+65,..,..,..
+a2,..,..
+99,..,..
+d7,..
+8b,..,..,..
+d7,..
+8b,..,..,..</Signature>
+      <Label>OBDII Registers Reset</Label>
+      <Comments>OBDII_REG_RESET - OBDII Registers Reset</Comments>
+      <SignatureLabel>OBDII Registers Reset Signature (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Second part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_RESET_01_01" Skip="false" Forced="true" ShortLabel="OBDII_REG_RESET" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>b1,..,..
+49,..,..,..,..
+65,..,..,..
+a2,..,..
+c6,..,..
+c6,..,..
+79,..,..
+df,..
+88,..,..
+d9,..
+c6,..,00</Signature>
+      <Label>OBDII Registers Reset</Label>
+      <Comments>OBDII_REG_RESET - OBDII Registers Reset</Comments>
+      <SignatureLabel>OBDII Registers Reset Signature (01bis forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Second part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_RESET_02" Skip="false" Forced="true" ShortLabel="OBDII_REG_RESET" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0">
+      <Signature>f2
+28,..
+49,..,..,..,..
+65,..,..,..
+a2,..,..
+b2,..,..
+99,..,..
+d7,..
+a2,..,..
+ef,..,..</Signature>
+      <Label>OBDII Registers Reset</Label>
+      <Comments>OBDII_REG_RESET - OBDII Registers Reset</Comments>
+      <SignatureLabel>OBDII Registers Reset Signature (02 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Second part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8061_01" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for806x="for8061Only">
+      <Signature>01,..
+37,..,..
+3a,..,..
+20,..
+71,..,..
+a1,..,..,..
+01,..
+8f,..,..,..
+09,..,..
+a3,..,..,..,..
+89,..,..,..
+db,..</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8061 (01 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8061</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8061_02" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for806x="for8061Only">
+      <Signature>a3,..,..,..
+89,..,..,..
+d3,..
+fa
+b1,01,32
+c7,..,..,32
+c7,..,..,32
+71,..,..
+71,..,..
+71,..,..
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8061 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8061</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8065_01" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+b0,..,..
+a3,..,..,..,..
+89,..,..,..
+d3,..
+91,..,..
+fa
+71,..,..
+71,..,..
+71,..,..
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8065 (01 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8065_01_01" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+b0,..,..
+a3,..,..,..,..
+89,..,..,..
+d3,..
+91,..,..
+fa
+71,..,..
+71,..,..
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8065 (01bis forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8065_02" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+b0,..,..
+a3,..,..,..,..
+89,..,..,..
+db,..
+99,..,..
+df,..
+48,..,..,..
+89,..,..,..
+d1,..
+91,..,..
+fa
+71,..,..
+71,..,..
+*
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8065 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8065_03" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+b3,..,..,..
+a3,..,..,..
+89,..,..,..
+db,..
+99,..,..
+df,..
+48,..,..,..
+89,..,..,..
+d1,..
+91,..,..
+fa
+71,..,..
+71,..,..
+*
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8065 (03 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8065_03_01" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+b3,..,..,..
+a3,..,..,..,..
+89,..,..,..
+d3,..
+91,..,..
+fa
+71,..,..
+71,..,..
+*
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8065 (03bis forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+  </Signatures>
+  <ElementsSignatures>
+    <ElementSignature UniqueKey="FN036_61" Skip="false" Forced="true" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for8061="true" forBankNum="">
+      <Signature>#EAOP#
+A3,..,..,..
+88,..,..
+D9,12
+45,78,00,..,..
+88,..,..
+D3,08
+94,..,..
+71,03,..
+DF,04
+C3,..,..,..
+71,..,..
+F0</Signature>
+      <SignatureLabel>MAF Transfer 8061</SignatureLabel>
+      <SignatureCategory>FN036</SignatureCategory>
+      <SignatureCategory2>8061</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>MAF Transfer Signature for 8061</SignatureComments>
+      <SignatureOpeIncludingElemAddress>#EAOP#</SignatureOpeIncludingElemAddress>
+      <Function ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="0" ShortLabel="FN036" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+        <Label>MAF Transfer</Label>
+        <Comments />
+        <InputScaleExpression>X</InputScaleExpression>
+        <OutputScaleExpression>X</OutputScaleExpression>
+      </Function>
+    </ElementSignature>
+    <ElementSignature UniqueKey="FN036_65_01" Skip="false" Forced="true" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for8061="false" forBankNum="">
+      <Signature>#EAOP#
+A3,..,..,..
+88,..,..
+D9,12
+45,78,00,..,..
+88,..,..
+D3,08
+94,..,..
+71,03,..
+DF,04
+C3,..,..,..
+71,..,..
+F0</Signature>
+      <SignatureLabel>MAF Transfer 8065 01</SignatureLabel>
+      <SignatureCategory>FN036</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>MAF Transfer Signature for 8065 01</SignatureComments>
+      <SignatureOpeIncludingElemAddress>#EAOP#</SignatureOpeIncludingElemAddress>
+      <Function ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="0" ShortLabel="FN036" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+        <Label>MAF Transfer</Label>
+        <Comments />
+        <InputScaleExpression>X</InputScaleExpression>
+        <OutputScaleExpression>X</OutputScaleExpression>
+      </Function>
+    </ElementSignature>
+    <ElementSignature UniqueKey="FN036_65_02" Skip="false" Forced="true" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for8061="false" forBankNum="">
+      <Signature>#EAOP#
+A3,..,..,..,..
+88,..,..
+D9,14
+45,78,00,..,..
+8B,..,..,..,..
+D3,08
+94,..,..
+71,03,..
+DF,05
+C3,..,..,..,..
+71,..,..
+F0</Signature>
+      <SignatureLabel>MAF Transfer 8065 02</SignatureLabel>
+      <SignatureCategory>FN036</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>MAF Transfer Signature for 8065 02</SignatureComments>
+      <SignatureOpeIncludingElemAddress>#EAOP#</SignatureOpeIncludingElemAddress>
+      <Function ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="0" ShortLabel="FN036" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+        <Label>MAF Transfer</Label>
+        <Comments />
+        <InputScaleExpression>X</InputScaleExpression>
+        <OutputScaleExpression>X</OutputScaleExpression>
+      </Function>
+    </ElementSignature>
+    <ElementSignature UniqueKey="FN036_65_03" Skip="false" Forced="true" DateCreated="2024-12-29T21:19:55.4874531Z" DateUpdated="2024-12-29T21:19:55.4874535Z" IdentificationStatus="0" for8061="false" forBankNum="">
+      <Signature>#EAOP#
+A3,..,..,..
+88,..,..
+D9,13
+45,78,00,..,..
+8B,..,..,..
+D3,08
+94,..,..
+71,03,..
+DF,04
+C3,..,..,..
+F0</Signature>
+      <SignatureLabel>MAF Transfer 8065 03</SignatureLabel>
+      <SignatureCategory>FN036</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>MAF Transfer Signature for 8065 03</SignatureComments>
+      <SignatureOpeIncludingElemAddress>#EAOP#</SignatureOpeIncludingElemAddress>
+      <Function ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="0" ShortLabel="FN036" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+        <Label>MAF Transfer</Label>
+        <Comments />
+        <InputScaleExpression>X</InputScaleExpression>
+        <OutputScaleExpression>X</OutputScaleExpression>
+      </Function>
+    </ElementSignature>
+  </ElementsSignatures>
+  <DupTables />
+  <DupFunctions />
+  <DupScalars />
+  <DupStructures />
+</S6x>
