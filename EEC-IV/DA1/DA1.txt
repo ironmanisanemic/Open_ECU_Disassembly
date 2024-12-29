@@ -32,9 +32,9 @@
 ║                   R0c       HSI_TIME_HI                   R14       HSO_IPEND2                                       ║
 ║                   R24       REG_24                        R25       FLAGS_25                                         ║
 ║                   R27       FLAGS_27                      R28       FLAGS_28                                         ║
-║                   R29       FLAGS_29                      R2a       REG_2A                                           ║
+║                   R29       FLAGS_29                      R2a       FLAGS_2A                                         ║
 ║                   R2b       FLAGS_2B                      R2c       FLAGS_2C                                         ║
-║                   R2d       WIG_FLAG                      R2e       FLAGS_2E                                         ║
+║                   R2d       FLAGS_2D                      R2e       FLAGS_2E                                         ║
 ║                   R2f       FLAGS_2F                      R3a       GENERAL_3A                                       ║
 ║                   R3b       GENERAL_3B                    R3c       FLAGS_3C                                         ║
 ║                   R3e       FLAGS_3E                      R46       FLAGS_46                                         ║
@@ -342,7 +342,7 @@ Sub0005:
 8 22c7: f0                   ret                      return;              
 
 INIT:
-8 22c8: 11,2a                clrb  R2a                [REG_2A] = 0;        
+8 22c8: 11,2a                clrb  R2a                [FLAGS_2A] = 0;      
 8 22ca: a1,9a,03,10          ldw   R10,39a            STACK = 39a;         
 8 22ce: 2d,d2                scall 20a2               RESET_ALL();         
 
@@ -5439,7 +5439,7 @@ UPDATE_SPARK:
 8 5c98: a3,01,18,03,34       ldw   R34,[318]          R34 = [RPM_FILTER_2];
 8 5c9d: ef,ae,d9             call  364e               UUWordLU();          
 8 5ca0: 68,38,42             sb2w  R42,R38            R42 -= R38;          
-8 5ca3: 33,2d,0f             jnb   B3,R2d,5cb5        if (!B3_[WIG_FLAG]) goto 5cb5;
+8 5ca3: 33,2d,0f             jnb   B3,R2d,5cb5        if (!B3_[FLAGS_2D]) goto 5cb5;
 8 5ca6: 37,2f,0c             jnb   B7,R2f,5cb5        if (!B7_[FLAGS_2F]) goto 5cb5;
 8 5ca9: 8b,f3,ec,03,42       cmpw  R42,[Rf2+3ec]                           
 8 5cae: da,05                jle   5cb5               if ((sig) R42 <= [Sc0203]) goto 5cb5;
@@ -7510,7 +7510,7 @@ Sub0120:
 8 74dc: 9b,f7,02,01,00       cmpb  0,[Rf6+102]                             
 8 74e1: df,06                je    74e9               if (0 == [KNOCK_SENSOR_PRESENT]) goto 74e9;
 8 74e3: 91,08,4f             orrb  R4f,8              [FLAGS_4F] |= 8;     
-8 74e6: 91,01,2d             orrb  R2d,1              [WIG_FLAG] |= 1;     
+8 74e6: 91,01,2d             orrb  R2d,1              <WIG_FLAG> = 1;      
 8 74e9: f0                   ret                      return;              
 
 Sub0121:
@@ -7676,7 +7676,7 @@ UPDATE_KNOCK_RETARD:
 
 DO_SELF_TEST:
 8 76b9: 29,de                scall 7899               SET_EGR_FLAGS();     
-8 76bb: 71,f7,2d             an2b  R2d,f7             [WIG_FLAG] &= f7;    
+8 76bb: 71,f7,2d             an2b  R2d,f7             [FLAGS_2D] &= f7;    
 8 76be: 3a,2a,0c             jb    B2,R2a,76cd        if (<VIP_ENABLE> == 1) goto 76cd;
 8 76c1: a3,7a,b0,42          ldw   R42,[R7a+b0]       R42 = [R7a+ECT];     
 8 76c5: 99,10,43             cmpb  R43,10                                  
@@ -7710,14 +7710,14 @@ DO_SELF_TEST:
 8 770f: a3,7a,b0,42          ldw   R42,[R7a+b0]       R42 = [R7a+ECT];     
 8 7713: 99,18,43             cmpb  R43,18                                  
 8 7716: d3,1f                jnc   7737               if ((uns) R43 < 18) goto 7737;
-8 7718: 3b,2a,19             jb    B3,R2a,7734        if (B3_[REG_2A]) goto 7734;
+8 7718: 3b,2a,19             jb    B3,R2a,7734        if (B3_[FLAGS_2A]) goto 7734;
 8 771b: 91,20,2a             orrb  R2a,20             <SELF_TEST> = 1;     
 8 771e: 28,18                scall 7738               Sub0127();           
 8 7720: cb,3b,2c,79          push  [R3a+792c]         push([R3a+VecLst8_016]);
 8 7724: f0                   ret                      return;              
 
 8 7725: 37,2a,0f             jnb   B7,R2a,7737        if (<STI_FLAG> == 0) goto 7737;
-8 7728: 3c,2a,09             jb    B4,R2a,7734        if (B4_[REG_2A]) goto 7734;
+8 7728: 3c,2a,09             jb    B4,R2a,7734        if (B4_[FLAGS_2A]) goto 7734;
 8 772b: 28,0b                scall 7738               Sub0127();           
 8 772d: cb,3b,1a,79          push  [R3a+791a]         push([R3a+VecLst8_015]);
 8 7731: f0                   ret                      return;              
@@ -7725,7 +7725,7 @@ DO_SELF_TEST:
 Sub0126:
 8 7732: 21,40                sjmp  7874               goto 7874;           
 
-8 7734: 91,08,2d             orrb  R2d,8              [WIG_FLAG] |= 8;     
+8 7734: 91,08,2d             orrb  R2d,8              [FLAGS_2D] |= 8;     
 8 7737: f0                   ret                      return;              
 
 Sub0127:
@@ -7889,7 +7889,7 @@ VecLst8_016 - Vectors List 8 016:
 
 CHECK_SENSORS:
 8 7970: 2f,27                scall 7899               SET_EGR_FLAGS();     
-8 7972: 3b,2d,07             jb    B3,R2d,797c        if (B3_[WIG_FLAG]) goto 797c;
+8 7972: 3b,2d,07             jb    B3,R2d,797c        if (B3_[FLAGS_2D]) goto 797c;
 8 7975: 37,2c,04             jnb   B7,R2c,797c        if (<CRANKING> == 0) goto 797c;
 8 7978: e7,9e,02             jump  7c19               goto Sub0137;        
 
@@ -7951,9 +7951,9 @@ CHECK_SENSORS:
 8 7a0b: 35                                            #args                
 8 7a0c: 29,34                scall 7b42               UPDATE_TROUBLE_CODE([832],6);
 8 7a0e: 32,08,06                                      #args                
-8 7a11: 33,2d,08             jnb   B3,R2d,7a1c        if (!B3_[WIG_FLAG]) goto 7a1c;
-8 7a14: 71,bf,2d             an2b  R2d,bf             [WIG_FLAG] &= bf;    
-8 7a17: 71,7f,2d             an2b  R2d,7f             [WIG_FLAG] &= 7f;    
+8 7a11: 33,2d,08             jnb   B3,R2d,7a1c        if (!B3_[FLAGS_2D]) goto 7a1c;
+8 7a14: 71,bf,2d             an2b  R2d,bf             [FLAGS_2D] &= bf;    
+8 7a17: 71,7f,2d             an2b  R2d,7f             [FLAGS_2D] &= 7f;    
 8 7a1a: 20,72                sjmp  7a8e               goto 7a8e;           
 
 8 7a1c: 2a,1e                scall 7c3c               Sub0140(32);         
@@ -7963,10 +7963,10 @@ CHECK_SENSORS:
 8 7a24: 3c,40,ed             jb    B4,R40,7a14        if (B4_R40) goto 7a14;
 8 7a27: 98,00,d1             cmpb  Rd1,0                                   
 8 7a2a: d7,2a                jne   7a56               if (Rd1 != 0) goto 7a56;
-8 7a2c: 71,7f,2d             an2b  R2d,7f             [WIG_FLAG] &= 7f;    
-8 7a2f: 3e,2d,08             jb    B6,R2d,7a3a        if (B6_[WIG_FLAG]) goto 7a3a;
+8 7a2c: 71,7f,2d             an2b  R2d,7f             [FLAGS_2D] &= 7f;    
+8 7a2f: 3e,2d,08             jb    B6,R2d,7a3a        if (B6_[FLAGS_2D]) goto 7a3a;
 8 7a32: c7,7b,d1,00,00       stb   [R7a+d1],0         [R7a+d1] = 0;        
-8 7a37: 91,40,2d             orrb  R2d,40             [WIG_FLAG] |= 40;    
+8 7a37: 91,40,2d             orrb  R2d,40             [FLAGS_2D] |= 40;    
 8 7a3a: ef,59,03             call  7d96               COMPARE([EVP_RAW],[93ce]);
 8 7a3d: 18,01,ce,93                                   #args                
 8 7a41: 36,e7,0b             jnb   B6,Re7,7a4f        if (!B6_Re7) goto 7a4f;
@@ -7977,7 +7977,7 @@ CHECK_SENSORS:
 8 7a51: 02,10,05                                      #args                
 8 7a54: 20,38                sjmp  7a8e               goto 7a8e;           
 
-8 7a56: 71,bf,2d             an2b  R2d,bf             [WIG_FLAG] &= bf;    
+8 7a56: 71,bf,2d             an2b  R2d,bf             [FLAGS_2D] &= bf;    
 8 7a59: 9b,7c,2b,d1          cmpb  Rd1,[R7c+2b]                            
 8 7a5d: de,b5                jlt   7a14               if ((sig) Rd1 < [R7c+FLAGS_2B]) goto 7a14;
 8 7a5f: b3,7a,b2,42          ldb   R42,[R7a+b2]       R42 = [R7a+LOAD];    
@@ -7985,15 +7985,15 @@ CHECK_SENSORS:
 8 7a66: db,ac                jc    7a14               if (R42 >= 0) goto 7a14;
 8 7a68: 9b,7c,27,42          cmpb  R42,[R7c+27]                            
 8 7a6c: d1,a6                jleu  7a14               if ((uns) R42 <= [R7c+FLAGS_27]) goto 7a14;
-8 7a6e: 3f,2d,08             jb    B7,R2d,7a79        if (B7_[WIG_FLAG]) goto 7a79;
-8 7a71: 91,80,2d             orrb  R2d,80             [WIG_FLAG] |= 80;    
+8 7a6e: 3f,2d,08             jb    B7,R2d,7a79        if (B7_[FLAGS_2D]) goto 7a79;
+8 7a71: 91,80,2d             orrb  R2d,80             [FLAGS_2D] |= 80;    
 8 7a74: c7,7b,d1,00,00       stb   [R7a+d1],0         [R7a+d1] = 0;        
 8 7a79: ef,1a,03             call  7d96               COMPARE([93d2],[EVP_RAW]);
 8 7a7c: d2,93,18,01                                   #args                
 8 7a80: 36,e7,0b             jnb   B6,Re7,7a8e        if (!B6_Re7) goto 7a8e;
 8 7a83: b3,7b,d1,00,18       ldb   R18,[R7a+d1]       R18 = [R7a+d1];      
 8 7a88: 9b,7c,2a,18          cmpb  R18,[R7c+2a]                            
-8 7a8c: d3,05                jnc   7a93               if ((uns) R18 < [R7c+REG_2A]) goto 7a93;
+8 7a8c: d3,05                jnc   7a93               if ((uns) R18 < [R7c+FLAGS_2A]) goto 7a93;
 8 7a8e: 28,b2                scall 7b42               UPDATE_TROUBLE_CODE([2002],4);
 8 7a90: 02,20,04                                      #args                
 8 7a93: 8b,7c,fa,ae          cmpw  Rae,[R7c+fa]                            
@@ -8028,14 +8028,14 @@ CHECK_SENSORS:
 8 7ae5: c0,10                                         #args                
 8 7ae7: 31,ef,03             jnb   B1,Ref,7aed        if (!B1_[FLAGS_EF]) goto 7aed;
 8 7aea: 91,10,2e             orrb  R2e,10             [FLAGS_2E] |= 10;    
-8 7aed: 33,2d,0a             jnb   B3,R2d,7afa        if (!B3_[WIG_FLAG]) goto 7afa;
+8 7aed: 33,2d,0a             jnb   B3,R2d,7afa        if (!B3_[FLAGS_2D]) goto 7afa;
 8 7af0: 37,d6,07             jnb   B7,Rd6,7afa        if (<THRESHOLD_LEVEL> == 0) goto 7afa;
 8 7af3: 29,1c                scall 7c11               Sub0136();           
 8 7af5: 91,80,2f             orrb  R2f,80             [FLAGS_2F] |= 80;    
 8 7af8: 20,08                sjmp  7b02               goto 7b02;           
 
 8 7afa: 71,7f,2f             an2b  R2f,7f             [FLAGS_2F] &= 7f;    
-8 7afd: 34,2d,02             jnb   B4,R2d,7b02        if (!B4_[WIG_FLAG]) goto 7b02;
+8 7afd: 34,2d,02             jnb   B4,R2d,7b02        if (!B4_[FLAGS_2D]) goto 7b02;
 8 7b00: 29,17                scall 7c19               Sub0137();           
 8 7b02: 39,25,3c             jb    B1,R25,7b41        if (B1_[FLAGS_25]) goto 7b41;
 8 7b05: 3f,2c,39             jb    B7,R2c,7b41        if (<CRANKING> == 1) goto 7b41;
@@ -8067,7 +8067,7 @@ UPDATE_TROUBLE_CODE:
 8 7b52: 44,f2,14,42          ad3w  R42,R14,Rf2        R42 = [HSO_IPEND2] + Rf2;
 8 7b56: 65,06,04,42          ad2w  R42,406            R42 += 406;          
 8 7b5a: b2,42,42             ldb   R42,[R42]          R42 = [R42];         
-8 7b5d: 33,2d,0e             jnb   B3,R2d,7b6e        if (!B3_[WIG_FLAG]) goto 7b6e;
+8 7b5d: 33,2d,0e             jnb   B3,R2d,7b6e        if (!B3_[FLAGS_2D]) goto 7b6e;
 8 7b60: b3,7c,f0,3a          ldb   R3a,[R7c+f0]       [GENERAL_3A] = [R7c+f0];
 8 7b64: 98,42,00             cmpb  0,R42                                   
 8 7b67: df,10                je    7b79               if (0 == R42) goto 7b79;
@@ -8137,12 +8137,12 @@ CLEAR_KAM:
 
 Sub0136:
 8 7c11: 91,80,d4             orrb  Rd4,80             [FLAGS_D4] |= 80;    
-8 7c14: 91,10,2d             orrb  R2d,10             [WIG_FLAG] |= 10;    
+8 7c14: 91,10,2d             orrb  R2d,10             [FLAGS_2D] |= 10;    
 8 7c17: 20,06                sjmp  7c1f               goto 7c1f;           
 
 Sub0137:
 8 7c19: 91,40,d4             orrb  Rd4,40             [FLAGS_D4] |= 40;    
-8 7c1c: 71,ef,2d             an2b  R2d,ef             [WIG_FLAG] &= ef;    
+8 7c1c: 71,ef,2d             an2b  R2d,ef             [FLAGS_2D] &= ef;    
 8 7c1f: 91,20,4a             orrb  R4a,20             <STO_TRIGGER> = 1;   
 8 7c22: f0                   ret                      return;              
 
@@ -8181,11 +8181,11 @@ Sub0141:
 8 7c5b: f0                   ret                      return;              
 
 Sub0142:
-8 7c5c: 3d,2d,2a             jb    B5,R2d,7c89        if (B5_[WIG_FLAG]) goto 7c89;
+8 7c5c: 3d,2d,2a             jb    B5,R2d,7c89        if (B5_[FLAGS_2D]) goto 7c89;
 8 7c5f: ef,b7,ff             call  7c19               Sub0137();           
 8 7c62: ef,57,08             call  84bc               Sub0173();           
 8 7c65: ef,e2,fb             call  784a               Sub0131();           
-8 7c68: 34,2a,05             jnb   B4,R2a,7c70        if (!B4_[REG_2A]) goto 7c70;
+8 7c68: 34,2a,05             jnb   B4,R2a,7c70        if (!B4_[FLAGS_2A]) goto 7c70;
 8 7c6b: ef,a3,ff             call  7c11               Sub0136();           
 8 7c6e: 27,fb                sjmp  7c6b               goto 7c6b;           
 
@@ -8200,7 +8200,7 @@ Sub0142:
 8 7c84: 28,12                scall 7c98               Sub0143();           
 8 7c86: 28,10                scall 7c98               Sub0143();           
 8 7c88: fb                   ei                       enable ints;         
-8 7c89: 91,20,2d             orrb  R2d,20             [WIG_FLAG] |= 20;    
+8 7c89: 91,20,2d             orrb  R2d,20             [FLAGS_2D] |= 20;    
 8 7c8c: 32,2a,08             jnb   B2,R2a,7c97        if (<VIP_ENABLE> == 0) goto 7c97;
 8 7c8f: 3f,46,05             jb    B7,R46,7c97        if (<FUEL_PUMP_ON> == 1) goto 7c97;
 8 7c92: 91,40,2a             orrb  R2a,40             <NO_START> = 1;      
@@ -8685,7 +8685,7 @@ Sub0168:
 8 81f2: 8b,1e,02,42          cmpw  R42,[R1e+2]                             
 8 81f6: d3,03                jnc   81fb               if ((uns) R42 < [R1e+2]) goto 81fb;
 8 81f8: b1,35,1a             ldb   R1a,35             R1a = 35;            
-8 81fb: 51,60,2a,42          an3b  R42,R2a,60         R42 = [REG_2A] & 60; 
+8 81fb: 51,60,2a,42          an3b  R42,R2a,60         R42 = [FLAGS_2A] & 60;
 8 81ff: df,02                je    8203               if (R42 == 0) goto 8203;
 8 8201: 2c,f2                scall 7ef5               SAVE_TROUBLE_CODE(); 
 8 8203: f0                   ret                      return;              
@@ -8908,7 +8908,7 @@ Sub0173:
 8 85ba: df,1c                je    85d8               if (R30 == [R32]) goto 85d8;
 
 Sub0174:
-8 85bc: 91,10,2a             orrb  R2a,10             [REG_2A] |= 10;      
+8 85bc: 91,10,2a             orrb  R2a,10             [FLAGS_2A] |= 10;    
 8 85bf: 20,50                sjmp  8611               goto 8611;           
 
 Sub0175:
@@ -8959,11 +8959,11 @@ Sub0176:
 8 8627: ef,4c,f8             call  7e76               Sub0150();           
 8 862a: ef,75,9a             call  20a2               RESET_ALL();         
 8 862d: 35,2a,06             jnb   B5,R2a,8636        if (<SELF_TEST> == 0) goto 8636;
-8 8630: 71,db,2a             an2b  R2a,db             [REG_2A] &= db;      
-8 8633: 91,08,2a             orrb  R2a,8              [REG_2A] |= 8;       
+8 8630: 71,db,2a             an2b  R2a,db             [FLAGS_2A] &= db;    
+8 8633: 91,08,2a             orrb  R2a,8              [FLAGS_2A] |= 8;     
 8 8636: 36,2a,06             jnb   B6,R2a,863f        if (<NO_START> == 0) goto 863f;
-8 8639: 71,bb,2a             an2b  R2a,bb             [REG_2A] &= bb;      
-8 863c: 91,10,2a             orrb  R2a,10             [REG_2A] |= 10;      
+8 8639: 71,bb,2a             an2b  R2a,bb             [FLAGS_2A] &= bb;    
+8 863c: 91,10,2a             orrb  R2a,10             [FLAGS_2A] |= 10;    
 8 863f: ef,d7,f5             call  7c19               Sub0137();           
 8 8642: e7,8b,9c             jump  22d0               goto BACKGROUND_LOOP;
 

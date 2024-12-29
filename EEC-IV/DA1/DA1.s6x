@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<S6x version="1.00" generated="2024-12-28 12:08:59">
-  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-12-28T20:06:41.8189067Z" IdentificationStatus="0">
+<S6x version="1.00" generated="2024-12-28 16:32:07">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-12-28T21:01:48.353741Z" IdentificationStatus="0">
     <Label>Exported</Label>
     <Comments />
     <Header />
@@ -8,6 +8,9 @@
       <BankProperties BankNum="8" AddressBin="00000" />
     </BanksProperties>
     <IdentificationDetails />
+    <SyncStates>
+      <SyncState SyncType="SQLite806xDB" SyncId="20241229.002909.sad_db.db" DateFirstSync="2024-12-29T00:29:09.2394769Z" DateLastSync="2024-12-29T00:29:09.2394769Z" />
+    </SyncStates>
   </Properties>
   <Tables>
     <Table BankNum="8" AddressInt="28287" DuplicateNum="0" AddressBinInt="28287" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="4" RowsNumber="3" ShortLabel="MFA_FUEL_MULT" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2024-11-15T07:58:46.348661Z" DateUpdated="2024-11-30T23:16:19.1575984Z" IdentificationStatus="0">
@@ -4752,11 +4755,21 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Register>
-    <Register AddressInt="45" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-14T02:41:53.3653078Z" DateUpdated="2024-11-14T02:42:14.7289422Z" IdentificationStatus="0">
-      <Label>WIG_FLAG</Label>
+    <Register AddressInt="45" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-14T02:41:53.3653078Z" DateUpdated="2024-12-28T20:56:24.2937835Z" IdentificationStatus="0">
+      <Label>FLAGS_2D</Label>
       <ByteLabel />
       <WordLabel />
       <Comments />
+      <BitFlags>
+        <BitFlag Position="0" Skip="false" ShortLabel="WIG_FLAG" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2024-12-28T20:54:04.1866464Z" DateUpdated="2024-12-28T20:56:21.4972789Z" IdentificationStatus="0">
+          <Label>WIG_FLAG</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+      </BitFlags>
       <ScaleExpression>X</ScaleExpression>
       <Units />
       <IdentificationDetails />
@@ -5116,14 +5129,70 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Register>
-    <Register AddressInt="79" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-22T08:34:39.353805Z" DateUpdated="2024-11-22T08:35:49.1130865Z" IdentificationStatus="0">
+    <Register AddressInt="79" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-22T08:34:39.353805Z" DateUpdated="2024-12-28T21:01:48.3533669Z" IdentificationStatus="0">
       <Label>FLAGS_4F</Label>
       <ByteLabel />
       <WordLabel />
       <Comments />
       <BitFlags>
-        <BitFlag Position="6" Skip="false" ShortLabel="KNOCK_ENABLED" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2024-11-22T08:35:25.3473673Z" DateUpdated="2024-11-22T08:35:43.5661384Z" IdentificationStatus="0">
+        <BitFlag Position="0" Skip="false" ShortLabel="B0" SetValue="1" NotSetValue="0" HideParent="false" DateCreated="2024-12-28T21:00:32.6998103Z" DateUpdated="2024-12-28T21:00:34.8949339Z" IdentificationStatus="0">
+          <Label>B0</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="1" Skip="false" ShortLabel="B1" SetValue="1" NotSetValue="0" HideParent="false" DateCreated="2024-12-28T21:00:34.9063566Z" DateUpdated="2024-12-28T21:00:37.8419346Z" IdentificationStatus="0">
+          <Label>B1</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="2" Skip="false" ShortLabel="B2" SetValue="1" NotSetValue="0" HideParent="false" DateCreated="2024-12-28T21:00:37.851151Z" DateUpdated="2024-12-28T21:00:41.2949132Z" IdentificationStatus="0">
+          <Label>B2</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="3" Skip="false" ShortLabel="B3" SetValue="1" NotSetValue="0" HideParent="false" DateCreated="2024-12-28T21:00:41.2999848Z" DateUpdated="2024-12-28T21:00:44.8130978Z" IdentificationStatus="0">
+          <Label>B3</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="4" Skip="false" ShortLabel="B4" SetValue="1" NotSetValue="0" HideParent="false" DateCreated="2024-12-28T21:00:44.8290876Z" DateUpdated="2024-12-28T21:00:49.5893607Z" IdentificationStatus="0">
+          <Label>B4</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="5" Skip="false" ShortLabel="B5" SetValue="1" NotSetValue="0" HideParent="false" DateCreated="2024-12-28T21:00:49.5958304Z" DateUpdated="2024-12-28T21:00:53.1979733Z" IdentificationStatus="0">
+          <Label>B5</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="6" Skip="false" ShortLabel="KNOCK_ENABLED" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2024-11-22T08:35:25.3473673Z" DateUpdated="2024-12-28T21:00:32.6955125Z" IdentificationStatus="0">
           <Label>KNOCK_ENABLED</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="7" Skip="false" ShortLabel="B7" SetValue="1" NotSetValue="0" HideParent="false" DateCreated="2024-12-28T21:00:53.2055276Z" DateUpdated="2024-12-28T21:00:57.5157373Z" IdentificationStatus="0">
+          <Label>B7</Label>
           <Comments />
           <IdentificationDetails />
           <Category />
@@ -5242,14 +5311,70 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Register>
-    <Register AddressInt="139" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-23T08:07:04.3705091Z" DateUpdated="2024-11-23T08:08:25.7159292Z" IdentificationStatus="0">
+    <Register AddressInt="139" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-23T08:07:04.3705091Z" DateUpdated="2024-12-28T20:59:35.7020134Z" IdentificationStatus="0">
       <Label>FLAGS_8B</Label>
       <ByteLabel />
       <WordLabel />
       <Comments />
       <BitFlags>
-        <BitFlag Position="5" Skip="false" ShortLabel="MPH_IRQ" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2024-11-23T08:07:50.9990185Z" DateUpdated="2024-11-23T08:08:21.7059404Z" IdentificationStatus="0">
+        <BitFlag Position="0" Skip="false" ShortLabel="B0" SetValue="1" NotSetValue="0" HideParent="false" DateCreated="2024-12-28T20:59:00.7337836Z" DateUpdated="2024-12-28T20:59:02.3634493Z" IdentificationStatus="0">
+          <Label>B0</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="1" Skip="false" ShortLabel="B1" SetValue="1" NotSetValue="0" HideParent="false" DateCreated="2024-12-28T20:58:05.3945223Z" DateUpdated="2024-12-28T20:59:00.7325008Z" IdentificationStatus="0">
+          <Label>B1</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="2" Skip="false" ShortLabel="B2" SetValue="1" NotSetValue="0" HideParent="false" DateCreated="2024-12-28T20:59:02.3647663Z" DateUpdated="2024-12-28T20:59:05.9724979Z" IdentificationStatus="0">
+          <Label>B2</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="3" Skip="false" ShortLabel="B3" SetValue="1" NotSetValue="0" HideParent="false" DateCreated="2024-12-28T20:59:05.9732644Z" DateUpdated="2024-12-28T20:59:09.142134Z" IdentificationStatus="0">
+          <Label>B3</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="4" Skip="false" ShortLabel="B4" SetValue="1" NotSetValue="0" HideParent="false" DateCreated="2024-12-28T20:59:09.1430984Z" DateUpdated="2024-12-28T20:59:13.2388663Z" IdentificationStatus="0">
+          <Label>B4</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="5" Skip="false" ShortLabel="MPH_IRQ" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2024-11-23T08:07:50.9990185Z" DateUpdated="2024-12-28T20:58:05.3919714Z" IdentificationStatus="0">
           <Label>MPH_IRQ</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="6" Skip="false" ShortLabel="B6" SetValue="1" NotSetValue="0" HideParent="false" DateCreated="2024-12-28T20:59:13.2403574Z" DateUpdated="2024-12-28T20:59:19.2623678Z" IdentificationStatus="0">
+          <Label>B6</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="7" Skip="false" ShortLabel="B7" SetValue="1" NotSetValue="0" HideParent="false" DateCreated="2024-12-28T20:59:19.2631243Z" DateUpdated="2024-12-28T20:59:23.8787212Z" IdentificationStatus="0">
+          <Label>B7</Label>
           <Comments />
           <IdentificationDetails />
           <Category />

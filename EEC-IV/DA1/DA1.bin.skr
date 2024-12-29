@@ -1,0 +1,622 @@
+Source Binary : DA1.bin
+	Compared skeleton : A9L.skt
+
+		Minimum Operations Count : 3
+		Operations Count Gap Tolerance % : 10.00
+		Damerau Levenshtein Distance Tolerance % : 70.00
+
+Routines Possible matches :
+
+++ 8 24c8 - 24c8 - Sub 8 24c8
+	++ 8 245d - Sched_HSO
+		% Chances : 84.00
+	-- 8 24c0
+-- 8 2530 - Operations Count(26)
+
+++ 8 2531 - 2531 - Sub 8 2531
+	++ 8 24c1 - 24c1 - Sub 8 24c1
+		% Chances : 100.00
+	-- 8 24f8
+-- 8 2568 - Operations Count(15)
+
+++ 8 2569 - Sub0013
+	++ 8 24f9 - Do_CmdN
+		% Chances : 100.00
+	-- 8 2508
+-- 8 2578 - Operations Count(6)
+
+++ 8 2579 - Sub0014
+	++ 8 2509 - Sub0033
+		% Chances : 100.00
+	-- 8 251f
+-- 8 258f - Operations Count(9)
+
+++ 8 2590 - Sub0015
+	++ 8 2520 - Sub0035
+		% Chances : 100.00
+	-- 8 2528
+-- 8 2598 - Operations Count(4)
+
+++ 8 2610 - IPT_HSO_1 - Interrupt High Speed Output 1
+	++ 8 25b9 - IPT_HSO_1 - Interrupt High Speed Output 1
+		% Chances : 83.78
+	-- 8 25f1
+-- 8 2648 - Operations Count(18)
+
+++ 8 264b - Sub0020
+	++ 8 25f4 - Sub0045
+		% Chances : 95.65
+	-- 8 2689
+-- 8 26e5 - Operations Count(46)
+
+++ 8 27bc - IPT_HSO_2 - Interrupt High Speed Output 2
+	++ 8 2751 - IPT_HSO_2 - Interrupt High Speed Output 2
+		% Chances : 100.00
+	-- 8 27a1
+-- 8 280f - Operations Count(30)
+
+++ 8 2810 - 2810 - Sub 8 2810
+	++ 8 27a2 - 27a2 - Sub 8 27a2
+		% Chances : 100.00
+	-- 8 27a5
+-- 8 2813 - Operations Count(4)
+
+++ 8 29a6 - Sub0029
+	++ 8 27ca - Pip_inth
+		% Chances : 83.67
+	-- 8 2818
+-- 8 29f4 - Operations Count(24)
+
+++ 8 2bad - 2bad - Sub 8 2bad
+	++ 8 29bf - 29bf - Sub 8 29bf
+		% Chances : 100.00
+	-- 8 29cd
+-- 8 2bbb - Operations Count(6)
+
+++ 8 2bfb - 2bfb - Sub 8 2bfb
+	** Elements : 1
+	++ 8 29f1 - 29f1 - Sub 8 29f1
+		% Chances : 100.00
+	-- 8 2a02
+-- 8 2c0c - Operations Count(7)
+
+++ 8 2c0d - 2c0d - Sub 8 2c0d
+	** Elements : 2
+	++ 8 2a03 - 2a03 - Sub 8 2a03
+		% Chances : 100.00
+	-- 8 2a10
+-- 8 2c1a - Operations Count(5)
+
+++ 8 2c52 - Sub0032
+	** Elements : 2
+	++ 8 2a3e - knck4
+		% Chances : 100.00
+	-- 8 2a4b
+-- 8 2c61 - Operations Count(5)
+
+++ 8 2e28 - Sub0034
+	++ 8 2c6e - Upd_Htime_Prev
+		% Chances : 78.95
+	-- 8 2c90
+-- 8 2e44 - Operations Count(9)
+
+++ 8 30d3 - Sub0036
+	++ 8 318a - UPd_Inj_pend
+		% Chances : 100.00
+	-- 8 3199
+-- 8 30e4 - Operations Count(5)
+
+++ 8 310a - Sub0038
+	++ 8 31c4 - Do_inj?
+		% Chances : 100.00
+	-- 8 3227
+-- 8 3172 - Operations Count(29)
+
+++ 8 3175 - 3175 - Sub 8 3175
+	++ 8 322a - 322a - Sub 8 322a
+		% Chances : 100.00
+	-- 8 3236
+-- 8 3183 - Operations Count(4)
+
+++ 8 31c2 - 31c2 - Sub 8 31c2
+	++ 8 3266 - 3266 - Sub 8 3266
+		% Chances : 100.00
+	-- 8 32af
+-- 8 320f - Operations Count(25)
+
+++ 8 3210 - 3210 - Sub 8 3210
+	++ 8 32b0 - 32b0 - Sub 8 32b0
+		% Chances : 100.00
+	-- 8 32cc
+-- 8 322c - Operations Count(10)
+
+++ 8 35ee - UUByteLU - Byte Function Reader
+	++ 8 35ac - subyteLU
+		% Chances : 100.00
+	-- 8 3600
+-- 8 3642 - Operations Count(32)
+
+++ 8 3643 - SUWordLU - Word Function Reader SI
+	++ 8 3601 - SUWordLU
+		% Chances : 100.00
+	-- 8 3653
+-- 8 3695 - Operations Count(31)
+
+++ 8 36cc - UTabLU - Table Reader
+	++ 8 36db - UTabLu16
+		% Chances : 75.51
+	-- 8 371e
+-- 8 3707 - Operations Count(23)
+
+++ 8 3708 - TabCore - Table Reader Core
+	++ 8 373c - 373c - Sub 8 373c
+		% Chances : 100.00
+	-- 8 374e
+-- 8 371a - Operations Count(6)
+
+++ 8 371b - CHECK_TIMERS
+	** Elements : 2
+	++ 8 374f - Check_Timers
+		% Chances : 100.00
+	-- 8 3783
+-- 8 374f - Operations Count(23)
+
+++ 8 37bf - UPDATE_WOT
+	** Elements : 4
+	++ 8 37f3 - Update_WOT
+		% Chances : 91.49
+	-- 8 3833
+-- 8 3803 - Operations Count(24)
+
+++ 8 3812 - 3812 - Sub 8 3812
+	++ 8 3842 - 3842 - Sub 8 3842
+		% Chances : 100.00
+	-- 8 384d
+-- 8 381d - Operations Count(5)
+
+++ 8 3c16 - UPDATE_MPH
+	** Elements : 3
+	++ 8 3ce4 - Update_MPH
+		% Chances : 70.00
+	-- 8 3d59
+-- 8 3cac - Operations Count(42)
+
+++ 8 4286 - 4286 - Sub 8 4286
+	++ 8 42b3 - 42b3 - Sub 8 42b3
+		% Chances : 100.00
+	-- 8 42c5
+-- 8 429b - Operations Count(6)
+
+++ 8 429c - Sub0066
+	** Elements : 3
+	++ 8 42c6 - Calc_Fuel_ratio
+		% Chances : 100.00
+	-- 8 4365
+-- 8 4343 - Operations Count(55)
+
+++ 8 44f0 - Sub0069
+	** Elements : 4
+	++ 8 44fe - Clamp_Lamda
+		% Chances : 100.00
+	-- 8 4512
+-- 8 4504 - Operations Count(7)
+
+++ 8 4505 - Sub0070
+	** Elements : 1
+	++ 8 4513 - Sub0254
+		% Chances : 100.00
+	-- 8 452b
+-- 8 451e - Operations Count(8)
+
+++ 8 46f3 - FRACTIONAL_TO_RATIO_CALC
+	++ 8 46e8 - Sub0262
+		% Chances : 100.00
+	-- 8 46ff
+-- 8 470a - Operations Count(8)
+
+++ 8 48c1 - Sub0074
+	** Elements : 2
+	++ 8 4897 - Sub0265
+		% Chances : 92.31
+	-- 8 48e7
+-- 8 4914 - Operations Count(26)
+
+++ 8 4915 - 4915 - Sub 8 4915
+	** Elements : 2
+	++ 8 48e8 - 48e8 - Sub 8 48e8
+		% Chances : 92.00
+	-- 8 493a
+-- 8 496a - Operations Count(25)
+
+++ 8 4ac2 - Sub0076
+	** Elements : 1
+	++ 8 4a87 - Sub0269
+		% Chances : 100.00
+	-- 8 4a9d
+-- 8 4ad8 - Operations Count(8)
+
+++ 8 4ad9 - Sub0077
+	** Elements : 4
+	++ 8 4a9e - Sub0270
+		% Chances : 79.49
+	-- 8 4ad6
+-- 8 4b14 - Operations Count(20)
+
+++ 8 585d - 585d - Sub 8 585d
+	** Elements : 6
+	++ 8 5418 - 5418 - Sub 8 5418
+		% Chances : 75.44
+	-- 8 54bb
+-- 8 591d - Operations Count(60)
+
+++ 8 591e - 591e - Sub 8 591e
+	++ 8 54bc - 54bc - Sub 8 54bc
+		% Chances : 76.47
+	-- 8 54d8
+-- 8 5946 - Operations Count(9)
+
+++ 8 5a0f - Sub0099
+	++ 8 559b - 559b - Sub 8 559b
+		% Chances : 100.00
+	-- 8 55c2
+-- 8 5a38 - Operations Count(14)
+
+++ 8 634d - UPDATE_VSC
+	** Elements : 2
+	++ 8 5ec4 - Upd_VSC
+		% Chances : 100.00
+	-- 8 5ee6
+-- 8 6372 - Operations Count(14)
+
+++ 8 63b7 - 63b7 - Sub 8 63b7
+	** Elements : 1
+	++ 8 5f21 - 5f21 - Sub 8 5f21
+		% Chances : 100.00
+	-- 8 5f2a
+-- 8 63c1 - Operations Count(4)
+
+++ 8 63c2 - 63c2 - Sub 8 63c2
+	** Elements : 2
+	++ 8 5f2b - 5f2b - Sub 8 5f2b
+		% Chances : 100.00
+	-- 8 5f3a
+	++ 8 5f3b - 5f3b - Sub 8 5f3b
+		% Chances : 100.00
+	-- 8 5f4a
+	++ 8 5f4b - 5f4b - Sub 8 5f4b
+		% Chances : 100.00
+	-- 8 5f5a
+	++ 8 5f5b - 5f5b - Sub 8 5f5b
+		% Chances : 83.33
+	-- 8 5f69
+-- 8 63d3 - Operations Count(6)
+
+++ 8 63d4 - 63d4 - Sub 8 63d4
+	** Elements : 2
+	++ 8 5f2b - 5f2b - Sub 8 5f2b
+		% Chances : 100.00
+	-- 8 5f3a
+	++ 8 5f3b - 5f3b - Sub 8 5f3b
+		% Chances : 100.00
+	-- 8 5f4a
+	++ 8 5f4b - 5f4b - Sub 8 5f4b
+		% Chances : 100.00
+	-- 8 5f5a
+	++ 8 5f5b - 5f5b - Sub 8 5f5b
+		% Chances : 83.33
+	-- 8 5f69
+-- 8 63e5 - Operations Count(6)
+
+++ 8 63e6 - 63e6 - Sub 8 63e6
+	** Elements : 2
+	++ 8 5f2b - 5f2b - Sub 8 5f2b
+		% Chances : 100.00
+	-- 8 5f3a
+	++ 8 5f3b - 5f3b - Sub 8 5f3b
+		% Chances : 100.00
+	-- 8 5f4a
+	++ 8 5f4b - 5f4b - Sub 8 5f4b
+		% Chances : 100.00
+	-- 8 5f5a
+	++ 8 5f5b - 5f5b - Sub 8 5f5b
+		% Chances : 83.33
+	-- 8 5f69
+-- 8 63f7 - Operations Count(6)
+
+++ 8 63f8 - 63f8 - Sub 8 63f8
+	** Elements : 2
+	++ 8 5f2b - 5f2b - Sub 8 5f2b
+		% Chances : 83.33
+	-- 8 5f3a
+	++ 8 5f3b - 5f3b - Sub 8 5f3b
+		% Chances : 83.33
+	-- 8 5f4a
+	++ 8 5f4b - 5f4b - Sub 8 5f4b
+		% Chances : 83.33
+	-- 8 5f5a
+	++ 8 5f5b - 5f5b - Sub 8 5f5b
+		% Chances : 100.00
+	-- 8 5f69
+-- 8 6408 - Operations Count(6)
+
+++ 8 6409 - 6409 - Sub 8 6409
+	** Elements : 2
+	++ 8 5f2b - 5f2b - Sub 8 5f2b
+		% Chances : 100.00
+	-- 8 5f3a
+	++ 8 5f3b - 5f3b - Sub 8 5f3b
+		% Chances : 100.00
+	-- 8 5f4a
+	++ 8 5f4b - 5f4b - Sub 8 5f4b
+		% Chances : 100.00
+	-- 8 5f5a
+	++ 8 5f5b - 5f5b - Sub 8 5f5b
+		% Chances : 83.33
+	-- 8 5f69
+-- 8 641a - Operations Count(6)
+
+++ 8 645b - 645b - Sub 8 645b
+	** Elements : 5
+	++ 8 5f8f - 5f8f - Sub 8 5f8f
+		% Chances : 100.00
+	-- 8 5fe1
+-- 8 64b2 - Operations Count(29)
+
+++ 8 64dd - 64dd - Sub 8 64dd
+	++ 8 5ffe - 5ffe - Sub 8 5ffe
+		% Chances : 100.00
+	-- 8 6014
+-- 8 64f5 - Operations Count(8)
+
+++ 8 64f6 - 64f6 - Sub 8 64f6
+	++ 8 6015 - 6015 - Sub 8 6015
+		% Chances : 100.00
+	-- 8 6032
+-- 8 6516 - Operations Count(10)
+
+++ 8 6517 - 6517 - Sub 8 6517
+	** Elements : 1
+	++ 8 6033 - 6033 - Sub 8 6033
+		% Chances : 100.00
+	-- 8 6050
+-- 8 6537 - Operations Count(10)
+
+++ 8 6538 - 6538 - Sub 8 6538
+	++ 8 6051 - 6051 - Sub 8 6051
+		% Chances : 100.00
+	-- 8 605d
+-- 8 6545 - Operations Count(5)
+
+++ 8 6546 - 6546 - Sub 8 6546
+	++ 8 605e - 605e - Sub 8 605e
+		% Chances : 100.00
+	-- 8 606c
+-- 8 6556 - Operations Count(5)
+
+++ 8 656d - 656d - Sub 8 656d
+	** Elements : 1
+	++ 8 606d - 606d - Sub 8 606d
+		% Chances : 100.00
+	-- 8 6082
+-- 8 6584 - Operations Count(8)
+
+++ 8 6589 - Sub0107
+	** Elements : 3
+	++ 8 6087 - Sub0363
+		% Chances : 100.00
+	-- 8 60ce
+-- 8 65d9 - Operations Count(22)
+
+++ 8 69f9 - 69f9 - Sub 8 69f9
+	** Elements : 3
+	++ 8 652a - 652a - Sub 8 652a
+		% Chances : 100.00
+	-- 8 6557
+-- 8 6a2c - Operations Count(16)
+
+++ 8 6a2e - 6a2e - Sub 8 6a2e
+	++ 8 6559 - 6559 - Sub 8 6559
+		% Chances : 100.00
+	-- 8 6565
+-- 8 6a3a - Operations Count(5)
+
+++ 8 6e1d - UPDATE_TIMERS
+	++ 8 68fe - Update_timers
+		% Chances : 95.20
+	-- 8 69b0
+-- 8 6ed0 - Operations Count(62)
+
+++ 8 73e4 - 73e4 - Sub 8 73e4
+	** Elements : 3
+	++ 8 6ba0 - 6ba0 - Sub 8 6ba0
+		% Chances : 82.35
+	-- 8 6c08
+-- 8 7449 - Operations Count(34)
+
+++ 8 744a - 744a - Sub 8 744a
+	++ 8 5293 - Sub0315
+		% Chances : 75.00
+	-- 8 529d
+	++ 8 6c09 - 6c09 - Sub 8 6c09
+		% Chances : 100.00
+	-- 8 6c13
+-- 8 7454 - Operations Count(4)
+
+++ 8 7455 - Sub0119
+	** Elements : 2
+	++ 8 6c14 - Sub0448
+		% Chances : 100.00
+	-- 8 6c8e
+-- 8 74d8 - Operations Count(44)
+
+++ 8 74d9 - Sub0120
+	** Elements : 1
+	++ 8 6c8f - Knk_inth
+		% Chances : 100.00
+	-- 8 6c9e
+-- 8 74e9 - Operations Count(6)
+
+++ 8 74f1 - 74f1 - Sub 8 74f1
+	** Elements : 2
+	++ 8 6ca6 - 6ca6 - Sub 8 6ca6
+		% Chances : 100.00
+	-- 8 6cb7
+-- 8 7504 - Operations Count(7)
+
+++ 8 7540 - Sub0122
+	++ 8 6ce5 - Sub0454
+		% Chances : 100.00
+	-- 8 6d10
+-- 8 756e - Operations Count(15)
+
+++ 8 76a2 - 76a2 - Sub 8 76a2
+	++ 8 6e33 - 6e33 - Sub 8 6e33
+		% Chances : 100.00
+	-- 8 6e48
+-- 8 76b8 - Operations Count(7)
+
+++ 8 76b9 - DO_SELF_TEST
+	++ 8 6e49 - Do_SelfTest
+		% Chances : 75.00
+	-- 8 6e74
+-- 8 76e4 - Operations Count(16)
+
+++ 8 7725 - 7725 - Sub 8 7725
+	++ 8 6f0c - 6f0c - Sub 8 6f0c
+		% Chances : 100.00
+	-- 8 6f18
+-- 8 7731 - Operations Count(5)
+
+++ 8 7738 - Sub0127
+	++ 8 6f4e - Sub0473
+		% Chances : 100.00
+	-- 8 6f64
+-- 8 774e - Operations Count(10)
+
+++ 8 781d - Sub0130
+	++ 8 7026 - Sub0489
+		% Chances : 88.57
+	-- 8 704f
+-- 8 7849 - Operations Count(18)
+
+++ 8 784a - Sub0131
+	++ 8 7050 - Get_diag_vals
+		% Chances : 100.00
+	-- 8 7074
+-- 8 7873 - Operations Count(10)
+
+++ 8 7874 - 7874 - Sub 8 7874
+	++ 8 7075 - Save_diag_vals
+		% Chances : 100.00
+	-- 8 7095
+-- 8 7898 - Operations Count(9)
+
+++ 8 7c04 - CLEAR_KAM
+	++ 8 77a0 - clear_KAM
+		% Chances : 75.00
+	-- 8 77ab
+-- 8 7c10 - Operations Count(4)
+
+++ 8 7c11 - Sub0136
+	++ 8 77ac - Set_STO
+		% Chances : 100.00
+	-- 8 77bd
+-- 8 7c22 - Operations Count(7)
+
+++ 8 7c23 - GET_BYTES_R1A
+	++ 8 77be - GetbytesR1a
+		% Chances : 100.00
+	-- 8 77d6
+-- 8 7c3b - Operations Count(10)
+
+++ 8 7c3c - Sub0140
+	++ 8 77ed - Set_TC
+		% Chances : 100.00
+	-- 8 77f8
+-- 8 7c47 - Operations Count(5)
+
+++ 8 7c48 - Sub0141
+	++ 8 77f9 - upd_flflg
+		% Chances : 80.00
+	-- 8 7806
+-- 8 7c55 - Operations Count(5)
+
+++ 8 7cb2 - CALIBRATION_CHECK
+	++ 8 7844 - Do_Csum
+		% Chances : 100.00
+	-- 8 78d1
+-- 8 7d1e - Operations Count(17)
+
+++ 8 7d96 - COMPARE
+	++ 8 7964 - Compare
+		% Chances : 100.00
+	-- 8 798a
+-- 8 7dbc - Operations Count(14)
+
+++ 8 7dbd - GET_ADDRESS
+	++ 8 798b - GetAddr
+		% Chances : 80.95
+	-- 8 79ac
+-- 8 7ddb - Operations Count(10)
+
+++ 8 7ef2 - SAVE_TROUBLE_CODE1
+	++ 8 7bae - SaveTCode1
+		% Chances : 100.00
+	-- 8 7bbf
+-- 8 7f02 - Operations Count(6)
+
+++ 8 7f03 - CHECK_RANGE_TROUBLE_CODE
+	++ 8 7bc0 - ChkRngeTC
+		% Chances : 100.00
+	-- 8 7bdf
+-- 8 7f21 - Operations Count(11)
+
+++ 8 816a - GET_WORD
+	++ 8 7e3b - GetWord
+		% Chances : 100.00
+	-- 8 7e4b
+-- 8 8179 - Operations Count(6)
+
+++ 8 81c5 - Sub0168
+	++ 8 7ecf - ChkSensor
+		% Chances : 100.00
+	-- 8 7f0d
+-- 8 8203 - Operations Count(22)
+
+++ 8 836f - 836f - Sub 8 836f
+	++ 8 823f - CHk_HEGO
+		% Chances : 80.00
+	-- 8 827c
+-- 8 84bb - Operations Count(21)
+
+++ 8 84bc - Sub0173
+	++ 8 827d - HW_Check
+		% Chances : 97.86
+	-- 8 8397
+-- 8 85d5 - Operations Count(93)
+
+++ 8 85d8 - 85d8 - Sub 8 85d8
+	++ 8 839a - RAM_test
+		% Chances : 100.00
+	-- 8 83d9
+-- 8 8617 - Operations Count(22)
+
+++ 8 8646 - Sub0177
+	++ 8 8485 - Idm_inth
+		% Chances : 100.00
+	-- 8 848e
+-- 8 864f - Operations Count(4)
+
+++ 8 86e4 - SET_IGNITION_TIMERS
+	++ 8 848f - Set_ign_timers
+		% Chances : 100.00
+	-- 8 84b0
+-- 8 8708 - Operations Count(11)
+
+++ 8 88fe - Sub0182
+	++ 8 85f5 - Check_Kam_2
+		% Chances : 100.00
+	-- 8 8628
+-- 8 8931 - Operations Count(16)
+
+## Routines with matching (89), Maximum matched routines(4)
