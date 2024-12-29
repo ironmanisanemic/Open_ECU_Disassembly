@@ -179,7 +179,7 @@ RESET_ALL:
 8 21cc: df,0a                je    21d8               if (0 == [CCDSW]) goto 21d8;
 8 21ce: a1,b0,23,90          ldw   R90,23b0           R90 = OSt8_004;      
 8 21d2: 91,08,4c             orrb  R4c,8              [FLAGS_4C].IMMEDIATE_HSO = 1;
-8 21d5: ef,d0,04             call  26a8               SEND_HSO_CMD();      
+8 21d5: ef,d0,04             call  26a8               SEND_HSO_COMMAND();  
 8 21d8: fb                   ei                       enable ints;         
 8 21d9: f0                   ret                      return;              
 
@@ -219,16 +219,16 @@ SET_TASKLIST - SET TASKLIST:
 
 
 VecLst8_001 - Vectors List 8 001:
-8 2210: 4c,79                794c  Bank 8 Vector      Check_ConsoleD
-8 2212: 78,24                2478  Bank 8 Vector      CHECK_KAM
+8 2210: 4c,79                794c  Bank 8 Vector      CHECK_CONSOLE_D
+8 2212: 78,24                2478  Bank 8 Vector      CHECK_KAM_1
 8 2214: fa,53                53fa  Bank 8 Vector      Update_dwell
 8 2216: 55,35                3555  Bank 8 Vector      SET_RPM_FLAGS
-8 2218: c7,35                35c7  Bank 8 Vector      Update_WOT
-8 221a: 06,23                2306  Bank 8 Vector      Read_AD
+8 2218: c7,35                35c7  Bank 8 Vector      UPDATE_WOT
+8 221a: 06,23                2306  Bank 8 Vector      READ_AD
 8 221c: 26,36                3626  Bank 8 Vector      Sub0067
 8 221e: d8,5f                5fd8  Bank 8 Vector      Sub0109
-8 2220: de,62                62de  Bank 8 Vector      Update_timers
-8 2222: 27,79                7927  Bank 8 Vector      Set_ign_timers
+8 2220: de,62                62de  Bank 8 Vector      UPDATE_TIMERS
+8 2222: 27,79                7927  Bank 8 Vector      SET_IGNITION_TIMERS
 8 2224: a6,22                22a6  Bank 8 Vector      Sub0007
 8 2226: 3a,3c                3c3a  Bank 8 Vector      Sub0070
 8 2228: d2,79                79d2  Bank 8 Vector      Sub0206
@@ -237,7 +237,7 @@ VecLst8_001 - Vectors List 8 001:
 8 222e: df,42                42df  Bank 8 Vector      Sub0076
 8 2230: 1f,46                461f  Bank 8 Vector      Sub0079
 8 2232: 2a,6b                6b2a  Bank 8 Vector      Sub0135
-8 2234: 44,4b                4b44  Bank 8 Vector      Sub0085
+8 2234: 44,4b                4b44  Bank 8 Vector      UPDATE_FUEL_PUMP
 8 2236: fc,22                22fc  Bank 8 Vector      Sub0011
 8 2238: b0,22                22b0  Bank 8 Vector      Sub0008
 8 223a: 8e,51                518e  Bank 8 Vector      Sub0095
@@ -250,39 +250,39 @@ VecLst8_001 - Vectors List 8 001:
 8 2248: 64,54                5464  Bank 8 Vector      Sub0100
 8 224a: 72,54                5472  Bank 8 Vector      Sub0102
 8 224c: 59,29                2959  Bank 8 Vector      Sub0035
-8 224e: 57,68                6857  Bank 8 Vector      Do_SelfTest
+8 224e: 57,68                6857  Bank 8 Vector      DO_SELF_TEST
 8 2250: fd,21                21fd  Bank 8 Vector      SET_TASKLIST - SET TASKLIST
-8 2252: 4c,79                794c  Bank 8 Vector      Check_ConsoleD
+8 2252: 4c,79                794c  Bank 8 Vector      CHECK_CONSOLE_D
 8 2254: 55,35                3555  Bank 8 Vector      SET_RPM_FLAGS
-8 2256: 06,23                2306  Bank 8 Vector      Read_AD
+8 2256: 06,23                2306  Bank 8 Vector      READ_AD
 8 2258: 26,36                3626  Bank 8 Vector      Sub0067
 8 225a: d8,5f                5fd8  Bank 8 Vector      Sub0109
 8 225c: 64,54                5464  Bank 8 Vector      Sub0100
 8 225e: 59,29                2959  Bank 8 Vector      Sub0035
-8 2260: de,62                62de  Bank 8 Vector      Update_timers
-8 2262: 27,79                7927  Bank 8 Vector      Set_ign_timers
+8 2260: de,62                62de  Bank 8 Vector      UPDATE_TIMERS
+8 2262: 27,79                7927  Bank 8 Vector      SET_IGNITION_TIMERS
 8 2264: 0f,3e                3e0f  Bank 8 Vector      Sub0071
 8 2266: 1f,46                461f  Bank 8 Vector      Sub0079
-8 2268: 44,4b                4b44  Bank 8 Vector      Sub0085
-8 226a: 57,68                6857  Bank 8 Vector      Do_SelfTest
+8 2268: 44,4b                4b44  Bank 8 Vector      UPDATE_FUEL_PUMP
+8 226a: 57,68                6857  Bank 8 Vector      DO_SELF_TEST
 8 226c: fd,21                21fd  Bank 8 Vector      SET_TASKLIST - SET TASKLIST
-8 226e: 4c,79                794c  Bank 8 Vector      Check_ConsoleD
-8 2270: 06,23                2306  Bank 8 Vector      Read_AD
+8 226e: 4c,79                794c  Bank 8 Vector      CHECK_CONSOLE_D
+8 2270: 06,23                2306  Bank 8 Vector      READ_AD
 8 2272: 26,36                3626  Bank 8 Vector      Sub0067
 8 2274: fa,53                53fa  Bank 8 Vector      Update_dwell
 8 2276: d8,5f                5fd8  Bank 8 Vector      Sub0109
-8 2278: de,62                62de  Bank 8 Vector      Update_timers
-8 227a: 27,79                7927  Bank 8 Vector      Set_ign_timers
+8 2278: de,62                62de  Bank 8 Vector      UPDATE_TIMERS
+8 227a: 27,79                7927  Bank 8 Vector      SET_IGNITION_TIMERS
 8 227c: 3a,3c                3c3a  Bank 8 Vector      Sub0070
 8 227e: 0f,3e                3e0f  Bank 8 Vector      Sub0071
 8 2280: 97,46                4697  Bank 8 Vector      Sub0080
-8 2282: 44,4b                4b44  Bank 8 Vector      Sub0085
+8 2282: 44,4b                4b44  Bank 8 Vector      UPDATE_FUEL_PUMP
 8 2284: 64,54                5464  Bank 8 Vector      Sub0100
 8 2286: 72,54                5472  Bank 8 Vector      Sub0102
 8 2288: 59,29                2959  Bank 8 Vector      Sub0035
 8 228a: 2d,77                772d  Bank 8 Vector      Sub0195
 8 228c: dc,76                76dc  Bank 8 Vector      Sub0194
-8 228e: 57,68                6857  Bank 8 Vector      Do_SelfTest
+8 228e: 57,68                6857  Bank 8 Vector      DO_SELF_TEST
 8 2290: 8e,51                518e  Bank 8 Vector      Sub0095
 8 2292: fd,21                21fd  Bank 8 Vector      SET_TASKLIST - SET TASKLIST
 
@@ -294,7 +294,7 @@ Sub0006:
 8 229e: f0                   ret                      return;              
 
 8 229f: 31,42,03             jnb   B1,R42,22a5        if (!B1_[GEN_42]) goto 22a5;
-8 22a2: ef,b2,28             call  4b57               Idm_inth();          
+8 22a2: ef,b2,28             call  4b57               IDM_HANDLER();       
 8 22a5: f0                   ret                      return;              
 
 Sub0007:
@@ -350,7 +350,7 @@ Sub0011:
 8 2302: ef,70,28             call  4b75               Sub0087();           
 8 2305: f0                   ret                      return;              
 
-Read_AD:
+READ_AD:
 8 2306: a1,3b,23,30          ldw   R30,233b           R30 = A/D_DEFINITION;
 8 230a: 34,50,04             jnb   B4,R50,2311        if (!B4_R50) goto 2311;
 8 230d: a1,3e,23,30          ldw   R30,233e           R30 = A/D_DEFINITION_233e;
@@ -400,7 +400,7 @@ A/D_DEFINITION:
 
 
 VecLst8_002 - Vectors List 8 002:
-8 235a: c0,67                67c0  Bank 8 Vector      Idm_inth
+8 235a: c0,67                67c0  Bank 8 Vector      IDM_HANDLER
 8 235c: 6a,23                236a  Bank 8 Vector      Sub0013
 8 235e: f3,33                33f3  Bank 8 Vector      Vss_inth
 8 2360: 59,4c                4c59  Bank 8 Vector      Sub0088
@@ -431,7 +431,7 @@ Sub0013:
 
 VecLst8_003 - Vectors List 8 003:
 8 239e: 0e,24                240e  Bank 8 Vector      Sub0014
-8 23a0: 6e,26                266e  Bank 8 Vector      Do_CmdN
+8 23a0: 6e,26                266e  Bank 8 Vector      DO_COMMAND_N
 
 
 8 23a2: 00,54,0b,22,6d,66,82,26                       Unknown Operation/Structure
@@ -506,7 +506,7 @@ Sub0015:
 8 2472: c7,01,ab,02,39       stb   [2ab],R39          [2ab] = R39;         
 8 2477: f0                   ret                      return;              
 
-CHECK_KAM:
+CHECK_KAM_1:
 8 2478: a1,3f,04,22          ldw   R22,43f            R22 = 43f;           
 8 247c: 71,7f,28             an2b  R28,7f             [FLAGS_28] &= 7f;    
 8 247f: b1,aa,42             ldb   R42,aa             [GEN_42] = aa;       
@@ -537,7 +537,7 @@ CHECK_KAM:
 8 24c7: c7,22,15,30          stb   [R22+15],R30       [R22+GEN_15] = R30;  
 8 24cb: c7,22,2c,32          stb   [R22+2c],R32       [R22+FLAGS_2C] = [GEN_32];
 8 24cf: 91,40,2d             orrb  R2d,40             [VIP_FLAGS3] |= 40;  
-8 24d2: ef,2c,4a             call  6f01               clear_KAM();         
+8 24d2: ef,2c,4a             call  6f01               CLEAR_KAM();         
 8 24d5: a1,80,a2,38          ldw   R38,a280           R38 = a280;          
 8 24d9: c3,01,86,04,38       stw   [486],R38          [KEPTZER] = R38;     
 8 24de: b3,ff,3e,01,38       ldb   R38,[Rfe+13e]      R38 = [Sc0347];      
@@ -670,8 +670,8 @@ Sub0019:
 8 2669: c7,7a,05,84          stb   [R7a+5],R84        [R7a+5] = R84;       
 8 266d: f0                   ret                      return;              
 
-Do_CmdN:
-8 266e: 28,38                scall 26a8               SEND_HSO_CMD();      
+DO_COMMAND_N:
+8 266e: 28,38                scall 26a8               SEND_HSO_COMMAND();  
 8 2670: 3e,4c,2a             jb    B6,R4c,269d        if ([FLAGS_4C].QUEUED == 1) goto 269d;
 8 2673: 65,08,00,90          ad2w  R90,8              R90 += 8;            
 8 2677: c9,7e,26             push  267e               push(Sub0012);       
@@ -682,7 +682,7 @@ Sub0012:
 8 267e: db,25                jc    26a5               if (R90 > ffff) goto 26a5;
 8 2680: 20,00                sjmp  2682               goto 2682;           
 
-8 2682: 28,24                scall 26a8               SEND_HSO_CMD();      
+8 2682: 28,24                scall 26a8               SEND_HSO_COMMAND();  
 8 2684: 3e,4c,16             jb    B6,R4c,269d        if ([FLAGS_4C].QUEUED == 1) goto 269d;
 8 2687: 37,79,0f             jnb   B7,R79,2699        if (!B7_R79) goto 2699;
 8 268a: 69,08,00,90          sb2w  R90,8              R90 -= 8;            
@@ -692,7 +692,7 @@ Sub0012:
 
 Sub0014:
 8 2695: db,0e                jc    26a5               if (R90 >= 0) goto 26a5;
-8 2697: 27,d5                sjmp  266e               goto Do_CmdN;        
+8 2697: 27,d5                sjmp  266e               goto DO_COMMAND_N;   
 
 8 2699: c7,7a,01,00          stb   [R7a+1],0          [R7a+1] = 0;         
 8 269d: f0                   ret                      return;              
@@ -703,7 +703,7 @@ Sub0014:
 8 26a5: 2f,2b                scall 25d2               Sub0019();           
 8 26a7: f0                   ret                      return;              
 
-SEND_HSO_CMD:
+SEND_HSO_COMMAND:
 8 26a8: b3,90,03,79          ldb   R79,[R90+3]        R79 = [R90+3];       
 8 26ac: 2e,87                scall 2535               SEND_HSO_CMD();      
 8 26ae: 34,4c,03             jnb   B4,R4c,26b4        if ([FLAGS_4C].NO_SERVICE == 0) goto 26b4;
@@ -1141,11 +1141,11 @@ Sub0037:
 8 2b44: f0                   ret                      return;              
 
 8 2b45: 91,08,4c             orrb  R4c,8              [FLAGS_4C].IMMEDIATE_HSO = 1;
-8 2b48: e7,5d,fb             jump  26a8               goto SEND_HSO_CMD;   
+8 2b48: e7,5d,fb             jump  26a8               goto SEND_HSO_COMMAND;
 
 8 2b4b: 30,4f,08             jnb   B0,R4f,2b56        if (!B0_R4f) goto 2b56;
 8 2b4e: a1,b0,23,90          ldw   R90,23b0           R90 = 23b0;          
-8 2b52: 28,9a                scall 2bee               Sub0040();           
+8 2b52: 28,9a                scall 2bee               KNOCK_CHECK();       
 8 2b54: 27,eb                sjmp  2b41               goto 2b41;           
 
 8 2b56: 3d,a3,ec             jb    B5,Ra3,2b45        if (B5_Ra3) goto 2b45;
@@ -1176,7 +1176,7 @@ Sub0038:
 8 2b98: 36,a3,17             jnb   B6,Ra3,2bb2        if (!B6_Ra3) goto 2bb2;
 8 2b9b: 3d,a3,06             jb    B5,Ra3,2ba4        if (B5_Ra3) goto 2ba4;
 8 2b9e: 91,08,4c             orrb  R4c,8              [FLAGS_4C].IMMEDIATE_HSO = 1;
-8 2ba1: ef,04,fb             call  26a8               SEND_HSO_CMD();      
+8 2ba1: ef,04,fb             call  26a8               SEND_HSO_COMMAND();  
 8 2ba4: 71,fb,50             an2b  R50,fb             R50 &= fb;           
 8 2ba7: a1,00,80,54          ldw   R54,8000           R54 = 8000;          
 8 2bab: c3,01,b6,01,54       stw   [1b6],R54          [1b6] = R54;         
@@ -1185,9 +1185,9 @@ Sub0038:
 8 2bb2: 38,4f,0e             jb    B0,R4f,2bc3        if (B0_R4f) goto 2bc3;
 8 2bb5: 35,a3,09             jnb   B5,Ra3,2bc1        if (!B5_Ra3) goto 2bc1;
 8 2bb8: 91,08,4c             orrb  R4c,8              [FLAGS_4C].IMMEDIATE_HSO = 1;
-8 2bbb: ef,b0,fa             call  266e               Do_CmdN();           
+8 2bbb: ef,b0,fa             call  266e               DO_COMMAND_N();      
 8 2bbe: 71,df,a3             an2b  Ra3,df             Ra3 &= df;           
-8 2bc1: 28,2b                scall 2bee               Sub0040();           
+8 2bc1: 28,2b                scall 2bee               KNOCK_CHECK();       
 8 2bc3: 91,c0,4d             orrb  R4d,c0             R4d |= c0;           
 8 2bc6: ef,bd,02             call  2e86               Sub0043();           
 8 2bc9: f0                   ret                      return;              
@@ -1208,7 +1208,7 @@ OSt8_008 - Other Structure 8 008:
 8 2beb: d9,f4                jgtu  2be1               if ((uns) R54 > [Sc0111]) goto 2be1;
 8 2bed: f0                   ret                      return;              
 
-Sub0040:
+KNOCK_CHECK:
 8 2bee: af,01,2a,02,54       ldzbw R54,[22a]          R54 = (uns)[22a];    
 8 2bf3: 36,4f,25             jnb   B6,R4f,2c1b        if (!B6_R4f) goto 2c1b;
 8 2bf6: 37,4f,22             jnb   B7,R4f,2c1b        if (!B7_R4f) goto 2c1b;
@@ -1221,7 +1221,7 @@ Sub0040:
 8 2c0f: d6,05                jge   2c16               if ((sig) R56 >= [Sc0282]) goto 2c16;
 8 2c11: b3,fb,84,00,56       ldb   R56,[Rfa+84]       R56 = [Sc0282];      
 8 2c16: c7,55,db,01,56       stb   [R54+1db],R56      [R54+1db] = R56;     
-8 2c1b: 2f,c1                scall 2bde               knck4();             
+8 2c1b: 2f,c1                scall 2bde               KNOCK_HANDLER();     
 8 2c1d: c7,01,2a,02,54       stb   [22a],R54          [22a] = R54;         
 8 2c22: 98,00,ad             cmpb  Rad,0                                   
 8 2c25: d7,22                jne   2c49               if (Rad != 0) goto 2c49;
@@ -1243,7 +1243,7 @@ Sub0040:
 8 2c55: c4,ad,58             stb   Rad,R58            Rad = R58;           
 8 2c58: b0,ad,56             ldb   R56,Rad            R56 = Rad;           
 8 2c5b: 36,4f,0c             jnb   B6,R4f,2c6a        if (!B6_R4f) goto 2c6a;
-8 2c5e: 2f,7e                scall 2bde               knck4();             
+8 2c5e: 2f,7e                scall 2bde               KNOCK_HANDLER();     
 8 2c60: 77,55,db,01,56       ad2b  R56,[R54+1db]      R56 += [R54+1db];    
 8 2c65: d5,03                jnv   2c6a               if (!OV) goto 2c6a;  
 8 2c67: b1,80,56             ldb   R56,80             R56 = 80;            
@@ -1336,7 +1336,7 @@ Sub0040:
 8 2d7b: d1,03                jleu  2d80               if ((uns) Rc4 <= [Sc0228]) goto 2d80;
 8 2d7d: 91,04,50             orrb  R50,4              R50 |= 4;            
 8 2d80: c3,01,4c,02,56       stw   [24c],R56          [24c] = R56;         
-8 2d85: 28,34                scall 2dbb               Upd_Htime_Prev();    
+8 2d85: 28,34                scall 2dbb               UPDATE_HSO_TIME_PREVIOUS();
 8 2d87: a1,3a,02,7a          ldw   R7a,23a            R7a = 23a;           
 8 2d8b: 9b,7a,01,00          cmpb  0,[R7a+1]                               
 8 2d8f: d6,19                jge   2daa               if ((sig) 0 >= [R7a+1]) goto 2daa;
@@ -1349,7 +1349,7 @@ Sub0040:
 8 2da7: ca,90                push  [R90]              push([R90]);         
 8 2da9: f0                   ret                      return;              
 
-8 2daa: ef,c1,f8             call  266e               Do_CmdN();           
+8 2daa: ef,c1,f8             call  266e               DO_COMMAND_N();      
 8 2dad: f0                   ret                      return;              
 
 
@@ -1357,7 +1357,7 @@ Sub0040:
 8 2db6: 00,f0,71,fe,50                                Unknown Operation/Structure
 
 
-Upd_Htime_Prev:
+UPDATE_HSO_TIME_PREVIOUS:
 8 2dbb: a3,01,40,02,7c       ldw   R7c,[240]          [HSO_TIME] = [240];  
 8 2dc0: b3,01,42,02,7e       ldb   R7e,[242]          [HSO_TIMEH] = [242]; 
 8 2dc5: 67,01,4c,02,7c       ad2w  R7c,[24c]          [HSO_TIME] += [24c]; 
@@ -1593,12 +1593,12 @@ Sub0047:
 8 3050: 37,82,11             jnb   B7,R82,3064        if (!B7_R82) goto 3064;
 8 3053: 68,80,7c             sb2w  R7c,R80            [HSO_TIME] -= R80;   
 8 3056: b8,82,7e             sbbb  R7e,R82            [HSO_TIMEH] -= R82 - CY;
-8 3059: ef,4c,f6             call  26a8               SEND_HSO_CMD();      
+8 3059: ef,4c,f6             call  26a8               SEND_HSO_COMMAND();  
 8 305c: 3d,4c,08             jb    B5,R4c,3067        if ([FLAGS_4C].LATE_OUTPUT == 1) goto 3067;
 8 305f: 91,20,4f             orrb  R4f,20             R4f |= 20;           
 8 3062: 20,03                sjmp  3067               goto 3067;           
 
-8 3064: ef,41,f6             call  26a8               SEND_HSO_CMD();      
+8 3064: ef,41,f6             call  26a8               SEND_HSO_COMMAND();  
 8 3067: 2f,64                scall 2fcd               2fcd();              
 8 3069: 20,5a                sjmp  30c5               goto 30c5;           
 
@@ -1626,13 +1626,13 @@ Sub0047:
 8 30a1: 37,5a,15             jnb   B7,R5a,30b9        if (!B7_R5a) goto 30b9;
 8 30a4: a3,7a,02,7c          ldw   R7c,[R7a+2]        [HSO_TIME] = [R7a+2];
 8 30a8: b3,7a,04,7e          ldb   R7e,[R7a+4]        [HSO_TIMEH] = [R7a+4];
-8 30ac: ef,f9,f5             call  26a8               SEND_HSO_CMD();      
+8 30ac: ef,f9,f5             call  26a8               SEND_HSO_COMMAND();  
 8 30af: 3d,4c,03             jb    B5,R4c,30b5        if ([FLAGS_4C].LATE_OUTPUT == 1) goto 30b5;
 8 30b2: 91,20,4f             orrb  R4f,20             R4f |= 20;           
 8 30b5: 36,4c,0d             jnb   B6,R4c,30c5        if ([FLAGS_4C].QUEUED == 0) goto 30c5;
 8 30b8: f0                   ret                      return;              
 
-8 30b9: ef,ec,f5             call  26a8               SEND_HSO_CMD();      
+8 30b9: ef,ec,f5             call  26a8               SEND_HSO_COMMAND();  
 8 30bc: 34,4f,02             jnb   B4,R4f,30c1        if (!B4_R4f) goto 30c1;
 8 30bf: 2f,23                scall 2fe4               Sub0044();           
 8 30c1: 36,4c,01             jnb   B6,R4c,30c5        if ([FLAGS_4C].QUEUED == 0) goto 30c5;
@@ -1664,7 +1664,7 @@ Sub0047:
 8 310a: 37,82,04             jnb   B7,R82,3111        if (!B7_R82) goto 3111;
 8 310d: 28,2f                scall 313e               Sub0048();           
 8 310f: 2e,d3                scall 2fe4               Sub0044();           
-8 3111: ef,94,f5             call  26a8               SEND_HSO_CMD();      
+8 3111: ef,94,f5             call  26a8               SEND_HSO_COMMAND();  
 8 3114: 36,4c,04             jnb   B6,R4c,311b        if ([FLAGS_4C].QUEUED == 0) goto 311b;
 8 3117: 71,ef,4f             an2b  R4f,ef             R4f &= ef;           
 8 311a: f0                   ret                      return;              
@@ -2107,7 +2107,7 @@ SET_RPM_FLAGS:
 8 35c5: fb                   ei                       enable ints;         
 8 35c6: f0                   ret                      return;              
 
-Update_WOT:
+UPDATE_WOT:
 8 35c7: 71,fe,26             an2b  R26,fe             [FLAGS_26].CTPTFG = 0;
 8 35ca: a3,01,20,01,36       ldw   R36,[120]          R36 = [120];         
 8 35cf: 47,f2,70,36,38       ad3w  R38,R36,[Rf2+70]   R38 = R36 + [Sc0040];
@@ -2462,7 +2462,7 @@ Sub0067:
 8 39d5: c3,01,78,01,32       stw   [178],R32          [178] = [GEN_32];    
 8 39da: 45,5a,00,f0,32       ad3w  R32,Rf0,5a         [GEN_32] = St0001;   
 8 39df: b3,f3,4d,01,36       ldb   R36,[Rf2+14d]      R36 = [Sc0079];      
-8 39e4: ef,e0,08             call  42c7               Sub0075();           
+8 39e4: ef,e0,08             call  42c7               FRACTIONAL_TO_RATIO_CALC();
 8 39e7: 0a,07,34             asrw  R34,7              [GEN_34] = [GEN_34] / 80;
 8 39ea: ef,7b,fa             call  3468               SUWordLU();          
 8 39ed: a0,38,14             ldw   R14,R38            [GEN_14] = R38;      
@@ -2513,7 +2513,7 @@ Sub0067:
 8 3a8a: ff                   ff                                            
 8 3a8b: a1,b0,23,90          ldw   R90,23b0           R90 = OSt8_004;      
 8 3a8f: 91,08,4c             orrb  R4c,8              [FLAGS_4C].IMMEDIATE_HSO = 1;
-8 3a92: ef,13,ec             call  26a8               SEND_HSO_CMD();      
+8 3a92: ef,13,ec             call  26a8               SEND_HSO_COMMAND();  
 8 3a95: fb                   ei                       enable ints;         
 8 3a96: 20,25                sjmp  3abd               goto 3abd;           
 
@@ -3094,7 +3094,7 @@ Sub0074:
 
 8 4180: 45,f0,02,f0,32       ad3w  R32,Rf0,2f0        [GEN_32] = St0005;   
 8 4185: b3,f3,92,00,36       ldb   R36,[Rf2+92]       R36 = [Sc0059];      
-8 418a: 29,3b                scall 42c7               Sub0075();           
+8 418a: 29,3b                scall 42c7               FRACTIONAL_TO_RATIO_CALC();
 8 418c: ef,d9,f2             call  3468               SUWordLU();          
 8 418f: a0,38,30             ldw   R30,R38            R30 = R38;           
 8 4192: 45,34,03,f0,32       ad3w  R32,Rf0,334        [GEN_32] = Fc030;    
@@ -3121,7 +3121,7 @@ Sub0074:
 8 41d8: c3,01,7e,01,3a       stw   [17e],R3a          [17e] = R3a;         
 8 41dd: 45,f0,02,f0,32       ad3w  R32,Rf0,2f0        [GEN_32] = St0005;   
 8 41e2: b3,f3,93,00,36       ldb   R36,[Rf2+93]       R36 = [Sc0060];      
-8 41e7: 28,de                scall 42c7               Sub0075();           
+8 41e7: 28,de                scall 42c7               FRACTIONAL_TO_RATIO_CALC();
 8 41e9: ef,7c,f2             call  3468               SUWordLU();          
 8 41ec: a0,38,30             ldw   R30,R38            R30 = R38;           
 8 41ef: 45,80,02,f0,32       ad3w  R32,Rf0,280        [GEN_32] = Fc026;    
@@ -3193,7 +3193,7 @@ Sub0074:
 8 42c3: 71,fd,d6             an2b  Rd6,fd             Rd6 &= fd;           
 8 42c6: f0                   ret                      return;              
 
-Sub0075:
+FRACTIONAL_TO_RATIO_CALC:
 8 42c7: fe,5c,bb,36,34       sml3b  R34,R36,Rbb       [GEN_34] = (sig)R36 * Rbb;
 8 42cc: 13,36                negb  R36                R36 = -R36;          
 8 42ce: 75,7f,36             ad2b  R36,7f             R36 += 7f;           
@@ -3732,7 +3732,7 @@ Sub0083:
 
 8 4920: 45,f0,02,f0,32       ad3w  R32,Rf0,2f0        [GEN_32] = St0005;   
 8 4925: b3,f3,52,01,36       ldb   R36,[Rf2+152]      R36 = [Sc0083];      
-8 492a: ef,9a,f9             call  42c7               Sub0075();           
+8 492a: ef,9a,f9             call  42c7               FRACTIONAL_TO_RATIO_CALC();
 8 492d: ef,38,eb             call  3468               SUWordLU();          
 8 4930: a0,38,1a             ldw   R1a,R38            R1a = R38;           
 8 4933: a0,1a,30             ldw   R30,R1a            R30 = R1a;           
@@ -3844,7 +3844,7 @@ Sub0084:
 8 4a7c: a0,38,30             ldw   R30,R38            R30 = R38;           
 8 4a7f: 45,b0,02,f0,32       ad3w  R32,Rf0,2b0        [GEN_32] = St0004;   
 8 4a84: b3,f3,58,01,36       ldb   R36,[Rf2+158]      R36 = [Sc0086];      
-8 4a89: ef,3b,f8             call  42c7               Sub0075();           
+8 4a89: ef,3b,f8             call  42c7               FRACTIONAL_TO_RATIO_CALC();
 8 4a8c: ef,d9,e9             call  3468               SUWordLU();          
 8 4a8f: a0,38,32             ldw   R32,R38            [GEN_32] = R38;      
 8 4a92: ad,08,34             ldzbw R34,8              [GEN_34] = (uns)8;   
@@ -3901,7 +3901,7 @@ Sub0084:
 8 4b40: 91,08,4a             orrb  R4a,8              R4a |= 8;            
 8 4b43: f0                   ret                      return;              
 
-Sub0085:
+UPDATE_FUEL_PUMP:
 8 4b44: a3,01,3c,01,14       ldw   R14,[13c]          [GEN_14] = [TSLPIP]; 
 8 4b49: 89,00,04,14          cmpw  R14,400                                 
 8 4b4d: d3,04                jnc   4b53               if ((uns) [GEN_14] < 400) goto 4b53;
@@ -3911,7 +3911,7 @@ Sub0085:
 8 4b53: 91,80,46             orrb  R46,80             R46 |= 80;           
 8 4b56: f0                   ret                      return;              
 
-Idm_inth:
+IDM_HANDLER:
 8 4b57: 71,fd,47             an2b  R47,fd             R47 &= fd;           
 8 4b5a: 36,a7,04             jnb   B6,Ra7,4b61        if (!B6_[FLAGS_A7]) goto 4b61;
 8 4b5d: 91,02,47             orrb  R47,2              R47 |= 2;            
@@ -4575,7 +4575,7 @@ Sub0097:
 8 52f0: ef,fe,e1             call  34f1               UTabLU();            
 8 52f3: ac,3b,3c             ldzbw R3c,R3b            [GEN_3C] = (uns)R3b; 
 8 52f6: b3,f3,66,01,36       ldb   R36,[Rf2+166]      R36 = [Sc0098];      
-8 52fb: ef,c9,ef             call  42c7               Sub0075();           
+8 52fb: ef,c9,ef             call  42c7               FRACTIONAL_TO_RATIO_CALC();
 8 52fe: 45,5a,01,f0,32       ad3w  R32,Rf0,15a        [GEN_32] = Fc013;    
 8 5303: ef,62,e1             call  3468               SUWordLU();          
 8 5306: a0,38,30             ldw   R30,R38            R30 = R38;           
@@ -4658,7 +4658,7 @@ Update_dwell:
 8 53fa: 9b,f1,ac,03,00       cmpb  0,[Rf0+3ac]                             
 8 53ff: df,62                je    5463               if (0 == [CCDSW]) goto 5463;
 8 5401: b3,f1,b0,03,36       ldb   R36,[Rf0+3b0]      R36 = [DWLWF];       
-8 5406: ef,be,ee             call  42c7               Sub0075();           
+8 5406: ef,be,ee             call  42c7               FRACTIONAL_TO_RATIO_CALC();
 8 5409: 0a,07,34             asrw  R34,7              [GEN_34] = [GEN_34] / 80;
 8 540c: 45,c0,03,f0,32       ad3w  R32,Rf0,3c0        [GEN_32] = FN160A;   
 8 5411: 9b,f1,ad,03,34       cmpb  R34,[Rf0+3ad]                           
@@ -5112,7 +5112,7 @@ Sub0103:
 8 595e: a3,74,2c,40          ldw   R40,[R74+2c]       R40 = [R74+FLAGS_2C];
 8 5962: 45,b0,02,f0,32       ad3w  R32,Rf0,2b0        [GEN_32] = St0004;   
 8 5967: b3,f3,58,01,36       ldb   R36,[Rf2+158]      R36 = [Sc0086];      
-8 596c: ef,58,e9             call  42c7               Sub0075();           
+8 596c: ef,58,e9             call  42c7               FRACTIONAL_TO_RATIO_CALC();
 8 596f: ef,f6,da             call  3468               SUWordLU();          
 8 5972: a0,38,30             ldw   R30,R38            R30 = R38;           
 8 5975: 45,fc,01,f2,32       ad3w  R32,Rf2,1fc        [GEN_32] = Fc036;    
@@ -5919,7 +5919,7 @@ Sub0109:
 8 62d8: c7,01,ce,01,00       stb   [1ce],0            [1ce] = 0;           
 8 62dd: f0                   ret                      return;              
 
-Update_timers:
+UPDATE_TIMERS:
 8 62de: a3,01,3e,01,3c       ldw   R3c,[13e]          [GEN_3C] = [13e];    
 8 62e3: a1,91,63,30          ldw   R30,6391           R30 = 6391;          
 8 62e7: a0,06,36             ldw   R36,R06            R36 = [IO_TIMER];    
@@ -6189,7 +6189,7 @@ Sub0114:
 
 8 6627: 28,15                scall 663e               Sub0115();           
 8 6629: a1,a0,23,90          ldw   R90,23a0           R90 = 23a0;          
-8 662d: ef,3e,c0             call  266e               Do_CmdN();           
+8 662d: ef,3e,c0             call  266e               DO_COMMAND_N();      
 8 6630: f0                   ret                      return;              
 
 
@@ -6332,7 +6332,7 @@ Sub0117:
 8 67bc: 91,80,a0             orrb  Ra0,80             [FLAGS_A0] |= 80;    
 8 67bf: f0                   ret                      return;              
 
-Idm_inth:
+IDM_HANDLER:
 8 67c0: 71,7f,83             an2b  R83,7f             R83 &= 7f;           
 8 67c3: 37,8e,03             jnb   B7,R8e,67c9        if (!B7_[LAST_HSI]) goto 67c9;
 8 67c6: 91,10,4e             orrb  R4e,10             [FLAGS_4E].NEW_IDM = 1;
@@ -6359,7 +6359,7 @@ Idm_inth:
 8 6852: 02,7e,e7,7b,bd                                Unknown Operation/Structure
 
 
-Do_SelfTest:
+DO_SELF_TEST:
 8 6857: 29,de                scall 6a37               Sub0134();           
 8 6859: 71,ef,2e             an2b  R2e,ef             R2e &= ef;           
 8 685c: 3a,2a,0c             jb    B2,R2a,686b        if ([VIP_FLAGS].VIP_ENABLE == 1) goto 686b;
@@ -6375,7 +6375,7 @@ Do_SelfTest:
 
 8 6879: 3b,2b,03             jb    B3,R2b,687f        if (B3_R2b) goto 687f;
 8 687c: 35,4a,03             jnb   B5,R4a,6882        if (!B5_R4a) goto 6882;
-8 687f: ef,7f,06             call  6f01               clear_KAM();         
+8 687f: ef,7f,06             call  6f01               CLEAR_KAM();         
 8 6882: e7,7d,10             jump  7902               goto Sub0203;        
 
 8 6885: 35,2a,16             jnb   B5,R2a,689e        if ([VIP_FLAGS].SELF_TEST == 0) goto 689e;
@@ -6413,13 +6413,13 @@ Do_SelfTest:
 8 68d7: f0                   ret                      return;              
 
 Sub0120:
-8 68d8: 21,3c                sjmp  6a16               goto Save_diag_vals; 
+8 68d8: 21,3c                sjmp  6a16               goto SAVE_DIAGNOSTIC_VALUES;
 
 8 68da: 91,10,2e             orrb  R2e,10             R2e |= 10;           
 8 68dd: f0                   ret                      return;              
 
 Sub0121:
-8 68de: 29,11                scall 69f1               Get_diag_vals();     
+8 68de: 29,11                scall 69f1               GET_DIAGNOSTIC_VALUES();
 8 68e0: ac,38,3a             ldzbw R3a,R38            R3a = (uns)R38;      
 8 68e3: 09,01,3a             shlw  R3a,1              R3a = R3a * 2;       
 8 68e6: cc,42                pop   R42                [GEN_42] = pop();    
@@ -6454,9 +6454,9 @@ Sub0125:
 8 691b: b1,10,19             ldb   R19,10             R19 = 10;            
 8 691e: 98,30,00             cmpb  0,R30                                   
 8 6921: d7,04                jne   6927               if (0 != R30) goto 6927;
-8 6923: ef,40,09             call  7266               SaveTCode1(11);      
+8 6923: ef,40,09             call  7266               SAVE_TROUBLE_CODE1(11);
 8 6926: 11                                            #args                
-8 6927: ef,3c,09             call  7266               SaveTCode1(0);       
+8 6927: ef,3c,09             call  7266               SAVE_TROUBLE_CODE1(0);
 8 692a: 00                                            #args                
 8 692b: a1,80,02,30          ldw   R30,280            R30 = 280;           
 8 692f: ae,31,32             ldzbw R32,[R30++]        [GEN_32] = (uns)[R30++];
@@ -6551,11 +6551,11 @@ Sub0151:
 8 69e6: c8,14                push  R14                push([GEN_14]);      
 8 69e8: c8,40                push  R40                push(R40);           
 8 69ea: 01,40                clrw  R40                R40 = 0;             
-8 69ec: 28,28                scall 6a16               Save_diag_vals();    
+8 69ec: 28,28                scall 6a16               SAVE_DIAGNOSTIC_VALUES();
 8 69ee: 01,e8                clrw  Re8                Re8 = 0;             
 8 69f0: f0                   ret                      return;              
 
-Get_diag_vals:
+GET_DIAGNOSTIC_VALUES:
 8 69f1: a3,72,3e,30          ldw   R30,[R72+3e]       R30 = [R72+GEN_3E];  
 8 69f5: a3,72,22,32          ldw   R32,[R72+22]       [GEN_32] = [R72+22]; 
 8 69f9: a3,72,1e,34          ldw   R34,[R72+1e]       [GEN_34] = [R72+1e]; 
@@ -6567,7 +6567,7 @@ Get_diag_vals:
 8 6a11: b3,72,24,19          ldb   R19,[R72+24]       R19 = [R72+24];      
 8 6a15: f0                   ret                      return;              
 
-Save_diag_vals:
+SAVE_DIAGNOSTIC_VALUES:
 8 6a16: c3,72,3e,30          stw   [R72+3e],R30       [R72+GEN_3E] = R30;  
 8 6a1a: c3,72,22,32          stw   [R72+22],R32       [R72+22] = [GEN_32]; 
 8 6a1e: c3,72,1e,34          stw   [R72+1e],R34       [R72+1e] = [GEN_34]; 
@@ -6709,7 +6709,7 @@ Sub0135:
 
 8 6b44: 37,2f,16             jnb   B7,R2f,6b5d        if (!B7_[FLAGS_2F]) goto 6b5d;
 8 6b47: 71,7f,2f             an2b  R2f,7f             [FLAGS_2F] &= 7f;    
-8 6b4a: ef,a4,fe             call  69f1               Get_diag_vals();     
+8 6b4a: ef,a4,fe             call  69f1               GET_DIAGNOSTIC_VALUES();
 8 6b4d: ef,89,06             call  71d9               Sub0162();           
 8 6b50: c9,5a,6b             push  6b5a               push(Sub0136);       
 8 6b53: ef,01,06             call  7157               Sub0158([AD_LOW],R80);
@@ -6717,28 +6717,28 @@ Sub0135:
 
 Sub0136:
 8 6b5a: 90,1a,2f             orrb  R2f,R1a            [FLAGS_2F] |= R1a;   
-8 6b5d: 2a,e2                scall 6e41               Sub0137([100],f);    
+8 6b5d: 2a,e2                scall 6e41               UPDATE_TROUBLE_CODE([100],f);
 8 6b5f: 00,01,0f                                      #args                
 8 6b62: 3c,2e,04             jb    B4,R2e,6b69        if (B4_R2e) goto 6b69;
 8 6b65: 37,a7,01             jnb   B7,Ra7,6b69        if (!B7_[FLAGS_A7]) goto 6b69;
 8 6b68: f0                   ret                      return;              
 
 8 6b69: 71,7f,2d             an2b  R2d,7f             [VIP_FLAGS3] &= 7f;  
-8 6b6c: ef,44,05             call  70b3               Compare([9278],[110]);
+8 6b6c: ef,44,05             call  70b3               COMPARE([9278],[110]);
 8 6b6f: 78,92,10,01                                   #args                
-8 6b73: 2a,cc                scall 6e41               Sub0137([2018],c);   
+8 6b73: 2a,cc                scall 6e41               UPDATE_TROUBLE_CODE([2018],c);
 8 6b75: 18,20,0c                                      #args                
-8 6b78: ef,38,05             call  70b3               Compare([110],[927a]);
+8 6b78: ef,38,05             call  70b3               COMPARE([110],[927a]);
 8 6b7b: 10,01,7a,92                                   #args                
-8 6b7f: 2a,c0                scall 6e41               Sub0137([8020],9);   
+8 6b7f: 2a,c0                scall 6e41               UPDATE_TROUBLE_CODE([8020],9);
 8 6b81: 20,80,09                                      #args                
-8 6b84: ef,2c,05             call  70b3               Compare([9260],[112]);
+8 6b84: ef,2c,05             call  70b3               COMPARE([9260],[112]);
 8 6b87: 60,92,12,01                                   #args                
-8 6b8b: 2a,b4                scall 6e41               Sub0137([EC_1008],e);
+8 6b8b: 2a,b4                scall 6e41               UPDATE_TROUBLE_CODE([EC_1008],e);
 8 6b8d: 08,10,0e                                      #args                
-8 6b90: ef,20,05             call  70b3               Compare([112],[9262]);
+8 6b90: ef,20,05             call  70b3               COMPARE([112],[9262]);
 8 6b93: 12,01,62,92                                   #args                
-8 6b97: 2a,a8                scall 6e41               Sub0137([4010],b);   
+8 6b97: 2a,a8                scall 6e41               UPDATE_TROUBLE_CODE([4010],b);
 8 6b99: 10,40,0b                                      #args                
 8 6b9c: b3,73,94,00,1a       ldb   R1a,[R72+94]       R1a = [R72+94];      
 8 6ba1: 9b,f3,a8,02,1a       cmpb  R1a,[Rf2+2a8]                           
@@ -6749,24 +6749,24 @@ Sub0136:
 
 8 6bad: 20,11                                         Unknown Operation/Structure
 
-8 6baf: ef,01,05             call  70b3               Compare([200],[92a6]);
+8 6baf: ef,01,05             call  70b3               COMPARE([200],[92a6]);
 8 6bb2: 00,02,a6,92                                   #args                
 8 6bb6: 3a,2f,07             jb    B2,R2f,6bc0        if (B2_[FLAGS_2F]) goto 6bc0;
-8 6bb9: ef,f7,04             call  70b3               Compare([92a4],[200]);
+8 6bb9: ef,f7,04             call  70b3               COMPARE([92a4],[200]);
 8 6bbc: a4,92,00,02                                   #args                
-8 6bc0: 2a,7f                scall 6e41               Sub0137([801],1);    
+8 6bc0: 2a,7f                scall 6e41               UPDATE_TROUBLE_CODE([801],1);
 8 6bc2: 01,08,01                                      #args                
-8 6bc5: ef,eb,04             call  70b3               Compare([9268],[11e]);
+8 6bc5: ef,eb,04             call  70b3               COMPARE([9268],[11e]);
 8 6bc8: 68,92,1e,01                                   #args                
-8 6bcc: 2a,73                scall 6e41               Sub0137([238],d);    
+8 6bcc: 2a,73                scall 6e41               UPDATE_TROUBLE_CODE([238],d);
 8 6bce: 38,02,0d                                      #args                
-8 6bd1: ef,df,04             call  70b3               Compare([11e],[9266]);
+8 6bd1: ef,df,04             call  70b3               COMPARE([11e],[9266]);
 8 6bd4: 1e,01,66,92                                   #args                
 8 6bd8: 31,a8,0a             jnb   B1,Ra8,6be5        if (!B1_Ra8) goto 6be5;
 8 6bdb: b1,ff,42             ldb   R42,ff             [GEN_42] = ff;       
 8 6bde: c7,72,0e,42          stb   [R72+e],R42        [R72+e] = [GEN_42];  
 8 6be2: 91,04,2f             orrb  R2f,4              [FLAGS_2F] |= 4;     
-8 6be5: 2a,5a                scall 6e41               Sub0137([840],a);    
+8 6be5: 2a,5a                scall 6e41               UPDATE_TROUBLE_CODE([840],a);
 8 6be7: 40,08,0a                                      #args                
 8 6bea: 34,2e,02             jnb   B4,R2e,6bef        if (!B4_R2e) goto 6bef;
 8 6bed: 20,6d                sjmp  6c5c               goto 6c5c;           
@@ -6811,7 +6811,7 @@ Sub0136:
 8 6c4d: 9b,f3,97,02,30       cmpb  R30,[Rf2+297]                           
 8 6c52: db,03                jc    6c57               if ((uns) R30 >= [Sc0150]) goto 6c57;
 8 6c54: 91,04,2f             orrb  R2f,4              [FLAGS_2F] |= 4;     
-8 6c57: 29,e8                scall 6e41               Sub0137([201],8);    
+8 6c57: 29,e8                scall 6e41               UPDATE_TROUBLE_CODE([201],8);
 8 6c59: 01,02,08                                      #args                
 8 6c5c: b3,75,a5,00,42       ldb   R42,[R74+a5]       [GEN_42] = [R74+a5]; 
 8 6c61: e0,42,57             djnz  R42,6cbb           [GEN_42]--; if ([GEN_42] !=  0) goto 6cbb;
@@ -6856,7 +6856,7 @@ Sub0136:
 8 6cb1: 9b,f3,1e,03,ae       cmpb  Rae,[Rf2+31e]                           
 8 6cb6: db,03                jc    6cbb               if ((uns) Rae >= [Sc0168]) goto 6cbb;
 8 6cb8: 91,04,2f             orrb  R2f,4              [FLAGS_2F] |= 4;     
-8 6cbb: 29,84                scall 6e41               Sub0137([8003],2);   
+8 6cbb: 29,84                scall 6e41               UPDATE_TROUBLE_CODE([8003],2);
 8 6cbd: 03,80,02                                      #args                
 8 6cc0: 36,a4,02             jnb   B6,Ra4,6cc5        if (!B6_Ra4) goto 6cc5;
 8 6cc3: 20,dc                sjmp  6da1               goto 6da1;           
@@ -6877,27 +6877,27 @@ Sub0136:
 8 6ce8: ef,6e,08             call  7559               Sub0185([1c6],St0031,St0029,[3432]);
 8 6ceb: c6,01,c2,92,b6,92,32,34                       #args                
 8 6cf3: b0,1a,40             ldb   R40,R1a            R40 = R1a;           
-8 6cf6: 2a,56                scall 6f4e               Set_TC(31);          
+8 6cf6: 2a,56                scall 6f4e               SET_TROUBLE_CODE(31);
 8 6cf8: 31                                            #args                
-8 6cf9: 29,46                scall 6e41               Sub0137([802a],3);   
+8 6cf9: 29,46                scall 6e41               UPDATE_TROUBLE_CODE([802a],3);
 8 6cfb: 2a,80,03                                      #args                
-8 6cfe: 2a,4e                scall 6f4e               Set_TC(35);          
+8 6cfe: 2a,4e                scall 6f4e               SET_TROUBLE_CODE(35);
 8 6d00: 35                                            #args                
-8 6d01: 29,3e                scall 6e41               Sub0137([832],7);    
+8 6d01: 29,3e                scall 6e41               UPDATE_TROUBLE_CODE([832],7);
 8 6d03: 32,08,07                                      #args                
 8 6d06: 34,2e,08             jnb   B4,R2e,6d11        if (!B4_R2e) goto 6d11;
 8 6d09: 71,fb,2e             an2b  R2e,fb             R2e &= fb;           
 8 6d0c: 71,7f,2e             an2b  R2e,7f             R2e &= 7f;           
 8 6d0f: 20,8b                sjmp  6d9c               goto 6d9c;           
 
-8 6d11: 2a,3b                scall 6f4e               Set_TC(32);          
+8 6d11: 2a,3b                scall 6f4e               SET_TROUBLE_CODE(32);
 8 6d13: 32                                            #args                
-8 6d14: 29,2b                scall 6e41               Sub0137([4002],4);   
+8 6d14: 29,2b                scall 6e41               UPDATE_TROUBLE_CODE([4002],4);
 8 6d16: 02,40,04                                      #args                
 8 6d19: 3b,2f,0a             jb    B3,R2f,6d26        if (B3_[FLAGS_2F]) goto 6d26;
-8 6d1c: 2a,30                scall 6f4e               Set_TC(34);          
+8 6d1c: 2a,30                scall 6f4e               SET_TROUBLE_CODE(34);
 8 6d1e: 34                                            #args                
-8 6d1f: 29,20                scall 6e41               Sub0137([EC_1002],6);
+8 6d1f: 29,20                scall 6e41               UPDATE_TROUBLE_CODE([EC_1002],6);
 8 6d21: 02,10,06                                      #args                
 8 6d24: 20,33                sjmp  6d59               goto 6d59;           
 
@@ -6908,13 +6908,13 @@ Sub0136:
 8 6d31: 3a,2e,07             jb    B2,R2e,6d3b        if (B2_R2e) goto 6d3b;
 8 6d34: c7,72,52,00          stb   [R72+52],0         [R72+52] = 0;        
 8 6d38: 91,04,2e             orrb  R2e,4              R2e |= 4;            
-8 6d3b: ef,75,03             call  70b3               Compare([114],[92d4]);
+8 6d3b: ef,75,03             call  70b3               COMPARE([114],[92d4]);
 8 6d3e: 14,01,d4,92                                   #args                
 8 6d42: 32,2f,0a             jnb   B2,R2f,6d4f        if (!B2_[FLAGS_2F]) goto 6d4f;
 8 6d45: b3,72,52,18          ldb   R18,[R72+52]       R18 = [R72+52];      
 8 6d49: 9b,74,60,18          cmpb  R18,[R74+60]                            
 8 6d4d: d3,52                jnc   6da1               if ((uns) R18 < [R74+60]) goto 6da1;
-8 6d4f: 28,f0                scall 6e41               Sub0137([EC_1002],6);
+8 6d4f: 28,f0                scall 6e41               UPDATE_TROUBLE_CODE([EC_1002],6);
 8 6d51: 02,10,06                                      #args                
 8 6d54: 20,46                sjmp  6d9c               goto 6d9c;           
 
@@ -6930,34 +6930,34 @@ Sub0136:
 8 6d71: 91,80,2e             orrb  R2e,80             R2e |= 80;           
 8 6d74: c7,72,52,00          stb   [R72+52],0         [R72+52] = 0;        
 8 6d78: 33,2f,09             jnb   B3,R2f,6d84        if (!B3_[FLAGS_2F]) goto 6d84;
-8 6d7b: ef,35,03             call  70b3               Compare([92d8],[114]);
+8 6d7b: ef,35,03             call  70b3               COMPARE([92d8],[114]);
 8 6d7e: d8,92,14,01                                   #args                
 8 6d82: 20,0b                sjmp  6d8f               goto 6d8f;           
 
 8 6d84: 29,b3                scall 6f39               SrolavT([1c8]);      
 8 6d86: c8,01                                         #args                
-8 6d88: ef,28,03             call  70b3               Compare([1c8],[92c8]);
+8 6d88: ef,28,03             call  70b3               COMPARE([1c8],[92c8]);
 8 6d8b: c8,01,c8,92                                   #args                
 8 6d8f: 32,2f,0a             jnb   B2,R2f,6d9c        if (!B2_[FLAGS_2F]) goto 6d9c;
 8 6d92: b3,72,52,18          ldb   R18,[R72+52]       R18 = [R72+52];      
 8 6d96: 9b,74,36,18          cmpb  R18,[R74+36]                            
 8 6d9a: d3,05                jnc   6da1               if ((uns) R18 < [R74+36]) goto 6da1;
-8 6d9c: 28,a3                scall 6e41               Sub0137([2002],5);   
+8 6d9c: 28,a3                scall 6e41               UPDATE_TROUBLE_CODE([2002],5);
 8 6d9e: 02,20,05                                      #args                
 8 6da1: 8b,74,fa,b8          cmpw  Rb8,[R74+fa]                            
 8 6da5: d3,39                jnc   6de0               if ((uns) [RPMX4] < [R74+fa]) goto 6de0;
-8 6da7: 2b,0a                scall 70b3               Compare([TSLPIP],[9276]);
+8 6da7: 2b,0a                scall 70b3               COMPARE([TSLPIP],[9276]);
 8 6da9: 3c,01,76,92                                   #args                
 8 6dad: 32,2f,0c             jnb   B2,R2f,6dbc        if (!B2_[FLAGS_2F]) goto 6dbc;
 8 6db0: 91,10,2f             orrb  R2f,10             [FLAGS_2F].IDM_BYPASS = 1;
 8 6db3: c7,72,14,00          stb   [R72+14],0         [R72+GEN_14] = 0;    
 8 6db7: c3,73,ae,00,00       stw   [R72+ae],0         [R72+ae] = 0;        
-8 6dbc: 28,83                scall 6e41               Sub0137([4001],0);   
+8 6dbc: 28,83                scall 6e41               UPDATE_TROUBLE_CODE([4001],0);
 8 6dbe: 01,40,00                                      #args                
 8 6dc1: 3c,2f,0d             jb    B4,R2f,6dd1        if ([FLAGS_2F].IDM_BYPASS == 1) goto 6dd1;
-8 6dc4: 2a,ed                scall 70b3               Compare([TSLIDM],[9272]);
+8 6dc4: 2a,ed                scall 70b3               COMPARE([TSLIDM],[9272]);
 8 6dc6: 2e,02,72,92                                   #args                
-8 6dca: 28,75                scall 6e41               Sub0137([2001],10);  
+8 6dca: 28,75                scall 6e41               UPDATE_TROUBLE_CODE([2001],10);
 8 6dcc: 01,20,10                                      #args                
 8 6dcf: 20,14                sjmp  6de5               goto 6de5;           
 
@@ -6966,17 +6966,17 @@ Sub0136:
 8 6ddb: d1,08                jleu  6de5               if ((uns) R43 <= [Sc0146]) goto 6de5;
 8 6ddd: 71,ef,2f             an2b  R2f,ef             [FLAGS_2F].IDM_BYPASS = 0;
 8 6de0: c3,73,ae,00,00       stw   [R72+ae],0         [R72+ae] = 0;        
-8 6de5: 29,73                scall 6f5a               upd_flflg([8003]);   
+8 6de5: 29,73                scall 6f5a               UPDATE_FL_FLAG([8003]);
 8 6de7: 03,80                                         #args                
-8 6de9: 29,6f                scall 6f5a               upd_flflg([400c]);   
+8 6de9: 29,6f                scall 6f5a               UPDATE_FL_FLAG([400c]);
 8 6deb: 0c,40                                         #args                
-8 6ded: 29,6b                scall 6f5a               upd_flflg([2030]);   
+8 6ded: 29,6b                scall 6f5a               UPDATE_FL_FLAG([2030]);
 8 6def: 30,20                                         #args                
-8 6df1: 29,67                scall 6f5a               upd_flflg([EC_10c0]);
+8 6df1: 29,67                scall 6f5a               UPDATE_FL_FLAG([EC_10c0]);
 8 6df3: c0,10                                         #args                
 8 6df5: 34,2e,09             jnb   B4,R2e,6e01        if (!B4_R2e) goto 6e01;
 8 6df8: 37,2d,04             jnb   B7,R2d,6dff        if (!B7_[VIP_FLAGS3]) goto 6dff;
-8 6dfb: 29,11                scall 6f0e               Set_STO();           
+8 6dfb: 29,11                scall 6f0e               SET_STO();           
 8 6dfd: 20,02                sjmp  6e01               goto 6e01;           
 
 8 6dff: 29,15                scall 6f16               Sub0140();           
@@ -7001,8 +7001,8 @@ Sub0136:
 8 6e3d: 71,fe,a2             an2b  Ra2,fe             Ra2 &= fe;           
 8 6e40: f0                   ret                      return;              
 
-Sub0137:
-8 6e41: 28,dd                scall 6f20               GetbytesR1a(3);      
+UPDATE_TROUBLE_CODE:
+8 6e41: 28,dd                scall 6f20               GET_BYTES_R1A(3);    
 8 6e43: 03                                            #args                
 8 6e44: bc,1c,14             ldsbw R14,R1c            [GEN_14] = (sig)R1c; 
 8 6e47: 45,84,01,14,1e       ad3w  R1e,R14,184        R1e = [GEN_14] + 184;
@@ -7072,13 +7072,13 @@ Sub0137:
 8 6efc: c7,72,4a,34          stb   [R72+4a],R34       [R72+4a] = [GEN_34]; 
 8 6f00: f0                   ret                      return;              
 
-clear_KAM:
+CLEAR_KAM:
 8 6f01: a1,16,00,16          ldw   R16,16             R16 = 16;            
 8 6f05: c7,17,54,04,00       stb   [R16+454],0        [R16+454] = 0;       
 8 6f0a: e0,16,f8             djnz  R16,6f05           R16--; if (R16 !=  0) goto 6f05;
 8 6f0d: f0                   ret                      return;              
 
-Set_STO:
+SET_STO:
 8 6f0e: 91,80,2b             orrb  R2b,80             R2b |= 80;           
 8 6f11: 91,02,45             orrb  R45,2              R45 |= 2;            
 8 6f14: 20,06                sjmp  6f1c               goto 6f1c;           
@@ -7089,7 +7089,7 @@ Sub0140:
 8 6f1c: 91,20,4a             orrb  R4a,20             R4a |= 20;           
 8 6f1f: f0                   ret                      return;              
 
-GetbytesR1a:
+GET_BYTES_R1A:
 8 6f20: a1,1a,00,16          ldw   R16,1a             R16 = 1a;            
 
 Sub0142:
@@ -7104,7 +7104,7 @@ Sub0142:
 8 6f38: f0                   ret                      return;              
 
 SrolavT:
-8 6f39: 2f,e5                scall 6f20               GetbytesR1a(2);      
+8 6f39: 2f,e5                scall 6f20               GET_BYTES_R1A(2);    
 8 6f3b: 02                                            #args                
 8 6f3c: a2,1a,32             ldw   R32,[R1a]          [GEN_32] = [R1a];    
 8 6f3f: a3,72,94,34          ldw   R34,[R72+94]       [GEN_34] = [R72+94]; 
@@ -7113,16 +7113,16 @@ SrolavT:
 8 6f4a: c2,1a,3e             stw   [R1a],R3e          [R1a] = [GEN_3E];    
 8 6f4d: f0                   ret                      return;              
 
-Set_TC:
-8 6f4e: 2f,d0                scall 6f20               GetbytesR1a(1);      
+SET_TROUBLE_CODE:
+8 6f4e: 2f,d0                scall 6f20               GET_BYTES_R1A(1);    
 8 6f50: 01                                            #args                
 8 6f51: 98,1a,40             cmpb  R40,R1a                                 
 8 6f54: d7,03                jne   6f59               if (R40 != R1a) goto 6f59;
 8 6f56: 91,04,2f             orrb  R2f,4              [FLAGS_2F] |= 4;     
 8 6f59: f0                   ret                      return;              
 
-upd_flflg:
-8 6f5a: 2f,c4                scall 6f20               GetbytesR1a(2);      
+UPDATE_FL_FLAG:
+8 6f5a: 2f,c4                scall 6f20               GET_BYTES_R1A(2);    
 8 6f5c: 02                                            #args                
 8 6f5d: 73,72,4a,1a          an2b  R1a,[R72+4a]       R1a &= [R72+4a];     
 8 6f61: df,04                je    6f67               if (R1a == [R72+4a]) goto 6f67;
@@ -7136,10 +7136,10 @@ upd_flflg:
 Sub0146:
 8 6f6d: 3e,2e,2a             jb    B6,R2e,6f9a        if (B6_R2e) goto 6f9a;
 8 6f70: ef,a3,ff             call  6f16               Sub0140();           
-8 6f73: ef,da,07             call  7750               HW_Check();          
-8 6f76: ef,78,fa             call  69f1               Get_diag_vals();     
+8 6f73: ef,da,07             call  7750               HW_CHECK();          
+8 6f76: ef,78,fa             call  69f1               GET_DIAGNOSTIC_VALUES();
 8 6f79: 34,2a,05             jnb   B4,R2a,6f81        if ([VIP_FLAGS].Disable_nostart == 0) goto 6f81;
-8 6f7c: ef,8f,ff             call  6f0e               Set_STO();           
+8 6f7c: ef,8f,ff             call  6f0e               SET_STO();           
 8 6f7f: 27,fb                sjmp  6f7c               goto 6f7c;           
 
 8 6f81: ef,38,00             call  6fbc               CalCheck();          
@@ -7189,7 +7189,7 @@ CalCheck - Calibration Starting Checks:
 
 8 6fd7: 88,3c,00             cmpw  0,R3c                                   
 8 6fda: df,03                je    6fdf               if (0 == [GEN_3C]) goto 6fdf;
-8 6fdc: 2a,88                scall 7266               SaveTCode1(15);      
+8 6fdc: 2a,88                scall 7266               SAVE_TROUBLE_CODE1(15);
 8 6fde: 15                                            #args                
 8 6fdf: 20,41                sjmp  7022               goto 7022;           
 
@@ -7216,16 +7216,16 @@ Sub0151:
 8 6ff4: 10,01,7a,92,51                                #args                
 8 6ff9: 98,30,32             cmpb  R32,R30                                 
 8 6ffc: d7,09                jne   7007               if ([GEN_32] != R30) goto 7007;
-8 6ffe: 2a,77                scall 7277               ChkRngeTC([110],St0018,St0017,21);
+8 6ffe: 2a,77                scall 7277               CHECK_RANGE_TROUBLE_CODE([110],St0018,St0017,21);
 8 7000: 10,01,8e,92,8c,92,21                          #args                
 8 7007: b3,73,94,00,42       ldb   R42,[R72+94]       [GEN_42] = [R72+94]; 
 8 700c: 9b,f3,a8,02,42       cmpb  R42,[Rf2+2a8]                           
 8 7011: d1,05                jleu  7018               if ((uns) [GEN_42] <= [Sc0154]) goto 7018;
-8 7013: 2a,51                scall 7266               SaveTCode1(22);      
+8 7013: 2a,51                scall 7266               SAVE_TROUBLE_CODE1(22);
 8 7015: 22                                            #args                
 8 7016: 20,0a                sjmp  7022               goto 7022;           
 
-8 7018: ef,5c,02             call  7277               ChkRngeTC([200],St0021,St0022,22);
+8 7018: ef,5c,02             call  7277               CHECK_RANGE_TROUBLE_CODE([200],St0021,St0022,22);
 8 701b: 00,02,9c,92,9e,92,22                          #args                
 8 7022: c7,72,52,00          stb   [R72+52],0         [R72+52] = 0;        
 8 7026: 17,38                incb  R38                R38++;               
@@ -7240,7 +7240,7 @@ Sub0152:
 8 7037: 12,01,62,92,54                                #args                
 8 703c: 98,30,32             cmpb  R32,R30                                 
 8 703f: d7,09                jne   704a               if ([GEN_32] != R30) goto 704a;
-8 7041: 2a,34                scall 7277               ChkRngeTC([112],St0014,St0013,24);
+8 7041: 2a,34                scall 7277               CHECK_RANGE_TROUBLE_CODE([112],St0014,St0013,24);
 8 7043: 12,01,86,92,84,92,24                          #args                
 8 704a: 3e,a4,1b             jb    B6,Ra4,7068        if (B6_Ra4) goto 7068;
 8 704d: 33,2f,0d             jnb   B3,R2f,705d        if (!B3_[FLAGS_2F]) goto 705d;
@@ -7251,17 +7251,17 @@ Sub0152:
 8 705d: ef,f9,04             call  7559               Sub0185([114],VEPTLL,St0029,[3434]);
 8 7060: 14,01,ba,92,b6,92,34,34                       #args                
 8 7068: 34,92,05             jnb   B4,R92,7070        if (!B4_R92) goto 7070;
-8 706b: 29,f9                scall 7266               SaveTCode1(67);      
+8 706b: 29,f9                scall 7266               SAVE_TROUBLE_CODE1(67);
 8 706d: 67                                            #args                
 8 706e: 20,09                sjmp  7079               goto 7079;           
 
-8 7070: 2a,05                scall 7277               ChkRngeTC([118],St0033,St0034,67);
+8 7070: 2a,05                scall 7277               CHECK_RANGE_TROUBLE_CODE([118],St0033,St0034,67);
 8 7072: 18,01,dc,92,de,92,67                          #args                
 8 7079: b3,75,8d,fd,42       ldb   R42,[R74+fd8d]     [GEN_42] = [R74+fd8d];
 8 707e: 99,01,42             cmpb  R42,1                                   
 8 7081: d7,07                jne   708a               if ([GEN_42] != 1) goto 708a;
 8 7083: 30,93,04             jnb   B0,R93,708a        if (!B0_R93) goto 708a;
-8 7086: ef,dd,01             call  7266               SaveTCode1(52);      
+8 7086: ef,dd,01             call  7266               SAVE_TROUBLE_CODE1(52);
 8 7089: 52                                            #args                
 8 708a: 28,2f                scall 70bb               Sub0155(St0006,[10a],19);
 8 708c: 48,92,0a,01,19                                #args                
@@ -7275,22 +7275,22 @@ Sub0153:
 8 709f: 1e,01,66,92,53                                #args                
 8 70a4: 98,30,32             cmpb  R32,R30                                 
 8 70a7: d7,09                jne   70b2               if ([GEN_32] != R30) goto 70b2;
-8 70a9: 29,cc                scall 7277               ChkRngeTC([11e],St0009,St0010,23);
+8 70a9: 29,cc                scall 7277               CHECK_RANGE_TROUBLE_CODE([11e],St0009,St0010,23);
 8 70ab: 1e,01,54,92,56,92,23                          #args                
 8 70b2: f0                   ret                      return;              
 
-Compare:
+COMPARE:
 8 70b3: 91,04,2f             orrb  R2f,4              [FLAGS_2F] |= 4;     
-8 70b6: 2e,68                scall 6f20               GetbytesR1a(4);      
+8 70b6: 2e,68                scall 6f20               GET_BYTES_R1A(4);    
 8 70b8: 04                                            #args                
 8 70b9: 20,03                sjmp  70be               goto 70be;           
 
 Sub0155:
-8 70bb: 2e,63                scall 6f20               GetbytesR1a(5);      
+8 70bb: 2e,63                scall 6f20               GET_BYTES_R1A(5);    
 8 70bd: 05                                            #args                
-8 70be: 28,1a                scall 70da               GetAddr(R1a);        
+8 70be: 28,1a                scall 70da               GET_ADDRESS(R1a);    
 8 70c0: 1a,00                                         #args                
-8 70c2: 28,16                scall 70da               GetAddr(R1c);        
+8 70c2: 28,16                scall 70da               GET_ADDRESS(R1c);    
 8 70c4: 1c,00                                         #args                
 8 70c6: a2,1a,42             ldw   R42,[R1a]          [GEN_42] = [R1a];    
 8 70c9: 8a,1c,42             cmpw  R42,[R1c]                               
@@ -7301,7 +7301,7 @@ Sub0155:
 8 70d6: 71,fb,2f             an2b  R2f,fb             [FLAGS_2F] &= fb;    
 8 70d9: f0                   ret                      return;              
 
-GetAddr:
+GET_ADDRESS:
 8 70da: a1,3e,00,16          ldw   R16,3e             R16 = 3e;            
 8 70de: 2e,44                scall 6f24               Sub0142(2);          
 8 70e0: 02                                            #args                
@@ -7358,7 +7358,7 @@ Sub0158:
 Sub0159:
 8 718b: 28,33                scall 71c0               Sub0161();           
 8 718d: cc,1e                pop   R1e                R1e = pop();         
-8 718f: 2d,8f                scall 6f20               GetbytesR1a(4);      
+8 718f: 2d,8f                scall 6f20               GET_BYTES_R1A(4);    
 8 7191: 04                                            #args                
 8 7192: c8,1e                push  R1e                push(R1e);           
 8 7194: bc,1b,1e             ldsbw R1e,R1b            R1e = (sig)R1b;      
@@ -7386,9 +7386,9 @@ Sub0161:
 8 71c3: 48,3c,06,3e          sb3w  R3e,R06,R3c        [GEN_3E] = [IO_TIMER] - [GEN_3C];
 8 71c7: 89,1b,41,3e          cmpw  R3e,411b                                
 8 71cb: db,0b                jc    71d8               if ((uns) [GEN_3E] >= 411b) goto 71d8;
-8 71cd: ef,46,f8             call  6a16               Save_diag_vals();    
-8 71d0: ef,33,b1             call  2306               Read_AD();           
-8 71d3: ef,1b,f8             call  69f1               Get_diag_vals();     
+8 71cd: ef,46,f8             call  6a16               SAVE_DIAGNOSTIC_VALUES();
+8 71d0: ef,33,b1             call  2306               READ_AD();           
+8 71d3: ef,1b,f8             call  69f1               GET_DIAGNOSTIC_VALUES();
 8 71d6: 27,eb                sjmp  71c3               goto 71c3;           
 
 8 71d8: f0                   ret                      return;              
@@ -7445,8 +7445,8 @@ Sub0164:
 8 7262: 71,fd,45             an2b  R45,fd             R45 &= fd;           
 8 7265: f0                   ret                      return;              
 
-SaveTCode1:
-8 7266: 2c,b8                scall 6f20               GetbytesR1a(1);      
+SAVE_TROUBLE_CODE1:
+8 7266: 2c,b8                scall 6f20               GET_BYTES_R1A(1);    
 8 7268: 01                                            #args                
 
 Sub0166:
@@ -7456,12 +7456,12 @@ Sub0166:
 8 7274: 07,30                incw  R30                R30++;               
 8 7276: f0                   ret                      return;              
 
-ChkRngeTC:
-8 7277: 2c,a7                scall 6f20               GetbytesR1a(7);      
+CHECK_RANGE_TROUBLE_CODE:
+8 7277: 2c,a7                scall 6f20               GET_BYTES_R1A(7);    
 8 7279: 07                                            #args                
-8 727a: 2e,5e                scall 70da               GetAddr(R1c);        
+8 727a: 2e,5e                scall 70da               GET_ADDRESS(R1c);    
 8 727c: 1c,00                                         #args                
-8 727e: 2e,5a                scall 70da               GetAddr(R1e);        
+8 727e: 2e,5a                scall 70da               GET_ADDRESS(R1e);    
 8 7280: 1e,00                                         #args                
 8 7282: a2,1a,42             ldw   R42,[R1a]          [GEN_42] = [R1a];    
 8 7285: 8a,1c,42             cmpw  R42,[R1c]                               
@@ -7482,34 +7482,34 @@ Sub0168:
 8 72a8: 71,fb,2f             an2b  R2f,fb             [FLAGS_2F] &= fb;    
 8 72ab: 30,a8,09             jnb   B0,Ra8,72b7        if (!B0_Ra8) goto 72b7;
 8 72ae: 91,04,2f             orrb  R2f,4              [FLAGS_2F] |= 4;     
-8 72b1: 2f,b3                scall 7266               SaveTCode1(98);      
+8 72b1: 2f,b3                scall 7266               SAVE_TROUBLE_CODE1(98);
 8 72b3: 98                                            #args                
-8 72b4: 2f,b0                scall 7266               SaveTCode1(22);      
+8 72b4: 2f,b0                scall 7266               SAVE_TROUBLE_CODE1(22);
 8 72b6: 22                                            #args                
 8 72b7: 51,d0,a8,22          an3b  R22,Ra8,d0         R22 = Ra8 & d0;      
 8 72bb: df,31                je    72ee               if (R22 == 0) goto 72ee;
 8 72bd: 3a,2f,06             jb    B2,R2f,72c6        if (B2_[FLAGS_2F]) goto 72c6;
 8 72c0: 91,04,2f             orrb  R2f,4              [FLAGS_2F] |= 4;     
-8 72c3: 2f,a1                scall 7266               SaveTCode1(98);      
+8 72c3: 2f,a1                scall 7266               SAVE_TROUBLE_CODE1(98);
 8 72c5: 98                                            #args                
 8 72c6: b3,72,4a,22          ldb   R22,[R72+4a]       R22 = [R72+4a];      
 8 72ca: 30,22,03             jnb   B0,R22,72d0        if (!B0_R22) goto 72d0;
-8 72cd: 2f,97                scall 7266               SaveTCode1(64);      
+8 72cd: 2f,97                scall 7266               SAVE_TROUBLE_CODE1(64);
 8 72cf: 64                                            #args                
 8 72d0: 31,22,03             jnb   B1,R22,72d6        if (!B1_R22) goto 72d6;
-8 72d3: 2f,91                scall 7266               SaveTCode1(54);      
+8 72d3: 2f,91                scall 7266               SAVE_TROUBLE_CODE1(54);
 8 72d5: 54                                            #args                
 8 72d6: 32,22,03             jnb   B2,R22,72dc        if (!B2_R22) goto 72dc;
-8 72d9: 2f,8b                scall 7266               SaveTCode1(61);      
+8 72d9: 2f,8b                scall 7266               SAVE_TROUBLE_CODE1(61);
 8 72db: 61                                            #args                
 8 72dc: 33,22,03             jnb   B3,R22,72e2        if (!B3_R22) goto 72e2;
-8 72df: 2f,85                scall 7266               SaveTCode1(51);      
+8 72df: 2f,85                scall 7266               SAVE_TROUBLE_CODE1(51);
 8 72e1: 51                                            #args                
 8 72e2: 36,22,03             jnb   B6,R22,72e8        if (!B6_R22) goto 72e8;
-8 72e5: 2f,7f                scall 7266               SaveTCode1(63);      
+8 72e5: 2f,7f                scall 7266               SAVE_TROUBLE_CODE1(63);
 8 72e7: 63                                            #args                
 8 72e8: 37,22,03             jnb   B7,R22,72ee        if (!B7_R22) goto 72ee;
-8 72eb: 2f,79                scall 7266               SaveTCode1(53);      
+8 72eb: 2f,79                scall 7266               SAVE_TROUBLE_CODE1(53);
 8 72ed: 53                                            #args                
 8 72ee: 32,2f,07             jnb   B2,R2f,72f8        if (!B2_[FLAGS_2F]) goto 72f8;
 8 72f1: b1,1f,38             ldb   R38,1f             R38 = 1f;            
@@ -7534,7 +7534,7 @@ Sub0168:
 8 732b: e7,6a,02             jump  7598               goto Sub0187;        
 
 Sub0169:
-8 732e: 29,4e                scall 747e               GetWord(St0047);     
+8 732e: 29,4e                scall 747e               GET_WORD(St0047);    
 8 7330: 2a,f1                                         #args                
 8 7332: a3,ff,26,01,32       ldw   R32,[Rfe+126]      [GEN_32] = [Sc0345]; 
 8 7337: 09,05,32             shlw  R32,5              [GEN_32] = [GEN_32] * 20;
@@ -7547,20 +7547,20 @@ Sub0169:
 8 734c: 22,4a                sjmp  7598               goto Sub0187;        
 
 Sub0170:
-8 734e: 2f,27                scall 7277               ChkRngeTC([110],St0020,St0019,21);
+8 734e: 2f,27                scall 7277               CHECK_RANGE_TROUBLE_CODE([110],St0020,St0019,21);
 8 7350: 10,01,92,92,90,92,21                          #args                
 8 7357: b3,73,94,00,42       ldb   R42,[R72+94]       [GEN_42] = [R72+94]; 
 8 735c: 9b,f3,a8,02,42       cmpb  R42,[Rf2+2a8]                           
 8 7361: d1,05                jleu  7368               if ((uns) [GEN_42] <= [Sc0154]) goto 7368;
-8 7363: 2f,01                scall 7266               SaveTCode1(22);      
+8 7363: 2f,01                scall 7266               SAVE_TROUBLE_CODE1(22);
 8 7365: 22                                            #args                
 8 7366: 20,0a                sjmp  7372               goto 7372;           
 
-8 7368: ef,0c,ff             call  7277               ChkRngeTC([200],St0023,St0024,22);
+8 7368: ef,0c,ff             call  7277               CHECK_RANGE_TROUBLE_CODE([200],St0023,St0024,22);
 8 736b: 00,02,a0,92,a2,92,22                          #args                
-8 7372: 2f,03                scall 7277               ChkRngeTC([11e],St0011,St0012,23);
+8 7372: 2f,03                scall 7277               CHECK_RANGE_TROUBLE_CODE([11e],St0011,St0012,23);
 8 7374: 1e,01,58,92,5a,92,23                          #args                
-8 737b: 2e,fa                scall 7277               ChkRngeTC([112],St0016,St0015,24);
+8 737b: 2e,fa                scall 7277               CHECK_RANGE_TROUBLE_CODE([112],St0016,St0015,24);
 8 737d: 12,01,8a,92,88,92,24                          #args                
 8 7384: 22,12                sjmp  7598               goto Sub0187;        
 
@@ -7568,7 +7568,7 @@ Sub0171:
 8 7386: a3,72,3c,42          ldw   R42,[R72+3c]       [GEN_42] = [R72+GEN_3C];
 8 738a: 8b,74,d4,42          cmpw  R42,[R74+d4]                            
 8 738e: db,07                jc    7397               if ((uns) [GEN_42] >= [R74+d4]) goto 7397;
-8 7390: 2e,d4                scall 7266               SaveTCode1(16);      
+8 7390: 2e,d4                scall 7266               SAVE_TROUBLE_CODE1(16);
 8 7392: 16                                            #args                
 8 7393: b1,10,38             ldb   R38,10             R38 = 10;            
 8 7396: f0                   ret                      return;              
@@ -7583,9 +7583,9 @@ Sub0172:
 
 8 73a2: 28,95                scall 7439               Sub0179(St0008);     
 8 73a4: 4c,92                                         #args                
-8 73a6: 28,d6                scall 747e               GetWord(St0044);     
+8 73a6: 28,d6                scall 747e               GET_WORD(St0044);    
 8 73a8: 20,f1                                         #args                
-8 73aa: 2e,ba                scall 7266               SaveTCode1(42);      
+8 73aa: 2e,ba                scall 7266               SAVE_TROUBLE_CODE1(42);
 8 73ac: 42                                            #args                
 8 73ad: 20,7b                sjmp  742a               goto 742a;           
 
@@ -7601,9 +7601,9 @@ Sub0173:
 8 73c4: 15,38                decb  R38                R38--;               
 8 73c6: 21,d0                sjmp  7598               goto Sub0187;        
 
-8 73c8: 28,b4                scall 747e               GetWord(St0035);     
+8 73c8: 28,b4                scall 747e               GET_WORD(St0035);    
 8 73ca: b0,b1                                         #args                
-8 73cc: 2e,98                scall 7266               SaveTCode1(41);      
+8 73cc: 2e,98                scall 7266               SAVE_TROUBLE_CODE1(41);
 8 73ce: 41                                            #args                
 8 73cf: 20,59                sjmp  742a               goto 742a;           
 
@@ -7614,7 +7614,7 @@ Sub0174:
 8 73dd: 30,1a,4a             jnb   B0,R1a,742a        if (!B0_R1a) goto 742a;
 8 73e0: 28,52                scall 7434               Sub0178(St0007);     
 8 73e2: 4a,92                                         #args                
-8 73e4: 28,98                scall 747e               GetWord(St0025);     
+8 73e4: 28,98                scall 747e               GET_WORD(St0025);    
 8 73e6: a9,92                                         #args                
 8 73e8: 91,01,46             orrb  R46,1              R46 |= 1;            
 8 73eb: 91,40,47             orrb  R47,40             R47 |= 40;           
@@ -7622,9 +7622,9 @@ Sub0174:
 
 Sub0175:
 8 73f0: 3d,28,09             jb    B5,R28,73fc        if (B5_[FLAGS_28]) goto 73fc;
-8 73f3: 28,89                scall 747e               GetWord(St0027);     
+8 73f3: 28,89                scall 747e               GET_WORD(St0027);    
 8 73f5: ab,92                                         #args                
-8 73f7: 2e,6d                scall 7266               SaveTCode1(44);      
+8 73f7: 2e,6d                scall 7266               SAVE_TROUBLE_CODE1(44);
 8 73f9: 44                                            #args                
 8 73fa: 20,28                sjmp  7424               goto 7424;           
 
@@ -7633,9 +7633,9 @@ Sub0175:
 
 Sub0176:
 8 7401: 35,28,07             jnb   B5,R28,740b        if (!B5_[FLAGS_28]) goto 740b;
-8 7404: 28,78                scall 747e               GetWord(St0028);     
+8 7404: 28,78                scall 747e               GET_WORD(St0028);    
 8 7406: ac,92                                         #args                
-8 7408: 2e,5c                scall 7266               SaveTCode1(45);      
+8 7408: 2e,5c                scall 7266               SAVE_TROUBLE_CODE1(45);
 8 740a: 45                                            #args                
 8 740b: 71,fe,46             an2b  R46,fe             R46 &= fe;           
 8 740e: 91,40,47             orrb  R47,40             R47 |= 40;           
@@ -7644,10 +7644,10 @@ Sub0176:
 Sub0177:
 8 7413: b3,74,34,1a          ldb   R1a,[R74+34]       R1a = [R74+GEN_34];  
 8 7417: 30,1a,0a             jnb   B0,R1a,7424        if (!B0_R1a) goto 7424;
-8 741a: 28,62                scall 747e               GetWord(St0026);     
+8 741a: 28,62                scall 747e               GET_WORD(St0026);    
 8 741c: aa,92                                         #args                
 8 741e: 35,28,03             jnb   B5,R28,7424        if (!B5_[FLAGS_28]) goto 7424;
-8 7421: 2e,43                scall 7266               SaveTCode1(46);      
+8 7421: 2e,43                scall 7266               SAVE_TROUBLE_CODE1(46);
 8 7423: 46                                            #args                
 8 7424: 71,bf,47             an2b  R47,bf             R47 &= bf;           
 8 7427: 71,fe,46             an2b  R46,fe             R46 &= fe;           
@@ -7661,9 +7661,9 @@ Sub0178:
 
 Sub0179:
 8 7439: 71,fe,a6             an2b  Ra6,fe             Ra6 &= fe;           
-8 743c: ef,e1,fa             call  6f20               GetbytesR1a(2);      
+8 743c: ef,e1,fa             call  6f20               GET_BYTES_R1A(2);    
 8 743f: 02                                            #args                
-8 7440: ef,97,fc             call  70da               GetAddr(R1a);        
+8 7440: ef,97,fc             call  70da               GET_ADDRESS(R1a);    
 8 7443: 1a,00                                         #args                
 8 7445: 4b,72,1a,06,34       sb3w  R34,R06,[R72+1a]   [GEN_34] = [IO_TIMER] - [R72+1a];
 8 744a: 6d,55,32,34          ml2w  R34,3255           [GEN_34] *= 3255;    
@@ -7686,10 +7686,10 @@ Sub0180:
 8 7479: c3,72,1a,06          stw   [R72+1a],R06       [R72+1a] = [IO_TIMER];
 8 747d: f0                   ret                      return;              
 
-GetWord:
-8 747e: ef,9f,fa             call  6f20               GetbytesR1a(2);      
+GET_WORD:
+8 747e: ef,9f,fa             call  6f20               GET_BYTES_R1A(2);    
 8 7481: 02                                            #args                
-8 7482: 2c,56                scall 70da               GetAddr(R1a);        
+8 7482: 2c,56                scall 70da               GET_ADDRESS(R1a);    
 8 7484: 1a,00                                         #args                
 8 7486: 9a,1a,18             cmpb  R18,[R1a]                               
 8 7489: db,02                jc    748d               if ((uns) R18 >= [R1a]) goto 748d;
@@ -7740,7 +7740,7 @@ Sub0183:
 8 74fd: 57,74,39,42,e3       ad3b  Re3,R42,[R74+39]   Re3 = [GEN_42] + [R74+39];
 8 7502: f0                   ret                      return;              
 
-8 7503: 2d,61                scall 7266               SaveTCode1(33);      
+8 7503: 2d,61                scall 7266               SAVE_TROUBLE_CODE1(33);
 8 7505: 33                                            #args                
 8 7506: 20,49                sjmp  7551               goto 7551;           
 
@@ -7764,23 +7764,23 @@ Sub0184:
 8 7536: db,02                jc    753a               if ([GEN_42] >= 0) goto 753a;
 8 7538: 03,42                negw  R42                [GEN_42] = -[GEN_42];
 8 753a: c3,72,5a,42          stw   [R72+5a],R42       [R72+5a] = [GEN_42]; 
-8 753e: ef,3d,ff             call  747e               GetWord(St0045);     
+8 753e: ef,3d,ff             call  747e               GET_WORD(St0045);    
 8 7541: 24,f1                                         #args                
 8 7543: a3,72,5a,42          ldw   R42,[R72+5a]       [GEN_42] = [R72+5a]; 
 8 7547: 8b,ff,22,01,42       cmpw  R42,[Rfe+122]                           
 8 754c: d1,03                jleu  7551               if ((uns) [GEN_42] <= [Sc0343]) goto 7551;
-8 754e: 2d,16                scall 7266               SaveTCode1(38);      
+8 754e: 2d,16                scall 7266               SAVE_TROUBLE_CODE1(38);
 8 7550: 38                                            #args                
 8 7551: a0,00,e2             ldw   Re2,0              Re2 = 0;             
 8 7554: b1,0f,38             ldb   R38,f              R38 = f;             
 8 7557: 20,3f                sjmp  7598               goto Sub0187;        
 
 Sub0185:
-8 7559: ef,c4,f9             call  6f20               GetbytesR1a(8);      
+8 7559: ef,c4,f9             call  6f20               GET_BYTES_R1A(8);    
 8 755c: 08                                            #args                
-8 755d: ef,7a,fb             call  70da               GetAddr(R1c);        
+8 755d: ef,7a,fb             call  70da               GET_ADDRESS(R1c);    
 8 7560: 1c,00                                         #args                
-8 7562: ef,75,fb             call  70da               GetAddr(R1e);        
+8 7562: ef,75,fb             call  70da               GET_ADDRESS(R1e);    
 8 7565: 1e,00                                         #args                
 8 7567: a2,1a,42             ldw   R42,[R1a]          [GEN_42] = [R1a];    
 8 756a: 01,1a                clrw  R1a                R1a = 0;             
@@ -7817,7 +7817,7 @@ Sub0188:
 8 75ab: 27,eb                sjmp  7598               goto Sub0187;        
 
 Sub0189:
-8 75ad: 2e,cf                scall 747e               GetWord(St0050);     
+8 75ad: 2e,cf                scall 747e               GET_WORD(St0050);    
 8 75af: 31,f1                                         #args                
 8 75b1: a3,ff,2e,01,32       ldw   R32,[Rfe+12e]      [GEN_32] = [Sc0346]; 
 8 75b6: 09,05,32             shlw  R32,5              [GEN_32] = [GEN_32] * 20;
@@ -7844,7 +7844,7 @@ Sub0190:
 8 75ef: 27,a7                sjmp  7598               goto Sub0187;        
 
 Sub0191:
-8 75f1: 2e,8b                scall 747e               GetWord(St0049);     
+8 75f1: 2e,8b                scall 747e               GET_WORD(St0049);    
 8 75f3: 30,f1                                         #args                
 8 75f5: 91,f0,2c             orrb  R2c,f0             [FLAGS_2C] |= f0;    
 8 75f8: c7,72,4b,be          stb   [R72+4b],Rbe       [R72+4b] = Rbe;      
@@ -7885,34 +7885,34 @@ Sub0192:
 8 7664: b3,f3,e0,02,1a       ldb   R1a,[Rf2+2e0]      R1a = [Sc0159];      
 8 7669: 79,0c,1a             sb2b  R1a,c              R1a -= c;            
 8 766c: c7,72,52,1a          stb   [R72+52],R1a       [R72+52] = R1a;      
-8 7670: 2e,0c                scall 747e               GetWord(Sc0159);     
+8 7670: 2e,0c                scall 747e               GET_WORD(Sc0159);    
 8 7672: e0,92                                         #args                
 8 7674: 36,2f,05             jnb   B6,R2f,767c        if (!B6_[FLAGS_2F]) goto 767c;
 8 7677: a3,ff,1e,01,96       ldw   R96,[Rfe+11e]      R96 = [Sc0342];      
 8 767c: 34,2c,06             jnb   B4,R2c,7685        if (!B4_[FLAGS_2C]) goto 7685;
-8 767f: ef,e4,fb             call  7266               SaveTCode1(77);      
+8 767f: ef,e4,fb             call  7266               SAVE_TROUBLE_CODE1(77);
 8 7682: 77                                            #args                
 8 7683: 20,18                sjmp  769d               goto 769d;           
 
 8 7685: 36,2c,04             jnb   B6,R2c,768c        if (!B6_[FLAGS_2C]) goto 768c;
-8 7688: ef,db,fb             call  7266               SaveTCode1(72);      
+8 7688: ef,db,fb             call  7266               SAVE_TROUBLE_CODE1(72);
 8 768b: 72                                            #args                
 8 768c: 35,2c,04             jnb   B5,R2c,7693        if (!B5_[FLAGS_2C]) goto 7693;
-8 768f: ef,d4,fb             call  7266               SaveTCode1(73);      
+8 768f: ef,d4,fb             call  7266               SAVE_TROUBLE_CODE1(73);
 8 7692: 73                                            #args                
 8 7693: 36,2f,07             jnb   B6,R2f,769d        if (!B6_[FLAGS_2F]) goto 769d;
 8 7696: 37,2c,04             jnb   B7,R2c,769d        if ([FLAGS_2C].NEW_PIP == 0) goto 769d;
-8 7699: ef,ca,fb             call  7266               SaveTCode1(25);      
+8 7699: ef,ca,fb             call  7266               SAVE_TROUBLE_CODE1(25);
 8 769c: 25                                            #args                
 8 769d: a3,74,cc,d2          ldw   Rd2,[R74+cc]       Rd2 = [R74+cc];      
 8 76a1: 31,2c,04             jnb   B1,R2c,76a8        if (!B1_[FLAGS_2C]) goto 76a8;
-8 76a4: ef,bf,fb             call  7266               SaveTCode1(74);      
+8 76a4: ef,bf,fb             call  7266               SAVE_TROUBLE_CODE1(74);
 8 76a7: 74                                            #args                
 8 76a8: 30,2c,04             jnb   B0,R2c,76af        if (!B0_[FLAGS_2C]) goto 76af;
-8 76ab: ef,b8,fb             call  7266               SaveTCode1(75);      
+8 76ab: ef,b8,fb             call  7266               SAVE_TROUBLE_CODE1(75);
 8 76ae: 75                                            #args                
 8 76af: 32,2c,04             jnb   B2,R2c,76b6        if (!B2_[FLAGS_2C]) goto 76b6;
-8 76b2: ef,b1,fb             call  7266               SaveTCode1(52);      
+8 76b2: ef,b1,fb             call  7266               SAVE_TROUBLE_CODE1(52);
 8 76b5: 52                                            #args                
 8 76b6: 91,07,2b             orrb  R2b,7              R2b |= 7;            
 8 76b9: 26,dd                sjmp  7598               goto Sub0187;        
@@ -7925,7 +7925,7 @@ Sub0193:
 8 76c2: a3,3b,da,6a,1a                                Unknown Operation/Structure
 
 8 76c7: 37,1b,08             jnb   B7,R1b,76d2        if (!B7_R1b) goto 76d2;
-8 76ca: ef,0d,fa             call  70da               GetAddr(R1a);        
+8 76ca: ef,0d,fa             call  70da               GET_ADDRESS(R1a);    
 8 76cd: 1a,00                                         #args                
 8 76cf: b2,1a,1a             ldb   R1a,[R1a]          R1a = [R1a];         
 8 76d2: 98,1a,18             cmpb  R18,R1a                                 
@@ -7985,7 +7985,7 @@ Sub0195:
 8 774c: 91,20,28             orrb  R28,20             [FLAGS_28] |= 20;    
 8 774f: f0                   ret                      return;              
 
-HW_Check:
+HW_CHECK:
 8 7750: fa                   di                       disable ints;        
 8 7751: ff                   ff                       7751 => 7752         
 8 7753: c3,73,b8,00,10       stw   [R72+b8],R10       [R72+RPMX4] = [STACK];
@@ -8077,7 +8077,7 @@ HW_Check:
 8 7842: c7,73,17,01,30       stb   [R72+117],R30      [R72+117] = R30;     
 8 7847: a1,97,02,32          ldw   R32,297            [GEN_32] = 297;      
 8 784b: 9a,32,30             cmpb  R30,[R32]                               
-8 784e: df,1c                je    786c               if (R30 == [[GEN_32]]) goto RAM_test;
+8 784e: df,1c                je    786c               if (R30 == [[GEN_32]]) goto TEST_RAM;
 
 Sub0197:
 8 7850: 91,10,2a             orrb  R2a,10             [VIP_FLAGS].Disable_nostart = 1;
@@ -8096,7 +8096,7 @@ Sub0198:
 8 786a: 27,e4                                         Unknown Operation/Structure
 
 
-RAM_test:
+TEST_RAM:
 8 786c: a1,ff,08,3a          ldw   R3a,8ff            R3a = 8ff;           
 8 7870: a1,00,01,42          ldw   R42,100            [GEN_42] = 100;      
 8 7874: a1,aa,aa,30          ldw   R30,aaaa           R30 = aaaa;          
@@ -8146,7 +8146,7 @@ Sub0201:
 8 78e0: 38,40,12             jb    B0,R40,78f5        if (B0_R40) goto 78f5;
 
 Sub0202:
-8 78e3: e7,28,f6             jump  6f0e               goto Set_STO;        
+8 78e3: e7,28,f6             jump  6f0e               goto SET_STO;        
 
 8 78e6: 3c,2a,0a             jb    B4,R2a,78f3        if ([VIP_FLAGS].Disable_nostart == 1) goto 78f3;
 8 78e9: 3c,50,07             jb    B4,R50,78f3        if (B4_R50) goto 78f3;
@@ -8181,7 +8181,7 @@ Sub0203:
 8 7926: f0                                            Unknown Operation/Structure
 
 
-Set_ign_timers:
+SET_IGNITION_TIMERS:
 8 7927: 37,4e,08             jnb   B7,R4e,7932        if ([FLAGS_4E].NEW_PIP == 0) goto 7932;
 8 792a: 71,7f,4e             an2b  R4e,7f             [FLAGS_4E].NEW_PIP = 0;
 8 792d: c3,01,3c,01,00       stw   [13c],0            [TSLPIP] = 0;        
@@ -8194,7 +8194,7 @@ Set_ign_timers:
 8 7946: c7,01,14,02,00       stb   [214],0            [BAPTMR] = 0;        
 8 794b: f0                   ret                      return;              
 
-Check_ConsoleD:
+CHECK_CONSOLE_D:
 8 794c: fa                   di                       disable ints;        
 
 CHECK_CONSOLE:
