@@ -826,7 +826,7 @@ AD_CHANNELS:
 Sub0029:
 8 27b7: a3,ea,80,32          ldw   R32,[Rea+80]       R32 = [100];         
 8 27bb: a0,b4,34             ldw   R34,Rb4            R34 = Rb4;           
-8 27be: a3,f8,02,36          ldw   R36,[Rf8+2]        R36 = [Sc0016];      
+8 27be: a3,f8,02,36          ldw   R36,[Rf8+2]        R36 = [TCTP];        
 8 27c2: ef,87,04             call  2c4c               Sub0044();           
 8 27c5: c3,ea,80,3e          stw   [Rea+80],R3e       [100] = R3e;         
 8 27c9: 89,78,05,b8          cmpw  Rb8,578                                 
@@ -1110,11 +1110,11 @@ Sub0033:
 8 2ab5: 11,30                clrb  R30                R30 = 0;             
 8 2ab7: a3,ea,90,38          ldw   R38,[Rea+90]       R38 = [ECT_RAW];     
 8 2abb: 8b,f6,04,38          cmpw  R38,[Rf6+4]                             
-8 2abf: d9,0f                jgtu  2ad0               if ((uns) R38 > [Sc0007]) goto 2ad0;
+8 2abf: d9,0f                jgtu  2ad0               if ((uns) R38 > [TOTMAX]) goto 2ad0;
 8 2ac1: 8b,f6,02,38          cmpw  R38,[Rf6+2]                             
-8 2ac5: d3,09                jnc   2ad0               if ((uns) R38 < [Sc0006]) goto 2ad0;
+8 2ac5: d3,09                jnc   2ad0               if ((uns) R38 < [TOTMIN]) goto 2ad0;
 8 2ac7: 17,30                incb  R30                R30++;               
-8 2ac9: ef,14,01             call  2be0               USWordLU(Fc001,R38); 
+8 2ac9: ef,14,01             call  2be0               USWordLU(FN703D,R38);
 8 2acc: 02,00,38,00                                   #args                
 8 2ad0: f0                   ret                      return;              
         Inc   8 2ad0: ostruct   OSt8_002_2ad0 - Other Structure 8 002
@@ -1720,9 +1720,9 @@ Sub0067:
 8 2fc7: f0                                            Unknown Operation/Structure
 
 8 2fc8: 71,7f,2d             an2b  R2d,7f             [FLAGS_2D] &= 7f;    
-8 2fcb: ef,0a,04             call  33d8               Sub0088(Sc0006,[ECT_RAW],8b);
+8 2fcb: ef,0a,04             call  33d8               Sub0088(TOTMIN,[ECT_RAW],8b);
 8 2fce: 02,b0,10,01,8b,07                             #args                
-8 2fd4: ef,01,04             call  33d8               Sub0088([ECT_RAW],Sc0007,87);
+8 2fd4: ef,01,04             call  33d8               Sub0088([ECT_RAW],TOTMAX,87);
 8 2fd7: 10,01,04,b0,87,06                             #args                
 8 2fdd: b3,ec,9a,42          ldb   R42,[Rec+9a]       R42 = [21a];         
 8 2fe1: 9b,fe,46,42          cmpb  R42,[Rfe+46]                            
@@ -1785,7 +1785,7 @@ Sub0067:
 8 3093: 9b,fe,6b,42          cmpb  R42,[Rfe+6b]                            
 8 3097: d3,03                jnc   309c               if ((uns) R42 < [Sc0128]) goto 309c;
 8 3099: 91,08,a2             orrb  Ra2,8              Ra2 |= 8;            
-8 309c: ef,44,fb             call  2be3               USWordLU(Fc002,Rbe); 
+8 309c: ef,44,fb             call  2be3               USWordLU(FN689V,Rbe);
 8 309f: 12,c3,be,00                                   #args                
 8 30a3: 3c,a8,25             jb    B4,Ra8,30cb        if (B4_Ra8) goto 30cb;
 8 30a6: 36,a1,22             jnb   B6,Ra1,30cb        if (!B6_Ra1) goto 30cb;
@@ -2720,7 +2720,7 @@ Sub0120:
 
 Sub0121:
 8 39d1: 45,26,01,fc,dc       ad3w  Rdc,Rfc,126        Rdc = St0009;        
-8 39d6: ef,94,f1             call  2b6d               UUByteLU(Fc003,Rbd); 
+8 39d6: ef,94,f1             call  2b6d               UUByteLU(FN615,Rbd); 
 8 39d9: 2e,c3,bd,00                                   #args                
 8 39dd: c7,ee,80,38          stb   [Ree+80],R38       [300] = R38;         
 8 39e1: a3,ee,88,32          ldw   R32,[Ree+88]       R32 = [308];         
@@ -2824,20 +2824,20 @@ Sub0121:
 8 3b15: a3,dd,00,ff,36       ldw   R36,[Rdc+ff00]     R36 = [Rdc+ff00];    
 8 3b1a: ef,2f,f1             call  2c4c               Sub0044();           
 8 3b1d: c3,ee,ce,3e          stw   [Ree+ce],R3e       [34e] = R3e;         
-8 3b21: ef,bf,f0             call  2be3               USWordLU(Fc031,[352]);
+8 3b21: ef,bf,f0             call  2be3               USWordLU(TORQUE_TABLE_SCALER_RPM,[352]);
 8 3b24: 9a,c7,52,03                                   #args                
 8 3b28: c3,ee,d4,38          stw   [Ree+d4],R38       [354] = R38;         
-8 3b2c: ef,b4,f0             call  2be3               USWordLU(Fc029,[34e]);
+8 3b2c: ef,b4,f0             call  2be3               USWordLU(FN067D,[34e]);
 8 3b2f: 46,c7,4e,03                                   #args                
 8 3b33: c3,ee,d0,38          stw   [Ree+d0],R38       [350] = R38;         
-8 3b37: ef,30,f0             call  2b6a               USByteLU(Fc005,Rbd); 
+8 3b37: ef,30,f0             call  2b6a               USByteLU(TORQUE_TABLE_MULTI_V_BP,Rbd);
 8 3b3a: 52,c3,bd,00                                   #args                
 8 3b3e: c7,ee,86,38          stb   [Ree+86],R38       [306] = R38;         
 8 3b42: 45,a2,09,fc,38       ad3w  R38,Rfc,9a2        R38 = Tb001;         
 8 3b47: b3,ee,86,42          ldb   R42,[Ree+86]       R42 = [306];         
 8 3b4b: 98,00,42             cmpb  R42,0                                   
 8 3b4e: d6,07                jge   3b57               if ((sig) R42 >= 0) goto 3b57;
-8 3b50: 45,28,0b,fc,38       ad3w  R38,Rfc,b28        R38 = Tb003;         
+8 3b50: 45,28,0b,fc,38       ad3w  R38,Rfc,b28        R38 = TORQUE_TABLE_1_ALTITUDE;
 8 3b55: 13,42                negb  R42                R42 = -R42;          
 8 3b57: a3,ee,d4,30          ldw   R30,[Ree+d4]       R30 = [354];         
 8 3b5b: a3,ee,d0,32          ldw   R32,[Ree+d0]       R32 = [350];         
@@ -2848,7 +2848,7 @@ Sub0121:
 8 3b6b: a3,ee,d4,30          ldw   R30,[Ree+d4]       R30 = [354];         
 8 3b6f: a3,ee,d0,32          ldw   R32,[Ree+d0]       R32 = [350];         
 8 3b73: ad,0f,34             ldzbw R34,f              R34 = (uns)f;        
-8 3b76: 45,65,0a,fc,38       ad3w  R38,Rfc,a65        R38 = Tb002;         
+8 3b76: 45,65,0a,fc,38       ad3w  R38,Rfc,a65        R38 = TORQUE_TABLE_2;
 8 3b7b: ef,38,f1             call  2cb6               UTabLU();            
 8 3b7e: 59,40,42,3c          sb3b  R3c,R42,40         R3c = R42 - 40;      
 8 3b82: 13,3c                negb  R3c                R3c = -R3c;          
@@ -2869,11 +2869,11 @@ Sub0121:
 8 3ba9: d3,03                jnc   3bae               if (R3c * 2 <= ffff) goto 3bae;
 8 3bab: b1,ff,3d             ldb   R3d,ff             R3d = ff;            
 8 3bae: c7,ee,c1,3d          stb   [Ree+c1],R3d       [341] = R3d;         
-8 3bb2: ef,b8,ef             call  2b6d               UUByteLU(Fc027,[1f3]);
+8 3bb2: ef,b8,ef             call  2b6d               UUByteLU(FN618,[1f3]);
 8 3bb5: 32,c7,f3,01                                   #args                
 8 3bb9: b0,38,42             ldb   R42,R38            R42 = R38;           
 8 3bbc: 34,8e,0f             jnb   B4,R8e,3bce        if (!B4_R8e) goto 3bce;
-8 3bbf: ef,ab,ef             call  2b6d               UUByteLU(Fc028,[1f3]);
+8 3bbf: ef,ab,ef             call  2b6d               UUByteLU(FN619,[1f3]);
 8 3bc2: 3c,c7,f3,01                                   #args                
 8 3bc6: 74,38,42             ad2b  R42,R38            R42 += R38;          
 8 3bc9: d3,03                jnc   3bce               if (R42 <= ff) goto 3bce;
@@ -2898,7 +2898,7 @@ Sub0121:
 8 3c06: 3a,a8,03             jb    B2,Ra8,3c0c        if (B2_Ra8) goto 3c0c;
 8 3c09: 91,01,46             orrb  R46,1              R46 |= 1;            
 8 3c0c: fb                   ei                       enable ints;         
-8 3c0d: ef,cd,ef             call  2bdd               SSWordLU(Fc004,Rb6); 
+8 3c0d: ef,cd,ef             call  2bdd               SSWordLU(FN690,Rb6); 
 8 3c10: 3a,c3,b6,00                                   #args                
 8 3c14: b1,80,42             ldb   R42,80             R42 = 80;            
 8 3c17: 88,38,ba             cmpw  Rba,R38                                 
@@ -3067,11 +3067,11 @@ Sub0125:
 8 3dc5: 3c,30,21             jb    B4,R30,3de9        if (B4_R30) goto 3de9;
 8 3dc8: 99,08,db             cmpb  Rdb,8                                   
 8 3dcb: d7,1c                jne   3de9               if (Rdb != 8) goto 3de9;
-8 3dcd: 45,2a,04,fc,32       ad3w  R32,Rfc,42a        R32 = Fc010;         
+8 3dcd: 45,2a,04,fc,32       ad3w  R32,Rfc,42a        R32 = FN34S;         
 8 3dd2: 45,e6,03,fc,3c       ad3w  R3c,Rfc,3e6        R3c = St0020;        
 8 3dd7: 29,11                scall 3eea               Sub0127();           
 8 3dd9: db,0e                jc    3de9               if ((uns) R41 >= R6f) goto 3de9;
-8 3ddb: 45,fa,03,fc,32       ad3w  R32,Rfc,3fa        R32 = Fc009;         
+8 3ddb: 45,fa,03,fc,32       ad3w  R32,Rfc,3fa        R32 = FN34PPH;       
 8 3de0: 29,1f                scall 3f01               Sub0128();           
 8 3de2: d6,05                jge   3de9               if ((sig) R3a >= [146]) goto 3de9;
 8 3de4: b1,08,da             ldb   Rda,8              Rda = 8;             
@@ -3079,18 +3079,18 @@ Sub0125:
 
 8 3de9: 99,06,d8             cmpb  Rd8,6                                   
 8 3dec: db,1c                jc    3e0a               if ((uns) Rd8 >= 6) goto 3e0a;
-8 3dee: 45,d2,03,fc,32       ad3w  R32,Rfc,3d2        R32 = Fc008;         
+8 3dee: 45,d2,03,fc,32       ad3w  R32,Rfc,3d2        R32 = FN23S;         
 8 3df3: 45,8e,03,fc,3c       ad3w  R3c,Rfc,38e        R3c = St0019;        
 8 3df8: 28,f0                scall 3eea               Sub0127();           
 8 3dfa: db,0e                jc    3e0a               if ((uns) R41 >= R6f) goto 3e0a;
-8 3dfc: 45,a2,03,fc,32       ad3w  R32,Rfc,3a2        R32 = Fc007;         
+8 3dfc: 45,a2,03,fc,32       ad3w  R32,Rfc,3a2        R32 = FN29PPH;       
 8 3e01: 28,fe                scall 3f01               Sub0128();           
 8 3e03: d6,05                jge   3e0a               if ((sig) R3a >= R3c) goto 3e0a;
 8 3e05: b1,06,da             ldb   Rda,6              Rda = 6;             
 8 3e08: 20,9e                sjmp  3ea8               goto 3ea8;           
 
 8 3e0a: 31,30,13             jnb   B1,R30,3e20        if (!B1_R30) goto 3e20;
-8 3e0d: 45,7a,03,fc,32       ad3w  R32,Rfc,37a        R32 = Fc006;         
+8 3e0d: 45,7a,03,fc,32       ad3w  R32,Rfc,37a        R32 = FN12S;         
 8 3e12: 45,66,03,fc,3c       ad3w  R3c,Rfc,366        R3c = St0018;        
 8 3e17: 28,d1                scall 3eea               Sub0127();           
 8 3e19: db,05                jc    3e20               if ((uns) R41 >= R6f) goto 3e20;
@@ -3098,7 +3098,7 @@ Sub0125:
 8 3e1e: 20,88                sjmp  3ea8               goto 3ea8;           
 
 8 3e20: 39,30,13             jb    B1,R30,3e36        if (B1_R30) goto 3e36;
-8 3e23: 45,52,04,fc,32       ad3w  R32,Rfc,452        R32 = Fc011;         
+8 3e23: 45,52,04,fc,32       ad3w  R32,Rfc,452        R32 = FN21S;         
 8 3e28: 45,3e,04,fc,3c       ad3w  R3c,Rfc,43e        R3c = St0021;        
 8 3e2d: 28,bb                scall 3eea               Sub0127();           
 8 3e2f: d1,05                jleu  3e36               if ((uns) R41 <= R6f) goto 3e36;
@@ -3107,7 +3107,7 @@ Sub0125:
 
 8 3e36: 99,04,d8             cmpb  Rd8,4                                   
 8 3e39: d1,13                jleu  3e4e               if ((uns) Rd8 <= 4) goto 3e4e;
-8 3e3b: 45,7a,04,fc,32       ad3w  R32,Rfc,47a        R32 = Fc012;         
+8 3e3b: 45,7a,04,fc,32       ad3w  R32,Rfc,47a        R32 = FN32S;         
 8 3e40: 45,66,04,fc,3c       ad3w  R3c,Rfc,466        R3c = St0022;        
 8 3e45: 28,a3                scall 3eea               Sub0127();           
 8 3e47: d1,05                jleu  3e4e               if ((uns) R41 <= R6f) goto 3e4e;
@@ -3117,7 +3117,7 @@ Sub0125:
 8 3e4e: 34,30,18             jnb   B4,R30,3e69        if (!B4_R30) goto 3e69;
 8 3e51: 99,06,db             cmpb  Rdb,6                                   
 8 3e54: df,0e                je    3e64               if (Rdb == 6) goto 3e64;
-8 3e56: 45,a2,04,fc,32       ad3w  R32,Rfc,4a2        R32 = Fc013;         
+8 3e56: 45,a2,04,fc,32       ad3w  R32,Rfc,4a2        R32 = FN43S;         
 8 3e5b: 45,8e,04,fc,3c       ad3w  R3c,Rfc,48e        R3c = St0023;        
 8 3e60: 28,88                scall 3eea               Sub0127();           
 8 3e62: d1,05                jleu  3e69               if ((uns) R41 <= R6f) goto 3e69;
@@ -3128,7 +3128,7 @@ Sub0125:
 8 3e6c: 20,3a                sjmp  3ea8               goto 3ea8;           
 
 8 3e6e: 3c,30,13             jb    B4,R30,3e84        if (B4_R30) goto 3e84;
-8 3e71: ef,6f,ed             call  2be3               USWordLU(Fc015,Rbe); 
+8 3e71: ef,6f,ed             call  2be3               USWordLU(FN689U,Rbe);
 8 3e74: ca,c4,be,00                                   #args                
 8 3e78: 8b,ee,88,38          cmpw  R38,[Ree+88]                            
 8 3e7c: db,06                jc    3e84               if ((uns) R38 >= [308]) goto 3e84;
@@ -3136,7 +3136,7 @@ Sub0125:
 8 3e82: 20,17                sjmp  3e9b               goto 3e9b;           
 
 8 3e84: 39,30,14             jb    B1,R30,3e9b        if (B1_R30) goto 3e9b;
-8 3e87: ef,59,ed             call  2be3               USWordLU(Fc014,Rbe); 
+8 3e87: ef,59,ed             call  2be3               USWordLU(FN689D,Rbe);
 8 3e8a: b6,c4,be,00                                   #args                
 8 3e8e: 8b,ee,88,38          cmpw  R38,[Ree+88]                            
 8 3e92: d1,07                jleu  3e9b               if ((uns) R38 <= [308]) goto 3e9b;
@@ -3250,7 +3250,7 @@ Sub0130:
 Sub0131:
 8 3f9b: c7,ee,82,d9          stb   [Ree+82],Rd9       [302] = Rd9;         
 8 3f9f: 32,a4,0b             jnb   B2,Ra4,3fad        if (!B2_Ra4) goto 3fad;
-8 3fa2: ef,3e,ec             call  2be3               USWordLU(Fc022,Rbe); 
+8 3fa2: ef,3e,ec             call  2be3               USWordLU(FN624,Rbe); 
 8 3fa5: 4e,c6,be,00                                   #args                
 8 3fa9: c3,ee,ec,38          stw   [Ree+ec],R38       [36c] = R38;         
 8 3fad: b3,dd,27,ff,32       ldb   R32,[Rdc+ff27]     R32 = [Rdc+ff27];    
@@ -3923,16 +3923,16 @@ Sub0141:
 8 46b4: b3,ee,db,42          ldb   R42,[Ree+db]       R42 = [35b];         
 8 46b8: c7,ee,17,42          stb   [Ree+17],R42       [397] = R42;         
 8 46bc: 3d,e9,35             jb    B5,Re9,46f4        if (B5_Re9) goto 46f4;
-8 46bf: ef,16,e5             call  2bd8               SUWordLU(Fc033,Rba); 
+8 46bf: ef,16,e5             call  2bd8               SUWordLU(FN622A,Rba);
 8 46c2: 82,c9,ba,00                                   #args                
 8 46c6: 5f,ee,be,38,42       ml3b  R42,R38,[Ree+be]   R42 = R38 * [33e];   
 8 46cb: 08,07,42             shrw  R42,7              R42 = R42 / 80;      
 8 46ce: 30,43,03             jnb   B0,R43,46d4        if (!B0_R43) goto 46d4;
 8 46d1: b1,ff,42             ldb   R42,ff             R42 = ff;            
-8 46d4: ef,96,e4             call  2b6d               UUByteLU(Fc030,R42); 
+8 46d4: ef,96,e4             call  2b6d               UUByteLU(FN620,R42); 
 8 46d7: 82,c7,42,00                                   #args                
 8 46db: a0,38,40             ldw   R40,R38            R40 = R38;           
-8 46de: ef,fc,e4             call  2bdd               SSWordLU(Fc032,Rba); 
+8 46de: ef,fc,e4             call  2bdd               SSWordLU(FN622,Rba); 
 8 46e1: 52,c9,ba,00                                   #args                
 8 46e5: 64,38,40             ad2w  R40,R38            R40 += R38;          
 8 46e8: de,0a                jlt   46f4               if ((sig) R40 < 0) goto 46f4;
@@ -4014,7 +4014,7 @@ OSt8_006 - Other Structure 8 006:
 8 47a2: 92,08      ostruct    892
 8 47a4: 71,ef      ostruct   ef71
 
-8 47a7: ef,c3,e3             call  2b6d               UUByteLU(Fc025,Rbf); 
+8 47a7: ef,c3,e3             call  2b6d               UUByteLU(FN616,Rbf); 
 8 47aa: f2,c6,bf,00                                   #args                
 8 47ae: 32,e9,08             jnb   B2,Re9,47b9        if (!B2_Re9) goto 47b9;
 8 47b1: 3a,e8,05             jb    B2,Re8,47b9        if (B2_Re8) goto 47b9;
@@ -4025,7 +4025,7 @@ OSt8_006 - Other Structure 8 006:
 8 47be: 3c,22,04             jb    B4,R22,47c5        if (B4_R22) goto 47c5;
 8 47c1: 59,02,d8,14          sb3b  R14,Rd8,2          [HSO_IPEND2] = Rd8 - 2;
 8 47c5: 7d,06,14             ml2b  R14,6              [HSO_IPEND2] *= 6;   
-8 47c8: 45,ce,06,fc,32       ad3w  R32,Rfc,6ce        R32 = Fc024;         
+8 47c8: 45,ce,06,fc,32       ad3w  R32,Rfc,6ce        R32 = FN1CB;         
 8 47cd: 64,14,32             ad2w  R32,R14            R32 += [HSO_IPEND2]; 
 8 47d0: b0,6f,34             ldb   R34,R6f            R34 = R6f;           
 8 47d3: ef,b8,e3             call  2b8e               UUByteLU();          
@@ -4035,7 +4035,7 @@ OSt8_006 - Other Structure 8 006:
 8 47da: 9b,fd,86,00,00       cmpb  0,[Rfc+86]                              
 8 47df: df,03                je    47e4               if (0 == [Sc0055]) goto 47e4;
 8 47e1: 3c,24,07             jb    B4,R24,47eb        if (B4_R24) goto 47eb;
-8 47e4: ef,86,e3             call  2b6d               UUByteLU(Fc025,Rbf); 
+8 47e4: ef,86,e3             call  2b6d               UUByteLU(FN616,Rbf); 
 8 47e7: f2,c6,bf,00                                   #args                
 8 47eb: a3,ee,88,16          ldw   R16,[Ree+88]       R16 = [308];         
 8 47ef: b0,6f,18             ldb   R18,R6f            R18 = R6f;           
@@ -4163,7 +4163,7 @@ Sub0147:
 8 492e: a3,ee,24,34          ldw   R34,[Ree+24]       R34 = [3a4];         
 8 4932: e7,cf,e2             jump  2c04               goto UUWordLU;       
 
-8 4935: ef,ab,e2             call  2be3               USWordLU(Fc026,[326]);
+8 4935: ef,ab,e2             call  2be3               USWordLU(FN617,[326]);
 8 4938: 02,c7,26,03                                   #args                
 8 493c: 31,e6,11             jnb   B1,Re6,4950        if (!B1_Re6) goto 4950;
 8 493f: a3,ee,88,1a          ldw   R1a,[Ree+88]       R1a = [308];         
@@ -4559,7 +4559,7 @@ Sub0153:
 8 4d63: 37,a8,20             jnb   B7,Ra8,4d86        if (!B7_Ra8) goto 4d86;
 8 4d66: a3,ee,88,16          ldw   R16,[Ree+88]       R16 = [308];         
 8 4d6a: 3c,a8,0d             jb    B4,Ra8,4d7a        if (B4_Ra8) goto 4d7a;
-8 4d6d: ef,73,de             call  2be3               USWordLU(Fc023,Rbe); 
+8 4d6d: ef,73,de             call  2be3               USWordLU(FN689L,Rbe);
 8 4d70: 66,c6,be,00                                   #args                
 8 4d74: 88,38,16             cmpw  R16,R38                                 
 8 4d77: d9,07                jgtu  4d80               if ((uns) R16 > R38) goto 4d80;
@@ -4818,10 +4818,10 @@ Sub0160:
 8 4fe3: 71,df,e0             an2b  Re0,df             Re0 &= df;           
 8 4fe6: 33,d8,1b             jnb   B3,Rd8,5004        if (!B3_Rd8) goto 5004;
 8 4fe9: ad,10,30             ldzbw R30,10             R30 = (uns)10;       
-8 4fec: ef,f4,db             call  2be3               USWordLU(Fc020,Rbe); 
+8 4fec: ef,f4,db             call  2be3               USWordLU(FN4ULK,Rbe);
 8 4fef: 16,c6,be,00                                   #args                
 8 4ff3: c3,ee,b4,38          stw   [Ree+b4],R38       [334] = R38;         
-8 4ff7: ef,e9,db             call  2be3               USWordLU(Fc021,Rbe); 
+8 4ff7: ef,e9,db             call  2be3               USWordLU(FN4LK,Rbe); 
 8 4ffa: 32,c6,be,00                                   #args                
 8 4ffe: c3,ee,b6,38          stw   [Ree+b6],R38       [336] = R38;         
 8 5002: 20,39                sjmp  503d               goto 503d;           
@@ -4829,19 +4829,19 @@ Sub0160:
 8 5004: 32,d8,7e             jnb   B2,Rd8,5085        if (!B2_Rd8) goto 5085;
 8 5007: 31,d8,1b             jnb   B1,Rd8,5025        if (!B1_Rd8) goto 5025;
 8 500a: ad,08,30             ldzbw R30,8              R30 = (uns)8;        
-8 500d: ef,d3,db             call  2be3               USWordLU(Fc018,Rbe); 
+8 500d: ef,d3,db             call  2be3               USWordLU(FN3ULK,Rbe);
 8 5010: de,c5,be,00                                   #args                
 8 5014: c3,ee,b4,38          stw   [Ree+b4],R38       [334] = R38;         
-8 5018: ef,c8,db             call  2be3               USWordLU(Fc019,Rbe); 
+8 5018: ef,c8,db             call  2be3               USWordLU(FN3LK,Rbe); 
 8 501b: fa,c5,be,00                                   #args                
 8 501f: c3,ee,b6,38          stw   [Ree+b6],R38       [336] = R38;         
 8 5023: 20,18                sjmp  503d               goto 503d;           
 
 8 5025: 01,30                clrw  R30                R30 = 0;             
-8 5027: ef,b9,db             call  2be3               USWordLU(Fc016,Rbe); 
+8 5027: ef,b9,db             call  2be3               USWordLU(FN2ULK,Rbe);
 8 502a: a6,c5,be,00                                   #args                
 8 502e: c3,ee,b4,38          stw   [Ree+b4],R38       [334] = R38;         
-8 5032: ef,ae,db             call  2be3               USWordLU(Fc017,Rbe); 
+8 5032: ef,ae,db             call  2be3               USWordLU(FN2LK,Rbe); 
 8 5035: c2,c5,be,00                                   #args                
 8 5039: c3,ee,b6,38          stw   [Ree+b6],R38       [336] = R38;         
 8 503d: 45,78,01,fc,42       ad3w  R42,Rfc,178        R42 = St0013;        
@@ -5518,18 +5518,18 @@ OSt8_009 - Other Structure 8 009:
 Rf0_EndAddr - Rbase Rf0 end next address:
 8 8800: 2e,88             Rf0 Rf0_EndAddr     word      882e               34862
 
-Fc001 - Function 001:
-8 8802: ff,ff,c0,fe       func                ffff,     fec0               65535,     -320
-8 8806: 40,e8,c0,fe       func                e840,     fec0               59456,     -320
-8 880a: 00,de,e0,ff       func                de00,     ffe0               56832,      -32
-8 880e: 80,c6,00,01       func                c680,      100               50816,      256
-8 8812: c0,3b,a8,04       func                3bc0,      4a8               15296,     1192
-8 8816: 80,1e,10,06       func                1e80,      610                7808,     1552
-8 881a: c0,11,30,07       func                11c0,      730                4544,     1840
-8 881e: 40,08,e0,08       func                 840,      8e0                2112,     2272
-8 8822: 80,07,28,09       func                 780,      928                1920,     2344
-8 8826: 80,06,70,09       func                 680,      970                1664,     2416
-8 882a: 00,00,70,09       func                   0,      970                   0,     2416
+FN703D - TOT_TRANSFER:
+8 8802: ff,ff,c0,fe       func                ffff,     fec0                5.12,   -40.00
+8 8806: 40,e8,c0,fe       func                e840,     fec0                4.65,   -40.00
+8 880a: 00,de,e0,ff       func                de00,     ffe0                4.44,    -4.00
+8 880e: 80,c6,00,01       func                c680,      100                3.97,    32.00
+8 8812: c0,3b,a8,04       func                3bc0,      4a8                1.20,   149.00
+8 8816: 80,1e,10,06       func                1e80,      610                0.61,   194.00
+8 881a: c0,11,30,07       func                11c0,      730                0.36,   230.00
+8 881e: 40,08,e0,08       func                 840,      8e0                0.17,   284.00
+8 8822: 80,07,28,09       func                 780,      928                0.15,   293.00
+8 8826: 80,06,70,09       func                 680,      970                0.13,   302.00
+8 882a: 00,00,70,09       func                   0,      970                0.00,   302.00
 
 
 Rf2_EndAddr - Rbase Rf2 end next address:
@@ -5541,8 +5541,12 @@ Rf4_EndAddr - Rbase Rf4 end next address:
 
 Rf6_EndAddr - Rbase Rf6 end next address:
 8 8834: 46,88             Rf6 Rf6_EndAddr     word      8846               34886
-8 8836: 80,03             Rf6+2 Sc0006        word       380                 896
-8 8838: c0,e9             Rf6+4 Sc0007        word      e9c0               59840
+
+TOTMIN - TOT_MIN:
+8 8836: 80,03             Rf6+2 TOTMIN        word       380              0.0700
+
+TOTMAX - TOT_MAX:
+8 8838: c0,e9             Rf6+4 TOTMAX        word      e9c0              4.6750
 8 883a: cd,04             Rf6+6 Sc0008        word       4cd                1229
 8 883c: 71,00             Rf6+8 Sc0009        word        71                 113
 8 883e: 20,b3             Rf6+a Sc0010        word      b320               45856
@@ -5555,7 +5559,9 @@ Rf6_EndAddr - Rbase Rf6 end next address:
 
 Rf8_EndAddr - Rbase Rf8 end next address:
 8 8846: 4e,88             Rf8 Rf8_EndAddr     word      884e               34894
-8 8848: 5c,12             Rf8+2 Sc0016        word      125c                4700
+
+TCTP - TPS_TIME_CONST:
+8 8848: 5c,12             Rf8+2 TCTP          word      125c              4.5898
 8 884a: bf,00             Rf8+4 Sc0017        word        bf                 191
 8 884c: 1f,00             Rf8+6 Sc0018        word        1f                  31
 
@@ -5565,6 +5571,8 @@ Rfa_EndAddr - Rbase Rfa end next address:
 Rfc_EndAddr - Rbase Rfc end next address:
 8 8850: 3c,94             Rfc Rfc_EndAddr     word      943c               37948
 8 8852: 60,09             Rfc+2 Sc0021        word       960                2400
+
+Sc0022 - Rfc+4:
 8 8854: 18,01             Rfc+4 Sc0022        word       118                 280
 8 8856: 00,30             Rfc+6 Sc0023        word      3000               12288
 8 8858: 48,26             Rfc+8 Sc0024        word      2648                9800
@@ -5945,42 +5953,42 @@ St0017 - Structure 017:
 
 8 8b61: 05                Rfc+311 Sc0087      byte         5                   5
 
-Fc002 - Function 002:
-8 8b62: ff,ff,b8,24       func                ffff,     24b8               65535,     9400
-8 8b66: 80,57,b8,24       func                5780,     24b8               22400,     9400
-8 8b6a: 80,3e,60,22       func                3e80,     2260               16000,     8800
-8 8b6e: 00,32,b0,1d       func                3200,     1db0               12800,     7600
-8 8b72: 00,19,70,17       func                1900,     1770                6400,     6000
-8 8b76: 00,00,70,17       func                   0,     1770                   0,     6000
-8 8b7a: 00,00,70,17       func                   0,     1770                   0,     6000
+FN689V - VSS_TEST_MIN_RPM_V_REL_TP:
+8 8b62: ff,ff,b8,24       func                ffff,     24b8                5.12,  2350.00
+8 8b66: 80,57,b8,24       func                5780,     24b8                1.75,  2350.00
+8 8b6a: 80,3e,60,22       func                3e80,     2260                1.25,  2200.00
+8 8b6e: 00,32,b0,1d       func                3200,     1db0                1.00,  1900.00
+8 8b72: 00,19,70,17       func                1900,     1770                0.50,  1500.00
+8 8b76: 00,00,70,17       func                   0,     1770                0.00,  1500.00
+8 8b7a: 00,00,70,17       func                   0,     1770                0.00,  1500.00
 
-Fc003 - Function 003:
-8 8b7e: ff,00             func                  ff,        0                 255,        0
-8 8b80: e0,00             func                  e0,        0                 224,        0
-8 8b82: c4,80             func                  c4,       80                 196,      128
-8 8b84: 80,c0             func                  80,       c0                 128,      192
-8 8b86: 00,c0             func                   0,       c0                   0,      192
-8 8b88: 00,c0             func                   0,       c0                   0,      192
+FN615 - BP_INTERPOLATION_MULTI:
+8 8b7e: ff,00             func                  ff,        0               15.94,     0.00
+8 8b80: e0,00             func                  e0,        0               14.00,     0.00
+8 8b82: c4,80             func                  c4,       80               12.25,     1.00
+8 8b84: 80,c0             func                  80,       c0                8.00,     1.50
+8 8b86: 00,c0             func                   0,       c0                0.00,     1.50
+8 8b88: 00,c0             func                   0,       c0                0.00,     1.50
 
-Fc004 - Function 004:
-8 8b8a: ff,7f,60,04       func                7fff,      460               32767,     1120
-8 8b8e: b0,04,60,04       func                 4b0,      460                1200,     1120
-8 8b92: 20,03,30,03       func                 320,      330                 800,      816
-8 8b96: f0,00,68,01       func                  f0,      168                 240,      360
-8 8b9a: 00,00,f0,00       func                   0,       f0                   0,      240
-8 8b9e: 00,80,f0,00       func                8000,       f0              -32768,      240
+FN690 - COLD_SHIFT_SHIFT_SCHEDULE_MAX_TOT:
+8 8b8a: ff,7f,60,04       func                7fff,      460             4095.88,   140.00
+8 8b8e: b0,04,60,04       func                 4b0,      460              150.00,   140.00
+8 8b92: 20,03,30,03       func                 320,      330              100.00,   102.00
+8 8b96: f0,00,68,01       func                  f0,      168               30.00,    45.00
+8 8b9a: 00,00,f0,00       func                   0,       f0                0.00,    30.00
+8 8b9e: 00,80,f0,00       func                8000,       f0            -4096.00,    30.00
 
-Fc005 - Function 005:
-8 8ba2: ff,40             func                  ff,       40                 255,       64
-8 8ba4: d4,40             func                  d4,       40                 212,       64
-8 8ba6: c6,00             func                  c6,        0                 198,        0
-8 8ba8: a8,b3             func                  a8,       b3                 168,      -77
-8 8baa: a0,9a             func                  a0,       9a                 160,     -102
-8 8bac: 00,9a             func                   0,       9a                   0,     -102
-8 8bae: 00,9a             func                   0,       9a                   0,     -102
-8 8bb0: 00,9a             func                   0,       9a                   0,     -102
-8 8bb2: 00,9a             func                   0,       9a                   0,     -102
-8 8bb4: 00,9a             func                   0,       9a                   0,     -102
+TORQUE_TABLE_MULTI_V_BP:
+8 8ba2: ff,40             func                  ff,       40               15.94,     1.00
+8 8ba4: d4,40             func                  d4,       40               13.25,     1.00
+8 8ba6: c6,00             func                  c6,        0               12.38,     0.00
+8 8ba8: a8,b3             func                  a8,       b3               10.50,    -1.20
+8 8baa: a0,9a             func                  a0,       9a               10.00,    -1.59
+8 8bac: 00,9a             func                   0,       9a                0.00,    -1.59
+8 8bae: 00,9a             func                   0,       9a                0.00,    -1.59
+8 8bb0: 00,9a             func                   0,       9a                0.00,    -1.59
+8 8bb2: 00,9a             func                   0,       9a                0.00,    -1.59
+8 8bb4: 00,9a             func                   0,       9a                0.00,    -1.59
 
 St0018 - Structure 018:
 8 8bb6: ff      struct     ff
@@ -5989,17 +5997,17 @@ St0018 - Structure 018:
 8 8bb7 -> 8bc9                     fill               00
 
 
-Fc006 - Function 006:
-8 8bca: ff,34             func                  ff,       34                 255,       52
-8 8bcc: 83,34             func                  83,       34                 131,       52
-8 8bce: 83,2b             func                  83,       2b                 131,       43
-8 8bd0: 7d,2b             func                  7d,       2b                 125,       43
-8 8bd2: 64,27             func                  64,       27                 100,       39
-8 8bd4: 4a,24             func                  4a,       24                  74,       36
-8 8bd6: 27,15             func                  27,       15                  39,       21
-8 8bd8: 1c,11             func                  1c,       11                  28,       17
-8 8bda: 00,11             func                   0,       11                   0,       17
-8 8bdc: 00,11             func                   0,       11                   0,       17
+FN12S - 1-2_SHIFT_SPEED_SEA_LEVEL:
+8 8bca: ff,34             func                  ff,       34                5.10,    26.00
+8 8bcc: 83,34             func                  83,       34                2.62,    26.00
+8 8bce: 83,2b             func                  83,       2b                2.62,    21.50
+8 8bd0: 7d,2b             func                  7d,       2b                2.50,    21.50
+8 8bd2: 64,27             func                  64,       27                2.00,    19.50
+8 8bd4: 4a,24             func                  4a,       24                1.48,    18.00
+8 8bd6: 27,15             func                  27,       15                0.78,    10.50
+8 8bd8: 1c,11             func                  1c,       11                0.56,     8.50
+8 8bda: 00,11             func                   0,       11                0.00,     8.50
+8 8bdc: 00,11             func                   0,       11                0.00,     8.50
 
 St0019 - Structure 019:
 8 8bde: ff      struct     ff
@@ -6008,31 +6016,31 @@ St0019 - Structure 019:
 8 8bdf -> 8bf1                     fill               00
 
 
-Fc007 - Function 007:
-8 8bf2: ff,ff,00,d8       func                ffff,     d800               65535,    55296
-8 8bf6: 00,00,00,d8       func                   0,     d800                   0,    55296
-8 8bfa: 00,00,00,d8       func                   0,     d800                   0,    55296
-8 8bfe: 00,00,00,d8       func                   0,     d800                   0,    55296
-8 8c02: 00,00,00,d8       func                   0,     d800                   0,    55296
-8 8c06: 00,00,00,d8       func                   0,     d800                   0,    55296
-8 8c0a: 00,00,00,d8       func                   0,     d800                   0,    55296
-8 8c0e: 00,00,00,d8       func                   0,     d800                   0,    55296
-8 8c12: 00,00,00,d8       func                   0,     d800                   0,    55296
-8 8c16: 00,00,00,d8       func                   0,     d800                   0,    55296
-8 8c1a: 00,00,00,d8       func                   0,     d800                   0,    55296
-8 8c1e: 00,00,00,d8       func                   0,     d800                   0,    55296
+FN29PPH - 2-3_SHIFT_MIN_ACCEL:
+8 8bf2: ff,ff,00,d8       func                ffff,     d800                5.12,   -20.00
+8 8bf6: 00,00,00,d8       func                   0,     d800                0.00,   -20.00
+8 8bfa: 00,00,00,d8       func                   0,     d800                0.00,   -20.00
+8 8bfe: 00,00,00,d8       func                   0,     d800                0.00,   -20.00
+8 8c02: 00,00,00,d8       func                   0,     d800                0.00,   -20.00
+8 8c06: 00,00,00,d8       func                   0,     d800                0.00,   -20.00
+8 8c0a: 00,00,00,d8       func                   0,     d800                0.00,   -20.00
+8 8c0e: 00,00,00,d8       func                   0,     d800                0.00,   -20.00
+8 8c12: 00,00,00,d8       func                   0,     d800                0.00,   -20.00
+8 8c16: 00,00,00,d8       func                   0,     d800                0.00,   -20.00
+8 8c1a: 00,00,00,d8       func                   0,     d800                0.00,   -20.00
+8 8c1e: 00,00,00,d8       func                   0,     d800                0.00,   -20.00
 
-Fc008 - Function 008:
-8 8c22: ff,5c             func                  ff,       5c                 255,       92
-8 8c24: 83,5c             func                  83,       5c                 131,       92
-8 8c26: 83,55             func                  83,       55                 131,       85
-8 8c28: 68,55             func                  68,       55                 104,       85
-8 8c2a: 4a,4b             func                  4a,       4b                  74,       75
-8 8c2c: 41,3d             func                  41,       3d                  65,       61
-8 8c2e: 28,27             func                  28,       27                  40,       39
-8 8c30: 1f,1e             func                  1f,       1e                  31,       30
-8 8c32: 00,1e             func                   0,       1e                   0,       30
-8 8c34: 00,1e             func                   0,       1e                   0,       30
+FN23S - 2-3_SHIFT_SPEED_SEA_LEVEL:
+8 8c22: ff,5c             func                  ff,       5c                5.10,    46.00
+8 8c24: 83,5c             func                  83,       5c                2.62,    46.00
+8 8c26: 83,55             func                  83,       55                2.62,    42.50
+8 8c28: 68,55             func                  68,       55                2.08,    42.50
+8 8c2a: 4a,4b             func                  4a,       4b                1.48,    37.50
+8 8c2c: 41,3d             func                  41,       3d                1.30,    30.50
+8 8c2e: 28,27             func                  28,       27                0.80,    19.50
+8 8c30: 1f,1e             func                  1f,       1e                0.62,    15.00
+8 8c32: 00,1e             func                   0,       1e                0.00,    15.00
+8 8c34: 00,1e             func                   0,       1e                0.00,    15.00
 
 St0020 - Structure 020:
 8 8c36: ff      struct     ff
@@ -6041,31 +6049,31 @@ St0020 - Structure 020:
 8 8c37 -> 8c49                     fill               00
 
 
-Fc009 - Function 009:
-8 8c4a: ff,ff,9a,00       func                ffff,       9a               65535,      154
-8 8c4e: 00,a8,9a,00       func                a800,       9a               43008,      154
-8 8c52: 00,7d,8a,00       func                7d00,       8a               32000,      138
-8 8c56: 00,64,66,00       func                6400,       66               25600,      102
-8 8c5a: 00,4b,33,00       func                4b00,       33               19200,       51
-8 8c5e: 80,39,05,00       func                3980,        5               14720,        5
-8 8c62: 00,19,a9,ff       func                1900,     ffa9                6400,    65449
-8 8c66: 00,00,00,d8       func                   0,     d800                   0,    55296
-8 8c6a: 00,00,00,d8       func                   0,     d800                   0,    55296
-8 8c6e: 00,00,00,d8       func                   0,     d800                   0,    55296
-8 8c72: 00,00,00,d8       func                   0,     d800                   0,    55296
-8 8c76: 00,00,00,d8       func                   0,     d800                   0,    55296
+FN34PPH - 3-4_SHIFT_MIN_ACCEL:
+8 8c4a: ff,ff,9a,00       func                ffff,       9a                5.12,   0.3008
+8 8c4e: 00,a8,9a,00       func                a800,       9a                3.36,   0.3008
+8 8c52: 00,7d,8a,00       func                7d00,       8a                2.50,   0.2695
+8 8c56: 00,64,66,00       func                6400,       66                2.00,   0.1992
+8 8c5a: 00,4b,33,00       func                4b00,       33                1.50,   0.0996
+8 8c5e: 80,39,05,00       func                3980,        5                1.15,   0.0098
+8 8c62: 00,19,a9,ff       func                1900,     ffa9                0.50,  -0.1699
+8 8c66: 00,00,00,d8       func                   0,     d800                0.00, -20.0000
+8 8c6a: 00,00,00,d8       func                   0,     d800                0.00, -20.0000
+8 8c6e: 00,00,00,d8       func                   0,     d800                0.00, -20.0000
+8 8c72: 00,00,00,d8       func                   0,     d800                0.00, -20.0000
+8 8c76: 00,00,00,d8       func                   0,     d800                0.00, -20.0000
 
-Fc010 - Function 010:
-8 8c7a: ff,8e             func                  ff,       8e                 255,      142
-8 8c7c: 83,8e             func                  83,       8e                 131,      142
-8 8c7e: 83,89             func                  83,       89                 131,      137
-8 8c80: 69,80             func                  69,       80                 105,      128
-8 8c82: 5a,7a             func                  5a,       7a                  90,      122
-8 8c84: 4b,6c             func                  4b,       6c                  75,      108
-8 8c86: 3f,60             func                  3f,       60                  63,       96
-8 8c88: 32,4c             func                  32,       4c                  50,       76
-8 8c8a: 28,40             func                  28,       40                  40,       64
-8 8c8c: 00,40             func                   0,       40                   0,       64
+FN34S - 3-4_SHIFT_SPEED_SEA_LVL:
+8 8c7a: ff,8e             func                  ff,       8e                5.10,    71.00
+8 8c7c: 83,8e             func                  83,       8e                2.62,    71.00
+8 8c7e: 83,89             func                  83,       89                2.62,    68.50
+8 8c80: 69,80             func                  69,       80                2.10,    64.00
+8 8c82: 5a,7a             func                  5a,       7a                1.80,    61.00
+8 8c84: 4b,6c             func                  4b,       6c                1.50,    54.00
+8 8c86: 3f,60             func                  3f,       60                1.26,    48.00
+8 8c88: 32,4c             func                  32,       4c                1.00,    38.00
+8 8c8a: 28,40             func                  28,       40                0.80,    32.00
+8 8c8c: 00,40             func                   0,       40                0.00,    32.00
 
 St0021 - Structure 021:
 8 8c8e: ff      struct     ff
@@ -6076,17 +6084,17 @@ St0021 - Structure 021:
 8 8c93 -> 8ca1                     fill               00
 
 
-Fc011 - Function 011:
-8 8ca2: ff,2a             func                  ff,       2a                 255,       42
-8 8ca4: 89,2a             func                  89,       2a                 137,       42
-8 8ca6: 89,24             func                  89,       24                 137,       36
-8 8ca8: 7e,23             func                  7e,       23                 126,       35
-8 8caa: 50,0f             func                  50,        f                  80,       15
-8 8cac: 00,0f             func                   0,        f                   0,       15
-8 8cae: 00,0f             func                   0,        f                   0,       15
-8 8cb0: 00,0f             func                   0,        f                   0,       15
-8 8cb2: 00,0f             func                   0,        f                   0,       15
-8 8cb4: 00,0f             func                   0,        f                   0,       15
+FN21S - 2-1_SHIFT_SPEED_SEA_LEVEL:
+8 8ca2: ff,2a             func                  ff,       2a                5.10,    21.00
+8 8ca4: 89,2a             func                  89,       2a                2.74,    21.00
+8 8ca6: 89,24             func                  89,       24                2.74,    18.00
+8 8ca8: 7e,23             func                  7e,       23                2.52,    17.50
+8 8caa: 50,0f             func                  50,        f                1.60,     7.50
+8 8cac: 00,0f             func                   0,        f                0.00,     7.50
+8 8cae: 00,0f             func                   0,        f                0.00,     7.50
+8 8cb0: 00,0f             func                   0,        f                0.00,     7.50
+8 8cb2: 00,0f             func                   0,        f                0.00,     7.50
+8 8cb4: 00,0f             func                   0,        f                0.00,     7.50
 
 St0022 - Structure 022:
 8 8cb6: ff      struct     ff
@@ -6095,17 +6103,17 @@ St0022 - Structure 022:
 8 8cb7 -> 8cc9                     fill               00
 
 
-Fc012 - Function 012:
-8 8cca: ff,4e             func                  ff,       4e                 255,       78
-8 8ccc: 89,4e             func                  89,       4e                 137,       78
-8 8cce: 89,48             func                  89,       48                 137,       72
-8 8cd0: 71,41             func                  71,       41                 113,       65
-8 8cd2: 50,31             func                  50,       31                  80,       49
-8 8cd4: 32,23             func                  32,       23                  50,       35
-8 8cd6: 1f,1c             func                  1f,       1c                  31,       28
-8 8cd8: 00,1c             func                   0,       1c                   0,       28
-8 8cda: 00,1c             func                   0,       1c                   0,       28
-8 8cdc: 00,1c             func                   0,       1c                   0,       28
+FN32S - 3-2_SHIFT_SPEED_SEA_LEVEL:
+8 8cca: ff,4e             func                  ff,       4e                5.10,    39.00
+8 8ccc: 89,4e             func                  89,       4e                2.74,    39.00
+8 8cce: 89,48             func                  89,       48                2.74,    36.00
+8 8cd0: 71,41             func                  71,       41                2.26,    32.50
+8 8cd2: 50,31             func                  50,       31                1.60,    24.50
+8 8cd4: 32,23             func                  32,       23                1.00,    17.50
+8 8cd6: 1f,1c             func                  1f,       1c                0.62,    14.00
+8 8cd8: 00,1c             func                   0,       1c                0.00,    14.00
+8 8cda: 00,1c             func                   0,       1c                0.00,    14.00
+8 8cdc: 00,1c             func                   0,       1c                0.00,    14.00
 
 St0023 - Structure 023:
 8 8cde: ff      struct     ff
@@ -6114,33 +6122,33 @@ St0023 - Structure 023:
 8 8cdf -> 8cf1                     fill               00
 
 
-Fc013 - Function 013:
-8 8cf2: ff,78             func                  ff,       78                 255,      120
-8 8cf4: 89,78             func                  89,       78                 137,      120
-8 8cf6: 78,74             func                  78,       74                 120,      116
-8 8cf8: 64,6e             func                  64,       6e                 100,      110
-8 8cfa: 64,5a             func                  64,       5a                 100,       90
-8 8cfc: 58,51             func                  58,       51                  88,       81
-8 8cfe: 4b,46             func                  4b,       46                  75,       70
-8 8d00: 3b,3c             func                  3b,       3c                  59,       60
-8 8d02: 00,3c             func                   0,       3c                   0,       60
-8 8d04: 00,3c             func                   0,       3c                   0,       60
+FN43S - 4-3_SHIFT_SPEED_SEA_LEVEL:
+8 8cf2: ff,78             func                  ff,       78                5.10,    60.00
+8 8cf4: 89,78             func                  89,       78                2.74,    60.00
+8 8cf6: 78,74             func                  78,       74                2.40,    58.00
+8 8cf8: 64,6e             func                  64,       6e                2.00,    55.00
+8 8cfa: 64,5a             func                  64,       5a                2.00,    45.00
+8 8cfc: 58,51             func                  58,       51                1.76,    40.50
+8 8cfe: 4b,46             func                  4b,       46                1.50,    35.00
+8 8d00: 3b,3c             func                  3b,       3c                1.18,    30.00
+8 8d02: 00,3c             func                   0,       3c                0.00,    30.00
+8 8d04: 00,3c             func                   0,       3c                0.00,    30.00
 
-Fc014 - Function 014:
-8 8d06: ff,ff,40,1f       func                ffff,     1f40               65535,     8000
-8 8d0a: 00,64,40,1f       func                6400,     1f40               25600,     8000
-8 8d0e: 00,4b,30,11       func                4b00,     1130               19200,     4400
-8 8d12: 00,37,68,10       func                3700,     1068               14080,     4200
-8 8d16: 00,00,40,0b       func                   0,      b40                   0,     2880
+FN689D - VSS_FAIL_DOWNSHIFT_RPM:
+8 8d06: ff,ff,40,1f       func                ffff,     1f40                5.12,  2000.00
+8 8d0a: 00,64,40,1f       func                6400,     1f40                2.00,  2000.00
+8 8d0e: 00,4b,30,11       func                4b00,     1130                1.50,  1100.00
+8 8d12: 00,37,68,10       func                3700,     1068                1.10,  1050.00
+8 8d16: 00,00,40,0b       func                   0,      b40                0.00,   720.00
 
-Fc015 - Function 015:
-8 8d1a: ff,ff,9c,31       func                ffff,     319c               65535,    12700
-8 8d1e: 00,87,9c,31       func                8700,     319c               34560,    12700
-8 8d22: 80,57,f8,2a       func                5780,     2af8               22400,    11000
-8 8d26: c0,44,80,25       func                44c0,     2580               17600,     9600
-8 8d2a: 80,3e,f0,23       func                3e80,     23f0               16000,     9200
-8 8d2e: 80,25,04,19       func                2580,     1904                9600,     6404
-8 8d32: 00,00,00,19       func                   0,     1900                   0,     6400
+FN689U - VSS_FAIL_UPSHIFT_RPM:
+8 8d1a: ff,ff,9c,31       func                ffff,     319c                5.12,  3175.00
+8 8d1e: 00,87,9c,31       func                8700,     319c                2.70,  3175.00
+8 8d22: 80,57,f8,2a       func                5780,     2af8                1.75,  2750.00
+8 8d26: c0,44,80,25       func                44c0,     2580                1.38,  2400.00
+8 8d2a: 80,3e,f0,23       func                3e80,     23f0                1.25,  2300.00
+8 8d2e: 80,25,04,19       func                2580,     1904                0.75,  1601.00
+8 8d32: 00,00,00,19       func                   0,     1900                0.00,  1600.00
 
 St0024 - Structure 024:
 8 8d36: ff      struct     ff
@@ -6192,74 +6200,74 @@ St0027 - Structure 027:
 8 8dee: ff,00,00,00,00,00,00,00               Unknown Calibration        ff,  0,  0,  0,  0,  0,  0,  0        255,   0,   0,   0,   0,   0,   0,   0
 
 
-Fc016 - Function 016:
-8 8df6: ff,ff,b4,00       func                ffff,       b4               65535,      180
-8 8dfa: 00,00,b4,00       func                   0,       b4                   0,      180
-8 8dfe: 00,00,b4,00       func                   0,       b4                   0,      180
-8 8e02: 00,00,b4,00       func                   0,       b4                   0,      180
-8 8e06: 00,00,b4,00       func                   0,       b4                   0,      180
-8 8e0a: 00,00,b4,00       func                   0,       b4                   0,      180
-8 8e0e: 00,00,b4,00       func                   0,       b4                   0,      180
+FN2ULK - TCC_UNLOCK_UPSHIFT_2ND:
+8 8df6: ff,ff,b4,00       func                ffff,       b4                5.12,   0.0110
+8 8dfa: 00,00,b4,00       func                   0,       b4                0.00,   0.0110
+8 8dfe: 00,00,b4,00       func                   0,       b4                0.00,   0.0110
+8 8e02: 00,00,b4,00       func                   0,       b4                0.00,   0.0110
+8 8e06: 00,00,b4,00       func                   0,       b4                0.00,   0.0110
+8 8e0a: 00,00,b4,00       func                   0,       b4                0.00,   0.0110
+8 8e0e: 00,00,b4,00       func                   0,       b4                0.00,   0.0110
 
-Fc017 - Function 017:
-8 8e12: ff,ff,f8,0b       func                ffff,      bf8               65535,     3064
-8 8e16: 40,83,f8,0b       func                8340,      bf8               33600,     3064
-8 8e1a: 00,7d,39,0c       func                7d00,      c39               32000,     3129
-8 8e1e: 00,64,29,0c       func                6400,      c29               25600,     3113
-8 8e22: 80,57,96,0b       func                5780,      b96               22400,     2966
-8 8e26: 00,4b,85,0b       func                4b00,      b85               19200,     2949
-8 8e2a: 00,00,9a,09       func                   0,      99a                   0,     2458
+FN2LK - TCC_LOCK_UPSHIFT_2ND:
+8 8e12: ff,ff,f8,0b       func                ffff,      bf8                5.12,   0.1872
+8 8e16: 40,83,f8,0b       func                8340,      bf8                2.63,   0.1872
+8 8e1a: 00,7d,39,0c       func                7d00,      c39                2.50,   0.1912
+8 8e1e: 00,64,29,0c       func                6400,      c29                2.00,   0.1902
+8 8e22: 80,57,96,0b       func                5780,      b96                1.75,   0.1813
+8 8e26: 00,4b,85,0b       func                4b00,      b85                1.50,   0.1802
+8 8e2a: 00,00,9a,09       func                   0,      99a                0.00,   0.1502
 
-Fc018 - Function 018:
-8 8e2e: ff,ff,9c,00       func                ffff,       9c               65535,      156
-8 8e32: 40,83,9c,00       func                8340,       9c               33600,      156
-8 8e36: 00,7d,c5,00       func                7d00,       c5               32000,      197
-8 8e3a: 00,64,b6,00       func                6400,       b6               25600,      182
-8 8e3e: 00,4b,a4,00       func                4b00,       a4               19200,      164
-8 8e42: 80,3e,17,01       func                3e80,      117               16000,      279
-8 8e46: 00,00,17,01       func                   0,      117                   0,      279
+FN3ULK - TCC_UNLOCK_UPSHIFT_3RD:
+8 8e2e: ff,ff,9c,00       func                ffff,       9c                5.12,   0.0095
+8 8e32: 40,83,9c,00       func                8340,       9c                2.63,   0.0095
+8 8e36: 00,7d,c5,00       func                7d00,       c5                2.50,   0.0120
+8 8e3a: 00,64,b6,00       func                6400,       b6                2.00,   0.0111
+8 8e3e: 00,4b,a4,00       func                4b00,       a4                1.50,   0.0100
+8 8e42: 80,3e,17,01       func                3e80,      117                1.25,   0.0170
+8 8e46: 00,00,17,01       func                   0,      117                0.00,   0.0170
 
-Fc019 - Function 019:
-8 8e4a: ff,ff,73,08       func                ffff,      873               65535,     2163
-8 8e4e: 40,83,73,08       func                8340,      873               33600,     2163
-8 8e52: 00,7d,52,08       func                7d00,      852               32000,     2130
-8 8e56: 00,64,10,08       func                6400,      810               25600,     2064
-8 8e5a: 00,4b,00,08       func                4b00,      800               19200,     2048
-8 8e5e: 80,3e,b8,06       func                3e80,      6b8               16000,     1720
-8 8e62: 00,00,b8,06       func                   0,      6b8                   0,     1720
+FN3LK - TCC_LOCK_UPSHIFT_3RD:
+8 8e4a: ff,ff,73,08       func                ffff,      873                5.12,   0.1586
+8 8e4e: 40,83,73,08       func                8340,      873                2.63,   0.1586
+8 8e52: 00,7d,52,08       func                7d00,      852                2.50,   0.1562
+8 8e56: 00,64,10,08       func                6400,      810                2.00,   0.1514
+8 8e5a: 00,4b,00,08       func                4b00,      800                1.50,   0.1502
+8 8e5e: 80,3e,b8,06       func                3e80,      6b8                1.25,   0.1262
+8 8e62: 00,00,b8,06       func                   0,      6b8                0.00,   0.1262
 
-Fc020 - Function 020:
-8 8e66: ff,ff,fe,00       func                ffff,       fe               65535,      254
-8 8e6a: 40,83,fe,00       func                8340,       fe               33600,      254
-8 8e6e: 00,7d,f6,00       func                7d00,       f6               32000,      246
-8 8e72: 00,64,f6,00       func                6400,       f6               25600,      246
-8 8e76: 00,4b,e7,00       func                4b00,       e7               19200,      231
-8 8e7a: 80,3e,e5,00       func                3e80,       e5               16000,      229
-8 8e7e: 00,00,e5,00       func                   0,       e5                   0,      229
+FN4ULK - TCC_UNLOCK_4TH:
+8 8e66: ff,ff,fe,00       func                ffff,       fe                5.12,   0.0155
+8 8e6a: 40,83,fe,00       func                8340,       fe                2.63,   0.0155
+8 8e6e: 00,7d,f6,00       func                7d00,       f6                2.50,   0.0150
+8 8e72: 00,64,f6,00       func                6400,       f6                2.00,   0.0150
+8 8e76: 00,4b,e7,00       func                4b00,       e7                1.50,   0.0141
+8 8e7a: 80,3e,e5,00       func                3e80,       e5                1.25,   0.0140
+8 8e7e: 00,00,e5,00       func                   0,       e5                0.00,   0.0140
 
-Fc021 - Function 021:
-8 8e82: ff,ff,66,06       func                ffff,      666               65535,     1638
-8 8e86: 40,83,66,06       func                8340,      666               33600,     1638
-8 8e8a: 00,7d,c3,05       func                7d00,      5c3               32000,     1475
-8 8e8e: 00,00,c3,05       func                   0,      5c3                   0,     1475
-8 8e92: 00,00,c3,05       func                   0,      5c3                   0,     1475
-8 8e96: 00,00,c3,05       func                   0,      5c3                   0,     1475
-8 8e9a: 00,00,c3,05       func                   0,      5c3                   0,     1475
+FN4LK - TCC_LOCK_UPSHIFT_4TH:
+8 8e82: ff,ff,66,06       func                ffff,      666                5.12,   0.1001
+8 8e86: 40,83,66,06       func                8340,      666                2.63,   0.1001
+8 8e8a: 00,7d,c3,05       func                7d00,      5c3                2.50,   0.0901
+8 8e8e: 00,00,c3,05       func                   0,      5c3                0.00,   0.0901
+8 8e92: 00,00,c3,05       func                   0,      5c3                0.00,   0.0901
+8 8e96: 00,00,c3,05       func                   0,      5c3                0.00,   0.0901
+8 8e9a: 00,00,c3,05       func                   0,      5c3                0.00,   0.0901
 
-Fc022 - Function 022:
-8 8e9e: ff,ff,b3,00       func                ffff,       b3               65535,      179
-8 8ea2: 80,02,b3,00       func                 280,       b3                 640,      179
-8 8ea6: 00,00,33,00       func                   0,       33                   0,       51
-8 8eaa: 00,00,33,00       func                   0,       33                   0,       51
-8 8eae: 00,00,33,00       func                   0,       33                   0,       51
-8 8eb2: 00,00,33,00       func                   0,       33                   0,       51
+FN624 - TCC_DOWNSHIFT_UNLOCK_DELAY:
+8 8e9e: ff,ff,b3,00       func                ffff,       b3                5.12,      179
+8 8ea2: 80,02,b3,00       func                 280,       b3                0.05,      179
+8 8ea6: 00,00,33,00       func                   0,       33                0.00,       51
+8 8eaa: 00,00,33,00       func                   0,       33                0.00,       51
+8 8eae: 00,00,33,00       func                   0,       33                0.00,       51
+8 8eb2: 00,00,33,00       func                   0,       33                0.00,       51
 
-Fc023 - Function 023:
-8 8eb6: ff,ff,a0,28       func                ffff,     28a0               65535,    10400
-8 8eba: 00,7d,a0,28       func                7d00,     28a0               32000,    10400
-8 8ebe: 00,37,e8,1c       func                3700,     1ce8               14080,     7400
-8 8ec2: 80,25,24,1c       func                2580,     1c24                9600,     7204
-8 8ec6: 00,00,20,1c       func                   0,     1c20                   0,     7200
+FN689L - TCC_LOCK_RPM_FOR_VSS_FAIL:
+8 8eb6: ff,ff,a0,28       func                ffff,     28a0                5.12,  2600.00
+8 8eba: 00,7d,a0,28       func                7d00,     28a0                2.50,  2600.00
+8 8ebe: 00,37,e8,1c       func                3700,     1ce8                1.10,  1850.00
+8 8ec2: 80,25,24,1c       func                2580,     1c24                0.75,  1801.00
+8 8ec6: 00,00,20,1c       func                   0,     1c20                0.00,  1800.00
 
 
 8 8eca: ff,00,00,00,00,00,00,00               Unknown Calibration        ff,  0,  0,  0,  0,  0,  0,  0        255,   0,   0,   0,   0,   0,   0,   0
@@ -6275,13 +6283,13 @@ Fc023 - Function 023:
 8 8f1a: 28,15,00,05                           Unknown Calibration                        28, 15,  0,  5                             40,  21,   0,   5
 
 
-Fc024 - Function 024:
-8 8f1e: ff,12             func                  ff,       12                 255,       18
-8 8f20: 00,00             func                   0,        0                   0,        0
-8 8f22: 00,00             func                   0,        0                   0,        0
-8 8f24: 00,00             func                   0,        0                   0,        0
-8 8f26: 00,00             func                   0,        0                   0,        0
-8 8f28: 00,00             func                   0,        0                   0,        0
+FN1CB - TV_PRESS_COAST_BOOST_1ST:
+8 8f1e: ff,12             func                  ff,       12              127.50,       18
+8 8f20: 00,00             func                   0,        0                0.00,        0
+8 8f22: 00,00             func                   0,        0                0.00,        0
+8 8f24: 00,00             func                   0,        0                0.00,        0
+8 8f26: 00,00             func                   0,        0                0.00,        0
+8 8f28: 00,00             func                   0,        0                0.00,        0
 
 
 8 8f2a: ff,60,5a,60,3c,3c,28,20               Unknown Calibration        ff, 60, 5a, 60, 3c, 3c, 28, 20        255,  96,  90,  96,  60,  60,  40,  32
@@ -6289,93 +6297,93 @@ Fc024 - Function 024:
 8 8f3a: 5a,24,46,1c,28,14,00,00               Unknown Calibration        5a, 24, 46, 1c, 28, 14,  0,  0         90,  36,  70,  28,  40,  20,   0,   0
 
 
-Fc025 - Function 025:
-8 8f42: ff,aa             func                  ff,       aa                 255,      170
-8 8f44: 58,aa             func                  58,       aa                  88,      170
-8 8f46: 4b,a0             func                  4b,       a0                  75,      160
-8 8f48: 19,14             func                  19,       14                  25,       20
-8 8f4a: 0f,0a             func                   f,        a                  15,       10
-8 8f4c: 00,0a             func                   0,        a                   0,       10
-8 8f4e: 00,0a             func                   0,        a                   0,       10
-8 8f50: 00,0a             func                   0,        a                   0,       10
+FN616 - TV_PRESS_STALL_V_TP:
+8 8f42: ff,aa             func                  ff,       aa                5.10,    85.00
+8 8f44: 58,aa             func                  58,       aa                1.76,    85.00
+8 8f46: 4b,a0             func                  4b,       a0                1.50,    80.00
+8 8f48: 19,14             func                  19,       14                0.50,    10.00
+8 8f4a: 0f,0a             func                   f,        a                0.30,     5.00
+8 8f4c: 00,0a             func                   0,        a                0.00,     5.00
+8 8f4e: 00,0a             func                   0,        a                0.00,     5.00
+8 8f50: 00,0a             func                   0,        a                0.00,     5.00
 
-Fc026 - Function 026:
-8 8f52: ff,ff,00,40       func                ffff,     4000               65535,    16384
-8 8f56: e9,36,00,40       func                36e9,     4000               14057,    16384
-8 8f5a: 58,31,29,4c       func                3158,     4c29               12632,    19497
-8 8f5e: b2,2d,a4,50       func                2db2,     50a4               11698,    20644
-8 8f62: 9a,29,1f,55       func                299a,     551f               10650,    21791
-8 8f66: dd,24,e1,5a       func                24dd,     5ae1                9437,    23265
-8 8f6a: 8d,1f,00,60       func                1f8d,     6000                8077,    24576
-8 8f6e: cb,19,66,66       func                19cb,     6666                6603,    26214
-8 8f72: b6,13,e1,6a       func                13b6,     6ae1                5046,    27361
-8 8f76: 50,0d,00,70       func                 d50,     7000                3408,    28672
-8 8f7a: b8,06,7b,74       func                 6b8,     747b                1720,    29819
-8 8f7e: 00,00,85,7b       func                   0,     7b85                   0,    31621
+FN617 - TC_TORQUE_RATIO:
+8 8f52: ff,ff,00,40       func                ffff,     4000                4.00,     1.00
+8 8f56: e9,36,00,40       func                36e9,     4000                0.86,     1.00
+8 8f5a: 58,31,29,4c       func                3158,     4c29                0.77,     1.19
+8 8f5e: b2,2d,a4,50       func                2db2,     50a4                0.71,     1.26
+8 8f62: 9a,29,1f,55       func                299a,     551f                0.65,     1.33
+8 8f66: dd,24,e1,5a       func                24dd,     5ae1                0.58,     1.42
+8 8f6a: 8d,1f,00,60       func                1f8d,     6000                0.49,     1.50
+8 8f6e: cb,19,66,66       func                19cb,     6666                0.40,     1.60
+8 8f72: b6,13,e1,6a       func                13b6,     6ae1                0.31,     1.67
+8 8f76: 50,0d,00,70       func                 d50,     7000                0.21,     1.75
+8 8f7a: b8,06,7b,74       func                 6b8,     747b                0.10,     1.82
+8 8f7e: 00,00,85,7b       func                   0,     7b85                0.00,     1.93
 
-Fc027 - Function 027:
-8 8f82: ff,00             func                  ff,        0                 255,        0
-8 8f84: 00,00             func                   0,        0                   0,        0
-8 8f86: 00,00             func                   0,        0                   0,        0
-8 8f88: 00,00             func                   0,        0                   0,        0
-8 8f8a: 00,00             func                   0,        0                   0,        0
+FN618 - ACC_LOAD_TORQUE:
+8 8f82: ff,00             func                  ff,        0             4080.00,     0.00
+8 8f84: 00,00             func                   0,        0                0.00,     0.00
+8 8f86: 00,00             func                   0,        0                0.00,     0.00
+8 8f88: 00,00             func                   0,        0                0.00,     0.00
+8 8f8a: 00,00             func                   0,        0                0.00,     0.00
 
-Fc028 - Function 028:
-8 8f8c: ff,09             func                  ff,        9                 255,        9
-8 8f8e: bc,06             func                  bc,        6                 188,        6
-8 8f90: 00,04             func                   0,        4                   0,        4
-8 8f92: 00,04             func                   0,        4                   0,        4
-8 8f94: 00,04             func                   0,        4                   0,        4
+FN619 - AC_LOAD_TORQUE:
+8 8f8c: ff,09             func                  ff,        9             4080.00,    18.00
+8 8f8e: bc,06             func                  bc,        6             3008.00,    12.00
+8 8f90: 00,04             func                   0,        4                0.00,     8.00
+8 8f92: 00,04             func                   0,        4                0.00,     8.00
+8 8f94: 00,04             func                   0,        4                0.00,     8.00
 
-Fc029 - Function 029:
-8 8f96: ff,ff,00,0c       func                ffff,      c00               65535,       12
-8 8f9a: 80,93,00,0c       func                9380,      c00               37760,       12
-8 8f9e: 00,6e,00,0b       func                6e00,      b00               28160,       11
-8 8fa2: 00,23,00,05       func                2300,      500                8960,        5
-8 8fa6: 80,16,00,03       func                1680,      300                5760,        3
-8 8faa: 00,00,00,00       func                   0,        0                   0,        0
-8 8fae: 00,00,00,00       func                   0,        0                   0,        0
-8 8fb2: 00,00,00,00       func                   0,        0                   0,        0
-8 8fb6: 00,00,00,00       func                   0,        0                   0,        0
-8 8fba: 00,00,00,00       func                   0,        0                   0,        0
-8 8fbe: 00,00,00,00       func                   0,        0                   0,        0
-8 8fc2: 00,00,00,00       func                   0,        0                   0,        0
-8 8fc6: 00,00,00,00       func                   0,        0                   0,        0
-8 8fca: 00,00,00,00       func                   0,        0                   0,        0
-8 8fce: 00,00,00,00       func                   0,        0                   0,        0
+FN067D - TORQUE_TABLE_SCALER_REL_TP:
+8 8f96: ff,ff,00,0c       func                ffff,      c00                5.12,       12
+8 8f9a: 80,93,00,0c       func                9380,      c00                2.95,       12
+8 8f9e: 00,6e,00,0b       func                6e00,      b00                2.20,       11
+8 8fa2: 00,23,00,05       func                2300,      500                0.70,        5
+8 8fa6: 80,16,00,03       func                1680,      300                0.45,        3
+8 8faa: 00,00,00,00       func                   0,        0                0.00,        0
+8 8fae: 00,00,00,00       func                   0,        0                0.00,        0
+8 8fb2: 00,00,00,00       func                   0,        0                0.00,        0
+8 8fb6: 00,00,00,00       func                   0,        0                0.00,        0
+8 8fba: 00,00,00,00       func                   0,        0                0.00,        0
+8 8fbe: 00,00,00,00       func                   0,        0                0.00,        0
+8 8fc2: 00,00,00,00       func                   0,        0                0.00,        0
+8 8fc6: 00,00,00,00       func                   0,        0                0.00,        0
+8 8fca: 00,00,00,00       func                   0,        0                0.00,        0
+8 8fce: 00,00,00,00       func                   0,        0                0.00,        0
 
-Fc030 - Function 030:
-8 8fd2: ff,00             func                  ff,        0                 255,        0
-8 8fd4: aa,00             func                  aa,        0                 170,        0
-8 8fd6: a2,26             func                  a2,       26                 162,       38
-8 8fd8: 97,42             func                  97,       42                 151,       66
-8 8fda: 85,65             func                  85,       65                 133,      101
-8 8fdc: 71,7f             func                  71,       7f                 113,      127
-8 8fde: 3c,b7             func                  3c,       b7                  60,      183
-8 8fe0: 23,cd             func                  23,       cd                  35,      205
-8 8fe2: 15,d8             func                  15,       d8                  21,      216
-8 8fe4: 01,eb             func                   1,       eb                   1,      235
-8 8fe6: 00,f9             func                   0,       f9                   0,      249
-8 8fe8: 00,ff             func                   0,       ff                   0,      255
+FN620 - VAR_FORCE_SOL_TRANSFER:
+8 8fd2: ff,00             func                  ff,        0              127.50,     0.00
+8 8fd4: aa,00             func                  aa,        0               85.00,     0.00
+8 8fd6: a2,26             func                  a2,       26               81.00,     0.15
+8 8fd8: 97,42             func                  97,       42               75.50,     0.26
+8 8fda: 85,65             func                  85,       65               66.50,     0.40
+8 8fdc: 71,7f             func                  71,       7f               56.50,     0.50
+8 8fde: 3c,b7             func                  3c,       b7               30.00,     0.72
+8 8fe0: 23,cd             func                  23,       cd               17.50,     0.80
+8 8fe2: 15,d8             func                  15,       d8               10.50,     0.85
+8 8fe4: 01,eb             func                   1,       eb                0.50,     0.92
+8 8fe6: 00,f9             func                   0,       f9                0.00,     0.98
+8 8fe8: 00,ff             func                   0,       ff                0.00,     1.00
 
-Fc031 - Function 031:
-8 8fea: ff,ff,00,0e       func                ffff,      e00               65535,       14
-8 8fee: 40,38,00,0e       func                3840,      e00               14400,       14
-8 8ff2: 00,32,00,0a       func                3200,      a00               12800,       10
-8 8ff6: a0,28,00,07       func                28a0,      700               10400,        7
-8 8ffa: e0,15,00,04       func                15e0,      400                5600,        4
-8 8ffe: 60,09,00,00       func                 960,        0                2400,        0
-8 9002: 00,00,00,00       func                   0,        0                   0,        0
-8 9006: 00,00,00,00       func                   0,        0                   0,        0
-8 900a: 00,00,00,00       func                   0,        0                   0,        0
-8 900e: 00,00,00,00       func                   0,        0                   0,        0
-8 9012: 00,00,00,00       func                   0,        0                   0,        0
-8 9016: 00,00,00,00       func                   0,        0                   0,        0
-8 901a: 00,00,00,00       func                   0,        0                   0,        0
-8 901e: 00,00,00,00       func                   0,        0                   0,        0
-8 9022: 00,00,00,00       func                   0,        0                   0,        0
-8 9026: 00,00,00,00       func                   0,        0                   0,        0
-8 902a: 00,00,00,00       func                   0,        0                   0,        0
+TORQUE_TABLE_SCALER_RPM:
+8 8fea: ff,ff,00,0e       func                ffff,      e00            16383.75,       14
+8 8fee: 40,38,00,0e       func                3840,      e00             3600.00,       14
+8 8ff2: 00,32,00,0a       func                3200,      a00             3200.00,       10
+8 8ff6: a0,28,00,07       func                28a0,      700             2600.00,        7
+8 8ffa: e0,15,00,04       func                15e0,      400             1400.00,        4
+8 8ffe: 60,09,00,00       func                 960,        0              600.00,        0
+8 9002: 00,00,00,00       func                   0,        0                0.00,        0
+8 9006: 00,00,00,00       func                   0,        0                0.00,        0
+8 900a: 00,00,00,00       func                   0,        0                0.00,        0
+8 900e: 00,00,00,00       func                   0,        0                0.00,        0
+8 9012: 00,00,00,00       func                   0,        0                0.00,        0
+8 9016: 00,00,00,00       func                   0,        0                0.00,        0
+8 901a: 00,00,00,00       func                   0,        0                0.00,        0
+8 901e: 00,00,00,00       func                   0,        0                0.00,        0
+8 9022: 00,00,00,00       func                   0,        0                0.00,        0
+8 9026: 00,00,00,00       func                   0,        0                0.00,        0
+8 902a: 00,00,00,00       func                   0,        0                0.00,        0
 
 
 8 902e: ff,ff,7f,00,9a,03,1e,00               Unknown Calibration        ff, ff, 7f,  0, 9a,  3, 1e,  0        255, 255, 127,   0, 154,   3,  30,   0
@@ -6433,74 +6441,74 @@ Fc031 - Function 031:
 8 919a: 00,80,80,00,00,80,80,00               Unknown Calibration         0, 80, 80,  0,  0, 80, 80,  0          0, 128, 128,   0,   0, 128, 128,   0
 
 
-Fc032 - Function 032:
-8 91a2: ff,7f,fd,ff       func                7fff,     fffd               32767,       -3
-8 91a6: d0,07,fd,ff       func                 7d0,     fffd                2000,       -3
-8 91aa: b0,04,01,00       func                 4b0,        1                1200,        1
-8 91ae: c8,00,08,00       func                  c8,        8                 200,        8
-8 91b2: 00,80,08,00       func                8000,        8              -32768,        8
-8 91b6: 00,80,08,00       func                8000,        8              -32768,        8
-8 91ba: 00,80,08,00       func                8000,        8              -32768,        8
-8 91be: 00,80,08,00       func                8000,        8              -32768,        8
-8 91c2: 00,80,08,00       func                8000,        8              -32768,        8
-8 91c6: 00,80,08,00       func                8000,        8              -32768,        8
-8 91ca: 00,80,08,00       func                8000,        8              -32768,        8
-8 91ce: 00,80,08,00       func                8000,        8              -32768,        8
+FN622 - VAR_FORCE_SOL_TRANSFER_ADJ_FOR_TOT:
+8 91a2: ff,7f,fd,ff       func                7fff,     fffd             4095.88,  -0.0117
+8 91a6: d0,07,fd,ff       func                 7d0,     fffd              250.00,  -0.0117
+8 91aa: b0,04,01,00       func                 4b0,        1              150.00,   0.0039
+8 91ae: c8,00,08,00       func                  c8,        8               25.00,   0.0313
+8 91b2: 00,80,08,00       func                8000,        8            -4096.00,   0.0313
+8 91b6: 00,80,08,00       func                8000,        8            -4096.00,   0.0313
+8 91ba: 00,80,08,00       func                8000,        8            -4096.00,   0.0313
+8 91be: 00,80,08,00       func                8000,        8            -4096.00,   0.0313
+8 91c2: 00,80,08,00       func                8000,        8            -4096.00,   0.0313
+8 91c6: 00,80,08,00       func                8000,        8            -4096.00,   0.0313
+8 91ca: 00,80,08,00       func                8000,        8            -4096.00,   0.0313
+8 91ce: 00,80,08,00       func                8000,        8            -4096.00,   0.0313
 
-Fc033 - Function 033:
-8 91d2: ff,7f,80,00       func                7fff,       80               32767,      128
-8 91d6: 00,80,80,00       func                8000,       80              -32768,      128
-8 91da: 00,80,80,00       func                8000,       80              -32768,      128
-8 91de: 00,80,80,00       func                8000,       80              -32768,      128
-8 91e2: 00,80,80,00       func                8000,       80              -32768,      128
-8 91e6: 00,80,80,00       func                8000,       80              -32768,      128
-8 91ea: 00,80,80,00       func                8000,       80              -32768,      128
-8 91ee: 00,80,80,00       func                8000,       80              -32768,      128
+FN622A - VAR_FORCE_SOL_TRANSFER_MULTI:
+8 91d2: ff,7f,80,00       func                7fff,       80             4095.88,   1.0000
+8 91d6: 00,80,80,00       func                8000,       80            -4096.00,   1.0000
+8 91da: 00,80,80,00       func                8000,       80            -4096.00,   1.0000
+8 91de: 00,80,80,00       func                8000,       80            -4096.00,   1.0000
+8 91e2: 00,80,80,00       func                8000,       80            -4096.00,   1.0000
+8 91e6: 00,80,80,00       func                8000,       80            -4096.00,   1.0000
+8 91ea: 00,80,80,00       func                8000,       80            -4096.00,   1.0000
+8 91ee: 00,80,80,00       func                8000,       80            -4096.00,   1.0000
 
-Tb001 - Table 001:
-8 91f2: 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00       table        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0          0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 9201: 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00       table        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0          0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 9210: 64,05,00,00,00,00,00,00,00,00,00,00,00,00,00       table       64,  5,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0        100,   5,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 921f: 96,64,05,00,00,00,00,00,00,00,00,00,00,00,00       table       96, 64,  5,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0        150, 100,   5,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 922e: 8f,5f,1e,17,0e,00,00,00,00,00,00,00,00,00,00       table       8f, 5f, 1e, 17,  e,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0        143,  95,  30,  23,  14,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 923d: 8f,8b,86,50,3e,25,13,00,00,00,00,00,00,00,00       table       8f, 8b, 86, 50, 3e, 25, 13,  0,  0,  0,  0,  0,  0,  0,  0        143, 139, 134,  80,  62,  37,  19,   0,   0,   0,   0,   0,   0,   0,   0        
-8 924c: 8f,90,90,79,68,51,43,2d,22,15,07,00,00,00,00       table       8f, 90, 90, 79, 68, 51, 43, 2d, 22, 15,  7,  0,  0,  0,  0        143, 144, 144, 121, 104,  81,  67,  45,  34,  21,   7,   0,   0,   0,   0        
-8 925b: 8f,98,a2,a4,9c,79,64,4e,48,40,34,22,00,00,00       table       8f, 98, a2, a4, 9c, 79, 64, 4e, 48, 40, 34, 22,  0,  0,  0        143, 152, 162, 164, 156, 121, 100,  78,  72,  64,  52,  34,   0,   0,   0        
-8 926a: 8f,98,9f,a7,a6,98,8a,73,69,5b,4d,28,00,00,00       table       8f, 98, 9f, a7, a6, 98, 8a, 73, 69, 5b, 4d, 28,  0,  0,  0        143, 152, 159, 167, 166, 152, 138, 115, 105,  91,  77,  40,   0,   0,   0        
-8 9279: 8f,99,a3,a8,a6,a5,9c,8e,88,7a,68,34,0e,00,00       table       8f, 99, a3, a8, a6, a5, 9c, 8e, 88, 7a, 68, 34,  e,  0,  0        143, 153, 163, 168, 166, 165, 156, 142, 136, 122, 104,  52,  14,   0,   0        
-8 9288: 8f,96,9e,a3,a4,9e,9a,8c,86,80,75,41,00,00,00       table       8f, 96, 9e, a3, a4, 9e, 9a, 8c, 86, 80, 75, 41,  0,  0,  0        143, 150, 158, 163, 164, 158, 154, 140, 134, 128, 117,  65,   0,   0,   0        
-8 9297: 8f,98,a2,a4,a4,9e,99,94,93,8f,89,61,2d,00,00       table       8f, 98, a2, a4, a4, 9e, 99, 94, 93, 8f, 89, 61, 2d,  0,  0        143, 152, 162, 164, 164, 158, 153, 148, 147, 143, 137,  97,  45,   0,   0        
-8 92a6: 8f,98,9f,a7,a6,9e,9a,90,8c,87,83,74,46,00,00       table       8f, 98, 9f, a7, a6, 9e, 9a, 90, 8c, 87, 83, 74, 46,  0,  0        143, 152, 159, 167, 166, 158, 154, 144, 140, 135, 131, 116,  70,   0,   0        
+Tb001 - TORQUE_TABLE_1_SEA_LEVEL:
+8 91f2: 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00       table        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0           0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 9201: 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00       table        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0           0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 9210: 64,05,00,00,00,00,00,00,00,00,00,00,00,00,00       table       64,  5,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0         200.00,   10.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 921f: 96,64,05,00,00,00,00,00,00,00,00,00,00,00,00       table       96, 64,  5,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0         300.00,  200.00,   10.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 922e: 8f,5f,1e,17,0e,00,00,00,00,00,00,00,00,00,00       table       8f, 5f, 1e, 17,  e,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0         286.00,  190.00,   60.00,   46.00,   28.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 923d: 8f,8b,86,50,3e,25,13,00,00,00,00,00,00,00,00       table       8f, 8b, 86, 50, 3e, 25, 13,  0,  0,  0,  0,  0,  0,  0,  0         286.00,  278.00,  268.00,  160.00,  124.00,   74.00,   38.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 924c: 8f,90,90,79,68,51,43,2d,22,15,07,00,00,00,00       table       8f, 90, 90, 79, 68, 51, 43, 2d, 22, 15,  7,  0,  0,  0,  0         286.00,  288.00,  288.00,  242.00,  208.00,  162.00,  134.00,   90.00,   68.00,   42.00,   14.00,    0.00,    0.00,    0.00,    0.00
+8 925b: 8f,98,a2,a4,9c,79,64,4e,48,40,34,22,00,00,00       table       8f, 98, a2, a4, 9c, 79, 64, 4e, 48, 40, 34, 22,  0,  0,  0         286.00,  304.00,  324.00,  328.00,  312.00,  242.00,  200.00,  156.00,  144.00,  128.00,  104.00,   68.00,    0.00,    0.00,    0.00
+8 926a: 8f,98,9f,a7,a6,98,8a,73,69,5b,4d,28,00,00,00       table       8f, 98, 9f, a7, a6, 98, 8a, 73, 69, 5b, 4d, 28,  0,  0,  0         286.00,  304.00,  318.00,  334.00,  332.00,  304.00,  276.00,  230.00,  210.00,  182.00,  154.00,   80.00,    0.00,    0.00,    0.00
+8 9279: 8f,99,a3,a8,a6,a5,9c,8e,88,7a,68,34,0e,00,00       table       8f, 99, a3, a8, a6, a5, 9c, 8e, 88, 7a, 68, 34,  e,  0,  0         286.00,  306.00,  326.00,  336.00,  332.00,  330.00,  312.00,  284.00,  272.00,  244.00,  208.00,  104.00,   28.00,    0.00,    0.00
+8 9288: 8f,96,9e,a3,a4,9e,9a,8c,86,80,75,41,00,00,00       table       8f, 96, 9e, a3, a4, 9e, 9a, 8c, 86, 80, 75, 41,  0,  0,  0         286.00,  300.00,  316.00,  326.00,  328.00,  316.00,  308.00,  280.00,  268.00,  256.00,  234.00,  130.00,    0.00,    0.00,    0.00
+8 9297: 8f,98,a2,a4,a4,9e,99,94,93,8f,89,61,2d,00,00       table       8f, 98, a2, a4, a4, 9e, 99, 94, 93, 8f, 89, 61, 2d,  0,  0         286.00,  304.00,  324.00,  328.00,  328.00,  316.00,  306.00,  296.00,  294.00,  286.00,  274.00,  194.00,   90.00,    0.00,    0.00
+8 92a6: 8f,98,9f,a7,a6,9e,9a,90,8c,87,83,74,46,00,00       table       8f, 98, 9f, a7, a6, 9e, 9a, 90, 8c, 87, 83, 74, 46,  0,  0         286.00,  304.00,  318.00,  334.00,  332.00,  316.00,  308.00,  288.00,  280.00,  270.00,  262.00,  232.00,  140.00,    0.00,    0.00
 
-Tb002 - Table 002:
-8 92b5: 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00       table        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0          0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 92c4: 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00       table        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0          0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 92d3: 64,05,00,00,00,00,00,00,00,00,00,00,00,00,00       table       64,  5,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0        100,   5,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 92e2: 7d,61,05,00,00,00,00,00,00,00,00,00,00,00,00       table       7d, 61,  5,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0        125,  97,   5,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 92f1: 7d,72,21,11,09,00,00,00,00,00,00,00,00,00,00       table       7d, 72, 21, 11,  9,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0        125, 114,  33,  17,   9,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 9300: 7d,77,4f,3a,26,11,00,00,00,00,00,00,00,00,00       table       7d, 77, 4f, 3a, 26, 11,  0,  0,  0,  0,  0,  0,  0,  0,  0        125, 119,  79,  58,  38,  17,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 930f: 7d,7d,79,66,54,40,30,1c,0b,00,00,00,00,00,00       table       7d, 7d, 79, 66, 54, 40, 30, 1c,  b,  0,  0,  0,  0,  0,  0        125, 125, 121, 102,  84,  64,  48,  28,  11,   0,   0,   0,   0,   0,   0        
-8 931e: 7d,80,82,85,7e,69,59,41,30,1c,00,00,00,00,00       table       7d, 80, 82, 85, 7e, 69, 59, 41, 30, 1c,  0,  0,  0,  0,  0        125, 128, 130, 133, 126, 105,  89,  65,  48,  28,   0,   0,   0,   0,   0        
-8 932d: 7d,82,86,8b,8b,87,79,6d,62,5d,58,1e,09,00,00       table       7d, 82, 86, 8b, 8b, 87, 79, 6d, 62, 5d, 58, 1e,  9,  0,  0        125, 130, 134, 139, 139, 135, 121, 109,  98,  93,  88,  30,   9,   0,   0        
-8 933c: 7d,82,87,8c,8d,87,87,7b,73,6e,64,41,19,00,00       table       7d, 82, 87, 8c, 8d, 87, 87, 7b, 73, 6e, 64, 41, 19,  0,  0        125, 130, 135, 140, 141, 135, 135, 123, 115, 110, 100,  65,  25,   0,   0        
-8 934b: 7d,81,86,89,8b,85,86,83,7d,78,6e,47,23,00,00       table       7d, 81, 86, 89, 8b, 85, 86, 83, 7d, 78, 6e, 47, 23,  0,  0        125, 129, 134, 137, 139, 133, 134, 131, 125, 120, 110,  71,  35,   0,   0        
-8 935a: 7d,84,89,92,93,8c,87,86,85,82,7b,64,2b,00,00       table       7d, 84, 89, 92, 93, 8c, 87, 86, 85, 82, 7b, 64, 2b,  0,  0        125, 132, 137, 146, 147, 140, 135, 134, 133, 130, 123, 100,  43,   0,   0        
-8 9369: 7d,7f,85,87,88,88,87,86,82,7b,72,6e,4e,00,00       table       7d, 7f, 85, 87, 88, 88, 87, 86, 82, 7b, 72, 6e, 4e,  0,  0        125, 127, 133, 135, 136, 136, 135, 134, 130, 123, 114, 110,  78,   0,   0        
+TORQUE_TABLE_2:
+8 92b5: 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00       table        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0           0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 92c4: 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00       table        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0           0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 92d3: 64,05,00,00,00,00,00,00,00,00,00,00,00,00,00       table       64,  5,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0         200.00,   10.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 92e2: 7d,61,05,00,00,00,00,00,00,00,00,00,00,00,00       table       7d, 61,  5,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0         250.00,  194.00,   10.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 92f1: 7d,72,21,11,09,00,00,00,00,00,00,00,00,00,00       table       7d, 72, 21, 11,  9,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0         250.00,  228.00,   66.00,   34.00,   18.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 9300: 7d,77,4f,3a,26,11,00,00,00,00,00,00,00,00,00       table       7d, 77, 4f, 3a, 26, 11,  0,  0,  0,  0,  0,  0,  0,  0,  0         250.00,  238.00,  158.00,  116.00,   76.00,   34.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 930f: 7d,7d,79,66,54,40,30,1c,0b,00,00,00,00,00,00       table       7d, 7d, 79, 66, 54, 40, 30, 1c,  b,  0,  0,  0,  0,  0,  0         250.00,  250.00,  242.00,  204.00,  168.00,  128.00,   96.00,   56.00,   22.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 931e: 7d,80,82,85,7e,69,59,41,30,1c,00,00,00,00,00       table       7d, 80, 82, 85, 7e, 69, 59, 41, 30, 1c,  0,  0,  0,  0,  0         250.00,  256.00,  260.00,  266.00,  252.00,  210.00,  178.00,  130.00,   96.00,   56.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 932d: 7d,82,86,8b,8b,87,79,6d,62,5d,58,1e,09,00,00       table       7d, 82, 86, 8b, 8b, 87, 79, 6d, 62, 5d, 58, 1e,  9,  0,  0         250.00,  260.00,  268.00,  278.00,  278.00,  270.00,  242.00,  218.00,  196.00,  186.00,  176.00,   60.00,   18.00,    0.00,    0.00
+8 933c: 7d,82,87,8c,8d,87,87,7b,73,6e,64,41,19,00,00       table       7d, 82, 87, 8c, 8d, 87, 87, 7b, 73, 6e, 64, 41, 19,  0,  0         250.00,  260.00,  270.00,  280.00,  282.00,  270.00,  270.00,  246.00,  230.00,  220.00,  200.00,  130.00,   50.00,    0.00,    0.00
+8 934b: 7d,81,86,89,8b,85,86,83,7d,78,6e,47,23,00,00       table       7d, 81, 86, 89, 8b, 85, 86, 83, 7d, 78, 6e, 47, 23,  0,  0         250.00,  258.00,  268.00,  274.00,  278.00,  266.00,  268.00,  262.00,  250.00,  240.00,  220.00,  142.00,   70.00,    0.00,    0.00
+8 935a: 7d,84,89,92,93,8c,87,86,85,82,7b,64,2b,00,00       table       7d, 84, 89, 92, 93, 8c, 87, 86, 85, 82, 7b, 64, 2b,  0,  0         250.00,  264.00,  274.00,  292.00,  294.00,  280.00,  270.00,  268.00,  266.00,  260.00,  246.00,  200.00,   86.00,    0.00,    0.00
+8 9369: 7d,7f,85,87,88,88,87,86,82,7b,72,6e,4e,00,00       table       7d, 7f, 85, 87, 88, 88, 87, 86, 82, 7b, 72, 6e, 4e,  0,  0         250.00,  254.00,  266.00,  270.00,  272.00,  272.00,  270.00,  268.00,  260.00,  246.00,  228.00,  220.00,  156.00,    0.00,    0.00
 
-Tb003 - Table 003:
-8 9378: 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00       table        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0          0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 9387: 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00       table        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0          0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 9396: 64,05,00,00,00,00,00,00,00,00,00,00,00,00,00       table       64,  5,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0        100,   5,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 93a5: 64,69,12,05,00,00,00,00,00,00,00,00,00,00,00       table       64, 69, 12,  5,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0        100, 105,  18,   5,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 93b4: 7d,7f,28,14,0b,04,00,00,00,00,00,00,00,00,00       table       7d, 7f, 28, 14,  b,  4,  0,  0,  0,  0,  0,  0,  0,  0,  0        125, 127,  40,  20,  11,   4,   0,   0,   0,   0,   0,   0,   0,   0,   0        
-8 93c3: 7d,73,4a,36,2a,15,04,00,00,00,00,00,00,00,00       table       7d, 73, 4a, 36, 2a, 15,  4,  0,  0,  0,  0,  0,  0,  0,  0        125, 115,  74,  54,  42,  21,   4,   0,   0,   0,   0,   0,   0,   0,   0        
-8 93d2: 7b,7b,73,64,55,3c,28,13,07,00,00,00,00,00,00       table       7b, 7b, 73, 64, 55, 3c, 28, 13,  7,  0,  0,  0,  0,  0,  0        123, 123, 115, 100,  85,  60,  40,  19,   7,   0,   0,   0,   0,   0,   0        
-8 93e1: 7a,78,75,78,7d,68,58,44,44,34,23,14,03,00,00       table       7a, 78, 75, 78, 7d, 68, 58, 44, 44, 34, 23, 14,  3,  0,  0        122, 120, 117, 120, 125, 104,  88,  68,  68,  52,  35,  20,   3,   0,   0        
-8 93f0: 79,79,78,7d,7f,7b,78,67,62,5c,55,32,12,00,00       table       79, 79, 78, 7d, 7f, 7b, 78, 67, 62, 5c, 55, 32, 12,  0,  0        121, 121, 120, 125, 127, 123, 120, 103,  98,  92,  85,  50,  18,   0,   0        
-8 93ff: 78,78,78,7b,7e,7a,76,76,73,71,5f,41,25,00,00       table       78, 78, 78, 7b, 7e, 7a, 76, 76, 73, 71, 5f, 41, 25,  0,  0        120, 120, 120, 123, 126, 122, 118, 118, 115, 113,  95,  65,  37,   0,   0        
-8 940e: 77,77,7b,80,7c,75,72,6c,6e,65,64,61,3e,00,00       table       77, 77, 7b, 80, 7c, 75, 72, 6c, 6e, 65, 64, 61, 3e,  0,  0        119, 119, 123, 128, 124, 117, 114, 108, 110, 101, 100,  97,  62,   0,   0        
-8 941d: 79,79,76,79,7b,76,71,6c,69,69,5c,19,12,00,00       table       79, 79, 76, 79, 7b, 76, 71, 6c, 69, 69, 5c, 19, 12,  0,  0        121, 121, 118, 121, 123, 118, 113, 108, 105, 105,  92,  25,  18,   0,   0        
-8 942c: 7c,7c,76,7a,76,72,6d,69,65,62,61,53,23,05,00       table       7c, 7c, 76, 7a, 76, 72, 6d, 69, 65, 62, 61, 53, 23,  5,  0        124, 124, 118, 122, 118, 114, 109, 105, 101,  98,  97,  83,  35,   5,   0        
+TORQUE_TABLE_1_ALTITUDE:
+8 9378: 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00       table        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0           0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 9387: 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00       table        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0           0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 9396: 64,05,00,00,00,00,00,00,00,00,00,00,00,00,00       table       64,  5,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0         200.00,   10.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 93a5: 64,69,12,05,00,00,00,00,00,00,00,00,00,00,00       table       64, 69, 12,  5,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0         200.00,  210.00,   36.00,   10.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 93b4: 7d,7f,28,14,0b,04,00,00,00,00,00,00,00,00,00       table       7d, 7f, 28, 14,  b,  4,  0,  0,  0,  0,  0,  0,  0,  0,  0         250.00,  254.00,   80.00,   40.00,   22.00,    8.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 93c3: 7d,73,4a,36,2a,15,04,00,00,00,00,00,00,00,00       table       7d, 73, 4a, 36, 2a, 15,  4,  0,  0,  0,  0,  0,  0,  0,  0         250.00,  230.00,  148.00,  108.00,   84.00,   42.00,    8.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 93d2: 7b,7b,73,64,55,3c,28,13,07,00,00,00,00,00,00       table       7b, 7b, 73, 64, 55, 3c, 28, 13,  7,  0,  0,  0,  0,  0,  0         246.00,  246.00,  230.00,  200.00,  170.00,  120.00,   80.00,   38.00,   14.00,    0.00,    0.00,    0.00,    0.00,    0.00,    0.00
+8 93e1: 7a,78,75,78,7d,68,58,44,44,34,23,14,03,00,00       table       7a, 78, 75, 78, 7d, 68, 58, 44, 44, 34, 23, 14,  3,  0,  0         244.00,  240.00,  234.00,  240.00,  250.00,  208.00,  176.00,  136.00,  136.00,  104.00,   70.00,   40.00,    6.00,    0.00,    0.00
+8 93f0: 79,79,78,7d,7f,7b,78,67,62,5c,55,32,12,00,00       table       79, 79, 78, 7d, 7f, 7b, 78, 67, 62, 5c, 55, 32, 12,  0,  0         242.00,  242.00,  240.00,  250.00,  254.00,  246.00,  240.00,  206.00,  196.00,  184.00,  170.00,  100.00,   36.00,    0.00,    0.00
+8 93ff: 78,78,78,7b,7e,7a,76,76,73,71,5f,41,25,00,00       table       78, 78, 78, 7b, 7e, 7a, 76, 76, 73, 71, 5f, 41, 25,  0,  0         240.00,  240.00,  240.00,  246.00,  252.00,  244.00,  236.00,  236.00,  230.00,  226.00,  190.00,  130.00,   74.00,    0.00,    0.00
+8 940e: 77,77,7b,80,7c,75,72,6c,6e,65,64,61,3e,00,00       table       77, 77, 7b, 80, 7c, 75, 72, 6c, 6e, 65, 64, 61, 3e,  0,  0         238.00,  238.00,  246.00,  256.00,  248.00,  234.00,  228.00,  216.00,  220.00,  202.00,  200.00,  194.00,  124.00,    0.00,    0.00
+8 941d: 79,79,76,79,7b,76,71,6c,69,69,5c,19,12,00,00       table       79, 79, 76, 79, 7b, 76, 71, 6c, 69, 69, 5c, 19, 12,  0,  0         242.00,  242.00,  236.00,  242.00,  246.00,  236.00,  226.00,  216.00,  210.00,  210.00,  184.00,   50.00,   36.00,    0.00,    0.00
+8 942c: 7c,7c,76,7a,76,72,6d,69,65,62,61,53,23,05,00       table       7c, 7c, 76, 7a, 76, 72, 6d, 69, 65, 62, 61, 53, 23,  5,  0         248.00,  248.00,  236.00,  244.00,  236.00,  228.00,  218.00,  210.00,  202.00,  196.00,  194.00,  166.00,   70.00,   10.00,    0.00
 
 
 8 943b: ff                                    Unknown Calibration                                    ff                                           255
