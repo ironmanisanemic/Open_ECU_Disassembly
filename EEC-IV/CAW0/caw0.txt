@@ -35,7 +35,7 @@
 Bnk8Start - Bank 8 Start:
 8 2000: ff                   ff                                            
 8 2001: fa                   di                       disable ints;        
-8 2002: 20,d1                sjmp  20d5               goto Initialise;     
+8 2002: 20,d1                sjmp  20d5               goto INIT;           
 
 
 8 2004: 00,00                                         Unknown Operation/Structure
@@ -74,22 +74,22 @@ Bnk8Start - Bank 8 Start:
 8 2030: 3c,94                943c  RBASEADR_08        Rbase Rfe
 
 
-Sub0002:
+RESET_ALL:
 8 2032: fa                   di                       disable ints;        
 8 2033: ff                   ff                                            
 8 2034: 11,0c                clrb  R0c                HSI_MASK = 0;        
 8 2036: a1,12,00,10          ldw   R10,12             STACK = 12;          
 8 203a: c6,11,00             stb   [R10++],0          [STACK++] = 0;       
 8 203d: 17,05                incb  R05                WD_TIMER++;          
-8 203f: 3e,2a,03             jb    B6,R2a,2045        if (B6_R2a) goto 2045;
-8 2042: 35,2a,08             jnb   B5,R2a,204d        if (!B5_R2a) goto 204d;
+8 203f: 3e,2a,03             jb    B6,R2a,2045        if (<NO_START> == 1) goto 2045;
+8 2042: 35,2a,08             jnb   B5,R2a,204d        if (<SELF_TEST> == 0) goto 204d;
 8 2045: 89,2a,00,10          cmpw  R10,2a                                  
 8 2049: d7,02                jne   204d               if (STACK != 2a) goto 204d;
 8 204b: 17,10                incb  R10                STACK++;             
 8 204d: 17,05                incb  R05                WD_TIMER++;          
 8 204f: 89,ce,03,10          cmpw  R10,3ce                                 
 8 2053: d3,e5                jnc   203a               if ((uns) STACK < 3ce) goto 203a;
-8 2055: a1,58,57,14          ldw   R14,5758           [HSO_IPEND2] = OSt8_008;
+8 2055: a1,58,57,14          ldw   R14,5758           [HSO_IPEND2] = OSt8_007;
 8 2059: 89,ff,ff,14          cmpw  R14,ffff                                
 8 205d: df,20                je    207f               if ([HSO_IPEND2] == ffff) goto 207f;
 8 205f: a2,15,1a             ldw   R1a,[R14++]        R1a = [R14++];       
@@ -102,17 +102,17 @@ Sub0002:
 8 2073: c6,1a,1c             stb   [R1a],R1c          [R1a] = R1c;         
 8 2076: 27,ed                sjmp  2065               goto 2065;           
 
-8 2078: d9,b8                jgtu  2032               if ((uns) [HSO_IPEND2] > R16) goto Sub0002;
+8 2078: d9,b8                jgtu  2032               if ((uns) [HSO_IPEND2] > R16) goto RESET_ALL;
 8 207a: a2,16,14             ldw   R14,[R16]          [HSO_IPEND2] = [R16];
 8 207d: 27,da                sjmp  2059               goto 2059;           
 
 8 207f: 91,01,a3             orrb  Ra3,1              Ra3 |= 1;            
-8 2082: 3d,2a,06             jb    B5,R2a,208b        if (B5_R2a) goto 208b;
-8 2085: 3e,2a,03             jb    B6,R2a,208b        if (B6_R2a) goto 208b;
+8 2082: 3d,2a,06             jb    B5,R2a,208b        if (<SELF_TEST> == 1) goto 208b;
+8 2085: 3e,2a,03             jb    B6,R2a,208b        if (<NO_START> == 1) goto 208b;
 8 2088: 91,01,a2             orrb  Ra2,1              Ra2 |= 1;            
 8 208b: 91,10,45             orrb  R45,10             [HSI_DATA] |= 10;    
 8 208e: ef,49,36             call  56da               CHECK_CONSOLE();     
-8 2091: 28,5e                scall 20f1               CalInit();           
+8 2091: 28,5e                scall 20f1               CAL_INIT();          
 8 2093: ef,5d,0e             call  2ef3               Sub0065();           
 8 2096: a3,fc,60,30          ldw   R30,[Rfc+60]       R30 = [Sc0041];      
 8 209a: c3,ee,9c,30          stw   [Ree+9c],R30       [31c] = R30;         
@@ -138,10 +138,10 @@ Sub0002:
 8 20d3: fb                   ei                       enable ints;         
 8 20d4: f0                   ret                      return;              
 
-Initialise:
-8 20d5: 11,2a                clrb  R2a                R2a = 0;             
+INIT:
+8 20d5: 11,2a                clrb  R2a                [FLAGS_2A] = 0;      
 8 20d7: a1,d0,03,10          ldw   R10,3d0            STACK = 3d0;         
-8 20db: 2f,55                scall 2032               Sub0002();           
+8 20db: 2f,55                scall 2032               RESET_ALL();         
 
 BACKGROUND_LOOP:
 8 20dd: 99,50,8c             cmpb  R8c,50                                  
@@ -152,7 +152,7 @@ BACKGROUND_LOOP:
 8 20ec: ca,30                push  [R30]              push([R30]);         
 8 20ee: 75,02,8c             ad2b  R8c,2              [BG_POINTER] += 2;   
 
-CalInit - Calibration Init:
+CAL_INIT:
 8 20f1: a1,80,01,ea          ldw   Rea,180            Rea = 180;           
 8 20f5: a1,80,02,ec          ldw   Rec,280            Rec = 280;           
 8 20f9: a1,80,03,ee          ldw   Ree,380            Ree = 380;           
@@ -162,7 +162,7 @@ CalInit - Calibration Init:
 8 2102: fa                   di                       disable ints;        
 8 2103: 27,fd                sjmp  2102               goto 2102;           
 
-Sub0006:
+SET_TASKLIST:
 8 2105: c3,01,00,1f,00       stw   [1f00],0           [EC_1f00] = 0;       
 8 210a: c3,01,00,1f,00       stw   [1f00],0           [EC_1f00] = 0;       
 8 210f: c3,01,00,1f,00       stw   [1f00],0           [EC_1f00] = 0;       
@@ -181,11 +181,11 @@ Sub0006:
 8 2150: c3,01,00,1f,00       stw   [1f00],0           [EC_1f00] = 0;       
 8 2155: b1,0f,42             ldb   R42,f              R42 = f;             
 8 2158: c7,01,ff,1f,42       stb   [1fff],R42         [EC_1fff] = R42;     
-8 215d: 36,2a,04             jnb   B6,R2a,2164        if (!B6_R2a) goto 2164;
+8 215d: 36,2a,04             jnb   B6,R2a,2164        if (<NO_START> == 0) goto 2164;
 8 2160: b1,1c,8c             ldb   R8c,1c             [BG_POINTER] = 1c;   
 8 2163: f0                   ret                      return;              
 
-8 2164: 35,2a,04             jnb   B5,R2a,216b        if (!B5_R2a) goto 216b;
+8 2164: 35,2a,04             jnb   B5,R2a,216b        if (<SELF_TEST> == 0) goto 216b;
 8 2167: b1,34,8c             ldb   R8c,34             [BG_POINTER] = 34;   
 8 216a: f0                   ret                      return;              
 
@@ -200,8 +200,8 @@ Sub0006:
 SUBROUTINE_TASKLIST:
 8 2170: d9,56                56d9  Bank 8 Vector      CHECK_CONSOLE_D
 8 2172: a3,26                26a3  Bank 8 Vector      CHECK_KAM_1
-8 2174: 1c,27                271c  Bank 8 Vector      Sub0027
-8 2176: 70,27                2770  Bank 8 Vector      Read_AD
+8 2174: 1c,27                271c  Bank 8 Vector      UPDATE_AD?
+8 2176: 70,27                2770  Bank 8 Vector      READ_AD
 8 2178: 3b,55                553b  Bank 8 Vector      Sub0170
 8 217a: 1d,28                281d  Bank 8 Vector      Sub0032
 8 217c: d7,2a                2ad7  Bank 8 Vector      Sub0034
@@ -211,11 +211,11 @@ SUBROUTINE_TASKLIST:
 8 2184: b8,2f                2fb8  Bank 8 Vector      Sub0067
 8 2186: 53,2b                2b53  Bank 8 Vector      Sub0035
 8 2188: 2b,2d                2d2b  Bank 8 Vector      DO_SELF_TEST
-8 218a: 05,21                2105  Bank 8 Vector      Sub0006
+8 218a: 05,21                2105  Bank 8 Vector      SET_TASKLIST
 8 218c: d9,56                56d9  Bank 8 Vector      CHECK_CONSOLE_D
 8 218e: a3,26                26a3  Bank 8 Vector      CHECK_KAM_1
-8 2190: 1c,27                271c  Bank 8 Vector      Sub0027
-8 2192: 70,27                2770  Bank 8 Vector      Read_AD
+8 2190: 1c,27                271c  Bank 8 Vector      UPDATE_AD?
+8 2192: 70,27                2770  Bank 8 Vector      READ_AD
 8 2194: 3b,55                553b  Bank 8 Vector      Sub0170
 8 2196: 1d,28                281d  Bank 8 Vector      Sub0032
 8 2198: d7,2a                2ad7  Bank 8 Vector      Sub0034
@@ -223,11 +223,11 @@ SUBROUTINE_TASKLIST:
 8 219c: b7,27                27b7  Bank 8 Vector      Sub0029
 8 219e: 53,2b                2b53  Bank 8 Vector      Sub0035
 8 21a0: 2b,2d                2d2b  Bank 8 Vector      DO_SELF_TEST
-8 21a2: 05,21                2105  Bank 8 Vector      Sub0006
+8 21a2: 05,21                2105  Bank 8 Vector      SET_TASKLIST
 8 21a4: d9,56                56d9  Bank 8 Vector      CHECK_CONSOLE_D
 8 21a6: a3,26                26a3  Bank 8 Vector      CHECK_KAM_1
-8 21a8: 1c,27                271c  Bank 8 Vector      Sub0027
-8 21aa: 70,27                2770  Bank 8 Vector      Read_AD
+8 21a8: 1c,27                271c  Bank 8 Vector      UPDATE_AD?
+8 21aa: 70,27                2770  Bank 8 Vector      READ_AD
 8 21ac: 3b,55                553b  Bank 8 Vector      Sub0170
 8 21ae: 1d,28                281d  Bank 8 Vector      Sub0032
 8 21b0: d7,2a                2ad7  Bank 8 Vector      Sub0034
@@ -237,7 +237,7 @@ SUBROUTINE_TASKLIST:
 8 21b8: 53,2b                2b53  Bank 8 Vector      Sub0035
 8 21ba: 0a,37                370a  Bank 8 Vector      Sub0110
 8 21bc: 2b,2d                2d2b  Bank 8 Vector      DO_SELF_TEST
-8 21be: 05,21                2105  Bank 8 Vector      Sub0006
+8 21be: 05,21                2105  Bank 8 Vector      SET_TASKLIST
 8 21c0: d0,21                21d0  Bank 8 Vector      Sub0007
 8 21c2: d0,21                21d0  Bank 8 Vector      Sub0007
 8 21c4: 88,25                2588  Bank 8 Vector      Sub0022
@@ -750,7 +750,7 @@ CHECK_KAM_1:
 
 8 271b: f0                   ret                      return;              
 
-Sub0027:
+UPDATE_AD?:
 8 271c: 30,e1,05             jnb   B0,Re1,2724        if (!B0_Re1) goto 2724;
 8 271f: 71,7f,a7             an2b  Ra7,7f             Ra7 &= 7f;           
 8 2722: 20,48                sjmp  276c               goto 276c;           
@@ -786,7 +786,7 @@ Sub0027:
 8 276c: 71,bf,a7             an2b  Ra7,bf             Ra7 &= bf;           
 8 276f: f0                   ret                      return;              
 
-Read_AD:
+READ_AD:
 8 2770: a1,a4,27,30          ldw   R30,27a4           R30 = AD_CHANNELS;   
 8 2774: 20,04                sjmp  277a               goto 277a;           
 
@@ -1108,7 +1108,7 @@ Sub0032:
 
 Sub0033:
 8 2ab5: 11,30                clrb  R30                R30 = 0;             
-8 2ab7: a3,ea,90,38          ldw   R38,[Rea+90]       R38 = [ECT_RAW];     
+8 2ab7: a3,ea,90,38          ldw   R38,[Rea+90]       R38 = [TOT_RAW];     
 8 2abb: 8b,f6,04,38          cmpw  R38,[Rf6+4]                             
 8 2abf: d9,0f                jgtu  2ad0               if ((uns) R38 > [TOTMAX]) goto 2ad0;
 8 2ac1: 8b,f6,02,38          cmpw  R38,[Rf6+2]                             
@@ -1121,14 +1121,14 @@ Sub0033:
 
 
 OSt8_002 - Other Structure 8 002:
-8 2ad1: 0e      ostruct    e
-8 2ad2: 0c      ostruct    c
-8 2ad3: 0a      ostruct    a
-8 2ad4: 08      ostruct    8
-8 2ad5: 04      ostruct    4
-8 2ad6: 02      ostruct    2
-8 2ad7: 45      ostruct   45
+8 2ad1: 0e      ostruct   e
 
+
+8 2ad2: 0c,0a,08,04,02                                Unknown Operation/Structure
+
+
+Sub0034:
+8 2ad7: 45,2c,01,fc,dc       ad3w  Rdc,Rfc,12c        Rdc = St0010;        
 8 2adc: c7,ee,9b,db          stb   [Ree+9b],Rdb       [31b] = Rdb;         
 8 2ae0: 91,04,e1             orrb  Re1,4              Re1 |= 4;            
 8 2ae3: a3,ea,98,42          ldw   R42,[Rea+98]       R42 = [NDS_RAW];     
@@ -1378,10 +1378,10 @@ TabCore - Table Reader Core:
 8 2d13: 74,31,3b             ad2b  R3b,R31            R3b += R31;          
 8 2d16: 65,80,00,3a          ad2w  R3a,80             R3a += 80;           
 8 2d1a: f0                   ret                      return;              
-        Inc   8 2d1a: ostruct   OSt8_003_2d1a - Other Structure 8 003
+        Inc   8 2d1a: ostruct   OSt8_002_2d1a - Other Structure 8 002
 
 
-OSt8_003 - Other Structure 8 003:
+OSt8_002 - Other Structure 8 002:
 8 2d1b: 14      ostruct   14
 8 2d1c: 22      ostruct   22
 8 2d1d: 29      ostruct   29
@@ -1404,12 +1404,12 @@ DO_SELF_TEST:
 8 2d2b: 71,fb,2c             an2b  R2c,fb             R2c &= fb;           
 8 2d2e: 29,be                scall 2eee               Sub0064();           
 8 2d30: 71,ef,2e             an2b  R2e,ef             R2e &= ef;           
-8 2d33: 3a,2a,0c             jb    B2,R2a,2d42        if (B2_R2a) goto 2d42;
+8 2d33: 3a,2a,0c             jb    B2,R2a,2d42        if (B2_[FLAGS_2A]) goto 2d42;
 8 2d36: a3,ea,b4,42          ldw   R42,[Rea+b4]       R42 = [134];         
 8 2d3a: 99,10,43             cmpb  R43,10                                  
 8 2d3d: d3,03                jnc   2d42               if ((uns) R43 < 10) goto 2d42;
-8 2d3f: 91,04,2a             orrb  R2a,4              R2a |= 4;            
-8 2d42: 36,2a,17             jnb   B6,R2a,2d5c        if (!B6_R2a) goto 2d5c;
+8 2d3f: 91,04,2a             orrb  R2a,4              [FLAGS_2A] |= 4;     
+8 2d42: 36,2a,17             jnb   B6,R2a,2d5c        if (<NO_START> == 0) goto 2d5c;
 8 2d45: 33,8e,08             jnb   B3,R8e,2d50        if (!B3_R8e) goto 2d50;
 8 2d48: 37,a7,0e             jnb   B7,Ra7,2d59        if (!B7_Ra7) goto 2d59;
 8 2d4b: 91,20,e8             orrb  Re8,20             Re8 |= 20;           
@@ -1420,7 +1420,7 @@ DO_SELF_TEST:
 8 2d56: ef,ef,04             call  3248               Sub0071();           
 8 2d59: e7,69,0b             jump  38c5               goto Sub0117;        
 
-8 2d5c: 35,2a,11             jnb   B5,R2a,2d70        if (!B5_R2a) goto 2d70;
+8 2d5c: 35,2a,11             jnb   B5,R2a,2d70        if (<SELF_TEST> == 0) goto 2d70;
 8 2d5f: 33,8e,f7             jnb   B3,R8e,2d59        if (!B3_R8e) goto 2d59;
 8 2d62: b3,fe,17,42          ldb   R42,[Rfe+17]       R42 = [Sc0101];      
 8 2d66: 99,03,42             cmpb  R42,3                                   
@@ -1436,17 +1436,17 @@ DO_SELF_TEST:
 8 2d7b: a3,ea,4e,42          ldw   R42,[Rea+4e]       R42 = [1ce];         
 8 2d7f: 99,04,43             cmpb  R43,4                                   
 8 2d82: d3,22                jnc   2da6               if ((uns) R43 < 4) goto 2da6;
-8 2d84: 32,2a,1f             jnb   B2,R2a,2da6        if (!B2_R2a) goto 2da6;
-8 2d87: 3b,2a,19             jb    B3,R2a,2da3        if (B3_R2a) goto 2da3;
-8 2d8a: 91,20,2a             orrb  R2a,20             R2a |= 20;           
+8 2d84: 32,2a,1f             jnb   B2,R2a,2da6        if (!B2_[FLAGS_2A]) goto 2da6;
+8 2d87: 3b,2a,19             jb    B3,R2a,2da3        if (B3_[FLAGS_2A]) goto 2da3;
+8 2d8a: 91,20,2a             orrb  R2a,20             <SELF_TEST> = 1;     
 8 2d8d: 28,18                scall 2da7               Sub0052();           
-8 2d8f: cb,3b,9a,2f          push  [R3a+2f9a]         push([R3a+VecLst8_005]);
+8 2d8f: cb,3b,9a,2f          push  [R3a+2f9a]         push([R3a+VecLst8_004]);
 8 2d93: f0                   ret                      return;              
 
 8 2d94: 33,8e,0f             jnb   B3,R8e,2da6        if (!B3_R8e) goto 2da6;
-8 2d97: 3c,2a,09             jb    B4,R2a,2da3        if (B4_R2a) goto 2da3;
+8 2d97: 3c,2a,09             jb    B4,R2a,2da3        if (B4_[FLAGS_2A]) goto 2da3;
 8 2d9a: 28,0b                scall 2da7               Sub0052();           
-8 2d9c: cb,3b,7a,2f          push  [R3a+2f7a]         push([R3a+VecLst8_004]);
+8 2d9c: cb,3b,7a,2f          push  [R3a+2f7a]         push([R3a+VecLst8_003]);
 8 2da0: f0                   ret                      return;              
 
 Sub0051:
@@ -1516,7 +1516,7 @@ Sub0056:
 
 8 2e17: 32,2b,0e             jnb   B2,R2b,2e28        if (!B2_R2b) goto 2e28;
 8 2e1a: 71,fb,2b             an2b  R2b,fb             R2b &= fb;           
-8 2e1d: 36,2a,03             jnb   B6,R2a,2e23        if (!B6_R2a) goto 2e23;
+8 2e1d: 36,2a,03             jnb   B6,R2a,2e23        if (<NO_START> == 0) goto 2e23;
 8 2e20: 91,02,2e             orrb  R2e,2              R2e |= 2;            
 8 2e23: 31,2b,10             jnb   B1,R2b,2e36        if (!B1_R2b) goto 2e36;
 8 2e26: 27,c9                sjmp  2df1               goto 2df1;           
@@ -1662,7 +1662,7 @@ Sub0066:
 8 2f5c: d9,1b                jgtu  2f79               if ((uns) R1a > 10) goto 2f79;
 8 2f5e: 18,01,3a             shrb  R3a,1              R3a = R3a / 2;       
 8 2f61: d3,11                jnc   2f74               if ((uns) R1a < 10) goto 2f74;
-8 2f63: 57,1b,1a,2d,00,1f    ad3b  R1f,0,[R1a+2d1a]   R1f = 0 + [R1a+OSt8_003_2d1a];
+8 2f63: 57,1b,1a,2d,00,1f    ad3b  R1f,0,[R1a+2d1a]   R1f = 0 + [R1a+OSt8_002_2d1a];
 8 2f69: df,09                je    2f74               if (R1f == 0) goto 2f74;
 8 2f6b: 89,af,02,42          cmpw  R42,2af                                 
 8 2f6f: db,03                jc    2f74               if ((uns) R42 >= 2af) goto 2f74;
@@ -1674,7 +1674,7 @@ Sub0066:
 
 
 
-VecLst8_004 - Vectors List 8 004:
+VecLst8_003 - Vectors List 8 003:
 8 2f7a: b6,32                32b6  Bank 8 Vector      Sub0077
 8 2f7c: ff,32                32ff  Bank 8 Vector      Sub0078
 8 2f7e: 44,33                3344  Bank 8 Vector      Sub0083
@@ -1693,7 +1693,7 @@ VecLst8_004 - Vectors List 8 004:
 
 
 
-VecLst8_005 - Vectors List 8 005:
+VecLst8_004 - Vectors List 8 004:
 8 2f9a: 7c,36                367c  Bank 8 Vector      Sub0103
 8 2f9c: be,2d                2dbe  Bank 8 Vector      Sub0053
 8 2f9e: 8a,36                368a  Bank 8 Vector      Sub0104
@@ -1709,7 +1709,7 @@ VecLst8_005 - Vectors List 8 005:
 
 Sub0067:
 8 2fb8: 2f,34                scall 2eee               Sub0064();           
-8 2fba: 3a,2a,01             jb    B2,R2a,2fbe        if (B2_R2a) goto 2fbe;
+8 2fba: 3a,2a,01             jb    B2,R2a,2fbe        if (B2_[FLAGS_2A]) goto 2fbe;
 8 2fbd: f0                   ret                      return;              
 
 8 2fbe: 3c,2e,07             jb    B4,R2e,2fc8        if (B4_R2e) goto 2fc8;
@@ -1720,9 +1720,9 @@ Sub0067:
 8 2fc7: f0                                            Unknown Operation/Structure
 
 8 2fc8: 71,7f,2d             an2b  R2d,7f             [FLAGS_2D] &= 7f;    
-8 2fcb: ef,0a,04             call  33d8               Sub0088(TOTMIN,[ECT_RAW],8b);
+8 2fcb: ef,0a,04             call  33d8               Sub0088(TOTMIN,[TOT_RAW],8b);
 8 2fce: 02,b0,10,01,8b,07                             #args                
-8 2fd4: ef,01,04             call  33d8               Sub0088([ECT_RAW],TOTMAX,87);
+8 2fd4: ef,01,04             call  33d8               Sub0088([TOT_RAW],TOTMAX,87);
 8 2fd7: 10,01,04,b0,87,06                             #args                
 8 2fdd: b3,ec,9a,42          ldb   R42,[Rec+9a]       R42 = [21a];         
 8 2fe1: 9b,fe,46,42          cmpb  R42,[Rfe+46]                            
@@ -1998,14 +1998,14 @@ Sub0077:
 8 32b9: ef,a0,ff             call  325c               Sub0073();           
 8 32bc: ef,b0,04             call  376f               Sub0112();           
 8 32bf: ef,e6,fb             call  2ea8               GET_DIAGNOSTIC_VALUES();
-8 32c2: 34,2a,05             jnb   B4,R2a,32ca        if (!B4_R2a) goto 32ca;
+8 32c2: 34,2a,05             jnb   B4,R2a,32ca        if (!B4_[FLAGS_2A]) goto 32ca;
 8 32c5: ef,8c,ff             call  3254               SET_STO();           
 8 32c8: 27,fb                sjmp  32c5               goto 32c5;           
 
 8 32ca: ef,4b,00             call  3318               CalCheck();          
 8 32cd: 11,38                clrb  R38                R38 = 0;             
 8 32cf: 91,40,2e             orrb  R2e,40             R2e |= 40;           
-8 32d2: 91,40,2a             orrb  R2a,40             R2a |= 40;           
+8 32d2: 91,40,2a             orrb  R2a,40             <NO_START> = 1;      
 8 32d5: 38,30,25             jb    B0,R30,32fd        if (B0_R30) goto 32fd;
 8 32d8: a3,ea,b4,3a          ldw   R3a,[Rea+b4]       R3a = [134];         
 8 32dc: 8b,fe,40,3a          cmpw  R3a,[Rfe+40]                            
@@ -2024,7 +2024,7 @@ Sub0077:
 8 32fd: 20,84                sjmp  3383               goto Sub0084;        
 
 Sub0078:
-8 32ff: 32,2a,02             jnb   B2,R2a,3304        if (!B2_R2a) goto 3304;
+8 32ff: 32,2a,02             jnb   B2,R2a,3304        if (!B2_[FLAGS_2A]) goto 3304;
 8 3302: 20,7f                sjmp  3383               goto Sub0084;        
 
 8 3304: f0                   ret                      return;              
@@ -2077,14 +2077,14 @@ ChkEndAdr - Checksum End Address:
 
 
 Sub0083:
-8 3344: 28,87                scall 33cd               Sub0087([b002],[ECT_RAW],66);
+8 3344: 28,87                scall 33cd               Sub0087([b002],[TOT_RAW],66);
 8 3346: 02,b0,10,01,66                                #args                
 8 334b: 3a,2f,16             jb    B2,R2f,3364        if (B2_R2f) goto 3364;
-8 334e: 28,7d                scall 33cd               Sub0087([ECT_RAW],[b004],56);
+8 334e: 28,7d                scall 33cd               Sub0087([TOT_RAW],[b004],56);
 8 3350: 10,01,04,b0,56                                #args                
 8 3355: 3a,2f,0c             jb    B2,R2f,3364        if (B2_R2f) goto 3364;
 8 3358: b0,30,32             ldb   R32,R30            R32 = R30;           
-8 335b: 2b,00                scall 365d               CHECK_RANGE_TROUBLE_CODE([ECT_RAW],St0036,St0035,26);
+8 335b: 2b,00                scall 365d               CHECK_RANGE_TROUBLE_CODE([TOT_RAW],St0036,St0035,26);
 8 335d: 10,01,62,f0,60,f0,26                          #args                
 8 3364: b3,ec,9a,42          ldb   R42,[Rec+9a]       R42 = [21a];         
 8 3368: 9b,fe,46,42          cmpb  R42,[Rfe+46]                            
@@ -2372,7 +2372,7 @@ Sub0103:
 8 3687: e7,2e,00             jump  36b8               goto Sub0106;        
 
 Sub0104:
-8 368a: 2f,d1                scall 365d               CHECK_RANGE_TROUBLE_CODE([ECT_RAW],St0038,St0037,26);
+8 368a: 2f,d1                scall 365d               CHECK_RANGE_TROUBLE_CODE([TOT_RAW],St0038,St0037,26);
 8 368c: 10,01,66,f0,64,f0,26                          #args                
 8 3693: 2f,c8                scall 365d               CHECK_RANGE_TROUBLE_CODE([120],St0030,St0031,23);
 8 3695: 20,01,2e,f0,30,f0,23                          #args                
@@ -2566,7 +2566,7 @@ Sub0112:
 8 3863: df,18                je    387d               if (R30 == [R32]) goto TEST_RAM;
 
 Sub0113:
-8 3865: 91,10,2a             orrb  R2a,10             R2a |= 10;           
+8 3865: 91,10,2a             orrb  R2a,10             [FLAGS_2A] |= 10;    
 8 3868: 20,4c                sjmp  38b6               goto 38b6;           
 
 Sub0114:
@@ -2617,13 +2617,13 @@ Sub0117:
 8 38c6: ff                   ff                                            
 8 38c7: a1,d0,03,10          ldw   R10,3d0            STACK = 3d0;         
 8 38cb: ef,1e,fc             call  34ec               Sub0092();           
-8 38ce: ef,61,e7             call  2032               Sub0002();           
-8 38d1: 35,2a,06             jnb   B5,R2a,38da        if (!B5_R2a) goto 38da;
-8 38d4: 71,db,2a             an2b  R2a,db             R2a &= db;           
-8 38d7: 91,18,2a             orrb  R2a,18             R2a |= 18;           
-8 38da: 36,2a,06             jnb   B6,R2a,38e3        if (!B6_R2a) goto 38e3;
-8 38dd: 71,bb,2a             an2b  R2a,bb             R2a &= bb;           
-8 38e0: 91,10,2a             orrb  R2a,10             R2a |= 10;           
+8 38ce: ef,61,e7             call  2032               RESET_ALL();         
+8 38d1: 35,2a,06             jnb   B5,R2a,38da        if (<SELF_TEST> == 0) goto 38da;
+8 38d4: 71,db,2a             an2b  R2a,db             [FLAGS_2A] &= db;    
+8 38d7: 91,18,2a             orrb  R2a,18             [FLAGS_2A] |= 18;    
+8 38da: 36,2a,06             jnb   B6,R2a,38e3        if (<NO_START> == 0) goto 38e3;
+8 38dd: 71,bb,2a             an2b  R2a,bb             [FLAGS_2A] &= bb;    
+8 38e0: 91,10,2a             orrb  R2a,10             [FLAGS_2A] |= 10;    
 8 38e3: ef,76,f9             call  325c               Sub0073();           
 8 38e6: e7,f4,e7             jump  20dd               goto BACKGROUND_LOOP;
 
@@ -3898,7 +3898,7 @@ Sub0141:
 8 4666: 65,0a,00,18          ad2w  R18,a              R18 += a;            
 8 466a: 29,23                scall 478f               Sub0144();           
 8 466c: a0,ba,34             ldw   R34,Rba            R34 = Rba;           
-8 466f: a3,19,98,47,32       ldw   R32,[R18+4798]     R32 = [R18+OSt8_006_4798];
+8 466f: a3,19,98,47,32       ldw   R32,[R18+4798]     R32 = [R18+OSt8_005_4798];
 8 4674: 64,fc,32             ad2w  R32,Rfc            R32 += Rfc;          
 8 4677: ac,38,40             ldzbw R40,R38            R40 = (uns)R38;      
 8 467a: 91,20,a1             orrb  Ra1,20             Ra1 |= 20;           
@@ -4004,13 +4004,13 @@ Sub0144:
 8 4794: 17,30                incb  R30                R30++;               
 8 4796: f0                   ret                      return;              
 
-        Inc   8 4798: ostruct   OSt8_006_4798 - Other Structure 8 006
+        Inc   8 4798: ostruct   OSt8_005_4798 - Other Structure 8 005
 
 8 4797: ff,c2,08,32,08,f2,08,62                       Unknown Operation/Structure
 8 479f: 08,22,09                                      Unknown Operation/Structure
 
 
-OSt8_006 - Other Structure 8 006:
+OSt8_005 - Other Structure 8 005:
 8 47a2: 92,08      ostruct    892
 8 47a4: 71,ef      ostruct   ef71
 
@@ -4180,7 +4180,7 @@ Sub0147:
 8 4962: 01,14                clrw  R14                [HSO_IPEND2] = 0;    
 8 4964: 20,04                sjmp  496a               goto 496a;           
 
-8 4966: a1,ff,7f,14          ldw   R14,7fff           [HSO_IPEND2] = OSt8_009;
+8 4966: a1,ff,7f,14          ldw   R14,7fff           [HSO_IPEND2] = OSt8_008;
 8 496a: 37,15,02             jnb   B7,R15,496f        if (!B7_R15) goto 496f;
 8 496d: 01,14                clrw  R14                [HSO_IPEND2] = 0;    
 8 496f: a3,ee,c8,38          ldw   R38,[Ree+c8]       R38 = [348];         
@@ -4403,7 +4403,7 @@ Sub0149:
 8 4bcf: 20,04                sjmp  4bd5               goto 4bd5;           
 
 8 4bd1: 65,0a,00,18          ad2w  R18,a              R18 += a;            
-8 4bd5: a3,19,c2,4c,32       ldw   R32,[R18+4cc2]     R32 = [R18+OSt8_007_4cc2];
+8 4bd5: a3,19,c2,4c,32       ldw   R32,[R18+4cc2]     R32 = [R18+OSt8_006_4cc2];
 8 4bda: 64,fc,32             ad2w  R32,Rfc            R32 += Rfc;          
 8 4bdd: 91,10,a1             orrb  Ra1,10             Ra1 |= 10;           
 8 4be0: ef,ab,df             call  2b8e               UUByteLU();          
@@ -4488,13 +4488,13 @@ Sub0150:
 8 4cbf: 17,1a                incb  R1a                R1a++;               
 8 4cc1: f0                   ret                      return;              
 
-        Inc   8 4cc2: ostruct   OSt8_007_4cc2 - Other Structure 8 007
+        Inc   8 4cc2: ostruct   OSt8_006_4cc2 - Other Structure 8 006
 
 8 4cc2: 7a,06,82,06,96,06,9e,06                       Unknown Operation/Structure
 8 4cca: b2,06                                         Unknown Operation/Structure
 
 
-OSt8_007 - Other Structure 8 007:
+OSt8_006 - Other Structure 8 006:
 8 4ccc: ba,06      ostruct    6ba
 8 4cce: de,07      ostruct    7de
 8 4cd0: fa,07      ostruct    7fa
@@ -5481,7 +5481,7 @@ Sub0174:
 8 5757: ff                                            Unknown Operation/Structure
 
 
-OSt8_008 - Other Structure 8 008:
+OSt8_007 - Other Structure 8 007:
 8 5758: 00,00      ostruct   0
 
 
@@ -5507,7 +5507,7 @@ OSt8_008 - Other Structure 8 008:
 8 57e3 -> 7ffe                     fill               ff
 
 
-OSt8_009 - Other Structure 8 009:
+OSt8_008 - Other Structure 8 008:
 8 7fff: ff      ostruct   ff
 
 
