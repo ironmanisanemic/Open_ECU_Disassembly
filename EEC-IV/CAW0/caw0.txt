@@ -89,7 +89,7 @@ RESET_ALL:
 8 204d: 17,05                incb  R05                WD_TIMER++;          
 8 204f: 89,ce,03,10          cmpw  R10,3ce                                 
 8 2053: d3,e5                jnc   203a               if ((uns) STACK < 3ce) goto 203a;
-8 2055: a1,58,57,14          ldw   R14,5758           [HSO_IPEND2] = OSt8_007;
+8 2055: a1,58,57,14          ldw   R14,5758           [HSO_IPEND2] = OSt8_008;
 8 2059: 89,ff,ff,14          cmpw  R14,ffff                                
 8 205d: df,20                je    207f               if ([HSO_IPEND2] == ffff) goto 207f;
 8 205f: a2,15,1a             ldw   R1a,[R14++]        R1a = [R14++];       
@@ -1121,14 +1121,14 @@ Sub0033:
 
 
 OSt8_002 - Other Structure 8 002:
-8 2ad1: 0e      ostruct   e
+8 2ad1: 0e      ostruct    e
+8 2ad2: 0c      ostruct    c
+8 2ad3: 0a      ostruct    a
+8 2ad4: 08      ostruct    8
+8 2ad5: 04      ostruct    4
+8 2ad6: 02      ostruct    2
+8 2ad7: 45      ostruct   45
 
-
-8 2ad2: 0c,0a,08,04,02                                Unknown Operation/Structure
-
-
-Sub0034:
-8 2ad7: 45,2c,01,fc,dc       ad3w  Rdc,Rfc,12c        Rdc = St0010;        
 8 2adc: c7,ee,9b,db          stb   [Ree+9b],Rdb       [31b] = Rdb;         
 8 2ae0: 91,04,e1             orrb  Re1,4              Re1 |= 4;            
 8 2ae3: a3,ea,98,42          ldw   R42,[Rea+98]       R42 = [NDS_RAW];     
@@ -1378,10 +1378,10 @@ TabCore - Table Reader Core:
 8 2d13: 74,31,3b             ad2b  R3b,R31            R3b += R31;          
 8 2d16: 65,80,00,3a          ad2w  R3a,80             R3a += 80;           
 8 2d1a: f0                   ret                      return;              
-        Inc   8 2d1a: ostruct   OSt8_002_2d1a - Other Structure 8 002
+        Inc   8 2d1a: ostruct   OSt8_003_2d1a - Other Structure 8 003
 
 
-OSt8_002 - Other Structure 8 002:
+OSt8_003 - Other Structure 8 003:
 8 2d1b: 14      ostruct   14
 8 2d1c: 22      ostruct   22
 8 2d1d: 29      ostruct   29
@@ -1440,13 +1440,13 @@ DO_SELF_TEST:
 8 2d87: 3b,2a,19             jb    B3,R2a,2da3        if (B3_[FLAGS_2A]) goto 2da3;
 8 2d8a: 91,20,2a             orrb  R2a,20             <SELF_TEST> = 1;     
 8 2d8d: 28,18                scall 2da7               Sub0052();           
-8 2d8f: cb,3b,9a,2f          push  [R3a+2f9a]         push([R3a+VecLst8_004]);
+8 2d8f: cb,3b,9a,2f          push  [R3a+2f9a]         push([R3a+VecLst8_005]);
 8 2d93: f0                   ret                      return;              
 
 8 2d94: 33,8e,0f             jnb   B3,R8e,2da6        if (!B3_R8e) goto 2da6;
 8 2d97: 3c,2a,09             jb    B4,R2a,2da3        if (B4_[FLAGS_2A]) goto 2da3;
 8 2d9a: 28,0b                scall 2da7               Sub0052();           
-8 2d9c: cb,3b,7a,2f          push  [R3a+2f7a]         push([R3a+VecLst8_003]);
+8 2d9c: cb,3b,7a,2f          push  [R3a+2f7a]         push([R3a+VecLst8_004]);
 8 2da0: f0                   ret                      return;              
 
 Sub0051:
@@ -1662,7 +1662,7 @@ Sub0066:
 8 2f5c: d9,1b                jgtu  2f79               if ((uns) R1a > 10) goto 2f79;
 8 2f5e: 18,01,3a             shrb  R3a,1              R3a = R3a / 2;       
 8 2f61: d3,11                jnc   2f74               if ((uns) R1a < 10) goto 2f74;
-8 2f63: 57,1b,1a,2d,00,1f    ad3b  R1f,0,[R1a+2d1a]   R1f = 0 + [R1a+OSt8_002_2d1a];
+8 2f63: 57,1b,1a,2d,00,1f    ad3b  R1f,0,[R1a+2d1a]   R1f = 0 + [R1a+OSt8_003_2d1a];
 8 2f69: df,09                je    2f74               if (R1f == 0) goto 2f74;
 8 2f6b: 89,af,02,42          cmpw  R42,2af                                 
 8 2f6f: db,03                jc    2f74               if ((uns) R42 >= 2af) goto 2f74;
@@ -1674,7 +1674,7 @@ Sub0066:
 
 
 
-VecLst8_003 - Vectors List 8 003:
+VecLst8_004 - Vectors List 8 004:
 8 2f7a: b6,32                32b6  Bank 8 Vector      Sub0077
 8 2f7c: ff,32                32ff  Bank 8 Vector      Sub0078
 8 2f7e: 44,33                3344  Bank 8 Vector      Sub0083
@@ -1693,7 +1693,7 @@ VecLst8_003 - Vectors List 8 003:
 
 
 
-VecLst8_004 - Vectors List 8 004:
+VecLst8_005 - Vectors List 8 005:
 8 2f9a: 7c,36                367c  Bank 8 Vector      Sub0103
 8 2f9c: be,2d                2dbe  Bank 8 Vector      Sub0053
 8 2f9e: 8a,36                368a  Bank 8 Vector      Sub0104
@@ -3898,7 +3898,7 @@ Sub0141:
 8 4666: 65,0a,00,18          ad2w  R18,a              R18 += a;            
 8 466a: 29,23                scall 478f               Sub0144();           
 8 466c: a0,ba,34             ldw   R34,Rba            R34 = Rba;           
-8 466f: a3,19,98,47,32       ldw   R32,[R18+4798]     R32 = [R18+OSt8_005_4798];
+8 466f: a3,19,98,47,32       ldw   R32,[R18+4798]     R32 = [R18+OSt8_006_4798];
 8 4674: 64,fc,32             ad2w  R32,Rfc            R32 += Rfc;          
 8 4677: ac,38,40             ldzbw R40,R38            R40 = (uns)R38;      
 8 467a: 91,20,a1             orrb  Ra1,20             Ra1 |= 20;           
@@ -4004,13 +4004,13 @@ Sub0144:
 8 4794: 17,30                incb  R30                R30++;               
 8 4796: f0                   ret                      return;              
 
-        Inc   8 4798: ostruct   OSt8_005_4798 - Other Structure 8 005
+        Inc   8 4798: ostruct   OSt8_006_4798 - Other Structure 8 006
 
 8 4797: ff,c2,08,32,08,f2,08,62                       Unknown Operation/Structure
 8 479f: 08,22,09                                      Unknown Operation/Structure
 
 
-OSt8_005 - Other Structure 8 005:
+OSt8_006 - Other Structure 8 006:
 8 47a2: 92,08      ostruct    892
 8 47a4: 71,ef      ostruct   ef71
 
@@ -4180,7 +4180,7 @@ Sub0147:
 8 4962: 01,14                clrw  R14                [HSO_IPEND2] = 0;    
 8 4964: 20,04                sjmp  496a               goto 496a;           
 
-8 4966: a1,ff,7f,14          ldw   R14,7fff           [HSO_IPEND2] = OSt8_008;
+8 4966: a1,ff,7f,14          ldw   R14,7fff           [HSO_IPEND2] = OSt8_009;
 8 496a: 37,15,02             jnb   B7,R15,496f        if (!B7_R15) goto 496f;
 8 496d: 01,14                clrw  R14                [HSO_IPEND2] = 0;    
 8 496f: a3,ee,c8,38          ldw   R38,[Ree+c8]       R38 = [348];         
@@ -4403,7 +4403,7 @@ Sub0149:
 8 4bcf: 20,04                sjmp  4bd5               goto 4bd5;           
 
 8 4bd1: 65,0a,00,18          ad2w  R18,a              R18 += a;            
-8 4bd5: a3,19,c2,4c,32       ldw   R32,[R18+4cc2]     R32 = [R18+OSt8_006_4cc2];
+8 4bd5: a3,19,c2,4c,32       ldw   R32,[R18+4cc2]     R32 = [R18+OSt8_007_4cc2];
 8 4bda: 64,fc,32             ad2w  R32,Rfc            R32 += Rfc;          
 8 4bdd: 91,10,a1             orrb  Ra1,10             Ra1 |= 10;           
 8 4be0: ef,ab,df             call  2b8e               UUByteLU();          
@@ -4488,13 +4488,13 @@ Sub0150:
 8 4cbf: 17,1a                incb  R1a                R1a++;               
 8 4cc1: f0                   ret                      return;              
 
-        Inc   8 4cc2: ostruct   OSt8_006_4cc2 - Other Structure 8 006
+        Inc   8 4cc2: ostruct   OSt8_007_4cc2 - Other Structure 8 007
 
 8 4cc2: 7a,06,82,06,96,06,9e,06                       Unknown Operation/Structure
 8 4cca: b2,06                                         Unknown Operation/Structure
 
 
-OSt8_006 - Other Structure 8 006:
+OSt8_007 - Other Structure 8 007:
 8 4ccc: ba,06      ostruct    6ba
 8 4cce: de,07      ostruct    7de
 8 4cd0: fa,07      ostruct    7fa
@@ -5481,7 +5481,7 @@ Sub0174:
 8 5757: ff                                            Unknown Operation/Structure
 
 
-OSt8_007 - Other Structure 8 007:
+OSt8_008 - Other Structure 8 008:
 8 5758: 00,00      ostruct   0
 
 
@@ -5507,7 +5507,7 @@ OSt8_007 - Other Structure 8 007:
 8 57e3 -> 7ffe                     fill               ff
 
 
-OSt8_008 - Other Structure 8 008:
+OSt8_009 - Other Structure 8 009:
 8 7fff: ff      ostruct   ff
 
 
