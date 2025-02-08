@@ -114,10 +114,10 @@ RESET_ALL:
 8 208e: ef,49,36             call  56da               CHECK_CONSOLE();     
 8 2091: 28,5e                scall 20f1               CAL_INIT();          
 8 2093: ef,5d,0e             call  2ef3               Sub0065();           
-8 2096: a3,fc,60,30          ldw   R30,[Rfc+60]       R30 = [Sc0041];      
+8 2096: a3,fc,60,30          ldw   R30,[Rfc+60]       R30 = [GRRAT1];      
 8 209a: c3,ee,9c,30          stw   [Ree+9c],R30       [31c] = R30;         
 8 209e: c3,ee,9e,30          stw   [Ree+9e],R30       [31e] = R30;         
-8 20a2: b3,fd,84,00,30       ldb   R30,[Rfc+84]       R30 = [Sc0053];      
+8 20a2: b3,fd,84,00,30       ldb   R30,[Rfc+84]       R30 = [NVBASE];      
 8 20a7: c7,ee,98,30          stb   [Ree+98],R30       [318] = R30;         
 8 20ab: c7,ee,97,30          stb   [Ree+97],R30       [317] = R30;         
 8 20af: 11,09                clrb  R09                INT_PEND = 0;        
@@ -722,9 +722,9 @@ CHECK_KAM_1:
 8 26bf: d7,14                jne   26d5               if (R32 != [Rde+f2]) goto 26d5;
 8 26c1: a3,de,0e,38          ldw   R38,[Rde+e]        R38 = [Rde+e];       
 8 26c5: 8b,fd,aa,01,38       cmpw  R38,[Rfc+1aa]                           
-8 26ca: d3,09                jnc   26d5               if ((uns) R38 < [Sc0084]) goto 26d5;
+8 26ca: d3,09                jnc   26d5               if ((uns) R38 < [RTNVMN]) goto 26d5;
 8 26cc: 8b,fd,ac,01,38       cmpw  R38,[Rfc+1ac]                           
-8 26d1: d9,02                jgtu  26d5               if ((uns) R38 > [Sc0085]) goto 26d5;
+8 26d1: d9,02                jgtu  26d5               if ((uns) R38 > [RTNVMX]) goto 26d5;
 8 26d3: 20,46                sjmp  271b               goto 271b;           
 
 8 26d5: 91,80,28             orrb  R28,80             <KAM_ERROR> = 1;     
@@ -757,30 +757,30 @@ UPDATE_AD?:
 
 8 2724: 37,a7,1a             jnb   B7,Ra7,2741        if (!B7_Ra7) goto 2741;
 8 2727: 8b,fe,22,b8          cmpw  Rb8,[Rfe+22]                            
-8 272b: d1,24                jleu  2751               if ((uns) Rb8 <= [Sc0106]) goto 2751;
+8 272b: d1,24                jleu  2751               if ((uns) Rb8 <= [NRUN]) goto 2751;
 8 272d: b3,ec,9b,42          ldb   R42,[Rec+9b]       R42 = [21b];         
 8 2731: 99,08,42             cmpb  R42,8                                   
 8 2734: d3,28                jnc   275e               if ((uns) R42 < 8) goto 275e;
 8 2736: 9b,fe,1c,d4          cmpb  Rd4,[Rfe+1c]                            
-8 273a: d3,22                jnc   275e               if ((uns) Rd4 < [Sc0103]) goto 275e;
+8 273a: d3,22                jnc   275e               if ((uns) Rd4 < [NCNT]) goto 275e;
 8 273c: 71,7f,a7             an2b  Ra7,7f             Ra7 &= 7f;           
 8 273f: 20,1d                sjmp  275e               goto 275e;           
 
 8 2741: 8b,fe,24,b8          cmpw  Rb8,[Rfe+24]                            
-8 2745: db,0e                jc    2755               if ((uns) Rb8 >= [Sc0107]) goto 2755;
+8 2745: db,0e                jc    2755               if ((uns) Rb8 >= [NSTALL]) goto 2755;
 8 2747: 91,80,a7             orrb  Ra7,80             Ra7 |= 80;           
 8 274a: c7,ec,9b,00          stb   [Rec+9b],0         [21b] = 0;           
 8 274e: c0,b6,00             stw   Rb6,0              Rb6 = 0;             
 8 2751: 11,d4                clrb  Rd4                Rd4 = 0;             
 8 2753: 20,09                sjmp  275e               goto 275e;           
 
-8 2755: a3,fe,1e,30          ldw   R30,[Rfe+1e]       R30 = [Sc0104];      
+8 2755: a3,fe,1e,30          ldw   R30,[Rfe+1e]       R30 = [UNRPM];       
 8 2759: 88,b8,30             cmpw  R30,Rb8                                 
 8 275c: d1,05                jleu  2763               if ((uns) R30 <= Rb8) goto 2763;
 8 275e: 91,40,a7             orrb  Ra7,40             Ra7 |= 40;           
 8 2761: 20,0c                sjmp  276f               goto 276f;           
 
-8 2763: 67,fe,20,30          ad2w  R30,[Rfe+20]       R30 += [Sc0105];     
+8 2763: 67,fe,20,30          ad2w  R30,[Rfe+20]       R30 += [UNRPMH];     
 8 2767: 88,b8,30             cmpw  R30,Rb8                                 
 8 276a: db,03                jc    276f               if ((uns) R30 >= Rb8) goto 276f;
 8 276c: 71,bf,a7             an2b  Ra7,bf             Ra7 &= bf;           
@@ -981,13 +981,13 @@ Sub0032:
 8 294b: 71,fe,e1             an2b  Re1,fe             Re1 &= fe;           
 8 294e: a3,ea,a0,16          ldw   R16,[Rea+a0]       R16 = [120];         
 8 2952: 8b,fe,38,16          cmpw  R16,[Rfe+38]                            
-8 2956: d3,06                jnc   295e               if ((uns) R16 < [Sc0109]) goto 295e;
+8 2956: d3,06                jnc   295e               if ((uns) R16 < [TAPMIN]) goto 295e;
 8 2958: 8b,fe,36,16          cmpw  R16,[Rfe+36]                            
-8 295c: d1,07                jleu  2965               if ((uns) R16 <= [Sc0108]) goto 2965;
+8 295c: d1,07                jleu  2965               if ((uns) R16 <= [TAPMAX]) goto 2965;
 8 295e: a3,f6,10,16          ldw   R16,[Rf6+10]       R16 = [Sc0014];      
 8 2962: 34,a8,03             jnb   B4,Ra8,2968        if (!B4_Ra8) goto 2968;
 8 2965: a0,16,b4             ldw   Rb4,R16            Rb4 = R16;           
-8 2968: 4b,fd,b4,01,b4,42    sb3w  R42,Rb4,[Rfc+1b4]  R42 = Rb4 - [Sc0086];
+8 2968: 4b,fd,b4,01,b4,42    sb3w  R42,Rb4,[Rfc+1b4]  R42 = Rb4 - [RATIV]; 
 8 296e: db,02                jc    2972               if (R42 >= 0) goto 2972;
 8 2970: 01,42                clrw  R42                R42 = 0;             
 8 2972: c0,be,42             stw   Rbe,R42            Rbe = R42;           
@@ -996,7 +996,7 @@ Sub0032:
 8 297b: 01,42                clrw  R42                R42 = 0;             
 8 297d: c0,c0,42             stw   Rc0,R42            Rc0 = R42;           
 8 2980: 9b,fe,18,00          cmpb  0,[Rfe+18]                              
-8 2984: d7,02                jne   2988               if (0 != [Sc0102]) goto 2988;
+8 2984: d7,02                jne   2988               if (0 != [VSTYPE]) goto 2988;
 8 2986: 20,94                sjmp  2a1c               goto 2a1c;           
 
 8 2988: fa                   di                       disable ints;        
@@ -1036,8 +1036,8 @@ Sub0032:
 8 29ea: 03,36                negw  R36                R36 = -R36;          
 8 29ec: b0,70,38             ldb   R38,R70            R38 = R70;           
 8 29ef: 8b,fc,40,36          cmpw  R36,[Rfc+40]                            
-8 29f3: d1,0b                jleu  2a00               if ((uns) R36 <= [Sc0038]) goto 2a00;
-8 29f5: 77,fc,3e,38          ad2b  R38,[Rfc+3e]       R38 += [Sc0037];     
+8 29f3: d1,0b                jleu  2a00               if ((uns) R36 <= [VSDELT]) goto 2a00;
+8 29f5: 77,fc,3e,38          ad2b  R38,[Rfc+3e]       R38 += [VSCNT];      
 8 29f9: d3,0c                jnc   2a07               if (R38 <= ff) goto 2a07;
 8 29fb: b1,ff,38             ldb   R38,ff             R38 = ff;            
 8 29fe: 20,07                sjmp  2a07               goto 2a07;           
@@ -1054,7 +1054,7 @@ Sub0032:
 8 2a19: c4,8d,3f             stb   R8d,R3f            R8d = R3f;           
 8 2a1c: 71,ef,25             an2b  R25,ef             R25 &= ef;           
 8 2a1f: 9b,fe,11,00          cmpb  0,[Rfe+11]                              
-8 2a23: df,06                je    2a2b               if (0 == [Sc0098]) goto 2a2b;
+8 2a23: df,06                je    2a2b               if (0 == [BIHP]) goto 2a2b;
 8 2a25: 34,90,03             jnb   B4,R90,2a2b        if (!B4_R90) goto 2a2b;
 8 2a28: 91,10,25             orrb  R25,10             R25 |= 10;           
 8 2a2b: a3,f4,02,36          ldw   R36,[Rf4+2]        R36 = [Sc0004];      
@@ -1422,7 +1422,7 @@ DO_SELF_TEST:
 
 8 2d5c: 35,2a,11             jnb   B5,R2a,2d70        if (<SELF_TEST> == 0) goto 2d70;
 8 2d5f: 33,8e,f7             jnb   B3,R8e,2d59        if (!B3_R8e) goto 2d59;
-8 2d62: b3,fe,17,42          ldb   R42,[Rfe+17]       R42 = [Sc0101];      
+8 2d62: b3,fe,17,42          ldb   R42,[Rfe+17]       R42 = [TRLOAD];      
 8 2d66: 99,03,42             cmpb  R42,3                                   
 8 2d69: d3,03                jnc   2d6e               if ((uns) R42 < 3) goto 2d6e;
 8 2d6b: 3e,a1,eb             jb    B6,Ra1,2d59        if (B6_Ra1) goto 2d59;
@@ -1618,7 +1618,7 @@ Sub0064:
 Sub0065:
 8 2ef3: b1,04,22             ldb   R22,4              R22 = 4;             
 8 2ef6: 9b,fe,16,22          cmpb  R22,[Rfe+16]                            
-8 2efa: d7,05                jne   2f01               if (R22 != [Sc0100]) goto 2f01;
+8 2efa: d7,05                jne   2f01               if (R22 != [TSTRAT]) goto 2f01;
 8 2efc: 91,04,45             orrb  R45,4              [HSI_DATA] |= 4;     
 8 2eff: 20,03                sjmp  2f04               goto 2f04;           
 
@@ -1735,7 +1735,7 @@ Sub0067:
 8 2ff7: 91,04,2f             orrb  R2f,4              R2f |= 4;            
 8 2ffa: ef,94,01             call  3191               Sub0068(1);          
 8 2ffd: 01                                            #args                
-8 2ffe: ef,d7,03             call  33d8               Sub0088(Sc0109,[120],a);
+8 2ffe: ef,d7,03             call  33d8               Sub0088(TAPMIN,[120],a);
 8 3001: 38,f0,20,01,0a,ef                             #args                
 8 3007: cf,03,20,01          pop   [R02+120]          [CPU_OK+120] = pop();
 8 300b: 36,f0,06             jnb   B6,Rf0,3014        if (!B6_Rf0) goto 3014;
@@ -1780,7 +1780,7 @@ Sub0067:
 8 3083: b3,fe,6c,42          ldb   R42,[Rfe+6c]       R42 = [Sc0129];      
 8 3087: e0,42,45             djnz  R42,30cf           R42--; if (R42 !=  0) goto 30cf;
 8 308a: 9b,fe,18,00          cmpb  0,[Rfe+18]                              
-8 308e: df,3f                je    30cf               if (0 == [Sc0102]) goto 30cf;
+8 308e: df,3f                je    30cf               if (0 == [VSTYPE]) goto 30cf;
 8 3090: b0,8d,42             ldb   R42,R8d            R42 = R8d;           
 8 3093: 9b,fe,6b,42          cmpb  R42,[Rfe+6b]                            
 8 3097: d3,03                jnc   309c               if ((uns) R42 < [Sc0128]) goto 309c;
@@ -1798,7 +1798,7 @@ Sub0067:
 8 30bb: 88,38,b8             cmpw  Rb8,R38                                 
 8 30be: d3,0b                jnc   30cb               if ((uns) Rb8 < R38) goto 30cb;
 8 30c0: 9b,fe,11,00          cmpb  0,[Rfe+11]                              
-8 30c4: df,03                je    30c9               if (0 == [Sc0098]) goto 30c9;
+8 30c4: df,03                je    30c9               if (0 == [BIHP]) goto 30c9;
 8 30c6: 3c,25,02             jb    B4,R25,30cb        if (B4_R25) goto 30cb;
 8 30c9: 20,06                sjmp  30d1               goto 30d1;           
 
@@ -2401,7 +2401,7 @@ Sub0106:
 Sub0107:
 8 36bf: b3,fe,4c,42          ldb   R42,[Rfe+4c]       R42 = [Sc0118];      
 8 36c3: e0,42,11             djnz  R42,36d7           R42--; if (R42 !=  0) goto 36d7;
-8 36c6: b3,fe,11,42          ldb   R42,[Rfe+11]       R42 = [Sc0098];      
+8 36c6: b3,fe,11,42          ldb   R42,[Rfe+11]       R42 = [BIHP];        
 8 36ca: e0,42,0a             djnz  R42,36d7           R42--; if (R42 !=  0) goto 36d7;
 8 36cd: 3c,a3,03             jb    B4,Ra3,36d3        if (B4_Ra3) goto 36d3;
 8 36d0: 33,a3,04             jnb   B3,Ra3,36d7        if (!B3_Ra3) goto 36d7;
@@ -2451,7 +2451,7 @@ HW_CHECK:
 8 3727: 37,29,14             jnb   B7,R29,373e        if (!B7_R29) goto 373e;
 8 372a: b3,fe,4c,42          ldb   R42,[Rfe+4c]       R42 = [Sc0118];      
 8 372e: e0,42,14             djnz  R42,3745           R42--; if (R42 !=  0) goto 3745;
-8 3731: b3,fe,11,42          ldb   R42,[Rfe+11]       R42 = [Sc0098];      
+8 3731: b3,fe,11,42          ldb   R42,[Rfe+11]       R42 = [BIHP];        
 8 3735: e0,42,0d             djnz  R42,3745           R42--; if (R42 !=  0) goto 3745;
 8 3738: 3c,a3,03             jb    B4,Ra3,373e        if (B4_Ra3) goto 373e;
 8 373b: 33,a3,07             jnb   B3,Ra3,3745        if (!B3_Ra3) goto 3745;
@@ -2905,36 +2905,36 @@ Sub0121:
 8 3c1a: d6,0a                jge   3c26               if ((sig) Rba >= R38) goto 3c26;
 8 3c1c: a3,ea,b6,30          ldw   R30,[Rea+b6]       R30 = [136];         
 8 3c20: 8b,fc,10,30          cmpw  R30,[Rfc+10]                            
-8 3c24: d3,06                jnc   3c2c               if ((uns) R30 < [Sc0029]) goto 3c2c;
+8 3c24: d3,06                jnc   3c2c               if ((uns) R30 < [CS_MAX_TIME]) goto 3c2c;
 8 3c26: 8b,fe,24,b8          cmpw  Rb8,[Rfe+24]                            
-8 3c2a: db,04                jc    3c30               if ((uns) Rb8 >= [Sc0107]) goto 3c30;
+8 3c2a: db,04                jc    3c30               if ((uns) Rb8 >= [NSTALL]) goto 3c30;
 8 3c2c: b3,fc,12,42          ldb   R42,[Rfc+12]       R42 = [Sc0030];      
 8 3c30: c7,ee,df,42          stb   [Ree+df],R42       [35f] = R42;         
 8 3c34: 91,04,e9             orrb  Re9,4              Re9 |= 4;            
 8 3c37: 8b,fd,ae,00,ba       cmpw  Rba,[Rfc+ae]                            
-8 3c3c: da,03                jle   3c41               if ((sig) Rba <= [Sc0057]) goto 3c41;
+8 3c3c: da,03                jle   3c41               if ((sig) Rba <= [TOTTV1]) goto 3c41;
 8 3c3e: 71,fb,e9             an2b  Re9,fb             Re9 &= fb;           
 8 3c41: 71,ef,e9             an2b  Re9,ef             Re9 &= ef;           
 8 3c44: 8b,fd,b0,00,ba       cmpw  Rba,[Rfc+b0]                            
-8 3c49: d2,0d                jgt   3c58               if ((sig) Rba > [Sc0058]) goto 3c58;
+8 3c49: d2,0d                jgt   3c58               if ((sig) Rba > [TOTTV2]) goto 3c58;
 8 3c4b: a3,ea,b6,42          ldw   R42,[Rea+b6]       R42 = [136];         
 8 3c4f: 8b,fc,2c,42          cmpw  R42,[Rfc+2c]                            
-8 3c53: db,03                jc    3c58               if ((uns) R42 >= [Sc0034]) goto 3c58;
+8 3c53: db,03                jc    3c58               if ((uns) R42 >= [CD_TVENG_TM]) goto 3c58;
 8 3c55: 91,10,e9             orrb  Re9,10             Re9 |= 10;           
 8 3c58: 71,f7,e9             an2b  Re9,f7             Re9 &= f7;           
 8 3c5b: 8b,fd,b2,00,ba       cmpw  Rba,[Rfc+b2]                            
-8 3c60: d2,03                jgt   3c65               if ((sig) Rba > [Sc0059]) goto 3c65;
+8 3c60: d2,03                jgt   3c65               if ((sig) Rba > [TOTTV3]) goto 3c65;
 8 3c62: 91,08,e9             orrb  Re9,8              Re9 |= 8;            
 8 3c65: 91,80,2f             orrb  R2f,80             R2f |= 80;           
 8 3c68: 8b,fd,b4,00,ba       cmpw  Rba,[Rfc+b4]                            
-8 3c6d: de,03                jlt   3c72               if ((sig) Rba < [Sc0060]) goto 3c72;
+8 3c6d: de,03                jlt   3c72               if ((sig) Rba < [TOTTV4]) goto 3c72;
 8 3c6f: 71,7f,2f             an2b  R2f,7f             R2f &= 7f;           
 8 3c72: f0                   ret                      return;              
 
 Sub0122:
 8 3c73: 01,14                clrw  R14                [HSO_IPEND2] = 0;    
 8 3c75: 8b,fe,24,b8          cmpw  Rb8,[Rfe+24]                            
-8 3c79: d3,12                jnc   3c8d               if ((uns) Rb8 < [Sc0107]) goto 3c8d;
+8 3c79: d3,12                jnc   3c8d               if ((uns) Rb8 < [NSTALL]) goto 3c8d;
 8 3c7b: a3,ee,8a,32          ldw   R32,[Ree+8a]       R32 = [30a];         
 8 3c7f: 4f,ee,9c,32,14       ml3w  R14,R32,[Ree+9c]   [HSO_IPEND2] = R32 * [31c];
 8 3c84: 8f,ee,88,14          divw  R14,[Ree+88]       [HSO_IPEND2] = [HSO_IPEND2]L / [308];
@@ -3260,7 +3260,7 @@ Sub0131:
 8 3fbc: 20,57                sjmp  4015               goto 4015;           
 
 8 3fbe: 8b,fe,24,b8          cmpw  Rb8,[Rfe+24]                            
-8 3fc2: db,12                jc    3fd6               if ((uns) Rb8 >= [Sc0107]) goto 3fd6;
+8 3fc2: db,12                jc    3fd6               if ((uns) Rb8 >= [NSTALL]) goto 3fd6;
 8 3fc4: 37,a8,0f             jnb   B7,Ra8,3fd6        if (!B7_Ra8) goto 3fd6;
 8 3fc7: 99,06,db             cmpb  Rdb,6                                   
 8 3fca: df,05                je    3fd1               if (Rdb == 6) goto 3fd1;
@@ -3294,7 +3294,7 @@ Sub0131:
 8 4003: 99,0a,db             cmpb  Rdb,a                                   
 8 4006: d7,0d                jne   4015               if (Rdb != a) goto 4015;
 8 4008: 9b,fc,4a,6f          cmpb  R6f,[Rfc+4a]                            
-8 400c: d9,03                jgtu  4011               if ((uns) R6f > [Sc0039]) goto 4011;
+8 400c: d9,03                jgtu  4011               if ((uns) R6f > [VS_NEU]) goto 4011;
 8 400e: 37,a8,04             jnb   B7,Ra8,4015        if (!B7_Ra8) goto 4015;
 8 4011: b3,fc,4b,d9          ldb   Rd9,[Rfc+4b]       Rd9 = [Sc0040];      
 8 4015: 71,fd,e6             an2b  Re6,fd             Re6 &= fd;           
@@ -3456,7 +3456,7 @@ Sub0136:
 8 41a5: 91,20,46             orrb  R46,20             R46 |= 20;           
 8 41a8: fb                   ei                       enable ints;         
 8 41a9: c4,d8,30             stb   Rd8,R30            Rd8 = R30;           
-8 41ac: 45,60,00,fc,34       ad3w  R34,Rfc,60         R34 = Sc0041;        
+8 41ac: 45,60,00,fc,34       ad3w  R34,Rfc,60         R34 = GRRAT1;        
 8 41b1: 64,34,32             ad2w  R32,R34            R32 += R34;          
 8 41b4: a2,32,34             ldw   R34,[R32]          R34 = [R32];         
 8 41b7: c3,ee,9c,34          stw   [Ree+9c],R34       [31c] = R34;         
@@ -3477,7 +3477,7 @@ Sub0137:
 8 41e0: 9b,ee,81,d8          cmpb  Rd8,[Ree+81]                            
 8 41e4: d1,5e                jleu  4244               if ((uns) Rd8 <= [301]) goto 4244;
 8 41e6: 8b,fc,76,be          cmpw  Rbe,[Rfc+76]                            
-8 41ea: d1,58                jleu  4244               if ((uns) Rbe <= [Sc0049]) goto 4244;
+8 41ea: d1,58                jleu  4244               if ((uns) Rbe <= [TP_SH_VALID]) goto 4244;
 8 41ec: b0,6f,32             ldb   R32,R6f            R32 = R6f;           
 8 41ef: 01,42                clrw  R42                R42 = 0;             
 8 41f1: 32,d8,05             jnb   B2,Rd8,41f9        if (!B2_Rd8) goto 41f9;
@@ -3496,7 +3496,7 @@ Sub0137:
 8 4213: 98,70,00             cmpb  0,R70                                   
 8 4216: d7,2c                jne   4244               if (0 != R70) goto 4244;
 8 4218: 8b,fe,24,b8          cmpw  Rb8,[Rfe+24]                            
-8 421c: d3,26                jnc   4244               if ((uns) Rb8 < [Sc0107]) goto 4244;
+8 421c: d3,26                jnc   4244               if ((uns) Rb8 < [NSTALL]) goto 4244;
 8 421e: b3,de,f8,32          ldb   R32,[Rde+f8]       R32 = [Rde+f8];      
 8 4222: 36,32,1f             jnb   B6,R32,4244        if (!B6_R32) goto 4244;
 8 4225: 71,bf,24             an2b  R24,bf             R24 &= bf;           
@@ -3512,20 +3512,20 @@ Sub0137:
 8 4247: 35,24,3f             jnb   B5,R24,4289        if (!B5_R24) goto 4289;
 8 424a: 71,df,24             an2b  R24,df             R24 &= df;           
 8 424d: b3,ee,96,42          ldb   R42,[Ree+96]       R42 = [316];         
-8 4251: 5b,fc,75,42,30       sb3b  R30,R42,[Rfc+75]   R30 = R42 - [Sc0048];
+8 4251: 5b,fc,75,42,30       sb3b  R30,R42,[Rfc+75]   R30 = R42 - [S_VAL_VSSUB];
 8 4256: d3,05                jnc   425d               if (R30 < 0) goto 425d;
 8 4258: 98,6f,30             cmpb  R30,R6f                                 
 8 425b: db,2c                jc    4289               if ((uns) R30 >= R6f) goto 4289;
-8 425d: 77,fc,74,42          ad2b  R42,[Rfc+74]       R42 += [Sc0047];     
+8 425d: 77,fc,74,42          ad2b  R42,[Rfc+74]       R42 += [S_VAL_VSADD];
 8 4261: db,05                jc    4268               if (R42 > ff) goto 4268;
 8 4263: 98,6f,42             cmpb  R42,R6f                                 
 8 4266: d1,21                jleu  4289               if ((uns) R42 <= R6f) goto 4289;
 8 4268: a3,ee,90,42          ldw   R42,[Ree+90]       R42 = [310];         
-8 426c: 47,fc,70,42,30       ad3w  R30,R42,[Rfc+70]   R30 = R42 + [Sc0045];
+8 426c: 47,fc,70,42,30       ad3w  R30,R42,[Rfc+70]   R30 = R42 + [S_VAL_TPADD];
 8 4271: db,05                jc    4278               if (R30 > ffff) goto 4278;
 8 4273: 88,be,30             cmpw  R30,Rbe                                 
 8 4276: d1,11                jleu  4289               if ((uns) R30 <= Rbe) goto 4289;
-8 4278: 6b,fc,72,42          sb2w  R42,[Rfc+72]       R42 -= [Sc0046];     
+8 4278: 6b,fc,72,42          sb2w  R42,[Rfc+72]       R42 -= [S_VAL_TPSUB];
 8 427c: d3,05                jnc   4283               if (R42 < 0) goto 4283;
 8 427e: 88,be,42             cmpw  R42,Rbe                                 
 8 4281: db,06                jc    4289               if ((uns) R42 >= Rbe) goto 4289;
@@ -3700,7 +3700,7 @@ Sub0140:
 8 4445: 01,03,23,00                                   #args                
 8 4449: c3,ee,1c,22          stw   [Ree+1c],R22       [39c] = R22;         
 8 444d: 8b,fe,22,b8          cmpw  Rb8,[Rfe+22]                            
-8 4451: d1,09                jleu  445c               if ((uns) Rb8 <= [Sc0106]) goto 445c;
+8 4451: d1,09                jleu  445c               if ((uns) Rb8 <= [NRUN]) goto 445c;
 8 4453: 3d,20,06             jb    B5,R20,445c        if (B5_R20) goto 445c;
 8 4456: 3f,20,03             jb    B7,R20,445c        if (B7_R20) goto 445c;
 8 4459: 91,04,e8             orrb  Re8,4              Re8 |= 4;            
@@ -4549,7 +4549,7 @@ Sub0153:
 8 4d44: 32,e6,03             jnb   B2,Re6,4d4a        if (!B2_Re6) goto 4d4a;
 8 4d47: 71,fb,e0             an2b  Re0,fb             Re0 &= fb;           
 8 4d4a: 9b,fc,0a,6f          cmpb  R6f,[Rfc+a]                             
-8 4d4e: d1,03                jleu  4d53               if ((uns) R6f <= [Sc0025]) goto 4d53;
+8 4d4e: d1,03                jleu  4d53               if ((uns) R6f <= [SRLK_FM]) goto 4d53;
 8 4d50: 38,e1,2d             jb    B0,Re1,4d80        if (B0_Re1) goto 4d80;
 8 4d53: a3,ee,a6,30          ldw   R30,[Ree+a6]       R30 = [326];         
 8 4d57: 8b,fc,06,30          cmpw  R30,[Rfc+6]                             
@@ -4566,7 +4566,7 @@ Sub0153:
 8 4d79: f0                   ret                      return;              
 
 8 4d7a: 8b,fc,08,16          cmpw  R16,[Rfc+8]                             
-8 4d7e: d1,06                jleu  4d86               if ((uns) R16 <= [Sc0024]) goto 4d86;
+8 4d7e: d1,06                jleu  4d86               if ((uns) R16 <= [NELK_FM]) goto 4d86;
 8 4d80: 91,04,e0             orrb  Re0,4              Re0 |= 4;            
 8 4d83: 91,08,e0             orrb  Re0,8              Re0 |= 8;            
 8 4d86: f0                   ret                      return;              
@@ -5575,14 +5575,19 @@ Rfc_EndAddr - Rbase Rfc end next address:
 Sc0022 - Rfc+4:
 8 8854: 18,01             Rfc+4 Sc0022        word       118                 280
 8 8856: 00,30             Rfc+6 Sc0023        word      3000               12288
-8 8858: 48,26             Rfc+8 Sc0024        word      2648                9800
 
-8 885a: 5a                Rfc+a Sc0025        byte        5a                  90
-8 885b: 35                Rfc+b Sc0026        byte        35                  53
+NELK_FM - TCC_LOCK_RPM_FOR_VSS_&_TPS_FAIL:
+8 8858: 48,26             Rfc+8 NELK_FM       word      2648             2450.00
 
+SRLK_FM - TCC_SPEED_RATIO_FOR_TPS_FAIL:
+8 885a: 5a,35             Rfc+a SRLK_FM       word      355a              0.8336
+        Inc   :
+        Inc   8 885b: 35      Rfc+b Sc0026        byte        35                  53
 8 885c: 54,00             Rfc+c Sc0027        word        54                  84
 8 885e: 33,01             Rfc+e Sc0028        word       133                 307
-8 8860: b0,04             Rfc+10 Sc0029       word       4b0                1200
+
+CS_MAX_TIME - COLD_START_SHIFT_SCHEDULE_MAX_TIME:
+8 8860: b0,04             Rfc+10 CS_MAX_TIME    word       4b0                1200
 
 8 8862: 71                Rfc+12 Sc0030       byte        71                 113
 
@@ -5601,7 +5606,9 @@ Sc0022 - Rfc+4:
 8 887a: 80                Rfc+2a Sc0032       byte        80                 128
 8 887b: 6a                Rfc+2b Sc0033       byte        6a                 106
 
-8 887c: 2c,01             Rfc+2c Sc0034       word       12c                 300
+
+CD_TVENG_TM - TV_PRESS_WORST_CASE_ENGAGE_MAX_TIME:
+8 887c: 2c,01             Rfc+2c CD_TVENG_TM    word       12c                 300
 8 887e: 00,10             Rfc+2e Sc0035       word      1000                4096
 
 8 8880: 03                Rfc+30 Sc0036       byte         3                   3
@@ -5611,19 +5618,26 @@ Sc0022 - Rfc+4:
 8 8889: 31,00,00,64,32                        Unknown Calibration                    31,  0,  0, 64, 32                        49,   0,   0, 100,  50
 
 
-8 888e: 02                Rfc+3e Sc0037       byte         2                   2
+
+VSCNT - VEHICLE_SPEED_CHANGE_COUNTER_INCREMENT:
+8 888e: 02                Rfc+3e VSCNT        byte         2                   2
 
 
 8 888f: ff                                    Unknown Calibration                                    ff                                           255
 
 
-8 8890: 00,28             Rfc+40 Sc0038       word      2800               10240
+
+VSDELT - VEHICLE_SPEED_CHANGE_COUNTER_MAX:
+8 8890: 00                Rfc+40 VSDELT       byte         0                   0
 
 
-8 8892: 00,01,66,00,00,00,e0,fc               Unknown Calibration         0,  1, 66,  0,  0,  0, e0, fc          0,   1, 102,   0,   0,   0, 224, 252
+8 8891: 28,00,01,66,00,00,00,e0               Unknown Calibration        28,  0,  1, 66,  0,  0,  0, e0         40,   0,   1, 102,   0,   0,   0, 224
+8 8899: fc                                    Unknown Calibration                                    fc                                           252
 
 
-8 889a: 3c                Rfc+4a Sc0039       byte        3c                  60
+
+VS_NEU - COMMANDED_GEAR_IN_NEUTRAL_AT_HIGH_MPH:
+8 889a: 3c                Rfc+4a VS_NEU       byte        3c               30.00
 8 889b: 04                Rfc+4b Sc0040       byte         4                   4
 
 
@@ -5638,7 +5652,9 @@ St0001 - Structure 001:
 8 88a9: 0a,9a,01,9a,05,aa,ff                  Unknown Calibration             a, 9a,  1, 9a,  5, aa, ff              10, 154,   1, 154,   5, 170, 255
 
 
-8 88b0: 71,ad             Rfc+60 Sc0041       word      ad71               44401
+
+GRRAT1 - 1ST_GEAR_RATIO:
+8 88b0: 71,ad             Rfc+60 GRRAT1       word      ad71              2.7100
 
 
 8 88b2: 6f,62,00,40,91,2d,a0,0a               Unknown Calibration        6f, 62,  0, 40, 91, 2d, a0,  a        111,  98,   0,  64, 145,  45, 160,  10
@@ -5647,13 +5663,23 @@ St0001 - Structure 001:
 8 88ba: 80,3e             Rfc+6a Sc0042       word      3e80               16000
 8 88bc: 00,6e             Rfc+6c Sc0043       word      6e00               28160
 8 88be: 90,01             Rfc+6e Sc0044       word       190                 400
-8 88c0: 80,02             Rfc+70 Sc0045       word       280                 640
-8 88c2: 00,02             Rfc+72 Sc0046       word       200                 512
 
-8 88c4: 0e                Rfc+74 Sc0047       byte         e                  14
-8 88c5: 02                Rfc+75 Sc0048       byte         2                   2
+S_VAL_TPADD - SHIFT_VALIDATION_TP_POS:
+8 88c0: 80,02             Rfc+70 S_VAL_TPADD    word       280              0.0500
 
-8 88c6: 80,2f             Rfc+76 Sc0049       word      2f80               12160
+S_VAL_TPSUB - SHIFT_VALIDATION_TP_NEG:
+8 88c2: 00,02             Rfc+72 S_VAL_TPSUB    word       200              0.0400
+
+
+S_VAL_VSADD - SHIFT_VALIDATION_MPH_POS:
+8 88c4: 0e                Rfc+74 S_VAL_VSADD    byte         e              7.0000
+
+S_VAL_VSSUB - SHIFT_VALIDATION_MPH_NEG:
+8 88c5: 02                Rfc+75 S_VAL_VSSUB    byte         2              1.0000
+
+
+TP_SH_VALID - SHIFT_VALIDATION_TP_MIN:
+8 88c6: 80,2f             Rfc+76 TP_SH_VALID    word      2f80              0.9500
 
 St0002 - Structure 002:
 8 88c8: 1b      struct     1b
@@ -5671,7 +5697,9 @@ St0002 - Structure 002:
 8 88d1: 04,04,00                              Unknown Calibration                             4,  4,  0                                   4,   4,   0
 
 
-8 88d4: 5e                Rfc+84 Sc0053       byte        5e                  94
+
+NVBASE - RPM_TO_MPH_RATIO_DEFAULT:
+8 88d4: 5e                Rfc+84 NVBASE       byte        5e             47.0000
 8 88d5: 04                Rfc+85 Sc0054       byte         4                   4
 8 88d6: 00                Rfc+86 Sc0055       byte         0                   0
 
@@ -5705,10 +5733,18 @@ St0004 - Structure 004:
 8 88f7: 20,21,15,24,21,15,ff                  Unknown Calibration            20, 21, 15, 24, 21, 15, ff              32,  33,  21,  36,  33,  21, 255
 
 
-8 88fe: 50,00             Rfc+ae Sc0057       word        50                  80
-8 8900: a0,ff             Rfc+b0 Sc0058       word      ffa0                 -96
-8 8902: 50,00             Rfc+b2 Sc0059       word        50                  80
-8 8904: a0,00             Rfc+b4 Sc0060       word        a0                 160
+
+TOTTV1 - TV_PRESS_STARTUP_TOT_MAX:
+8 88fe: 50,00             Rfc+ae TOTTV1       word        50               10.00
+
+TOTTV2 - TV_PRESS_WORST_CASE_ENGAGEMENT_TOT_MIN:
+8 8900: a0,ff             Rfc+b0 TOTTV2       word      ffa0              -12.00
+
+TOTTV3 - TV_PRESS_MODERATE_ENGAGEMENT_TOT_MIN:
+8 8902: 50,00             Rfc+b2 TOTTV3       word        50             10.0000
+
+TOTTV4 - TV_PRESS_DYNAMIC_COLD_TRANS_ADDER_MAX_TOT:
+8 8904: a0,00             Rfc+b4 TOTTV4       word        a0             20.0000
 
 St0005 - Structure 005:
 8 8906: 00      struct     0
@@ -5871,14 +5907,20 @@ St0014 - Structure 014:
 8 89f9: 01                                    Unknown Calibration                                     1                                             1
 
 
-8 89fa: cd,2c             Rfc+1aa Sc0084      word      2ccd               11469
-8 89fc: cd,4c             Rfc+1ac Sc0085      word      4ccd               19661
+
+RTNVMN - RPM_TO_MPH_RATIO_KAM_MIN:
+8 89fa: cd,2c             Rfc+1aa RTNVMN      word      2ccd              0.7000
+
+RTNVMX - RPM_TO_MPH_RATIO_KAM_MAX:
+8 89fc: cd,4c             Rfc+1ac RTNVMX      word      4ccd              1.2000
 
 
 8 89fe: 29,ac,20,08,00,80                     Unknown Calibration                29, ac, 20,  8,  0, 80                   41, 172,  32,   8,   0, 128
 
 
-8 8a04: 80,3b             Rfc+1b4 Sc0086      word      3b80               15232
+
+RATIV - TPS_SUB_VALUE:
+8 8a04: 80,3b             Rfc+1b4 RATIV       word      3b80              1.1900
 
 
 8 8a06: 7b,14                                 Unknown Calibration                                7b, 14                                      123,  20
@@ -6533,31 +6575,49 @@ Rfe_EndAddr - Rbase Rfe end next address:
 8 944a: 14                Rfe+e Sc0095        byte        14                  20
 8 944b: 0a                Rfe+f Sc0096        byte         a                  10
 8 944c: 05                Rfe+10 Sc0097       byte         5                   5
-8 944d: 01                Rfe+11 Sc0098       byte         1                   1
+
+BIHP - BRAKE_SW_PRESENT:
+8 944d: 01                Rfe+11 BIHP         byte         1                   1
 8 944e: 00                Rfe+12 Sc0099       byte         0                   0
 
 
 8 944f: 02,00,00                              Unknown Calibration                             2,  0,  0                                   2,   0,   0
 
 
-8 9452: 04                Rfe+16 Sc0100       byte         4                   4
-8 9453: 06                Rfe+17 Sc0101       byte         6                   6
-8 9454: 01                Rfe+18 Sc0102       byte         1                   1
+
+TSTRAT - TRANSMISSION_STRAT:
+8 9452: 04                Rfe+16 TSTRAT       byte         4                   4
+
+TRLOAD - TRANSMISSION_TYPE:
+8 9453: 06                Rfe+17 TRLOAD       byte         6                   6
+
+VSTYPE - SPEED_SENSOR_PRESENT:
+8 9454: 01                Rfe+18 VSTYPE       byte         1                   1
 
 
 8 9455: ff,00,10                              Unknown Calibration                            ff,  0, 10                                 255,   0,  16
 
 
-8 9458: ff                Rfe+1c Sc0103       byte        ff                 255
+
+NCNT - CRANK_MODE_EXIT_MIN_PIP:
+8 9458: ff                Rfe+1c NCNT         byte        ff                 255
 
 
 8 9459: ff                                    Unknown Calibration                                    ff                                           255
 
 
-8 945a: b0,04             Rfe+1e Sc0104       word       4b0                1200
-8 945c: c8,00             Rfe+20 Sc0105       word        c8                 200
-8 945e: e8,03             Rfe+22 Sc0106       word       3e8                1000
-8 9460: 20,03             Rfe+24 Sc0107       word       320                 800
+
+UNRPM - UNDERSPEED_RPM:
+8 945a: b0,04             Rfe+1e UNRPM        word       4b0              300.00
+
+UNRPMH - UNDERSPEED_RPM_HYST:
+8 945c: c8,00             Rfe+20 UNRPMH       word        c8               50.00
+
+NRUN - CRANK_MODE_EXIT_RPM:
+8 945e: e8,03             Rfe+22 NRUN         word       3e8              250.00
+
+NSTALL - CRANK_MODE_REENTER_RPM:
+8 9460: 20,03             Rfe+24 NSTALL       word       320              200.00
 
 
 8 9462: 78,28,00,32                           Unknown Calibration                        78, 28,  0, 32                            120,  40,   0,  50
@@ -6591,8 +6651,14 @@ St0031 - Structure 031:
 8 946d: 61,80,a2,80,57                        Unknown Calibration                    61, 80, a2, 80, 57                        97, 128, 162, 128,  87
 
 
-8 9472: 80,f7             Rfe+36 Sc0108       word      f780               63360
-8 9474: 00,0a             Rfe+38 Sc0109       word       a00                2560
+
+TAPMAX - SELF_TEST_TPS_MAX:
+8 9472: 80,f7             Rfe+36 TAPMAX       word      f780              4.9500
+
+TAPMIN - SELF_TEST_TPS_MIN:
+8 9474: 00,0a             Rfe+38 TAPMIN       word       a00              0.2000
+
+Sc0110 - Rfe+3a:
 8 9476: 80,77             Rfe+3a Sc0110       word      7780               30592
 8 9478: 00,ac             Rfe+3c Sc0111       word      ac00               44032
 8 947a: 33,01             Rfe+3e Sc0112       word       133                 307
