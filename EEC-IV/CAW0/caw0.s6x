@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<S6x version="1.00" generated="2025-01-27 20:40:27">
-  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="false" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="2000" XdfBaseOffsetSubtract="true" DateCreated="2025-01-26T17:16:51.7946225Z" DateUpdated="2025-01-28T04:40:09.5521737Z" IdentificationStatus="0">
+<S6x version="1.00" generated="2025-02-08 16:06:17">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="false" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="2000" XdfBaseOffsetSubtract="true" DateCreated="2025-01-26T17:16:51.7946225Z" DateUpdated="2025-02-09T00:05:44.1456356Z" IdentificationStatus="0">
     <Label>caw0.s6x</Label>
     <BanksProperties>
       <BankProperties BankNum="8" AddressBin="00000" />
@@ -813,6 +813,66 @@
     <Scalar BankNum="8" AddressInt="29814" DuplicateNum="0" AddressBinInt="29814" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="Sc0110" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-02-04T03:20:06.2787604Z" DateUpdated="2025-02-04T06:52:54.5892801Z" IdentificationStatus="0">
       <Label>Rfe+3a</Label>
       <Comments>ENDED HERE 2/3/25</Comments>
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="29818" DuplicateNum="0" AddressBinInt="29818" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="DIAG_TOOL_DELAY_TIME" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-08T23:31:54.9009395Z" DateUpdated="2025-02-08T23:39:36.8113161Z" IdentificationStatus="0">
+      <Label>DIAG_TOOL_DELAY_TIME</Label>
+      <Comments>947a</Comments>
+      <ScaleExpression>X/1024</ScaleExpression>
+      <Units>SECONDS</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="29820" DuplicateNum="0" AddressBinInt="29820" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="DIAG_TOOL_POWERUP_DELAY" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-08T23:31:54.9009395Z" DateUpdated="2025-02-08T23:40:08.0369563Z" IdentificationStatus="0">
+      <Label>DIAG_TOOL_POWERUP_DELAY</Label>
+      <Comments>947c</Comments>
+      <ScaleExpression>X/1024</ScaleExpression>
+      <Units>SECONDS</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="29863" DuplicateNum="0" AddressBinInt="29863" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="VSSMN1" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-08T23:31:54.9009395Z" DateUpdated="2025-02-08T23:52:21.9293661Z" IdentificationStatus="0">
+      <Label>VSS_TEST_MIN_MPH</Label>
+      <Comments>94a7</Comments>
+      <ScaleExpression>X/2</ScaleExpression>
+      <Units>MPH</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="29864" DuplicateNum="0" AddressBinInt="29864" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="VSSSW" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="0" Max="1" DateCreated="2025-02-08T23:31:54.9009395Z" DateUpdated="2025-02-08T23:53:38.6742761Z" IdentificationStatus="0">
+      <Label>VSS_TEST_SW</Label>
+      <Comments>94a8</Comments>
+      <ScaleExpression>X</ScaleExpression>
+      <Units>SW</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="29865" DuplicateNum="0" AddressBinInt="29865" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="VSSTIM" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-08T23:31:54.9009395Z" DateUpdated="2025-02-08T23:55:28.6823414Z" IdentificationStatus="0">
+      <Label>VSS_TEST_MIN_TIME</Label>
+      <Comments>94a9</Comments>
+      <ScaleExpression>X/8</ScaleExpression>
+      <Units>SECS</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="29924" DuplicateNum="0" AddressBinInt="29924" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="Sc0137" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-02-08T23:31:54.9009395Z" DateUpdated="2025-02-09T00:05:44.1446359Z" IdentificationStatus="0">
+      <Label>Rfe+a8</Label>
+      <Comments />
       <ScaleExpression>X</ScaleExpression>
       <Units />
       <IdentificationDetails />

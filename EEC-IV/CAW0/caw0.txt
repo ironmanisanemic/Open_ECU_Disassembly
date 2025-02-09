@@ -1777,13 +1777,13 @@ Sub0067:
 
 8 307d: 91,10,a8             orrb  Ra8,10             Ra8 |= 10;           
 8 3080: 71,f7,a2             an2b  Ra2,f7             Ra2 &= f7;           
-8 3083: b3,fe,6c,42          ldb   R42,[Rfe+6c]       R42 = [Sc0129];      
+8 3083: b3,fe,6c,42          ldb   R42,[Rfe+6c]       R42 = [VSSSW];       
 8 3087: e0,42,45             djnz  R42,30cf           R42--; if (R42 !=  0) goto 30cf;
 8 308a: 9b,fe,18,00          cmpb  0,[Rfe+18]                              
 8 308e: df,3f                je    30cf               if (0 == [VSTYPE]) goto 30cf;
 8 3090: b0,8d,42             ldb   R42,R8d            R42 = R8d;           
 8 3093: 9b,fe,6b,42          cmpb  R42,[Rfe+6b]                            
-8 3097: d3,03                jnc   309c               if ((uns) R42 < [Sc0128]) goto 309c;
+8 3097: d3,03                jnc   309c               if ((uns) R42 < [VSSMN1]) goto 309c;
 8 3099: 91,08,a2             orrb  Ra2,8              Ra2 |= 8;            
 8 309c: ef,44,fb             call  2be3               USWordLU(FN689V,Rbe);
 8 309f: 12,c3,be,00                                   #args                
@@ -1808,7 +1808,7 @@ Sub0067:
 8 30d1: 3b,a2,f7             jb    B3,Ra2,30cb        if (B3_Ra2) goto 30cb;
 8 30d4: b3,ea,52,42          ldb   R42,[Rea+52]       R42 = [1d2];         
 8 30d8: 9b,fe,6d,42          cmpb  R42,[Rfe+6d]                            
-8 30dc: d1,03                jleu  30e1               if ((uns) R42 <= [Sc0130]) goto 30e1;
+8 30dc: d1,03                jleu  30e1               if ((uns) R42 <= [VSSTIM]) goto 30e1;
 8 30de: 91,04,2f             orrb  R2f,4              R2f |= 4;            
 8 30e1: ef,ad,00             call  3191               Sub0068(2);          
 8 30e4: 02                                            #args                
@@ -2009,10 +2009,10 @@ Sub0077:
 8 32d5: 38,30,25             jb    B0,R30,32fd        if (B0_R30) goto 32fd;
 8 32d8: a3,ea,b4,3a          ldw   R3a,[Rea+b4]       R3a = [134];         
 8 32dc: 8b,fe,40,3a          cmpw  R3a,[Rfe+40]                            
-8 32e0: d3,22                jnc   3304               if ((uns) R3a < [Sc0113]) goto 3304;
+8 32e0: d3,22                jnc   3304               if ((uns) R3a < [DIAG_TOOL_POWERUP_DELAY]) goto 3304;
 8 32e2: a3,ea,4e,3a          ldw   R3a,[Rea+4e]       R3a = [1ce];         
 8 32e6: 8b,fe,3e,3a          cmpw  R3a,[Rfe+3e]                            
-8 32ea: d3,18                jnc   3304               if ((uns) R3a < [Sc0112]) goto 3304;
+8 32ea: d3,18                jnc   3304               if ((uns) R3a < [DIAG_TOOL_DELAY_TIME]) goto 3304;
 8 32ec: fa                   di                       disable ints;        
 8 32ed: ff                   ff                                            
 8 32ee: 71,df,4a             an2b  R4a,df             R4a &= df;           
@@ -6661,8 +6661,12 @@ TAPMIN - SELF_TEST_TPS_MIN:
 Sc0110 - Rfe+3a:
 8 9476: 80,77             Rfe+3a Sc0110       word      7780               30592
 8 9478: 00,ac             Rfe+3c Sc0111       word      ac00               44032
-8 947a: 33,01             Rfe+3e Sc0112       word       133                 307
-8 947c: 33,01             Rfe+40 Sc0113       word       133                 307
+
+DIAG_TOOL_DELAY_TIME:
+8 947a: 33,01             Rfe+3e DIAG_TOOL_DELAY_TIME    word       133              0.2998
+
+DIAG_TOOL_POWERUP_DELAY:
+8 947c: 33,01             Rfe+40 DIAG_TOOL_POWERUP_DELAY    word       133              0.2998
 
 8 947e: 0a                Rfe+42 Sc0114       byte         a                  10
 8 947f: 05                Rfe+43 Sc0115       byte         5                   5
@@ -6734,9 +6738,15 @@ St0038 - Structure 038:
 8 94a4: 40,01             Rfe+68 Sc0126       word       140                 320
 
 8 94a6: 53                Rfe+6a Sc0127       byte        53                  83
-8 94a7: 08                Rfe+6b Sc0128       byte         8                   8
-8 94a8: 01                Rfe+6c Sc0129       byte         1                   1
-8 94a9: 10                Rfe+6d Sc0130       byte        10                  16
+
+VSSMN1 - VSS_TEST_MIN_MPH:
+8 94a7: 08                Rfe+6b VSSMN1       byte         8              4.0000
+
+VSSSW - VSS_TEST_SW:
+8 94a8: 01                Rfe+6c VSSSW        byte         1                   1
+
+VSSTIM - VSS_TEST_MIN_TIME:
+8 94a9: 10                Rfe+6d VSSTIM       byte        10              2.0000
 
 
 8 94aa: fe,b4                                 Unknown Calibration                                fe, b4                                      254, 180
@@ -6768,6 +6778,8 @@ St0038 - Structure 038:
 
 
 8 94e2: 8f,42             Rfe+a6 Sc0136       word      428f               17039
+
+Sc0137 - Rfe+a8:
 8 94e4: 00,4b             Rfe+a8 Sc0137       word      4b00               19200
 
         Inc   8 953b: Rfe+ff  struct    St0039 - Structure 039
