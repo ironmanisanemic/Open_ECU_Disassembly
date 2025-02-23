@@ -2073,7 +2073,7 @@ SET_RPM_FLAGS:
 8 3575: 20,41                sjmp  35b8               goto 35b8;           
 
 8 3577: 8b,fa,5c,b8          cmpw  Rb8,[Rfa+5c]                            
-8 357b: db,1c                jc    3599               if ((uns) [RPMX4] >= [Sc0262]) goto 3599;
+8 357b: db,1c                jc    3599               if ((uns) [RPMX4] >= [NSTALL]) goto 3599;
 8 357d: 91,20,a7             orrb  Ra7,20             [FLAGS_A7] |= 20;    
 8 3580: 91,40,a0             orrb  Ra0,40             [FLAGS_A0] |= 40;    
 8 3583: 91,80,a7             orrb  Ra7,80             [FLAGS_A7] |= 80;    
@@ -2084,12 +2084,12 @@ SET_RPM_FLAGS:
 8 3594: 71,df,26             an2b  R26,df             [FLAGS_26] &= df;    
 8 3597: 20,1f                sjmp  35b8               goto 35b8;           
 
-8 3599: a3,fa,58,30          ldw   R30,[Rfa+58]       R30 = [Sc0260];      
+8 3599: a3,fa,58,30          ldw   R30,[Rfa+58]       R30 = [UNRPM];       
 8 359d: 88,b8,30             cmpw  R30,Rb8                                 
 8 35a0: d1,02                jleu  35a4               if ((uns) R30 <= [RPMX4]) goto 35a4;
 8 35a2: 20,14                sjmp  35b8               goto 35b8;           
 
-8 35a4: 67,fa,5a,30          ad2w  R30,[Rfa+5a]       R30 += [Sc0261];     
+8 35a4: 67,fa,5a,30          ad2w  R30,[Rfa+5a]       R30 += [UNRPMH];     
 8 35a8: 88,b8,30             cmpw  R30,Rb8                                 
 8 35ab: db,09                jc    35b6               if ((uns) R30 >= [RPMX4]) goto 35b6;
 8 35ad: fa                   di                       disable ints;        
@@ -10170,9 +10170,15 @@ Tb020 - Table 020:
 8 8eff: ff                                    Unknown Calibration                                    ff                                           255
 
 
-8 8f00: b0,04             Rfa+58 Sc0260       word       4b0                1200
-8 8f02: 58,02             Rfa+5a Sc0261       word       258                 600
-8 8f04: 20,03             Rfa+5c Sc0262       word       320                 800
+
+UNRPM:
+8 8f00: b0,04             Rfa+58 UNRPM        word       4b0                1200
+
+UNRPMH:
+8 8f02: 58,02             Rfa+5a UNRPMH       word       258                 600
+
+NSTALL:
+8 8f04: 20,03             Rfa+5c NSTALL       word       320                 800
 
 8 8f06: 80                Rfa+5e Sc0263       byte        80                 128
 8 8f07: 21                Rfa+5f Sc0264       byte        21                  33

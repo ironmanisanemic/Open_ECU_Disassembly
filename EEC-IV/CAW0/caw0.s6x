@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<S6x version="1.00" generated="2025-02-08 16:06:17">
-  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="false" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="2000" XdfBaseOffsetSubtract="true" DateCreated="2025-01-26T17:16:51.7946225Z" DateUpdated="2025-02-09T00:05:44.1456356Z" IdentificationStatus="0">
+<S6x version="1.00" generated="2025-02-23 11:29:08">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="false" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="2000" XdfBaseOffsetSubtract="true" DateCreated="2025-01-26T17:16:51.7946225Z" DateUpdated="2025-02-23T19:28:58.0055347Z" IdentificationStatus="0">
     <Label>caw0.s6x</Label>
     <BanksProperties>
       <BankProperties BankNum="8" AddressBin="00000" />
@@ -760,7 +760,7 @@
       <Category2 />
       <Category3 />
     </Scalar>
-    <Scalar BankNum="8" AddressInt="29788" DuplicateNum="0" AddressBinInt="29788" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="UNRPMH" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-02-04T03:20:06.2787604Z" DateUpdated="2025-02-04T06:43:17.5092421Z" IdentificationStatus="0">
+    <Scalar BankNum="8" AddressInt="29788" DuplicateNum="0" AddressBinInt="29788" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="UNRPMH" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-02-04T03:20:06.2787604Z" DateUpdated="2025-02-23T19:24:05.9665394Z" IdentificationStatus="0">
       <Label>UNDERSPEED_RPM_HYST</Label>
       <Comments>945c</Comments>
       <ScaleExpression>X/4</ScaleExpression>
@@ -780,8 +780,8 @@
       <Category2 />
       <Category3 />
     </Scalar>
-    <Scalar BankNum="8" AddressInt="29792" DuplicateNum="0" AddressBinInt="29792" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="NSTALL" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-02-04T03:20:06.2787604Z" DateUpdated="2025-02-04T06:48:15.6317194Z" IdentificationStatus="0">
-      <Label>CRANK_MODE_REENTER_RPM</Label>
+    <Scalar BankNum="8" AddressInt="29792" DuplicateNum="0" AddressBinInt="29792" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="NSTALL" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-02-04T03:20:06.2787604Z" DateUpdated="2025-02-23T19:28:58.0053484Z" IdentificationStatus="0">
+      <Label>CRANK_MODE_RE-ENTER_RPM</Label>
       <Comments>9460</Comments>
       <ScaleExpression>X/4</ScaleExpression>
       <Units>RPM</Units>
@@ -903,6 +903,15 @@ Byte
       <Category2 />
       <Category3 />
     </Structure>
+    <Structure BankNum="8" AddressInt="2769" DuplicateNum="0" AddressBinInt="2769" Skip="false" Number="6" isCalibrationElement="false" ShortLabel="OSt8_002" OutputComments="false" DateCreated="2025-02-09T00:42:51.0173812Z" DateUpdated="2025-02-09T01:02:28.5823079Z" IdentificationStatus="0">
+      <StructDef>ByteHex</StructDef>
+      <Label>Other Structure 8 002</Label>
+      <Comments />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Structure>
   </Structures>
   <Routines>
     <Routine BankNum="8" AddressInt="50" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="RESET_ALL" OutputComments="false" DateCreated="2025-01-26T17:16:51.7946225Z" DateUpdated="2025-01-28T03:58:05.9419489Z" IdentificationStatus="0" Skip="false">
@@ -956,8 +965,8 @@ Ree = 380</Comments>
       <Category2 />
       <Category3 />
     </Routine>
-    <Routine BankNum="8" AddressInt="1820" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="UPDATE_AD?" OutputComments="false" DateCreated="2025-01-26T17:16:51.7946225Z" DateUpdated="2025-01-28T04:39:59.920503Z" IdentificationStatus="0" Skip="false">
-      <Label>UPDATE_AD?</Label>
+    <Routine BankNum="8" AddressInt="1820" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="SET_RPM_FLAGS" OutputComments="false" DateCreated="2025-01-26T17:16:51.7946225Z" DateUpdated="2025-02-23T18:52:39.7309034Z" IdentificationStatus="0" Skip="false">
+      <Label>SET_RPM_FLAGS</Label>
       <Comments>8 271c</Comments>
       <IdentificationDetails />
       <Category />
@@ -1045,6 +1054,18 @@ Ree = 380</Comments>
   </Routines>
   <Operations />
   <Registers>
+    <Register AddressInt="0" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-02-23T19:15:37.7234834Z" DateUpdated="2025-02-23T19:15:47.1560109Z" IdentificationStatus="0">
+      <Label>ZERO</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
     <Register AddressInt="20" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-01-26T17:43:42.6309931Z" DateUpdated="2025-01-26T17:44:01.773128Z" IdentificationStatus="0">
       <Label>HSO_IPEND2</Label>
       <ByteLabel />
@@ -1131,6 +1152,18 @@ Ree = 380</Comments>
       <Category2 />
       <Category3 />
     </Register>
+    <Register AddressInt="66" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-02-23T18:56:33.3421614Z" DateUpdated="2025-02-23T18:56:54.1061033Z" IdentificationStatus="0">
+      <Label>GEN_42</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
     <Register AddressInt="69" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-01-26T17:44:26.2804303Z" DateUpdated="2025-01-26T17:46:39.8931991Z" IdentificationStatus="0">
       <Label>HSI_DATA</Label>
       <ByteLabel />
@@ -1157,6 +1190,52 @@ Ree = 380</Comments>
     </Register>
     <Register AddressInt="140" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-01-26T18:00:18.5595017Z" DateUpdated="2025-01-26T18:01:10.9408982Z" IdentificationStatus="0">
       <Label>BG_POINTER</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="167" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-02-23T18:55:08.1737078Z" DateUpdated="2025-02-23T19:12:11.6142818Z" IdentificationStatus="0">
+      <Label>FLAGS_A7</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <BitFlags>
+        <BitFlag Position="7" Skip="false" ShortLabel="CRANKING" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2025-02-23T19:11:04.1288278Z" DateUpdated="2025-02-23T19:12:04.9702831Z" IdentificationStatus="0">
+          <Label>CRANKING</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+      </BitFlags>
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="184" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-02-23T18:56:02.0704444Z" DateUpdated="2025-02-23T18:56:19.8995554Z" IdentificationStatus="0">
+      <Label>RPM</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X/4</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="212" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-02-23T18:58:19.6981131Z" DateUpdated="2025-02-23T18:58:34.0233849Z" IdentificationStatus="0">
+      <Label>PIPCNT</Label>
       <ByteLabel />
       <WordLabel />
       <Comments />
@@ -1229,6 +1308,18 @@ Ree = 380</Comments>
     </Register>
     <Register AddressInt="286" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-01-26T19:01:34.6499826Z" DateUpdated="2025-01-26T19:02:50.804372Z" IdentificationStatus="0">
       <Label />
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="539" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-02-23T18:57:41.3527394Z" DateUpdated="2025-02-23T18:57:56.9671893Z" IdentificationStatus="0">
+      <Label>ECTCNT</Label>
       <ByteLabel />
       <WordLabel />
       <Comments />

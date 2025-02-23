@@ -89,7 +89,7 @@ RESET_ALL:
 8 204d: 17,05                incb  R05                WD_TIMER++;          
 8 204f: 89,ce,03,10          cmpw  R10,3ce                                 
 8 2053: d3,e5                jnc   203a               if ((uns) STACK < 3ce) goto 203a;
-8 2055: a1,58,57,14          ldw   R14,5758           [HSO_IPEND2] = OSt8_008;
+8 2055: a1,58,57,14          ldw   R14,5758           [HSO_IPEND2] = OSt8_007;
 8 2059: 89,ff,ff,14          cmpw  R14,ffff                                
 8 205d: df,20                je    207f               if ([HSO_IPEND2] == ffff) goto 207f;
 8 205f: a2,15,1a             ldw   R1a,[R14++]        R1a = [R14++];       
@@ -179,8 +179,8 @@ SET_TASKLIST:
 8 2146: c3,01,00,1f,00       stw   [1f00],0           [EC_1f00] = 0;       
 8 214b: c3,01,00,1f,00       stw   [1f00],0           [EC_1f00] = 0;       
 8 2150: c3,01,00,1f,00       stw   [1f00],0           [EC_1f00] = 0;       
-8 2155: b1,0f,42             ldb   R42,f              R42 = f;             
-8 2158: c7,01,ff,1f,42       stb   [1fff],R42         [EC_1fff] = R42;     
+8 2155: b1,0f,42             ldb   R42,f              [GEN_42] = f;        
+8 2158: c7,01,ff,1f,42       stb   [1fff],R42         [EC_1fff] = [GEN_42];
 8 215d: 36,2a,04             jnb   B6,R2a,2164        if (<NO_START> == 0) goto 2164;
 8 2160: b1,1c,8c             ldb   R8c,1c             [BG_POINTER] = 1c;   
 8 2163: f0                   ret                      return;              
@@ -200,7 +200,7 @@ SET_TASKLIST:
 SUBROUTINE_TASKLIST:
 8 2170: d9,56                56d9  Bank 8 Vector      CHECK_CONSOLE_D
 8 2172: a3,26                26a3  Bank 8 Vector      CHECK_KAM_1
-8 2174: 1c,27                271c  Bank 8 Vector      UPDATE_AD?
+8 2174: 1c,27                271c  Bank 8 Vector      SET_RPM_FLAGS
 8 2176: 70,27                2770  Bank 8 Vector      READ_AD
 8 2178: 3b,55                553b  Bank 8 Vector      Sub0170
 8 217a: 1d,28                281d  Bank 8 Vector      Sub0032
@@ -214,7 +214,7 @@ SUBROUTINE_TASKLIST:
 8 218a: 05,21                2105  Bank 8 Vector      SET_TASKLIST
 8 218c: d9,56                56d9  Bank 8 Vector      CHECK_CONSOLE_D
 8 218e: a3,26                26a3  Bank 8 Vector      CHECK_KAM_1
-8 2190: 1c,27                271c  Bank 8 Vector      UPDATE_AD?
+8 2190: 1c,27                271c  Bank 8 Vector      SET_RPM_FLAGS
 8 2192: 70,27                2770  Bank 8 Vector      READ_AD
 8 2194: 3b,55                553b  Bank 8 Vector      Sub0170
 8 2196: 1d,28                281d  Bank 8 Vector      Sub0032
@@ -226,7 +226,7 @@ SUBROUTINE_TASKLIST:
 8 21a2: 05,21                2105  Bank 8 Vector      SET_TASKLIST
 8 21a4: d9,56                56d9  Bank 8 Vector      CHECK_CONSOLE_D
 8 21a6: a3,26                26a3  Bank 8 Vector      CHECK_KAM_1
-8 21a8: 1c,27                271c  Bank 8 Vector      UPDATE_AD?
+8 21a8: 1c,27                271c  Bank 8 Vector      SET_RPM_FLAGS
 8 21aa: 70,27                2770  Bank 8 Vector      READ_AD
 8 21ac: 3b,55                553b  Bank 8 Vector      Sub0170
 8 21ae: 1d,28                281d  Bank 8 Vector      Sub0032
@@ -592,9 +592,9 @@ Sub0021:
 8 2565: 07,d2                incw  Rd2                Rd2++;               
 8 2567: c3,ee,d8,72          stw   [Ree+d8],R72       [358] = R72;         
 8 256b: c7,ee,da,74          stb   [Ree+da],R74       [35a] = R74;         
-8 256f: 17,d4                incb  Rd4                Rd4++;               
-8 2571: d7,02                jne   2575               if ([HSI_DATA] != Rd4) goto 2575;
-8 2573: 15,d4                decb  Rd4                Rd4--;               
+8 256f: 17,d4                incb  Rd4                [PIPCNT]++;          
+8 2571: d7,02                jne   2575               if ([HSI_DATA] != [PIPCNT]) goto 2575;
+8 2573: 15,d4                decb  Rd4                [PIPCNT]--;          
 8 2575: 91,08,4e             orrb  R4e,8              R4e |= 8;            
 8 2578: f0                   ret                      return;              
 
@@ -711,11 +711,11 @@ Sub0025:
 
 CHECK_KAM_1:
 8 26a3: 71,7f,28             an2b  R28,7f             <KAM_ERROR> = 0;     
-8 26a6: b1,aa,42             ldb   R42,aa             R42 = aa;            
+8 26a6: b1,aa,42             ldb   R42,aa             [GEN_42] = aa;       
 8 26a9: b1,c6,30             ldb   R30,c6             R30 = c6;            
 8 26ac: b1,75,32             ldb   R32,75             R32 = 75;            
 8 26af: 9b,de,80,42          cmpb  R42,[Rde+80]                            
-8 26b3: d7,20                jne   26d5               if (R42 != [Rde+80]) goto 26d5;
+8 26b3: d7,20                jne   26d5               if ([GEN_42] != [Rde+80]) goto 26d5;
 8 26b5: 9b,de,da,30          cmpb  R30,[Rde+da]                            
 8 26b9: d7,1a                jne   26d5               if (R30 != [Rde+da]) goto 26d5;
 8 26bb: 9b,de,f2,32          cmpb  R32,[Rde+f2]                            
@@ -728,7 +728,7 @@ CHECK_KAM_1:
 8 26d3: 20,46                sjmp  271b               goto 271b;           
 
 8 26d5: 91,80,28             orrb  R28,80             <KAM_ERROR> = 1;     
-8 26d8: c7,de,80,42          stb   [Rde+80],R42       [Rde+80] = R42;      
+8 26d8: c7,de,80,42          stb   [Rde+80],R42       [Rde+80] = [GEN_42]; 
 8 26dc: c7,de,da,30          stb   [Rde+da],R30       [Rde+da] = R30;      
 8 26e0: c7,de,f2,32          stb   [Rde+f2],R32       [Rde+f2] = R32;      
 8 26e4: 91,40,2d             orrb  R2d,40             <VIP_KAM> = 1;       
@@ -750,40 +750,40 @@ CHECK_KAM_1:
 
 8 271b: f0                   ret                      return;              
 
-UPDATE_AD?:
+SET_RPM_FLAGS:
 8 271c: 30,e1,05             jnb   B0,Re1,2724        if (!B0_Re1) goto 2724;
-8 271f: 71,7f,a7             an2b  Ra7,7f             Ra7 &= 7f;           
+8 271f: 71,7f,a7             an2b  Ra7,7f             <CRANKING> = 0;      
 8 2722: 20,48                sjmp  276c               goto 276c;           
 
-8 2724: 37,a7,1a             jnb   B7,Ra7,2741        if (!B7_Ra7) goto 2741;
+8 2724: 37,a7,1a             jnb   B7,Ra7,2741        if (<CRANKING> == 0) goto 2741;
 8 2727: 8b,fe,22,b8          cmpw  Rb8,[Rfe+22]                            
-8 272b: d1,24                jleu  2751               if ((uns) Rb8 <= [NRUN]) goto 2751;
-8 272d: b3,ec,9b,42          ldb   R42,[Rec+9b]       R42 = [21b];         
+8 272b: d1,24                jleu  2751               if ((uns) [RPM] <= [NRUN]) goto 2751;
+8 272d: b3,ec,9b,42          ldb   R42,[Rec+9b]       [GEN_42] = [ECTCNT]; 
 8 2731: 99,08,42             cmpb  R42,8                                   
-8 2734: d3,28                jnc   275e               if ((uns) R42 < 8) goto 275e;
+8 2734: d3,28                jnc   275e               if ((uns) [GEN_42] < 8) goto 275e;
 8 2736: 9b,fe,1c,d4          cmpb  Rd4,[Rfe+1c]                            
-8 273a: d3,22                jnc   275e               if ((uns) Rd4 < [NCNT]) goto 275e;
-8 273c: 71,7f,a7             an2b  Ra7,7f             Ra7 &= 7f;           
+8 273a: d3,22                jnc   275e               if ((uns) [PIPCNT] < [NCNT]) goto 275e;
+8 273c: 71,7f,a7             an2b  Ra7,7f             <CRANKING> = 0;      
 8 273f: 20,1d                sjmp  275e               goto 275e;           
 
 8 2741: 8b,fe,24,b8          cmpw  Rb8,[Rfe+24]                            
-8 2745: db,0e                jc    2755               if ((uns) Rb8 >= [NSTALL]) goto 2755;
-8 2747: 91,80,a7             orrb  Ra7,80             Ra7 |= 80;           
-8 274a: c7,ec,9b,00          stb   [Rec+9b],0         [21b] = 0;           
+8 2745: db,0e                jc    2755               if ((uns) [RPM] >= [NSTALL]) goto 2755;
+8 2747: 91,80,a7             orrb  Ra7,80             <CRANKING> = 1;      
+8 274a: c7,ec,9b,00          stb   [Rec+9b],0         [ECTCNT] = 0;        
 8 274e: c0,b6,00             stw   Rb6,0              Rb6 = 0;             
-8 2751: 11,d4                clrb  Rd4                Rd4 = 0;             
+8 2751: 11,d4                clrb  Rd4                [PIPCNT] = 0;        
 8 2753: 20,09                sjmp  275e               goto 275e;           
 
 8 2755: a3,fe,1e,30          ldw   R30,[Rfe+1e]       R30 = [UNRPM];       
 8 2759: 88,b8,30             cmpw  R30,Rb8                                 
-8 275c: d1,05                jleu  2763               if ((uns) R30 <= Rb8) goto 2763;
-8 275e: 91,40,a7             orrb  Ra7,40             Ra7 |= 40;           
+8 275c: d1,05                jleu  2763               if ((uns) R30 <= [RPM]) goto 2763;
+8 275e: 91,40,a7             orrb  Ra7,40             [FLAGS_A7] |= 40;    
 8 2761: 20,0c                sjmp  276f               goto 276f;           
 
 8 2763: 67,fe,20,30          ad2w  R30,[Rfe+20]       R30 += [UNRPMH];     
 8 2767: 88,b8,30             cmpw  R30,Rb8                                 
-8 276a: db,03                jc    276f               if ((uns) R30 >= Rb8) goto 276f;
-8 276c: 71,bf,a7             an2b  Ra7,bf             Ra7 &= bf;           
+8 276a: db,03                jc    276f               if ((uns) R30 >= [RPM]) goto 276f;
+8 276c: 71,bf,a7             an2b  Ra7,bf             [FLAGS_A7] &= bf;    
 8 276f: f0                   ret                      return;              
 
 READ_AD:
@@ -830,7 +830,7 @@ Sub0029:
 8 27c2: ef,87,04             call  2c4c               Sub0044();           
 8 27c5: c3,ea,80,3e          stw   [Rea+80],R3e       [100] = R3e;         
 8 27c9: 89,78,05,b8          cmpw  Rb8,578                                 
-8 27cd: d1,08                jleu  27d7               if ((uns) Rb8 <= 578) goto 27d7;
+8 27cd: d1,08                jleu  27d7               if ((uns) [RPM] <= 578) goto 27d7;
 8 27cf: 88,d6,3e             cmpw  R3e,Rd6                                 
 8 27d2: db,03                jc    27d7               if ((uns) R3e >= Rd6) goto 27d7;
 8 27d4: c0,d6,3e             stw   Rd6,R3e            Rd6 = R3e;           
@@ -855,20 +855,20 @@ Sub0031:
 8 27f4: 17,38                incb  R38                R38++;               
 8 27f6: 37,43,0b             jnb   B7,R43,2804        if (!B7_R43) goto 2804;
 8 27f9: 13,43                negb  R43                R43 = -R43;          
-8 27fb: 78,43,42             sb2b  R42,R43            R42 -= R43;          
-8 27fe: db,0c                jc    280c               if (R42 >= 0) goto 280c;
+8 27fb: 78,43,42             sb2b  R42,R43            [GEN_42] -= R43;     
+8 27fe: db,0c                jc    280c               if ([GEN_42] >= 0) goto 280c;
 8 2800: bd,ff,30             ldsbw R30,ff             R30 = (sig)ff;       
 8 2803: f0                   ret                      return;              
 
-8 2804: 74,43,42             ad2b  R42,R43            R42 += R43;          
-8 2807: d3,03                jnc   280c               if (R42 <= ff) goto 280c;
-8 2809: b1,ff,42             ldb   R42,ff             R42 = ff;            
-8 280c: 78,38,42             sb2b  R42,R38            R42 -= R38;          
-8 280f: d3,ef                jnc   2800               if (R42 < 0) goto 2800;
+8 2804: 74,43,42             ad2b  R42,R43            [GEN_42] += R43;     
+8 2807: d3,03                jnc   280c               if ([GEN_42] <= ff) goto 280c;
+8 2809: b1,ff,42             ldb   R42,ff             [GEN_42] = ff;       
+8 280c: 78,38,42             sb2b  R42,R38            [GEN_42] -= R38;     
+8 280f: d3,ef                jnc   2800               if ([GEN_42] < 0) goto 2800;
 8 2811: 99,1f,42             cmpb  R42,1f                                  
-8 2814: d1,03                jleu  2819               if ((uns) R42 <= 1f) goto 2819;
-8 2816: b1,1f,42             ldb   R42,1f             R42 = 1f;            
-8 2819: 08,42,30             shrw  R30,42             R30 = R30 >> R42;    
+8 2814: d1,03                jleu  2819               if ((uns) [GEN_42] <= 1f) goto 2819;
+8 2816: b1,1f,42             ldb   R42,1f             [GEN_42] = 1f;       
+8 2819: 08,42,30             shrw  R30,42             R30 = R30 >> [GEN_42];
 8 281c: f0                   ret                      return;              
 
 Sub0032:
@@ -876,7 +876,7 @@ Sub0032:
 8 2820: 2a,93                scall 2ab5               Sub0033();           
 8 2822: 30,30,43             jnb   B0,R30,2868        if (!B0_R30) goto 2868;
 8 2825: 9b,ec,9b,00          cmpb  0,[Rec+9b]                              
-8 2829: d7,2e                jne   2859               if (0 != [21b]) goto 2859;
+8 2829: d7,2e                jne   2859               if (0 != [ECTCNT]) goto 2859;
 8 282b: a0,38,ba             ldw   Rba,R38            Rba = R38;           
 8 282e: 20,38                sjmp  2868               goto 2868;           
 
@@ -904,11 +904,11 @@ Sub0032:
 8 2868: a3,ea,b4,14          ldw   R14,[Rea+b4]       [HSO_IPEND2] = [134];
 8 286c: 8b,f6,08,14          cmpw  R14,[Rf6+8]                             
 8 2870: d1,1d                jleu  288f               if ((uns) [HSO_IPEND2] <= [Sc0009]) goto 288f;
-8 2872: b3,ec,9b,14          ldb   R14,[Rec+9b]       [HSO_IPEND2] = [21b];
+8 2872: b3,ec,9b,14          ldb   R14,[Rec+9b]       [HSO_IPEND2] = [ECTCNT];
 8 2876: 99,08,14             cmpb  R14,8                                   
 8 2879: db,14                jc    288f               if ((uns) [HSO_IPEND2] >= 8) goto 288f;
 8 287b: 17,14                incb  R14                [HSO_IPEND2]++;      
-8 287d: c7,ec,9b,14          stb   [Rec+9b],R14       [21b] = [HSO_IPEND2];
+8 287d: c7,ec,9b,14          stb   [Rec+9b],R14       [ECTCNT] = [HSO_IPEND2];
 8 2881: 2a,32                scall 2ab5               Sub0033();           
 8 2883: 38,30,03             jb    B0,R30,2889        if (B0_R30) goto 2889;
 8 2886: a0,ba,38             ldw   R38,Rba            R38 = Rba;           
@@ -938,17 +938,17 @@ Sub0032:
 
 8 28d0: fa                   di                       disable ints;        
 8 28d1: ff                   ff                                            
-8 28d2: a0,d2,42             ldw   R42,Rd2            R42 = Rd2;           
+8 28d2: a0,d2,42             ldw   R42,Rd2            [GEN_42] = Rd2;      
 8 28d5: a3,ee,d8,30          ldw   R30,[Ree+d8]       R30 = [358];         
 8 28d9: b3,ee,da,32          ldb   R32,[Ree+da]       R32 = [35a];         
 8 28dd: 01,d2                clrw  Rd2                Rd2 = 0;             
 8 28df: fb                   ei                       enable ints;         
 8 28e0: 88,00,42             cmpw  R42,0                                   
-8 28e3: df,48                je    292d               if (R42 == 0) goto 292d;
+8 28e3: df,48                je    292d               if ([GEN_42] == 0) goto 292d;
 8 28e5: ac,32,16             ldzbw R16,R32            R16 = (uns)R32;      
 8 28e8: 4b,ee,dc,30,14       sb3w  R14,R30,[Ree+dc]   [HSO_IPEND2] = R30 - [35c];
 8 28ed: bb,ee,de,16          sbbb  R16,[Ree+de]       R16 -= [35e] - CY;   
-8 28f1: 8c,42,14             divw  R14,R42            [HSO_IPEND2] = [HSO_IPEND2]L / R42;
+8 28f1: 8c,42,14             divw  R14,R42            [HSO_IPEND2] = [HSO_IPEND2]L / [GEN_42];
 8 28f4: d5,03                jnv   28f9               if (!OV) goto 28f9;  
 8 28f6: bd,ff,14             ldsbw R14,ff             [HSO_IPEND2] = (sig)ff;
 8 28f9: a0,14,c8             ldw   Rc8,R14            Rc8 = [HSO_IPEND2];  
@@ -959,22 +959,22 @@ Sub0032:
 8 290b: 2e,cb                scall 27d8               Sub0030();           
 8 290d: a1,96,98,32          ldw   R32,9896           R32 = 9896;          
 8 2911: a1,00,76,30          ldw   R30,7600           R30 = 7600;          
-8 2915: a1,05,10,42          ldw   R42,1005           R42 = 1005;          
+8 2915: a1,05,10,42          ldw   R42,1005           [GEN_42] = 1005;     
 8 2919: 2e,ce                scall 27e9               Sub0031();           
-8 291b: a0,30,b8             ldw   Rb8,R30            Rb8 = R30;           
+8 291b: a0,30,b8             ldw   Rb8,R30            [RPM] = R30;         
 8 291e: 08,06,30             shrw  R30,6              R30 = R30 / 40;      
 8 2921: 98,00,31             cmpb  R31,0                                   
 8 2924: df,03                je    2929               if (R31 == 0) goto 2929;
 8 2926: b1,ff,30             ldb   R30,ff             R30 = ff;            
 8 2929: c7,ea,73,30          stb   [Rea+73],R30       [1f3] = R30;         
-8 292d: a3,ee,88,42          ldw   R42,[Ree+88]       R42 = [308];         
+8 292d: a3,ee,88,42          ldw   R42,[Ree+88]       [GEN_42] = [308];    
 8 2931: 8b,fe,0c,42          cmpw  R42,[Rfe+c]                             
-8 2935: db,14                jc    294b               if ((uns) R42 >= [Sc0094]) goto 294b;
+8 2935: db,14                jc    294b               if ((uns) [GEN_42] >= [Sc0094]) goto 294b;
 8 2937: 99,0a,db             cmpb  Rdb,a                                   
 8 293a: db,12                jc    294e               if ((uns) Rdb >= a) goto 294e;
-8 293c: b3,ee,95,42          ldb   R42,[Ree+95]       R42 = [315];         
+8 293c: b3,ee,95,42          ldb   R42,[Ree+95]       [GEN_42] = [315];    
 8 2940: 9b,fe,0e,42          cmpb  R42,[Rfe+e]                             
-8 2944: d1,08                jleu  294e               if ((uns) R42 <= [Sc0095]) goto 294e;
+8 2944: d1,08                jleu  294e               if ((uns) [GEN_42] <= [Sc0095]) goto 294e;
 8 2946: 91,01,e1             orrb  Re1,1              Re1 |= 1;            
 8 2949: 20,03                sjmp  294e               goto 294e;           
 
@@ -987,21 +987,21 @@ Sub0032:
 8 295e: a3,f6,10,16          ldw   R16,[Rf6+10]       R16 = [Sc0014];      
 8 2962: 34,a8,03             jnb   B4,Ra8,2968        if (!B4_Ra8) goto 2968;
 8 2965: a0,16,b4             ldw   Rb4,R16            Rb4 = R16;           
-8 2968: 4b,fd,b4,01,b4,42    sb3w  R42,Rb4,[Rfc+1b4]  R42 = Rb4 - [RATIV]; 
-8 296e: db,02                jc    2972               if (R42 >= 0) goto 2972;
-8 2970: 01,42                clrw  R42                R42 = 0;             
-8 2972: c0,be,42             stw   Rbe,R42            Rbe = R42;           
-8 2975: 48,d6,b4,42          sb3w  R42,Rb4,Rd6        R42 = Rb4 - Rd6;     
-8 2979: db,02                jc    297d               if (R42 >= 0) goto 297d;
-8 297b: 01,42                clrw  R42                R42 = 0;             
-8 297d: c0,c0,42             stw   Rc0,R42            Rc0 = R42;           
+8 2968: 4b,fd,b4,01,b4,42    sb3w  R42,Rb4,[Rfc+1b4]  [GEN_42] = Rb4 - [RATIV];
+8 296e: db,02                jc    2972               if ([GEN_42] >= 0) goto 2972;
+8 2970: 01,42                clrw  R42                [GEN_42] = 0;        
+8 2972: c0,be,42             stw   Rbe,R42            Rbe = [GEN_42];      
+8 2975: 48,d6,b4,42          sb3w  R42,Rb4,Rd6        [GEN_42] = Rb4 - Rd6;
+8 2979: db,02                jc    297d               if ([GEN_42] >= 0) goto 297d;
+8 297b: 01,42                clrw  R42                [GEN_42] = 0;        
+8 297d: c0,c0,42             stw   Rc0,R42            Rc0 = [GEN_42];      
 8 2980: 9b,fe,18,00          cmpb  0,[Rfe+18]                              
 8 2984: d7,02                jne   2988               if (0 != [VSTYPE]) goto 2988;
 8 2986: 20,94                sjmp  2a1c               goto 2a1c;           
 
 8 2988: fa                   di                       disable ints;        
 8 2989: ff                   ff                                            
-8 298a: af,ea,d1,42          ldzbw R42,[Rea+d1]       R42 = (uns)[151];    
+8 298a: af,ea,d1,42          ldzbw R42,[Rea+d1]       [GEN_42] = (uns)[151];
 8 298e: a3,ec,8e,30          ldw   R30,[Rec+8e]       R30 = [20e];         
 8 2992: b3,ec,90,32          ldb   R32,[Rec+90]       R32 = [210];         
 8 2996: c7,ea,d1,00          stb   [Rea+d1],0         [151] = 0;           
@@ -1017,11 +1017,11 @@ Sub0032:
 
 8 29b0: a0,6c,34             ldw   R34,R6c            R34 = R6c;           
 8 29b3: 98,00,42             cmpb  R42,0                                   
-8 29b6: df,55                je    2a0d               if (R42 == 0) goto 2a0d;
+8 29b6: df,55                je    2a0d               if ([GEN_42] == 0) goto 2a0d;
 8 29b8: ac,32,16             ldzbw R16,R32            R16 = (uns)R32;      
 8 29bb: 4b,ec,92,30,14       sb3w  R14,R30,[Rec+92]   [HSO_IPEND2] = R30 - [212];
 8 29c0: bb,ec,94,16          sbbb  R16,[Rec+94]       R16 -= [214] - CY;   
-8 29c4: 8c,42,14             divw  R14,R42            [HSO_IPEND2] = [HSO_IPEND2]L / R42;
+8 29c4: 8c,42,14             divw  R14,R42            [HSO_IPEND2] = [HSO_IPEND2]L / [GEN_42];
 8 29c7: d5,03                jnv   29cc               if (!OV) goto 29cc;  
 8 29c9: bd,ff,14             ldsbw R14,ff             [HSO_IPEND2] = (sig)ff;
 8 29cc: a1,9f,04,36          ldw   R36,49f            R36 = 49f;           
@@ -1121,24 +1121,26 @@ Sub0033:
 
 
 OSt8_002 - Other Structure 8 002:
-8 2ad1: 0e      ostruct    e
-8 2ad2: 0c      ostruct    c
-8 2ad3: 0a      ostruct    a
-8 2ad4: 08      ostruct    8
-8 2ad5: 04      ostruct    4
-8 2ad6: 02      ostruct    2
-8 2ad7: 45      ostruct   45
+8 2ad1: 0e      ostruct   e
+8 2ad2: 0c      ostruct   c
+8 2ad3: 0a      ostruct   a
+8 2ad4: 08      ostruct   8
+8 2ad5: 04      ostruct   4
+8 2ad6: 02      ostruct   2
 
+
+Sub0034:
+8 2ad7: 45,2c,01,fc,dc       ad3w  Rdc,Rfc,12c        Rdc = St0010;        
 8 2adc: c7,ee,9b,db          stb   [Ree+9b],Rdb       [31b] = Rdb;         
 8 2ae0: 91,04,e1             orrb  Re1,4              Re1 |= 4;            
-8 2ae3: a3,ea,98,42          ldw   R42,[Rea+98]       R42 = [NDS_RAW];     
+8 2ae3: a3,ea,98,42          ldw   R42,[Rea+98]       [GEN_42] = [NDS_RAW];
 8 2ae7: 45,10,01,fc,30       ad3w  R30,Rfc,110        R30 = St0008;        
 8 2aec: b3,fd,29,01,34       ldb   R34,[Rfc+129]      R34 = [Sc0077];      
 8 2af1: ad,06,32             ldzbw R32,6              R32 = (uns)6;        
 8 2af4: 8a,31,42             cmpw  R42,[R30++]                             
-8 2af7: d1,29                jleu  2b22               if ((uns) R42 <= [R30++]) goto 2b22;
+8 2af7: d1,29                jleu  2b22               if ((uns) [GEN_42] <= [R30++]) goto 2b22;
 8 2af9: 8a,31,42             cmpw  R42,[R30++]                             
-8 2afc: d3,05                jnc   2b03               if ((uns) R42 < [R30++]) goto 2b03;
+8 2afc: d3,05                jnc   2b03               if ((uns) [GEN_42] < [R30++]) goto 2b03;
 8 2afe: e0,32,f3             djnz  R32,2af4           R32--; if (R32 !=  0) goto 2af4;
 8 2b01: 20,1f                sjmp  2b22               goto 2b22;           
 
@@ -1162,8 +1164,8 @@ OSt8_002 - Other Structure 8 002:
 8 2b34: b1,06,34             ldb   R34,6              R34 = 6;             
 8 2b37: 9b,ee,9a,34          cmpb  R34,[Ree+9a]                            
 8 2b3b: df,0c                je    2b49               if (R34 == [31a]) goto 2b49;
-8 2b3d: a3,dc,fe,42          ldw   R42,[Rdc+fe]       R42 = [Rdc+fe];      
-8 2b41: c3,ee,e8,42          stw   [Ree+e8],R42       [368] = R42;         
+8 2b3d: a3,dc,fe,42          ldw   R42,[Rdc+fe]       [GEN_42] = [Rdc+fe]; 
+8 2b41: c3,ee,e8,42          stw   [Ree+e8],R42       [368] = [GEN_42];    
 8 2b45: c7,ee,9a,34          stb   [Ree+9a],R34       [31a] = R34;         
 8 2b49: 8b,ee,e8,00          cmpw  0,[Ree+e8]                              
 8 2b4d: d7,03                jne   2b52               if (0 != [368]) goto 2b52;
@@ -1289,19 +1291,19 @@ UUWordLU - Word Function Reader:
 
 Sub0044:
 8 2c4c: 28,36                scall 2c84               Calc_FFact();        
-8 2c4e: b1,02,42             ldb   R42,2              R42 = 2;             
+8 2c4e: b1,02,42             ldb   R42,2              [GEN_42] = 2;        
 8 2c51: 20,04                sjmp  2c57               goto 2c57;           
 
 Sub0045:
 8 2c53: 28,2f                scall 2c84               Calc_FFact();        
-8 2c55: 11,42                clrb  R42                R42 = 0;             
+8 2c55: 11,42                clrb  R42                [GEN_42] = 0;        
 8 2c57: 48,32,34,3c          sb3w  R3c,R34,R32        R3c = R34 - R32;     
-8 2c5b: 31,42,04             jnb   B1,R42,2c62        if (!B1_R42) goto 2c62;
-8 2c5e: db,08                jc    2c68               if (R42 > ff) goto 2c68;
+8 2c5b: 31,42,04             jnb   B1,R42,2c62        if (!B1_[GEN_42]) goto 2c62;
+8 2c5e: db,08                jc    2c68               if ([GEN_42] > ff) goto 2c68;
 8 2c60: 20,02                sjmp  2c64               goto 2c64;           
 
 8 2c62: d6,04                jge   2c68               if ((sig) R3c >= 0) goto 2c68;
-8 2c64: 17,42                incb  R42                R42++;               
+8 2c64: 17,42                incb  R42                [GEN_42]++;          
 8 2c66: 03,3c                negw  R3c                R3c = -R3c;          
 8 2c68: 89,01,00,3c          cmpw  R3c,1                                   
 8 2c6c: d9,04                jgtu  2c72               if ((uns) R3c > 1) goto 2c72;
@@ -1312,15 +1314,15 @@ Sub0045:
 8 2c75: 03,3e                negw  R3e                R3e = -R3e;          
 8 2c77: d7,02                jne   2c7b               if (R3c != R3e) goto 2c7b;
 8 2c79: 05,3e                decw  R3e                R3e--;               
-8 2c7b: 38,42,02             jb    B0,R42,2c80        if (B0_R42) goto 2c80;
+8 2c7b: 38,42,02             jb    B0,R42,2c80        if (B0_[GEN_42]) goto 2c80;
 8 2c7e: 03,3e                negw  R3e                R3e = -R3e;          
 8 2c80: 64,32,3e             ad2w  R3e,R32            R3e += R32;          
 8 2c83: f0                   ret                      return;              
 
 Calc_FFact:
-8 2c84: 39,a7,04             jb    B1,Ra7,2c8b        if (B1_Ra7) goto 2c8b;
+8 2c84: 39,a7,04             jb    B1,Ra7,2c8b        if (B1_[FLAGS_A7]) goto 2c8b;
 8 2c87: a3,ec,b8,3e          ldw   R3e,[Rec+b8]       R3e = [238];         
-8 2c8b: 71,fd,a7             an2b  Ra7,fd             Ra7 &= fd;           
+8 2c8b: 71,fd,a7             an2b  Ra7,fd             [FLAGS_A7] &= fd;    
 8 2c8e: 01,3c                clrw  R3c                R3c = 0;             
 8 2c90: 64,3e,36             ad2w  R36,R3e            R36 += R3e;          
 8 2c93: d3,03                jnc   2c98               if (R36 <= ffff) goto 2c98;
@@ -1378,10 +1380,10 @@ TabCore - Table Reader Core:
 8 2d13: 74,31,3b             ad2b  R3b,R31            R3b += R31;          
 8 2d16: 65,80,00,3a          ad2w  R3a,80             R3a += 80;           
 8 2d1a: f0                   ret                      return;              
-        Inc   8 2d1a: ostruct   OSt8_003_2d1a - Other Structure 8 003
+        Inc   8 2d1a: ostruct   OSt8_002_2d1a - Other Structure 8 002
 
 
-OSt8_003 - Other Structure 8 003:
+OSt8_002 - Other Structure 8 002:
 8 2d1b: 14      ostruct   14
 8 2d1c: 22      ostruct   22
 8 2d1d: 29      ostruct   29
@@ -1405,13 +1407,13 @@ DO_SELF_TEST:
 8 2d2e: 29,be                scall 2eee               Sub0064();           
 8 2d30: 71,ef,2e             an2b  R2e,ef             R2e &= ef;           
 8 2d33: 3a,2a,0c             jb    B2,R2a,2d42        if (B2_[FLAGS_2A]) goto 2d42;
-8 2d36: a3,ea,b4,42          ldw   R42,[Rea+b4]       R42 = [134];         
+8 2d36: a3,ea,b4,42          ldw   R42,[Rea+b4]       [GEN_42] = [134];    
 8 2d3a: 99,10,43             cmpb  R43,10                                  
 8 2d3d: d3,03                jnc   2d42               if ((uns) R43 < 10) goto 2d42;
 8 2d3f: 91,04,2a             orrb  R2a,4              [FLAGS_2A] |= 4;     
 8 2d42: 36,2a,17             jnb   B6,R2a,2d5c        if (<NO_START> == 0) goto 2d5c;
 8 2d45: 33,8e,08             jnb   B3,R8e,2d50        if (!B3_R8e) goto 2d50;
-8 2d48: 37,a7,0e             jnb   B7,Ra7,2d59        if (!B7_Ra7) goto 2d59;
+8 2d48: 37,a7,0e             jnb   B7,Ra7,2d59        if (<CRANKING> == 0) goto 2d59;
 8 2d4b: 91,20,e8             orrb  Re8,20             Re8 |= 20;           
 8 2d4e: 20,4a                sjmp  2d9a               goto 2d9a;           
 
@@ -1422,31 +1424,31 @@ DO_SELF_TEST:
 
 8 2d5c: 35,2a,11             jnb   B5,R2a,2d70        if (<SELF_TEST> == 0) goto 2d70;
 8 2d5f: 33,8e,f7             jnb   B3,R8e,2d59        if (!B3_R8e) goto 2d59;
-8 2d62: b3,fe,17,42          ldb   R42,[Rfe+17]       R42 = [TRLOAD];      
+8 2d62: b3,fe,17,42          ldb   R42,[Rfe+17]       [GEN_42] = [TRLOAD]; 
 8 2d66: 99,03,42             cmpb  R42,3                                   
-8 2d69: d3,03                jnc   2d6e               if ((uns) R42 < 3) goto 2d6e;
+8 2d69: d3,03                jnc   2d6e               if ((uns) [GEN_42] < 3) goto 2d6e;
 8 2d6b: 3e,a1,eb             jb    B6,Ra1,2d59        if (B6_Ra1) goto 2d59;
 8 2d6e: 20,1d                sjmp  2d8d               goto 2d8d;           
 
-8 2d70: 3f,a7,21             jb    B7,Ra7,2d94        if (B7_Ra7) goto 2d94;
-8 2d73: 3e,a7,03             jb    B6,Ra7,2d79        if (B6_Ra7) goto 2d79;
+8 2d70: 3f,a7,21             jb    B7,Ra7,2d94        if (<CRANKING> == 1) goto 2d94;
+8 2d73: 3e,a7,03             jb    B6,Ra7,2d79        if (B6_[FLAGS_A7]) goto 2d79;
 8 2d76: 3b,8e,02             jb    B3,R8e,2d7b        if (B3_R8e) goto 2d7b;
 8 2d79: 20,2b                sjmp  2da6               goto 2da6;           
 
-8 2d7b: a3,ea,4e,42          ldw   R42,[Rea+4e]       R42 = [1ce];         
+8 2d7b: a3,ea,4e,42          ldw   R42,[Rea+4e]       [GEN_42] = [1ce];    
 8 2d7f: 99,04,43             cmpb  R43,4                                   
 8 2d82: d3,22                jnc   2da6               if ((uns) R43 < 4) goto 2da6;
 8 2d84: 32,2a,1f             jnb   B2,R2a,2da6        if (!B2_[FLAGS_2A]) goto 2da6;
 8 2d87: 3b,2a,19             jb    B3,R2a,2da3        if (B3_[FLAGS_2A]) goto 2da3;
 8 2d8a: 91,20,2a             orrb  R2a,20             <SELF_TEST> = 1;     
 8 2d8d: 28,18                scall 2da7               Sub0052();           
-8 2d8f: cb,3b,9a,2f          push  [R3a+2f9a]         push([R3a+VecLst8_005]);
+8 2d8f: cb,3b,9a,2f          push  [R3a+2f9a]         push([R3a+VecLst8_004]);
 8 2d93: f0                   ret                      return;              
 
 8 2d94: 33,8e,0f             jnb   B3,R8e,2da6        if (!B3_R8e) goto 2da6;
 8 2d97: 3c,2a,09             jb    B4,R2a,2da3        if (B4_[FLAGS_2A]) goto 2da3;
 8 2d9a: 28,0b                scall 2da7               Sub0052();           
-8 2d9c: cb,3b,7a,2f          push  [R3a+2f7a]         push([R3a+VecLst8_004]);
+8 2d9c: cb,3b,7a,2f          push  [R3a+2f7a]         push([R3a+VecLst8_003]);
 8 2da0: f0                   ret                      return;              
 
 Sub0051:
@@ -1459,13 +1461,13 @@ Sub0052:
 8 2da7: 28,ff                scall 2ea8               GET_DIAGNOSTIC_VALUES();
 8 2da9: ac,38,3a             ldzbw R3a,R38            R3a = (uns)R38;      
 8 2dac: 09,01,3a             shlw  R3a,1              R3a = R3a * 2;       
-8 2daf: cc,42                pop   R42                R42 = pop();         
+8 2daf: cc,42                pop   R42                [GEN_42] = pop();    
 8 2db1: c9,a1,2d             push  2da1               push(Sub0051);       
 8 2db4: 88,00,40             cmpw  R40,0                                   
 8 2db7: df,02                je    2dbb               if (R40 == 0) goto 2dbb;
 8 2db9: 20,d9                sjmp  2e94               goto 2e94;           
 
-8 2dbb: c8,42                push  R42                push(R42);           
+8 2dbb: c8,42                push  R42                push([GEN_42]);      
 8 2dbd: f0                   ret                      return;              
 
 Sub0053:
@@ -1647,12 +1649,12 @@ Sub0066:
 8 2f2c: ad,14,3a             ldzbw R3a,14             R3a = (uns)14;       
 8 2f2f: c7,3b,9b,02,00       stb   [R3a+29b],0        [R3a+29b] = 0;       
 8 2f34: e0,3a,f8             djnz  R3a,2f2f           R3a--; if (R3a !=  0) goto 2f2f;
-8 2f37: a1,9c,02,42          ldw   R42,29c            R42 = 29c;           
+8 2f37: a1,9c,02,42          ldw   R42,29c            [GEN_42] = 29c;      
 8 2f3b: b1,15,3a             ldb   R3a,15             R3a = 15;            
-8 2f3e: c6,42,3a             stb   [R42],R3a          [R42] = R3a;         
+8 2f3e: c6,42,3a             stb   [R42],R3a          [[GEN_42]] = R3a;    
 8 2f41: 3e,2d,35             jb    B6,R2d,2f79        if (<VIP_KAM> == 1) goto 2f79;
 8 2f44: b1,11,3a             ldb   R3a,11             R3a = 11;            
-8 2f47: c6,42,3a             stb   [R42],R3a          [R42] = R3a;         
+8 2f47: c6,42,3a             stb   [R42],R3a          [[GEN_42]] = R3a;    
 8 2f4a: 01,1a                clrw  R1a                R1a = 0;             
 8 2f4c: a1,5b,04,1c          ldw   R1c,45b            R1c = 45b;           
 8 2f50: b1,08,1e             ldb   R1e,8              R1e = 8;             
@@ -1662,10 +1664,10 @@ Sub0066:
 8 2f5c: d9,1b                jgtu  2f79               if ((uns) R1a > 10) goto 2f79;
 8 2f5e: 18,01,3a             shrb  R3a,1              R3a = R3a / 2;       
 8 2f61: d3,11                jnc   2f74               if ((uns) R1a < 10) goto 2f74;
-8 2f63: 57,1b,1a,2d,00,1f    ad3b  R1f,0,[R1a+2d1a]   R1f = 0 + [R1a+OSt8_003_2d1a];
+8 2f63: 57,1b,1a,2d,00,1f    ad3b  R1f,0,[R1a+2d1a]   R1f = 0 + [R1a+OSt8_002_2d1a];
 8 2f69: df,09                je    2f74               if (R1f == 0) goto 2f74;
 8 2f6b: 89,af,02,42          cmpw  R42,2af                                 
-8 2f6f: db,03                jc    2f74               if ((uns) R42 >= 2af) goto 2f74;
+8 2f6f: db,03                jc    2f74               if ((uns) [GEN_42] >= 2af) goto 2f74;
 8 2f71: c6,43,1f             stb   [R42++],R1f        [R42++] = R1f;       
 8 2f74: e0,1e,df             djnz  R1e,2f56           R1e--; if (R1e !=  0) goto 2f56;
 8 2f77: 27,d7                sjmp  2f50               goto 2f50;           
@@ -1674,7 +1676,7 @@ Sub0066:
 
 
 
-VecLst8_004 - Vectors List 8 004:
+VecLst8_003 - Vectors List 8 003:
 8 2f7a: b6,32                32b6  Bank 8 Vector      Sub0077
 8 2f7c: ff,32                32ff  Bank 8 Vector      Sub0078
 8 2f7e: 44,33                3344  Bank 8 Vector      Sub0083
@@ -1693,7 +1695,7 @@ VecLst8_004 - Vectors List 8 004:
 
 
 
-VecLst8_005 - Vectors List 8 005:
+VecLst8_004 - Vectors List 8 004:
 8 2f9a: 7c,36                367c  Bank 8 Vector      Sub0103
 8 2f9c: be,2d                2dbe  Bank 8 Vector      Sub0053
 8 2f9e: 8a,36                368a  Bank 8 Vector      Sub0104
@@ -1713,7 +1715,7 @@ Sub0067:
 8 2fbd: f0                   ret                      return;              
 
 8 2fbe: 3c,2e,07             jb    B4,R2e,2fc8        if (B4_R2e) goto 2fc8;
-8 2fc1: 37,a7,04             jnb   B7,Ra7,2fc8        if (!B7_Ra7) goto 2fc8;
+8 2fc1: 37,a7,04             jnb   B7,Ra7,2fc8        if (<CRANKING> == 0) goto 2fc8;
 8 2fc4: e7,95,02             jump  325c               goto Sub0073;        
 
 
@@ -1724,10 +1726,10 @@ Sub0067:
 8 2fce: 02,b0,10,01,8b,07                             #args                
 8 2fd4: ef,01,04             call  33d8               Sub0088([TOT_RAW],TOTMAX,87);
 8 2fd7: 10,01,04,b0,87,06                             #args                
-8 2fdd: b3,ec,9a,42          ldb   R42,[Rec+9a]       R42 = [21a];         
+8 2fdd: b3,ec,9a,42          ldb   R42,[Rec+9a]       [GEN_42] = [21a];    
 8 2fe1: 9b,fe,46,42          cmpb  R42,[Rfe+46]                            
-8 2fe5: d9,10                jgtu  2ff7               if ((uns) R42 > [Sc0116]) goto 2ff7;
-8 2fe7: a3,ea,a6,42          ldw   R42,[Rea+a6]       R42 = [126];         
+8 2fe5: d9,10                jgtu  2ff7               if ((uns) [GEN_42] > [Sc0116]) goto 2ff7;
+8 2fe7: a3,ea,a6,42          ldw   R42,[Rea+a6]       [GEN_42] = [126];    
 8 2feb: 8b,fe,3a,42          cmpw  R42,[Rfe+3a]                            
 8 2fef: d3,06                jnc   2ff7               if ((uns) 0 < 0) goto 2ff7;
 8 2ff1: 8b,fe,3c,42          cmpw  R42,[Rfe+3c]                            
@@ -1739,7 +1741,7 @@ Sub0067:
 8 3001: 38,f0,20,01,0a,ef                             #args                
 8 3007: cf,03,20,01          pop   [R02+120]          [CPU_OK+120] = pop();
 8 300b: 36,f0,06             jnb   B6,Rf0,3014        if (!B6_Rf0) goto 3014;
-8 300e: a3,ea,a0,42          ldw   R42,[Rea+a0]       R42 = [120];         
+8 300e: a3,ea,a0,42          ldw   R42,[Rea+a0]       [GEN_42] = [120];    
 8 3012: 8b,fe,38,42          cmpw  R42,[Rfe+38]                            
 8 301c: db,03                jc    3021               if (Rfe * R8b > ffff) goto 3021;
 8 301e: 91,04,2f             orrb  R2f,4              R2f |= 4;            
@@ -1748,11 +1750,11 @@ Sub0067:
 8 3025: ac,71,30             ldzbw R30,R71            R30 = (uns)R71;      
 8 3028: ac,84,34             ldzbw R34,R84            R34 = (uns)R84;      
 8 302b: 64,30,34             ad2w  R34,R30            R34 += R30;          
-8 302e: a3,fe,06,42          ldw   R42,[Rfe+6]        R42 = [Sc0091];      
+8 302e: a3,fe,06,42          ldw   R42,[Rfe+6]        [GEN_42] = [Sc0091]; 
 8 3032: 88,42,34             cmpw  R34,R42                                 
-8 3035: d3,1c                jnc   3053               if ((uns) R34 < R42) goto 3053;
-8 3037: a3,fe,08,42          ldw   R42,[Rfe+8]        R42 = [Sc0092];      
-8 303b: 6c,42,34             ml2w  R34,R42            R34 *= R42;          
+8 3035: d3,1c                jnc   3053               if ((uns) R34 < [GEN_42]) goto 3053;
+8 3037: a3,fe,08,42          ldw   R42,[Rfe+8]        [GEN_42] = [Sc0092]; 
+8 303b: 6c,42,34             ml2w  R34,R42            R34 *= [GEN_42];     
 8 303e: 08,07,34             shrw  R34,7              R34 = R34 / 80;      
 8 3041: 88,34,30             cmpw  R30,R34                                 
 8 3044: d3,03                jnc   3049               if ((uns) R30 < R34) goto 3049;
@@ -1761,29 +1763,29 @@ Sub0067:
 8 304c: c4,84,00             stb   R84,0              R84 = 0;             
 8 304f: ef,3f,01             call  3191               Sub0068(3);          
 8 3052: 03                                            #args                
-8 3053: b3,ea,0a,42          ldb   R42,[Rea+a]        R42 = [18a];         
+8 3053: b3,ea,0a,42          ldb   R42,[Rea+a]        [GEN_42] = [18a];    
 8 3057: 9b,fe,78,42          cmpb  R42,[Rfe+78]                            
-8 305b: d9,20                jgtu  307d               if ((uns) R42 > [Sc0135]) goto 307d;
-8 305d: b3,ea,06,42          ldb   R42,[Rea+6]        R42 = [186];         
+8 305b: d9,20                jgtu  307d               if ((uns) [GEN_42] > [Sc0135]) goto 307d;
+8 305d: b3,ea,06,42          ldb   R42,[Rea+6]        [GEN_42] = [186];    
 8 3061: 9b,fe,74,42          cmpb  R42,[Rfe+74]                            
-8 3065: d9,16                jgtu  307d               if ((uns) R42 > [Sc0134]) goto 307d;
-8 3067: b3,ea,03,42          ldb   R42,[Rea+3]        R42 = [183];         
+8 3065: d9,16                jgtu  307d               if ((uns) [GEN_42] > [Sc0134]) goto 307d;
+8 3067: b3,ea,03,42          ldb   R42,[Rea+3]        [GEN_42] = [183];    
 8 306b: 9b,fe,71,42          cmpb  R42,[Rfe+71]                            
-8 306f: d9,0c                jgtu  307d               if ((uns) R42 > [Sc0132]) goto 307d;
-8 3071: b3,ea,04,42          ldb   R42,[Rea+4]        R42 = [184];         
+8 306f: d9,0c                jgtu  307d               if ((uns) [GEN_42] > [Sc0132]) goto 307d;
+8 3071: b3,ea,04,42          ldb   R42,[Rea+4]        [GEN_42] = [184];    
 8 3075: 9b,fe,72,42          cmpb  R42,[Rfe+72]                            
-8 3079: d9,02                jgtu  307d               if ((uns) R42 > [Sc0133]) goto 307d;
+8 3079: d9,02                jgtu  307d               if ((uns) [GEN_42] > [Sc0133]) goto 307d;
 8 307b: 20,03                sjmp  3080               goto 3080;           
 
 8 307d: 91,10,a8             orrb  Ra8,10             Ra8 |= 10;           
 8 3080: 71,f7,a2             an2b  Ra2,f7             Ra2 &= f7;           
-8 3083: b3,fe,6c,42          ldb   R42,[Rfe+6c]       R42 = [VSSSW];       
-8 3087: e0,42,45             djnz  R42,30cf           R42--; if (R42 !=  0) goto 30cf;
+8 3083: b3,fe,6c,42          ldb   R42,[Rfe+6c]       [GEN_42] = [VSSSW];  
+8 3087: e0,42,45             djnz  R42,30cf           [GEN_42]--; if ([GEN_42] !=  0) goto 30cf;
 8 308a: 9b,fe,18,00          cmpb  0,[Rfe+18]                              
 8 308e: df,3f                je    30cf               if (0 == [VSTYPE]) goto 30cf;
-8 3090: b0,8d,42             ldb   R42,R8d            R42 = R8d;           
+8 3090: b0,8d,42             ldb   R42,R8d            [GEN_42] = R8d;      
 8 3093: 9b,fe,6b,42          cmpb  R42,[Rfe+6b]                            
-8 3097: d3,03                jnc   309c               if ((uns) R42 < [VSSMN1]) goto 309c;
+8 3097: d3,03                jnc   309c               if ((uns) [GEN_42] < [VSSMN1]) goto 309c;
 8 3099: 91,08,a2             orrb  Ra2,8              Ra2 |= 8;            
 8 309c: ef,44,fb             call  2be3               USWordLU(FN689V,Rbe);
 8 309f: 12,c3,be,00                                   #args                
@@ -1796,7 +1798,7 @@ Sub0067:
 8 30b6: 98,00,3a             cmpb  R3a,0                                   
 8 30b9: d7,10                jne   30cb               if (R3a != 0) goto 30cb;
 8 30bb: 88,38,b8             cmpw  Rb8,R38                                 
-8 30be: d3,0b                jnc   30cb               if ((uns) Rb8 < R38) goto 30cb;
+8 30be: d3,0b                jnc   30cb               if ((uns) [RPM] < R38) goto 30cb;
 8 30c0: 9b,fe,11,00          cmpb  0,[Rfe+11]                              
 8 30c4: df,03                je    30c9               if (0 == [BIHP]) goto 30c9;
 8 30c6: 3c,25,02             jb    B4,R25,30cb        if (B4_R25) goto 30cb;
@@ -1806,15 +1808,15 @@ Sub0067:
 8 30cf: 20,10                sjmp  30e1               goto 30e1;           
 
 8 30d1: 3b,a2,f7             jb    B3,Ra2,30cb        if (B3_Ra2) goto 30cb;
-8 30d4: b3,ea,52,42          ldb   R42,[Rea+52]       R42 = [1d2];         
+8 30d4: b3,ea,52,42          ldb   R42,[Rea+52]       [GEN_42] = [1d2];    
 8 30d8: 9b,fe,6d,42          cmpb  R42,[Rfe+6d]                            
-8 30dc: d1,03                jleu  30e1               if ((uns) R42 <= [VSSTIM]) goto 30e1;
+8 30dc: d1,03                jleu  30e1               if ((uns) [GEN_42] <= [VSSTIM]) goto 30e1;
 8 30de: 91,04,2f             orrb  R2f,4              R2f |= 4;            
 8 30e1: ef,ad,00             call  3191               Sub0068(2);          
 8 30e4: 02                                            #args                
-8 30e5: b3,ea,02,42          ldb   R42,[Rea+2]        R42 = [182];         
+8 30e5: b3,ea,02,42          ldb   R42,[Rea+2]        [GEN_42] = [182];    
 8 30e9: 9b,fe,70,42          cmpb  R42,[Rfe+70]                            
-8 30ed: d1,03                jleu  30f2               if ((uns) R42 <= [Sc0131]) goto 30f2;
+8 30ed: d1,03                jleu  30f2               if ((uns) [GEN_42] <= [Sc0131]) goto 30f2;
 8 30ef: 91,80,a8             orrb  Ra8,80             Ra8 |= 80;           
 8 30f2: 33,a2,03             jnb   B3,Ra2,30f8        if (!B3_Ra2) goto 30f8;
 8 30f5: 71,7f,a8             an2b  Ra8,7f             Ra8 &= 7f;           
@@ -1842,7 +1844,7 @@ Sub0067:
 
 8 312b: 29,2f                scall 325c               Sub0073();           
 8 312d: 39,25,60             jb    B1,R25,3190        if (B1_R25) goto 3190;
-8 3130: 3e,a7,5d             jb    B6,Ra7,3190        if (B6_Ra7) goto 3190;
+8 3130: 3e,a7,5d             jb    B6,Ra7,3190        if (B6_[FLAGS_A7]) goto 3190;
 8 3133: a0,b6,14             ldw   R14,Rb6            [HSO_IPEND2] = Rb6;  
 8 3136: 8b,fe,5e,14          cmpw  R14,[Rfe+5e]                            
 8 313a: d6,54                jge   3190               if ((sig) [HSO_IPEND2] >= [Sc0125]) goto 3190;
@@ -1862,13 +1864,13 @@ Sub0067:
 8 3162: d3,20                jnc   3184               if ((uns) R3a < 50) goto 3184;
 8 3164: 99,10,38             cmpb  R38,10                                  
 8 3167: db,1b                jc    3184               if ((uns) R38 >= 10) goto 3184;
-8 3169: a0,38,42             ldw   R42,R38            R42 = R38;           
-8 316c: 08,03,42             shrw  R42,3              R42 = R42 / 8;       
+8 3169: a0,38,42             ldw   R42,R38            [GEN_42] = R38;      
+8 316c: 08,03,42             shrw  R42,3              [GEN_42] = [GEN_42] / 8;
 8 316f: a1,ff,fe,14          ldw   R14,feff           [HSO_IPEND2] = feff; 
 8 3173: 51,07,38,30          an3b  R30,R38,7          R30 = R38 & 7;       
 8 3177: 09,30,14             shlw  R14,30             [HSO_IPEND2] = [HSO_IPEND2] << R30;
-8 317a: 73,43,5b,04,15       an2b  R15,[R42+45b]      R15 &= [R42+45b];    
-8 317f: c7,43,5b,04,15       stb   [R42+45b],R15      [R42+45b] = R15;     
+8 317a: 73,43,5b,04,15       an2b  R15,[R42+45b]      R15 &= [[GEN_42]+45b];
+8 317f: c7,43,5b,04,15       stb   [R42+45b],R15      [[GEN_42]+45b] = R15;
 8 3184: c7,39,61,04,3a       stb   [R38+461],R3a      [R38+461] = R3a;     
 8 3189: 05,38                decw  R38                R38--;               
 8 318b: db,c7                jc    3154               if (R38 >= 0) goto 3154;
@@ -1892,12 +1894,12 @@ Sub0069:
 8 31b2: b3,15,80,01,30       ldb   R30,[R14+180]      R30 = [[HSO_IPEND2]+180];
 8 31b7: 44,fe,14,32          ad3w  R32,R14,Rfe        R32 = [HSO_IPEND2] + Rfe;
 8 31bb: b3,32,6e,32          ldb   R32,[R32+6e]       R32 = [R32+6e];      
-8 31bf: 44,fe,14,42          ad3w  R42,R14,Rfe        R42 = [HSO_IPEND2] + Rfe;
-8 31c3: 57,42,7e,00,42       ad3b  R42,0,[R42+7e]     R42 = 0 + [R42+7e];  
-8 31c8: df,0d                je    31d7               if (R42 == 0) goto 31d7;
+8 31bf: 44,fe,14,42          ad3w  R42,R14,Rfe        [GEN_42] = [HSO_IPEND2] + Rfe;
+8 31c3: 57,42,7e,00,42       ad3b  R42,0,[R42+7e]     [GEN_42] = 0 + [[GEN_42]+7e];
+8 31c8: df,0d                je    31d7               if ([GEN_42] == 0) goto 31d7;
 8 31ca: 34,2e,07             jnb   B4,R2e,31d4        if (!B4_R2e) goto 31d4;
 8 31cd: b3,fe,47,32          ldb   R32,[Rfe+47]       R32 = [Sc0117];      
-8 31d1: b1,ff,42             ldb   R42,ff             R42 = ff;            
+8 31d1: b1,ff,42             ldb   R42,ff             [GEN_42] = ff;       
 8 31d4: 3a,2f,22             jb    B2,R2f,31f9        if (B2_R2f) goto 31f9;
 8 31d7: 98,00,30             cmpb  R30,0                                   
 8 31da: df,02                je    31de               if (R30 == 0) goto 31de;
@@ -1911,7 +1913,7 @@ Sub0069:
 8 31f2: c7,35,bc,01,16       stb   [R34+1bc],R16      [R34+1bc] = R16;     
 8 31f7: 20,39                sjmp  3232               goto 3232;           
 
-8 31f9: 74,42,30             ad2b  R30,R42            R30 += R42;          
+8 31f9: 74,42,30             ad2b  R30,R42            R30 += [GEN_42];     
 8 31fc: d3,03                jnc   3201               if (R30 <= ff) goto 3201;
 8 31fe: b1,ff,30             ldb   R30,ff             R30 = ff;            
 8 3201: 98,30,32             cmpb  R32,R30                                 
@@ -1959,11 +1961,11 @@ GET_BYTES_R1A:
 8 3266: a1,1a,00,16          ldw   R16,1a             R16 = 1a;            
 8 326a: cc,3c                pop   R3c                R3c = pop();         
 8 326c: b2,3d,3a             ldb   R3a,[R3c++]        R3a = [R3c++];       
-8 326f: cc,42                pop   R42                R42 = pop();         
+8 326f: cc,42                pop   R42                [GEN_42] = pop();    
 8 3271: b2,43,3b             ldb   R3b,[R42++]        R3b = [R42++];       
 8 3274: c6,17,3b             stb   [R16++],R3b        [R16++] = R3b;       
 8 3277: e0,3a,f7             djnz  R3a,3271           R3a--; if (R3a !=  0) goto 3271;
-8 327a: c8,42                push  R42                push(R42);           
+8 327a: c8,42                push  R42                push([GEN_42]);      
 8 327c: c8,3c                push  R3c                push(R3c);           
 8 327e: f0                   ret                      return;              
 
@@ -2046,7 +2048,7 @@ Sub0081:
 CalCheck - Calibration Starting Checks:
 8 3318: 01,30                clrw  R30                R30 = 0;             
 8 331a: 01,3c                clrw  R3c                R3c = 0;             
-8 331c: a1,3e,33,42          ldw   R42,333e           R42 = ChkStartAdr;   
+8 331c: a1,3e,33,42          ldw   R42,333e           [GEN_42] = ChkStartAdr;
 8 3320: 46,43,00,3a          ad3w  R3a,0,[R42++]      R3a = 0 + [R42++];   
 8 3324: df,0d                je    3333               if (R3a == 0) goto 3333;
 8 3326: a2,43,3e             ldw   R3e,[R42++]        R3e = [R42++];       
@@ -2086,9 +2088,9 @@ Sub0083:
 8 3358: b0,30,32             ldb   R32,R30            R32 = R30;           
 8 335b: 2b,00                scall 365d               CHECK_RANGE_TROUBLE_CODE([TOT_RAW],St0036,St0035,26);
 8 335d: 10,01,62,f0,60,f0,26                          #args                
-8 3364: b3,ec,9a,42          ldb   R42,[Rec+9a]       R42 = [21a];         
+8 3364: b3,ec,9a,42          ldb   R42,[Rec+9a]       [GEN_42] = [21a];    
 8 3368: 9b,fe,46,42          cmpb  R42,[Rfe+46]                            
-8 336c: d1,02                jleu  3370               if ((uns) R42 <= [Sc0116]) goto 3370;
+8 336c: d1,02                jleu  3370               if ((uns) [GEN_42] <= [Sc0116]) goto 3370;
 8 336e: 20,10                sjmp  3380               goto 3380;           
 
 8 3370: a3,ea,a6,14          ldw   R14,[Rea+a6]       [HSO_IPEND2] = [126];
@@ -2159,9 +2161,9 @@ Sub0088:
 8 33f6: 28,26                scall 341e               Sub0090();           
 8 33f8: ad,1c,3e             ldzbw R3e,1c             R3e = (uns)1c;       
 8 33fb: 28,21                scall 341e               Sub0090();           
-8 33fd: a2,1a,42             ldw   R42,[R1a]          R42 = [R1a];         
+8 33fd: a2,1a,42             ldw   R42,[R1a]          [GEN_42] = [R1a];    
 8 3400: 8a,1c,42             cmpw  R42,[R1c]                               
-8 3403: d1,0b                jleu  3410               if ((uns) R42 <= [R1c]) goto 3410;
+8 3403: d1,0b                jleu  3410               if ((uns) [GEN_42] <= [R1c]) goto 3410;
 8 3405: 3a,2f,0b             jb    B2,R2f,3413        if (B2_R2f) goto 3413;
 8 3408: b0,1e,1a             ldb   R1a,R1e            R1a = R1e;           
 8 340b: 91,04,2f             orrb  R2f,4              R2f |= 4;            
@@ -2171,20 +2173,20 @@ Sub0088:
 8 3413: f0                   ret                      return;              
 
 Sub0089:
-8 3414: cc,42                pop   R42                R42 = pop();         
+8 3414: cc,42                pop   R42                [GEN_42] = pop();    
 8 3416: b2,43,3e             ldb   R3e,[R42++]        R3e = [R42++];       
 8 3419: b2,43,3f             ldb   R3f,[R42++]        R3f = [R42++];       
-8 341c: c8,42                push  R42                push(R42);           
+8 341c: c8,42                push  R42                push([GEN_42]);      
 
 Sub0090:
-8 341e: a2,3e,42             ldw   R42,[R3e]          R42 = [R3e];         
+8 341e: a2,3e,42             ldw   R42,[R3e]          [GEN_42] = [R3e];    
 8 3421: 37,43,14             jnb   B7,R43,3438        if (!B7_R43) goto 3438;
 8 3424: ac,43,3a             ldzbw R3a,R43            R3a = (uns)R43;      
 8 3427: 71,70,3a             an2b  R3a,70             R3a &= 70;           
 8 342a: 08,03,3a             shrw  R3a,3              R3a = R3a / 8;       
 8 342d: 71,0f,43             an2b  R43,f              R43 &= f;            
-8 3430: 67,3b,f0,00,42       ad2w  R42,[R3a+f0]       R42 += [R3a+f0];     
-8 3435: c2,3e,42             stw   [R3e],R42          [R3e] = R42;         
+8 3430: 67,3b,f0,00,42       ad2w  R42,[R3a+f0]       [GEN_42] += [R3a+f0];
+8 3435: c2,3e,42             stw   [R3e],R42          [R3e] = [GEN_42];    
 8 3438: f0                   ret                      return;              
 
 8 3439: a1,44,34,34          ldw   R34,3444           R34 = 3444;          
@@ -2231,9 +2233,9 @@ Sub0093:
 8 34fd: 32,45,53             jnb   B2,R45,3553        if (!B2_[HSI_DATA]) goto 3553;
 8 3500: 9b,fe,50,00          cmpb  0,[Rfe+50]                              
 8 3504: df,4d                je    3553               if (0 == [Sc0121]) goto 3553;
-8 3506: b3,fe,4e,42          ldb   R42,[Rfe+4e]       R42 = [Sc0119];      
+8 3506: b3,fe,4e,42          ldb   R42,[Rfe+4e]       [GEN_42] = [Sc0119]; 
 8 350a: 91,01,46             orrb  R46,1              R46 |= 1;            
-8 350d: c7,ee,db,42          stb   [Ree+db],R42       [35b] = R42;         
+8 350d: c7,ee,db,42          stb   [Ree+db],R42       [35b] = [GEN_42];    
 8 3511: ef,8a,01             call  369e               Sub0105(St0034);     
 8 3514: 4d,f0                                         #args                
 8 3516: 26,6b                sjmp  3383               goto Sub0084;        
@@ -2242,16 +2244,16 @@ Sub0094:
 8 3518: ef,b2,f9             call  2ecd               SAVE_DIAGNOSTIC_VALUES();
 8 351b: ef,36,12             call  4754               Sub0142();           
 8 351e: ef,87,f9             call  2ea8               GET_DIAGNOSTIC_VALUES();
-8 3521: a3,ea,9c,42          ldw   R42,[Rea+9c]       R42 = [11c];         
-8 3525: c3,ea,44,42          stw   [Rea+44],R42       [1c4] = R42;         
+8 3521: a3,ea,9c,42          ldw   R42,[Rea+9c]       [GEN_42] = [11c];    
+8 3525: c3,ea,44,42          stw   [Rea+44],R42       [1c4] = [GEN_42];    
 8 3529: 8b,ee,18,42          cmpw  R42,[Ree+18]                            
-8 352d: db,27                jc    3556               if ((uns) R42 >= [398]) goto 3556;
+8 352d: db,27                jc    3556               if ((uns) [GEN_42] >= [398]) goto 3556;
 8 352f: 29,1a                scall 364b               Sub0100(99);         
 8 3531: 99                                            #args                
 8 3532: 20,1b                sjmp  354f               goto 354f;           
 
 Sub0095:
-8 3534: b3,fe,4f,42          ldb   R42,[Rfe+4f]       R42 = [Sc0120];      
+8 3534: b3,fe,4f,42          ldb   R42,[Rfe+4f]       [GEN_42] = [Sc0120]; 
 8 3538: 27,d0                sjmp  350a               goto 350a;           
 
 Sub0096:
@@ -2355,11 +2357,11 @@ CHECK_RANGE_TROUBLE_CODE:
 8 3663: 1c,00                                         #args                
 8 3665: 2d,ad                scall 3414               Sub0089(R1e);        
 8 3667: 1e,00                                         #args                
-8 3669: a2,1a,42             ldw   R42,[R1a]          R42 = [R1a];         
+8 3669: a2,1a,42             ldw   R42,[R1a]          [GEN_42] = [R1a];    
 8 366c: 8a,1c,42             cmpw  R42,[R1c]                               
-8 366f: d3,05                jnc   3676               if ((uns) R42 < [R1c]) goto 3676;
+8 366f: d3,05                jnc   3676               if ((uns) [GEN_42] < [R1c]) goto 3676;
 8 3671: 8a,1e,42             cmpw  R42,[R1e]                               
-8 3674: d1,05                jleu  367b               if ((uns) R42 <= [R1e]) goto 367b;
+8 3674: d1,05                jleu  367b               if ((uns) [GEN_42] <= [R1e]) goto 367b;
 8 3676: b0,20,1a             ldb   R1a,R20            R1a = R20;           
 8 3679: 2f,d4                scall 364f               Sub0101();           
 8 367b: f0                   ret                      return;              
@@ -2399,10 +2401,10 @@ Sub0106:
 8 36be: f0                   ret                      return;              
 
 Sub0107:
-8 36bf: b3,fe,4c,42          ldb   R42,[Rfe+4c]       R42 = [Sc0118];      
-8 36c3: e0,42,11             djnz  R42,36d7           R42--; if (R42 !=  0) goto 36d7;
-8 36c6: b3,fe,11,42          ldb   R42,[Rfe+11]       R42 = [BIHP];        
-8 36ca: e0,42,0a             djnz  R42,36d7           R42--; if (R42 !=  0) goto 36d7;
+8 36bf: b3,fe,4c,42          ldb   R42,[Rfe+4c]       [GEN_42] = [Sc0118]; 
+8 36c3: e0,42,11             djnz  R42,36d7           [GEN_42]--; if ([GEN_42] !=  0) goto 36d7;
+8 36c6: b3,fe,11,42          ldb   R42,[Rfe+11]       [GEN_42] = [BIHP];   
+8 36ca: e0,42,0a             djnz  R42,36d7           [GEN_42]--; if ([GEN_42] !=  0) goto 36d7;
 8 36cd: 3c,a3,03             jb    B4,Ra3,36d3        if (B4_Ra3) goto 36d3;
 8 36d0: 33,a3,04             jnb   B3,Ra3,36d7        if (!B3_Ra3) goto 36d7;
 8 36d3: ef,75,ff             call  364b               Sub0100(74);         
@@ -2449,10 +2451,10 @@ HW_CHECK:
 8 3721: 32,45,06             jnb   B2,R45,372a        if (!B2_[HSI_DATA]) goto 372a;
 8 3724: 33,29,17             jnb   B3,R29,373e        if (!B3_R29) goto 373e;
 8 3727: 37,29,14             jnb   B7,R29,373e        if (!B7_R29) goto 373e;
-8 372a: b3,fe,4c,42          ldb   R42,[Rfe+4c]       R42 = [Sc0118];      
-8 372e: e0,42,14             djnz  R42,3745           R42--; if (R42 !=  0) goto 3745;
-8 3731: b3,fe,11,42          ldb   R42,[Rfe+11]       R42 = [BIHP];        
-8 3735: e0,42,0d             djnz  R42,3745           R42--; if (R42 !=  0) goto 3745;
+8 372a: b3,fe,4c,42          ldb   R42,[Rfe+4c]       [GEN_42] = [Sc0118]; 
+8 372e: e0,42,14             djnz  R42,3745           [GEN_42]--; if ([GEN_42] !=  0) goto 3745;
+8 3731: b3,fe,11,42          ldb   R42,[Rfe+11]       [GEN_42] = [BIHP];   
+8 3735: e0,42,0d             djnz  R42,3745           [GEN_42]--; if ([GEN_42] !=  0) goto 3745;
 8 3738: 3c,a3,03             jb    B4,Ra3,373e        if (B4_Ra3) goto 373e;
 8 373b: 33,a3,07             jnb   B3,Ra3,3745        if (!B3_Ra3) goto 3745;
 8 373e: ef,5d,ff             call  369e               Sub0105(St0033);     
@@ -2584,24 +2586,24 @@ Sub0114:
 
 TEST_RAM:
 8 387d: a1,ff,08,3a          ldw   R3a,8ff            R3a = 8ff;           
-8 3881: a1,00,01,42          ldw   R42,100            R42 = 100;           
+8 3881: a1,00,01,42          ldw   R42,100            [GEN_42] = 100;      
 8 3885: a1,aa,aa,30          ldw   R30,aaaa           R30 = aaaa;          
 8 3889: a1,55,55,32          ldw   R32,5555           R32 = 5555;          
 8 388d: 95,40,02             xrb   R02,40             CPU_OK ^= 40;        
 8 3890: 17,05                incb  R05                WD_TIMER++;          
-8 3892: a2,42,34             ldw   R34,[R42]          R34 = [R42];         
+8 3892: a2,42,34             ldw   R34,[R42]          R34 = [[GEN_42]];    
 8 3895: 95,40,02             xrb   R02,40             CPU_OK ^= 40;        
-8 3898: c2,42,30             stw   [R42],R30          [R42] = R30;         
-8 389b: a2,42,36             ldw   R36,[R42]          R36 = [R42];         
+8 3898: c2,42,30             stw   [R42],R30          [[GEN_42]] = R30;    
+8 389b: a2,42,36             ldw   R36,[R42]          R36 = [[GEN_42]];    
 8 389e: 88,30,36             cmpw  R36,R30                                 
 8 38a1: d7,19                jne   38bc               if (R36 != R30) goto 38bc;
-8 38a3: c2,42,32             stw   [R42],R32          [R42] = R32;         
-8 38a6: a2,42,36             ldw   R36,[R42]          R36 = [R42];         
+8 38a3: c2,42,32             stw   [R42],R32          [[GEN_42]] = R32;    
+8 38a6: a2,42,36             ldw   R36,[R42]          R36 = [[GEN_42]];    
 8 38a9: 88,32,36             cmpw  R36,R32                                 
 8 38ac: d7,0e                jne   38bc               if (R36 != R32) goto 38bc;
 8 38ae: c2,43,34             stw   [R42++],R34        [R42++] = R34;       
 8 38b1: 88,3a,42             cmpw  R42,R3a                                 
-8 38b4: d3,d7                jnc   388d               if ((uns) R42 < R3a) goto 388d;
+8 38b4: d3,d7                jnc   388d               if ((uns) [GEN_42] < R3a) goto 388d;
 8 38b6: a3,ec,c0,10          ldw   R10,[Rec+c0]       STACK = [240];       
 8 38ba: fb                   ei                       enable ints;         
 8 38bb: f0                   ret                      return;              
@@ -2709,8 +2711,8 @@ Sub0120:
 
 8 39b3: 3a,90,0b             jb    B2,R90,39c1        if (B2_R90) goto 39c1;
 8 39b6: 95,01,e8             xrb   Re8,1              Re8 ^= 1;            
-8 39b9: a3,fc,1c,42          ldw   R42,[Rfc+1c]       R42 = [Sc0031];      
-8 39bd: c3,ee,00,42          stw   [Ree],R42          [380] = R42;         
+8 39b9: a3,fc,1c,42          ldw   R42,[Rfc+1c]       [GEN_42] = [Sc0031]; 
+8 39bd: c3,ee,00,42          stw   [Ree],R42          [380] = [GEN_42];    
 8 39c1: 8b,ee,00,00          cmpw  0,[Ree]                                 
 8 39c5: d7,09                jne   39d0               if (0 != [380]) goto 39d0;
 8 39c7: 91,02,e8             orrb  Re8,2              Re8 |= 2;            
@@ -2724,7 +2726,7 @@ Sub0121:
 8 39d9: 2e,c3,bd,00                                   #args                
 8 39dd: c7,ee,80,38          stb   [Ree+80],R38       [300] = R38;         
 8 39e1: a3,ee,88,32          ldw   R32,[Ree+88]       R32 = [308];         
-8 39e5: a0,b8,34             ldw   R34,Rb8            R34 = Rb8;           
+8 39e5: a0,b8,34             ldw   R34,Rb8            R34 = [RPM];         
 8 39e8: a3,dd,ee,fe,36       ldw   R36,[Rdc+feee]     R36 = [Rdc+feee];    
 8 39ed: ef,5c,f2             call  2c4c               Sub0044();           
 8 39f0: c3,ee,88,3e          stw   [Ree+88],R3e       [308] = R3e;         
@@ -2815,7 +2817,7 @@ Sub0121:
 8 3af5: 3e,e9,f8             jb    B6,Re9,3af0        if (B6_Re9) goto 3af0;
 8 3af8: 91,40,e7             orrb  Re7,40             Re7 |= 40;           
 8 3afb: a3,ee,d2,32          ldw   R32,[Ree+d2]       R32 = [352];         
-8 3aff: a0,b8,34             ldw   R34,Rb8            R34 = Rb8;           
+8 3aff: a0,b8,34             ldw   R34,Rb8            R34 = [RPM];         
 8 3b02: a3,dd,02,ff,36       ldw   R36,[Rdc+ff02]     R36 = [Rdc+ff02];    
 8 3b07: ef,42,f1             call  2c4c               Sub0044();           
 8 3b0a: c3,ee,d2,3e          stw   [Ree+d2],R3e       [352] = R3e;         
@@ -2834,23 +2836,23 @@ Sub0121:
 8 3b3a: 52,c3,bd,00                                   #args                
 8 3b3e: c7,ee,86,38          stb   [Ree+86],R38       [306] = R38;         
 8 3b42: 45,a2,09,fc,38       ad3w  R38,Rfc,9a2        R38 = Tb001;         
-8 3b47: b3,ee,86,42          ldb   R42,[Ree+86]       R42 = [306];         
+8 3b47: b3,ee,86,42          ldb   R42,[Ree+86]       [GEN_42] = [306];    
 8 3b4b: 98,00,42             cmpb  R42,0                                   
-8 3b4e: d6,07                jge   3b57               if ((sig) R42 >= 0) goto 3b57;
+8 3b4e: d6,07                jge   3b57               if ((sig) [GEN_42] >= 0) goto 3b57;
 8 3b50: 45,28,0b,fc,38       ad3w  R38,Rfc,b28        R38 = TORQUE_TABLE_1_ALTITUDE;
-8 3b55: 13,42                negb  R42                R42 = -R42;          
+8 3b55: 13,42                negb  R42                [GEN_42] = -[GEN_42];
 8 3b57: a3,ee,d4,30          ldw   R30,[Ree+d4]       R30 = [354];         
 8 3b5b: a3,ee,d0,32          ldw   R32,[Ree+d0]       R32 = [350];         
 8 3b5f: ad,0f,34             ldzbw R34,f              R34 = (uns)f;        
 8 3b62: ef,51,f1             call  2cb6               UTabLU();            
 8 3b65: b0,3b,40             ldb   R40,R3b            R40 = R3b;           
-8 3b68: 7c,42,40             ml2b  R40,R42            R40 *= R42;          
+8 3b68: 7c,42,40             ml2b  R40,R42            R40 *= [GEN_42];     
 8 3b6b: a3,ee,d4,30          ldw   R30,[Ree+d4]       R30 = [354];         
 8 3b6f: a3,ee,d0,32          ldw   R32,[Ree+d0]       R32 = [350];         
 8 3b73: ad,0f,34             ldzbw R34,f              R34 = (uns)f;        
 8 3b76: 45,65,0a,fc,38       ad3w  R38,Rfc,a65        R38 = TORQUE_TABLE_2;
 8 3b7b: ef,38,f1             call  2cb6               UTabLU();            
-8 3b7e: 59,40,42,3c          sb3b  R3c,R42,40         R3c = R42 - 40;      
+8 3b7e: 59,40,42,3c          sb3b  R3c,R42,40         R3c = [GEN_42] - 40; 
 8 3b82: 13,3c                negb  R3c                R3c = -R3c;          
 8 3b84: 16,3c                sexb  R3c                R3cW = (int)R3c;     
 8 3b86: ac,3b,3a             ldzbw R3a,R3b            R3a = (uns)R3b;      
@@ -2871,15 +2873,15 @@ Sub0121:
 8 3bae: c7,ee,c1,3d          stb   [Ree+c1],R3d       [341] = R3d;         
 8 3bb2: ef,b8,ef             call  2b6d               UUByteLU(FN618,[1f3]);
 8 3bb5: 32,c7,f3,01                                   #args                
-8 3bb9: b0,38,42             ldb   R42,R38            R42 = R38;           
+8 3bb9: b0,38,42             ldb   R42,R38            [GEN_42] = R38;      
 8 3bbc: 34,8e,0f             jnb   B4,R8e,3bce        if (!B4_R8e) goto 3bce;
 8 3bbf: ef,ab,ef             call  2b6d               UUByteLU(FN619,[1f3]);
 8 3bc2: 3c,c7,f3,01                                   #args                
-8 3bc6: 74,38,42             ad2b  R42,R38            R42 += R38;          
-8 3bc9: d3,03                jnc   3bce               if (R42 <= ff) goto 3bce;
-8 3bcb: b1,ff,42             ldb   R42,ff             R42 = ff;            
-8 3bce: c7,ee,c2,42          stb   [Ree+c2],R42       [342] = R42;         
-8 3bd2: 78,42,3d             sb2b  R3d,R42            R3d -= R42;          
+8 3bc6: 74,38,42             ad2b  R42,R38            [GEN_42] += R38;     
+8 3bc9: d3,03                jnc   3bce               if ([GEN_42] <= ff) goto 3bce;
+8 3bcb: b1,ff,42             ldb   R42,ff             [GEN_42] = ff;       
+8 3bce: c7,ee,c2,42          stb   [Ree+c2],R42       [342] = [GEN_42];    
+8 3bd2: 78,42,3d             sb2b  R3d,R42            R3d -= [GEN_42];     
 8 3bd5: db,02                jc    3bd9               if (R3d >= 0) goto 3bd9;
 8 3bd7: 11,3d                clrb  R3d                R3d = 0;             
 8 3bd9: c7,ee,c3,3d          stb   [Ree+c3],R3d       [343] = R3d;         
@@ -2900,16 +2902,16 @@ Sub0121:
 8 3c0c: fb                   ei                       enable ints;         
 8 3c0d: ef,cd,ef             call  2bdd               SSWordLU(FN690,Rb6); 
 8 3c10: 3a,c3,b6,00                                   #args                
-8 3c14: b1,80,42             ldb   R42,80             R42 = 80;            
+8 3c14: b1,80,42             ldb   R42,80             [GEN_42] = 80;       
 8 3c17: 88,38,ba             cmpw  Rba,R38                                 
 8 3c1a: d6,0a                jge   3c26               if ((sig) Rba >= R38) goto 3c26;
 8 3c1c: a3,ea,b6,30          ldw   R30,[Rea+b6]       R30 = [136];         
 8 3c20: 8b,fc,10,30          cmpw  R30,[Rfc+10]                            
 8 3c24: d3,06                jnc   3c2c               if ((uns) R30 < [CS_MAX_TIME]) goto 3c2c;
 8 3c26: 8b,fe,24,b8          cmpw  Rb8,[Rfe+24]                            
-8 3c2a: db,04                jc    3c30               if ((uns) Rb8 >= [NSTALL]) goto 3c30;
-8 3c2c: b3,fc,12,42          ldb   R42,[Rfc+12]       R42 = [Sc0030];      
-8 3c30: c7,ee,df,42          stb   [Ree+df],R42       [35f] = R42;         
+8 3c2a: db,04                jc    3c30               if ((uns) [RPM] >= [NSTALL]) goto 3c30;
+8 3c2c: b3,fc,12,42          ldb   R42,[Rfc+12]       [GEN_42] = [Sc0030]; 
+8 3c30: c7,ee,df,42          stb   [Ree+df],R42       [35f] = [GEN_42];    
 8 3c34: 91,04,e9             orrb  Re9,4              Re9 |= 4;            
 8 3c37: 8b,fd,ae,00,ba       cmpw  Rba,[Rfc+ae]                            
 8 3c3c: da,03                jle   3c41               if ((sig) Rba <= [TOTTV1]) goto 3c41;
@@ -2917,9 +2919,9 @@ Sub0121:
 8 3c41: 71,ef,e9             an2b  Re9,ef             Re9 &= ef;           
 8 3c44: 8b,fd,b0,00,ba       cmpw  Rba,[Rfc+b0]                            
 8 3c49: d2,0d                jgt   3c58               if ((sig) Rba > [TOTTV2]) goto 3c58;
-8 3c4b: a3,ea,b6,42          ldw   R42,[Rea+b6]       R42 = [136];         
+8 3c4b: a3,ea,b6,42          ldw   R42,[Rea+b6]       [GEN_42] = [136];    
 8 3c4f: 8b,fc,2c,42          cmpw  R42,[Rfc+2c]                            
-8 3c53: db,03                jc    3c58               if ((uns) R42 >= [CD_TVENG_TM]) goto 3c58;
+8 3c53: db,03                jc    3c58               if ((uns) [GEN_42] >= [CD_TVENG_TM]) goto 3c58;
 8 3c55: 91,10,e9             orrb  Re9,10             Re9 |= 10;           
 8 3c58: 71,f7,e9             an2b  Re9,f7             Re9 &= f7;           
 8 3c5b: 8b,fd,b2,00,ba       cmpw  Rba,[Rfc+b2]                            
@@ -2934,7 +2936,7 @@ Sub0121:
 Sub0122:
 8 3c73: 01,14                clrw  R14                [HSO_IPEND2] = 0;    
 8 3c75: 8b,fe,24,b8          cmpw  Rb8,[Rfe+24]                            
-8 3c79: d3,12                jnc   3c8d               if ((uns) Rb8 < [NSTALL]) goto 3c8d;
+8 3c79: d3,12                jnc   3c8d               if ((uns) [RPM] < [NSTALL]) goto 3c8d;
 8 3c7b: a3,ee,8a,32          ldw   R32,[Ree+8a]       R32 = [30a];         
 8 3c7f: 4f,ee,9c,32,14       ml3w  R14,R32,[Ree+9c]   [HSO_IPEND2] = R32 * [31c];
 8 3c84: 8f,ee,88,14          divw  R14,[Ree+88]       [HSO_IPEND2] = [HSO_IPEND2]L / [308];
@@ -3181,7 +3183,7 @@ Sub0127:
 8 3eed: af,ee,df,38          ldzbw R38,[Ree+df]       R38 = (uns)[35f];    
 8 3ef1: 6c,38,40             ml2w  R40,R38            R40 *= R38;          
 8 3ef4: 0c,07,40             shrdw R40,7              R40L = R40L / 80;    
-8 3ef7: 30,42,03             jnb   B0,R42,3efd        if (!B0_R42) goto 3efd;
+8 3ef7: 30,42,03             jnb   B0,R42,3efd        if (!B0_[GEN_42]) goto 3efd;
 8 3efa: b1,ff,41             ldb   R41,ff             R41 = ff;            
 8 3efd: 98,6f,41             cmpb  R41,R6f                                 
 8 3f00: f0                   ret                      return;              
@@ -3260,7 +3262,7 @@ Sub0131:
 8 3fbc: 20,57                sjmp  4015               goto 4015;           
 
 8 3fbe: 8b,fe,24,b8          cmpw  Rb8,[Rfe+24]                            
-8 3fc2: db,12                jc    3fd6               if ((uns) Rb8 >= [NSTALL]) goto 3fd6;
+8 3fc2: db,12                jc    3fd6               if ((uns) [RPM] >= [NSTALL]) goto 3fd6;
 8 3fc4: 37,a8,0f             jnb   B7,Ra8,3fd6        if (!B7_Ra8) goto 3fd6;
 8 3fc7: 99,06,db             cmpb  Rdb,6                                   
 8 3fca: df,05                je    3fd1               if (Rdb == 6) goto 3fd1;
@@ -3377,28 +3379,28 @@ Sub0135:
 8 40d0: d9,27                jgtu  40f9               if ((uns) Rd9 > [304]) goto 40f9;
 8 40d2: 3e,e7,1e             jb    B6,Re7,40f3        if (B6_Re7) goto 40f3;
 8 40d5: 3d,e7,15             jb    B5,Re7,40ed        if (B5_Re7) goto 40ed;
-8 40d8: 01,42                clrw  R42                R42 = 0;             
+8 40d8: 01,42                clrw  R42                [GEN_42] = 0;        
 8 40da: 91,10,e7             orrb  Re7,10             Re7 |= 10;           
 8 40dd: b0,6f,34             ldb   R34,R6f            R34 = R6f;           
 8 40e0: 9b,dd,38,ff,34       cmpb  R34,[Rdc+ff38]                          
 8 40e5: d1,24                jleu  410b               if ((uns) R34 <= [Rdc+ff38]) goto 410b;
-8 40e7: a1,0a,00,42          ldw   R42,a              R42 = a;             
+8 40e7: a1,0a,00,42          ldw   R42,a              [GEN_42] = a;        
 8 40eb: 20,1e                sjmp  410b               goto 410b;           
 
-8 40ed: a1,02,00,42          ldw   R42,2              R42 = 2;             
+8 40ed: a1,02,00,42          ldw   R42,2              [GEN_42] = 2;        
 8 40f1: 20,18                sjmp  410b               goto 410b;           
 
-8 40f3: a1,04,00,42          ldw   R42,4              R42 = 4;             
+8 40f3: a1,04,00,42          ldw   R42,4              [GEN_42] = 4;        
 8 40f7: 20,12                sjmp  410b               goto 410b;           
 
-8 40f9: a1,06,00,42          ldw   R42,6              R42 = 6;             
+8 40f9: a1,06,00,42          ldw   R42,6              [GEN_42] = 6;        
 8 40fd: 36,e7,0b             jnb   B6,Re7,410b        if (!B6_Re7) goto 410b;
-8 4100: a1,08,00,42          ldw   R42,8              R42 = 8;             
+8 4100: a1,08,00,42          ldw   R42,8              [GEN_42] = 8;        
 8 4104: 31,e8,04             jnb   B1,Re8,410b        if (!B1_Re8) goto 410b;
-8 4107: a1,0c,00,42          ldw   R42,c              R42 = c;             
+8 4107: a1,0c,00,42          ldw   R42,c              [GEN_42] = c;        
 8 410b: 45,50,00,fc,30       ad3w  R30,Rfc,50         R30 = St0001;        
-8 4110: 64,30,42             ad2w  R42,R30            R42 += R30;          
-8 4113: a2,42,30             ldw   R30,[R42]          R30 = [R42];         
+8 4110: 64,30,42             ad2w  R42,R30            [GEN_42] += R30;     
+8 4113: a2,42,30             ldw   R30,[R42]          R30 = [[GEN_42]];    
 8 4116: c3,ee,f0,30          stw   [Ree+f0],R30       [370] = R30;         
 8 411a: 34,e7,0f             jnb   B4,Re7,412c        if (!B4_Re7) goto 412c;
 8 411d: 36,e7,0c             jnb   B6,Re7,412c        if (!B6_Re7) goto 412c;
@@ -3441,7 +3443,7 @@ Sub0136:
 8 4185: d1,0b                jleu  4192               if ((uns) R18 <= R16) goto 4192;
 8 4187: 3c,e9,03             jb    B4,Re9,418d        if (B4_Re9) goto 418d;
 8 418a: 33,e9,05             jnb   B3,Re9,4192        if (!B3_Re9) goto 4192;
-8 418d: 3e,a7,02             jb    B6,Ra7,4192        if (B6_Ra7) goto 4192;
+8 418d: 3e,a7,02             jb    B6,Ra7,4192        if (B6_[FLAGS_A7]) goto 4192;
 8 4190: 20,13                sjmp  41a5               goto 41a5;           
 
 8 4192: 91,10,46             orrb  R46,10             R46 |= 10;           
@@ -3469,9 +3471,9 @@ Sub0136:
 Sub0137:
 8 41ca: 31,e6,77             jnb   B1,Re6,4244        if (!B1_Re6) goto 4244;
 8 41cd: 71,df,24             an2b  R24,df             R24 &= df;           
-8 41d0: a3,ee,8c,42          ldw   R42,[Ree+8c]       R42 = [30c];         
-8 41d4: 07,42                incw  R42                R42++;               
-8 41d6: c3,ee,8c,42          stw   [Ree+8c],R42       [30c] = R42;         
+8 41d0: a3,ee,8c,42          ldw   R42,[Ree+8c]       [GEN_42] = [30c];    
+8 41d4: 07,42                incw  R42                [GEN_42]++;          
+8 41d6: c3,ee,8c,42          stw   [Ree+8c],R42       [30c] = [GEN_42];    
 8 41da: 3a,e1,67             jb    B2,Re1,4244        if (B2_Re1) goto 4244;
 8 41dd: 35,e7,64             jnb   B5,Re7,4244        if (!B5_Re7) goto 4244;
 8 41e0: 9b,ee,81,d8          cmpb  Rd8,[Ree+81]                            
@@ -3479,71 +3481,71 @@ Sub0137:
 8 41e6: 8b,fc,76,be          cmpw  Rbe,[Rfc+76]                            
 8 41ea: d1,58                jleu  4244               if ((uns) Rbe <= [TP_SH_VALID]) goto 4244;
 8 41ec: b0,6f,32             ldb   R32,R6f            R32 = R6f;           
-8 41ef: 01,42                clrw  R42                R42 = 0;             
+8 41ef: 01,42                clrw  R42                [GEN_42] = 0;        
 8 41f1: 32,d8,05             jnb   B2,Rd8,41f9        if (!B2_Rd8) goto 41f9;
 8 41f4: 39,d8,07             jb    B1,Rd8,41fe        if (B1_Rd8) goto 41fe;
 8 41f7: 20,07                sjmp  4200               goto 4200;           
 
 8 41f9: 33,d8,48             jnb   B3,Rd8,4244        if (!B3_Rd8) goto 4244;
-8 41fc: 07,42                incw  R42                R42++;               
-8 41fe: 07,42                incw  R42                R42++;               
+8 41fc: 07,42                incw  R42                [GEN_42]++;          
+8 41fe: 07,42                incw  R42                [GEN_42]++;          
 8 4200: 45,78,00,fc,30       ad3w  R30,Rfc,78         R30 = St0002;        
-8 4205: 64,30,42             ad2w  R42,R30            R42 += R30;          
+8 4205: 64,30,42             ad2w  R42,R30            [GEN_42] += R30;     
 8 4208: 9a,42,32             cmpb  R32,[R42]                               
-8 420b: d1,37                jleu  4244               if ((uns) R32 <= [R42]) goto 4244;
+8 420b: d1,37                jleu  4244               if ((uns) R32 <= [[GEN_42]]) goto 4244;
 8 420d: 3c,a8,34             jb    B4,Ra8,4244        if (B4_Ra8) goto 4244;
 8 4210: 3f,a8,31             jb    B7,Ra8,4244        if (B7_Ra8) goto 4244;
 8 4213: 98,70,00             cmpb  0,R70                                   
 8 4216: d7,2c                jne   4244               if (0 != R70) goto 4244;
 8 4218: 8b,fe,24,b8          cmpw  Rb8,[Rfe+24]                            
-8 421c: d3,26                jnc   4244               if ((uns) Rb8 < [NSTALL]) goto 4244;
+8 421c: d3,26                jnc   4244               if ((uns) [RPM] < [NSTALL]) goto 4244;
 8 421e: b3,de,f8,32          ldb   R32,[Rde+f8]       R32 = [Rde+f8];      
 8 4222: 36,32,1f             jnb   B6,R32,4244        if (!B6_R32) goto 4244;
 8 4225: 71,bf,24             an2b  R24,bf             R24 &= bf;           
 8 4228: 33,a4,03             jnb   B3,Ra4,422e        if (!B3_Ra4) goto 422e;
 8 422b: 91,40,24             orrb  R24,40             R24 |= 40;           
 8 422e: c3,ee,90,be          stw   [Ree+90],Rbe       [310] = Rbe;         
-8 4232: a3,ee,88,42          ldw   R42,[Ree+88]       R42 = [308];         
-8 4236: c3,ee,92,42          stw   [Ree+92],R42       [312] = R42;         
-8 423a: b0,6f,42             ldb   R42,R6f            R42 = R6f;           
-8 423d: c7,ee,96,42          stb   [Ree+96],R42       [316] = R42;         
+8 4232: a3,ee,88,42          ldw   R42,[Ree+88]       [GEN_42] = [308];    
+8 4236: c3,ee,92,42          stw   [Ree+92],R42       [312] = [GEN_42];    
+8 423a: b0,6f,42             ldb   R42,R6f            [GEN_42] = R6f;      
+8 423d: c7,ee,96,42          stb   [Ree+96],R42       [316] = [GEN_42];    
 8 4241: 91,20,24             orrb  R24,20             R24 |= 20;           
 8 4244: 3f,e7,42             jb    B7,Re7,4289        if (B7_Re7) goto 4289;
 8 4247: 35,24,3f             jnb   B5,R24,4289        if (!B5_R24) goto 4289;
 8 424a: 71,df,24             an2b  R24,df             R24 &= df;           
-8 424d: b3,ee,96,42          ldb   R42,[Ree+96]       R42 = [316];         
-8 4251: 5b,fc,75,42,30       sb3b  R30,R42,[Rfc+75]   R30 = R42 - [S_VAL_VSSUB];
+8 424d: b3,ee,96,42          ldb   R42,[Ree+96]       [GEN_42] = [316];    
+8 4251: 5b,fc,75,42,30       sb3b  R30,R42,[Rfc+75]   R30 = [GEN_42] - [S_VAL_VSSUB];
 8 4256: d3,05                jnc   425d               if (R30 < 0) goto 425d;
 8 4258: 98,6f,30             cmpb  R30,R6f                                 
 8 425b: db,2c                jc    4289               if ((uns) R30 >= R6f) goto 4289;
-8 425d: 77,fc,74,42          ad2b  R42,[Rfc+74]       R42 += [S_VAL_VSADD];
-8 4261: db,05                jc    4268               if (R42 > ff) goto 4268;
+8 425d: 77,fc,74,42          ad2b  R42,[Rfc+74]       [GEN_42] += [S_VAL_VSADD];
+8 4261: db,05                jc    4268               if ([GEN_42] > ff) goto 4268;
 8 4263: 98,6f,42             cmpb  R42,R6f                                 
-8 4266: d1,21                jleu  4289               if ((uns) R42 <= R6f) goto 4289;
-8 4268: a3,ee,90,42          ldw   R42,[Ree+90]       R42 = [310];         
-8 426c: 47,fc,70,42,30       ad3w  R30,R42,[Rfc+70]   R30 = R42 + [S_VAL_TPADD];
+8 4266: d1,21                jleu  4289               if ((uns) [GEN_42] <= R6f) goto 4289;
+8 4268: a3,ee,90,42          ldw   R42,[Ree+90]       [GEN_42] = [310];    
+8 426c: 47,fc,70,42,30       ad3w  R30,R42,[Rfc+70]   R30 = [GEN_42] + [S_VAL_TPADD];
 8 4271: db,05                jc    4278               if (R30 > ffff) goto 4278;
 8 4273: 88,be,30             cmpw  R30,Rbe                                 
 8 4276: d1,11                jleu  4289               if ((uns) R30 <= Rbe) goto 4289;
-8 4278: 6b,fc,72,42          sb2w  R42,[Rfc+72]       R42 -= [S_VAL_TPSUB];
-8 427c: d3,05                jnc   4283               if (R42 < 0) goto 4283;
+8 4278: 6b,fc,72,42          sb2w  R42,[Rfc+72]       [GEN_42] -= [S_VAL_TPSUB];
+8 427c: d3,05                jnc   4283               if ([GEN_42] < 0) goto 4283;
 8 427e: 88,be,42             cmpw  R42,Rbe                                 
-8 4281: db,06                jc    4289               if ((uns) R42 >= Rbe) goto 4289;
+8 4281: db,06                jc    4289               if ((uns) [GEN_42] >= Rbe) goto 4289;
 8 4283: 36,24,05             jnb   B6,R24,428b        if (!B6_R24) goto 428b;
 8 4286: 3b,a4,02             jb    B3,Ra4,428b        if (B3_Ra4) goto 428b;
 8 4289: 20,8b                sjmp  4316               goto 4316;           
 
-8 428b: a3,ee,8e,42          ldw   R42,[Ree+8e]       R42 = [30e];         
-8 428f: 07,42                incw  R42                R42++;               
-8 4291: c3,ee,8e,42          stw   [Ree+8e],R42       [30e] = R42;         
+8 428b: a3,ee,8e,42          ldw   R42,[Ree+8e]       [GEN_42] = [30e];    
+8 428f: 07,42                incw  R42                [GEN_42]++;          
+8 4291: c3,ee,8e,42          stw   [Ree+8e],R42       [30e] = [GEN_42];    
 8 4295: b0,d8,40             ldb   R40,Rd8            R40 = Rd8;           
 8 4298: 99,02,40             cmpb  R40,2                                   
 8 429b: df,2c                je    42c9               if (R40 == 2) goto 42c9;
-8 429d: a3,ee,92,42          ldw   R42,[Ree+92]       R42 = [312];         
-8 42a1: 6b,fc,6e,42          sb2w  R42,[Rfc+6e]       R42 -= [Sc0044];     
-8 42a5: d3,06                jnc   42ad               if (R42 < 0) goto 42ad;
+8 429d: a3,ee,92,42          ldw   R42,[Ree+92]       [GEN_42] = [312];    
+8 42a1: 6b,fc,6e,42          sb2w  R42,[Rfc+6e]       [GEN_42] -= [Sc0044];
+8 42a5: d3,06                jnc   42ad               if ([GEN_42] < 0) goto 42ad;
 8 42a7: 8b,ee,88,42          cmpw  R42,[Ree+88]                            
-8 42ab: db,03                jc    42b0               if ((uns) R42 >= [308]) goto 42b0;
+8 42ab: db,03                jc    42b0               if ((uns) [GEN_42] >= [308]) goto 42b0;
 8 42ad: 91,04,2f             orrb  R2f,4              R2f |= 4;            
 8 42b0: 79,06,40             sb2b  R40,6              R40 -= 6;            
 8 42b3: 37,40,06             jnb   B7,R40,42bc        if (!B7_R40) goto 42bc;
@@ -3567,17 +3569,17 @@ Sub0137:
 8 42dc: df,03                je    42e1               if (0 == [18e]) goto 42e1;
 8 42de: 91,10,e1             orrb  Re1,10             Re1 |= 10;           
 8 42e1: 71,7f,e1             an2b  Re1,7f             Re1 &= 7f;           
-8 42e4: b3,de,db,42          ldb   R42,[Rde+db]       R42 = [Rde+db];      
-8 42e8: 35,42,0a             jnb   B5,R42,42f5        if (!B5_R42) goto 42f5;
+8 42e4: b3,de,db,42          ldb   R42,[Rde+db]       [GEN_42] = [Rde+db]; 
+8 42e8: 35,42,0a             jnb   B5,R42,42f5        if (!B5_[GEN_42]) goto 42f5;
 8 42eb: b3,de,e6,14          ldb   R14,[Rde+e6]       [HSO_IPEND2] = [Rde+e6];
 8 42ef: 9b,fe,0f,14          cmpb  R14,[Rfe+f]                             
 8 42f3: d3,1e                jnc   4313               if ((uns) [HSO_IPEND2] < [Sc0096]) goto 4313;
-8 42f5: b3,de,dc,42          ldb   R42,[Rde+dc]       R42 = [Rde+dc];      
-8 42f9: 30,42,0a             jnb   B0,R42,4306        if (!B0_R42) goto 4306;
+8 42f5: b3,de,dc,42          ldb   R42,[Rde+dc]       [GEN_42] = [Rde+dc]; 
+8 42f9: 30,42,0a             jnb   B0,R42,4306        if (!B0_[GEN_42]) goto 4306;
 8 42fc: b3,de,e9,14          ldb   R14,[Rde+e9]       [HSO_IPEND2] = [Rde+e9];
 8 4300: 9b,fe,0f,14          cmpb  R14,[Rfe+f]                             
 8 4304: d3,0d                jnc   4313               if ((uns) [HSO_IPEND2] < [Sc0096]) goto 4313;
-8 4306: 36,42,0d             jnb   B6,R42,4316        if (!B6_R42) goto 4316;
+8 4306: 36,42,0d             jnb   B6,R42,4316        if (!B6_[GEN_42]) goto 4316;
 8 4309: b3,de,ef,14          ldb   R14,[Rde+ef]       [HSO_IPEND2] = [Rde+ef];
 8 430d: 9b,fe,0f,14          cmpb  R14,[Rfe+f]                             
 8 4311: db,03                jc    4316               if ((uns) [HSO_IPEND2] >= [Sc0096]) goto 4316;
@@ -3587,25 +3589,25 @@ Sub0137:
 Sub0138:
 8 4317: 31,e6,61             jnb   B1,Re6,437b        if (!B1_Re6) goto 437b;
 8 431a: 35,e7,5e             jnb   B5,Re7,437b        if (!B5_Re7) goto 437b;
-8 431d: 01,42                clrw  R42                R42 = 0;             
+8 431d: 01,42                clrw  R42                [GEN_42] = 0;        
 8 431f: 01,30                clrw  R30                R30 = 0;             
 8 4321: 8b,fc,6a,be          cmpw  Rbe,[Rfc+6a]                            
 8 4325: d1,10                jleu  4337               if ((uns) Rbe <= [Sc0042]) goto 4337;
 8 4327: 8b,fc,6c,be          cmpw  Rbe,[Rfc+6c]                            
 8 432b: d9,06                jgtu  4333               if ((uns) Rbe > [Sc0043]) goto 4333;
-8 432d: a1,06,00,42          ldw   R42,6              R42 = 6;             
+8 432d: a1,06,00,42          ldw   R42,6              [GEN_42] = 6;        
 8 4331: 20,04                sjmp  4337               goto 4337;           
 
-8 4333: a1,0c,00,42          ldw   R42,c              R42 = c;             
+8 4333: a1,0c,00,42          ldw   R42,c              [GEN_42] = c;        
 8 4337: ac,d8,32             ldzbw R32,Rd8            R32 = (uns)Rd8;      
-8 433a: 64,32,42             ad2w  R42,R32            R42 += R32;          
+8 433a: 64,32,42             ad2w  R42,R32            [GEN_42] += R32;     
 8 433d: 9b,ee,81,32          cmpb  R32,[Ree+81]                            
 8 4341: d9,06                jgtu  4349               if ((uns) R32 > [301]) goto 4349;
-8 4343: 65,10,00,42          ad2w  R42,10             R42 += 10;           
+8 4343: 65,10,00,42          ad2w  R42,10             [GEN_42] += 10;      
 8 4347: 20,04                sjmp  434d               goto 434d;           
 
-8 4349: 69,04,00,42          sb2w  R42,4              R42 -= 4;            
-8 434d: a0,42,30             ldw   R30,R42            R30 = R42;           
+8 4349: 69,04,00,42          sb2w  R42,4              [GEN_42] -= 4;       
+8 434d: a0,42,30             ldw   R30,R42            R30 = [GEN_42];      
 8 4350: 08,01,30             shrw  R30,1              R30 = R30 / 2;       
 8 4353: b3,31,d2,04,16       ldb   R16,[R30+4d2]      R16 = [R30+4d2];     
 8 4358: 17,16                incb  R16                R16++;               
@@ -3615,11 +3617,11 @@ Sub0138:
 8 4364: 20,15                sjmp  437b               goto 437b;           
 
 8 4366: c7,31,d2,04,00       stb   [R30+4d2],0        [R30+4d2] = 0;       
-8 436b: a3,43,ae,04,14       ldw   R14,[R42+4ae]      [HSO_IPEND2] = [R42+4ae];
+8 436b: a3,43,ae,04,14       ldw   R14,[R42+4ae]      [HSO_IPEND2] = [[GEN_42]+4ae];
 8 4370: 07,14                incw  R14                [HSO_IPEND2]++;      
 8 4372: d3,02                jnc   4376               if ([HSO_IPEND2] <= ffff) goto 4376;
 8 4374: 05,14                decw  R14                [HSO_IPEND2]--;      
-8 4376: c3,43,ae,04,14       stw   [R42+4ae],R14      [R42+4ae] = [HSO_IPEND2];
+8 4376: c3,43,ae,04,14       stw   [R42+4ae],R14      [[GEN_42]+4ae] = [HSO_IPEND2];
 8 437b: f0                   ret                      return;              
 
 Sub0139:
@@ -3700,7 +3702,7 @@ Sub0140:
 8 4445: 01,03,23,00                                   #args                
 8 4449: c3,ee,1c,22          stw   [Ree+1c],R22       [39c] = R22;         
 8 444d: 8b,fe,22,b8          cmpw  Rb8,[Rfe+22]                            
-8 4451: d1,09                jleu  445c               if ((uns) Rb8 <= [NRUN]) goto 445c;
+8 4451: d1,09                jleu  445c               if ((uns) [RPM] <= [NRUN]) goto 445c;
 8 4453: 3d,20,06             jb    B5,R20,445c        if (B5_R20) goto 445c;
 8 4456: 3f,20,03             jb    B7,R20,445c        if (B7_R20) goto 445c;
 8 4459: 91,04,e8             orrb  Re8,4              Re8 |= 4;            
@@ -3876,7 +3878,7 @@ Sub0141:
 8 4630: 3f,e7,06             jb    B7,Re7,4639        if (B7_Re7) goto 4639;
 8 4633: 9b,ee,85,d8          cmpb  Rd8,[Ree+85]                            
 8 4637: df,6b                je    46a4               if (Rd8 == [305]) goto 46a4;
-8 4639: 01,42                clrw  R42                R42 = 0;             
+8 4639: 01,42                clrw  R42                [GEN_42] = 0;        
 8 463b: 01,30                clrw  R30                R30 = 0;             
 8 463d: 01,18                clrw  R18                R18 = 0;             
 8 463f: 39,1e,2a             jb    B1,R1e,466c        if (B1_R1e) goto 466c;
@@ -3887,18 +3889,18 @@ Sub0141:
 8 4650: 29,39                scall 478b               Sub0143();           
 8 4652: 20,18                sjmp  466c               goto 466c;           
 
-8 4654: 17,42                incb  R42                R42++;               
+8 4654: 17,42                incb  R42                [GEN_42]++;          
 8 4656: 33,1e,0b             jnb   B3,R1e,4664        if (!B3_R1e) goto 4664;
 8 4659: 65,08,00,18          ad2w  R18,8              R18 += 8;            
 8 465d: 31,24,0c             jnb   B1,R24,466c        if (!B1_R24) goto 466c;
 8 4660: 29,29                scall 478b               Sub0143();           
 8 4662: 20,08                sjmp  466c               goto 466c;           
 
-8 4664: 17,42                incb  R42                R42++;               
+8 4664: 17,42                incb  R42                [GEN_42]++;          
 8 4666: 65,0a,00,18          ad2w  R18,a              R18 += a;            
 8 466a: 29,23                scall 478f               Sub0144();           
 8 466c: a0,ba,34             ldw   R34,Rba            R34 = Rba;           
-8 466f: a3,19,98,47,32       ldw   R32,[R18+4798]     R32 = [R18+OSt8_006_4798];
+8 466f: a3,19,98,47,32       ldw   R32,[R18+4798]     R32 = [R18+OSt8_005_4798];
 8 4674: 64,fc,32             ad2w  R32,Rfc            R32 += Rfc;          
 8 4677: ac,38,40             ldzbw R40,R38            R40 = (uns)R38;      
 8 467a: 91,20,a1             orrb  Ra1,20             Ra1 |= 20;           
@@ -3907,8 +3909,8 @@ Sub0141:
 8 4683: 08,07,38             shrw  R38,7              R38 = R38 / 80;      
 8 4686: 31,18,11             jnb   B1,R18,469a        if (!B1_R18) goto 469a;
 8 4689: 30,30,0e             jnb   B0,R30,469a        if (!B0_R30) goto 469a;
-8 468c: 64,fc,42             ad2w  R42,Rfc            R42 += Rfc;          
-8 468f: af,43,03,01,3a       ldzbw R3a,[R42+103]      R3a = (uns)[R42+103];
+8 468c: 64,fc,42             ad2w  R42,Rfc            [GEN_42] += Rfc;     
+8 468f: af,43,03,01,3a       ldzbw R3a,[R42+103]      R3a = (uns)[[GEN_42]+103];
 8 4694: 6c,3a,38             ml2w  R38,R3a            R38 *= R3a;          
 8 4697: 0c,07,38             shrdw R38,7              R38L = R38L / 80;    
 8 469a: 98,39,00             cmpb  0,R39                                   
@@ -3920,16 +3922,16 @@ Sub0141:
 8 46a9: db,05                jc    46b0               if ((uns) R38 >= [Rdc+ff7c]) goto 46b0;
 8 46ab: b3,dd,7c,ff,38       ldb   R38,[Rdc+ff7c]     R38 = [Rdc+ff7c];    
 8 46b0: c7,ee,be,38          stb   [Ree+be],R38       [33e] = R38;         
-8 46b4: b3,ee,db,42          ldb   R42,[Ree+db]       R42 = [35b];         
-8 46b8: c7,ee,17,42          stb   [Ree+17],R42       [397] = R42;         
+8 46b4: b3,ee,db,42          ldb   R42,[Ree+db]       [GEN_42] = [35b];    
+8 46b8: c7,ee,17,42          stb   [Ree+17],R42       [397] = [GEN_42];    
 8 46bc: 3d,e9,35             jb    B5,Re9,46f4        if (B5_Re9) goto 46f4;
 8 46bf: ef,16,e5             call  2bd8               SUWordLU(FN622A,Rba);
 8 46c2: 82,c9,ba,00                                   #args                
-8 46c6: 5f,ee,be,38,42       ml3b  R42,R38,[Ree+be]   R42 = R38 * [33e];   
-8 46cb: 08,07,42             shrw  R42,7              R42 = R42 / 80;      
+8 46c6: 5f,ee,be,38,42       ml3b  R42,R38,[Ree+be]   [GEN_42] = R38 * [33e];
+8 46cb: 08,07,42             shrw  R42,7              [GEN_42] = [GEN_42] / 80;
 8 46ce: 30,43,03             jnb   B0,R43,46d4        if (!B0_R43) goto 46d4;
-8 46d1: b1,ff,42             ldb   R42,ff             R42 = ff;            
-8 46d4: ef,96,e4             call  2b6d               UUByteLU(FN620,R42); 
+8 46d1: b1,ff,42             ldb   R42,ff             [GEN_42] = ff;       
+8 46d4: ef,96,e4             call  2b6d               UUByteLU(FN620,[GEN_42]);
 8 46d7: 82,c7,42,00                                   #args                
 8 46db: a0,38,40             ldw   R40,R38            R40 = R38;           
 8 46de: ef,fc,e4             call  2bdd               SSWordLU(FN622,Rba); 
@@ -3952,7 +3954,7 @@ Sub0141:
 8 470d: c3,ee,04,00          stw   [Ree+4],0          [384] = 0;           
 8 4711: 99,a0,91             cmpb  R91,a0                                  
 8 4714: d3,3d                jnc   4753               if ((uns) R91 < a0) goto 4753;
-8 4716: 3e,a7,3a             jb    B6,Ra7,4753        if (B6_Ra7) goto 4753;
+8 4716: 3e,a7,3a             jb    B6,Ra7,4753        if (B6_[FLAGS_A7]) goto 4753;
 8 4719: a3,ee,04,30          ldw   R30,[Ree+4]        R30 = [384];         
 8 471d: 8b,fd,00,01,30       cmpw  R30,[Rfc+100]                           
 8 4722: d3,2f                jnc   4753               if ((uns) R30 < [Sc0072]) goto 4753;
@@ -4004,13 +4006,13 @@ Sub0144:
 8 4794: 17,30                incb  R30                R30++;               
 8 4796: f0                   ret                      return;              
 
-        Inc   8 4798: ostruct   OSt8_006_4798 - Other Structure 8 006
+        Inc   8 4798: ostruct   OSt8_005_4798 - Other Structure 8 005
 
 8 4797: ff,c2,08,32,08,f2,08,62                       Unknown Operation/Structure
 8 479f: 08,22,09                                      Unknown Operation/Structure
 
 
-OSt8_006 - Other Structure 8 006:
+OSt8_005 - Other Structure 8 005:
 8 47a2: 92,08      ostruct    892
 8 47a4: 71,ef      ostruct   ef71
 
@@ -4040,10 +4042,10 @@ OSt8_006 - Other Structure 8 006:
 8 47eb: a3,ee,88,16          ldw   R16,[Ree+88]       R16 = [308];         
 8 47ef: b0,6f,18             ldb   R18,R6f            R18 = R6f;           
 8 47f2: b3,dd,7e,ff,3a       ldb   R3a,[Rdc+ff7e]     R3a = [Rdc+ff7e];    
-8 47f7: 11,42                clrb  R42                R42 = 0;             
+8 47f7: 11,42                clrb  R42                [GEN_42] = 0;        
 8 47f9: 9b,dc,9b,18          cmpb  R18,[Rdc+9b]                            
 8 47fd: db,04                jc    4803               if ((uns) R18 >= [Rdc+9b]) goto 4803;
-8 47ff: 17,42                incb  R42                R42++;               
+8 47ff: 17,42                incb  R42                [GEN_42]++;          
 8 4801: 20,03                sjmp  4806               goto 4806;           
 
 8 4803: 3f,50,49             jb    B7,R50,484f        if (B7_R50) goto 484f;
@@ -4060,7 +4062,7 @@ OSt8_006 - Other Structure 8 006:
 8 4820: 30,32,2c             jnb   B0,R32,484f        if (!B0_R32) goto 484f;
 8 4823: 3c,e9,29             jb    B4,Re9,484f        if (B4_Re9) goto 484f;
 8 4826: b3,dd,7f,ff,3a       ldb   R3a,[Rdc+ff7f]     R3a = [Rdc+ff7f];    
-8 482b: 30,42,09             jnb   B0,R42,4837        if (!B0_R42) goto 4837;
+8 482b: 30,42,09             jnb   B0,R42,4837        if (!B0_[GEN_42]) goto 4837;
 8 482e: 9b,dc,9c,18          cmpb  R18,[Rdc+9c]                            
 8 4832: d1,03                jleu  4837               if ((uns) R18 <= [Rdc+9c]) goto 4837;
 8 4834: 3f,50,18             jb    B7,R50,484f        if (B7_R50) goto 484f;
@@ -4130,12 +4132,12 @@ Sub0146:
 8 48de: cc,00                pop   0                  0 = pop();           
 8 48e0: 44,30,1a,32          ad3w  R32,R1a,R30        R32 = R1a + R30;     
 8 48e4: 28,48                scall 492e               Sub0147();           
-8 48e6: a0,38,42             ldw   R42,R38            R42 = R38;           
+8 48e6: a0,38,42             ldw   R42,R38            [GEN_42] = R38;      
 8 48e9: 44,30,18,32          ad3w  R32,R18,R30        R32 = R18 + R30;     
 8 48ed: 28,3f                scall 492e               Sub0147();           
 8 48ef: a0,38,3a             ldw   R3a,R38            R3a = R38;           
 8 48f2: 11,1c                clrb  R1c                R1c = 0;             
-8 48f4: 48,38,42,30          sb3w  R30,R42,R38        R30 = R42 - R38;     
+8 48f4: 48,38,42,30          sb3w  R30,R42,R38        R30 = [GEN_42] - R38;
 8 48f8: db,04                jc    48fe               if (R30 >= 0) goto 48fe;
 8 48fa: 17,1c                incb  R1c                R1c++;               
 8 48fc: 03,30                negw  R30                R30 = -R30;          
@@ -4180,7 +4182,7 @@ Sub0147:
 8 4962: 01,14                clrw  R14                [HSO_IPEND2] = 0;    
 8 4964: 20,04                sjmp  496a               goto 496a;           
 
-8 4966: a1,ff,7f,14          ldw   R14,7fff           [HSO_IPEND2] = OSt8_009;
+8 4966: a1,ff,7f,14          ldw   R14,7fff           [HSO_IPEND2] = OSt8_008;
 8 496a: 37,15,02             jnb   B7,R15,496f        if (!B7_R15) goto 496f;
 8 496d: 01,14                clrw  R14                [HSO_IPEND2] = 0;    
 8 496f: a3,ee,c8,38          ldw   R38,[Ree+c8]       R38 = [348];         
@@ -4403,12 +4405,12 @@ Sub0149:
 8 4bcf: 20,04                sjmp  4bd5               goto 4bd5;           
 
 8 4bd1: 65,0a,00,18          ad2w  R18,a              R18 += a;            
-8 4bd5: a3,19,c2,4c,32       ldw   R32,[R18+4cc2]     R32 = [R18+OSt8_007_4cc2];
+8 4bd5: a3,19,c2,4c,32       ldw   R32,[R18+4cc2]     R32 = [R18+OSt8_006_4cc2];
 8 4bda: 64,fc,32             ad2w  R32,Rfc            R32 += Rfc;          
 8 4bdd: 91,10,a1             orrb  Ra1,10             Ra1 |= 10;           
 8 4be0: ef,ab,df             call  2b8e               UUByteLU();          
 8 4be3: 16,38                sexb  R38                R38W = (int)R38;     
-8 4be5: 01,42                clrw  R42                R42 = 0;             
+8 4be5: 01,42                clrw  R42                [GEN_42] = 0;        
 8 4be7: a0,ba,30             ldw   R30,Rba            R30 = Rba;           
 8 4bea: 8b,dc,e0,30          cmpw  R30,[Rdc+e0]                            
 8 4bee: d6,16                jge   4c06               if ((sig) R30 >= [Rdc+e0]) goto 4c06;
@@ -4478,23 +4480,23 @@ Sub0150:
 8 4ca0: 11,1a                clrb  R1a                R1a = 0;             
 8 4ca2: a0,38,40             ldw   R40,R38            R40 = R38;           
 8 4ca5: 31,24,19             jnb   B1,R24,4cc1        if (!B1_R24) goto 4cc1;
-8 4ca8: ac,d8,42             ldzbw R42,Rd8            R42 = (uns)Rd8;      
+8 4ca8: ac,d8,42             ldzbw R42,Rd8            [GEN_42] = (uns)Rd8; 
 8 4cab: 89,02,00,42          cmpw  R42,2                                   
-8 4caf: d7,04                jne   4cb5               if (R42 != 2) goto 4cb5;
-8 4cb1: a1,04,00,42          ldw   R42,4              R42 = 4;             
-8 4cb5: 69,04,00,42          sb2w  R42,4              R42 -= 4;            
-8 4cb9: 64,42,16             ad2w  R16,R42            R16 += R42;          
+8 4caf: d7,04                jne   4cb5               if ([GEN_42] != 2) goto 4cb5;
+8 4cb1: a1,04,00,42          ldw   R42,4              [GEN_42] = 4;        
+8 4cb5: 69,04,00,42          sb2w  R42,4              [GEN_42] -= 4;       
+8 4cb9: 64,42,16             ad2w  R16,R42            R16 += [GEN_42];     
 8 4cbc: a2,16,32             ldw   R32,[R16]          R32 = [R16];         
 8 4cbf: 17,1a                incb  R1a                R1a++;               
 8 4cc1: f0                   ret                      return;              
 
-        Inc   8 4cc2: ostruct   OSt8_007_4cc2 - Other Structure 8 007
+        Inc   8 4cc2: ostruct   OSt8_006_4cc2 - Other Structure 8 006
 
 8 4cc2: 7a,06,82,06,96,06,9e,06                       Unknown Operation/Structure
 8 4cca: b2,06                                         Unknown Operation/Structure
 
 
-OSt8_007 - Other Structure 8 007:
+OSt8_006 - Other Structure 8 006:
 8 4ccc: ba,06      ostruct    6ba
 8 4cce: de,07      ostruct    7de
 8 4cd0: fa,07      ostruct    7fa
@@ -4528,8 +4530,8 @@ Sub0152:
 8 4d10: 71,fe,24             an2b  R24,fe             R24 &= fe;           
 8 4d13: 33,a4,03             jnb   B3,Ra4,4d19        if (!B3_Ra4) goto 4d19;
 8 4d16: 91,01,24             orrb  R24,1              R24 |= 1;            
-8 4d19: b3,dc,28,42          ldb   R42,[Rdc+28]       R42 = [Rdc+FLAGS_28];
-8 4d1d: 38,42,0f             jb    B0,R42,4d2f        if (B0_R42) goto 4d2f;
+8 4d19: b3,dc,28,42          ldb   R42,[Rdc+28]       [GEN_42] = [Rdc+FLAGS_28];
+8 4d1d: 38,42,0f             jb    B0,R42,4d2f        if (B0_[GEN_42]) goto 4d2f;
 8 4d20: 3a,e6,11             jb    B2,Re6,4d34        if (B2_Re6) goto 4d34;
 8 4d23: 38,e5,0e             jb    B0,Re5,4d34        if (B0_Re5) goto 4d34;
 8 4d26: 39,e5,06             jb    B1,Re5,4d2f        if (B1_Re5) goto 4d2f;
@@ -4572,7 +4574,7 @@ Sub0153:
 8 4d86: f0                   ret                      return;              
 
 Sub0154:
-8 4d87: a3,dc,42,30          ldw   R30,[Rdc+42]       R30 = [Rdc+42];      
+8 4d87: a3,dc,42,30          ldw   R30,[Rdc+42]       R30 = [Rdc+GEN_42];  
 8 4d8b: 88,30,c0             cmpw  Rc0,R30                                 
 8 4d8e: db,05                jc    4d95               if ((uns) Rc0 >= R30) goto 4d95;
 8 4d90: 91,08,e6             orrb  Re6,8              Re6 |= 8;            
@@ -4623,9 +4625,9 @@ Sub0154:
 8 4e0a: df,03                je    4e0f               if (Rda == Rd9) goto 4e0f;
 8 4e0c: 91,04,e4             orrb  Re4,4              Re4 |= 4;            
 8 4e0f: 71,f7,e4             an2b  Re4,f7             Re4 &= f7;           
-8 4e12: b3,ee,df,42          ldb   R42,[Ree+df]       R42 = [35f];         
+8 4e12: b3,ee,df,42          ldb   R42,[Ree+df]       [GEN_42] = [35f];    
 8 4e16: 99,80,42             cmpb  R42,80                                  
-8 4e19: df,03                je    4e1e               if (R42 == 80) goto 4e1e;
+8 4e19: df,03                je    4e1e               if ([GEN_42] == 80) goto 4e1e;
 8 4e1b: 91,08,e4             orrb  Re4,8              Re4 |= 8;            
 8 4e1e: b3,dc,0a,30          ldb   R30,[Rdc+a]        R30 = [Rdc+a];       
 8 4e22: 98,30,bd             cmpb  Rbd,R30                                 
@@ -4647,7 +4649,7 @@ Sub0154:
 8 4e4d: 8b,dc,0c,30          cmpw  R30,[Rdc+c]                             
 8 4e51: db,03                jc    4e56               if ((uns) R30 >= [Rdc+c]) goto 4e56;
 8 4e53: 91,02,e9             orrb  Re9,2              Re9 |= 2;            
-8 4e56: b3,ee,e6,42          ldb   R42,[Ree+e6]       R42 = [366];         
+8 4e56: b3,ee,e6,42          ldb   R42,[Ree+e6]       [GEN_42] = [366];    
 8 4e5a: 45,34,01,fc,32       ad3w  R32,Rfc,134        R32 = St0011;        
 8 4e5f: 33,e6,02             jnb   B3,Re6,4e64        if (!B3_Re6) goto 4e64;
 8 4e62: 28,b0                scall 4f14               Sub0155();           
@@ -4672,7 +4674,7 @@ Sub0154:
 8 4e90: b3,ee,81,34          ldb   R34,[Ree+81]       R34 = [301];         
 8 4e94: 33,d8,09             jnb   B3,Rd8,4ea0        if (!B3_Rd8) goto 4ea0;
 8 4e97: 3b,34,3b             jb    B3,R34,4ed5        if (B3_R34) goto 4ed5;
-8 4e9a: b3,dc,50,42          ldb   R42,[Rdc+50]       R42 = [Rdc+50];      
+8 4e9a: b3,dc,50,42          ldb   R42,[Rdc+50]       [GEN_42] = [Rdc+50]; 
 8 4e9e: 20,35                sjmp  4ed5               goto 4ed5;           
 
 8 4ea0: 32,d8,29             jnb   B2,Rd8,4ecc        if (!B2_Rd8) goto 4ecc;
@@ -4680,37 +4682,37 @@ Sub0154:
 8 4ea6: 99,06,34             cmpb  R34,6                                   
 8 4ea9: d9,08                jgtu  4eb3               if ((uns) R34 > 6) goto 4eb3;
 8 4eab: df,28                je    4ed5               if (R34 == 6) goto 4ed5;
-8 4ead: b3,dc,4f,42          ldb   R42,[Rdc+4f]       R42 = [Rdc+4f];      
+8 4ead: b3,dc,4f,42          ldb   R42,[Rdc+4f]       [GEN_42] = [Rdc+4f]; 
 8 4eb1: 20,22                sjmp  4ed5               goto 4ed5;           
 
-8 4eb3: b3,dc,17,42          ldb   R42,[Rdc+17]       R42 = [Rdc+17];      
+8 4eb3: b3,dc,17,42          ldb   R42,[Rdc+17]       [GEN_42] = [Rdc+17]; 
 8 4eb7: 20,1c                sjmp  4ed5               goto 4ed5;           
 
 8 4eb9: 99,04,34             cmpb  R34,4                                   
 8 4ebc: d9,08                jgtu  4ec6               if ((uns) R34 > 4) goto 4ec6;
 8 4ebe: df,15                je    4ed5               if (R34 == 4) goto 4ed5;
-8 4ec0: b3,dc,4e,42          ldb   R42,[Rdc+4e]       R42 = [Rdc+4e];      
+8 4ec0: b3,dc,4e,42          ldb   R42,[Rdc+4e]       [GEN_42] = [Rdc+4e]; 
 8 4ec4: 20,0f                sjmp  4ed5               goto 4ed5;           
 
-8 4ec6: b3,dc,16,42          ldb   R42,[Rdc+16]       R42 = [Rdc+16];      
+8 4ec6: b3,dc,16,42          ldb   R42,[Rdc+16]       [GEN_42] = [Rdc+16]; 
 8 4eca: 20,09                sjmp  4ed5               goto 4ed5;           
 
 8 4ecc: 99,02,34             cmpb  R34,2                                   
 8 4ecf: d1,04                jleu  4ed5               if ((uns) R34 <= 2) goto 4ed5;
-8 4ed1: b3,dc,15,42          ldb   R42,[Rdc+15]       R42 = [Rdc+15];      
-8 4ed5: c7,ee,e6,42          stb   [Ree+e6],R42       [366] = R42;         
-8 4ed9: b3,dc,28,42          ldb   R42,[Rdc+28]       R42 = [Rdc+FLAGS_28];
+8 4ed1: b3,dc,15,42          ldb   R42,[Rdc+15]       [GEN_42] = [Rdc+15]; 
+8 4ed5: c7,ee,e6,42          stb   [Ree+e6],R42       [366] = [GEN_42];    
+8 4ed9: b3,dc,28,42          ldb   R42,[Rdc+28]       [GEN_42] = [Rdc+FLAGS_28];
 8 4edd: 99,02,42             cmpb  R42,2                                   
-8 4ee0: df,2e                je    4f10               if (R42 == 2) goto 4f10;
-8 4ee2: b3,ee,f3,42          ldb   R42,[Ree+f3]       R42 = [373];         
+8 4ee0: df,2e                je    4f10               if ([GEN_42] == 2) goto 4f10;
+8 4ee2: b3,ee,f3,42          ldb   R42,[Ree+f3]       [GEN_42] = [373];    
 8 4ee6: 9b,dc,2e,42          cmpb  R42,[Rdc+2e]                            
-8 4eea: d9,05                jgtu  4ef1               if ((uns) R42 > [Rdc+2e]) goto 4ef1;
+8 4eea: d9,05                jgtu  4ef1               if ((uns) [GEN_42] > [Rdc+2e]) goto 4ef1;
 8 4eec: 3b,e6,21             jb    B3,Re6,4f10        if (B3_Re6) goto 4f10;
 8 4eef: 20,0c                sjmp  4efd               goto 4efd;           
 
-8 4ef1: b0,6f,42             ldb   R42,R6f            R42 = R6f;           
+8 4ef1: b0,6f,42             ldb   R42,R6f            [GEN_42] = R6f;      
 8 4ef4: 9b,dc,51,42          cmpb  R42,[Rdc+51]                            
-8 4ef8: db,03                jc    4efd               if ((uns) R42 >= [Rdc+51]) goto 4efd;
+8 4ef8: db,03                jc    4efd               if ((uns) [GEN_42] >= [Rdc+51]) goto 4efd;
 8 4efa: 37,a8,13             jnb   B7,Ra8,4f10        if (!B7_Ra8) goto 4f10;
 8 4efd: 98,00,e4             cmpb  Re4,0                                   
 8 4f00: d7,0e                jne   4f10               if (Re4 != 0) goto 4f10;
@@ -4725,8 +4727,8 @@ Sub0154:
 
 Sub0155:
 8 4f14: 9a,32,42             cmpb  R42,[R32]                               
-8 4f17: db,03                jc    4f1c               if ((uns) R42 >= [R32]) goto 4f1c;
-8 4f19: b2,32,42             ldb   R42,[R32]          R42 = [R32];         
+8 4f17: db,03                jc    4f1c               if ((uns) [GEN_42] >= [R32]) goto 4f1c;
+8 4f19: b2,32,42             ldb   R42,[R32]          [GEN_42] = [R32];    
 8 4f1c: f0                   ret                      return;              
 
 Sub0156:
@@ -4794,10 +4796,10 @@ Sub0158:
 8 4fad: f0                   ret                      return;              
 
 Sub0159:
-8 4fae: a3,ee,ea,42          ldw   R42,[Ree+ea]       R42 = [36a];         
+8 4fae: a3,ee,ea,42          ldw   R42,[Ree+ea]       [GEN_42] = [36a];    
 8 4fb2: 34,e5,11             jnb   B4,Re5,4fc6        if (!B4_Re5) goto 4fc6;
 8 4fb5: 8b,ee,ec,42          cmpw  R42,[Ree+ec]                            
-8 4fb9: d3,0b                jnc   4fc6               if ((uns) R42 < [36c]) goto 4fc6;
+8 4fb9: d3,0b                jnc   4fc6               if ((uns) [GEN_42] < [36c]) goto 4fc6;
 8 4fbb: 71,ef,e5             an2b  Re5,ef             Re5 &= ef;           
 8 4fbe: 91,20,e5             orrb  Re5,20             Re5 |= 20;           
 8 4fc1: c3,ee,ea,00          stw   [Ree+ea],0         [36a] = 0;           
@@ -4805,7 +4807,7 @@ Sub0159:
 
 8 4fc6: 35,e5,0f             jnb   B5,Re5,4fd8        if (!B5_Re5) goto 4fd8;
 8 4fc9: 8b,dc,38,42          cmpw  R42,[Rdc+38]                            
-8 4fcd: d3,09                jnc   4fd8               if ((uns) R42 < [Rdc+38]) goto 4fd8;
+8 4fcd: d3,09                jnc   4fd8               if ((uns) [GEN_42] < [Rdc+38]) goto 4fd8;
 8 4fcf: 71,df,e5             an2b  Re5,df             Re5 &= df;           
 8 4fd2: 71,df,e7             an2b  Re7,df             Re7 &= df;           
 8 4fd5: 71,fe,e5             an2b  Re5,fe             Re5 &= fe;           
@@ -4844,10 +4846,10 @@ Sub0160:
 8 5032: ef,ae,db             call  2be3               USWordLU(FN2LK,Rbe); 
 8 5035: c2,c5,be,00                                   #args                
 8 5039: c3,ee,b6,38          stw   [Ree+b6],R38       [336] = R38;         
-8 503d: 45,78,01,fc,42       ad3w  R42,Rfc,178        R42 = St0013;        
+8 503d: 45,78,01,fc,42       ad3w  R42,Rfc,178        [GEN_42] = St0013;   
 8 5042: 33,e7,05             jnb   B3,Re7,504a        if (!B3_Re7) goto 504a;
-8 5045: 45,90,01,fc,42       ad3w  R42,Rfc,190        R42 = St0014;        
-8 504a: 64,30,42             ad2w  R42,R30            R42 += R30;          
+8 5045: 45,90,01,fc,42       ad3w  R42,Rfc,190        [GEN_42] = St0014;   
+8 504a: 64,30,42             ad2w  R42,R30            [GEN_42] += R30;     
 8 504d: b1,04,34             ldb   R34,4              R34 = 4;             
 8 5050: a1,2c,03,32          ldw   R32,32c            R32 = 32c;           
 8 5054: a2,43,30             ldw   R30,[R42++]        R30 = [R42++];       
@@ -4855,11 +4857,11 @@ Sub0160:
 8 505a: e0,34,f7             djnz  R34,5054           R34--; if (R34 !=  0) goto 5054;
 8 505d: b1,02,34             ldb   R34,2              R34 = 2;             
 8 5060: a1,34,03,32          ldw   R32,334            R32 = 334;           
-8 5064: a2,32,42             ldw   R42,[R32]          R42 = [R32];         
-8 5067: 67,ee,a8,42          ad2w  R42,[Ree+a8]       R42 += [328];        
-8 506b: d3,03                jnc   5070               if (R42 <= ffff) goto 5070;
-8 506d: bd,ff,42             ldsbw R42,ff             R42 = (sig)ff;       
-8 5070: c2,33,42             stw   [R32++],R42        [R32++] = R42;       
+8 5064: a2,32,42             ldw   R42,[R32]          [GEN_42] = [R32];    
+8 5067: 67,ee,a8,42          ad2w  R42,[Ree+a8]       [GEN_42] += [328];   
+8 506b: d3,03                jnc   5070               if ([GEN_42] <= ffff) goto 5070;
+8 506d: bd,ff,42             ldsbw R42,ff             [GEN_42] = (sig)ff;  
+8 5070: c2,33,42             stw   [R32++],R42        [R32++] = [GEN_42];  
 8 5073: e0,34,ee             djnz  R34,5064           R34--; if (R34 !=  0) goto 5064;
 8 5076: ac,d8,22             ldzbw R22,Rd8            R22 = (uns)Rd8;      
 8 5079: 64,fc,22             ad2w  R22,Rfc            R22 += Rfc;          
@@ -4907,16 +4909,16 @@ Sub0162:
 8 50e9: 8b,fd,50,01,38       cmpw  R38,[Rfc+150]                           
 8 50ee: da,03                jle   50f3               if ((sig) R38 <= [Sc0078]) goto 50f3;
 8 50f0: 91,20,e0             orrb  Re0,20             Re0 |= 20;           
-8 50f3: a3,ee,ea,42          ldw   R42,[Ree+ea]       R42 = [36a];         
+8 50f3: a3,ee,ea,42          ldw   R42,[Ree+ea]       [GEN_42] = [36a];    
 8 50f7: 36,e5,25             jnb   B6,Re5,511f        if (!B6_Re5) goto 511f;
 8 50fa: 32,e5,11             jnb   B2,Re5,510e        if (!B2_Re5) goto 510e;
 8 50fd: 36,e7,08             jnb   B6,Re7,5108        if (!B6_Re7) goto 5108;
 8 5100: 8b,ee,b0,42          cmpw  R42,[Ree+b0]                            
-8 5104: db,08                jc    510e               if ((uns) R42 >= [330]) goto 510e;
+8 5104: db,08                jc    510e               if ((uns) [GEN_42] >= [330]) goto 510e;
 8 5106: 20,17                sjmp  511f               goto 511f;           
 
 8 5108: 8b,ee,ac,42          cmpw  R42,[Ree+ac]                            
-8 510c: d3,11                jnc   511f               if ((uns) R42 < [32c]) goto 511f;
+8 510c: d3,11                jnc   511f               if ((uns) [GEN_42] < [32c]) goto 511f;
 8 510e: c3,ee,ea,00          stw   [Ree+ea],0         [36a] = 0;           
 8 5112: a3,ee,b6,38          ldw   R38,[Ree+b6]       R38 = [336];         
 8 5116: 2f,80                scall 5098               Sub0161();           
@@ -4929,11 +4931,11 @@ Sub0162:
 8 5125: 33,e5,11             jnb   B3,Re5,5139        if (!B3_Re5) goto 5139;
 8 5128: 36,e7,08             jnb   B6,Re7,5133        if (!B6_Re7) goto 5133;
 8 512b: 8b,ee,b2,42          cmpw  R42,[Ree+b2]                            
-8 512f: db,08                jc    5139               if ((uns) R42 >= [332]) goto 5139;
+8 512f: db,08                jc    5139               if ((uns) [GEN_42] >= [332]) goto 5139;
 8 5131: 20,0c                sjmp  513f               goto 513f;           
 
 8 5133: 8b,ee,ae,42          cmpw  R42,[Ree+ae]                            
-8 5137: d3,06                jnc   513f               if ((uns) R42 < [32e]) goto 513f;
+8 5137: d3,06                jnc   513f               if ((uns) [GEN_42] < [32e]) goto 513f;
 8 5139: 71,76,e5             an2b  Re5,76             Re5 &= 76;           
 8 513c: 71,df,e7             an2b  Re7,df             Re7 &= df;           
 8 513f: 35,e0,28             jnb   B5,Re0,516a        if (!B5_Re0) goto 516a;
@@ -4971,9 +4973,9 @@ Sub0163:
 8 5192: 3f,e7,11             jb    B7,Re7,51a6        if (B7_Re7) goto 51a6;
 8 5195: 45,48,01,fc,18       ad3w  R18,Rfc,148        R18 = St0012;        
 8 519a: 64,16,18             ad2w  R18,R16            R18 += R16;          
-8 519d: a3,ee,a6,42          ldw   R42,[Ree+a6]       R42 = [326];         
+8 519d: a3,ee,a6,42          ldw   R42,[Ree+a6]       [GEN_42] = [326];    
 8 51a1: 8a,18,42             cmpw  R42,[R18]                               
-8 51a4: d3,16                jnc   51bc               if ((uns) R42 < [R18]) goto 51bc;
+8 51a4: d3,16                jnc   51bc               if ((uns) [GEN_42] < [R18]) goto 51bc;
 8 51a6: 45,16,05,fc,3c       ad3w  R3c,Rfc,516        R3c = St0025;        
 8 51ab: 45,e6,04,fc,1c       ad3w  R1c,Rfc,4e6        R1c = St0024;        
 8 51b0: 64,14,3c             ad2w  R3c,R14            R3c += [HSO_IPEND2]; 
@@ -5042,10 +5044,10 @@ Sub0164:
 8 5262: 4b,dc,1a,34,1a       sb3w  R1a,R34,[Rdc+1a]   R1a = R34 - [Rdc+1a];
 8 5267: db,02                jc    526b               if (R1a >= 0) goto 526b;
 8 5269: 01,1a                clrw  R1a                R1a = 0;             
-8 526b: 01,42                clrw  R42                R42 = 0;             
+8 526b: 01,42                clrw  R42                [GEN_42] = 0;        
 8 526d: 88,1a,32             cmpw  R32,R1a                                 
 8 5270: d9,02                jgtu  5274               if ((uns) R32 > R1a) goto 5274;
-8 5272: 17,42                incb  R42                R42++;               
+8 5272: 17,42                incb  R42                [GEN_42]++;          
 8 5274: 88,18,be             cmpw  Rbe,R18                                 
 8 5277: db,02                jc    527b               if ((uns) Rbe >= R18) goto 527b;
 8 5279: 17,43                incb  R43                R43++;               
@@ -5053,7 +5055,7 @@ Sub0164:
 8 527e: 38,43,17             jb    B0,R43,5298        if (B0_R43) goto 5298;
 8 5281: 88,34,32             cmpw  R32,R34                                 
 8 5284: d9,0d                jgtu  5293               if ((uns) R32 > R34) goto 5293;
-8 5286: 38,42,15             jb    B0,R42,529e        if (B0_R42) goto 529e;
+8 5286: 38,42,15             jb    B0,R42,529e        if (B0_[GEN_42]) goto 529e;
 8 5289: 33,a4,12             jnb   B3,Ra4,529e        if (!B3_Ra4) goto 529e;
 8 528c: 30,e6,0f             jnb   B0,Re6,529e        if (!B0_Re6) goto 529e;
 8 528f: 17,36                incb  R36                R36++;               
@@ -5080,7 +5082,7 @@ Sub0164:
 8 52c4: d3,05                jnc   52cb               if ((uns) Rbe < [Rdc+34]) goto 52cb;
 8 52c6: 88,34,32             cmpw  R32,R34                                 
 8 52c9: d9,0b                jgtu  52d6               if ((uns) R32 > R34) goto 52d6;
-8 52cb: 38,42,03             jb    B0,R42,52d1        if (B0_R42) goto 52d1;
+8 52cb: 38,42,03             jb    B0,R42,52d1        if (B0_[GEN_42]) goto 52d1;
 8 52ce: 30,43,08             jnb   B0,R43,52d9        if (!B0_R43) goto 52d9;
 8 52d1: 71,fd,e5             an2b  Re5,fd             Re5 &= fd;           
 8 52d4: 20,03                sjmp  52d9               goto 52d9;           
@@ -5212,11 +5214,11 @@ Sub0167:
 8 5434: ef,5a,dd             call  3191               Sub0068(9);          
 8 5437: 09                                            #args                
 8 5438: 71,bf,e1             an2b  Re1,bf             Re1 &= bf;           
-8 543b: b3,de,dc,42          ldb   R42,[Rde+dc]       R42 = [Rde+dc];      
-8 543f: 31,42,0d             jnb   B1,R42,544f        if (!B1_R42) goto 544f;
-8 5442: b3,de,ea,42          ldb   R42,[Rde+ea]       R42 = [Rde+ea];      
+8 543b: b3,de,dc,42          ldb   R42,[Rde+dc]       [GEN_42] = [Rde+dc]; 
+8 543f: 31,42,0d             jnb   B1,R42,544f        if (!B1_[GEN_42]) goto 544f;
+8 5442: b3,de,ea,42          ldb   R42,[Rde+ea]       [GEN_42] = [Rde+ea]; 
 8 5446: 9b,fe,10,42          cmpb  R42,[Rfe+10]                            
-8 544a: db,03                jc    544f               if ((uns) R42 >= [Sc0097]) goto 544f;
+8 544a: db,03                jc    544f               if ((uns) [GEN_42] >= [Sc0097]) goto 544f;
 8 544c: 91,40,e1             orrb  Re1,40             Re1 |= 40;           
 8 544f: f0                   ret                      return;              
 
@@ -5248,12 +5250,12 @@ Sub0169:
 8 548d: de,03                jlt   5492               if ((sig) R16 < Rba) goto 5492;
 8 548f: 71,df,a8             an2b  Ra8,df             Ra8 &= df;           
 8 5492: 3b,8e,1f             jb    B3,R8e,54b4        if (B3_R8e) goto 54b4;
-8 5495: b3,ee,e1,42          ldb   R42,[Ree+e1]       R42 = [361];         
+8 5495: b3,ee,e1,42          ldb   R42,[Ree+e1]       [GEN_42] = [361];    
 8 5499: 9b,fd,0e,01,42       cmpb  R42,[Rfc+10e]                           
-8 549e: d1,14                jleu  54b4               if ((uns) R42 <= [Sc0074]) goto 54b4;
-8 54a0: b3,ee,e0,42          ldb   R42,[Ree+e0]       R42 = [360];         
+8 549e: d1,14                jleu  54b4               if ((uns) [GEN_42] <= [Sc0074]) goto 54b4;
+8 54a0: b3,ee,e0,42          ldb   R42,[Ree+e0]       [GEN_42] = [360];    
 8 54a4: 9b,fd,0f,01,42       cmpb  R42,[Rfc+10f]                           
-8 54a9: d3,18                jnc   54c3               if ((uns) R42 < [Sc0075]) goto 54c3;
+8 54a9: d3,18                jnc   54c3               if ((uns) [GEN_42] < [Sc0075]) goto 54c3;
 8 54ab: c7,ee,e0,00          stb   [Ree+e0],0         [360] = 0;           
 8 54af: 3a,44,09             jb    B2,R44,54bb        if (B2_R44) goto 54bb;
 8 54b2: 20,0c                sjmp  54c0               goto 54c0;           
@@ -5277,14 +5279,14 @@ Sub0169:
 
 8 54e1: 71,fe,e1             an2b  Re1,fe             Re1 &= fe;           
 8 54e4: 71,f7,e1             an2b  Re1,f7             Re1 &= f7;           
-8 54e7: b3,de,db,42          ldb   R42,[Rde+db]       R42 = [Rde+db];      
-8 54eb: 30,42,0e             jnb   B0,R42,54fc        if (!B0_R42) goto 54fc;
+8 54e7: b3,de,db,42          ldb   R42,[Rde+db]       [GEN_42] = [Rde+db]; 
+8 54eb: 30,42,0e             jnb   B0,R42,54fc        if (!B0_[GEN_42]) goto 54fc;
 8 54ee: b3,de,e1,30          ldb   R30,[Rde+e1]       R30 = [Rde+e1];      
 8 54f2: 9b,fd,11,03,30       cmpb  R30,[Rfc+311]                           
 8 54f7: db,03                jc    54fc               if ((uns) R30 >= [Sc0087]) goto 54fc;
 8 54f9: 91,08,e1             orrb  Re1,8              Re1 |= 8;            
 8 54fc: 3b,8e,37             jb    B3,R8e,5536        if (B3_R8e) goto 5536;
-8 54ff: 3f,a7,34             jb    B7,Ra7,5536        if (B7_Ra7) goto 5536;
+8 54ff: 3f,a7,34             jb    B7,Ra7,5536        if (<CRANKING> == 1) goto 5536;
 8 5502: 3a,a8,35             jb    B2,Ra8,553a        if (B2_Ra8) goto 553a;
 8 5505: ad,0a,30             ldzbw R30,a              R30 = (uns)a;        
 8 5508: 44,fc,30,16          ad3w  R16,R30,Rfc        R16 = R30 + Rfc;     
@@ -5310,7 +5312,7 @@ Sub0169:
 8 553a: f0                   ret                      return;              
 
 Sub0170:
-8 553b: 37,a7,04             jnb   B7,Ra7,5542        if (!B7_Ra7) goto 5542;
+8 553b: 37,a7,04             jnb   B7,Ra7,5542        if (<CRANKING> == 0) goto 5542;
 8 553e: 11,c2                clrb  Rc2                Rc2 = 0;             
 8 5540: 20,07                sjmp  5549               goto 5549;           
 
@@ -5463,13 +5465,13 @@ CHECK_CONSOLE:
 8 5729: c2,19,1c             stw   [R18++],R1c        [R18++] = R1c;       
 8 572c: e0,1a,f7             djnz  R1a,5726           R1a--; if (R1a !=  0) goto 5726;
 8 572f: 3c,45,21             jb    B4,R45,5753        if (B4_[HSI_DATA]) goto Sub0174;
-8 5732: b3,01,f3,1f,42       ldb   R42,[1ff3]         R42 = [EC_1ff3];     
+8 5732: b3,01,f3,1f,42       ldb   R42,[1ff3]         [GEN_42] = [EC_1ff3];
 8 5737: 99,1f,42             cmpb  R42,1f                                  
-8 573a: d7,17                jne   5753               if (R42 != 1f) goto Sub0174;
-8 573c: a1,a5,a5,42          ldw   R42,a5a5           R42 = a5a5;          
-8 5740: c3,01,f6,1f,42       stw   [1ff6],R42         [EC_1ff6] = R42;     
+8 573a: d7,17                jne   5753               if ([GEN_42] != 1f) goto Sub0174;
+8 573c: a1,a5,a5,42          ldw   R42,a5a5           [GEN_42] = a5a5;     
+8 5740: c3,01,f6,1f,42       stw   [1ff6],R42         [EC_1ff6] = [GEN_42];
 8 5745: 8b,01,f6,1f,42       cmpw  R42,[1ff6]                              
-8 574a: d7,07                jne   5753               if (R42 != [EC_1ff6]) goto Sub0174;
+8 574a: d7,07                jne   5753               if ([GEN_42] != [EC_1ff6]) goto Sub0174;
 8 574c: c9,53,57             push  5753               push(Sub0174);       
 8 574f: cb,01,f2,1f          push  [1ff2]             push([EC_1ff2]);     
 
@@ -5481,7 +5483,7 @@ Sub0174:
 8 5757: ff                                            Unknown Operation/Structure
 
 
-OSt8_008 - Other Structure 8 008:
+OSt8_007 - Other Structure 8 007:
 8 5758: 00,00      ostruct   0
 
 
@@ -5507,7 +5509,7 @@ OSt8_008 - Other Structure 8 008:
 8 57e3 -> 7ffe                     fill               ff
 
 
-OSt8_009 - Other Structure 8 009:
+OSt8_008 - Other Structure 8 008:
 8 7fff: ff      ostruct   ff
 
 
@@ -6616,7 +6618,7 @@ UNRPMH - UNDERSPEED_RPM_HYST:
 NRUN - CRANK_MODE_EXIT_RPM:
 8 945e: e8,03             Rfe+22 NRUN         word       3e8              250.00
 
-NSTALL - CRANK_MODE_REENTER_RPM:
+NSTALL - CRANK_MODE_RE-ENTER_RPM:
 8 9460: 20,03             Rfe+24 NSTALL       word       320              200.00
 
 

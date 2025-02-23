@@ -2293,17 +2293,17 @@ SET_RPM_FLAGS:
 8 3752: 71,7f,ef             an2b  Ref,7f             <CRANK_TRANS> = 0;   
 8 3755: 37,2c,1d             jnb   B7,R2c,3775        if (<CRANKING> == 0) goto 3775;
 8 3758: 8b,f1,e4,00,ae       cmpw  Rae,[Rf0+e4]                            
-8 375d: d1,23                jleu  3782               if ((uns) [RPM] <= [CRANK_MODE_EXIT]) goto 3782;
+8 375d: d1,23                jleu  3782               if ((uns) [RPM] <= [NCNT]) goto 3782;
 8 375f: b1,0a,14             ldb   R14,a              [HSO_IPEND2] = a;    
 8 3762: 9b,01,7b,02,14       cmpb  R14,[27b]                               
 8 3767: d9,0a                jgtu  3773               if ((uns) [HSO_IPEND2] > [ECT_COUNT]) goto 3773;
 8 3769: 9b,f1,de,00,b4       cmpb  Rb4,[Rf0+de]                            
-8 376e: d3,03                jnc   3773               if ((uns) [PIP_COUNT] < [CRANK_EXIT_PIP_COUNT]) goto 3773;
+8 376e: d3,03                jnc   3773               if ((uns) [PIP_COUNT] < [NCNT]) goto 3773;
 8 3770: 71,7f,2c             an2b  R2c,7f             <CRANKING> = 0;      
 8 3773: 20,3d                sjmp  37b2               goto 37b2;           
 
 8 3775: 8b,f1,e6,00,ae       cmpw  Rae,[Rf0+e6]                            
-8 377a: db,14                jc    3790               if ((uns) [RPM] >= [CRANK_MODE_RE-ENTER_RPM]) goto 3790;
+8 377a: db,14                jc    3790               if ((uns) [RPM] >= [NSTALL]) goto 3790;
 8 377c: 91,80,2c             orrb  R2c,80             <CRANKING> = 1;      
 8 377f: 91,80,ef             orrb  Ref,80             <CRANK_TRANS> = 1;   
 8 3782: c7,01,7b,02,00       stb   [27b],0            [ECT_COUNT] = 0;     
@@ -2312,12 +2312,12 @@ SET_RPM_FLAGS:
 8 378b: 71,df,e8             an2b  Re8,df             <PTSCR> = 0;         
 8 378e: 20,22                sjmp  37b2               goto 37b2;           
 
-8 3790: a3,f1,e0,00,30       ldw   R30,[Rf0+e0]       R30 = [UNDERSPEED_RPM];
+8 3790: a3,f1,e0,00,30       ldw   R30,[Rf0+e0]       R30 = [UNRPM];       
 8 3795: 88,ae,30             cmpw  R30,Rae                                 
 8 3798: d1,02                jleu  379c               if ((uns) R30 <= [RPM]) goto 379c;
 8 379a: 20,16                sjmp  37b2               goto 37b2;           
 
-8 379c: 67,f1,e2,00,30       ad2w  R30,[Rf0+e2]       R30 += [UNDERSPEED_RPM_HYST];
+8 379c: 67,f1,e2,00,30       ad2w  R30,[Rf0+e2]       R30 += [UNRPMH];     
 8 37a1: 88,ae,30             cmpw  R30,Rae                                 
 8 37a4: db,0a                jc    37b0               if ((uns) R30 >= [RPM]) goto 37b0;
 8 37a6: fa                   di                       disable ints;        
@@ -9693,31 +9693,31 @@ St0001 - Structure 001:
 
 
 
-CRANK_EXIT_PIP_COUNT:
-8 8ede: 08                Rf0+de CRANK_EXIT_PIP_COUNT    byte         8                   8
+NCNT - CRANK_MODE_EXIT_MIN_PIP:
+8 8ede: 08                Rf0+de NCNT         byte         8                   8
 
 
 8 8edf: ff                                    Unknown Calibration                                    ff                                           255
 
 
 
-UNDERSPEED_RPM:
-8 8ee0: 78,05             Rf0+e0 UNDERSPEED_RPM    word       578              350.00
+UNRPM - UNDERSPEED_RPM:
+8 8ee0: 78,05             Rf0+e0 UNRPM        word       578              350.00
 
-UNDERSPEED_RPM_HYST:
-8 8ee2: 90,01             Rf0+e2 UNDERSPEED_RPM_HYST    word       190              100.00
+UNRPMH - UNDERSPEED_RPM_HYST:
+8 8ee2: 90,01             Rf0+e2 UNRPMH       word       190              100.00
 
 
-CRANK_MODE_EXIT:
-8 8ee4: b0                Rf0+e4 CRANK_MODE_EXIT    byte        b0              352.00
+NCNT - CRANK_MODE_EXIT:
+8 8ee4: b0                Rf0+e4 NCNT         byte        b0              352.00
 
 
 8 8ee5: 04                                    Unknown Calibration                                     4                                             4
 
 
 
-CRANK_MODE_RE-ENTER_RPM:
-8 8ee6: c8,00             Rf0+e6 CRANK_MODE_RE-ENTER_RPM    word        c8               50.00
+NSTALL - CRANK_MODE_RE-ENTER_RPM:
+8 8ee6: c8,00             Rf0+e6 NSTALL       word        c8               50.00
 
 8 8ee8: 00                Rf0+e8 Sc0054       byte         0                   0
 8 8ee9: 00                Rf0+e9 Sc0055       byte         0                   0
