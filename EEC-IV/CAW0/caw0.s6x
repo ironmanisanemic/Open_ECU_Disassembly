@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<S6x version="1.00" generated="2025-02-23 11:29:08">
-  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="false" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="2000" XdfBaseOffsetSubtract="true" DateCreated="2025-01-26T17:16:51.7946225Z" DateUpdated="2025-02-23T19:28:58.0055347Z" IdentificationStatus="0">
+<S6x version="1.00" generated="2025-02-23 19:22:35">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="false" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="2000" XdfBaseOffsetSubtract="true" DateCreated="2025-01-26T17:16:51.7946225Z" DateUpdated="2025-02-24T03:16:38.7991337Z" IdentificationStatus="0">
     <Label>caw0.s6x</Label>
     <BanksProperties>
       <BankProperties BankNum="8" AddressBin="00000" />
@@ -64,6 +64,150 @@
       <Category2 />
       <Category3 />
     </Function>
+    <Function BankNum="8" AddressInt="27144" DuplicateNum="0" AddressBinInt="27144" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN46B_T" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T03:09:06.1420194Z" DateUpdated="2025-02-24T03:09:51.6571132Z" IdentificationStatus="0">
+      <Label>TV_PRESS_ENGAGE_D-R_TIMED</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27172" DuplicateNum="0" AddressBinInt="27172" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN54B_T" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T03:15:22.2450207Z" DateUpdated="2025-02-24T03:16:38.7981343Z" IdentificationStatus="0">
+      <Label>TV_PRESS_ENGAGE_N-D_TIMED</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27200" DuplicateNum="0" AddressBinInt="27200" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN56B_T" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T03:05:31.3879866Z" DateUpdated="2025-02-24T03:06:24.9603752Z" IdentificationStatus="0">
+      <Label>TV_PRESS_ENGAGE_N-R_TIMED</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27228" DuplicateNum="0" AddressBinInt="27228" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN64B_T" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T03:07:14.5912087Z" DateUpdated="2025-02-24T03:08:03.3456839Z" IdentificationStatus="0">
+      <Label>TV_PRESS_ENGAGE_R-D_TIMED</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27256" DuplicateNum="0" AddressBinInt="27256" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN46S_T" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T02:54:31.0175429Z" DateUpdated="2025-02-24T02:55:59.9378971Z" IdentificationStatus="0">
+      <Label>TV_PRESS_ENGAGE_D-R_START</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27284" DuplicateNum="0" AddressBinInt="27284" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN54S_T" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T02:57:24.9799272Z" DateUpdated="2025-02-24T02:58:34.6878029Z" IdentificationStatus="0">
+      <Label>TV_PRESS_ENGAGE_N-D_START</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27312" DuplicateNum="0" AddressBinInt="27312" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN56S_T" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T02:59:23.2602368Z" DateUpdated="2025-02-24T03:00:23.7267587Z" IdentificationStatus="0">
+      <Label>TV_PRESS_ENGAGE_N-R_START</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27340" DuplicateNum="0" AddressBinInt="27340" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN64S_T" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T03:02:58.5271855Z" DateUpdated="2025-02-24T03:03:55.8615401Z" IdentificationStatus="0">
+      <Label>TV_PRESS_ENGAGE_R-D_START</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27368" DuplicateNum="0" AddressBinInt="27368" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN46F_T" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T02:50:30.6644231Z" DateUpdated="2025-02-24T02:52:31.6501874Z" IdentificationStatus="0">
+      <Label>TV_PRESS_ENGAGE_D-R_FINISH</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27396" DuplicateNum="0" AddressBinInt="27396" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN54F_T" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T00:57:57.6513771Z" DateUpdated="2025-02-24T01:00:16.8176744Z" IdentificationStatus="0">
+      <Label>TV_PRESS_ENGAGE_N-D_FINISH</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27424" DuplicateNum="0" AddressBinInt="27424" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN56F_T" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:01:30.2489747Z" DateUpdated="2025-02-24T01:02:29.584634Z" IdentificationStatus="0">
+      <Label>TV_PRESS_ENGAGE_N-R_FINISH</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27452" DuplicateNum="0" AddressBinInt="27452" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN64F_T" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:04:58.5476034Z" DateUpdated="2025-02-24T01:07:16.8064682Z" IdentificationStatus="0">
+      <Label>TV_PRESS_ENGAGE_R-D_FINISH</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
     <Function BankNum="8" AddressInt="27490" DuplicateNum="0" AddressBinInt="27490" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="true" RowsNumber="7" ShortLabel="FN689V" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-01-26T20:20:19.5999501Z" DateUpdated="2025-01-26T21:12:48.6306251Z" IdentificationStatus="0">
       <Label>VSS_TEST_MIN_RPM_V_REL_TP</Label>
       <Comments>Fc002 - Function 002</Comments>
@@ -112,6 +256,18 @@
       <Category2 />
       <Category3 />
     </Function>
+    <Function BankNum="8" AddressInt="27574" DuplicateNum="0" AddressBinInt="27574" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="10" ShortLabel="FN12A" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T00:55:43.8443014Z" DateUpdated="2025-02-24T00:56:35.8377169Z" IdentificationStatus="0">
+      <Label>1-2_SHIFT_SPEED_ALTITUDE</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
     <Function BankNum="8" AddressInt="27594" DuplicateNum="0" AddressBinInt="27594" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN12S" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-01-26T20:20:19.5999501Z" DateUpdated="2025-01-26T21:41:37.1525883Z" IdentificationStatus="0">
       <Label>1-2_SHIFT_SPEED_SEA_LEVEL</Label>
       <Comments>Fc006 - Function 006</Comments>
@@ -124,7 +280,19 @@
       <Category2 />
       <Category3 />
     </Function>
-    <Function BankNum="8" AddressInt="27634" DuplicateNum="0" AddressBinInt="27634" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="true" RowsNumber="12" ShortLabel="FN29PPH" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-01-26T20:20:19.5999501Z" DateUpdated="2025-01-26T21:48:29.4816627Z" IdentificationStatus="0">
+    <Function BankNum="8" AddressInt="27614" DuplicateNum="0" AddressBinInt="27614" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="10" ShortLabel="FN23A" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T00:50:54.315027Z" DateUpdated="2025-02-24T00:51:50.6704503Z" IdentificationStatus="0">
+      <Label>2-3_SHIFT_SPEED_ALTITUDE</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27634" DuplicateNum="0" AddressBinInt="27634" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="true" RowsNumber="12" ShortLabel="FN23PPH" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-01-26T20:20:19.5999501Z" DateUpdated="2025-02-24T02:29:24.382138Z" IdentificationStatus="0">
       <Label>2-3_SHIFT_MIN_ACCEL</Label>
       <Comments>Fc007 - Function 007</Comments>
       <InputScaleExpression>X/12800</InputScaleExpression>
@@ -148,6 +316,18 @@
       <Category2 />
       <Category3 />
     </Function>
+    <Function BankNum="8" AddressInt="27702" DuplicateNum="0" AddressBinInt="27702" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="10" ShortLabel="FN34A" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T00:45:45.2912359Z" DateUpdated="2025-02-24T00:46:46.8368161Z" IdentificationStatus="0">
+      <Label>3-4_SHIFT_SPEED_ALTITUDE</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
     <Function BankNum="8" AddressInt="27722" DuplicateNum="0" AddressBinInt="27722" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="true" RowsNumber="12" ShortLabel="FN34PPH" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-01-26T20:20:19.5999501Z" DateUpdated="2025-01-26T21:58:59.2886255Z" IdentificationStatus="0">
       <Label>3-4_SHIFT_MIN_ACCEL</Label>
       <Comments>Fc009 - Function 009</Comments>
@@ -160,7 +340,7 @@
       <Category2 />
       <Category3 />
     </Function>
-    <Function BankNum="8" AddressInt="27770" DuplicateNum="0" AddressBinInt="27770" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN34S" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-01-26T20:20:19.5999501Z" DateUpdated="2025-01-26T22:08:22.6696441Z" IdentificationStatus="0">
+    <Function BankNum="8" AddressInt="27770" DuplicateNum="0" AddressBinInt="27770" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="10" ShortLabel="FN34S" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-01-26T20:20:19.5999501Z" DateUpdated="2025-02-24T00:43:43.0007271Z" IdentificationStatus="0">
       <Label>3-4_SHIFT_SPEED_SEA_LVL</Label>
       <Comments>Fc010 - Function 010</Comments>
       <InputScaleExpression>X/50</InputScaleExpression>
@@ -172,7 +352,19 @@
       <Category2 />
       <Category3 />
     </Function>
-    <Function BankNum="8" AddressInt="27810" DuplicateNum="0" AddressBinInt="27810" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN21S" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-01-26T20:20:19.5999501Z" DateUpdated="2025-01-26T22:12:36.8406081Z" IdentificationStatus="0">
+    <Function BankNum="8" AddressInt="27790" DuplicateNum="0" AddressBinInt="27790" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="10" ShortLabel="FN21A" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T00:40:52.1857483Z" DateUpdated="2025-02-24T00:44:26.9825795Z" IdentificationStatus="0">
+      <Label>2-1_SHIFT_SPEED_ALTITUDE</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27810" DuplicateNum="0" AddressBinInt="27810" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="10" ShortLabel="FN21S" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-01-26T20:20:19.5999501Z" DateUpdated="2025-02-24T00:43:47.9335655Z" IdentificationStatus="0">
       <Label>2-1_SHIFT_SPEED_SEA_LEVEL</Label>
       <Comments>Fc011 - Function 011</Comments>
       <InputScaleExpression>X/50</InputScaleExpression>
@@ -184,7 +376,19 @@
       <Category2 />
       <Category3 />
     </Function>
-    <Function BankNum="8" AddressInt="27850" DuplicateNum="0" AddressBinInt="27850" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN32S" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-01-26T20:20:19.5999501Z" DateUpdated="2025-01-26T22:14:22.7495409Z" IdentificationStatus="0">
+    <Function BankNum="8" AddressInt="27830" DuplicateNum="0" AddressBinInt="27830" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="10" ShortLabel="FN32A" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:11:06.4045826Z" DateUpdated="2025-02-24T01:15:25.5440636Z" IdentificationStatus="0">
+      <Label>3-2_SHIFT_SPEED_ALTITUDE</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27850" DuplicateNum="0" AddressBinInt="27850" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="10" ShortLabel="FN32S" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-01-26T20:20:19.5999501Z" DateUpdated="2025-02-24T00:43:54.4370254Z" IdentificationStatus="0">
       <Label>3-2_SHIFT_SPEED_SEA_LEVEL</Label>
       <Comments>Fc012 - Function 012</Comments>
       <InputScaleExpression>X/50</InputScaleExpression>
@@ -196,7 +400,19 @@
       <Category2 />
       <Category3 />
     </Function>
-    <Function BankNum="8" AddressInt="27890" DuplicateNum="0" AddressBinInt="27890" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN43S" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-01-26T20:20:19.5999501Z" DateUpdated="2025-01-26T22:32:41.6565963Z" IdentificationStatus="0">
+    <Function BankNum="8" AddressInt="27870" DuplicateNum="0" AddressBinInt="27870" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="10" ShortLabel="FN43A" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:16:56.9416356Z" DateUpdated="2025-02-24T01:17:47.3566496Z" IdentificationStatus="0">
+      <Label>4-3_SHIFT_SPEED_ALTITUDE</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27890" DuplicateNum="0" AddressBinInt="27890" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="10" ShortLabel="FN43S" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-01-26T20:20:19.5999501Z" DateUpdated="2025-02-24T00:43:59.5900248Z" IdentificationStatus="0">
       <Label>4-3_SHIFT_SPEED_SEA_LEVEL</Label>
       <Comments>Fc013 - Function 013</Comments>
       <InputScaleExpression>X/50</InputScaleExpression>
@@ -227,6 +443,150 @@
       <OutputScaleExpression>X/4</OutputScaleExpression>
       <InputUnits>VOLTS</InputUnits>
       <OutputUnits>RPM</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27958" DuplicateNum="0" AddressBinInt="27958" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN2LS" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T00:33:35.23653Z" DateUpdated="2025-02-24T00:36:28.8991392Z" IdentificationStatus="0">
+      <Label>TCC_LOCK_2ND_SEA_LVL</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27978" DuplicateNum="0" AddressBinInt="27978" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN3LS" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:20:30.0132241Z" DateUpdated="2025-02-24T01:22:04.7875033Z" IdentificationStatus="0">
+      <Label>TCC_LOCK_3RD_SEA_LVL</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27998" DuplicateNum="0" AddressBinInt="27998" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="4" ShortLabel="FN4LS" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:22:56.2774331Z" DateUpdated="2025-02-24T01:25:11.5490747Z" IdentificationStatus="0">
+      <Label>TCC_LOCK_4TH_SEA_LVL</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28006" DuplicateNum="0" AddressBinInt="28006" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN2LA" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T00:22:20.5304086Z" DateUpdated="2025-02-24T00:27:31.1909081Z" IdentificationStatus="0">
+      <Label>TCC_LOCK_2ND_ALTITUDE</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>RPM</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28026" DuplicateNum="0" AddressBinInt="28026" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN3LA" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:26:32.6896123Z" DateUpdated="2025-02-24T01:27:18.4048072Z" IdentificationStatus="0">
+      <Label>TCC_LOCK_3RD_ALTITUDE</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28046" DuplicateNum="0" AddressBinInt="28046" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="4" ShortLabel="FN4LA" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:28:09.9726168Z" DateUpdated="2025-02-24T01:28:56.124943Z" IdentificationStatus="0">
+      <Label>TCC_LOCK_4TH_ALTITUDE</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28054" DuplicateNum="0" AddressBinInt="28054" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN2US" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:30:05.1504459Z" DateUpdated="2025-02-24T01:30:57.3531905Z" IdentificationStatus="0">
+      <Label>TCC_UNLOCK_2ND_SEA_LVL</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28074" DuplicateNum="0" AddressBinInt="28074" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN3US" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:32:12.2737648Z" DateUpdated="2025-02-24T01:33:03.2658768Z" IdentificationStatus="0">
+      <Label>TCC_UNLOCK_3RD_SEA_LVL</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28094" DuplicateNum="0" AddressBinInt="28094" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="4" ShortLabel="FN4US" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:33:33.3929219Z" DateUpdated="2025-02-24T01:35:07.3202395Z" IdentificationStatus="0">
+      <Label>TCC_UNLOCK_4TH_SEA_LVL</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28102" DuplicateNum="0" AddressBinInt="28102" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN2UA" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:35:50.1974002Z" DateUpdated="2025-02-24T02:34:48.6862008Z" IdentificationStatus="0">
+      <Label>TCC_UNLOCK_2ND_ALTITUDE</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28122" DuplicateNum="0" AddressBinInt="28122" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN3UA" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:37:42.4546713Z" DateUpdated="2025-02-24T01:38:46.0240778Z" IdentificationStatus="0">
+      <Label>TCC_UNLOCK_3RD_ALTITUDE</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28142" DuplicateNum="0" AddressBinInt="28142" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="4" ShortLabel="FN4UA" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:40:26.7241317Z" DateUpdated="2025-02-24T01:41:07.3616215Z" IdentificationStatus="0">
+      <Label>TCC_UNLOCK_4TH_ALTITUDE</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X/2</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>MPH</OutputUnits>
       <IdentificationDetails />
       <Category />
       <Category2 />
@@ -328,9 +688,105 @@
       <Category2 />
       <Category3 />
     </Function>
+    <Function BankNum="8" AddressInt="28362" DuplicateNum="0" AddressBinInt="28362" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="4" ShortLabel="FN21_DC" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:42:06.6845994Z" DateUpdated="2025-02-24T01:43:02.7747513Z" IdentificationStatus="0">
+      <Label>TV_PRESS_DYNAMIC_2-1_V_TP</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28370" DuplicateNum="0" AddressBinInt="28370" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN12_DC" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:43:52.6273265Z" DateUpdated="2025-02-24T01:44:41.3923374Z" IdentificationStatus="0">
+      <Label>TV_PRESS_DYNAMIC_1-2_V_TP</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28390" DuplicateNum="0" AddressBinInt="28390" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="4" ShortLabel="FN32_DC" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:45:31.8537565Z" DateUpdated="2025-02-24T01:46:47.4748497Z" IdentificationStatus="0">
+      <Label>TV_PRESS_DYNAMIC_3-2_V_TP</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28398" DuplicateNum="0" AddressBinInt="28398" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN23_DC" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:49:50.2818018Z" DateUpdated="2025-02-24T01:50:39.5414316Z" IdentificationStatus="0">
+      <Label>TV_PRESS_DNAMIC_2-3_V_TP</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28418" DuplicateNum="0" AddressBinInt="28418" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="4" ShortLabel="FN43_DC" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:51:26.3522499Z" DateUpdated="2025-02-24T01:52:10.7076118Z" IdentificationStatus="0">
+      <Label>TV_PRESS_DYNAMIC_4-3_V_TP</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28426" DuplicateNum="0" AddressBinInt="28426" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN34_DC" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:52:58.4276677Z" DateUpdated="2025-02-24T01:53:37.2927011Z" IdentificationStatus="0">
+      <Label>TV_PRESS_DYNAMIC_3-4_V_TP</Label>
+      <Comments />
+      <InputScaleExpression>X/50</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits>VOLTS</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
     <Function BankNum="8" AddressInt="28446" DuplicateNum="0" AddressBinInt="28446" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN1CB" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-01-26T22:43:54.5297947Z" DateUpdated="2025-01-26T23:41:56.3045492Z" IdentificationStatus="0">
       <Label>TV_PRESS_COAST_BOOST_1ST</Label>
       <Comments>Fc024 - Function 024</Comments>
+      <InputScaleExpression>X/2</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits>MPH</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28458" DuplicateNum="0" AddressBinInt="28458" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN2CB" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:54:25.7171246Z" DateUpdated="2025-02-24T01:55:18.9463819Z" IdentificationStatus="0">
+      <Label>TV_PRESS_COAST_BOOST_2ND</Label>
+      <Comments />
+      <InputScaleExpression>X/2</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits>MPH</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28470" DuplicateNum="0" AddressBinInt="28470" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN3CB" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:56:02.5352088Z" DateUpdated="2025-02-24T01:56:58.4425976Z" IdentificationStatus="0">
+      <Label>TV_PRESS_COAST_BOOST_3RD</Label>
+      <Comments />
       <InputScaleExpression>X/2</InputScaleExpression>
       <OutputScaleExpression>X</OutputScaleExpression>
       <InputUnits>MPH</InputUnits>
@@ -419,6 +875,114 @@
       <OutputScaleExpression>X/256</OutputScaleExpression>
       <InputUnits />
       <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28718" DuplicateNum="0" AddressBinInt="28718" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN12CA" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:57:54.0697914Z" DateUpdated="2025-02-24T01:59:07.9381634Z" IdentificationStatus="0">
+      <Label>TV_PRESS_DYNAMIC_1-2_COLD_ACCUMULATOR</Label>
+      <Comments />
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits>SECONDS</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28746" DuplicateNum="0" AddressBinInt="28746" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN23CA" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T01:59:58.736233Z" DateUpdated="2025-02-24T02:00:39.8297088Z" IdentificationStatus="0">
+      <Label>TV_PRESS_DYNAMIC_2-3_COLD_ACCUMULATOR</Label>
+      <Comments />
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits>SECONDS</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28774" DuplicateNum="0" AddressBinInt="28774" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN34CA" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T02:02:00.3711739Z" DateUpdated="2025-02-24T02:02:55.2316574Z" IdentificationStatus="0">
+      <Label>TV_PRESS_DYNAMIC_3-4_COLD_ACCUMULATOR</Label>
+      <Comments />
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits>SECONDS</InputUnits>
+      <OutputUnits>PSI</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28802" DuplicateNum="0" AddressBinInt="28802" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="12" ShortLabel="FN12T" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T02:08:46.2868468Z" DateUpdated="2025-02-24T02:14:34.463796Z" IdentificationStatus="0">
+      <Label>TV_PRESS_1-2_MULTI</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/128</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>MULTIPLIER</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28850" DuplicateNum="0" AddressBinInt="28850" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="12" ShortLabel="FN23T" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T02:15:27.1149109Z" DateUpdated="2025-02-24T02:16:33.0486454Z" IdentificationStatus="0">
+      <Label>TV_PRESS_2-3_MULTI</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/128</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>MULTIPLIER</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28898" DuplicateNum="0" AddressBinInt="28898" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="12" ShortLabel="FN34T" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T02:17:42.0637345Z" DateUpdated="2025-02-24T02:19:25.6735769Z" IdentificationStatus="0">
+      <Label>TV_PRESS_3-4_MULTI</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/128</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>MULTIPLIER</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28946" DuplicateNum="0" AddressBinInt="28946" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="12" ShortLabel="FN21T" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T02:20:17.1175666Z" DateUpdated="2025-02-24T02:21:27.7281115Z" IdentificationStatus="0">
+      <Label>TV_PRESS_2-1_MULTI</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/128</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>MULTIPLIER</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="28994" DuplicateNum="0" AddressBinInt="28994" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="12" ShortLabel="FN32T" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T02:22:18.4282897Z" DateUpdated="2025-02-24T02:23:12.8202966Z" IdentificationStatus="0">
+      <Label>TV_PRESS_3-2_MULTI</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/128</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>MULTIPLIER</OutputUnits>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="29042" DuplicateNum="0" AddressBinInt="29042" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="12" ShortLabel="FN43T" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="4" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-02-24T02:24:12.473919Z" DateUpdated="2025-02-24T02:25:09.2088694Z" IdentificationStatus="0">
+      <Label>TV_PRESS_4-3_MULTI</Label>
+      <Comments />
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/128</OutputScaleExpression>
+      <InputUnits>DEG_F</InputUnits>
+      <OutputUnits>MULTIPLIER</OutputUnits>
       <IdentificationDetails />
       <Category />
       <Category2 />
@@ -520,11 +1084,81 @@
       <Category2 />
       <Category3 />
     </Scalar>
+    <Scalar BankNum="8" AddressInt="26734" DuplicateNum="0" AddressBinInt="26734" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="DELTAT" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T23:26:39.295107Z" DateUpdated="2025-02-23T23:27:38.8466463Z" IdentificationStatus="0">
+      <Label>POWER_MODE_TP</Label>
+      <Comments />
+      <ScaleExpression>X/12800</ScaleExpression>
+      <Units>V</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
     <Scalar BankNum="8" AddressInt="26748" DuplicateNum="0" AddressBinInt="26748" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="CD_TVENG_TM" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-02-04T03:20:06.2787604Z" DateUpdated="2025-02-04T03:27:44.1757177Z" IdentificationStatus="0">
       <Label>TV_PRESS_WORST_CASE_ENGAGE_MAX_TIME</Label>
       <Comments>887c</Comments>
       <ScaleExpression>X</ScaleExpression>
       <Units>SECONDS</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26754" DuplicateNum="0" AddressBinInt="26754" isCalibrationElement="true" Skip="false" Byte="false" Signed="true" ShortLabel="NE12A" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T23:59:41.3821366Z" DateUpdated="2025-02-24T00:01:19.434184Z" IdentificationStatus="0">
+      <Label>WOT_1-2_SHIFT_POINT_ALTITUDE</Label>
+      <Comments />
+      <ScaleExpression>X/8</ScaleExpression>
+      <Units>RPM</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26756" DuplicateNum="0" AddressBinInt="26756" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="NE12S" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-24T00:02:32.2799259Z" DateUpdated="2025-02-24T00:03:36.3800914Z" IdentificationStatus="0">
+      <Label>WOT_1-2_SHIFT_POINT_SEA_LEVEL</Label>
+      <Comments />
+      <ScaleExpression>X/4</ScaleExpression>
+      <Units>RPM</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26758" DuplicateNum="0" AddressBinInt="26758" isCalibrationElement="true" Skip="false" Byte="false" Signed="true" ShortLabel="NE23A" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-24T00:06:24.7891735Z" DateUpdated="2025-02-24T00:07:09.3601876Z" IdentificationStatus="0">
+      <Label>WOT_2-3_SHIFT_POINT_ALTITUDE</Label>
+      <Comments />
+      <ScaleExpression>X/8</ScaleExpression>
+      <Units>RPM</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26760" DuplicateNum="0" AddressBinInt="26760" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="NE23S" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-24T00:08:03.1369001Z" DateUpdated="2025-02-24T00:08:47.396686Z" IdentificationStatus="0">
+      <Label>WOT_2-3_SHIFT_POINT_SEA_LVL</Label>
+      <Comments />
+      <ScaleExpression>X/4</ScaleExpression>
+      <Units>RPM</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26762" DuplicateNum="0" AddressBinInt="26762" isCalibrationElement="true" Skip="false" Byte="false" Signed="true" ShortLabel="NE34A" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-24T00:09:33.0324619Z" DateUpdated="2025-02-24T00:10:27.1943098Z" IdentificationStatus="0">
+      <Label>WOT_3-4_SHIFT_POINT_ALTITUDE</Label>
+      <Comments />
+      <ScaleExpression>X/8</ScaleExpression>
+      <Units>RPM</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26764" DuplicateNum="0" AddressBinInt="26764" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="NE34S" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-24T00:11:19.041808Z" DateUpdated="2025-02-24T00:12:15.4851078Z" IdentificationStatus="0">
+      <Label>WOT_3-4_SHIFT_POINT_SEA_LVL</Label>
+      <Comments />
+      <ScaleExpression>X/4</ScaleExpression>
+      <Units>RPM</Units>
       <IdentificationDetails />
       <Category />
       <Category2 />
@@ -560,11 +1194,85 @@
       <Category2 />
       <Category3 />
     </Scalar>
+    <Scalar BankNum="8" AddressInt="26780" DuplicateNum="0" AddressBinInt="26780" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="GRMSFT" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-02-23T22:47:36.8860095Z" DateUpdated="2025-02-23T22:52:21.4500583Z" IdentificationStatus="0">
+      <Label>MANUAL_SHIFT_COMMANDED_GEAR</Label>
+      <Comments>8=4TH
+6=3RD
+4=2ND
+2=1ST
+</Comments>
+      <ScaleExpression>X/2</ScaleExpression>
+      <Units>SWITCH</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26781" DuplicateNum="0" AddressBinInt="26781" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="SW_MSF" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-02-23T22:44:37.2623118Z" DateUpdated="2025-02-23T22:45:46.6672167Z" IdentificationStatus="0">
+      <Label>MANUAL_SHIFT_ENABLE</Label>
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units>SWITCH</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26782" DuplicateNum="0" AddressBinInt="26782" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="VS21PI" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-02-23T21:35:40.407751Z" DateUpdated="2025-02-23T21:38:21.8636923Z" IdentificationStatus="0">
+      <Label>2-1_PULL_IN_MAX_SPEED</Label>
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units>RPM</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
     <Scalar BankNum="8" AddressInt="26800" DuplicateNum="0" AddressBinInt="26800" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="GRRAT1" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-04T03:20:06.2787604Z" DateUpdated="2025-02-04T03:38:09.3488016Z" IdentificationStatus="0">
       <Label>1ST_GEAR_RATIO</Label>
       <Comments>88b0</Comments>
       <ScaleExpression>X/16384</ScaleExpression>
       <Units>RATIO</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26802" DuplicateNum="0" AddressBinInt="26802" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="GRRAT2" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T22:23:49.6976671Z" DateUpdated="2025-02-23T22:25:04.3182862Z" IdentificationStatus="0">
+      <Label>2ND_GEAR_RATIO</Label>
+      <Comments />
+      <ScaleExpression>X/16384</ScaleExpression>
+      <Units>RATIO</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26804" DuplicateNum="0" AddressBinInt="26804" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="GRRAT3" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T22:26:57.9894635Z" DateUpdated="2025-02-23T22:27:54.1404548Z" IdentificationStatus="0">
+      <Label>3RD_GEAR_RATIO</Label>
+      <Comments />
+      <ScaleExpression>X/16384</ScaleExpression>
+      <Units>RATIO</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26806" DuplicateNum="0" AddressBinInt="26806" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="GRRAT4" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T22:29:05.5781793Z" DateUpdated="2025-02-23T22:29:39.682325Z" IdentificationStatus="0">
+      <Label>4TH_GEAR_RATIO</Label>
+      <Comments />
+      <ScaleExpression>X/16384</ScaleExpression>
+      <Units>RATIO</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26808" DuplicateNum="0" AddressBinInt="26808" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="CLDCTM" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-02-23T23:34:26.8924503Z" DateUpdated="2025-02-23T23:35:15.6272464Z" IdentificationStatus="0">
+      <Label>SHIFT_SOL_COLD_CYCLE_TIME</Label>
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units>NUMBER</Units>
       <IdentificationDetails />
       <Category />
       <Category2 />
@@ -665,6 +1373,156 @@
       <Comments>8904</Comments>
       <ScaleExpression>X/8</ScaleExpression>
       <Units>DEG_F</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26976" DuplicateNum="0" AddressBinInt="26976" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="MAN1LO" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T23:05:18.7894795Z" DateUpdated="2025-02-23T23:07:16.2135389Z" IdentificationStatus="0">
+      <Label>MLPS_MAN1_POS_MIN_V</Label>
+      <Comments />
+      <ScaleExpression>X/12800</ScaleExpression>
+      <Units>V</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26978" DuplicateNum="0" AddressBinInt="26978" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="MAN1HI" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T23:01:34.2799891Z" DateUpdated="2025-02-23T23:07:10.3501617Z" IdentificationStatus="0">
+      <Label>MLPS_MAN1_POS_MAX_V</Label>
+      <Comments />
+      <ScaleExpression>X/12800</ScaleExpression>
+      <Units>V</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26980" DuplicateNum="0" AddressBinInt="26980" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="MLPS_2LO" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T22:56:50.5821712Z" DateUpdated="2025-02-23T23:04:46.5819675Z" IdentificationStatus="0">
+      <Label>MLPS_MAN_2ND_POS_MIN_V</Label>
+      <Comments />
+      <ScaleExpression>X/12800</ScaleExpression>
+      <Units>V</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26982" DuplicateNum="0" AddressBinInt="26982" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="MLPS_2HI" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T22:53:55.2869957Z" DateUpdated="2025-02-23T23:05:05.0934337Z" IdentificationStatus="0">
+      <Label>MLPS_MAN_2ND_POS_MAX_V</Label>
+      <Comments />
+      <ScaleExpression>X/12800</ScaleExpression>
+      <Units>VOLTS</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26984" DuplicateNum="0" AddressBinInt="26984" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="ODLO" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T23:14:57.4705897Z" DateUpdated="2025-02-23T23:15:28.1524135Z" IdentificationStatus="0">
+      <Label>MLPS_OD_POS_MIN_V</Label>
+      <Comments />
+      <ScaleExpression>X/12800</ScaleExpression>
+      <Units>V</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26986" DuplicateNum="0" AddressBinInt="26986" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="ODHI" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T23:13:22.5078881Z" DateUpdated="2025-02-23T23:14:00.8633457Z" IdentificationStatus="0">
+      <Label>MLPS_OD_POS_MAX_V</Label>
+      <Comments />
+      <ScaleExpression>X/12800</ScaleExpression>
+      <Units>V</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26988" DuplicateNum="0" AddressBinInt="26988" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="NEULO" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T23:11:30.0948296Z" DateUpdated="2025-02-23T23:12:10.7654837Z" IdentificationStatus="0">
+      <Label>MLPS_NEUTRAL_POS_MIN_V</Label>
+      <Comments />
+      <ScaleExpression>X/12800</ScaleExpression>
+      <Units>V</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26990" DuplicateNum="0" AddressBinInt="26990" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="NEUHI" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T23:09:48.1253369Z" DateUpdated="2025-02-23T23:10:31.7333798Z" IdentificationStatus="0">
+      <Label>MLPS_NEUTRAL_POS_MAX_V</Label>
+      <Comments />
+      <ScaleExpression>X/12800</ScaleExpression>
+      <Units>V</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26992" DuplicateNum="0" AddressBinInt="26992" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="REVLO" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T23:21:13.7651503Z" DateUpdated="2025-02-23T23:23:39.5855323Z" IdentificationStatus="0">
+      <Label>MLPS_REV_POS_MIN_V</Label>
+      <Comments />
+      <ScaleExpression>X/12800</ScaleExpression>
+      <Units>V</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26994" DuplicateNum="0" AddressBinInt="26994" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="REVHI" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T23:21:34.9387448Z" DateUpdated="2025-02-23T23:22:43.9190117Z" IdentificationStatus="0">
+      <Label>MLPS_REV_POS_MAX_V</Label>
+      <Comments />
+      <ScaleExpression>X/12800</ScaleExpression>
+      <Units>V</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26996" DuplicateNum="0" AddressBinInt="26996" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="PARKLO" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T23:17:50.4582875Z" DateUpdated="2025-02-23T23:18:26.9982522Z" IdentificationStatus="0">
+      <Label>MLPS_PARK_POS_MIN_V</Label>
+      <Comments />
+      <ScaleExpression>X/12800</ScaleExpression>
+      <Units>V</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="26998" DuplicateNum="0" AddressBinInt="26998" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="PARKHI" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T23:16:22.9473184Z" DateUpdated="2025-02-23T23:17:04.9239737Z" IdentificationStatus="0">
+      <Label>MLPS_PARK_POS_MAX_V</Label>
+      <Comments />
+      <ScaleExpression>X/12800</ScaleExpression>
+      <Units>V</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="27032" DuplicateNum="0" AddressBinInt="27032" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="SRLK2" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-02-23T22:00:53.7824925Z" DateUpdated="2025-02-23T22:06:47.9993479Z" IdentificationStatus="0">
+      <Label>TCC_LOCK_MIN_SPEED_RATIO_2ND</Label>
+      <Comments />
+      <ScaleExpression>X/16384</ScaleExpression>
+      <Units>RATIO</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="27034" DuplicateNum="0" AddressBinInt="27034" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="SRLK3" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T21:55:25.824258Z" DateUpdated="2025-02-23T22:07:55.5121517Z" IdentificationStatus="0">
+      <Label>TCC_LOCK_MIN_SPEED_RATIO_3RD</Label>
+      <Comments />
+      <ScaleExpression>X/16384</ScaleExpression>
+      <Units>RATIO</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="27036" DuplicateNum="0" AddressBinInt="27036" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="SRLK4" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T21:56:34.9641714Z" DateUpdated="2025-02-23T22:08:48.3500789Z" IdentificationStatus="0">
+      <Label>TCC_LOCK_MIN_SPEED_RATIO_4TH</Label>
+      <Comments />
+      <ScaleExpression>X/16384</ScaleExpression>
+      <Units>RATIO</Units>
       <IdentificationDetails />
       <Category />
       <Category2 />
@@ -785,6 +1643,16 @@
       <Comments>9460</Comments>
       <ScaleExpression>X/4</ScaleExpression>
       <Units>RPM</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="29798" DuplicateNum="0" AddressBinInt="29798" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="VCAL" OutputComments="false" InlineComments="false" ScalePrecision="4" Min="" Max="" DateCreated="2025-02-23T23:55:29.7842749Z" DateUpdated="2025-02-23T23:57:04.260305Z" IdentificationStatus="0">
+      <Label>V_CAL_CONST</Label>
+      <Comments />
+      <ScaleExpression>X/4096</ScaleExpression>
+      <Units>V</Units>
       <IdentificationDetails />
       <Category />
       <Category2 />
