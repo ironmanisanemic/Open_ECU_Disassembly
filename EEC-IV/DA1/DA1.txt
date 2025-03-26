@@ -406,7 +406,7 @@ SUBROUTINE_TASKLIST:
 8 2316: be,4e                4ebe  Bank 8 Vector      Sub0084
 8 2318: 02,4f                4f02  Bank 8 Vector      Sub0085
 8 231a: 0c,3e                3e0c  Bank 8 Vector      UPDATE_VE
-8 231c: 8f,87                878f  Bank 8 Vector      Sub0189
+8 231c: 8f,87                878f  Bank 8 Vector      INFERRED_BP_CALC
 8 231e: b4,3f                3fb4  Bank 8 Vector      UPDATE_EGR
 8 2320: 68,41                4168  Bank 8 Vector      Sub0065
 8 2322: 0b,47                470b  Bank 8 Vector      ?ADAPTIVE_CALC?
@@ -794,7 +794,7 @@ Sub0020:
 8 26d3: d1,03                jleu  26d8               if ((uns) R88 <= [332]) goto 26d8;
 8 26d5: 91,02,4c             orrb  R4c,2              [FLAGS_4C] |= 2;     
 8 26d8: 65,86,02,82          ad2w  R82,286            R82 += 286;          
-8 26dc: 65,ee,89,96          ad2w  R96,89ee           [HSO_OR_INJ_TABLE_POINTER] += VecLst8_016;
+8 26dc: 65,ee,89,96          ad2w  R96,89ee           [HSO_OR_INJ_TABLE_POINTER] += VecLst8_015;
 8 26e0: c9,e6,26             push  26e6               push(Sub0021);       
 8 26e3: ca,96                push  [R96]              push([[HSO_OR_INJ_TABLE_POINTER]]);
 8 26e5: f0                   ret                      return;              
@@ -1441,7 +1441,7 @@ KNOCK_CHECK:
 8 2e06: 37,55,0d             jnb   B7,R55,2e16        if (!B7_R55) goto 2e16;
 8 2e09: 91,08,4c             orrb  R4c,8              [FLAGS_4C] |= 8;     
 8 2e0c: af,82,01,96          ldzbw R96,[R82+1]        [HSO_OR_INJ_TABLE_POINTER] = (uns)[R82+1];
-8 2e10: 65,ee,89,96          ad2w  R96,89ee           [HSO_OR_INJ_TABLE_POINTER] += VecLst8_016;
+8 2e10: 65,ee,89,96          ad2w  R96,89ee           [HSO_OR_INJ_TABLE_POINTER] += VecLst8_015;
 8 2e14: ca,96                push  [R96]              push([[HSO_OR_INJ_TABLE_POINTER]]);
 8 2e16: f0                   ret                      return;              
 
@@ -1635,7 +1635,7 @@ Sub0035:
 
 8 301d: 79,01,58             sb2b  R58,1              R58 -= 1;            
 8 3020: 5d,16,58,96          ml3b  R96,R58,16         [HSO_OR_INJ_TABLE_POINTER] = R58 * 16;
-8 3024: 65,20,8a,96          ad2w  R96,8a20           [HSO_OR_INJ_TABLE_POINTER] += OSt8_018;
+8 3024: 65,20,8a,96          ad2w  R96,8a20           [HSO_OR_INJ_TABLE_POINTER] += OSt8_017;
 8 3028: 47,96,08,f2,58       ad3w  R58,Rf2,[R96+8]    R58 = Rf2 + [[HSO_OR_INJ_TABLE_POINTER]+8];
 8 302d: af,59,d6,00,58       ldzbw R58,[R58+d6]       R58 = (uns)[R58+FLAGS_D6];
 8 3032: 8b,59,f2,01,00       cmpw  0,[R58+1f2]                             
@@ -5248,8 +5248,10 @@ OSt8_013 - Other Structure 8 013:
 8 5a0c: 40      ostruct   40
 8 5a0d: 58      ostruct   58
 8 5a0e: 6e      ostruct   6e
-8 5a0f: ad      ostruct   ad
 
+
+Sub0099:
+8 5a0f: ad,06,30             ldzbw R30,6              R30 = (uns)6;        
 8 5a12: 9b,31,08,5a,d1       cmpb  Rd1,[R30+5a08]                          
 8 5a17: d9,03                jgtu  5a1c               if ((uns) Rd1 > [R30+OSt8_013_5a08]) goto 5a1c;
 8 5a19: e0,30,f6             djnz  R30,5a12           R30--; if (R30 !=  0) goto 5a12;
@@ -7558,7 +7560,7 @@ Sub0121:
 8 7522: 28,1c                scall 7540               Sub0122();           
 8 7524: a1,f0,89,96          ldw   R96,89f0           [HSO_OR_INJ_TABLE_POINTER] = 89f0;
 8 7528: 37,99,04             jnb   B7,R99,752f        if (!B7_R99) goto 752f;
-8 752b: a1,00,8a,96          ldw   R96,8a00           [HSO_OR_INJ_TABLE_POINTER] = OSt8_017;
+8 752b: a1,00,8a,96          ldw   R96,8a00           [HSO_OR_INJ_TABLE_POINTER] = OSt8_016;
 8 752f: ef,37,b0             call  2569               DO_COMMAND_N();      
 8 7532: f0                   ret                      return;              
 
@@ -7729,13 +7731,13 @@ DO_SELF_TEST:
 8 7718: 3b,2a,19             jb    B3,R2a,7734        if (B3_[FLAGS_2A]) goto 7734;
 8 771b: 91,20,2a             orrb  R2a,20             <SELF_TEST> = 1;     
 8 771e: 28,18                scall 7738               Sub0127();           
-8 7720: cb,3b,2c,79          push  [R3a+792c]         push([R3a+VecLst8_015]);
+8 7720: cb,3b,2c,79          push  [R3a+792c]         push([R3a+VecLst8_014]);
 8 7724: f0                   ret                      return;              
 
 8 7725: 37,2a,0f             jnb   B7,R2a,7737        if (<STI_FLAG> == 0) goto 7737;
 8 7728: 3c,2a,09             jb    B4,R2a,7734        if (B4_[FLAGS_2A]) goto 7734;
 8 772b: 28,0b                scall 7738               Sub0127();           
-8 772d: cb,3b,1a,79          push  [R3a+791a]         push([R3a+VecLst8_014]);
+8 772d: cb,3b,1a,79          push  [R3a+791a]         push([R3a+VecLst8_013]);
 8 7731: f0                   ret                      return;              
 
 Sub0126:
@@ -7871,7 +7873,7 @@ SET_EGR_FLAGS:
 
 
 
-VecLst8_014 - Vectors List 8 014:
+VecLst8_013 - Vectors List 8 013:
 8 791a: 5c,7c                7c5c  Bank 8 Vector      Sub0143
 8 791c: 59,83                8359  Bank 8 Vector      Sub0179
 
@@ -7881,7 +7883,7 @@ VecLst8_014 - Vectors List 8 014:
 
 
 
-VecLst8_015 - Vectors List 8 015:
+VecLst8_014 - Vectors List 8 014:
 8 792c: 22,7f                7f22  Bank 8 Vector      Sub0161
 8 792e: 4f,77                774f  Bank 8 Vector      Sub0128
 8 7930: ca,7f                7fca  Bank 8 Vector      Sub0162
@@ -9125,7 +9127,7 @@ CHECK_CONSOLE_D:
 8 8789: c7,01,9e,02,00       stb   [29e],0            [29e] = 0;           
 8 878e: f0                   ret                      return;              
 
-Sub0189:
+INFERRED_BP_CALC:
 8 878f: a1,a2,07,22          ldw   R22,7a2            R22 = 7a2;           
 8 8793: b3,22,10,14          ldb   R14,[R22+10]       [HSO_IPEND2] = [R22+10];
 8 8797: a3,7a,b0,16          ldw   R16,[R7a+b0]       R16 = [R7a+ECT];     
@@ -9321,7 +9323,7 @@ CHECK_KAM_1:
 
 
 
-VecLst8_016 - Vectors List 8 016:
+VecLst8_015 - Vectors List 8 015:
 8 89ee: d8,8a                8ad8  Bank 8 Vector      Sub0193
 8 89f0: 69,25                2569  Bank 8 Vector      DO_COMMAND_N
 
@@ -9330,7 +9332,7 @@ VecLst8_016 - Vectors List 8 016:
 8 89fa: 00,c9,0b,5e,33,75                             Unknown Operation/Structure
 
 
-OSt8_017 - Other Structure 8 017:
+OSt8_016 - Other Structure 8 016:
 8 8a00: 69      ostruct   69
 
 
@@ -9340,7 +9342,7 @@ OSt8_017 - Other Structure 8 017:
 8 8a19: 25,00,c5,0c,04,1b,2e                          Unknown Operation/Structure
 
 
-OSt8_018 - Other Structure 8 018:
+OSt8_017 - Other Structure 8 017:
 8 8a20: b6,31      ostruct   31b6
 
 
@@ -9607,16 +9609,12 @@ IGN_DEG_PER_PIP:
 8 8e42: 68,01             Rf0+42 IGN_DEG_PER_PIP    word       168                 360
 
 FUEL_INJ_OFFSET_V_VOLTS:
-8 8e44: ff,1d,e0          func                  ff,     e01d                 255,    57373
-8 8e47: 1d,d0,20          func                  1d,     20d0                  29,     8400
-8 8e4a: c0,25,b0          func                  c0,     b025                 192,    45093
-8 8e4d: 2d,a0,36          func                  2d,     36a0                  45,    13984
-8 8e50: 90,41,80          func                  90,     8041                 144,    32833
-
-
-8 8e53: 53,70,71,60,b1,58,f0,00               Unknown Calibration        53, 70, 71, 60, b1, 58, f0,  0         83, 112, 113,  96, 177,  88, 240,   0
-8 8e5b: f0                                    Unknown Calibration                                    f0                                           240
-
+8 8e44: ff,1d,e0,1d       func                1dff,     1de0                7679,     7648
+8 8e48: d0,20,c0,25       func                20d0,     25c0                8400,     9664
+8 8e4c: b0,2d,a0,36       func                2db0,     36a0               11696,    13984
+8 8e50: 90,41,80,53       func                4190,     5380               16784,    21376
+8 8e54: 70,71,60,b1       func                7170,     b160               29040,    45408
+8 8e58: 58,f0,00,f0       func                f058,     f000               61528,    61440
 
 HEGO_BIAS:
 8 8e5c: ff,ff,7b,00       func                ffff,       7b               65535,      123

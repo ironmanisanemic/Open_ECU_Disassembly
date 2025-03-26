@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<S6x version="1.00" generated="2025-02-23 11:29:19">
-  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2025-02-23T19:28:59.9108533Z" IdentificationStatus="0">
+<S6x version="1.00" generated="2025-03-24 17:53:59">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2025-03-25T00:53:55.7112055Z" IdentificationStatus="0">
     <Label>Exported</Label>
     <Comments />
     <Header />
@@ -322,10 +322,17 @@
       <InputScaleExpression>X</InputScaleExpression>
       <OutputScaleExpression>X</OutputScaleExpression>
     </Function>
-    <Function BankNum="8" AddressInt="28228" DuplicateNum="0" AddressBinInt="28228" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FUEL_INJ_OFFSET_V_VOLTS" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2024-11-09T08:20:05.5121547Z" DateUpdated="2024-11-10T20:31:59.2631579Z" IdentificationStatus="0">
+    <Function BankNum="8" AddressInt="28228" DuplicateNum="0" AddressBinInt="28228" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FUEL_INJ_OFFSET_V_VOLTS" OutputComments="false" InputScalePrecision="4" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2024-11-09T08:20:05.5121547Z" DateUpdated="2025-03-06T05:45:46.6773147Z" IdentificationStatus="0">
       <Label>FUEL_INJ_OFFSET_V_VOLTS</Label>
+      <Comments />
       <InputScaleExpression>X</InputScaleExpression>
       <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits />
+      <OutputUnits />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
     </Function>
     <Function BankNum="8" AddressInt="28252" DuplicateNum="0" AddressBinInt="28252" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="8" ShortLabel="HEGO_BIAS" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2024-11-15T07:58:46.334669Z" DateUpdated="2024-11-15T08:04:39.0631608Z" IdentificationStatus="0">
       <Label>HEGO_BIAS</Label>
@@ -4000,6 +4007,15 @@ ByteHex
       <Category2 />
       <Category3 />
     </Structure>
+    <Structure BankNum="8" AddressInt="14857" DuplicateNum="0" AddressBinInt="14857" Skip="false" Number="6" isCalibrationElement="false" ShortLabel="OSt8_013" OutputComments="false" DateCreated="2025-03-06T06:31:42.4920814Z" DateUpdated="2025-03-06T06:32:32.3675976Z" IdentificationStatus="0">
+      <StructDef>ByteHex</StructDef>
+      <Label>Other Structure 8 013</Label>
+      <Comments />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Structure>
     <Structure BankNum="8" AddressInt="20177" DuplicateNum="0" AddressBinInt="20177" Skip="false" Number="51" isCalibrationElement="false" ShortLabel="TIMER_LIST" OutputComments="false" DateCreated="2024-11-11T07:09:59.7637463Z" DateUpdated="2024-12-02T00:19:13.8598178Z" IdentificationStatus="0">
       <StructDef>ByteHex:1
 If(B0:1){
@@ -4737,6 +4753,14 @@ WordHex:1}</StructDef>
     <Routine BankNum="8" AddressInt="26377" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="CHECK_CONSOLE_D" OutputComments="false" DateCreated="2024-11-10T20:03:42.5580102Z" DateUpdated="2024-11-10T20:31:59.2672961Z" IdentificationStatus="0" Skip="false">
       <Label>CHECK_CONSOLE_D</Label>
       <Comments />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Routine>
+    <Routine BankNum="8" AddressInt="26511" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="INFERRED_BP_CALC" OutputComments="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2025-03-25T00:53:55.7112055Z" IdentificationStatus="0" Skip="false">
+      <Label>INFERRED_BP_CALC</Label>
+      <Comments>8 878f</Comments>
       <IdentificationDetails />
       <Category />
       <Category2 />
