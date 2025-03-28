@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<S6x version="1.00" generated="2025-03-25 19:51:02">
-  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2025-03-26T02:51:00.2359228Z" IdentificationStatus="0">
+<S6x version="1.00" generated="2025-03-27 20:51:09">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2025-03-28T03:51:06.8194067Z" IdentificationStatus="0">
     <Label>Exported</Label>
     <Comments />
     <Header />
@@ -2492,21 +2492,65 @@
       <Category2 />
       <Category3 />
     </Scalar>
-    <Scalar BankNum="8" AddressInt="30854" DuplicateNum="0" AddressBinInt="30854" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="ADAPT_MIN_ACT" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2024-11-09T08:20:05.523674Z" DateUpdated="2024-11-10T20:31:59.2617989Z" IdentificationStatus="0">
+    <Scalar BankNum="8" AddressInt="30852" DuplicateNum="0" AddressBinInt="30852" isCalibrationElement="true" Skip="false" Byte="true" Signed="true" ShortLabel="ADAPT_MIN_ECT" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-03-28T02:16:39.5839929Z" DateUpdated="2025-03-28T02:27:27.5942399Z" IdentificationStatus="0">
+      <Label>ADAPT_MIN_ECT</Label>
+      <Comments>9884</Comments>
+      <ScaleExpression>X/0.5</ScaleExpression>
+      <Units>DEG_F</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="30853" DuplicateNum="0" AddressBinInt="30853" isCalibrationElement="true" Skip="false" Byte="true" Signed="true" ShortLabel="ADAPT_MAX_ECT" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-03-28T02:16:39.5840127Z" DateUpdated="2025-03-28T02:26:18.8845786Z" IdentificationStatus="0">
+      <Label>ADAPT_MAX_ECT</Label>
+      <Comments>9885</Comments>
+      <ScaleExpression>X/0.5</ScaleExpression>
+      <Units>DEG_F</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="30854" DuplicateNum="0" AddressBinInt="30854" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="ADAPT_MIN_ACT" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-11-09T08:20:05.523674Z" DateUpdated="2025-03-28T02:26:30.399285Z" IdentificationStatus="0">
       <Label>ADAPT_MIN_ACT</Label>
-      <ScaleExpression>X</ScaleExpression>
+      <Comments />
+      <ScaleExpression>X/0.5</ScaleExpression>
+      <Units>DEG_F</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
     </Scalar>
-    <Scalar BankNum="8" AddressInt="30855" DuplicateNum="0" AddressBinInt="30855" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="ADAPT_MAX_ACT" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2024-11-09T08:20:05.5251448Z" DateUpdated="2024-11-10T20:31:59.2618627Z" IdentificationStatus="0">
+    <Scalar BankNum="8" AddressInt="30855" DuplicateNum="0" AddressBinInt="30855" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="ADAPT_MAX_ACT" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-11-09T08:20:05.5251448Z" DateUpdated="2025-03-28T02:26:38.0164732Z" IdentificationStatus="0">
       <Label>ADAPT_MAX_ACT</Label>
-      <ScaleExpression>X</ScaleExpression>
+      <Comments />
+      <ScaleExpression>X/0.5</ScaleExpression>
+      <Units>DEG_F</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
     </Scalar>
-    <Scalar BankNum="8" AddressInt="30856" DuplicateNum="0" AddressBinInt="30856" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="ADAPT_MIN_CORRECTION" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2024-11-09T08:20:05.5240556Z" DateUpdated="2024-11-10T20:31:59.2619103Z" IdentificationStatus="0">
+    <Scalar BankNum="8" AddressInt="30856" DuplicateNum="0" AddressBinInt="30856" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="ADAPT_MIN_CORRECTION" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-11-09T08:20:05.5240556Z" DateUpdated="2025-03-28T02:25:26.9195453Z" IdentificationStatus="0">
       <Label>ADAPT_MIN_CORRECTION</Label>
+      <Comments />
       <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
     </Scalar>
-    <Scalar BankNum="8" AddressInt="30857" DuplicateNum="0" AddressBinInt="30857" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="ADAPT_MAX_CORRECTION" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2024-11-09T08:20:05.5242433Z" DateUpdated="2024-11-10T20:31:59.26196Z" IdentificationStatus="0">
+    <Scalar BankNum="8" AddressInt="30857" DuplicateNum="0" AddressBinInt="30857" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="ADAPT_MAX_CORRECTION" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-11-09T08:20:05.5242433Z" DateUpdated="2025-03-28T02:23:55.7533637Z" IdentificationStatus="0">
       <Label>ADAPT_MAX_CORRECTION</Label>
+      <Comments />
       <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
     </Scalar>
     <Scalar BankNum="8" AddressInt="30972" DuplicateNum="0" AddressBinInt="30972" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="TPS_INITAL_VALUE" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-11-28T21:59:08.7283707Z" DateUpdated="2024-11-28T22:48:50.967404Z" IdentificationStatus="0">
       <Label>TPS_INITAL_VALUE</Label>
@@ -4280,9 +4324,25 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Routine>
-    <Routine BankNum="8" AddressInt="9995" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="?ADAPTIVE_CALC?" OutputComments="false" DateCreated="2024-11-10T19:55:18.4013323Z" DateUpdated="2024-11-10T20:31:59.2672648Z" IdentificationStatus="0" Skip="false">
-      <Label>?ADAPTIVE_CALC?</Label>
+    <Routine BankNum="8" AddressInt="9995" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="CALC_ADAPTIVES" OutputComments="false" DateCreated="2024-11-10T19:55:18.4013323Z" DateUpdated="2025-03-28T02:14:04.3395306Z" IdentificationStatus="0" Skip="false">
+      <Label>CALC_ADAPTIVES</Label>
       <Comments />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Routine>
+    <Routine BankNum="8" AddressInt="10433" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="CALC_ADAPTIVES_2?" OutputComments="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2025-03-28T03:42:48.1497184Z" IdentificationStatus="0" Skip="false">
+      <Label>CALC_ADAPTIVES_2?</Label>
+      <Comments>8 48c1</Comments>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Routine>
+    <Routine BankNum="8" AddressInt="10603" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="?CALC_HEGO_FUEL_CORRECTION?" OutputComments="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2025-03-28T03:51:06.8193059Z" IdentificationStatus="0" Skip="false">
+      <Label>?CALC_HEGO_FUEL_CORRECTION?</Label>
+      <Comments>8 496b</Comments>
       <IdentificationDetails />
       <Category />
       <Category2 />
@@ -4991,14 +5051,30 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Register>
-    <Register AddressInt="38" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-12-29T04:28:10.9924009Z" DateUpdated="2024-12-29T04:28:59.1899246Z" IdentificationStatus="0">
+    <Register AddressInt="38" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-12-29T04:28:10.9924009Z" DateUpdated="2025-03-28T03:36:25.9907824Z" IdentificationStatus="0">
       <Label>FLAGS_26</Label>
       <ByteLabel />
       <WordLabel />
       <Comments />
       <BitFlags>
-        <BitFlag Position="3" Skip="false" ShortLabel="JUMP_FLAG" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2024-12-29T04:28:24.6681867Z" DateUpdated="2024-12-29T04:28:54.6016927Z" IdentificationStatus="0">
+        <BitFlag Position="3" Skip="false" ShortLabel="JUMP_FLAG" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2024-12-29T04:28:24.6681867Z" DateUpdated="2025-03-28T03:35:52.6568574Z" IdentificationStatus="0">
           <Label>JUMP_FLAG</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="6" Skip="false" ShortLabel="DNDSUP" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2025-03-28T03:35:52.661709Z" DateUpdated="2025-03-28T03:36:15.0537135Z" IdentificationStatus="0">
+          <Label>DNDSUP</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="7" Skip="false" ShortLabel="HCAMFG" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2025-03-28T03:24:40.0522417Z" DateUpdated="2025-03-28T03:25:02.2465393Z" IdentificationStatus="0">
+          <Label>HCAMFG</Label>
           <Comments />
           <IdentificationDetails />
           <Category />
@@ -5203,13 +5279,21 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Register>
-    <Register AddressInt="44" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-21T06:49:48.2733369Z" DateUpdated="2025-02-23T19:12:41.3021924Z" IdentificationStatus="0">
+    <Register AddressInt="44" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-21T06:49:48.2733369Z" DateUpdated="2025-03-28T02:30:45.1027303Z" IdentificationStatus="0">
       <Label>FLAGS_2C</Label>
       <ByteLabel />
       <WordLabel />
       <Comments />
       <BitFlags>
-        <BitFlag Position="4" Skip="false" ShortLabel="CTNFLG" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2025-01-28T05:09:21.954346Z" DateUpdated="2025-02-23T19:11:51.0153765Z" IdentificationStatus="0">
+        <BitFlag Position="1" Skip="false" ShortLabel="ADPTMR_ON" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2025-03-28T02:30:03.9774596Z" DateUpdated="2025-03-28T02:30:41.8082096Z" IdentificationStatus="0">
+          <Label>ADPTMR_ON</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="4" Skip="false" ShortLabel="CTNFLG" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2025-01-28T05:09:21.954346Z" DateUpdated="2025-03-28T02:30:03.9738306Z" IdentificationStatus="0">
           <Label>CTNFLG</Label>
           <Comments />
           <IdentificationDetails />
@@ -6569,14 +6653,22 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Register>
-    <Register AddressInt="230" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-23T04:48:25.2755749Z" DateUpdated="2025-03-26T02:31:37.5313504Z" IdentificationStatus="0">
+    <Register AddressInt="230" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-23T04:48:25.2755749Z" DateUpdated="2025-03-28T03:34:23.2915793Z" IdentificationStatus="0">
       <Label>FLAGS_E6</Label>
       <ByteLabel />
       <WordLabel />
       <Comments />
       <BitFlags>
-        <BitFlag Position="0" Skip="false" ShortLabel="MFA_ON" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2025-03-26T02:31:19.6182442Z" DateUpdated="2025-03-26T02:31:34.8582066Z" IdentificationStatus="0">
+        <BitFlag Position="0" Skip="false" ShortLabel="MFA_ON" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2025-03-26T02:31:19.6182442Z" DateUpdated="2025-03-28T03:33:28.345561Z" IdentificationStatus="0">
           <Label>MFA_ON</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="1" Skip="false" ShortLabel="NEUFLG" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2025-03-28T03:33:28.3492055Z" DateUpdated="2025-03-28T03:34:20.2146468Z" IdentificationStatus="0">
+          <Label>NEUFLG</Label>
           <Comments />
           <IdentificationDetails />
           <Category />
@@ -7281,6 +7373,18 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Register>
+    <Register AddressInt="308" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-03-28T02:36:41.0700911Z" DateUpdated="2025-03-28T02:36:58.366218Z" IdentificationStatus="0">
+      <Label>RANNUM</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
     <Register AddressInt="314" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-11-16T08:52:50.1045379Z" IdentificationStatus="0">
       <Label>[13a]</Label>
       <ByteLabel />
@@ -7563,6 +7667,18 @@ WordHex:1}</StructDef>
       <Label>DESRPM</Label>
       <Comments />
     </Register>
+    <Register AddressInt="406" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-03-28T03:32:10.3333939Z" DateUpdated="2025-03-28T03:32:27.4548078Z" IdentificationStatus="0">
+      <Label>LAMMUL</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
     <Register AddressInt="408" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-12-29T04:31:58.0965921Z" DateUpdated="2024-12-29T04:32:16.2938839Z" IdentificationStatus="0">
       <Label>IS_FLAG</Label>
       <ByteLabel />
@@ -7637,6 +7753,18 @@ WordHex:1}</StructDef>
     </Register>
     <Register AddressInt="452" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-12-29T03:55:20.808391Z" DateUpdated="2024-12-29T03:55:37.2412693Z" IdentificationStatus="0">
       <Label>INJECTION_PENDING</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="460" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-03-28T02:16:20.8098952Z" DateUpdated="2025-03-28T02:16:32.9146182Z" IdentificationStatus="0">
+      <Label>ADPTMR</Label>
       <ByteLabel />
       <WordLabel />
       <Comments />
@@ -8151,8 +8279,56 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Register>
+    <Register AddressInt="1794" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-03-28T03:25:50.2659479Z" DateUpdated="2025-03-28T03:26:11.1860812Z" IdentificationStatus="0">
+      <Label>KTMTB100</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="1874" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-03-28T03:26:15.1514885Z" DateUpdated="2025-03-28T03:26:34.4569801Z" IdentificationStatus="0">
+      <Label>KTMTB200</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
     <Register AddressInt="1954" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-12-01T05:39:30.6965087Z" DateUpdated="2024-12-01T05:39:49.9529345Z" IdentificationStatus="0">
       <Label>KTMTB200</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="1956" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-03-28T03:03:55.2023778Z" DateUpdated="2025-03-28T03:05:29.2551102Z" IdentificationStatus="0">
+      <Label>KEGOCT1</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="1957" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-03-28T02:50:36.7820562Z" DateUpdated="2025-03-28T02:51:00.5397986Z" IdentificationStatus="0">
+      <Label>KEGOCT2</Label>
       <ByteLabel />
       <WordLabel />
       <Comments />
@@ -8181,6 +8357,42 @@ WordHex:1}</StructDef>
       <WordLabel />
       <Comments />
       <ScaleExpression />
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="1962" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-03-28T03:22:54.7820598Z" DateUpdated="2025-03-28T03:23:17.6851562Z" IdentificationStatus="0">
+      <Label>KLPCT1L</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="1964" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-03-28T03:16:45.8629055Z" DateUpdated="2025-03-28T03:17:42.1947344Z" IdentificationStatus="0">
+      <Label>KLPCT1R</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="1996" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-03-28T03:10:17.6829797Z" DateUpdated="2025-03-28T03:11:12.0272134Z" IdentificationStatus="0">
+      <Label>KWUCTR</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
       <Units />
       <IdentificationDetails />
       <Category />
