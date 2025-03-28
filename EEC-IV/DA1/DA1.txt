@@ -38,60 +38,71 @@
 ║                   R2e       FLAGS_2E                      R2f       FLAGS_2F                                         ║
 ║                   R3a       GENERAL_3A                    R3b       GENERAL_3B                                       ║
 ║                   R3c       FLAGS_3C                      R3e       FLAGS_3E                                         ║
-║                   R46       FLAGS_46                      R47       FLAGS_47                                         ║
-║                   R4a       FLAGS_4A                      R4c       FLAGS_4C                                         ║
-║                   R4e       FLAGS_4E                      R4f       FLAGS_4F                                         ║
-║                   R50       FLAGS_50                      R51       FLAGS_51                                         ║
-║                   R7e       EVENT_TIME                    R80       EVENT_TIME_H                                     ║
+║                   R44       HSOut_Flags                   R46       FLAGS_46                                         ║
+║                   R47       FLAGS_47                      R4a       FLAGS_4A                                         ║
+║                   R4c       FLAGS_4C                      R4e       FLAGS_4E                                         ║
+║                   R4f       FLAGS_4F                      R50       FLAGS_50                                         ║
+║                   R51       FLAGS_51                      R7e       EVENT_TIME                                       ║
+║                   R80       EVENT_TIME_H                  R82       Rtab                                             ║
 ║                   R84       HSO_TIME                      R86       HSO_TIME_H                                       ║
-║                   R8b       FLAGS_8B                      R94       FLAGS_94                                         ║
-║                   R96       HSO_OR_INJ_TABLE_POINTER      R98       BG_POINTER                                       ║
-║                   R9e       AT_PT                         R9f       LOAD                                             ║
-║                   Ra0       VSC_FLAGS_B                   Ra1       VSC_STATES                                       ║
-║                   Ra2       VSC_FLAGS                     Raa       TPS                                              ║
-║                   Rac       TCSTRL                        Rad       TCSTRT                                           ║
-║                   Rae       RPM                           Rb0       ECT                                              ║
-║                   Rb1       ACT                           Rb2       LOAD                                             ║
-║                   Rb4       PIP_COUNT                     Rb5       THROTTLE_ANGLE_RATE                              ║
-║                   Rb6       EVP                           Rb8       PIP_HI_E_TIME                                    ║
-║                   Rbc       PIP_HIGH_PW                   Rc2       Mkay                                             ║
-║                   Rc4       SPARK                         Rc9       FLAGS_C9                                         ║
-║                   Rca       ATMR1                         Rcb       ATMR2                                            ║
+║                   R8b       FLAGS_8B                      R90       Reftime                                          ║
+║                   R92       ReftimeH                      R94       FLAGS_94                                         ║
+║                   R95       Slice_ptr                     R96       HSO_OR_INJ_TABLE_POINTER                         ║
+║                   R98       BG_POINTER                    R9e       AT_PT                                            ║
+║                   R9f       LOAD                          Ra0       VSC_FLAGS_B                                      ║
+║                   Ra1       VSC_STATES                    Ra2       VSC_FLAGS                                        ║
+║                   Raa       TPS                           Rac       TCSTRL                                           ║
+║                   Rad       TCSTRT                        Rae       RPM                                              ║
+║                   Rb0       ECT                           Rb1       ACT                                              ║
+║                   Rb2       LOAD                          Rb4       PIP_COUNT                                        ║
+║                   Rb5       THROTTLE_ANGLE_RATE           Rb6       EVP                                              ║
+║                   Rb8       PIP_HI_E_TIME                 Rbc       PIP_HIGH_PW                                      ║
+║                   Rbe       Dtpcyc                        Rc0       Hfpcyc                                           ║
+║                   Rc2       Mkay                          Rc4       SPARK                                            ║
+║                   Rc9       FLAGS_C9                      Rca       ATMR1                                            ║
+║                   Rcb       ATMR2                         Rcc       Synctr                                           ║
 ║                   Rcf       PIP_COUNTER                   Rd0       EGR_DC                                           ║
-║                   Rd4       FLAGS_D4                      Rd5       FLAGS_D5                                         ║
-║                   Rd6       FLAGS_D6                      Rda       ISC_DC                                           ║
+║                   Rd2       Vip_code                      Rd4       FLAGS_D4                                         ║
+║                   Rd5       FLAGS_D5                      Rd6       FLAGS_D6                                         ║
+║                   Rda       ISC_DC                        Rdd       Kwctr                                            ║
 ║                   Re0       TIP_IN_RETARD                 Re1       RET_INC                                          ║
-║                   Re4       FLAGS_E4                      Re6       FLAGS_E6                                         ║
-║                   Re7       FLAGS_E7                      Re8       FLAGS_E8                                         ║
-║                   Re9       FLAGS_E9                      Rea       FLAGS_EA                                         ║
-║                   Reb       FLAGS_EB                      Rec       FLAGS_EC                                         ║
-║                   Red       FLAGS_ED                      Ree       FLAGS_EE                                         ║
-║                   Ref       FLAGS_EF                      [104]     EPT_FILTER                                       ║
-║                   [10e]     KEY_VOLTAGE                   [110]     OCC_RAW                                          ║
-║                   [112]     VSS_RAW                       [114]     ECT_RAW                                          ║
-║                   [116]     ACT_RAW                       [118]     EVP_RAW                                          ║
-║                   [11a]     NDS_RAW                       [11c]     HEGO1_RAW                                        ║
-║                   [11e]     HEGO2_RAW                     [120]     TAR_RAW                                          ║
-║                   [122]     TPS_RAW                       [124]     TPS_INITAL_VALUE                                 ║
-║                   [126]     EVP_DEF                       [128]     CTTMR                                            ║
-║                   [12a]     CPU_ON_TIME_mS                [12b]     PRGTMR                                           ║
-║                   [12d]     BAP_TIMER                     [132]     MAP                                              ║
-║                   [134]     RANNUM                        [142]     MPH_FILTER2                                      ║
+║                   Re2       HQcnt                         Re4       FLAGS_E4                                         ║
+║                   Re6       FLAGS_E6                      Re7       FLAGS_E7                                         ║
+║                   Re8       FLAGS_E8                      Re9       FLAGS_E9                                         ║
+║                   Rea       FLAGS_EA                      Reb       FLAGS_EB                                         ║
+║                   Rec       FLAGS_EC                      Red       FLAGS_ED                                         ║
+║                   Ree       FLAGS_EE                      Ref       FLAGS_EF                                         ║
+║                   [104]     EPT_FILTER                    [10e]     KEY_VOLTAGE                                      ║
+║                   [110]     OCC_RAW                       [112]     VSS_RAW                                          ║
+║                   [114]     ECT_RAW                       [116]     ACT_RAW                                          ║
+║                   [118]     EVP_RAW                       [11a]     NDS_RAW                                          ║
+║                   [11c]     HEGO1_RAW                     [11e]     HEGO2_RAW                                        ║
+║                   [120]     TAR_RAW                       [122]     TPS_RAW                                          ║
+║                   [124]     TPS_INITAL_VALUE              [126]     EVP_DEF                                          ║
+║                   [128]     CTTMR                         [12a]     CPU_ON_TIME_mS                                   ║
+║                   [12b]     PRGTMR                        [12d]     BAP_TIMER                                        ║
+║                   [132]     MAP                           [134]     RANNUM                                           ║
+║                   [140]     Ltime                         [142]     MPH_FILTER2                                      ║
+║                   [144]     Res_speed                     [146]     Set_speed                                        ║
 ║                   [148]     MPH_FILTER                    [14a]     MPH_RAW                                          ║
 ║                   [14c]     SCCS_CONTROL_SW               [150]     VSC_RAW                                          ║
 ║                   [159]     MPH_COUNT                     [15b]     TIME_SINCE_LAST_MPH_UPDATE                       ║
 ║                   [15c]     MPH                           [15e]     MPH_TIME1_LOW                                    ║
 ║                   [160]     MPH_TIME1_HIGH                [162]     MPH_TIME2_HIGH                                   ║
 ║                   [164]     MPH_TIME2_LOW                 [166]     1/8TH_SEC_TIMER                                  ║
-║                   [168]     LOOP_TIMER                    [16e]     TSL_PIP                                          ║
-║                   [170]     SL_TIMER                      [172]     LUG_TIMER                                        ║
-║                   [173]     CTNTMR                        [178]     AWOTMR                                           ║
-║                   [17a]     NACTMR                        [17f]     HLTMR                                            ║
-║                   [180]     EDF_TIMER                     [194]     DESRPM                                           ║
-║                   [196]     LAMMUL                        [198]     IS_FLAG                                          ║
-║                   [199]     IS_LAST                       [19c]     EGR_ERROR                                        ║
+║                   [168]     LOOP_TIMER                    [16a]     LastSWtime                                       ║
+║                   [16e]     TSL_PIP                       [170]     SL_TIMER                                         ║
+║                   [172]     LUG_TIMER                     [173]     CTNTMR                                           ║
+║                   [178]     AWOTMR                        [17a]     NACTMR                                           ║
+║                   [17f]     HLTMR                         [180]     EDF_TIMER                                        ║
+║                   [194]     DESRPM                        [196]     LAMMUL                                           ║
+║                   [198]     IS_FLAG                       [199]     IS_LAST                                          ║
+║                   [19a]     Egract                        [19b]     Egrate                                           ║
+║                   [19c]     EGR_ERROR                     [19e]     Desdp                                            ║
 ║                   [1a4]     PRESER                        [1a6]     CONPR                                            ║
-║                   [1aa]     DESEM                         [1c4]     INJECTION_PENDING                                ║
+║                   [1aa]     DESEM                         [1b8]     Pwoff                                            ║
+║                   [1c2]     Inj_base                      [1c3]     Inj_pip                                          ║
+║                   [1c4]     INJECTION_PENDING             [1ca]     Ampem                                            ║
 ║                   [1cc]     ADPTMR                        [1dc]     VIPLATM                                          ║
 ║                   [1e8]     VCUTOUT                       [1f2]     PW2                                              ║
 ║                   [1f4]     PW1                           [1f6]     LAMBSE1                                          ║
@@ -103,24 +114,27 @@
 ║                   [20a]     EGRCNT                        [20b]     EGRPER                                           ║
 ║                   [218]     HIGH_TIME_BETA                [21a]     HIGH_TIME_DELTA                                  ║
 ║                   [21c]     THROTTLE_BART                 [21d]     SPARK_ADV                                        ║
-║                   [222]     EGRPER                        [22f]     V_BAT                                            ║
-║                   [24e]     RVIPRPM                       [252]     TSL_IDM                                          ║
-║                   [259]     FMEM_MONITOR                  [25a]     ENPIP1                                           ║
-║                   [25b]     ENPIP2                        [276]     RPM_FILTER_1                                     ║
-║                   [278]     TCF                           [27b]     ECT_COUNT                                        ║
+║                   [222]     EGRPER                        [22a]     Last_HSO                                         ║
+║                   [22f]     V_BAT                         [24e]     RVIPRPM                                          ║
+║                   [252]     TSL_IDM                       [259]     FMEM_MONITOR                                     ║
+║                   [25a]     ENPIP1                        [25b]     ENPIP2                                           ║
+║                   [276]     RPM_FILTER_1                  [278]     TCF                                              ║
+║                   [27a]     Em                            [27b]     ECT_COUNT                                        ║
 ║                   [27c]     RPMSCALE                      [280]     VE                                               ║
 ║                   [284]     RPMX4                         [290]     PREVIOUS_PIP_TIME                                ║
-║                   [292]     PREVIOUS_PIP_TIME_H           [2ea]     PREVIOUS_PIP_E_TIME                              ║
-║                   [2ec]     PREVIOUS_PIP_HIGH_PW          [2f2]     BASE_ADDR_DTC_TABLE                              ║
-║                   [318]     RPM_FILTER_2                  [31a]     INJ_PIP_COUNT1                                   ║
-║                   [31b]     INJ_PIP_COUNT2                [320]     I_BETA_1                                         ║
-║                   [700]     K_EPTZER                      [702]     KTMTB100                                         ║
+║                   [292]     PREVIOUS_PIP_TIME_H           [29c]     Next_spout_beta                                  ║
+║                   [2ea]     PREVIOUS_PIP_E_TIME           [2ec]     PREVIOUS_PIP_HIGH_PW                             ║
+║                   [2f2]     BASE_ADDR_DTC_TABLE           [318]     RPM_FILTER_2                                     ║
+║                   [31a]     INJ_PIP_COUNT1                [31b]     INJ_PIP_COUNT2                                   ║
+║                   [320]     I_BETA_1                      [35a]     KEptzer                                          ║
+║                   [700]     KCsuml                        [702]     KTMTB100                                         ║
 ║                   [752]     KTMTB200                      [7a2]     KTMTB200                                         ║
 ║                   [7a4]     KEGOCT1                       [7a5]     KEGOCT2                                          ║
 ║                   [7a6]     KAMRF1                        [7a8]     KAMRF2                                           ║
 ║                   [7aa]     KLPCT1L                       [7ac]     KLPCT1R                                          ║
-║                   [7cc]     KWUCTR                        [7d7]     TLO_FLAG                                         ║
-║                   [7d8]     DIFCTR                        [7dc]     K_ISC_KAM0L                                      ║
+║                   [7cc]     KWUCTR                        [7ce]     Slice_0                                          ║
+║                   [7d7]     TLO_FLAG                      [7d8]     DIFCTR                                           ║
+║                   [7da]     Kamqc                         [7dc]     K_ISC_KAM0L                                      ║
 ║                   [7e4]     K_ISC_SUM                                                                                ║
 ║                                                                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
@@ -259,13 +273,13 @@ Sub0003:
 8 217b: c3,01,24,01,20       stw   [124],R20          [TPS_INITAL_VALUE] = R20;
 8 2180: c3,01,1c,02,20       stw   [21c],R20          [THROTTLE_BART] = R20;
 8 2185: c3,01,b4,07,20       stw   [7b4],R20          [7b4] = R20;         
-8 218a: a3,01,5a,03,30       ldw   R30,[35a]          R30 = [35a];         
+8 218a: a3,01,5a,03,30       ldw   R30,[35a]          R30 = [KEptzer];     
 8 218f: 8b,f1,24,01,30       cmpw  R30,[Rf0+124]                           
 8 2194: d1,07                jleu  219d               if ((uns) R30 <= [EPT_KOEO_MIN]) goto 219d;
 8 2196: 8b,f1,26,01,30       cmpw  R30,[Rf0+126]                           
 8 219b: d3,09                jnc   21a6               if ((uns) R30 < [EPT_KOER_MAX]) goto 21a6;
 8 219d: a1,80,a2,30          ldw   R30,a280           R30 = a280;          
-8 21a1: c3,01,5a,03,30       stw   [35a],R30          [35a] = R30;         
+8 21a1: c3,01,5a,03,30       stw   [35a],R30          [KEptzer] = R30;     
 8 21a6: 28,42                scall 21ea               Sub0004();           
 8 21a8: 11,09                clrb  R09                [HSI_SAMPLE] = 0;    
 8 21aa: 32,0a,06             jnb   B2,R0a,21b3        if (!B2_[HSI_DATA]) goto 21b3;
@@ -554,16 +568,16 @@ Sub0010:
 
 Sub0011:
 8 242f: 71,8e,4c             an2b  R4c,8e             [FLAGS_4C] &= 8e;    
-8 2432: 48,90,06,88          sb3w  R88,R06,R90        R88 = IO_TIMER - R90;
-8 2436: 64,88,90             ad2w  R90,R88            R90 += R88;          
-8 2439: b4,00,92             adcb  R92,0              R92 += 0 + CY;       
+8 2432: 48,90,06,88          sb3w  R88,R06,R90        R88 = IO_TIMER - [Reftime];
+8 2436: 64,88,90             ad2w  R90,R88            [Reftime] += R88;    
+8 2439: b4,00,92             adcb  R92,0              [ReftimeH] += 0 + CY;
 8 243c: 3b,4c,4c             jb    B3,R4c,248b        if (B3_[FLAGS_4C]) goto 248b;
 8 243f: 05,84                decw  R84                [HSO_TIME]--;        
 8 2441: b8,00,86             sbbb  R86,0              [HSO_TIME_H] -= 0 - CY;
 8 2444: 39,4c,30             jb    B1,R4c,2477        if (B1_[FLAGS_4C]) goto 2477;
-8 2447: 48,90,84,88          sb3w  R88,R84,R90        R88 = [HSO_TIME] - R90;
+8 2447: 48,90,84,88          sb3w  R88,R84,R90        R88 = [HSO_TIME] - [Reftime];
 8 244b: b0,86,8a             ldb   R8a,R86            R8a = [HSO_TIME_H];  
-8 244e: b8,92,8a             sbbb  R8a,R92            R8a -= R92 - CY;     
+8 244e: b8,92,8a             sbbb  R8a,R92            R8a -= [ReftimeH] - CY;
 8 2451: 3f,8a,34             jb    B7,R8a,2488        if (B7_R8a) goto 2488;
 8 2454: d7,0d                jne   2463               if ([FLAGS_4C] != 8) goto 2463;
 8 2456: 89,0b,00,88          cmpw  R88,b                                   
@@ -582,14 +596,14 @@ Sub0011:
 
 8 2477: 3a,4c,1c             jb    B2,R4c,2496        if (B2_[FLAGS_4C]) goto 2496;
 8 247a: 9b,96,04,e2          cmpb  Re2,[R96+4]                             
-8 247e: d3,16                jnc   2496               if ((uns) Re2 < [[HSO_OR_INJ_TABLE_POINTER]+4]) goto 2496;
+8 247e: d3,16                jnc   2496               if ((uns) [HQcnt] < [[HSO_OR_INJ_TABLE_POINTER]+4]) goto 2496;
 8 2480: 37,4c,ed             jnb   B7,R4c,2470        if (!B7_[FLAGS_4C]) goto 2470;
 8 2483: 91,10,4c             orrb  R4c,10             [FLAGS_4C] |= 10;    
 8 2486: 20,36                sjmp  24be               goto 24be;           
 
 8 2488: 91,08,4c             orrb  R4c,8              [FLAGS_4C] |= 8;     
-8 248b: b0,92,86             ldb   R86,R92            [HSO_TIME_H] = R92;  
-8 248e: 45,0c,00,90,84       ad3w  R84,R90,c          [HSO_TIME] = R90 + c;
+8 248b: b0,92,86             ldb   R86,R92            [HSO_TIME_H] = [ReftimeH];
+8 248e: 45,0c,00,90,84       ad3w  R84,R90,c          [HSO_TIME] = [Reftime] + c;
 8 2493: b4,00,86             adcb  R86,0              [HSO_TIME_H] += 0 + CY;
 8 2496: 38,0a,2f             jb    B0,R0a,24c8        if (B0_[HSI_DATA]) goto 24c8;
 8 2499: a0,84,0e             ldw   R0e,R84            HSO_TIME = [HSO_TIME];
@@ -600,32 +614,32 @@ Sub0011:
 8 24a7: 3a,4c,14             jb    B2,R4c,24be        if (B2_[FLAGS_4C]) goto 24be;
 8 24aa: 01,88                clrw  R88                R88 = 0;             
 8 24ac: 51,07,85,88          an3b  R88,R85,7          R88 = R85 & 7;       
-8 24b0: b3,89,ce,07,8a       ldb   R8a,[R88+7ce]      R8a = [R88+7ce];     
+8 24b0: b3,89,ce,07,8a       ldb   R8a,[R88+7ce]      R8a = [R88+Slice_0]; 
 8 24b5: 17,8a                incb  R8a                R8a++;               
-8 24b7: c7,89,ce,07,8a       stb   [R88+7ce],R8a      [R88+7ce] = R8a;     
-8 24bc: 17,e2                incb  Re2                Re2++;               
+8 24b7: c7,89,ce,07,8a       stb   [R88+7ce],R8a      [R88+Slice_0] = R8a; 
+8 24bc: 17,e2                incb  Re2                [HQcnt]++;           
 8 24be: 71,79,4c             an2b  R4c,79             [FLAGS_4C] &= 79;    
 8 24c1: 33,4c,03             jnb   B3,R4c,24c7        if (!B3_[FLAGS_4C]) goto 24c7;
 8 24c4: 95,28,4c             xrb   R4c,28             [FLAGS_4C] ^= 28;    
 8 24c7: f0                   ret                      return;              
 
-8 24c8: b1,0c,e2             ldb   Re2,c              Re2 = c;             
+8 24c8: b1,0c,e2             ldb   Re2,c              [HQcnt] = c;         
 8 24cb: 27,b3                sjmp  2480               goto 2480;           
 
 Sub0012:
-8 24cd: af,96,05,82          ldzbw R82,[R96+5]        R82 = (uns)[[HSO_OR_INJ_TABLE_POINTER]+5];
-8 24d1: 57,83,86,02,00,8c    ad3b  R8c,0,[R82+286]    R8c = 0 + [R82+286]; 
+8 24cd: af,96,05,82          ldzbw R82,[R96+5]        [Rtab] = (uns)[[HSO_OR_INJ_TABLE_POINTER]+5];
+8 24d1: 57,83,86,02,00,8c    ad3b  R8c,0,[R82+286]    R8c = 0 + [[Rtab]+286];
 8 24d7: de,1a                jlt   24f3               if ((sig) R8c < 0) goto 24f3;
 8 24d9: b1,ff,8e             ldb   R8e,ff             R8e = ff;            
-8 24dc: c7,83,86,02,8e       stb   [R82+286],R8e      [R82+286] = R8e;     
-8 24e1: 57,83,8b,02,00,8e    ad3b  R8e,0,[R82+28b]    R8e = 0 + [R82+28b]; 
+8 24dc: c7,83,86,02,8e       stb   [R82+286],R8e      [[Rtab]+286] = R8e;  
+8 24e1: 57,83,8b,02,00,8e    ad3b  R8e,0,[R82+28b]    R8e = 0 + [[Rtab]+28b];
 8 24e7: c7,8d,86,02,8e       stb   [R8c+286],R8e      [R8c+286] = R8e;     
 8 24ec: da,05                jle   24f3               if ((sig) R8e <= 0) goto 24f3;
 8 24ee: c7,8f,86,02,8c       stb   [R8e+286],R8c      [R8e+286] = R8c;     
 8 24f3: 49,ee,89,96,8c       sb3w  R8c,R96,89ee       R8c = [HSO_OR_INJ_TABLE_POINTER] - 89ee;
-8 24f8: c7,83,87,02,8c       stb   [R82+287],R8c      [R82+287] = R8c;     
-8 24fd: c3,83,88,02,84       stw   [R82+288],R84      [R82+288] = [HSO_TIME];
-8 2502: c7,83,8a,02,86       stb   [R82+28a],R86      [R82+28a] = [HSO_TIME_H];
+8 24f8: c7,83,87,02,8c       stb   [R82+287],R8c      [[Rtab]+287] = R8c;  
+8 24fd: c3,83,88,02,84       stw   [R82+288],R84      [[Rtab]+288] = [HSO_TIME];
+8 2502: c7,83,8a,02,86       stb   [R82+28a],R86      [[Rtab]+28a] = [HSO_TIME_H];
 8 2507: af,96,02,8c          ldzbw R8c,[R96+2]        R8c = (uns)[[HSO_OR_INJ_TABLE_POINTER]+2];
 8 250b: 57,8d,86,02,00,8e    ad3b  R8e,0,[R8c+286]    R8e = 0 + [R8c+286]; 
 8 2511: 20,0a                sjmp  251d               goto 251d;           
@@ -633,10 +647,10 @@ Sub0012:
 8 2513: 55,05,8e,8c          ad3b  R8c,R8e,5          R8c = R8e + 5;       
 8 2517: 57,8f,8b,02,00,8e    ad3b  R8e,0,[R8e+28b]    R8e = 0 + [R8e+28b]; 
 8 251d: d2,12                jgt   2531               if ((sig) R8e > 0) goto 2531;
-8 251f: c7,83,8b,02,8e       stb   [R82+28b],R8e      [R82+28b] = R8e;     
-8 2524: c7,8d,86,02,82       stb   [R8c+286],R82      [R8c+286] = R82;     
-8 2529: 65,86,02,82          ad2w  R82,286            R82 += 286;          
-8 252d: c6,82,8c             stb   [R82],R8c          [R82] = R8c;         
+8 251f: c7,83,8b,02,8e       stb   [R82+28b],R8e      [[Rtab]+28b] = R8e;  
+8 2524: c7,8d,86,02,82       stb   [R8c+286],R82      [R8c+286] = [Rtab];  
+8 2529: 65,86,02,82          ad2w  R82,286            [Rtab] += 286;       
+8 252d: c6,82,8c             stb   [R82],R8c          [[Rtab]] = R8c;      
 8 2530: f0                   ret                      return;              
 
 8 2531: 9b,8f,87,02,00       cmpb  0,[R8e+287]                             
@@ -647,12 +661,12 @@ Sub0012:
 8 2545: 37,8a,cb             jnb   B7,R8a,2513        if (!B7_R8a) goto 2513;
 8 2548: a0,8e,8c             ldw   R8c,R8e            R8c = R8e;           
 8 254b: af,8d,86,02,8e       ldzbw R8e,[R8c+286]      R8e = (uns)[R8c+286];
-8 2550: c7,8f,86,02,82       stb   [R8e+286],R82      [R8e+286] = R82;     
-8 2555: 75,05,82             ad2b  R82,5              R82 += 5;            
-8 2558: c7,8d,86,02,82       stb   [R8c+286],R82      [R8c+286] = R82;     
-8 255d: 65,81,02,82          ad2w  R82,281            R82 += 281;          
-8 2561: c6,82,8e             stb   [R82],R8e          [R82] = R8e;         
-8 2564: c7,82,05,8c          stb   [R82+5],R8c        [R82+5] = R8c;       
+8 2550: c7,8f,86,02,82       stb   [R8e+286],R82      [R8e+286] = [Rtab];  
+8 2555: 75,05,82             ad2b  R82,5              [Rtab] += 5;         
+8 2558: c7,8d,86,02,82       stb   [R8c+286],R82      [R8c+286] = [Rtab];  
+8 255d: 65,81,02,82          ad2w  R82,281            [Rtab] += 281;       
+8 2561: c6,82,8e             stb   [R82],R8e          [[Rtab]] = R8e;      
+8 2564: c7,82,05,8c          stb   [R82+5],R8c        [[Rtab]+5] = R8c;    
 8 2568: f0                   ret                      return;              
 
 DO_COMMAND_N:
@@ -679,7 +693,7 @@ Sub0015:
 8 2590: db,0e                jc    25a0               if ([HSO_OR_INJ_TABLE_POINTER] >= 0) goto 25a0;
 8 2592: 27,d5                sjmp  2569               goto DO_COMMAND_N;   
 
-8 2594: c7,82,01,00          stb   [R82+1],0          [R82+1] = 0;         
+8 2594: c7,82,01,00          stb   [R82+1],0          [[Rtab]+1] = 0;      
 8 2598: f0                   ret                      return;              
 
 
@@ -700,19 +714,19 @@ SEND_HSO_COMMAND:
 8 25b5: 51,0f,81,8a          an3b  R8a,R81,f          R8a = R81 & f;       
 8 25b9: ad,01,88             ldzbw R88,1              R88 = (uns)1;        
 8 25bc: 09,8a,88             shlw  R88,8a             R88 = R88 << R8a;    
-8 25bf: 80,88,44             orrw  R44,R88            R44 |= R88;          
+8 25bf: 80,88,44             orrw  R44,R88            [HSOut_Flags] |= R88;
 8 25c2: 3c,81,03             jb    B4,R81,25c8        if (B4_R81) goto 25c8;
-8 25c5: 84,88,44             xrw   R44,R88            R44 ^= R88;          
+8 25c5: 84,88,44             xrw   R44,R88            [HSOut_Flags] ^= R88;
 8 25c8: f0                   ret                      return;              
 
 Sub0017:
-8 25c9: 48,90,06,88          sb3w  R88,R06,R90        R88 = IO_TIMER - R90;
-8 25cd: 64,88,90             ad2w  R90,R88            R90 += R88;          
-8 25d0: b4,00,92             adcb  R92,0              R92 += 0 + CY;       
-8 25d3: b0,92,80             ldb   R80,R92            [EVENT_TIME_H] = R92;
-8 25d6: 48,0e,90,88          sb3w  R88,R90,R0e        R88 = R90 - HSI_TIME;
+8 25c9: 48,90,06,88          sb3w  R88,R06,R90        R88 = IO_TIMER - [Reftime];
+8 25cd: 64,88,90             ad2w  R90,R88            [Reftime] += R88;    
+8 25d0: b4,00,92             adcb  R92,0              [ReftimeH] += 0 + CY;
+8 25d3: b0,92,80             ldb   R80,R92            [EVENT_TIME_H] = [ReftimeH];
+8 25d6: 48,0e,90,88          sb3w  R88,R90,R0e        R88 = [Reftime] - HSI_TIME;
 8 25da: 65,02,00,88          ad2w  R88,2              R88 += 2;            
-8 25de: 48,88,90,7e          sb3w  R7e,R90,R88        [EVENT_TIME] = R90 - R88;
+8 25de: 48,88,90,7e          sb3w  R7e,R90,R88        [EVENT_TIME] = [Reftime] - R88;
 8 25e2: b8,00,80             sbbb  R80,0              [EVENT_TIME_H] -= 0 - CY;
 8 25e5: b0,0d,87             ldb   R87,R0d            R87 = HSI_DATA;      
 8 25e8: b0,94,8b             ldb   R8b,R94            [FLAGS_8B] = [FLAGS_94];
@@ -738,17 +752,17 @@ IPT_HSO_1 - Interrupt High Speed Output 1:
 8 2610: f2                   pushp                    push(PSW);           
 8 2611: 47,01,3a,03,06,0e    ad3w  R0e,R06,[33a]      HSO_TIME = IO_TIMER + [33a];
 8 2617: b1,2a,0d             ldb   R0d,2a             HSO_CMD = 2a;        
-8 261a: c3,01,2a,02,06       stw   [22a],R06          [22a] = IO_TIMER;    
+8 261a: c3,01,2a,02,06       stw   [22a],R06          [Last_HSO] = IO_TIMER;
 8 261f: c3,01,88,02,10       stw   [288],R10          [288] = STACK;       
 8 2624: ad,74,10             ldzbw R10,74             STACK = (uns)74;     
-8 2627: ac,95,54             ldzbw R54,R95            R54 = (uns)R95;      
-8 262a: 51,07,91,95          an3b  R95,R91,7          R95 = R91 & 7;       
+8 2627: ac,95,54             ldzbw R54,R95            R54 = (uns)[Slice_ptr];
+8 262a: 51,07,91,95          an3b  R95,R91,7          [Slice_ptr] = R91 & 7;
 8 262e: 98,54,95             cmpb  R95,R54                                 
-8 2631: df,15                je    2648               if (R95 == R54) goto 2648;
-8 2633: 7b,55,ce,07,e2       sb2b  Re2,[R54+7ce]      Re2 -= [R54+7ce];    
-8 2638: d6,02                jge   263c               if ((sig) Re2 >= 0) goto 263c;
-8 263a: 11,e2                clrb  Re2                Re2 = 0;             
-8 263c: c7,55,ce,07,00       stb   [R54+7ce],0        [R54+7ce] = 0;       
+8 2631: df,15                je    2648               if ([Slice_ptr] == R54) goto 2648;
+8 2633: 7b,55,ce,07,e2       sb2b  Re2,[R54+7ce]      [HQcnt] -= [R54+Slice_0];
+8 2638: d6,02                jge   263c               if ((sig) [HQcnt] >= 0) goto 263c;
+8 263a: 11,e2                clrb  Re2                [HQcnt] = 0;         
+8 263c: c7,55,ce,07,00       stb   [R54+7ce],0        [R54+Slice_0] = 0;   
 8 2641: 17,54                incb  R54                R54++;               
 8 2643: 71,07,54             an2b  R54,7              R54 &= 7;            
 8 2646: 27,e6                sjmp  262e               goto 262e;           
@@ -766,30 +780,30 @@ Sub0020:
 8 2666: 01,74                clrw  R74                R74 = 0;             
 8 2668: 01,76                clrw  R76                R76 = 0;             
 8 266a: b1,80,4c             ldb   R4c,80             [FLAGS_4C] = 80;     
-8 266d: 57,75,86,02,00,82    ad3b  R82,0,[R74+286]    R82 = 0 + [R74+286]; 
-8 2673: d7,02                jne   2677               if (R82 != 0) goto 2677;
+8 266d: 57,75,86,02,00,82    ad3b  R82,0,[R74+286]    [Rtab] = 0 + [R74+286];
+8 2673: d7,02                jne   2677               if ([Rtab] != 0) goto 2677;
 8 2675: 20,86                sjmp  26fd               goto 26fd;           
 
 8 2677: 11,83                clrb  R83                R83 = 0;             
-8 2679: 57,83,87,02,00,96    ad3b  R96,0,[R82+287]    [HSO_OR_INJ_TABLE_POINTER] = 0 + [R82+287];
+8 2679: 57,83,87,02,00,96    ad3b  R96,0,[R82+287]    [HSO_OR_INJ_TABLE_POINTER] = 0 + [[Rtab]+287];
 8 267f: d7,1c                jne   269d               if ([HSO_OR_INJ_TABLE_POINTER] != 0) goto 269d;
 8 2681: b1,ff,54             ldb   R54,ff             R54 = ff;            
-8 2684: c7,83,86,02,54       stb   [R82+286],R54      [R82+286] = R54;     
-8 2689: 57,83,8b,02,00,76    ad3b  R76,0,[R82+28b]    R76 = 0 + [R82+28b]; 
+8 2684: c7,83,86,02,54       stb   [R82+286],R54      [[Rtab]+286] = R54;  
+8 2689: 57,83,8b,02,00,76    ad3b  R76,0,[R82+28b]    R76 = 0 + [[Rtab]+28b];
 8 268f: c7,75,86,02,76       stb   [R74+286],R76      [R74+286] = R76;     
 8 2694: df,67                je    26fd               if (R76 == 0) goto 26fd;
 8 2696: c7,77,86,02,74       stb   [R76+286],R74      [R76+286] = R74;     
 8 269b: 27,d0                sjmp  266d               goto 266d;           
 
 8 269d: 11,97                clrb  R97                R97 = 0;             
-8 269f: 48,90,06,88          sb3w  R88,R06,R90        R88 = IO_TIMER - R90;
-8 26a3: 64,88,90             ad2w  R90,R88            R90 += R88;          
-8 26a6: b4,00,92             adcb  R92,0              R92 += 0 + CY;       
-8 26a9: a3,83,88,02,84       ldw   R84,[R82+288]      [HSO_TIME] = [R82+288];
-8 26ae: b3,83,8a,02,86       ldb   R86,[R82+28a]      [HSO_TIME_H] = [R82+28a];
-8 26b3: 48,90,84,88          sb3w  R88,R84,R90        R88 = [HSO_TIME] - R90;
+8 269f: 48,90,06,88          sb3w  R88,R06,R90        R88 = IO_TIMER - [Reftime];
+8 26a3: 64,88,90             ad2w  R90,R88            [Reftime] += R88;    
+8 26a6: b4,00,92             adcb  R92,0              [ReftimeH] += 0 + CY;
+8 26a9: a3,83,88,02,84       ldw   R84,[R82+288]      [HSO_TIME] = [[Rtab]+288];
+8 26ae: b3,83,8a,02,86       ldb   R86,[R82+28a]      [HSO_TIME_H] = [[Rtab]+28a];
+8 26b3: 48,90,84,88          sb3w  R88,R84,R90        R88 = [HSO_TIME] - [Reftime];
 8 26b7: b0,86,8a             ldb   R8a,R86            R8a = [HSO_TIME_H];  
-8 26ba: b8,92,8a             sbbb  R8a,R92            R8a -= R92 - CY;     
+8 26ba: b8,92,8a             sbbb  R8a,R92            R8a -= [ReftimeH] - CY;
 8 26bd: 3f,8a,0b             jb    B7,R8a,26cb        if (B7_R8a) goto 26cb;
 8 26c0: d7,3b                jne   26fd               if ([FLAGS_4C] != 2) goto 26fd;
 8 26c2: 8b,01,24,03,88       cmpw  R88,[324]                               
@@ -800,7 +814,7 @@ Sub0020:
 8 26ce: 8b,01,32,03,88       cmpw  R88,[332]                               
 8 26d3: d1,03                jleu  26d8               if ((uns) R88 <= [332]) goto 26d8;
 8 26d5: 91,02,4c             orrb  R4c,2              [FLAGS_4C] |= 2;     
-8 26d8: 65,86,02,82          ad2w  R82,286            R82 += 286;          
+8 26d8: 65,86,02,82          ad2w  R82,286            [Rtab] += 286;       
 8 26dc: 65,ee,89,96          ad2w  R96,89ee           [HSO_OR_INJ_TABLE_POINTER] += VecLst8_015;
 8 26e0: c9,e6,26             push  26e6               push(Sub0021);       
 8 26e3: ca,96                push  [R96]              push([[HSO_OR_INJ_TABLE_POINTER]]);
@@ -858,7 +872,7 @@ Sub0022:
 8 276a: ad,09,54             ldzbw R54,9              R54 = (uns)9;        
 8 276d: 01,58                clrw  R58                R58 = 0;             
 8 276f: e0,54,05             djnz  R54,2777           R54--; if (R54 !=  0) goto 2777;
-8 2772: b0,58,e2             ldb   Re2,R58            Re2 = R58;           
+8 2772: b0,58,e2             ldb   Re2,R58            [HQcnt] = R58;       
 8 2775: 20,07                sjmp  277e               goto 277e;           
 
 8 2777: 77,55,cd,07,58       ad2b  R58,[R54+7cd]      R58 += [R54+7cd];    
@@ -885,8 +899,8 @@ IPT_Timer_OVF - Interrupt Timer OVF:
 8 27a0: 07,12                incw  R12                R12++;               
 8 27a2: d7,03                jne   27a7               if (0 != R12) goto 27a7;
 8 27a4: 91,04,4f             orrb  R4f,4              [FLAGS_4F] |= 4;     
-8 27a7: b0,12,92             ldb   R92,R12            R92 = R12;           
-8 27aa: a0,06,90             ldw   R90,R06            R90 = IO_TIMER;      
+8 27a7: b0,12,92             ldb   R92,R12            [ReftimeH] = R12;    
+8 27aa: a0,06,90             ldw   R90,R06            [Reftime] = IO_TIMER;
 8 27ad: fa                   di                       disable ints;        
 8 27ae: b1,a1,08             ldb   R08,a1             INT_MASK = a1;       
 8 27b1: 9b,f4,02,00          cmpb  0,[Rf4+2]                               
@@ -901,7 +915,7 @@ IPT_HSO_2 - Interrupt High Speed Output 2:
 8 27bc: f2                   pushp                    push(PSW);           
 8 27bd: fa                   di                       disable ints;        
 8 27be: ff                   ff                                            
-8 27bf: 47,01,6a,01,00,54    ad3w  R54,0,[16a]        R54 = 0 + [16a];     
+8 27bf: 47,01,6a,01,00,54    ad3w  R54,0,[16a]        R54 = 0 + [LastSWtime];
 8 27c5: df,23                je    27ea               if (R54 == 0) goto 27ea;
 8 27c7: 48,06,54,56          sb3w  R56,R54,R06        R56 = R54 - IO_TIMER;
 8 27cb: 37,57,1c             jnb   B7,R57,27ea        if (!B7_R57) goto 27ea;
@@ -912,7 +926,7 @@ IPT_HSO_2 - Interrupt High Speed Output 2:
 8 27d6: 67,01,40,03,54       ad2w  R54,[340]          R54 += [340];        
 8 27db: d7,02                jne   27df               if (R54 != 0) goto 27df;
 8 27dd: 07,54                incw  R54                R54++;               
-8 27df: c3,01,6a,01,54       stw   [16a],R54          [16a] = R54;         
+8 27df: c3,01,6a,01,54       stw   [16a],R54          [LastSWtime] = R54;  
 8 27e4: a0,54,0e             ldw   R0e,R54            HSO_TIME = R54;      
 8 27e7: b1,0f,0d             ldb   R0d,f              HSO_CMD = f;         
 8 27ea: a3,01,00,0d,54       ldw   R54,[d00]          R54 = [CC_d00];      
@@ -1159,7 +1173,7 @@ PIP_HANDLER:
 8 2ab8: c3,01,14,02,58       stw   [214],R58          [214] = R58;         
 8 2abd: ef,af,0a             call  356f               Sub0042();           
 8 2ac0: 71,df,26             an2b  R26,df             [FLAGS_26] &= df;    
-8 2ac3: 75,20,cc             ad2b  Rcc,20             Rcc += 20;           
+8 2ac3: 75,20,cc             ad2b  Rcc,20             [Synctr] += 20;      
 8 2ac6: ef,0b,49             call  73d4               Sub0118();           
 8 2ac9: 30,4f,03             jnb   B0,R4f,2acf        if (<PIP_DOUBLE> == 0) goto 2acf;
 8 2acc: ef,86,49             call  7455               Sub0119();           
@@ -1185,7 +1199,7 @@ PIP_HANDLER:
 8 2b08: 71,fd,50             an2b  R50,fd             [FLAGS_50] &= fd;    
 8 2b0b: 29,55                scall 2c62               KNOCK_CHECK();       
 8 2b0d: b1,ff,54             ldb   R54,ff             R54 = ff;            
-8 2b10: c7,01,c3,01,54       stb   [1c3],R54          [1c3] = R54;         
+8 2b10: c7,01,c3,01,54       stb   [1c3],R54          [Inj_pip] = R54;     
 8 2b15: ef,2d,03             call  2e45               Sub0035();           
 8 2b18: 20,a2                sjmp  2bbc               goto Sub0030;        
 
@@ -1214,7 +1228,7 @@ PIP_HANDLER:
 8 2b59: 91,01,c9             orrb  Rc9,1              [FLAGS_C9] |= 1;     
 8 2b5c: a3,01,ec,02,bc       ldw   Rbc,[2ec]          [PIP_HIGH_PW] = [PREVIOUS_PIP_HIGH_PW];
 8 2b61: 9b,f0,40,cc          cmpb  Rcc,[Rf0+40]                            
-8 2b65: df,02                je    2b69               if (Rcc == [NUM_CYL]) goto 2b69;
+8 2b65: df,02                je    2b69               if ([Synctr] == [NUM_CYL]) goto 2b69;
 8 2b67: 20,1b                sjmp  2b84               goto 2b84;           
 
 8 2b69: 91,50,51             orrb  R51,50             [FLAGS_51] |= 50;    
@@ -1222,11 +1236,11 @@ PIP_HANDLER:
 8 2b70: 8b,f0,40,54          cmpw  R54,[Rf0+40]                            
 8 2b74: df,03                je    2b79               if (R54 == [NUM_CYL]) goto 2b79;
 8 2b76: 71,ef,51             an2b  R51,ef             <SYNC_UP_FUEL> = 0;  
-8 2b79: 11,cc                clrb  Rcc                Rcc = 0;             
-8 2b7b: ac,cc,5c             ldzbw R5c,Rcc            R5c = (uns)Rcc;      
+8 2b79: 11,cc                clrb  Rcc                [Synctr] = 0;        
+8 2b7b: ac,cc,5c             ldzbw R5c,Rcc            R5c = (uns)[Synctr]; 
 8 2b7e: 8b,f0,40,5c          cmpw  R5c,[Rf0+40]                            
 8 2b82: d3,05                jnc   2b89               if ((uns) R5c < [NUM_CYL]) goto 2b89;
-8 2b84: 11,cc                clrb  Rcc                Rcc = 0;             
+8 2b84: 11,cc                clrb  Rcc                [Synctr] = 0;        
 8 2b86: 71,2f,51             an2b  R51,2f             [FLAGS_51] &= 2f;    
 8 2b89: ef,30,00             call  2bbc               Sub0030();           
 8 2b8c: 9b,f7,02,01,00       cmpb  0,[Rf6+102]                             
@@ -1269,13 +1283,13 @@ Sub0031:
 8 2be8: b3,f0,05,54          ldb   R54,[Rf0+5]        R54 = [PIP_PER_REV]; 
 8 2bec: 19,04,54             shlb  R54,4              R54 = R54 * 10;      
 8 2bef: 98,54,cc             cmpb  Rcc,R54                                 
-8 2bf2: df,06                je    2bfa               if (Rcc == R54) goto 2bfa;
-8 2bf4: b0,54,cc             ldb   Rcc,R54            Rcc = R54;           
+8 2bf2: df,06                je    2bfa               if ([Synctr] == R54) goto 2bfa;
+8 2bf4: b0,54,cc             ldb   Rcc,R54            [Synctr] = R54;      
 8 2bf7: 71,2f,51             an2b  R51,2f             [FLAGS_51] &= 2f;    
 8 2bfa: f0                   ret                      return;              
 
-8 2bfb: b0,cc,54             ldb   R54,Rcc            R54 = Rcc;           
-8 2bfe: 11,cc                clrb  Rcc                Rcc = 0;             
+8 2bfb: b0,cc,54             ldb   R54,Rcc            R54 = [Synctr];      
+8 2bfe: 11,cc                clrb  Rcc                [Synctr] = 0;        
 8 2c00: 38,2b,06             jb    B0,R2b,2c09        if (<UNDERSPEED> == 1) goto 2c09;
 8 2c03: 9b,f0,40,54          cmpb  R54,[Rf0+40]                            
 8 2c07: df,04                je    2c0d               if (R54 == [NUM_CYL]) goto 2c0d;
@@ -1438,16 +1452,16 @@ KNOCK_CHECK:
 8 2de3: 8b,fb,1a,01,b8       cmpw  Rb8,[Rfa+11a]                           
 8 2de8: d1,03                jleu  2ded               if ((uns) [PIP_HI_E_TIME] <= [SPOUT_RISING_EDGE_CALC_RPM]) goto 2ded;
 8 2dea: 91,04,50             orrb  R50,4              [FLAGS_50] |= 4;     
-8 2ded: c3,01,9c,02,56       stw   [29c],R56          [29c] = R56;         
+8 2ded: c3,01,9c,02,56       stw   [29c],R56          [Next_spout_beta] = R56;
 8 2df2: 28,34                scall 2e28               UPDATE_HSO_TIME_PREVIOUS();
-8 2df4: a1,8a,02,82          ldw   R82,28a            R82 = 28a;           
+8 2df4: a1,8a,02,82          ldw   R82,28a            [Rtab] = 28a;        
 8 2df8: 9b,82,01,00          cmpb  0,[R82+1]                               
-8 2dfc: d6,19                jge   2e17               if ((sig) 0 >= [R82+1]) goto 2e17;
+8 2dfc: d6,19                jge   2e17               if ((sig) 0 >= [[Rtab]+1]) goto 2e17;
 8 2dfe: 91,01,50             orrb  R50,1              [FLAGS_50] |= 1;     
-8 2e01: 4b,82,02,84,54       sb3w  R54,R84,[R82+2]    R54 = [HSO_TIME] - [R82+2];
+8 2e01: 4b,82,02,84,54       sb3w  R54,R84,[R82+2]    R54 = [HSO_TIME] - [[Rtab]+2];
 8 2e06: 37,55,0d             jnb   B7,R55,2e16        if (!B7_R55) goto 2e16;
 8 2e09: 91,08,4c             orrb  R4c,8              [FLAGS_4C] |= 8;     
-8 2e0c: af,82,01,96          ldzbw R96,[R82+1]        [HSO_OR_INJ_TABLE_POINTER] = (uns)[R82+1];
+8 2e0c: af,82,01,96          ldzbw R96,[R82+1]        [HSO_OR_INJ_TABLE_POINTER] = (uns)[[Rtab]+1];
 8 2e10: 65,ee,89,96          ad2w  R96,89ee           [HSO_OR_INJ_TABLE_POINTER] += VecLst8_015;
 8 2e14: ca,96                push  [R96]              push([[HSO_OR_INJ_TABLE_POINTER]]);
 8 2e16: f0                   ret                      return;              
@@ -1463,7 +1477,7 @@ KNOCK_CHECK:
 UPDATE_HSO_TIME_PREVIOUS:
 8 2e28: a3,01,90,02,84       ldw   R84,[290]          [HSO_TIME] = [PREVIOUS_PIP_TIME];
 8 2e2d: b3,01,92,02,86       ldb   R86,[292]          [HSO_TIME_H] = [PREVIOUS_PIP_TIME_H];
-8 2e32: 67,01,9c,02,84       ad2w  R84,[29c]          [HSO_TIME] += [29c]; 
+8 2e32: 67,01,9c,02,84       ad2w  R84,[29c]          [HSO_TIME] += [Next_spout_beta];
 8 2e37: b4,00,86             adcb  R86,0              [HSO_TIME_H] += 0 + CY;
 8 2e3a: 30,4f,06             jnb   B0,R4f,2e43        if (<PIP_DOUBLE> == 0) goto 2e43;
 8 2e3d: 64,bc,84             ad2w  R84,Rbc            [HSO_TIME] += [PIP_HIGH_PW];
@@ -1548,7 +1562,7 @@ Sub0035:
 8 2f22: d7,59                jne   2f7d               if (0 != [1ba]) goto 2f7d;
 8 2f24: af,5b,1c,03,56       ldzbw R56,[R5a+31c]      R56 = (uns)[R5a+31c];
 8 2f29: 09,05,56             shlw  R56,5              R56 = R56 * 20;      
-8 2f2c: ac,cc,54             ldzbw R54,Rcc            R54 = (uns)Rcc;      
+8 2f2c: ac,cc,54             ldzbw R54,Rcc            R54 = (uns)[Synctr]; 
 8 2f2f: 68,56,54             sb2w  R54,R56            R54 -= R56;          
 8 2f32: db,04                jc    2f38               if (R54 >= 0) goto 2f38;
 8 2f34: 67,f0,40,54          ad2w  R54,[Rf0+40]       R54 += [NUM_CYL];    
@@ -1591,7 +1605,7 @@ Sub0035:
 8 2f92: 3f,2c,34             jb    B7,R2c,2fc9        if (<CRANKING> == 1) goto 2fc9;
 8 2f95: 37,99,31             jnb   B7,R99,2fc9        if (!B7_R99) goto 2fc9;
 8 2f98: 36,51,2e             jnb   B6,R51,2fc9        if (<SYN_FLAG> == 0) goto 2fc9;
-8 2f9b: ac,cc,54             ldzbw R54,Rcc            R54 = (uns)Rcc;      
+8 2f9b: ac,cc,54             ldzbw R54,Rcc            R54 = (uns)[Synctr]; 
 8 2f9e: 9b,f0,40,54          cmpb  R54,[Rf0+40]                            
 8 2fa2: d7,09                jne   2fad               if (R54 != [NUM_CYL]) goto 2fad;
 8 2fa4: 9b,01,1c,03,00       cmpb  0,[31c]                                 
@@ -1650,8 +1664,8 @@ Sub0035:
 8 3039: 30,51,1a             jnb   B0,R51,3056        if (!B0_[FLAGS_51]) goto 3056;
 8 303c: 38,2b,03             jb    B0,R2b,3042        if (<UNDERSPEED> == 1) goto 3042;
 8 303f: 30,51,08             jnb   B0,R51,304a        if (!B0_[FLAGS_51]) goto 304a;
-8 3042: a0,90,84             ldw   R84,R90            [HSO_TIME] = R90;    
-8 3045: b0,92,86             ldb   R86,R92            [HSO_TIME_H] = R92;  
+8 3042: a0,90,84             ldw   R84,R90            [HSO_TIME] = [Reftime];
+8 3045: b0,92,86             ldb   R86,R92            [HSO_TIME_H] = [ReftimeH];
 8 3048: 20,08                sjmp  3052               goto 3052;           
 
 8 304a: 28,99                scall 30e5               SET_INJECTION_BANK();
@@ -1660,9 +1674,9 @@ Sub0035:
 8 3052: 28,b6                scall 310a               DO_INJECTION?();     
 8 3054: 20,0e                sjmp  3064               goto 3064;           
 
-8 3056: af,96,05,82          ldzbw R82,[R96+5]        R82 = (uns)[[HSO_OR_INJ_TABLE_POINTER]+5];
-8 305a: c3,83,84,02,90       stw   [R82+284],R90      [R82+RPMX4] = R90;   
-8 305f: c7,83,83,02,92       stb   [R82+283],R92      [R82+283] = R92;     
+8 3056: af,96,05,82          ldzbw R82,[R96+5]        [Rtab] = (uns)[[HSO_OR_INJ_TABLE_POINTER]+5];
+8 305a: c3,83,84,02,90       stw   [R82+284],R90      [[Rtab]+RPMX4] = [Reftime];
+8 305f: c7,83,83,02,92       stb   [R82+283],R92      [[Rtab]+283] = [ReftimeH];
 8 3064: cc,5a                pop   R5a                R5a = pop();         
 8 3066: 71,df,51             an2b  R51,df             [FLAGS_51] &= df;    
 8 3069: 3b,51,03             jb    B3,R51,306f        if (B3_[FLAGS_51]) goto 306f;
@@ -1727,20 +1741,20 @@ SET_INJECTION_BANK:
 
 DO_INJECTION?:
 8 310a: 71,f7,50             an2b  R50,f7             [FLAGS_50] &= f7;    
-8 310d: af,96,05,82          ldzbw R82,[R96+5]        R82 = (uns)[[HSO_OR_INJ_TABLE_POINTER]+5];
-8 3111: 65,86,02,82          ad2w  R82,286            R82 += 286;          
+8 310d: af,96,05,82          ldzbw R82,[R96+5]        [Rtab] = (uns)[[HSO_OR_INJ_TABLE_POINTER]+5];
+8 3111: 65,86,02,82          ad2w  R82,286            [Rtab] += 286;       
 8 3115: 35,51,0e             jnb   B5,R51,3126        if (!B5_[FLAGS_51]) goto 3126;
 8 3118: b3,96,06,54          ldb   R54,[R96+6]        R54 = [[HSO_OR_INJ_TABLE_POINTER]+6];
-8 311c: 93,01,c2,01,54       orrb  R54,[1c2]          R54 |= [1c2];        
-8 3121: c7,01,c2,01,54       stb   [1c2],R54          [1c2] = R54;         
+8 311c: 93,01,c2,01,54       orrb  R54,[1c2]          R54 |= [Inj_base];   
+8 3121: c7,01,c2,01,54       stb   [1c2],R54          [Inj_base] = R54;    
 8 3126: b3,96,07,54          ldb   R54,[R96+7]        R54 = [[HSO_OR_INJ_TABLE_POINTER]+7];
-8 312a: 73,01,c3,01,54       an2b  R54,[1c3]          R54 &= [1c3];        
-8 312f: c7,01,c3,01,54       stb   [1c3],R54          [1c3] = R54;         
+8 312a: 73,01,c3,01,54       an2b  R54,[1c3]          R54 &= [Inj_pip];    
+8 312f: c7,01,c3,01,54       stb   [1c3],R54          [Inj_pip] = R54;     
 8 3134: a3,01,2a,03,54       ldw   R54,[32a]          R54 = [32a];         
-8 3139: 43,96,0a,44,00       an3w  0,R44,[R96+a]      0 = R44 & [[HSO_OR_INJ_TABLE_POINTER]+a];
-8 313e: df,44                je    3184               if (R44 != [[HSO_OR_INJ_TABLE_POINTER]+a]) goto 3184;
-8 3140: 67,82,02,54          ad2w  R54,[R82+2]        R54 += [R82+2];      
-8 3144: b3,82,04,56          ldb   R56,[R82+4]        R56 = [R82+4];       
+8 3139: 43,96,0a,44,00       an3w  0,R44,[R96+a]      0 = [HSOut_Flags] & [[HSO_OR_INJ_TABLE_POINTER]+a];
+8 313e: df,44                je    3184               if ([HSOut_Flags] != [[HSO_OR_INJ_TABLE_POINTER]+a]) goto 3184;
+8 3140: 67,82,02,54          ad2w  R54,[R82+2]        R54 += [[Rtab]+2];   
+8 3144: b3,82,04,56          ldb   R56,[R82+4]        R56 = [[Rtab]+4];    
 8 3148: b4,00,56             adcb  R56,0              R56 += 0 + CY;       
 8 314b: 88,54,84             cmpw  R84,R54                                 
 8 314e: b0,86,8a             ldb   R8a,R86            R8a = [HSO_TIME_H];  
@@ -1748,10 +1762,10 @@ DO_INJECTION?:
 8 3154: 37,8a,1e             jnb   B7,R8a,3175        if (!B7_R8a) goto 3175;
 8 3157: 35,51,0b             jnb   B5,R51,3165        if (!B5_[FLAGS_51]) goto 3165;
 8 315a: 91,08,50             orrb  R50,8              [FLAGS_50] |= 8;     
-8 315d: c3,82,fe,84          stw   [R82+fe],R84       [R82+fe] = [HSO_TIME];
-8 3161: c7,82,fd,86          stb   [R82+fd],R86       [R82+fd] = [HSO_TIME_H];
-8 3165: a3,82,02,84          ldw   R84,[R82+2]        [HSO_TIME] = [R82+2];
-8 3169: b3,82,04,86          ldb   R86,[R82+4]        [HSO_TIME_H] = [R82+4];
+8 315d: c3,82,fe,84          stw   [R82+fe],R84       [[Rtab]+fe] = [HSO_TIME];
+8 3161: c7,82,fd,86          stb   [R82+fd],R86       [[Rtab]+fd] = [HSO_TIME_H];
+8 3165: a3,82,02,84          ldw   R84,[R82+2]        [HSO_TIME] = [[Rtab]+2];
+8 3169: b3,82,04,86          ldb   R86,[R82+4]        [HSO_TIME_H] = [[Rtab]+4];
 8 316d: 28,be                scall 322d               Sub0039();           
 8 316f: 71,f7,50             an2b  R50,f7             [FLAGS_50] &= f7;    
 8 3172: e7,58,f3             jump  24cd               goto Sub0012;        
@@ -1761,8 +1775,8 @@ DO_INJECTION?:
 8 317e: c7,01,c4,01,54       stb   [1c4],R54          [INJECTION_PENDING] = R54;
 8 3183: f0                   ret                      return;              
 
-8 3184: 67,82,fe,54          ad2w  R54,[R82+fe]       R54 += [R82+fe];     
-8 3188: b3,82,fd,56          ldb   R56,[R82+fd]       R56 = [R82+fd];      
+8 3184: 67,82,fe,54          ad2w  R54,[R82+fe]       R54 += [[Rtab]+fe];  
+8 3188: b3,82,fd,56          ldb   R56,[R82+fd]       R56 = [[Rtab]+fd];   
 8 318c: b4,00,56             adcb  R56,0              R56 += 0 + CY;       
 8 318f: 88,54,84             cmpw  R84,R54                                 
 8 3192: b0,86,8a             ldb   R8a,R86            R8a = [HSO_TIME_H];  
@@ -1785,7 +1799,7 @@ DO_INJECTION?:
 8 31c1: f0                   ret                      return;              
 
 8 31c2: 28,69                scall 322d               Sub0039();           
-8 31c4: 67,01,b8,01,84       ad2w  R84,[1b8]          [HSO_TIME] += [1b8]; 
+8 31c4: 67,01,b8,01,84       ad2w  R84,[1b8]          [HSO_TIME] += [Pwoff];
 8 31c9: b4,00,86             adcb  R86,0              [HSO_TIME_H] += 0 + CY;
 8 31cc: 65,0c,00,96          ad2w  R96,c              [HSO_OR_INJ_TABLE_POINTER] += c;
 8 31d0: b3,96,06,58          ldb   R58,[R96+6]        R58 = [[HSO_OR_INJ_TABLE_POINTER]+6];
@@ -1793,8 +1807,8 @@ DO_INJECTION?:
 8 31d9: df,2b                je    3206               if (R58 == [INJECTION_PENDING]) goto 3206;
 8 31db: 91,10,4f             orrb  R4f,10             <INJECTION_PENDING> = 1;
 8 31de: 2f,05                scall 30e5               SET_INJECTION_BANK();
-8 31e0: 73,01,c3,01,58       an2b  R58,[1c3]          R58 &= [1c3];        
-8 31e5: df,06                je    31ed               if (R58 == [1c3]) goto 31ed;
+8 31e0: 73,01,c3,01,58       an2b  R58,[1c3]          R58 &= [Inj_pip];    
+8 31e5: df,06                je    31ed               if (R58 == [Inj_pip]) goto 31ed;
 8 31e7: 68,b8,54             sb2w  R54,Rb8            R54 -= [PIP_HI_E_TIME];
 8 31ea: b8,00,56             sbbb  R56,0              R56 -= 0 - CY;       
 8 31ed: 47,01,2a,03,84,88    ad3w  R88,R84,[32a]      R88 = [HSO_TIME] + [32a];
@@ -1810,16 +1824,16 @@ DO_INJECTION?:
 8 320c: 71,ef,4f             an2b  R4f,ef             <INJECTION_PENDING> = 0;
 8 320f: f0                   ret                      return;              
 
-8 3210: c3,82,fe,84          stw   [R82+fe],R84       [R82+fe] = [HSO_TIME];
-8 3214: c7,82,fd,86          stb   [R82+fd],R86       [R82+fd] = [HSO_TIME_H];
+8 3210: c3,82,fe,84          stw   [R82+fe],R84       [[Rtab]+fe] = [HSO_TIME];
+8 3214: c7,82,fd,86          stb   [R82+fd],R86       [[Rtab]+fd] = [HSO_TIME_H];
 8 3218: 34,4f,0c             jnb   B4,R4f,3227        if (<INJECTION_PENDING> == 0) goto 3227;
 8 321b: a0,54,84             ldw   R84,R54            [HSO_TIME] = R54;    
 8 321e: b0,56,86             ldb   R86,R56            [HSO_TIME_H] = R56;  
 8 3221: 69,0c,00,96          sb2w  R96,c              [HSO_OR_INJ_TABLE_POINTER] -= c;
 8 3225: 27,8f                sjmp  31b6               goto 31b6;           
 
-8 3227: 07,82                incw  R82                R82++;               
-8 3229: c6,82,00             stb   [R82],0            [R82] = 0;           
+8 3227: 07,82                incw  R82                [Rtab]++;            
+8 3229: c6,82,00             stb   [R82],0            [[Rtab]] = 0;        
 8 322c: f0                   ret                      return;              
 
 Sub0039:
@@ -1827,13 +1841,13 @@ Sub0039:
 8 322f: 47,96,08,f2,54       ad3w  R54,Rf2,[R96+8]    R54 = Rf2 + [[HSO_OR_INJ_TABLE_POINTER]+8];
 8 3234: af,55,d6,00,54       ldzbw R54,[R54+d6]       R54 = (uns)[R54+FLAGS_D6];
 8 3239: b3,96,06,5a          ldb   R5a,[R96+6]        R5a = [[HSO_OR_INJ_TABLE_POINTER]+6];
-8 323d: 73,01,c2,01,5a       an2b  R5a,[1c2]          R5a &= [1c2];        
-8 3242: df,1a                je    325e               if (R5a == [1c2]) goto 325e;
-8 3244: 97,01,c2,01,5a       xrb   R5a,[1c2]          R5a ^= [1c2];        
-8 3249: c7,01,c2,01,5a       stb   [1c2],R5a          [1c2] = R5a;         
+8 323d: 73,01,c2,01,5a       an2b  R5a,[1c2]          R5a &= [Inj_base];   
+8 3242: df,1a                je    325e               if (R5a == [Inj_base]) goto 325e;
+8 3244: 97,01,c2,01,5a       xrb   R5a,[1c2]          R5a ^= [Inj_base];   
+8 3249: c7,01,c2,01,5a       stb   [1c2],R5a          [Inj_base] = R5a;    
 8 324e: 3b,50,08             jb    B3,R50,3259        if (B3_[FLAGS_50]) goto 3259;
-8 3251: c3,82,fe,84          stw   [R82+fe],R84       [R82+fe] = [HSO_TIME];
-8 3255: c7,82,fd,86          stb   [R82+fd],R86       [R82+fd] = [HSO_TIME_H];
+8 3251: c3,82,fe,84          stw   [R82+fe],R84       [[Rtab]+fe] = [HSO_TIME];
+8 3255: c7,82,fd,86          stb   [R82+fd],R86       [[Rtab]+fd] = [HSO_TIME_H];
 8 3259: a3,55,f2,01,58       ldw   R58,[R54+1f2]      R58 = [R54+PW2];     
 8 325e: 01,5a                clrw  R5a                R5a = 0;             
 8 3260: 67,01,c0,01,58       ad2w  R58,[1c0]          R58 += [1c0];        
@@ -2695,7 +2709,7 @@ UPDATE_AD:
 8 3bcb: 01,30                clrw  R30                R30 = 0;             
 8 3bcd: b0,38,31             ldb   R31,R38            R31 = R38;           
 8 3bd0: 6f,01,2c,03,30       ml2w  R30,[32c]          R30 *= [32c];        
-8 3bd5: c3,01,b8,01,32       stw   [1b8],R32          [1b8] = R32;         
+8 3bd5: c3,01,b8,01,32       stw   [1b8],R32          [Pwoff] = R32;       
 8 3bda: a3,01,04,02,32       ldw   R32,[204]          R32 = [204];         
 8 3bdf: 68,aa,32             sb2w  R32,Raa            R32 -= [TPS];        
 8 3be2: d3,09                jnc   3bed               if (R32 < 0) goto 3bed;
@@ -2932,8 +2946,8 @@ UPDATE_VE:
 8 3e74: 89,00,ff,38          cmpw  R38,ff00                                
 8 3e78: d1,04                jleu  3e7e               if ((uns) R38 <= ff00) goto 3e7e;
 8 3e7a: a1,00,ff,38          ldw   R38,ff00           R38 = ff00;          
-8 3e7e: c3,01,ca,01,38       stw   [1ca],R38          [1ca] = R38;         
-8 3e83: af,01,7a,02,3a       ldzbw R3a,[27a]          [GENERAL_3A] = (uns)[27a];
+8 3e7e: c3,01,ca,01,38       stw   [1ca],R38          [Ampem] = R38;       
+8 3e83: af,01,7a,02,3a       ldzbw R3a,[27a]          [GENERAL_3A] = (uns)REm;
 8 3e88: 09,04,3a             shlw  R3a,4              [GENERAL_3A] = [GENERAL_3A] * 10;
 8 3e8b: 48,3a,38,3a          sb3w  R3a,R38,R3a        [GENERAL_3A] = R38 - [GENERAL_3A];
 8 3e8f: db,02                jc    3e93               if ([GENERAL_3A] >= 0) goto 3e93;
@@ -3048,14 +3062,14 @@ UPDATE_EGR:
 8 3fe2: 8b,f1,26,01,34       cmpw  R34,[Rf0+126]                           
 8 3fe7: db,19                jc    4002               if ((uns) R34 >= [EPT_KOER_MAX]) goto 4002;
 8 3fe9: 67,f1,28,01,34       ad2w  R34,[Rf0+128]      R34 += [Sc0067];     
-8 3fee: a3,01,5a,03,32       ldw   R32,[35a]          R32 = [35a];         
+8 3fee: a3,01,5a,03,32       ldw   R32,[35a]          R32 = [KEptzer];     
 8 3ff3: a3,f1,1a,01,36       ldw   R36,[Rf0+11a]      R36 = [EPT_TIME_CONSTANT];
 8 3ff8: ef,9b,f6             call  3696               Srolav1T();          
-8 3ffb: c3,01,5a,03,3e       stw   [35a],R3e          [35a] = [FLAGS_3E];  
+8 3ffb: c3,01,5a,03,3e       stw   [35a],R3e          [KEptzer] = [FLAGS_3E];
 8 4000: 20,09                sjmp  400b               goto 400b;           
 
 8 4002: a1,80,a2,30          ldw   R30,a280           R30 = a280;          
-8 4006: c3,01,5a,03,30       stw   [35a],R30          [35a] = R30;         
+8 4006: c3,01,5a,03,30       stw   [35a],R30          [KEptzer] = R30;     
 8 400b: 3f,2c,53             jb    B7,R2c,4061        if (<CRANKING> == 1) goto 4061;
 8 400e: a3,01,04,01,32       ldw   R32,[104]          R32 = [EPT_FILTER];  
 8 4013: a3,01,18,01,34       ldw   R34,[118]          R34 = [EVP_RAW];     
@@ -3073,13 +3087,13 @@ UPDATE_EGR:
 8 4041: 9b,f1,22,01,b0       cmpb  Rb0,[Rf0+122]                           
 8 4046: de,17                jlt   405f               if ((sig) [ECT] < [EPT_IDLE_ECT_MIN]) goto 405f;
 8 4048: a3,01,18,01,34       ldw   R34,[118]          R34 = [EVP_RAW];     
-8 404d: a3,01,5a,03,32       ldw   R32,[35a]          R32 = [35a];         
+8 404d: a3,01,5a,03,32       ldw   R32,[35a]          R32 = [KEptzer];     
 8 4052: a3,f1,1a,01,36       ldw   R36,[Rf0+11a]      R36 = [EPT_TIME_CONSTANT];
 8 4057: ef,3c,f6             call  3696               Srolav1T();          
-8 405a: c3,01,5a,03,3e       stw   [35a],R3e          [35a] = [FLAGS_3E];  
+8 405a: c3,01,5a,03,3e       stw   [35a],R3e          [KEptzer] = [FLAGS_3E];
 8 405f: 20,55                sjmp  40b6               goto 40b6;           
 
-8 4061: a3,01,5a,03,30       ldw   R30,[35a]          R30 = [35a];         
+8 4061: a3,01,5a,03,30       ldw   R30,[35a]          R30 = [KEptzer];     
 8 4066: c3,01,04,01,30       stw   [104],R30          [EPT_FILTER] = R30;  
 8 406b: 20,fa                sjmp  4167               goto 4167;           
 
@@ -3788,7 +3802,7 @@ CALC_ADAPTIVES_2?:
 8 4900: 15,36                decb  R36                R36--;               
 8 4902: c7,40,00,36          stb   [R40],R36          [R40] = R36;         
 8 4906: c7,3f,ac,07,00       stb   [R3e+7ac],0        [[FLAGS_3E]+KLPCT1R] = 0;
-8 490b: a3,01,00,07,36       ldw   R36,[700]          R36 = [K_EPTZER];    
+8 490b: a3,01,00,07,36       ldw   R36,[700]          R36 = [KCsuml];      
 8 4910: 05,36                decw  R36                R36--;               
 8 4912: 20,4c                sjmp  4960               goto 4960;           
 
@@ -3814,9 +3828,9 @@ CALC_ADAPTIVES_2?:
 8 494e: 17,36                incb  R36                R36++;               
 8 4950: c7,40,00,36          stb   [R40],R36          [R40] = R36;         
 8 4954: c7,3f,aa,07,00       stb   [R3e+7aa],0        [[FLAGS_3E]+KLPCT1L] = 0;
-8 4959: a3,01,00,07,36       ldw   R36,[700]          R36 = [K_EPTZER];    
+8 4959: a3,01,00,07,36       ldw   R36,[700]          R36 = [KCsuml];      
 8 495e: 07,36                incw  R36                R36++;               
-8 4960: c3,01,00,07,36       stw   [700],R36          [K_EPTZER] = R36;    
+8 4960: c3,01,00,07,36       stw   [700],R36          [KCsuml] = R36;      
 8 4965: c7,3f,a4,07,00       stb   [R3e+7a4],0        [[FLAGS_3E]+KEGOCT1] = 0;
 8 496a: f0                   ret                      return;              
 
@@ -4149,7 +4163,7 @@ Sub0083:
 8 4d21: 0c,06,30             shrdw R30,6              R30L = R30L / 40;    
 8 4d24: a0,30,3a             ldw   R3a,R30            [GENERAL_3A] = R30;  
 8 4d27: 01,32                clrw  R32                R32 = 0;             
-8 4d29: a3,01,b8,01,30       ldw   R30,[1b8]          R30 = [1b8];         
+8 4d29: a3,01,b8,01,30       ldw   R30,[1b8]          R30 = [Pwoff];       
 8 4d2e: 0d,05,30             shldw R30,5              R30L = R30L * 20;    
 8 4d31: 8c,b8,30             divw  R30,Rb8            R30 = R30L / [PIP_HI_E_TIME];
 8 4d34: 54,30,34,40          ad3b  R40,R34,R30        R40 = R34 + R30;     
@@ -4895,7 +4909,7 @@ Sub0095:
 8 55a1: c0,40,38             stw   R40,R38            R40 = R38;           
 8 55a4: a3,01,04,01,30       ldw   R30,[104]          R30 = [EPT_FILTER];  
 8 55a9: 08,01,30             shrw  R30,1              R30 = R30 / 2;       
-8 55ac: a3,01,5a,03,32       ldw   R32,[35a]          R32 = [35a];         
+8 55ac: a3,01,5a,03,32       ldw   R32,[35a]          R32 = [KEptzer];     
 8 55b1: 08,01,32             shrw  R32,1              R32 = R32 / 2;       
 8 55b4: 68,32,30             sb2w  R30,R32            R30 -= R32;          
 8 55b7: a3,f1,16,01,32       ldw   R32,[Rf0+116]      R32 = [EPT_TRANSFER];
@@ -4928,7 +4942,7 @@ Sub0095:
 8 560c: 09,01,3a             shlw  R3a,1              [GENERAL_3A] = [GENERAL_3A] * 2;
 8 560f: d3,03                jnc   5614               if ([GENERAL_3A] * 2 <= ffff) goto 5614;
 8 5611: b1,ff,3b             ldb   R3b,ff             [GENERAL_3B] = ff;   
-8 5614: c7,01,7a,02,3b       stb   [27a],R3b          [27a] = [GENERAL_3B];
+8 5614: c7,01,7a,02,3b       stb   [27a],R3b          REm = [GENERAL_3B];  
 8 5619: 20,57                sjmp  5672               goto 5672;           
 
 8 561b: b0,00,38             ldb   R38,0              R38 = 0;             
@@ -4955,24 +4969,24 @@ Sub0095:
 8 5665: 9d,ef,38             divb  R38,ef             R38 = R38W / ef;     
 8 5668: d5,03                jnv   566d               if (!OV) goto 566d;  
 8 566a: b1,ff,38             ldb   R38,ff             R38 = ff;            
-8 566d: c7,01,7a,02,38       stb   [27a],R38          [27a] = R38;         
-8 5672: b3,01,7a,02,34       ldb   R34,[27a]          R34 = [27a];         
+8 566d: c7,01,7a,02,38       stb   [27a],R38          REm = R38;           
+8 5672: b3,01,7a,02,34       ldb   R34,[27a]          R34 = REm;           
 8 5677: 7d,c8,34             ml2b  R34,c8             R34 *= c8;           
 8 567a: 01,36                clrw  R36                R36 = 0;             
 8 567c: 0d,05,34             shldw R34,5              R34L = R34L * 20;    
-8 567f: 8f,01,ca,01,34       divw  R34,[1ca]          R34 = R34L / [1ca];  
+8 567f: 8f,01,ca,01,34       divw  R34,[1ca]          R34 = R34L / [Ampem];
 8 5684: dd,06                jv    568c               if (OV) goto 568c;   
 8 5686: 89,ff,00,34          cmpw  R34,ff                                  
 8 568a: d1,03                jleu  568f               if ((uns) R34 <= ff) goto 568f;
 8 568c: b1,ff,34             ldb   R34,ff             R34 = ff;            
-8 568f: af,01,9a,01,32       ldzbw R32,[19a]          R32 = (uns)[19a];    
-8 5694: c7,01,9a,01,34       stb   [19a],R34          [19a] = R34;         
+8 568f: af,01,9a,01,32       ldzbw R32,[19a]          R32 = (uns)[Egract]; 
+8 5694: c7,01,9a,01,34       stb   [19a],R34          [Egract] = R34;      
 8 5699: 11,35                clrb  R35                R35 = 0;             
 8 569b: 9b,f1,1f,01,00       cmpb  0,[Rf0+11f]                             
 8 56a0: df,0d                je    56af               if (0 == [EGR_TYPE_SW]) goto 56af;
 8 56a2: a3,f1,14,01,36       ldw   R36,[Rf0+114]      R36 = [EGR_ACTUAL_PERCENT_TIME_CONSTANT];
 8 56a7: ef,ec,df             call  3696               Srolav1T();          
-8 56aa: c7,01,9a,01,3e       stb   [19a],R3e          [19a] = [FLAGS_3E];  
+8 56aa: c7,01,9a,01,3e       stb   [19a],R3e          [Egract] = [FLAGS_3E];
 8 56af: 2e,6a                scall 551b               Sub0095();           
 8 56b1: 71,7f,24             an2b  R24,7f             [FLAGS_24] &= 7f;    
 8 56b4: b3,f8,68,38          ldb   R38,[Rf8+68]       R38 = [EGR_RAMP_IN_DELAY];
@@ -4987,7 +5001,7 @@ Sub0095:
 8 56d3: 9b,f1,1f,01,00       cmpb  0,[Rf0+11f]                             
 8 56d8: d7,0e                jne   56e8               if (0 != [EGR_TYPE_SW]) goto 56e8;
 8 56da: 38,28,0b             jb    B0,R28,56e8        if (B0_[FLAGS_28]) goto 56e8;
-8 56dd: c7,01,9b,01,00       stb   [19b],0            [19b] = 0;           
+8 56dd: c7,01,9b,01,00       stb   [19b],0            [Egrate] = 0;        
 8 56e2: c3,01,fa,01,00       stw   [1fa],0            [DELOPT] = 0;        
 8 56e7: f0                   ret                      return;              
 
@@ -5064,7 +5078,7 @@ Sub0095:
 8 57d7: 98,00,3b             cmpb  R3b,0                                   
 8 57da: df,03                je    57df               if ([GENERAL_3B] == 0) goto 57df;
 8 57dc: b1,ff,3a             ldb   R3a,ff             [GENERAL_3A] = ff;   
-8 57df: c7,01,9b,01,3a       stb   [19b],R3a          [19b] = [GENERAL_3A];
+8 57df: c7,01,9b,01,3a       stb   [19b],R3a          [Egrate] = [GENERAL_3A];
 8 57e4: 9b,f1,1f,01,00       cmpb  0,[Rf0+11f]                             
 8 57e9: d7,72                jne   585d               if (0 != [EGR_TYPE_SW]) goto 585d;
 8 57eb: 98,00,3a             cmpb  R3a,0                                   
@@ -5073,7 +5087,7 @@ Sub0095:
 8 57f5: 20,65                sjmp  585c               goto 585c;           
 
 8 57f7: 5d,a4,3a,38          ml3b  R38,R3a,a4         R38 = [GENERAL_3A] * a4;
-8 57fb: 6f,01,ca,01,38       ml2w  R38,[1ca]          R38 *= [1ca];        
+8 57fb: 6f,01,ca,01,38       ml2w  R38,[1ca]          R38 *= [Ampem];      
 8 5800: 0c,0f,38             shrdw R38,f              R38L = R38L / 8000;  
 8 5803: 11,17                clrb  R17                R17 = 0;             
 8 5805: 8c,16,38             divw  R38,R16            R38 = R38L / R16;    
@@ -5103,7 +5117,7 @@ Sub0095:
 8 585c: f0                   ret                      return;              
 
 8 585d: 7d,52,3a             ml2b  R3a,52             [GENERAL_3A] *= 52;  
-8 5860: a3,01,ca,01,38       ldw   R38,[1ca]          R38 = [1ca];         
+8 5860: a3,01,ca,01,38       ldw   R38,[1ca]          R38 = [Ampem];       
 8 5865: 6c,3a,38             ml2w  R38,R3a            R38 *= [GENERAL_3A]; 
 8 5868: c0,3c,3a             stw   R3c,R3a            [FLAGS_3C] = [GENERAL_3A];
 8 586b: 99,07,3b             cmpb  R3b,7                                   
@@ -5148,14 +5162,14 @@ Sub0095:
 8 58d8: d6,04                jge   58de               if ((sig) R34 >= ce00) goto 58de;
 8 58da: a1,00,ce,34          ldw   R34,ce00           R34 = ce00;          
 8 58de: 09,01,34             shlw  R34,1              R34 = R34 * 2;       
-8 58e1: a3,01,9e,01,32       ldw   R32,[19e]          R32 = [19e];         
+8 58e1: a3,01,9e,01,32       ldw   R32,[19e]          R32 = [Desdp];       
 8 58e6: a3,f1,1c,01,36       ldw   R36,[Rf0+11c]      R36 = [DESIRED_DOWNSTREAM_PRESSURE_TIME_CONSTANT];
 8 58eb: ef,ad,dd             call  369b               FILTER_X();          
-8 58ee: c3,01,9e,01,3e       stw   [19e],R3e          [19e] = [FLAGS_3E];  
+8 58ee: c3,01,9e,01,3e       stw   [19e],R3e          [Desdp] = [FLAGS_3E];
 8 58f3: a3,f1,18,01,38       ldw   R38,[Rf0+118]      R38 = [EPT_TRANSFER_RECIPROCOL];
 8 58f8: fe,6c,3e,38          sml2w  R38,R3e           R38 *= (sig)[FLAGS_3E];
 8 58fc: 0d,02,38             shldw R38,2              R38L = R38L * 4;     
-8 58ff: a3,01,5a,03,36       ldw   R36,[35a]          R36 = [35a];         
+8 58ff: a3,01,5a,03,36       ldw   R36,[35a]          R36 = [KEptzer];     
 8 5904: 08,01,36             shrw  R36,1              R36 = R36 / 2;       
 8 5907: 64,36,3a             ad2w  R3a,R36            [GENERAL_3A] += R36; 
 8 590a: d5,05                jnv   5911               if (!OV) goto 5911;  
@@ -5169,13 +5183,13 @@ Sub0095:
 8 591d: f0                   ret                      return;              
 
 8 591e: c3,01,a0,01,00       stw   [1a0],0            [1a0] = 0;           
-8 5923: c7,01,7a,02,00       stb   [27a],0            [27a] = 0;           
-8 5928: c7,01,9a,01,00       stb   [19a],0            [19a] = 0;           
-8 592d: c7,01,9b,01,00       stb   [19b],0            [19b] = 0;           
+8 5923: c7,01,7a,02,00       stb   [27a],0            REm = 0;             
+8 5928: c7,01,9a,01,00       stb   [19a],0            [Egract] = 0;        
+8 592d: c7,01,9b,01,00       stb   [19b],0            [Egrate] = 0;        
 8 5932: c7,01,aa,01,00       stb   [1aa],0            [DESEM] = 0;         
 8 5937: a3,01,04,01,30       ldw   R30,[104]          R30 = [EPT_FILTER];  
 8 593c: c3,01,a6,01,30       stw   [1a6],R30          [CONPR] = R30;       
-8 5941: c3,01,9e,01,40       stw   [19e],R40          [19e] = R40;         
+8 5941: c3,01,9e,01,40       stw   [19e],R40          [Desdp] = R40;       
 8 5946: f0                   ret                      return;              
 
 CALC_EGR:
@@ -5410,7 +5424,7 @@ UPDATE_SPARK:
 8 5be0: 08,01,38             shrw  R38,1              R38 = R38 / 2;       
 8 5be3: 29,11                scall 5cf6               SCALE_R3C();         
 8 5be5: 44,34,3c,42          ad3w  R42,R3c,R34        R42 = [FLAGS_3C] + R34;
-8 5be9: b3,01,9a,01,34       ldb   R34,[19a]          R34 = [19a];         
+8 5be9: b3,01,9a,01,34       ldb   R34,[19a]          R34 = [Egract];      
 8 5bee: 45,76,00,fe,32       ad3w  R32,Rfe,76         R32 = PART_THROTTLE_SPARK_ADDER_EGR;
 8 5bf3: ef,00,da             call  35f6               USByteLU();          
 8 5bf6: 16,38                sexb  R38                R38W = (int)R38;     
@@ -5561,7 +5575,7 @@ UPDATE_IDLE:
 8 5db3: ef,38,d8             call  35ee               UUByteLU();          
 8 5db6: 64,38,40             ad2w  R40,R38            R40 += R38;          
 8 5db9: 35,2a,0a             jnb   B5,R2a,5dc6        if (<SELF_TEST> == 0) goto 5dc6;
-8 5dbc: a3,7b,cc,00,40       ldw   R40,[R7a+cc]       R40 = [R7a+cc];      
+8 5dbc: a3,7b,cc,00,40       ldw   R40,[R7a+cc]       R40 = [R7a+Synctr];  
 8 5dc1: 6b,fd,c4,00,40       sb2w  R40,[Rfc+c4]       R40 -= [IDLE_SPEED_NEUTRAL];
 8 5dc6: 91,80,26             orrb  R26,80             <HCAMFG> = 1;        
 8 5dc9: 88,00,40             cmpw  R40,0                                   
@@ -6101,7 +6115,7 @@ Sub0106:
 8 6435: 3f,a1,18             jb    B7,Ra1,6450        if (<SCCS_ON> == 1) goto 6450;
 8 6438: 32,a0,18             jnb   B2,Ra0,6453        if (!B2_[VSC_FLAGS_B]) goto 6453;
 8 643b: 8b,f7,96,01,3c       cmpw  R3c,[Rf6+196]                           
-8 6440: d1,11                jleu  6453               if ((uns) [FLAGS_3C] <= [Sc0270]) goto 6453;
+8 6440: d1,11                jleu  6453               if ((uns) [FLAGS_3C] <= [Minvsp]) goto 6453;
 8 6442: 8b,f3,34,03,3c       cmpw  R3c,[Rf2+334]                           
 8 6447: db,0a                jc    6453               if ((uns) [FLAGS_3C] >= [Sc0171]) goto 6453;
 8 6449: c3,01,e6,07,3c       stw   [7e6],R3c          [7e6] = [FLAGS_3C];  
@@ -6109,31 +6123,31 @@ Sub0106:
 
 8 6450: 37,a0,08             jnb   B7,Ra0,645b        if (<SCCS_OFF> == 0) goto 645b;
 8 6453: 11,a1                clrb  Ra1                [VSC_STATES] = 0;    
-8 6455: c3,01,44,01,00       stw   [144],0            [144] = 0;           
+8 6455: c3,01,44,01,00       stw   [144],0            [Res_speed] = 0;     
 8 645a: f0                   ret                      return;              
 
 8 645b: 39,a2,55             jb    B1,Ra2,64b3        if (B1_[VSC_FLAGS]) goto 64b3;
-8 645e: a3,f7,96,01,38       ldw   R38,[Rf6+196]      R38 = [Sc0270];      
+8 645e: a3,f7,96,01,38       ldw   R38,[Rf6+196]      R38 = [Minvsp];      
 8 6463: 88,38,3c             cmpw  R3c,R38                                 
 8 6466: db,03                jc    646b               if ((uns) [FLAGS_3C] >= R38) goto 646b;
 8 6468: 91,20,a2             orrb  Ra2,20             <SCCS_Q1> = 1;       
-8 646b: 67,f3,3c,03,38       ad2w  R38,[Rf2+33c]      R38 += [Sc0175];     
+8 646b: 67,f3,3c,03,38       ad2w  R38,[Rf2+33c]      R38 += [Mphh];       
 8 6470: db,08                jc    647a               if (R38 > ffff) goto 647a;
 8 6472: 88,38,3c             cmpw  R3c,R38                                 
 8 6475: d1,03                jleu  647a               if ((uns) [FLAGS_3C] <= R38) goto 647a;
 8 6477: 71,df,a2             an2b  Ra2,df             <SCCS_Q1> = 0;       
 8 647a: 31,a0,03             jnb   B1,Ra0,6480        if (<SCCS_ERROR> == 0) goto 6480;
 8 647d: 91,20,a2             orrb  Ra2,20             <SCCS_Q1> = 1;       
-8 6480: a3,f7,98,01,38       ldw   R38,[Rf6+198]      R38 = [Sc0271];      
+8 6480: a3,f7,98,01,38       ldw   R38,[Rf6+198]      R38 = [Vsnmax];      
 8 6485: 88,ae,38             cmpw  R38,Rae                                 
 8 6488: db,03                jc    648d               if ((uns) R38 >= [RPM]) goto 648d;
 8 648a: 91,20,a2             orrb  Ra2,20             <SCCS_Q1> = 1;       
 8 648d: 3d,a2,1f             jb    B5,Ra2,64af        if (<SCCS_Q1> == 1) goto 64af;
-8 6490: a3,f3,38,03,38       ldw   R38,[Rf2+338]      R38 = [Sc0173];      
+8 6490: a3,f3,38,03,38       ldw   R38,[Rf2+338]      R38 = [Maxvsp];      
 8 6495: 88,38,3c             cmpw  R3c,R38                                 
 8 6498: d1,03                jleu  649d               if ((uns) [FLAGS_3C] <= R38) goto 649d;
 8 649a: 91,10,a2             orrb  Ra2,10             <SCCS_Q2> = 1;       
-8 649d: 6b,f3,3c,03,38       sb2w  R38,[Rf2+33c]      R38 -= [Sc0175];     
+8 649d: 6b,f3,3c,03,38       sb2w  R38,[Rf2+33c]      R38 -= [Mphh];       
 8 64a2: d3,08                jnc   64ac               if (R38 < 0) goto 64ac;
 8 64a4: 88,38,3c             cmpw  R3c,R38                                 
 8 64a7: db,03                jc    64ac               if ((uns) [FLAGS_3C] >= R38) goto 64ac;
@@ -6163,58 +6177,58 @@ Sub0106:
 
 8 64e5: 36,a1,0e             jnb   B6,Ra1,64f6        if (<SCCS_COAST> == 0) goto 64f6;
 8 64e8: b1,85,a1             ldb   Ra1,85             [VSC_STATES] = 85;   
-8 64eb: c3,01,46,01,3c       stw   [146],R3c          [146] = [FLAGS_3C];  
-8 64f0: c3,01,44,01,3c       stw   [144],R3c          [144] = [FLAGS_3C];  
+8 64eb: c3,01,46,01,3c       stw   [146],R3c          [Set_speed] = [FLAGS_3C];
+8 64f0: c3,01,44,01,3c       stw   [144],R3c          [Res_speed] = [FLAGS_3C];
 8 64f5: f0                   ret                      return;              
 
 8 64f6: 34,a0,0d             jnb   B4,Ra0,6506        if (<SCCS_ACCEL> == 0) goto 6506;
 8 64f9: 3c,a1,05             jb    B4,Ra1,6501        if (<SCCS_RESUME> == 1) goto 6501;
-8 64fc: c3,01,46,01,3c       stw   [146],R3c          [146] = [FLAGS_3C];  
+8 64fc: c3,01,46,01,3c       stw   [146],R3c          [Set_speed] = [FLAGS_3C];
 8 6501: b1,91,a1             ldb   Ra1,91             [VSC_STATES] = 91;   
 8 6504: 20,0b                sjmp  6511               goto 6511;           
 
 8 6506: 34,a1,0e             jnb   B4,Ra1,6517        if (<SCCS_RESUME> == 0) goto 6517;
 8 6509: b1,85,a1             ldb   Ra1,85             [VSC_STATES] = 85;   
-8 650c: c3,01,46,01,3c       stw   [146],R3c          [146] = [FLAGS_3C];  
-8 6511: c3,01,44,01,3c       stw   [144],R3c          [144] = [FLAGS_3C];  
+8 650c: c3,01,46,01,3c       stw   [146],R3c          [Set_speed] = [FLAGS_3C];
+8 6511: c3,01,44,01,3c       stw   [144],R3c          [Res_speed] = [FLAGS_3C];
 8 6516: f0                   ret                      return;              
 
 8 6517: 3b,a1,1e             jb    B3,Ra1,6538        if (<SCCS_RESUME> == 1) goto 6538;
 8 651a: 38,a2,12             jb    B0,Ra2,652f        if (<SCCS_CODE_87> == 1) goto 652f;
 8 651d: 33,a0,18             jnb   B3,Ra0,6538        if (<SCCS_RESUME> == 0) goto 6538;
 8 6520: 35,a1,15             jnb   B5,Ra1,6538        if (<SCCS_BRAKE> == 0) goto 6538;
-8 6523: a3,01,44,01,38       ldw   R38,[144]          R38 = [144];         
+8 6523: a3,01,44,01,38       ldw   R38,[144]          R38 = [Res_speed];   
 8 6528: 8b,f7,96,01,38       cmpw  R38,[Rf6+196]                           
-8 652d: d1,09                jleu  6538               if ((uns) R38 <= [Sc0270]) goto 6538;
+8 652d: d1,09                jleu  6538               if ((uns) R38 <= [Minvsp]) goto 6538;
 8 652f: b1,89,a1             ldb   Ra1,89             [VSC_STATES] = 89;   
-8 6532: c3,01,46,01,3c       stw   [146],R3c          [146] = [FLAGS_3C];  
+8 6532: c3,01,46,01,3c       stw   [146],R3c          [Set_speed] = [FLAGS_3C];
 8 6537: f0                   ret                      return;              
 
 8 6538: 33,a1,0b             jnb   B3,Ra1,6546        if (<SCCS_RESUME> == 0) goto 6546;
 8 653b: 8b,01,44,01,3c       cmpw  R3c,[144]                               
-8 6540: db,04                jc    6546               if ((uns) [FLAGS_3C] >= [144]) goto 6546;
+8 6540: db,04                jc    6546               if ((uns) [FLAGS_3C] >= [Res_speed]) goto 6546;
 8 6542: b1,8b,a1             ldb   Ra1,8b             [VSC_STATES] = 8b;   
 8 6545: f0                   ret                      return;              
 
 8 6546: 33,a1,0e             jnb   B3,Ra1,6557        if (<SCCS_RESUME> == 0) goto 6557;
 8 6549: b1,85,a1             ldb   Ra1,85             [VSC_STATES] = 85;   
-8 654c: a3,01,44,01,38       ldw   R38,[144]          R38 = [144];         
-8 6551: c3,01,46,01,38       stw   [146],R38          [146] = R38;         
+8 654c: a3,01,44,01,38       ldw   R38,[144]          R38 = [Res_speed];   
+8 6551: c3,01,46,01,38       stw   [146],R38          [Set_speed] = R38;   
 8 6556: f0                   ret                      return;              
 
 8 6557: 32,a0,13             jnb   B2,Ra0,656d        if (!B2_[VSC_FLAGS_B]) goto 656d;
 8 655a: a3,01,e6,07,38       ldw   R38,[7e6]          R38 = [7e6];         
-8 655f: c3,01,44,01,38       stw   [144],R38          [144] = R38;         
-8 6564: c3,01,46,01,3c       stw   [146],R3c          [146] = [FLAGS_3C];  
+8 655f: c3,01,44,01,38       stw   [144],R38          [Res_speed] = R38;   
+8 6564: c3,01,46,01,3c       stw   [146],R3c          [Set_speed] = [FLAGS_3C];
 8 6569: b1,89,a1             ldb   Ra1,89             [VSC_STATES] = 89;   
 8 656c: f0                   ret                      return;              
 
 8 656d: 32,a1,18             jnb   B2,Ra1,6588        if (<SCCS_HOLD_STATE> == 0) goto 6588;
-8 6570: a3,01,46,01,38       ldw   R38,[146]          R38 = [146];         
+8 6570: a3,01,46,01,38       ldw   R38,[146]          R38 = [Set_speed];   
 8 6575: 68,3c,38             sb2w  R38,R3c            R38 -= [FLAGS_3C];   
 8 6578: d3,07                jnc   6581               if (R38 < 0) goto 6581;
 8 657a: 8b,f3,3a,03,38       cmpw  R38,[Rf2+33a]                           
-8 657f: d9,04                jgtu  6585               if ((uns) R38 > [Sc0174]) goto 6585;
+8 657f: d9,04                jgtu  6585               if ((uns) R38 > [Mphded]) goto 6585;
 8 6581: 91,01,a1             orrb  Ra1,1              [VSC_STATES].SCCS_PULSE = 1;
 8 6584: f0                   ret                      return;              
 
@@ -6224,27 +6238,27 @@ Sub0106:
 Sub0107:
 8 6589: 3c,a0,03             jb    B4,Ra0,658f        if (<SCCS_ACCEL> == 1) goto 658f;
 8 658c: 31,a1,45             jnb   B1,Ra1,65d4        if (<SCCS_ACCEL_REQ> == 0) goto 65d4;
-8 658f: 4b,f3,3e,03,3c,32    sb3w  R32,R3c,[Rf2+33e]  R32 = [FLAGS_3C] - [Sc0176];
+8 658f: 4b,f3,3e,03,3c,32    sb3w  R32,R3c,[Rf2+33e]  R32 = [FLAGS_3C] - [Aclded];
 8 6595: db,03                jc    659a               if (R32 >= 0) goto 659a;
 8 6597: a0,00,32             ldw   R32,0              R32 = 0;             
 8 659a: 8b,01,46,01,32       cmpw  R32,[146]                               
-8 659f: d1,07                jleu  65a8               if ((uns) R32 <= [146]) goto 65a8;
-8 65a1: c3,01,46,01,3c       stw   [146],R3c          [146] = [FLAGS_3C];  
+8 659f: d1,07                jleu  65a8               if ((uns) R32 <= [Set_speed]) goto 65a8;
+8 65a1: c3,01,46,01,3c       stw   [146],R3c          [Set_speed] = [FLAGS_3C];
 8 65a6: 20,2c                sjmp  65d4               goto 65d4;           
 
-8 65a8: 4b,01,40,01,06,38    sb3w  R38,R06,[140]      R38 = IO_TIMER - [140];
+8 65a8: 4b,01,40,01,06,38    sb3w  R38,R06,[140]      R38 = IO_TIMER - [Ltime];
 8 65ae: 31,a2,07             jnb   B1,Ra2,65b8        if (!B1_[VSC_FLAGS]) goto 65b8;
-8 65b1: a3,f3,54,03,30       ldw   R30,[Rf2+354]      R30 = [Sc0186];      
+8 65b1: a3,f3,54,03,30       ldw   R30,[Rf2+354]      R30 = [Vacrr];       
 8 65b6: 20,05                sjmp  65bd               goto 65bd;           
 
-8 65b8: a3,ff,e6,00,30       ldw   R30,[Rfe+e6]       R30 = [Sc0436];      
+8 65b8: a3,ff,e6,00,30       ldw   R30,[Rfe+e6]       R30 = [Aclinc];      
 8 65bd: 6f,01,2e,03,38       ml2w  R38,[32e]          R38 *= [32e];        
 8 65c2: 6c,3a,30             ml2w  R30,R3a            R30 *= [GENERAL_3A]; 
-8 65c5: 67,01,46,01,32       ad2w  R32,[146]          R32 += [146];        
+8 65c5: 67,01,46,01,32       ad2w  R32,[146]          R32 += [Set_speed];  
 8 65ca: d3,03                jnc   65cf               if (R32 <= ffff) goto 65cf;
 8 65cc: bd,ff,32             ldsbw R32,ff             R32 = (sig)ff;       
-8 65cf: c3,01,46,01,32       stw   [146],R32          [146] = R32;         
-8 65d4: c3,01,40,01,06       stw   [140],R06          [140] = IO_TIMER;    
+8 65cf: c3,01,46,01,32       stw   [146],R32          [Set_speed] = R32;   
+8 65d4: c3,01,40,01,06       stw   [140],R06          [Ltime] = IO_TIMER;  
 8 65d9: f0                   ret                      return;              
 
 Sub0108:
@@ -6265,7 +6279,7 @@ Sub0108:
 8 6609: a3,ff,e4,00,38       ldw   R38,[Rfe+e4]       R38 = [Sc0435];      
 8 660e: a3,ff,de,00,42       ldw   R42,[Rfe+de]       R42 = [Sc0432];      
 8 6613: 30,a1,24             jnb   B0,Ra1,663a        if ([VSC_STATES].SCCS_PULSE == 0) goto 663a;
-8 6616: 6f,01,46,01,14       ml2w  R14,[146]          [HSO_IPEND2] *= [146];
+8 6616: 6f,01,46,01,14       ml2w  R14,[146]          [HSO_IPEND2] *= [Set_speed];
 8 661b: 64,42,16             ad2w  R16,R42            R16 += R42;          
 8 661e: 6f,01,42,01,18       ml2w  R18,[142]          R18 *= [MPH_FILTER2];
 8 6623: 68,1a,16             sb2w  R16,R1a            R16 -= R1a;          
@@ -7438,21 +7452,21 @@ Sub0118:
 8 73d4: 9b,f0,05,bb          cmpb  Rbb,[Rf0+5]                             
 8 73d8: d1,0a                jleu  73e4               if ((uns) Rbb <= [PIP_PER_REV]) goto 73e4;
 8 73da: b1,01,bb             ldb   Rbb,1              Rbb = 1;             
-8 73dd: c0,be,b8             stw   Rbe,Rb8            Rbe = [PIP_HI_E_TIME];
-8 73e0: c0,c0,bc             stw   Rc0,Rbc            Rc0 = [PIP_HIGH_PW]; 
+8 73dd: c0,be,b8             stw   Rbe,Rb8            [Dtpcyc] = [PIP_HI_E_TIME];
+8 73e0: c0,c0,bc             stw   Rc0,Rbc            [Hfpcyc] = [PIP_HIGH_PW];
 8 73e3: f0                   ret                      return;              
 
 8 73e4: 17,bb                incb  Rbb                Rbb++;               
 8 73e6: 9b,f0,05,bb          cmpb  Rbb,[Rf0+5]                             
 8 73ea: d1,68                jleu  7454               if ((uns) Rbb <= [PIP_PER_REV]) goto 7454;
-8 73ec: 48,be,b8,54          sb3w  R54,Rb8,Rbe        R54 = [PIP_HI_E_TIME] - Rbe;
+8 73ec: 48,be,b8,54          sb3w  R54,Rb8,Rbe        R54 = [PIP_HI_E_TIME] - [Dtpcyc];
 8 73f0: db,02                jc    73f4               if (R54 >= 0) goto 73f4;
 8 73f2: 03,54                negw  R54                R54 = -R54;          
 8 73f4: a3,f1,bc,02,58       ldw   R58,[Rf0+2bc]      R58 = [STEADY_STATE_FACTOR];
 8 73f9: 6c,b8,58             ml2w  R58,Rb8            R58 *= [PIP_HI_E_TIME];
 8 73fc: 88,5a,54             cmpw  R54,R5a                                 
 8 73ff: d9,53                jgtu  7454               if ((uns) R54 > R5a) goto 7454;
-8 7401: 48,c0,bc,54          sb3w  R54,Rbc,Rc0        R54 = [PIP_HIGH_PW] - Rc0;
+8 7401: 48,c0,bc,54          sb3w  R54,Rbc,Rc0        R54 = [PIP_HIGH_PW] - [Hfpcyc];
 8 7405: db,02                jc    7409               if (R54 >= 0) goto 7409;
 8 7407: 03,54                negw  R54                R54 = -R54;          
 8 7409: a3,f1,bc,02,58       ldw   R58,[Rf0+2bc]      R58 = [STEADY_STATE_FACTOR];
@@ -7460,10 +7474,10 @@ Sub0118:
 8 7411: 88,5a,54             cmpw  R54,R5a                                 
 8 7414: d9,3e                jgtu  7454               if ((uns) R54 > R5a) goto 7454;
 8 7416: 01,58                clrw  R58                R58 = 0;             
-8 7418: 44,be,b8,5a          ad3w  R5a,Rb8,Rbe        R5a = [PIP_HI_E_TIME] + Rbe;
+8 7418: 44,be,b8,5a          ad3w  R5a,Rb8,Rbe        R5a = [PIP_HI_E_TIME] + [Dtpcyc];
 8 741c: db,36                jc    7454               if (R5a > ffff) goto 7454;
 8 741e: 0c,02,58             shrdw R58,2              R58L = R58L / 4;     
-8 7421: 44,c0,bc,54          ad3w  R54,Rbc,Rc0        R54 = [PIP_HIGH_PW] + Rc0;
+8 7421: 44,c0,bc,54          ad3w  R54,Rbc,Rc0        R54 = [PIP_HIGH_PW] + [Hfpcyc];
 8 7425: db,2d                jc    7454               if (R54 > ffff) goto 7454;
 8 7427: 8c,54,58             divw  R58,R54            R58 = R58L / R54;    
 8 742a: dd,28                jv    7454               if (OV) goto 7454;   
@@ -7544,23 +7558,23 @@ Sub0121:
 8 74f0: f0                   ret                      return;              
 
 8 74f1: 8b,f1,7c,02,ae       cmpw  Rae,[Rf0+27c]                           
-8 74f6: d1,13                jleu  750b               if ((uns) [RPM] <= [Sc0080]) goto 750b;
+8 74f6: d1,13                jleu  750b               if ((uns) [RPM] <= [RPMCNL]) goto 750b;
 8 74f8: 9b,f1,81,02,dd       cmpb  Rdd,[Rf0+281]                           
-8 74fd: db,0c                jc    750b               if ((uns) Rdd >= [Sc0083]) goto 750b;
+8 74fd: db,0c                jc    750b               if ((uns) [Kwctr] >= [WINCLD]) goto 750b;
 8 74ff: 33,4f,03             jnb   B3,R4f,7505        if (<KNOCK_DETECTED> == 0) goto 7505;
-8 7502: 17,dd                incb  Rdd                Rdd++;               
+8 7502: 17,dd                incb  Rdd                [Kwctr]++;           
 8 7504: f0                   ret                      return;              
 
 8 7505: 30,c9,03             jnb   B0,Rc9,750b        if (!B0_[FLAGS_C9]) goto 750b;
-8 7508: 17,dd                incb  Rdd                Rdd++;               
+8 7508: 17,dd                incb  Rdd                [Kwctr]++;           
 8 750a: f0                   ret                      return;              
 
-8 750b: 11,dd                clrb  Rdd                Rdd = 0;             
-8 750d: a1,e4,02,82          ldw   R82,2e4            R82 = 2e4;           
+8 750b: 11,dd                clrb  Rdd                [Kwctr] = 0;         
+8 750d: a1,e4,02,82          ldw   R82,2e4            [Rtab] = 2e4;        
 8 7511: 37,99,04             jnb   B7,R99,7518        if (!B7_R99) goto 7518;
-8 7514: a1,b6,02,82          ldw   R82,2b6            R82 = 2b6;           
+8 7514: a1,b6,02,82          ldw   R82,2b6            [Rtab] = 2b6;        
 8 7518: 9b,82,01,00          cmpb  0,[R82+1]                               
-8 751c: df,04                je    7522               if (0 == [R82+1]) goto 7522;
+8 751c: df,04                je    7522               if (0 == [[Rtab]+1]) goto 7522;
 8 751e: 91,02,4e             orrb  R4e,2              <KTS_PENDING> = 1;   
 8 7521: f0                   ret                      return;              
 
@@ -7767,9 +7781,9 @@ Sub0127:
 8 774e: f0                   ret                      return;              
 
 Sub0128:
-8 774f: a1,10,55,d2          ldw   Rd2,5510           Rd2 = 5510;          
-8 7753: 7b,f0,05,d2          sb2b  Rd2,[Rf0+5]        Rd2 -= [PIP_PER_REV];
-8 7757: 08,d2,d2             shrw  Rd2,d2             Rd2 = Rd2 >> Rd2;    
+8 774f: a1,10,55,d2          ldw   Rd2,5510           [Vip_code] = 5510;   
+8 7753: 7b,f0,05,d2          sb2b  Rd2,[Rf0+5]        [Vip_code] -= [PIP_PER_REV];
+8 7757: 08,d2,d2             shrw  Rd2,d2             [Vip_code] = [Vip_code] >> [Vip_code];
 8 775a: 28,09                scall 7765               Sub0129();           
 8 775c: 20,7c                sjmp  77da               goto 77da;           
 
@@ -7830,7 +7844,7 @@ Sub0130:
 8 7841: c8,40                push  R40                push(R40);           
 8 7843: 01,40                clrw  R40                R40 = 0;             
 8 7845: 28,2d                scall 7874               SAVE_DIAGNOSTIC_VALUES();
-8 7847: 01,d2                clrw  Rd2                Rd2 = 0;             
+8 7847: 01,d2                clrw  Rd2                [Vip_code] = 0;      
 8 7849: f0                   ret                      return;              
 
 GET_DIAGNOSTIC_VALUES:
@@ -8029,7 +8043,7 @@ CHECK_SENSORS:
 8 7a9f: 36,e7,0c             jnb   B6,Re7,7aae        if (<ERROR_DETECTED> == 0) goto 7aae;
 8 7aa2: 91,04,25             orrb  R25,4              <IDM_BYPASS> = 1;    
 8 7aa5: c7,7a,67,00          stb   [R7a+67],0         [R7a+67] = 0;        
-8 7aa9: c3,7b,d2,00,00       stw   [R7a+d2],0         [R7a+d2] = 0;        
+8 7aa9: c3,7b,d2,00,00       stw   [R7a+d2],0         [R7a+Vip_code] = 0;  
 8 7aae: 28,92                scall 7b42               UPDATE_TROUBLE_CODE([4001],0);
 8 7ab0: 01,40,00                                      #args                
 8 7ab3: 3a,25,0d             jb    B2,R25,7ac3        if (<IDM_BYPASS> == 1) goto 7ac3;
@@ -8039,11 +8053,11 @@ CHECK_SENSORS:
 8 7abe: 01,20,0d                                      #args                
 8 7ac1: 20,14                sjmp  7ad7               goto 7ad7;           
 
-8 7ac3: a3,7b,d2,00,42       ldw   R42,[R7a+d2]       R42 = [R7a+d2];      
+8 7ac3: a3,7b,d2,00,42       ldw   R42,[R7a+d2]       R42 = [R7a+Vip_code];
 8 7ac8: 9b,f3,8e,03,43       cmpb  R43,[Rf2+38e]                           
 8 7acd: d1,08                jleu  7ad7               if ((uns) R43 <= [Sc0193]) goto 7ad7;
 8 7acf: 71,fb,25             an2b  R25,fb             <IDM_BYPASS> = 0;    
-8 7ad2: c3,7b,d2,00,00       stw   [R7a+d2],0         [R7a+d2] = 0;        
+8 7ad2: c3,7b,d2,00,00       stw   [R7a+d2],0         [R7a+Vip_code] = 0;  
 8 7ad7: 29,6f                scall 7c48               UPDATE_FL_FLAG([2003]);
 8 7ad9: 03,20                                         #args                
 8 7adb: 29,6b                scall 7c48               UPDATE_FL_FLAG([800c]);
@@ -8388,14 +8402,14 @@ Sub0154:
 8 7e33: bc,1b,1e             ldsbw R1e,R1b            R1e = (sig)R1b;      
 8 7e36: 65,8c,03,1e          ad2w  R1e,38c            R1e += 38c;          
 8 7e3a: 64,f2,1e             ad2w  R1e,Rf2            R1e += Rf2;          
-8 7e3d: a3,7a,90,16          ldw   R16,[R7a+90]       R16 = [R7a+90];      
+8 7e3d: a3,7a,90,16          ldw   R16,[R7a+90]       R16 = [R7a+Reftime]; 
 8 7e41: c3,7a,5a,16          stw   [R7a+5a],R16       [R7a+5a] = R16;      
 8 7e45: f0                   ret                      return;              
 
 Sub0155:
 8 7e46: 28,14                scall 7e5c               Sub0156();           
 8 7e48: a3,7a,5a,16          ldw   R16,[R7a+5a]       R16 = [R7a+5a];      
-8 7e4c: 6b,7a,90,16          sb2w  R16,[R7a+90]       R16 -= [R7a+90];     
+8 7e4c: 6b,7a,90,16          sb2w  R16,[R7a+90]       R16 -= [R7a+Reftime];
 8 7e50: d6,02                jge   7e54               if ((sig) R16 >= 0) goto 7e54;
 8 7e52: 03,16                negw  R16                R16 = -R16;          
 8 7e54: 8a,1e,16             cmpw  R16,[R1e]                               
@@ -8523,7 +8537,7 @@ Sub0161:
 8 7fad: a1,00,01,42          ldw   R42,100            R42 = 100;           
 8 7fb1: c3,7b,26,06,42       stw   [R7a+626],R42      [R7a+626] = R42;     
 8 7fb6: c3,7b,28,06,42       stw   [R7a+628],R42      [R7a+628] = R42;     
-8 7fbb: a3,7c,cc,c4          ldw   Rc4,[R7c+cc]       [SPARK] = [R7c+cc];  
+8 7fbb: a3,7c,cc,c4          ldw   Rc4,[R7c+cc]       [SPARK] = [R7c+Synctr];
 8 7fbf: 01,d0                clrw  Rd0                [EGR_DC] = 0;        
 8 7fc1: 71,be,46             an2b  R46,be             [FLAGS_46] &= be;    
 8 7fc4: 71,bd,47             an2b  R47,bd             [FLAGS_47] &= bd;    
@@ -8962,9 +8976,9 @@ HW_CHECK:
 8 856f: c3,7b,bc,00,3c       stw   [R7a+bc],R3c       [R7a+PIP_HIGH_PW] = [FLAGS_3C];
 8 8574: 28,4b                scall 85c1               Sub0183();           
 8 8576: 8b,7b,be,00,3c       cmpw  R3c,[R7a+be]                            
-8 857b: d7,3f                jne   85bc               if ([FLAGS_3C] != [R7a+be]) goto Sub0182;
+8 857b: d7,3f                jne   85bc               if ([FLAGS_3C] != [R7a+Dtpcyc]) goto Sub0182;
 8 857d: 8b,7b,c0,00,3c       cmpw  R3c,[R7a+c0]                            
-8 8582: d7,38                jne   85bc               if ([FLAGS_3C] != [R7a+c0]) goto Sub0182;
+8 8582: d7,38                jne   85bc               if ([FLAGS_3C] != [R7a+Hfpcyc]) goto Sub0182;
 8 8584: 88,30,3c             cmpw  R3c,R30                                 
 8 8587: d7,33                jne   85bc               if ([FLAGS_3C] != R30) goto Sub0182;
 8 8589: a1,00,04,10          ldw   R10,400            STACK = 400;         
@@ -8972,9 +8986,9 @@ HW_CHECK:
 8 8591: c3,7b,bc,00,3c       stw   [R7a+bc],R3c       [R7a+PIP_HIGH_PW] = [FLAGS_3C];
 8 8596: 28,29                scall 85c1               Sub0183();           
 8 8598: 8b,7b,be,00,3c       cmpw  R3c,[R7a+be]                            
-8 859d: d7,1d                jne   85bc               if ([FLAGS_3C] != [R7a+be]) goto Sub0182;
+8 859d: d7,1d                jne   85bc               if ([FLAGS_3C] != [R7a+Dtpcyc]) goto Sub0182;
 8 859f: 8b,7b,c0,00,3c       cmpw  R3c,[R7a+c0]                            
-8 85a4: d7,16                jne   85bc               if ([FLAGS_3C] != [R7a+c0]) goto Sub0182;
+8 85a4: d7,16                jne   85bc               if ([FLAGS_3C] != [R7a+Hfpcyc]) goto Sub0182;
 8 85a6: 88,30,3c             cmpw  R3c,R30                                 
 8 85a9: d7,11                jne   85bc               if ([FLAGS_3C] != R30) goto Sub0182;
 8 85ab: b1,aa,30             ldb   R30,aa             R30 = aa;            
@@ -8989,11 +9003,11 @@ Sub0182:
 
 Sub0183:
 8 85c1: cb,7b,bc,00          push  [R7a+bc]           push([R7a+PIP_HIGH_PW]);
-8 85c5: cf,7b,be,00          pop   [R7a+be]           [R7a+be] = pop();    
-8 85c9: cb,7b,be,00          push  [R7a+be]           push([R7a+be]);      
+8 85c5: cf,7b,be,00          pop   [R7a+be]           [R7a+Dtpcyc] = pop();
+8 85c9: cb,7b,be,00          push  [R7a+be]           push([R7a+Dtpcyc]);  
 8 85cd: cc,30                pop   R30                R30 = pop();         
 8 85cf: c8,30                push  R30                push(R30);           
-8 85d1: cf,7b,c0,00          pop   [R7a+c0]           [R7a+c0] = pop();    
+8 85d1: cf,7b,c0,00          pop   [R7a+c0]           [R7a+Hfpcyc] = pop();
 8 85d5: f0                   ret                      return;              
 
 
@@ -9233,7 +9247,7 @@ Sub0190:
 8 88bf: af,31,51,07,3a       ldzbw R3a,[R30+751]      [GENERAL_3A] = (uns)[R30+751];
 8 88c4: 64,3a,38             ad2w  R38,R3a            R38 += [GENERAL_3A]; 
 8 88c7: e0,30,ed             djnz  R30,88b7           R30--; if (R30 !=  0) goto 88b7;
-8 88ca: a3,01,00,07,3a       ldw   R3a,[700]          [GENERAL_3A] = [K_EPTZER];
+8 88ca: a3,01,00,07,3a       ldw   R3a,[700]          [GENERAL_3A] = [KCsuml];
 8 88cf: 68,38,3a             sb2w  R3a,R38            [GENERAL_3A] -= R38; 
 8 88d2: db,02                jc    88d6               if ([GENERAL_3A] >= 0) goto 88d6;
 8 88d4: 03,3a                negw  R3a                [GENERAL_3A] = -[GENERAL_3A];
@@ -9246,13 +9260,13 @@ Sub0190:
 8 88ec: e0,30,f3             djnz  R30,88e2           R30--; if (R30 !=  0) goto 88e2;
 8 88ef: a1,00,50,38          ldw   R38,5000           R38 = 5000;          
 8 88f3: c7,01,cc,07,00       stb   [7cc],0            [KWUCTR] = 0;        
-8 88f8: c3,01,00,07,38       stw   [700],R38          [K_EPTZER] = R38;    
+8 88f8: c3,01,00,07,38       stw   [700],R38          [KCsuml] = R38;      
 8 88fd: f0                   ret                      return;              
 
 CHECK_KAM_2:
 8 88fe: a1,08,00,30          ldw   R30,8              R30 = 8;             
 8 8902: 01,32                clrw  R32                R32 = 0;             
-8 8904: 67,31,da,07,32       ad2w  R32,[R30+7da]      R32 += [R30+7da];    
+8 8904: 67,31,da,07,32       ad2w  R32,[R30+7da]      R32 += [R30+Kamqc];  
 8 8909: 79,02,30             sb2b  R30,2              R30 -= 2;            
 8 890c: d7,f6                jne   8904               if (R30 != 0) goto 8904;
 8 890e: 4b,01,e4,07,32,34    sb3w  R34,R32,[7e4]      R34 = R32 - [K_ISC_SUM];
@@ -9298,7 +9312,7 @@ CHECK_KAM_1:
 8 8984: 91,40,d6             orrb  Rd6,40             <VIP_KAM> = 1;       
 8 8987: ef,7a,f2             call  7c04               CLEAR_KAM();         
 8 898a: a1,80,a2,38          ldw   R38,a280           R38 = a280;          
-8 898e: c3,01,5a,03,38       stw   [35a],R38          [35a] = R38;         
+8 898e: c3,01,5a,03,38       stw   [35a],R38          [KEptzer] = R38;     
 8 8993: a3,f6,02,38          ldw   R38,[Rf6+2]        R38 = [TPS_INITAL_VALUE];
 8 8997: c3,22,12,38          stw   [R22+12],R38       [R22+12] = R38;      
 8 899b: b1,80,3a             ldb   R3a,80             [GENERAL_3A] = 80;   
@@ -9307,7 +9321,7 @@ CHECK_KAM_1:
 8 89a6: c7,31,51,07,3a       stb   [R30+751],R3a      [R30+751] = [GENERAL_3A];
 8 89ab: e0,30,f3             djnz  R30,89a1           R30--; if (R30 !=  0) goto 89a1;
 8 89ae: a1,00,50,38          ldw   R38,5000           R38 = 5000;          
-8 89b2: c3,01,00,07,38       stw   [700],R38          [K_EPTZER] = R38;    
+8 89b2: c3,01,00,07,38       stw   [700],R38          [KCsuml] = R38;      
 8 89b7: a1,04,00,32          ldw   R32,4              R32 = 4;             
 8 89bb: a1,dc,07,30          ldw   R30,7dc            R30 = 7dc;           
 8 89bf: c2,31,00             stw   [R30++],0          [R30++] = 0;         
@@ -9379,7 +9393,7 @@ OSt8_017 - Other Structure 8 017:
 
 
 Sub0193:
-8 8ad8: c7,82,01,00          stb   [R82+1],0          [R82+1] = 0;         
+8 8ad8: c7,82,01,00          stb   [R82+1],0          [[Rtab]+1] = 0;      
 8 8adc: f0                   ret                      return;              
 
 
@@ -9929,7 +9943,9 @@ WINDOW_OPEN:
 
 WINDOW_LENGTH:
 8 907a: 00,00             Rf0+27a WINDOW_LENGTH    word         0                   0
-8 907c: 80,3e             Rf0+27c Sc0080      word      3e80               16000
+
+RPMCNL:
+8 907c: 80,3e             Rf0+27c RPMCNL      word      3e80               16000
 
 SPARK_ADVANCE_LIMIT:
 8 907e: ae,07             Rf0+27e SPARK_ADVANCE_LIMIT    word       7ae                6.00
@@ -9937,7 +9953,9 @@ SPARK_ADVANCE_LIMIT:
 
 KNOCK_CYLINDER_COUNT:
 8 9080: 01                Rf0+280 KNOCK_CYLINDER_COUNT    byte         1                   1
-8 9081: 0c                Rf0+281 Sc0083      byte         c                  12
+
+WINCLD:
+8 9081: 0c                Rf0+281 WINCLD      byte         c                  12
 
 FUEL_MULT_HIGH_SPEED:
 8 9082: ff,04             func                  ff,        4                 255,        4
@@ -10585,10 +10603,18 @@ SCCS_HIGH_HOLD:
 8 94ae: 80,56             Rf2+332 Sc0170      word      5680               22144
 8 94b0: 00,82             Rf2+334 Sc0171      word      8200               33280
 8 94b2: 29,00             Rf2+336 Sc0172      word        29                  41
-8 94b4: 00,c8             Rf2+338 Sc0173      word      c800               51200
-8 94b6: 00,14             Rf2+33a Sc0174      word      1400                5120
-8 94b8: 00,02             Rf2+33c Sc0175      word       200                 512
-8 94ba: 00,06             Rf2+33e Sc0176      word       600                1536
+
+Maxvsp:
+8 94b4: 00,c8             Rf2+338 Maxvsp      word      c800               51200
+
+Mphded:
+8 94b6: 00,14             Rf2+33a Mphded      word      1400                5120
+
+Mphh:
+8 94b8: 00,02             Rf2+33c Mphh        word       200                 512
+
+Aclded:
+8 94ba: 00,06             Rf2+33e Aclded      word       600                1536
 8 94bc: 00,01             Rf2+340 Sc0177      word       100                 256
 
 
@@ -10611,7 +10637,9 @@ LOW_VOLTAGE_LIMIT:
 8 94cc: 00,06,00,78                           Unknown Calibration                         0,  6,  0, 78                              0,   6,   0, 120
 
 
-8 94d0: 00,04             Rf2+354 Sc0186      word       400                1024
+
+Vacrr:
+8 94d0: 00,04             Rf2+354 Vacrr       word       400                1024
 
 
 8 94d2: a0,50,50,50,10,ff,00,05               Unknown Calibration        a0, 50, 50, 50, 10, ff,  0,  5        160,  80,  80,  80,  16, 255,   0,   5
@@ -11300,8 +11328,12 @@ ISC_IDLE_AIR_NEUTRAL:
 8 9a8f: ff                                    Unknown Calibration                                    ff                                           255
 
 
-8 9a90: 00,32             Rf6+196 Sc0270      word      3200               12800
-8 9a92: b0,36             Rf6+198 Sc0271      word      36b0               14000
+
+Minvsp:
+8 9a90: 00,32             Rf6+196 Minvsp      word      3200               12800
+
+Vsnmax:
+8 9a92: b0,36             Rf6+198 Vsnmax      word      36b0               14000
 8 9a94: 33,33             Rf6+19a Sc0272      word      3333               13107
 
 
@@ -12082,7 +12114,9 @@ St0013 - Structure 013:
 8 9f68: b8,1e             Rfe+e0 Sc0433       word      1eb8                7864
 8 9f6a: 14,1e             Rfe+e2 Sc0434       word      1e14                7700
 8 9f6c: 34,02             Rfe+e4 Sc0435       word       234                 564
-8 9f6e: 00,03             Rfe+e6 Sc0436       word       300                 768
+
+Aclinc:
+8 9f6e: 00,03             Rfe+e6 Aclinc       word       300                 768
 
 8 9f70: 1a                Rfe+e8 Sc0437       byte        1a                  26
 

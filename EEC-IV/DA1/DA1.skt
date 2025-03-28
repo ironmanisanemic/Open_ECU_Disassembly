@@ -2734,7 +2734,7 @@
 
 -- 8 4167 - 120
 
-++ 8 4168 - Sub0065
+++ 8 4168 - UPDATE_LOOP_STATUS
 	b3
 	57
 	d3
@@ -3030,7 +3030,7 @@
 
 -- 8 44ef - 128
 
-++ 8 44f0 - CLAMP_LAMDA
+++ 8 44f0 - CLAMP_LAMBDA
 	8b
 	d1
 	a3
@@ -3207,7 +3207,7 @@
 
 -- 8 470a - 8
 
-++ 8 470b - ?ADAPTIVE_CALC?
+++ 8 470b - CALC_ADAPTIVES
 	38
 	38
 	9b
@@ -3337,7 +3337,7 @@
 
 -- 8 48c0 - 126
 
-++ 8 48c1 - Sub0074
+++ 8 48c1 - CALC_ADAPTIVES_2?
 	67
 	9b
 	df
@@ -3396,7 +3396,7 @@
 
 -- 8 496a - 25
 
-++ 8 496b - Sub0075
+++ 8 496b - ?CALC_HEGO_FUEL_CORRECTION?
 	af
 	af
 	38
@@ -4398,7 +4398,7 @@
 
 -- 8 5551 - 2
 
-++ 8 5552 - Sub0096
+++ 8 5552 - ?CALC_EGR_2?
 	30
 	e7
 	9b
@@ -4777,7 +4777,7 @@
 
 -- 8 5a08 - 60
 
-++ 8 5a0f - Sub0099
+++ 8 5a0f - UPDATE_EGR2-2
 	af
 	9b
 	d9
@@ -7709,7 +7709,7 @@
 
 -- 8 7ddb - 10
 
-++ 8 7ddc - Sub0187 - New Element
+++ 8 7ddc - Sub0187
 	ef
 	ef
 	b3
@@ -8296,7 +8296,7 @@
 
 -- 8 878e - 41
 
-++ 8 878f - Sub0189
+++ 8 878f - INFERRED_BP_CALC
 	a3
 	b3
 	a3
