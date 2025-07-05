@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<S6x version="1.00" generated="2025-03-28 00:31:17">
-  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2025-03-28T04:55:48.4966277Z" IdentificationStatus="0">
+<S6x version="1.00" generated="2025-05-09 23:45:57">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2025-05-10T06:45:48.1897263Z" IdentificationStatus="0">
     <Label>Exported</Label>
     <Comments />
     <Header />
@@ -4188,7 +4188,7 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Routine>
-    <Routine BankNum="8" AddressInt="1071" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="SEND_HSO_CMD" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-01-14T03:35:21.4434136Z" IdentificationStatus="0" Skip="false">
+    <Routine BankNum="8" AddressInt="1071" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="SEND_HSO_CMD" OutputComments="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2024-01-14T03:35:21.4434136Z" IdentificationStatus="0" Skip="false">
       <Label>SEND_HSO_CMD</Label>
       <Comments />
       <IdentificationDetails />
@@ -5798,6 +5798,18 @@ WordHex:1}</StructDef>
           <Category3 />
         </BitFlag>
       </BitFlags>
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="48" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-05-10T06:45:01.811967Z" DateUpdated="2025-05-10T06:45:48.1897263Z" IdentificationStatus="0">
+      <Label>TABLE_INDEX</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
       <ScaleExpression>X</ScaleExpression>
       <Units />
       <IdentificationDetails />

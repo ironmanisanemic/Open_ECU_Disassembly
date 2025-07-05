@@ -1,0 +1,2332 @@
+++ 8 2000 - Bnk8Start - Bank 8 Start
+	e7
+
+-- 8 2000 - 1
+
+++ 8 2020 - Sub0002
+	fa
+	ff
+	01
+	11
+	a3
+	a3
+	01
+	95
+	ff
+	11
+	95
+	66
+	8b
+	da
+	8b
+	df
+	81
+	e7
+	b3
+	b3
+	a3
+	38
+	b3
+	05
+	df
+	95
+	ff
+	11
+	95
+	c4
+	9b
+	df
+	81
+	e7
+	17
+	df
+	61
+	01
+	c2
+	8b
+	df
+	8b
+	d7
+	67
+	8b
+	d7
+	b3
+	b3
+	a3
+	a3
+	a3
+	b3
+	a3
+	a3
+	a3
+	b3
+	b3
+	b3
+	b3
+	a3
+	11
+	11
+	b3
+	b3
+	ff
+	15
+	d7
+	fb
+	c9
+	ef
+	9b
+	d7
+	e7
+	9b
+	d1
+	91
+	b3
+	38
+	8b
+	d7
+	e7
+	e7
+	a3
+	8b
+	de
+	d5
+	e7
+	dd
+	38
+	9b
+	d1
+	e7
+	b3
+	11
+	a3
+	b3
+	30
+	c4
+	c4
+	61
+	c2
+	17
+	9b
+	de
+	f0
+
+-- 8 2155 - 105
+
+++ 8 2156 - Keep_Alive
+	17
+	fa
+	ff
+	95
+	ff
+	17
+	95
+	fb
+	a3
+	f0
+
+-- 8 2168 - 10
+
+++ 8 2169 - Run_SubTasks
+	11
+	17
+	e7
+
+-- 8 216d - 3
+
+++ 8 2170 - Sub0008
+	f0
+
+-- 8 2170 - 1
+
+++ 8 2171 - Pump_Sto
+	b3
+	38
+	71
+	e7
+	91
+	71
+	38
+	91
+	71
+	38
+	91
+	ef
+	11
+	f0
+
+-- 8 2196 - 14
+
+++ 8 2197 - Do_outputs
+	30
+	ef
+	30
+	ef
+	30
+	ef
+	30
+	ef
+	30
+	ef
+	ef
+	f0
+
+-- 8 21b4 - 12
+
+++ 8 21b5 - Do_SPARK
+	8b
+	d1
+	a3
+	a3
+	11
+	e7
+	38
+	38
+	e7
+	38
+	11
+	30
+	b3
+	ef
+	30
+	e7
+	91
+	a3
+	e7
+	b3
+	ef
+	30
+	91
+	e7
+	71
+	a3
+	30
+	e7
+	38
+	e7
+	71
+	e7
+	91
+	30
+	e7
+	38
+	30
+	e7
+	a3
+	91
+	38
+	30
+	ef
+	91
+	4f
+	0d
+	4b
+	03
+	4b
+	6f
+	0d
+	a3
+	a3
+	e7
+	38
+	ef
+	71
+	4f
+	0d
+	a3
+	a3
+	b3
+	b3
+	ef
+	30
+	91
+	e7
+	a3
+	71
+	91
+	a3
+	8b
+	d3
+	8b
+	d1
+	a3
+	a3
+	b3
+	b3
+	ef
+	30
+	91
+	e7
+	71
+	a3
+	71
+	f0
+
+-- 8 22ae - 87
+
+++ 8 22af - Do_InjBank1
+	38
+	38
+	30
+	a3
+	e7
+	4b
+	d5
+	de
+	e7
+	d6
+	e7
+	11
+	b3
+	ef
+	30
+	91
+	e7
+	a3
+	71
+	b3
+	b3
+	a3
+	a3
+	ef
+	30
+	91
+	e7
+	a3
+	a3
+	ef
+	71
+	71
+	f0
+
+-- 8 2306 - 33
+
+++ 8 2307 - Do_InjBank2
+	38
+	38
+	30
+	a3
+	e7
+	4b
+	d5
+	de
+	e7
+	d6
+	e7
+	11
+	b3
+	ef
+	30
+	91
+	e7
+	a3
+	71
+	b3
+	b3
+	a3
+	a3
+	ef
+	30
+	91
+	e7
+	a3
+	a3
+	ef
+	71
+	71
+	f0
+
+-- 8 235e - 33
+
+++ 8 235f - Do_Trip_Dbl
+	38
+	a3
+	e7
+	38
+	8b
+	d3
+	e7
+
+-- 8 2370 - 7
+
+++ 8 2373 - 2373 - Sub 8 2373
+	a3
+	a3
+	a3
+	b3
+	b3
+	b3
+	ef
+	38
+	71
+	71
+	a3
+	f0
+
+-- 8 2394 - 12
+
+++ 8 2395 - Do_OUTPUT
+	71
+	38
+	05
+	38
+	a3
+	e7
+	46
+	91
+	b3
+	a3
+	4b
+	ef
+	d3
+	71
+	a3
+	38
+	38
+	e7
+	38
+	38
+	a3
+	b3
+	a3
+	4b
+	ef
+	d3
+	a3
+	e7
+	91
+	f0
+
+-- 8 23ea - 30
+
+++ 8 2b1c - HSOUT
+	de
+	dd
+	e7
+	dd
+	fa
+	ff
+	03
+	8b
+	d3
+	a3
+	b3
+	f8
+	e7
+	fa
+	ff
+	a3
+	a3
+	b3
+	f9
+	fb
+	f0
+
+-- 8 2b46 - 21
+
+++ 8 2b47 - Inc_Injtime
+	4f
+	6b
+	67
+	a3
+	a4
+	c0
+	c0
+	f0
+
+-- 8 2b66 - 8
+
+++ 8 2b67 - Do_Trip_Single
+	a3
+	a3
+	b3
+	b3
+	30
+	b3
+	ef
+	38
+	a3
+	71
+	95
+	f0
+
+-- 8 2b89 - 12
+
+++ 8 2b8a - STO_OUT
+	30
+	38
+	b3
+	e7
+	30
+	b3
+	11
+	ef
+	38
+	95
+	f0
+
+-- 8 2ba6 - 11
+
+++ 8 2ba7 - Do_subTaskList
+	67
+	8b
+	d3
+	01
+	cb
+	f0
+
+-- 8 2bb7 - 6
+
+++ 8 2bb8 - Main_EXIT
+	e7
+
+-- 8 2bb8 - 1
+
+++ 8 2bbb - Do_ISC_OUT
+	30
+	30
+	11
+	b3
+	ef
+	38
+	a3
+	71
+	e7
+	a3
+	8b
+	d1
+	a3
+	8b
+	db
+	a3
+	a3
+	09
+	6f
+	a3
+	a3
+	4b
+	db
+	a3
+	a3
+	b3
+	b3
+	b3
+	ef
+	38
+	a3
+	71
+	71
+	f0
+
+-- 8 2c27 - 34
+
+++ 8 2c28 - Do_EGR_OUT
+	9b
+	df
+	8b
+	de
+	dd
+	e7
+	d5
+	a3
+	4f
+	38
+	8b
+	d9
+	c0
+	e7
+	6b
+	03
+	b3
+	9b
+	df
+	b3
+	e7
+	8b
+	d3
+	c0
+	e7
+	b3
+	9b
+	df
+	b3
+	a3
+	a3
+	b3
+	ef
+	38
+	c0
+	95
+	f0
+
+-- 8 2c9f - 37
+
+++ 8 2ca0 - IPT_Timer_OVF - Interrupt Timer OVF
+	f2
+	07
+	d7
+	91
+	17
+	d7
+	15
+	fa
+	ff
+	f3
+	f1
+
+-- 8 2cb1 - 11
+
+++ 8 2cb2 - IPT_HSI_0 - Interrupt High Speed Input 0
+	f1
+
+-- 8 2cb2 - 1
+
+++ 8 2cb3 - IPT_HSI_Data - Interrupt High Speed Input Data
+	f2
+	fa
+	ff
+	a3
+	b3
+	b3
+	fb
+	94
+	b3
+	38
+	38
+	38
+	38
+	38
+	11
+	9b
+	d7
+	fa
+	ff
+	f3
+	f1
+
+-- 8 2cdf - 21
+
+++ 8 2ce0 - Ignore_STI
+	71
+	e7
+	4b
+	c0
+	c0
+	71
+	e7
+	71
+	e7
+	71
+	e7
+	05
+	05
+	38
+	71
+	4b
+	8b
+	db
+	91
+	e7
+	a3
+	38
+	a3
+	a3
+	71
+	e7
+	4b
+	8b
+	db
+	71
+	e7
+	a3
+	38
+	c0
+	a3
+	71
+	91
+	91
+	17
+	9b
+	d7
+	91
+	9b
+	d7
+	11
+	11
+	91
+	30
+	38
+	71
+	91
+	e7
+	30
+	91
+	e7
+	38
+	38
+	38
+	30
+	e7
+	38
+	91
+	e7
+	38
+	e7
+	38
+	91
+	e7
+	71
+	71
+	e7
+	71
+	e7
+	f2
+	38
+	8b
+	de
+	dd
+	e7
+	d5
+	91
+	38
+	8b
+	de
+	d5
+	e7
+	d5
+	91
+	91
+	fa
+	ff
+	f3
+	f1
+
+-- 8 2dd9 - 93
+
+++ 8 2dda - Spark_calc_1
+	a3
+	b3
+	a3
+	30
+	ef
+	e7
+
+-- 8 2de8 - 6
+
+++ 8 2deb - IGN_clc3
+	ef
+	b3
+	a3
+	e7
+
+-- 8 2df3 - 4
+
+++ 8 2df6 - Base_Ign_Lookup
+	30
+	b3
+	f0
+
+-- 8 2dfc - 3
+
+++ 8 2dfd - 2dfd - Sub 8 2dfd
+	a3
+	a3
+	ef
+	a3
+	a3
+	a3
+	ef
+	a3
+	a3
+	a3
+	a3
+	9b
+	d2
+	9b
+	da
+	9b
+	d2
+	9b
+	da
+	8b
+	d9
+	a3
+	e7
+	a3
+	ef
+	af
+	a3
+	bf
+	ef
+	af
+	6b
+	ef
+	a3
+	a3
+	a3
+	a3
+	a3
+	ef
+	af
+	a3
+	ef
+	67
+	a3
+	91
+	f0
+
+-- 8 2e8b - 45
+
+++ 8 2e8c - IGN_Temp_Calc
+	38
+	e7
+	71
+	a3
+	a3
+	b3
+	11
+	ef
+	a3
+	a3
+	a3
+	ef
+	a3
+	a3
+	a3
+	a3
+	a3
+	ef
+	af
+	38
+	a3
+	30
+	67
+	e7
+	67
+	af
+	ef
+	a3
+	30
+	8b
+	d1
+	67
+	bf
+	67
+	38
+	9b
+	d7
+	9b
+	d9
+	b3
+	9b
+	d3
+	b3
+	b3
+	5b
+	30
+	13
+	13
+	9b
+	d1
+	57
+	b3
+	ef
+	f0
+
+-- 8 2f3c - 54
+
+++ 8 2f3d - Scale_R3c
+	fe,6f
+	0c
+	f0
+
+-- 8 2f44 - 3
+
+++ 8 2f45 - Ign_Delay_Calc
+	a3
+	01
+	a3
+	8c
+	a3
+	af
+	4b
+	01
+	09
+	8c
+	dd
+	a3
+	91
+	30
+	71
+	8b
+	d3
+	4b
+	09
+	a3
+	e7
+	a3
+	4b
+	09
+	4b
+	e7
+	ff
+	f0
+
+-- 8 2f9b - 28
+
+++ 8 2f9c - UUByteLU - Byte Function Reader
+	91
+	9b
+	30
+	db
+	e7
+	d6
+	67
+	e7
+	b2
+	b2
+	7a
+	7a
+	7a
+	30
+	db
+	e7
+	d6
+	91
+	13
+	7f
+	9c
+	30
+	13
+	76
+	71
+	f0
+
+-- 8 2fe0 - 26
+
+++ 8 2fe1 - SWfilter
+	b3
+	e7
+	4b
+	30
+	db
+	e7
+	d6
+	91
+	03
+	8b
+	d9
+	a3
+	e7
+	6f
+	03
+	d7
+	05
+	38
+	03
+	67
+	f0
+
+-- 8 3016 - 21
+
+++ 8 3017 - Process_Sensors
+	a3
+	a3
+	08
+	ef
+	a3
+	b3
+	9b
+	db
+	fe,6f
+	67
+	a3
+	a3
+	08
+	ef
+	a3
+	b3
+	9b
+	db
+	fe,6f
+	67
+	a3
+	bf
+	ef
+	c0
+	a3
+	c0
+	c0
+	17
+	30
+	b3
+	b3
+	30
+	b3
+	b3
+	a3
+	a3
+	a3
+	ef
+	c0
+	8b
+	d3
+	b3
+	e7
+	8b
+	d3
+	b3
+	e7
+	8b
+	d3
+	b3
+	e7
+	b3
+	71
+	8b
+	d3
+	91
+	8b
+	d3
+	91
+	e7
+	8b
+	db
+	8b
+	d3
+	91
+	e7
+	91
+	b3
+	38
+	71
+	a3
+	bf
+	ef
+	a3
+	a3
+	a3
+	ef
+	a3
+	e7
+
+-- 8 3122 - 79
+
+++ 8 3125 - Main_airflow_calc
+	a3
+	a3
+	a3
+	8c
+	c0
+	a3
+	a3
+	ef
+	30
+	b3
+	c4
+	b3
+	11
+	08
+	01
+	b3
+	1a
+	77
+	11
+	8c
+	a3
+	ef
+	6f
+	a3
+	30
+	30
+	a3
+	e7
+	a3
+	e7
+	a3
+	ef
+	a3
+	30
+	30
+	a3
+	e7
+	a3
+	e7
+	a3
+	ef
+	a3
+	e7
+
+-- 8 31ac - 43
+
+++ 8 31af - Mass_Flow
+	a3
+	ef
+	6f
+	9b
+	d3
+	a3
+	91
+	0d
+	f0
+
+-- 8 31c8 - 9
+
+++ 8 31c9 - Process_TPS
+	30
+	a3
+	a3
+	e7
+	a3
+	a3
+	a3
+	ef
+	a3
+	8b
+	db
+	a3
+	4b
+	d9
+	01
+	8b
+	d9
+	91
+	71
+	e7
+	8b
+	d9
+	71
+	e7
+	91
+	71
+	a3
+	a3
+	6b
+	c0
+	c0
+	e7
+
+-- 8 322b - 32
+
+++ 8 322e - RPM_calc
+	30
+	a3
+	a3
+	8c
+	a3
+	71
+	a3
+	a3
+	ef
+	a3
+	38
+	01
+	30
+	a3
+	67
+	8b
+	d3
+	71
+	e7
+	8b
+	db
+	91
+	e7
+
+-- 8 3274 - 23
+
+++ 8 3277 - UTabLU - Table Reader
+	5f
+	77
+	d3
+	17
+	67
+	b2
+	b2
+	ef
+	67
+	b2
+	05
+	b2
+	b3
+	ef
+	b3
+	b3
+	b3
+	ef
+	f0
+
+-- 8 32a8 - 19
+
+++ 8 32a9 - TabInterp
+	5f
+	5f
+	6b
+	77
+	67
+	f0
+
+-- 8 32bb - 6
+
+++ 8 32bc - UUWordLU - Word Function Reader
+	91
+	8b
+	30
+	db
+	e7
+	d6
+	67
+	e7
+	a2
+	a2
+	6a
+	6a
+	6a
+	30
+	db
+	e7
+	d6
+	91
+	03
+	6f
+	8c
+	30
+	03
+	66
+	71
+	f0
+
+-- 8 3300 - 26
+
+++ 8 3301 - Ign_Delta_Calc
+	38
+	e7
+	fa
+	ff
+	a3
+	a3
+	a3
+	a3
+	fb
+	71
+	4b
+	db
+	03
+	4f
+	8b
+	d1
+	e7
+	01
+	8c
+	d5
+	e7
+	a3
+	6f
+	4b
+	db
+	03
+	4f
+	a3
+	8b
+	d3
+	08
+	a3
+	6b
+	db
+	e7
+	6f
+	0d
+	8b
+	d3
+	08
+	67
+	db
+	4f
+	0d
+	8b
+	d9
+	a3
+	dd
+	01
+	a3
+	dd
+	0c
+	8c
+	dd
+	a3
+	a3
+	ef
+	a3
+	8b
+	db
+	a3
+	8b
+	d1
+	a3
+	6b
+	d6
+	01
+	e7
+	a3
+	08
+	67
+	dd
+	a3
+	4f
+	6f
+	0d
+	8b
+	d1
+	67
+	dd
+	8b
+	d3
+	a3
+	e7
+
+-- 8 33f1 - 84
+
+++ 8 33f4 - Base_inj_calc
+	b3
+	a3
+	a3
+	6f
+	67
+	a3
+	30
+	01
+	91
+	c0
+	ef
+	a3
+	ef
+	a3
+	a3
+	6f
+	67
+	a3
+	30
+	01
+	91
+	a3
+	ef
+	a3
+	30
+	9b
+	df
+	38
+	a3
+	08
+	a3
+	a3
+	ef
+	a3
+	e7
+
+-- 8 3469 - 35
+
+++ 8 346c - Calc_Cyl_AirMass
+	01
+	8c
+	dd
+	01
+	38
+	8d
+	e7
+	8d
+	8b
+	d1
+	a3
+	91
+	30
+	8b
+	db
+	a3
+	f0
+
+-- 8 34a0 - 17
+
+++ 8 34a1 - Base_Cyl_Inj_calc
+	6f
+	a3
+	6f
+	a3
+	8c
+	d5
+	a3
+	91
+	f0
+
+-- 8 34bd - 9
+
+++ 8 34be - Set_RPM_flags
+	b3
+	9b
+	df
+	11
+	38
+	71
+	e7
+	38
+	8b
+	d3
+	a3
+	91
+	71
+	30
+	91
+	e7
+	b3
+	71
+	e7
+	a3
+	30
+	67
+	8b
+	d9
+	e7
+	30
+	8b
+	d9
+	91
+	11
+	8b
+	d3
+	a3
+	e7
+	8b
+	d9
+	71
+	91
+	11
+	e7
+	8b
+	d3
+	71
+	9b
+	d6
+	8b
+	db
+	b3
+	e7
+	30
+	38
+	8b
+	db
+	8b
+	db
+	30
+	01
+	b3
+	e7
+	9b
+	d2
+	9b
+	da
+	8b
+	d9
+	e7
+	b3
+	e7
+	30
+	b3
+	e7
+	b3
+	01
+	51
+	90
+	30
+	81
+	8b
+	df
+	81
+	c0
+	e7
+
+-- 8 35b5 - 82
+
+++ 8 35b8 - Enrich_Flow_calc
+	a3
+	a3
+	ef
+	a3
+	a3
+	b3
+	11
+	ef
+	a3
+	a3
+	a3
+	ef
+	a3
+	a3
+	a3
+	ef
+	a3
+	a3
+	38
+	a3
+	b3
+	ef
+	af
+	8b
+	d1
+	a3
+	b3
+	ef
+	af
+	09
+	4f
+	8c
+	d5
+	91
+	e7
+	09
+	67
+	db
+	09
+	4b
+	db
+	a3
+	91
+	e7
+
+-- 8 363e - 44
+
+++ 8 3641 - Cranking_Inj_Calc
+	b3
+	30
+	b3
+	30
+	b3
+	ef
+	c0
+	a3
+	b3
+	30
+	b3
+	30
+	b3
+	ef
+	c0
+	a3
+	38
+	b3
+	b3
+	e7
+
+-- 8 3680 - 20
+
+++ 8 3683 - Calc_Accelpump
+	30
+	b3
+	b3
+	e7
+	a3
+	a3
+	b3
+	a3
+	a3
+	a3
+	ef
+	38
+	b3
+	a3
+	a3
+	a3
+	a3
+	b3
+	a3
+	a3
+	a3
+	ef
+	38
+	b3
+	a3
+	a3
+	a3
+	e7
+
+-- 8 36d1 - 28
+
+++ 8 36d4 - Load_Calc
+	a3
+	a3
+	ef
+	b3
+	a3
+	a3
+	ef
+	b3
+	e7
+
+-- 8 36ee - 9
+
+++ 8 36f1 - Clip_Inj_Calc
+	b3
+	30
+	8b
+	db
+	7b
+	11
+	6f
+	8f
+	77
+	c4
+	e7
+
+-- 8 3717 - 11
+
+++ 8 371a - Inject_Time_calc
+	a3
+	b3
+	a3
+	b3
+	b3
+	a3
+	ef
+	c0
+	a3
+	a3
+	b3
+	a3
+	b3
+	b3
+	a3
+	ef
+	c0
+	a3
+	b3
+	38
+	38
+	e7
+	a3
+	e7
+	4f
+	4b
+	6f
+	0d
+	67
+	a3
+	e7
+
+-- 8 3782 - 31
+
+++ 8 3785 - enrich_viaECT_calc
+	a3
+	ef
+	a3
+	a3
+	a3
+	a3
+	a3
+	ef
+	11
+	09
+	f0
+
+-- 8 37a4 - 11
+
+++ 8 37a5 - Load_lookup
+	a3
+	a3
+	ef
+	a3
+	a3
+	a3
+	ef
+	a3
+	a3
+	a3
+	a3
+	a3
+	ef
+	f0
+
+-- 8 37cf - 14
+
+++ 8 37d0 - Crank_Inj_calc
+	a3
+	ef
+	af
+	30
+	a3
+	a3
+	ef
+	b3
+	a3
+	b3
+	11
+	ef
+	a3
+	a3
+	a3
+	ef
+	a3
+	a3
+	a3
+	a3
+	ef
+	5f
+	af
+	6f
+	0c
+	f0
+
+-- 8 3823 - 26
+
+++ 8 3824 - Accel_pump
+	11
+	af
+	8b
+	db
+	9b
+	d9
+	e7
+	4b
+	db
+	01
+	a3
+	08
+	8b
+	d3
+	a3
+	6b
+	a3
+	ef
+	b3
+	a3
+	b3
+	ef
+	7f
+	57
+	db
+	01
+	11
+	b3
+	b3
+	11
+	8c
+	dd
+	a3
+	01
+	e7
+	9b
+	d1
+	a3
+	08
+	af
+	6b
+	d1
+	6f
+	dd
+	57
+	db
+	e7
+	91
+	b3
+	01
+	e7
+	91
+	f0
+
+-- 8 38b9 - 53
+
+++ 8 38ba - Main_Inj_Calc
+	38
+	4f
+	a3
+	af
+	6f
+	0c
+	af
+	6f
+	0c
+	af
+	6f
+	0c
+	8b
+	d7
+	af
+	6f
+	0c
+	8b
+	d7
+	30
+	af
+	6f
+	0c
+	8b
+	d7
+	30
+	af
+	6f
+	0c
+	8b
+	d7
+	a3
+	6f
+	0c
+	8b
+	d7
+	67
+	8b
+	d1
+	a3
+	91
+	6f
+	30
+	30
+	01
+	f0
+
+-- 8 3946 - 46
+
+++ 8 3947 - Trip_Calc
+	38
+	9b
+	d7
+	8b
+	d7
+	71
+	e7
+	a3
+	67
+	a3
+	a4
+	a3
+	a3
+	0c
+	8b
+	d3
+	a3
+	a3
+	8f
+	c0
+	c0
+	8c
+	a3
+	8b
+	db
+	a3
+	8b
+	d1
+	a3
+	01
+	01
+	91
+	c0
+	c0
+	e7
+
+-- 8 39bf - 35
+
+++ 8 39c2 - Fuel_Pump
+	91
+	9b
+	d3
+	71
+	e7
+
+-- 8 39cd - 5
+
+++ 8 39d0 - Sensor_Test
+	ef
+	9b
+	d1
+	9b
+	d7
+	11
+	38
+	30
+	38
+	38
+	b3
+	e7
+	30
+	38
+	b3
+	11
+	e7
+	38
+	b3
+	71
+	e7
+	11
+	11
+	e7
+	9b
+	de
+	71
+	71
+	38
+	8b
+	d3
+	9b
+	df
+	91
+	b3
+	38
+	8b
+	d3
+	9b
+	de
+	91
+	e7
+	81
+	b3
+	b3
+	71
+	9b
+	d7
+	9b
+	df
+	91
+	11
+	b3
+	b3
+	e7
+	af
+	b3
+	71
+	9b
+	d7
+	17
+	9b
+	da
+	8b
+	d7
+	91
+	e7
+	b3
+	a3
+	af
+	09
+	a3
+	0c
+	a3
+	cb
+	f0
+
+-- 8 3aa4 - 76
+
+++ 8 3ac2 - VAF_Check
+	8b
+	d9
+	8b
+	d3
+	e7
+	8b
+	d9
+	8b
+	d3
+	e7
+	8b
+	d9
+	8b
+	d3
+	e7
+	8b
+	d9
+	8b
+	d3
+	e7
+	a3
+	8b
+	d9
+	8b
+	d3
+	38
+	38
+	38
+	11
+	c4
+	e7
+	b3
+	9b
+	d3
+	71
+	0d
+	a3
+	e7
+	38
+	38
+	30
+	11
+	c4
+	e7
+	b3
+	9b
+	d3
+	91
+	0d
+	a3
+	80
+	61
+	07
+	17
+	9b
+	d9
+	e7
+	f0
+
+-- 8 3b77 - 58
+
+++ 8 3b78 - 3b78 - Sub 8 3b78
+	9b
+	d7
+	38
+	30
+	91
+	11
+	b3
+	e7
+	9b
+	d7
+	9b
+	de
+	71
+	11
+	b3
+	e7
+	b3
+	08
+	38
+	71
+	e7
+	9b
+	de
+	11
+	8b
+	d7
+	11
+	e7
+	17
+	e7
+	8b
+	d7
+	a3
+	e7
+	a3
+	08
+	38
+	17
+	9b
+	da
+	11
+	e7
+	af
+	09
+	a3
+	01
+	0d
+	38
+	71
+	e7
+	91
+	0c
+	8b
+	df
+	e7
+
+-- 8 3c06 - 55
+
+++ 8 3c1e - ISC_pw_calc
+	91
+	38
+	a3
+	e7
+	a3
+	a3
+	a3
+	ef
+	a3
+	01
+	b3
+	9b
+	d7
+	b3
+	e7
+	01
+	30
+	af
+	67
+	8b
+	d1
+	9b
+	d7
+	38
+	a3
+	a3
+	a3
+	a3
+	bf
+	ef
+	a3
+	30
+	b3
+	71
+	e7
+	30
+	b3
+	71
+	e7
+	30
+	38
+	38
+	01
+	91
+	e7
+	01
+	a3
+	a3
+	ef
+	e7
+	30
+	a3
+	e7
+	30
+	38
+	8b
+	db
+	e7
+	91
+	e7
+	8b
+	db
+	8b
+	db
+	a3
+	e7
+	71
+	71
+	a3
+	8b
+	d1
+	e7
+	01
+	a3
+	bf
+	ef
+	67
+	30
+	38
+	91
+	01
+	8b
+	d3
+	e7
+	30
+	71
+	01
+	8b
+	d9
+	bf
+	a3
+	ef
+	6b
+	30
+	67
+	c0
+	4b
+	c0
+	38
+	8b
+	d9
+	a3
+	e7
+	71
+	a3
+	ef
+	c0
+	bf
+	a3
+	ef
+	c0
+	30
+	6f
+	0c
+	a3
+	38
+	6f
+	67
+	a4
+	8b
+	d3
+	a3
+	01
+	e7
+	03
+	6f
+	6b
+	a8
+	db
+	01
+	01
+	8b
+	d9
+	a3
+	c0
+	c0
+	a3
+	30
+	67
+	30
+	67
+	a3
+	ef
+	c0
+	e7
+
+-- 8 3def - 145
+
+++ 8 3df2 - Timer_Update
+	38
+	91
+	e7
+	71
+	01
+	ef
+	e7
+
+-- 8 3e02 - 7
+
+++ 8 3e2a - Upd_Timers
+	a3
+	a3
+	4b
+	01
+	0d
+	8d
+	8b
+	d7
+	e7
+	67
+	08
+	4b
+	c0
+	b3
+	77
+	5b
+	d3
+	b3
+	91
+	e0
+	91
+	b3
+	b2
+	9b
+	df
+	ae
+	30
+	b2
+	ae
+	72
+	30
+	df
+	e7
+	df
+	50
+	df
+	30
+	a2
+	e7
+	be
+	30
+	03
+	df
+	38
+	07
+	e7
+	67
+	d3
+	01
+	38
+	05
+	30
+	03
+	30
+	c2
+	e7
+	c6
+	e7
+	e7
+
+-- 8 3ed0 - 59
+
+++ 8 3ed3 - CAL_CON
+	f2
+	a3
+	9b
+	df
+	a3
+	05
+	d2
+	e7
+	ef
+	fa
+	ff
+	f3
+	e7
+
+-- 8 3eee - 13
+
+++ 8 3ef1 - Calc_EGR_PW
+	b3
+	9b
+	df
+	9b
+	df
+	30
+	af
+	67
+	8b
+	d1
+	af
+	67
+	8b
+	d9
+	a3
+	38
+	a3
+	e7
+	b3
+	a3
+	ef
+	b3
+	b3
+	a3
+	ef
+	7f
+	a3
+	a3
+	ef
+	a3
+	a3
+	ef
+	c0
+	e7
+	a3
+	c0
+	e7
+
+-- 8 3f6b - 37
+
+++ 8 3f6e - EGR_AECT_calc
+	a3
+	ef
+	a3
+	a3
+	a3
+	a3
+	ef
+	11
+	4f
+	0d
+	8b
+	d1
+	a3
+	f0
+
+-- 8 3f99 - 14
+
+## Routines(69), Maximum Operations(145 starting at 8 3c1e)
