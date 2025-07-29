@@ -65,83 +65,84 @@
 ║                   Rb8       PIP_HI_E_TIME                 Rbc       PIP_HIGH_PW                                      ║
 ║                   Rbe       Dtpcyc                        Rc0       Hfpcyc                                           ║
 ║                   Rc2       Mkay                          Rc4       SPARK                                            ║
-║                   Rc9       FLAGS_C9                      Rca       ATMR1                                            ║
-║                   Rcb       ATMR2                         Rcc       Synctr                                           ║
-║                   Rcf       PIP_COUNTER                   Rd0       EGR_DC                                           ║
-║                   Rd2       Vip_code                      Rd4       FLAGS_D4                                         ║
-║                   Rd5       FLAGS_D5                      Rd6       FLAGS_D6                                         ║
-║                   Rda       ISC_DC                        Rdd       Kwctr                                            ║
-║                   Re0       TIP_IN_RETARD                 Re1       RET_INC                                          ║
-║                   Re2       HQcnt                         Re4       FLAGS_E4                                         ║
-║                   Re6       FLAGS_E6                      Re7       FLAGS_E7                                         ║
-║                   Re8       FLAGS_E8                      Re9       FLAGS_E9                                         ║
-║                   Rea       FLAGS_EA                      Reb       FLAGS_EB                                         ║
-║                   Rec       FLAGS_EC                      Red       FLAGS_ED                                         ║
-║                   Ree       FLAGS_EE                      Ref       FLAGS_EF                                         ║
-║                   [104]     EPT_FILTER                    [10e]     KEY_VOLTAGE                                      ║
-║                   [110]     OCC_RAW                       [112]     VSS_RAW                                          ║
-║                   [114]     ECT_RAW                       [116]     ACT_RAW                                          ║
-║                   [118]     EVP_RAW                       [11a]     NDS_RAW                                          ║
-║                   [11c]     HEGO1_RAW                     [11e]     HEGO2_RAW                                        ║
-║                   [120]     TAR_RAW                       [122]     TPS_RAW                                          ║
-║                   [124]     TPS_INITAL_VALUE              [126]     EVP_DEF                                          ║
-║                   [128]     CTTMR                         [12a]     CPU_ON_TIME_mS                                   ║
-║                   [12b]     PRGTMR                        [12d]     BAP_TIMER                                        ║
-║                   [132]     MAP                           [134]     RANNUM                                           ║
-║                   [140]     Ltime                         [142]     MPH_FILTER2                                      ║
-║                   [144]     Res_speed                     [146]     Set_speed                                        ║
-║                   [148]     MPH_FILTER                    [14a]     MPH_RAW                                          ║
-║                   [14c]     SCCS_CONTROL_SW               [150]     VSC_RAW                                          ║
-║                   [159]     MPH_COUNT                     [15b]     TIME_SINCE_LAST_MPH_UPDATE                       ║
-║                   [15c]     MPH                           [15e]     MPH_TIME1_LOW                                    ║
-║                   [160]     MPH_TIME1_HIGH                [162]     MPH_TIME2_HIGH                                   ║
-║                   [164]     MPH_TIME2_LOW                 [166]     1/8TH_SEC_TIMER                                  ║
-║                   [168]     LOOP_TIMER                    [16a]     LastSWtime                                       ║
-║                   [16e]     TSL_PIP                       [170]     SL_TIMER                                         ║
-║                   [172]     LUG_TIMER                     [173]     CTNTMR                                           ║
-║                   [178]     AWOTMR                        [17a]     NACTMR                                           ║
-║                   [17f]     HLTMR                         [180]     EDF_TIMER                                        ║
-║                   [194]     DESRPM                        [196]     LAMMUL                                           ║
-║                   [198]     IS_FLAG                       [199]     IS_LAST                                          ║
-║                   [19a]     Egract                        [19b]     Egrate                                           ║
-║                   [19c]     EGR_ERROR                     [19e]     Desdp                                            ║
-║                   [1a4]     PRESER                        [1a6]     CONPR                                            ║
-║                   [1aa]     DESEM                         [1b8]     Pwoff                                            ║
-║                   [1c2]     Inj_base                      [1c3]     Inj_pip                                          ║
-║                   [1c4]     INJECTION_PENDING             [1ca]     Ampem                                            ║
-║                   [1cc]     ADPTMR                        [1dc]     VIPLATM                                          ║
-║                   [1e8]     VCUTOUT                       [1f2]     PW2                                              ║
-║                   [1f4]     PW1                           [1f6]     LAMBSE1                                          ║
-║                   [1f8]     LAMBSE2                       [1fa]     DELOPT                                           ║
-║                   [1fc]     CLFLG?                        [1fd]     AC_CLUTCH_BRAKE_TIMER                            ║
-║                   [1ff]     AC_CLUTCH_WOT_CUTOUT_TIMER    [200]     AC_CLUTCH_TIMER                                  ║
-║                   [202]     AC_CLUTCH_TURN_ON_DELAY_TIME  [206]     TSL_ADV                                          ║
-║                   [208]     RPM_FILTER1                   [209]     AE_LOAD                                          ║
-║                   [20a]     EGRCNT                        [20b]     EGRPER                                           ║
-║                   [218]     HIGH_TIME_BETA                [21a]     HIGH_TIME_DELTA                                  ║
-║                   [21c]     THROTTLE_BART                 [21d]     SPARK_ADV                                        ║
-║                   [222]     EGRPER                        [22a]     Last_HSO                                         ║
-║                   [22f]     V_BAT                         [24e]     RVIPRPM                                          ║
-║                   [252]     TSL_IDM                       [259]     FMEM_MONITOR                                     ║
-║                   [25a]     ENPIP1                        [25b]     ENPIP2                                           ║
-║                   [276]     RPM_FILTER_1                  [278]     TCF                                              ║
-║                   [27a]     Em                            [27b]     ECT_COUNT                                        ║
-║                   [27c]     RPMSCALE                      [280]     VE                                               ║
-║                   [284]     RPMX4                         [290]     PREVIOUS_PIP_TIME                                ║
-║                   [292]     PREVIOUS_PIP_TIME_H           [29c]     Next_spout_beta                                  ║
-║                   [2ea]     PREVIOUS_PIP_E_TIME           [2ec]     PREVIOUS_PIP_HIGH_PW                             ║
-║                   [2f2]     BASE_ADDR_DTC_TABLE           [318]     RPM_FILTER_2                                     ║
-║                   [31a]     INJ_PIP_COUNT1                [31b]     INJ_PIP_COUNT2                                   ║
-║                   [320]     I_BETA_1                      [35a]     KEptzer                                          ║
-║                   [700]     KCsuml                        [702]     KTMTB100                                         ║
-║                   [752]     KTMTB200                      [7a2]     KTMTB200                                         ║
-║                   [7a4]     KEGOCT1                       [7a5]     KEGOCT2                                          ║
-║                   [7a6]     KAMRF1                        [7a8]     KAMRF2                                           ║
-║                   [7aa]     KLPCT1L                       [7ac]     KLPCT1R                                          ║
-║                   [7cc]     KWUCTR                        [7ce]     Slice_0                                          ║
-║                   [7d7]     TLO_FLAG                      [7d8]     DIFCTR                                           ║
-║                   [7da]     Kamqc                         [7dc]     K_ISC_KAM0L                                      ║
-║                   [7e4]     K_ISC_SUM                     [d00]     CONSOLE_STATUS                                   ║
+║                   Rc8       RC8                           Rc9       FLAGS_C9                                         ║
+║                   Rca       ATMR1                         Rcb       ATMR2                                            ║
+║                   Rcc       Synctr                        Rcf       PIP_COUNTER                                      ║
+║                   Rd0       EGR_DC                        Rd2       Vip_code                                         ║
+║                   Rd4       FLAGS_D4                      Rd5       FLAGS_D5                                         ║
+║                   Rd6       FLAGS_D6                      Rda       ISC_DC                                           ║
+║                   Rdd       Kwctr                         Re0       TIP_IN_RETARD                                    ║
+║                   Re1       RET_INC                       Re2       HQcnt                                            ║
+║                   Re4       FLAGS_E4                      Re6       FLAGS_E6                                         ║
+║                   Re7       FLAGS_E7                      Re8       FLAGS_E8                                         ║
+║                   Re9       FLAGS_E9                      Rea       FLAGS_EA                                         ║
+║                   Reb       FLAGS_EB                      Rec       FLAGS_EC                                         ║
+║                   Red       FLAGS_ED                      Ree       FLAGS_EE                                         ║
+║                   Ref       FLAGS_EF                      [104]     EPT_FILTER                                       ║
+║                   [10e]     KEY_VOLTAGE                   [110]     OCC_RAW                                          ║
+║                   [112]     VSS_RAW                       [114]     ECT_RAW                                          ║
+║                   [116]     ACT_RAW                       [118]     EVP_RAW                                          ║
+║                   [11a]     NDS_RAW                       [11c]     HEGO1_RAW                                        ║
+║                   [11e]     HEGO2_RAW                     [120]     TAR_RAW                                          ║
+║                   [122]     TPS_RAW                       [124]     TPS_INITAL_VALUE                                 ║
+║                   [126]     EVP_DEF                       [128]     CTTMR                                            ║
+║                   [12a]     CPU_ON_TIME_mS                [12b]     PRGTMR                                           ║
+║                   [12d]     BAP_TIMER                     [132]     MAP                                              ║
+║                   [134]     RANNUM                        [140]     Ltime                                            ║
+║                   [142]     MPH_FILTER2                   [144]     Res_speed                                        ║
+║                   [146]     Set_speed                     [148]     MPH_FILTER                                       ║
+║                   [14a]     MPH_RAW                       [14c]     SCCS_CONTROL_SW                                  ║
+║                   [150]     VSC_RAW                       [159]     MPH_COUNT                                        ║
+║                   [15b]     TIME_SINCE_LAST_MPH_UPDATE    [15c]     MPH                                              ║
+║                   [15e]     MPH_TIME1_LOW                 [160]     MPH_TIME1_HIGH                                   ║
+║                   [162]     MPH_TIME2_HIGH                [164]     MPH_TIME2_LOW                                    ║
+║                   [166]     1/8TH_SEC_TIMER               [168]     LOOP_TIMER                                       ║
+║                   [16a]     LastSWtime                    [16e]     TSL_PIP                                          ║
+║                   [170]     SL_TIMER                      [172]     LUG_TIMER                                        ║
+║                   [173]     CTNTMR                        [178]     AWOTMR                                           ║
+║                   [17a]     NACTMR                        [17f]     HLTMR                                            ║
+║                   [180]     EDF_TIMER                     [194]     DESRPM                                           ║
+║                   [196]     LAMMUL                        [198]     IS_FLAG                                          ║
+║                   [199]     IS_LAST                       [19a]     Egract                                           ║
+║                   [19b]     Egrate                        [19c]     EGR_ERROR                                        ║
+║                   [19e]     Desdp                         [1a4]     PRESER                                           ║
+║                   [1a6]     CONPR                         [1aa]     DESEM                                            ║
+║                   [1b8]     Pwoff                         [1c2]     Inj_base                                         ║
+║                   [1c3]     Inj_pip                       [1c4]     INJECTION_PENDING                                ║
+║                   [1ca]     Ampem                         [1cc]     ADPTMR                                           ║
+║                   [1dc]     VIPLATM                       [1e8]     VCUTOUT                                          ║
+║                   [1f2]     PW2                           [1f4]     PW1                                              ║
+║                   [1f6]     LAMBSE1                       [1f8]     LAMBSE2                                          ║
+║                   [1fa]     DELOPT                        [1fc]     FLAGS_1FC                                        ║
+║                   [1fd]     AC_CLUTCH_BRAKE_TIMER         [1ff]     AC_CLUTCH_WOT_CUTOUT_TIMER                       ║
+║                   [200]     AC_CLUTCH_TIMER               [202]     AC_CLUTCH_TURN_ON_DELAY_TIME                     ║
+║                   [206]     TSL_ADV                       [208]     RPM_FILTER1                                      ║
+║                   [209]     AE_LOAD                       [20a]     EGRCNT                                           ║
+║                   [20b]     EGRPER                        [218]     HIGH_TIME_BETA                                   ║
+║                   [21a]     HIGH_TIME_DELTA               [21c]     THROTTLE_BART                                    ║
+║                   [21d]     SPARK_ADV                     [222]     EGRPER                                           ║
+║                   [22a]     Last_HSO                      [22f]     V_BAT                                            ║
+║                   [24e]     RVIPRPM                       [252]     TSL_IDM                                          ║
+║                   [259]     FMEM_MONITOR                  [25a]     ENPIP1                                           ║
+║                   [25b]     ENPIP2                        [276]     RPM_FILTER_1                                     ║
+║                   [278]     TCF                           [27a]     Em                                               ║
+║                   [27b]     ECT_COUNT                     [27c]     RPMSCALE                                         ║
+║                   [280]     VE                            [284]     RPMX4                                            ║
+║                   [290]     PREVIOUS_PIP_TIME             [292]     PREVIOUS_PIP_TIME_H                              ║
+║                   [29c]     Next_spout_beta               [2ea]     PREVIOUS_PIP_E_TIME                              ║
+║                   [2ec]     PREVIOUS_PIP_HIGH_PW          [2f2]     BASE_ADDR_DTC_TABLE                              ║
+║                   [318]     RPM_FILTER_2                  [31a]     INJ_PIP_COUNT1                                   ║
+║                   [31b]     INJ_PIP_COUNT2                [320]     I_BETA_1                                         ║
+║                   [35a]     KEptzer                       [700]     KCsuml                                           ║
+║                   [702]     KTMTB100                      [752]     KTMTB200                                         ║
+║                   [7a2]     KTMTB200                      [7a4]     KEGOCT1                                          ║
+║                   [7a5]     KEGOCT2                       [7a6]     KAMRF1                                           ║
+║                   [7a8]     KAMRF2                        [7aa]     KLPCT1L                                          ║
+║                   [7ac]     KLPCT1R                       [7cc]     KWUCTR                                           ║
+║                   [7ce]     Slice_0                       [7d7]     TLO_FLAG                                         ║
+║                   [7d8]     DIFCTR                        [7da]     Kamqc                                            ║
+║                   [7dc]     K_ISC_KAM0L                   [7e4]     K_ISC_SUM                                        ║
+║                   [d00]     CONSOLE_STATUS                                                                           ║
 ║                                                                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 ╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
@@ -2498,7 +2499,7 @@ UPDATE_AD:
 8 3937: db,03                jc    393c               if ([TABLE_INDEX] >= 0) goto 393c;
 8 3939: b1,00,30             ldb   R30,0              [TABLE_INDEX] = 0;   
 8 393c: 45,10,03,f0,32       ad3w  R32,Rf0,310        [GEN_32] = Fc021;    
-8 3941: b0,c8,34             ldb   R34,Rc8            [GEN_34] = Rc8;      
+8 3941: b0,c8,34             ldb   R34,Rc8            [GEN_34] = [RC8];    
 8 3944: 2c,b3                scall 35f9               UUByteLU();          
 8 3946: 98,38,30             cmpb  R30,R38                                 
 8 3949: d1,05                jleu  3950               if ((uns) [TABLE_INDEX] <= R38) goto 3950;
@@ -2871,7 +2872,7 @@ UPDATE_RPM:
 8 3d55: 98,00,37             cmpb  R37,0                                   
 8 3d58: df,03                je    3d5d               if (R37 == 0) goto 3d5d;
 8 3d5a: b1,ff,36             ldb   R36,ff             R36 = ff;            
-8 3d5d: b0,36,c8             ldb   Rc8,R36            Rc8 = R36;           
+8 3d5d: b0,36,c8             ldb   Rc8,R36            [RC8] = R36;         
 8 3d60: 45,fe,00,f2,32       ad3w  R32,Rf2,fe         [GEN_32] = SPARK_INJ_TIMING_ADAPTIVE_RPM_SCALER;
 8 3d65: a0,ae,34             ldw   R34,Rae            [GEN_34] = [RPM];    
 8 3d68: ef,e3,f8             call  364e               UUWordLU();          
@@ -2969,11 +2970,11 @@ UPDATE_VE:
 8 3eb2: 77,fc,09,38          ad2b  R38,[Rfc+9]        R38 += [FAM_INCREMENTAL_ADDER];
 8 3eb6: db,26                jc    3ede               if (R38 > ff) goto 3ede;
 8 3eb8: 98,c8,38             cmpb  R38,Rc8                                 
-8 3ebb: db,21                jc    3ede               if ((uns) R38 >= Rc8) goto 3ede;
+8 3ebb: db,21                jc    3ede               if ((uns) R38 >= [RC8]) goto 3ede;
 8 3ebd: 77,f6,05,38          ad2b  R38,[Rf6+5]        R38 += [Sc0242];     
 8 3ec1: db,23                jc    3ee6               if (R38 > ff) goto 3ee6;
 8 3ec3: 98,c8,38             cmpb  R38,Rc8                                 
-8 3ec6: db,1e                jc    3ee6               if ((uns) R38 >= Rc8) goto 3ee6;
+8 3ec6: db,1e                jc    3ee6               if ((uns) R38 >= [RC8]) goto 3ee6;
 8 3ec8: 71,f7,e6             an2b  Re6,f7             <REF_FLAG> = 0;      
 8 3ecb: 8b,fd,d0,00,3e       cmpw  R3e,[Rfc+d0]                            
 8 3ed0: d1,0a                jleu  3edc               if ((uns) [FLAGS_3E] <= [FAM_EXIT_CLIP]) goto 3edc;
@@ -3270,11 +3271,11 @@ UPDATE_LOOP_STATUS:
 8 4277: 91,20,c9             orrb  Rc9,20             <OL_CL_TRANSITION_FLAG> = 1;
 8 427a: 71,fb,ed             an2b  Red,fb             <OLFLG> = 0;         
 8 427d: b1,01,34             ldb   R34,1              [GEN_34] = 1;        
-8 4280: c7,01,fc,01,34       stb   [1fc],R34          [CLFLG?] = [GEN_34]; 
+8 4280: c7,01,fc,01,34       stb   [1fc],R34          [FLAGS_1FC] = [GEN_34];
 8 4285: f0                   ret                      return;              
 
 8 4286: 91,04,ed             orrb  Red,4              <OLFLG> = 1;         
-8 4289: c7,01,fc,01,00       stb   [1fc],0            [CLFLG?] = 0;        
+8 4289: c7,01,fc,01,00       stb   [1fc],0            [FLAGS_1FC] = 0;     
 8 428e: b1,01,34             ldb   R34,1              [GEN_34] = 1;        
 8 4291: c7,01,5a,02,34       stb   [25a],R34          [ENPIP1] = [GEN_34]; 
 8 4296: c7,01,5b,02,34       stb   [25b],R34          [ENPIP2] = [GEN_34]; 
@@ -5926,7 +5927,7 @@ UPDATE_IDLE:
 8 61fd: d1,05                jleu  6204               if ((uns) [GEN_32] <= 0) goto 6204;
 8 61ff: 88,ae,32             cmpw  R32,Rae                                 
 8 6202: d9,7b                jgtu  627f               if ((uns) [GEN_32] > [RPM]) goto 627f;
-8 6204: b0,c8,34             ldb   R34,Rc8            [GEN_34] = Rc8;      
+8 6204: b0,c8,34             ldb   R34,Rc8            [GEN_34] = [RC8];    
 8 6207: 45,63,02,f4,32       ad3w  R32,Rf4,263        [GEN_32] = ISC_GAIN_V_RPM_ERROR;
 8 620c: ef,ea,d3             call  35f9               UUByteLU();          
 8 620f: 09,08,38             shlw  R38,8              R38 = R38 * 100;     

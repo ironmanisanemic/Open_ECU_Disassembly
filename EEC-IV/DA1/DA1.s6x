@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<S6x version="1.00" generated="2025-07-27 14:22:05">
-  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2025-07-27T21:22:02.5789987Z" IdentificationStatus="0">
+<S6x version="1.00" generated="2025-07-29 08:54:55">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="true" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2025-07-29T15:51:53.3103728Z" IdentificationStatus="0">
     <Label>Exported</Label>
     <Comments />
     <Header />
@@ -6905,6 +6905,18 @@ WordHex:1}</StructDef>
       <Label>SPARK</Label>
       <Comments />
     </Register>
+    <Register AddressInt="200" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-09T08:19:27.5451604Z" DateUpdated="2025-07-29T15:51:53.3103728Z" IdentificationStatus="0">
+      <Label>RC8</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression />
+      <Units />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
     <Register AddressInt="201" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-12-29T04:25:38.8373455Z" DateUpdated="2025-03-26T01:48:34.6560229Z" IdentificationStatus="0">
       <Label>FLAGS_C9</Label>
       <ByteLabel />
@@ -8413,11 +8425,37 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Register>
-    <Register AddressInt="508" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-10T07:46:30.1491217Z" DateUpdated="2025-03-26T02:26:51.6300757Z" IdentificationStatus="0">
-      <Label>CLFLG?</Label>
+    <Register AddressInt="508" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-11-10T07:46:30.1491217Z" DateUpdated="2025-07-29T15:42:07.6776374Z" IdentificationStatus="0">
+      <Label>FLAGS_1FC</Label>
       <ByteLabel />
       <WordLabel />
       <Comments />
+      <BitFlags>
+        <BitFlag Position="2" Skip="false" ShortLabel="OPEN_LOOP" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2025-07-29T15:40:02.4879018Z" DateUpdated="2025-07-29T15:41:51.2497296Z" IdentificationStatus="0">
+          <Label>OPEN_LOOP</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="6" Skip="false" ShortLabel="indflg" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2025-07-29T15:40:27.2057956Z" DateUpdated="2025-07-29T15:41:56.2366151Z" IdentificationStatus="0">
+          <Label>indflg</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+        <BitFlag Position="7" Skip="false" ShortLabel="AC" SetValue="1" NotSetValue="0" HideParent="true" DateCreated="2025-07-29T15:41:05.0007658Z" DateUpdated="2025-07-29T15:42:00.7264947Z" IdentificationStatus="0">
+          <Label>AC</Label>
+          <Comments />
+          <IdentificationDetails />
+          <Category />
+          <Category2 />
+          <Category3 />
+        </BitFlag>
+      </BitFlags>
       <ScaleExpression />
       <Units />
       <IdentificationDetails />
