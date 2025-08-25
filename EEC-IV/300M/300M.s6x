@@ -1,0 +1,2068 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<S6x version="1.00" generated="2023-10-10 22:08:12">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="false" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="2000" XdfBaseOffsetSubtract="true" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-12T14:06:51.291241Z" IdentificationStatus="0">
+    <Label>300M.s6x</Label>
+    <BanksProperties>
+      <BankProperties BankNum="8" AddressBin="00000" />
+    </BanksProperties>
+    <IdentificationDetails />
+  </Properties>
+  <Tables>
+    <Table BankNum="8" AddressInt="27596" DuplicateNum="0" AddressBinInt="27596" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="5" RowsNumber="5" ShortLabel="FN1348" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-12T12:54:16.1715008Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Hot Injector Comp Time Multiplier</Label>
+      <Comments>FN1348 - Hot Injector Comp Time Multiplier</Comments>
+      <CellsScaleExpression>X/64</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>ATMR3</ColsUnits>
+      <RowsUnits>AirMass</RowsUnits>
+      <CellsUnits>xMult</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="27621" DuplicateNum="0" AddressBinInt="27621" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="5" RowsNumber="5" ShortLabel="FN1349" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-12T12:55:15.2945315Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Hot Injector Comp Fuel enrichment factor</Label>
+      <Comments>FN1349 - Hot Injector Comp Fuel enrichment factor</Comments>
+      <CellsScaleExpression>X/64</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>°F ECT</ColsUnits>
+      <RowsUnits>°F ACSTRT</RowsUnits>
+      <CellsUnits>xMult</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="27646" DuplicateNum="0" AddressBinInt="27646" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="5" RowsNumber="5" ShortLabel="FN1350" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-12T12:07:18.8025985Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Crank PW Multiplier</Label>
+      <Comments>FN1350 - Crank PW Multiplier
+
+Crank mode Fuel Air ratio multiplier used to taper crank fuel command during start/runup.
+PURPOSE:   Crank mode Fuel Air ratio multiplier
+X INPUT:   Normalized CRKPIP_CTR_BW - FN023
+Y INPUT:   Normalized ACT - FN024
+OUTPUT:	 Multiplier</Comments>
+      <CellsScaleExpression>X/64</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>CRKPIP</ColsUnits>
+      <RowsUnits>°F</RowsUnits>
+      <CellsUnits />
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="28389" DuplicateNum="0" AddressBinInt="28389" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="12" RowsNumber="8" ShortLabel="FN1320" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-11T16:43:03.6154292Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>VE Table Air (Fuel)</Label>
+      <Comments>FN1320 - VE Table Air (Fuel)
+
+Primary fueling table in speed density ecu
+
+y = mapope
+x = n</Comments>
+      <CellsScaleExpression>X / 256</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>VE</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="28564" DuplicateNum="0" AddressBinInt="28564" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1321" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-11T09:05:56.2896972Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Equlibrium intake surface fuel</Label>
+      <Comments>FN1321 - Equlibrium intake surface fuel</Comments>
+      <CellsScaleExpression>X/8</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>°F</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits />
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="28644" DuplicateNum="0" AddressBinInt="28644" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1322" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-11T09:05:56.2896972Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Equilibrium fuel transfer time</Label>
+      <Comments>FN1322 - Equilibrium fuel transfer time
+
+OUTPUT:  Fractional value of injection</Comments>
+      <CellsScaleExpression>X/8</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>°F</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>xMult</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="28842" DuplicateNum="0" AddressBinInt="28842" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="7" RowsNumber="6" ShortLabel="FN1861" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-12T09:55:52.9576131Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>ISC Multiplier (Drive)</Label>
+      <Comments>FN1861 - ISC Multiplier (Drive)</Comments>
+      <CellsScaleExpression>X / 64</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>°F</ColsUnits>
+      <RowsUnits>Secs</RowsUnits>
+      <CellsUnits>xISC</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="30470" DuplicateNum="0" AddressBinInt="30470" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1362" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-12T09:20:32.7739802Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Base OL Fuel</Label>
+      <Comments>FN1362 - Base OL Fuel
+
+On older FN1362 Tables size is 8x10
+
+Base Open Loop Fuel table = a 12 x 8 table of lambda values as a function of temperature and load.
+X INPUT: NORMALIZED FRCBFT * ACT + (1 - FRCBFT) * ECT - FN022BX
+Y INPUT: NORMALIZED PERLOAD - FN072
+OUTPUT:  BASE OPEN LOOP FUEL</Comments>
+      <CellsScaleExpression>X/128</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>°F</ColsUnits>
+      <RowsUnits>PERLOAD</RowsUnits>
+      <CellsUnits>-LAMBSE</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="30550" DuplicateNum="0" AddressBinInt="30550" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1361_H_RES" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-12T09:34:17.8817244Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Startup Enrichment Lambse Subtractor</Label>
+      <Comments>FN1361_H_RES - Startup Enrichment Lambse Subtractor
+
+older strats with FN1361_H_RES are 8x10
+
+STARTUP OPEN LOOP enleanment table for exhaust warm-up	X INPUT: NORMALIZED FRCSFT * ACT + (1 - FRCSFT) * ECT - FN022BX
+Y INPUT: NORMALIZED TIME SINCE START - FN018C
+OUTPUT:	 STARTUP OPEN LOOP FUEL</Comments>
+      <CellsScaleExpression>X/128</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>°F</ColsUnits>
+      <RowsUnits>Secs</RowsUnits>
+      <CellsUnits>-LAMBSE</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="30630" DuplicateNum="0" AddressBinInt="30630" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1462" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-12T09:21:22.3510882Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Base CL Fuel (MPG Mode)</Label>
+      <Comments>FN1462 - Base OL Fuel  (MPG Mode)
+
+On older FN1362 Tables size is 8x10
+
+Base Open Loop Fuel table = a 12 x 8 table of lambda values as a function of temperature and load.
+X INPUT: NORMALIZED FRCBFT * ACT + (1 - FRCBFT) * ECT - FN022BX
+Y INPUT: NORMALIZED PERLOAD - FN072
+OUTPUT:  BASE OPEN LOOP FUEL</Comments>
+      <CellsScaleExpression>X/128</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>PERLOAD</RowsUnits>
+      <CellsUnits>-LAMBSE</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="30710" DuplicateNum="0" AddressBinInt="30710" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="8" RowsNumber="7" ShortLabel="FN1303" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-12T09:47:44.081062Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Desired Accel Enrichment fuel flow</Label>
+      <Comments>FN1303 - Desired Accel Enrichment fuel flow</Comments>
+      <CellsScaleExpression>X</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>TAR</ColsUnits>
+      <RowsUnits>°F</RowsUnits>
+      <CellsUnits>lbm/hr</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="30766" DuplicateNum="0" AddressBinInt="30766" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="Tb012" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-10T13:36:42.4412871Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Table 012</Label>
+      <Comments>Tb012 - Table 012</Comments>
+      <CellsScaleExpression>X</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>rpm</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits />
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="30846" DuplicateNum="0" AddressBinInt="30846" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1120" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-11T16:58:56.1636052Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Base MBT Spark Table</Label>
+      <Comments>FN1120 - Base MBT Spark Table
+
+8x10 in older strats; MAP vs RPM
+
+MBT spark at stoichiometry and 0% EGR
+X INPUT:   Normalized N - FN070	
+Y INPUT:   Normalized LOAD - FN071
+OUTPUT:	   Spark advance (deg BTDC)</Comments>
+      <CellsScaleExpression>X/4</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>SpkAdv</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="30926" DuplicateNum="0" AddressBinInt="30926" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1121" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-11T17:00:01.6533921Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>MBT Spark EGR Adder</Label>
+      <Comments>FN1121 - MBT Spark EGR Adder
+
+~8x10 in older strats
+Increase in mbt spark for each % EGR
+X INPUT:   Normalized RPM - FN070
+Y INPUT:   Normalized LOAD - FN071
+OUTPUT:    Spark adder (degrees)</Comments>
+      <CellsScaleExpression>X/32</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>SpkAdv</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="31006" DuplicateNum="0" AddressBinInt="31006" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1122" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-12T07:13:14.1429679Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Spark Advance Reduction Table for Octane</Label>
+      <Comments>FN1122 - Spark Advance Reduction Table for Octane
+
+~in older strats FN1122 is 8x10
+
+FN2225
+PURPOSE:   Borderline detonation adjustment for octane bar
+X INPUT:   Normalized RPM - FN070
+Y INPUT:   Normalized LOAD - FN071
+OUTPUT:  Octane switch adjustment to Borderline spark advance(degrees)</Comments>
+      <CellsScaleExpression>X/4</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>SpkAdv</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="31086" DuplicateNum="0" AddressBinInt="31086" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="Tb016" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-10T13:36:42.4412871Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Table 016</Label>
+      <Comments>Tb016 - Table 016</Comments>
+      <CellsScaleExpression>X</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>rpm</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits />
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="31166" DuplicateNum="0" AddressBinInt="31166" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1126" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-11T16:59:19.6853734Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Base MBT Spark Table (MPG Mode)</Label>
+      <Comments>FN1126 - Base MBT Spark Table (MPG Mode)
+
+8x10 in older strats; MAP vs RPM
+
+MBT spark at stoichiometry and 0% EGR
+X INPUT:   Normalized N - FN070	
+Y INPUT:   Normalized LOAD - FN071
+OUTPUT:	   Spark advance (deg BTDC)</Comments>
+      <CellsScaleExpression>X/4</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>SpkAdv</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="31246" DuplicateNum="0" AddressBinInt="31246" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1127" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-11T17:00:56.7470099Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Spark Advance  Adder  Table  for  Cold  Temperatures  and Tip-ins</Label>
+      <Comments>FN1127 - Spark Advance  Adder  Table  for  Cold  Temperatures  and Tip-ins</Comments>
+      <CellsScaleExpression>X/4</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>SpkAdv</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="31326" DuplicateNum="0" AddressBinInt="31326" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1128" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-11T17:01:04.2565244Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Spark Cold Temperature Multiplier</Label>
+      <Comments>FN1128 - Spark Cold Temperature Multiplier</Comments>
+      <CellsScaleExpression>X/64</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>°F ECT / ACT</ColsUnits>
+      <RowsUnits>TP_REL</RowsUnits>
+      <CellsUnits>xMult</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="31406" DuplicateNum="0" AddressBinInt="31406" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1129" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-11T17:00:11.5749244Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>MBT Spark EGR Adder (MPG Mode)</Label>
+      <Comments>FN1129 - MBT Spark EGR Adder (MPG Mode)
+
+~8x10 in older strats
+Increase in mbt spark for each % EGR
+X INPUT:   Normalized RPM - FN070
+Y INPUT:   Normalized LOAD - FN071
+OUTPUT:    Spark adder (degrees)</Comments>
+      <CellsScaleExpression>X/32</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>SpkAdv</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="31552" DuplicateNum="0" AddressBinInt="31552" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="true" ColsNumber="10" RowsNumber="9" ShortLabel="FN1325" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-10T13:05:04.1338217Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Adaptive Update Rate (LOAD)</Label>
+      <Comments>FN1325 - Adaptive Update Rate (LOAD)
+Positive values or zero permit adaptive update to occur in the cell, higher values reduce the update rate. Negative values force the ecu to use a different cell, e.g. -24 indicates that the cell located at row 2, column 4 should be used. WARNING: either the top or bottom row is for the special idle cells and is yet to be determined. WARNING column scaling to be confirmed.</Comments>
+      <CellsScaleExpression>X</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>LOAD</RowsUnits>
+      <CellsUnits>Loops</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="32117" DuplicateNum="0" AddressBinInt="32117" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1220" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-10T13:36:42.4412871Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>EGR Rate</Label>
+      <Comments>FN1220 - EGR Rate
+
+If EGR is enabled, the base amount of EGR to  be  added.
+The base amount of EGR can be adjusted by ECT, ACT, and BP to reflect special engine operating conditions.</Comments>
+      <CellsScaleExpression>X/16</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>xMult</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="32197" DuplicateNum="0" AddressBinInt="32197" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1222" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2023-09-10T13:36:42.4412871Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>EGR Rate (MPG Mode)</Label>
+      <Comments>FN1222 - EGR Rate (MPG Mode)
+
+If EGR is enabled, the base amount of EGR to  be  added.
+The base amount of EGR can be adjusted by ECT, ACT, and BP to reflect special engine operating conditions.</Comments>
+      <CellsScaleExpression>X/16</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>xMult</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+  </Tables>
+  <Functions>
+    <Function BankNum="8" AddressInt="27438" DuplicateNum="0" AddressBinInt="27438" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="9" ShortLabel="FN303" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T14:01:26.5380557Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>WOT Lambse Multiplier</Label>
+      <Comments>FN303 - WOT Lambse Multiplier</Comments>
+      <InputScaleExpression>X/4</InputScaleExpression>
+      <OutputScaleExpression>X/128</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <OutputUnits>xLambse</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27474" DuplicateNum="0" AddressBinInt="27474" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN310" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T14:06:44.4010007Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>WOT Time Lambse Multiplier</Label>
+      <Comments>FN310 - WOT Time Lambse Multiplier</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>WOT_Tmr</InputUnits>
+      <OutputUnits>xLambse</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27488" DuplicateNum="0" AddressBinInt="27488" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN005" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T12:56:10.2482281Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>ECT Scaler for Hot Injector Comp</Label>
+      <Comments>FN005 - ECT Scaler for Hot Injector Comp</Comments>
+      <InputScaleExpression>X*2</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>°F</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27512" DuplicateNum="0" AddressBinInt="27512" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN007" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T12:57:24.6308665Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>AM Scaler for Hot Injector Comp</Label>
+      <Comments>FN007 - AM Scaler for Hot Injector Comp</Comments>
+      <InputScaleExpression>X/1024</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>lb/min AM</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27532" DuplicateNum="0" AddressBinInt="27532" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN008" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T12:57:01.4984631Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>ATMR3 Sclaer for Hot Injector Comp</Label>
+      <Comments>FN008 - ATMR3 Sclaer for Hot Injector Comp</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>Secs ATMR3</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27552" DuplicateNum="0" AddressBinInt="27552" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN023" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T12:07:48.1252173Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>Cranking Fuel PW Crank PIP Scaler</Label>
+      <Comments>FN023 - Cranking Fuel PW Crank PIP Scaler
+
+FN023 - Do not edit first or last entries. Provides column scaling for the following table;
+
+'Cranking Fuel PW' (aka FN1350)</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>PIP</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27572" DuplicateNum="0" AddressBinInt="27572" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN024" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T12:08:09.520527Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>Cranking Fuel PW ACT Scaler</Label>
+      <Comments>FN024 - Cranking Fuel PW ACT Scaler
+
+FN024 - Do not edit first or last entries. Provides row scaling for the following table;
+
+'Cranking Fuel PW' (aka FN1350)</Comments>
+      <InputScaleExpression>X*2</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>°F</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27672" DuplicateNum="0" AddressBinInt="27672" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN331A" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T09:49:17.8282511Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>AEM TPREL Multiplier</Label>
+      <Comments />
+      <InputScaleExpression>X / 64</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>TPREL</InputUnits>
+      <OutputUnits>xMul</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="27692" DuplicateNum="0" AddressBinInt="27692" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN379" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T09:51:09.8617022Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>AE RPM Multiplier</Label>
+      <Comments />
+      <InputScaleExpression>X / 4</InputScaleExpression>
+      <OutputScaleExpression>X / 64</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <OutputUnits>xMul</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="27716" DuplicateNum="0" AddressBinInt="27716" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="9" ShortLabel="FN091" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T07:14:41.3083695Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>Spark TEMP_FRAC Scaler</Label>
+      <Comments>FN091 - TEMP_FRAC Scaler for Spark</Comments>
+      <InputScaleExpression>X/64</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>°F ECT-ACT</InputUnits>
+      <OutputUnits />
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27752" DuplicateNum="0" AddressBinInt="27752" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN092" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T07:15:05.8129865Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>Spark TP_REL Scaler</Label>
+      <Comments>FN092 - Spark TP_REL Scaler</Comments>
+      <InputScaleExpression>X/12800</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>TP_REL</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27793" DuplicateNum="0" AddressBinInt="27793" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN875D" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T09:57:49.5439342Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>AM Drive</Label>
+      <Comments />
+      <InputScaleExpression>X * 64</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>DSDRPM</InputUnits>
+      <OutputUnits>lbs/hr</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27805" DuplicateNum="0" AddressBinInt="27805" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN875HN" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T10:01:00.3622852Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>Idle AM Neutral</Label>
+      <Comments />
+      <InputScaleExpression>X * 64</InputScaleExpression>
+      <OutputScaleExpression>X/128</OutputScaleExpression>
+      <InputUnits>DSDRPM</InputUnits>
+      <OutputUnits>LBS/MIN</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27954" DuplicateNum="0" AddressBinInt="27954" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN018A" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T09:35:24.7160836Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>Fuel ATMR1 Scaler</Label>
+      <Comments>FN018A - Fuel ATMR1 Scaler</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>ATMR1</InputUnits>
+      <OutputUnits>Row</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27982" DuplicateNum="0" AddressBinInt="27982" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN019A" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T09:46:13.0902089Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>Accel Enrichment TAR Scaler</Label>
+      <Comments>FN019A - Accel Enrichment TAR Scaler
+
+Throttle Angle Rate for Accel Enrichment.</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>TAR</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="28002" DuplicateNum="0" AddressBinInt="28002" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="8" ShortLabel="FN020C" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T09:42:01.4827007Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>ISC ECT Scaler</Label>
+      <Comments>FN020C - ISC ECT Scaler</Comments>
+      <InputScaleExpression>X / 64</InputScaleExpression>
+      <OutputScaleExpression>X / 256</OutputScaleExpression>
+      <InputUnits>°F</InputUnits>
+      <OutputUnits />
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="28034" DuplicateNum="0" AddressBinInt="28034" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="8" ShortLabel="FN021V" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-11T16:46:50.8984971Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>VE Table MAPOPE Scaler</Label>
+      <Comments>FN021V - VE Table MAPOPE Scaler</Comments>
+      <InputScaleExpression>X / 128</InputScaleExpression>
+      <OutputScaleExpression>X / 256</OutputScaleExpression>
+      <InputUnits>MAPOPE</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="28066" DuplicateNum="0" AddressBinInt="28066" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN022A" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-11T16:35:14.875537Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>Fuel ECT Scaler</Label>
+      <Comments>FN022A - Fuel ECT Scaler
+
+5 rows for older functions</Comments>
+      <InputScaleExpression>X / 64</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>°F</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="28106" DuplicateNum="0" AddressBinInt="28106" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN070" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-11T16:35:39.3886842Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>RPM Scaler</Label>
+      <Comments>FN070 - RPM Scaler</Comments>
+      <InputScaleExpression>X / 4</InputScaleExpression>
+      <OutputScaleExpression>X / 256</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="28134" DuplicateNum="0" AddressBinInt="28134" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="9" ShortLabel="FN070V" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-11T16:45:25.8793562Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>VE Table RPM Scaler</Label>
+      <Comments>FN070V - Lambda / VE Table RPM Scaler</Comments>
+      <InputScaleExpression>X / 4</InputScaleExpression>
+      <OutputScaleExpression>X / 256</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="28170" DuplicateNum="0" AddressBinInt="28170" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN072D" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T09:22:42.5454192Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>Fuel PERLOAD Scaler</Label>
+      <Comments>FN072D - Fuel LOAD Scaler</Comments>
+      <InputScaleExpression>X / 128</InputScaleExpression>
+      <OutputScaleExpression>X / 256</OutputScaleExpression>
+      <InputUnits>PERLOAD</InputUnits>
+      <OutputUnits>Row</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="28198" DuplicateNum="0" AddressBinInt="28198" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN071" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-11T16:34:32.915509Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>Fuel/Spark LOAD (MAP) Scaler</Label>
+      <Comments>FN071 - Fuel/Spark LOAD (MAP) Scaler
+
+this function also provides scaling for the base spark table on older 1980s speed density ecu's
+
+LOAD NORMALIZING FUNCTION
+PURPOSE:  USE FOR TABLE LOOKUP
+INPUT:  LOAD
+OUTPUT: NORMALIZED LOAD</Comments>
+      <InputScaleExpression>X / 8</InputScaleExpression>
+      <OutputScaleExpression>X / 256</OutputScaleExpression>
+      <InputUnits>MAPOPE</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="28818" DuplicateNum="0" AddressBinInt="28818" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN018B" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T09:56:45.223452Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>ISC ATMR3 Scaler</Label>
+      <Comments>FN018B - ISC ATMR3 Scaler</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>Seconds</InputUnits>
+      <OutputUnits />
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="29400" DuplicateNum="0" AddressBinInt="29400" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN219" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-11T09:05:56.2896972Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>EGR Mass Flow Transfer</Label>
+      <Comments />
+      <InputScaleExpression>X / 64</InputScaleExpression>
+      <OutputScaleExpression>X / 32768</OutputScaleExpression>
+      <InputUnits>iEVP</InputUnits>
+      <OutputUnits>lbs/min</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="29480" DuplicateNum="0" AddressBinInt="29480" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN239" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-11T09:05:56.2896972Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>EGR Flow Error Correction</Label>
+      <Comments>egr dutycycle adder vs egr error</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits>EGRDC</InputUnits>
+      <OutputUnits>correction</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="29867" DuplicateNum="0" AddressBinInt="29867" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN305" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-11T16:48:30.17037Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>ACT AM Multiplier VE</Label>
+      <Comments>FN305 - ACT AM Multiplier VE
+
+lower value richens
+higher value leans</Comments>
+      <InputScaleExpression>X / 0.5</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>°F ACT</InputUnits>
+      <OutputUnits>xVE</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="29877" DuplicateNum="0" AddressBinInt="29877" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN326" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-11T16:49:12.8313429Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>ECT AM Multiplier VE</Label>
+      <Comments>lower value richens
+higher value leans</Comments>
+      <InputScaleExpression>X / 0.5</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>ECT</InputUnits>
+      <OutputUnits>xVE</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="29887" DuplicateNum="0" AddressBinInt="29887" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="9" ShortLabel="FN367" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T12:27:33.2577171Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>Injector Offset Voltage</Label>
+      <Comments />
+      <InputScaleExpression>X / 16</InputScaleExpression>
+      <OutputScaleExpression>X / 32</OutputScaleExpression>
+      <InputUnits>VBAT</InputUnits>
+      <OutputUnits>PW</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="30048" DuplicateNum="0" AddressBinInt="30048" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN332" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T09:52:30.0428639Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>AE Pulse Period</Label>
+      <Comments>FN332 - AE Pulse Period</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits>mass</InputUnits>
+      <OutputUnits>xx</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="30058" DuplicateNum="0" AddressBinInt="30058" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN378" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T09:50:15.9996289Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>AE BP Multiplier</Label>
+      <Comments />
+      <InputScaleExpression>X / 8</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>in hg</InputUnits>
+      <OutputUnits>xMul</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="30068" DuplicateNum="0" AddressBinInt="30068" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="13" ShortLabel="FNCRK_LAMS" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-12T12:09:04.1464415Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>Cranking Lambse (FN348X Crank PW)</Label>
+      <Comments />
+      <InputScaleExpression>X / 0.5</InputScaleExpression>
+      <OutputScaleExpression>X / 655.36</OutputScaleExpression>
+      <InputUnits>ECT</InputUnits>
+      <OutputUnits>PW</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="31691" DuplicateNum="0" AddressBinInt="31691" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN307" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-11T09:05:56.2906984Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>Transient Constant  Multiplier</Label>
+      <Comments />
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X / 32</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <OutputUnits>xMul</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="32028" DuplicateNum="0" AddressBinInt="32028" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN211" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-11T09:05:56.2906984Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>ECT EGR Multiplier</Label>
+      <Comments />
+      <InputScaleExpression>X / 0.5</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>ECT</InputUnits>
+      <OutputUnits>X</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="32042" DuplicateNum="0" AddressBinInt="32042" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN220" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-11T09:05:56.2906984Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>ACT EGR Multiplier</Label>
+      <Comments />
+      <InputScaleExpression>X / 0.5</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>ACT</InputUnits>
+      <OutputUnits>X</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="32107" DuplicateNum="0" AddressBinInt="32107" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN212A" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2023-09-11T16:18:49.6458574Z" DateUpdated="2023-10-11T03:04:56.6793328Z" IdentificationStatus="0">
+      <Label>BP EGR Multiplier</Label>
+      <Comments>FN212A - BP EGR Multiplier
+
+EGR rate multiplier as a function of Barometric Pressure BP.</Comments>
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/128</OutputScaleExpression>
+      <InputUnits>BP</InputUnits>
+      <OutputUnits>xMult</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+  </Functions>
+  <Scalars>
+    <Scalar BankNum="8" AddressInt="13033" DuplicateNum="0" AddressBinInt="13033" isCalibrationElement="false" Skip="false" Byte="false" Signed="false" ShortLabel="PYM_FPPRT" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2023-09-10T13:05:14.6724773Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Fuel Pump Prime Time</Label>
+      <Comments>PYM_FPPRT - Fuel Pump Prime Time</Comments>
+      <ScaleExpression>X / 1024</ScaleExpression>
+      <Units>Seconds</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="18938" DuplicateNum="0" AddressBinInt="18938" isCalibrationElement="false" Skip="false" Byte="false" Signed="false" ShortLabel="P_49FA" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>fuel_mpg_mode_enable</Label>
+      <Comments>P_49FA - fuel_mpg_mode_enable
+fuel_mpg_mode_enable</Comments>
+      <ScaleExpression />
+      <Units>16529=Enable; 49009=Disable; Use NOTHING else</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28369" DuplicateNum="0" AddressBinInt="28369" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_006ED1" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>spark_torque_reduction_sw</Label>
+      <Comments>P_006ED1 - spark_torque_reduction_sw
+spark_torque_reduction_sw</Comments>
+      <ScaleExpression />
+      <Units>1=Enable;0=Disable</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28375" DuplicateNum="0" AddressBinInt="28375" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="NUMOUT" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2023-09-10T09:33:57.6257986Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Number of Injector Output Ports</Label>
+      <Comments>NUMOUT - Number of Injector Output Ports
+NUMOUT</Comments>
+      <ScaleExpression>X</ScaleExpression>
+      <Units>no.</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28380" DuplicateNum="0" AddressBinInt="28380" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="DFMIN0" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2023-09-10T09:33:57.6257986Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Transient Spark Flag Hi Lo Changes</Label>
+      <Comments>DFMIN0 - Transient Spark Flag Hi Lo Changes</Comments>
+      <ScaleExpression>X</ScaleExpression>
+      <Units>#</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28381" DuplicateNum="0" AddressBinInt="28381" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="DFMIN1" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2023-09-10T09:33:57.6257986Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Transient Spark Flag Lo Hi Changes</Label>
+      <Comments>DFMIN1 - Transient Spark Flag Lo Hi Changes</Comments>
+      <ScaleExpression>X</ScaleExpression>
+      <Units>#</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28382" DuplicateNum="0" AddressBinInt="28382" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_6EDE" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>fuel_ve_cid_multiplier</Label>
+      <Comments>P_6EDE - fuel_ve_cid_multiplier
+fuel_ve_cid_multiplier</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28384" DuplicateNum="0" AddressBinInt="28384" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_6EE0" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>fuel_ve_multiplier</Label>
+      <Comments>P_6EE0 - fuel_ve_multiplier
+fuel_ve_multiplier</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28492" DuplicateNum="0" AddressBinInt="28492" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="AHISL" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2023-09-12T11:41:09.4132703Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>LBS/HR - Injector High Slope</Label>
+      <Comments>AHISL - LBS/HR - Injector High Slope
+</Comments>
+      <ScaleExpression>X/582.53333333333</ScaleExpression>
+      <Units>LBS/HR</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28508" DuplicateNum="0" AddressBinInt="28508" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_6F5C" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>fuel_adapt_max</Label>
+      <Comments>P_6F5C - fuel_adapt_max
+fuel_adapt_max</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28510" DuplicateNum="0" AddressBinInt="28510" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_6F5E" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>fuel_adapt_min</Label>
+      <Comments>P_6F5E - fuel_adapt_min
+fuel_adapt_min</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28516" DuplicateNum="0" AddressBinInt="28516" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_6F64" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>rev_limit</Label>
+      <Comments>P_6F64 - rev_limit
+rev_limit</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28518" DuplicateNum="0" AddressBinInt="28518" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_6F66" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>rev_limit_hysterisis</Label>
+      <Comments>P_6F66 - rev_limit_hysterisis
+rev_limit_hysterisis</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28522" DuplicateNum="0" AddressBinInt="28522" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_6F6A" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>rev_limit2</Label>
+      <Comments>P_6F6A - rev_limit2
+rev_limit2</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28742" DuplicateNum="0" AddressBinInt="28742" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_7046" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2023-09-11T09:05:56.2896972Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>ACT to ECT Percentage</Label>
+      <Comments>P_7046 - ACT to ECT Percentage
+0 == ACT
+1 == ECT</Comments>
+      <ScaleExpression>X / 128</ScaleExpression>
+      <Units>Act/Ect</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28778" DuplicateNum="0" AddressBinInt="28778" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="Sc0339" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2023-09-11T09:05:56.2896972Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>Knock Cylinder Strategy - KNKCYL</Label>
+      <Comments>Sc0339 - Knock Cylinder Strategy - KNKCYL
+KNKCYL - Determines whether an individual or multi cylinder knock strategy is to be used.
+
+Set to '1' to for a multi cylinder knock strategy. This will result in all cylinders being retarded by the same amount when spark retard for knock is applied.
+
+Set equal to the number of cylinders for an individual cylinder knock strategy. This will result in each cylinder being retarded by the a different amount when spark retard for knock is applied.</Comments>
+      <ScaleExpression>X</ScaleExpression>
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28790" DuplicateNum="0" AddressBinInt="28790" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="SSFCTR" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2023-09-10T09:33:57.6257986Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Steady State Factor</Label>
+      <Comments>SSFCTR - Steady State Factor
+SSFCTR - Used in MKAY and signature KAY calculations.</Comments>
+      <ScaleExpression>X/65536</ScaleExpression>
+      <Units>multiplier</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28792" DuplicateNum="0" AddressBinInt="28792" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="FKSKAY" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2023-09-10T09:33:57.6257986Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Signature PIP Half Period Multiplier Filter Constant</Label>
+      <Comments>FKSKAY - Signature PIP Half Period Multiplier Filter Constant
+FKSKAY</Comments>
+      <ScaleExpression>X/65536</ScaleExpression>
+      <Units>x</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28794" DuplicateNum="0" AddressBinInt="28794" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="SIGKLL" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2023-09-10T09:33:57.6257986Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Signature PIP Multiplier Lowest Value</Label>
+      <Comments>SIGKLL - Signature PIP Multiplier Lowest Value
+SIGKLL - 1.42857 for 30% dutycycle signature PIP, 1.25000 for 35% dutycycle signature PIP.</Comments>
+      <ScaleExpression>X/32768</ScaleExpression>
+      <Units>multiplier</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28796" DuplicateNum="0" AddressBinInt="28796" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="SIGKLU" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2023-09-10T09:33:57.6257986Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>Signature PIP Multiplier Highest Value</Label>
+      <Comments>SIGKLU - Signature PIP Multiplier Highest Value
+SIGKLU - 1.99996 for 30% dutycycle signature PIP, 1.66666 for 35% dutycycle signature PIP.</Comments>
+      <ScaleExpression>X/32768</ScaleExpression>
+      <Units>multiplier</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="29147" DuplicateNum="0" AddressBinInt="29147" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_71DB" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>fuel_adapt_ect_min</Label>
+      <Comments>P_71DB - fuel_adapt_ect_min
+fuel_adapt_ect_min</Comments>
+      <ScaleExpression />
+      <Units>F</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="29148" DuplicateNum="0" AddressBinInt="29148" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_71DC" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>fuel_adapt_ect_max</Label>
+      <Comments>P_71DC - fuel_adapt_ect_max
+fuel_adapt_ect_max</Comments>
+      <ScaleExpression />
+      <Units>F</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="29149" DuplicateNum="0" AddressBinInt="29149" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_71DD" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>fuel_adapt_act_max</Label>
+      <Comments>P_71DD - fuel_adapt_act_max
+fuel_adapt_act_max</Comments>
+      <ScaleExpression />
+      <Units>F</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="29150" DuplicateNum="0" AddressBinInt="29150" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_0071DE" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>fuel_adapt_act_min</Label>
+      <Comments>P_0071DE - fuel_adapt_act_min
+fuel_adapt_act_min</Comments>
+      <ScaleExpression />
+      <Units>F</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31650" DuplicateNum="0" AddressBinInt="31650" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="Sc0210" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2023-09-11T09:05:56.2896972Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>Signature PIP Difference Value - MHPFD</Label>
+      <Comments>Sc0210 - Signature PIP Difference Value - MHPFD
+MHPFD - Permitted values are;
+
+8 cylinder, signature dutycycle &lt;= 35% = 0.20
+6 cylinder, signature dutycycle &lt;= 30% = 0.24
+4 cylinder, signature dutycycle &lt;= 30% = 0.29
+Signature PIP distributor not present = 0.99</Comments>
+      <ScaleExpression>X / 65535</ScaleExpression>
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31685" DuplicateNum="0" AddressBinInt="31685" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="TFCTM" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2023-09-11T09:05:56.2906984Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>Transient Fuel Delay Startup</Label>
+      <Comments>TFCTM - Transient Fuel Delay Startup
+time to delay transient fuel compensation since time engine running</Comments>
+      <ScaleExpression>X</ScaleExpression>
+      <Units>sec</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31688" DuplicateNum="0" AddressBinInt="31688" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="MEFTRD" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2023-09-11T09:05:56.2906984Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>Transient Fuel Decel Multiplier</Label>
+      <Comments>MEFTRD - Transient Fuel Decel Multiplier
+</Comments>
+      <ScaleExpression>X / 128</ScaleExpression>
+      <Units>%</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31726" DuplicateNum="0" AddressBinInt="31726" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_7BEE" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>mph_limiter</Label>
+      <Comments>P_7BEE - mph_limiter
+mph_limiter</Comments>
+      <ScaleExpression />
+      <Units>MPH</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31727" DuplicateNum="0" AddressBinInt="31727" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_7BEF" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>mph_limiter_hysteris</Label>
+      <Comments>P_7BEF - mph_limiter_hysteris
+mph_limiter_hysteris</Comments>
+      <ScaleExpression />
+      <Units>MPH</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31765" DuplicateNum="0" AddressBinInt="31765" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_7C15" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>spark_min_allowed</Label>
+      <Comments>P_7C15 - spark_min_allowed
+spark_min_allowed</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31766" DuplicateNum="0" AddressBinInt="31766" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_7C16" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>spark_max_allowed</Label>
+      <Comments>P_7C16 - spark_max_allowed
+spark_max_allowed</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31769" DuplicateNum="0" AddressBinInt="31769" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_007C19" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>spark_torque_reduction2_sw</Label>
+      <Comments>P_007C19 - spark_torque_reduction2_sw
+spark_torque_reduction2_sw</Comments>
+      <ScaleExpression />
+      <Units>1=Enable;0=Disable</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31790" DuplicateNum="0" AddressBinInt="31790" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_7C2E" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>spark_max_retard_control</Label>
+      <Comments>P_7C2E - spark_max_retard_control
+spark_max_retard_control</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31810" DuplicateNum="0" AddressBinInt="31810" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_7C42" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>spark_wot_global_adder</Label>
+      <Comments>P_7C42 - spark_wot_global_adder
+spark_wot_global_adder</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31874" DuplicateNum="0" AddressBinInt="31874" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_7c82" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>isc_min_airflow</Label>
+      <Comments>P_7c82 - isc_min_airflow
+isc_min_airflow</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31898" DuplicateNum="0" AddressBinInt="31898" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_7C9A" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>isc_idle_drive</Label>
+      <Comments>P_7C9A - isc_idle_drive
+isc_idle_drive</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31900" DuplicateNum="0" AddressBinInt="31900" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_7C9C" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>isc_idle_neutral</Label>
+      <Comments>P_7C9C - isc_idle_neutral
+isc_idle_neutral</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="32102" DuplicateNum="0" AddressBinInt="32102" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_7D66" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>fuel_accel_enrichment_tps_min_active_tar</Label>
+      <Comments>P_7D66 - fuel_accel_enrichment_tps_min_active_tar
+fuel_accel_enrichment_tps_min_active_tar</Comments>
+      <ScaleExpression />
+      <Units>DEG/SEC</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="32284" DuplicateNum="0" AddressBinInt="32284" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_7E1C" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>fuel_cl_lambda_min</Label>
+      <Comments>P_7E1C - fuel_cl_lambda_min
+fuel_cl_lambda_min</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="32286" DuplicateNum="0" AddressBinInt="32286" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_7E1E" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2023-10-11T03:04:56.6949487Z" DateUpdated="2023-10-11T03:07:47.7398344Z" IdentificationStatus="0">
+      <Label>fuel_cl_lambda_max</Label>
+      <Comments>P_7E1E - fuel_cl_lambda_max
+fuel_cl_lambda_max</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+  </Scalars>
+  <Structures>
+    <Structure BankNum="8" AddressInt="8312" DuplicateNum="0" AddressBinInt="8312" Skip="false" Number="1" isCalibrationElement="false" ShortLabel="OSt8_010" OutputComments="false" DateCreated="2023-09-11T16:31:05.7812042Z" DateUpdated="2023-09-11T16:33:29.9492684Z" IdentificationStatus="0">
+      <StructDef>WordHex</StructDef>
+      <Label>Other Structure 8 010</Label>
+      <Comments />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Structure>
+    <Structure BankNum="8" AddressInt="8318" DuplicateNum="0" AddressBinInt="8318" Skip="false" Number="1" isCalibrationElement="false" ShortLabel="OSt8_011" OutputComments="false" DateCreated="2023-09-11T16:31:27.2170459Z" DateUpdated="2023-09-11T16:33:02.4662683Z" IdentificationStatus="0">
+      <StructDef>WordHex</StructDef>
+      <Label>Other Structure 8 011</Label>
+      <Comments />
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Structure>
+  </Structures>
+  <Routines />
+  <Operations />
+  <Registers>
+    <Register AddressInt="184" Skip="false" SizeStatus="Byte" SignedStatus="Unsigned" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>wRPM</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression />
+      <Units />
+    </Register>
+    <Register AddressInt="186" Skip="false" SizeStatus="Byte" SignedStatus="Unsigned" isRBase="false" isRConst="false" ScalePrecision="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>bECT</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X*2</ScaleExpression>
+      <Units>°F</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="187" Skip="false" SizeStatus="Byte" SignedStatus="Unsigned" isRBase="false" isRConst="false" ScalePrecision="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>bACT</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X*2</ScaleExpression>
+      <Units>°F</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="215" Skip="false" SizeStatus="Byte" SignedStatus="Unsigned" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>bATMR1</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units>Seconds</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="602" Skip="false" SizeStatus="Byte" SignedStatus="Unsigned" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2023-09-10T13:04:32.1954885Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>wBG_TMR</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression />
+      <Units />
+    </Register>
+    <Register AddressInt="742" Skip="false" SizeStatus="Word" SignedStatus="Unsigned" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>LOAD_FN071SC</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments>LOAD (MAP) Scaler (FN071)</Comments>
+      <ScaleExpression>X/8</ScaleExpression>
+      <Units>MAPOPE</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="744" Skip="false" SizeStatus="Word" SignedStatus="Unsigned" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-10-11T03:04:56.6949487Z" IdentificationStatus="0">
+      <Label>RPM_FN070SC</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments>RPM Scaler (FN070)</Comments>
+      <ScaleExpression>X/4</ScaleExpression>
+      <Units>RPM</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+  </Registers>
+  <OtherAddresses />
+  <Signatures>
+    <Signature UniqueKey="CHT_CLIPW_8065_02" Skip="false" Forced="true" ShortLabel="CHT_CLIPW" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+89,..,..,..
+da,06
+a1,..,..,..
+20,0a
+89,00,ff,..
+d6,04
+a1,..,..,..
+f3
+f0</Signature>
+      <Label>CHT Clip W</Label>
+      <Comments>CHT_CLIPW - CHT Clip W</Comments>
+      <SignatureLabel>CHT ClipW 8065 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="CORE_REG_INIT_8065_01" Skip="false" Forced="true" ShortLabel="CORE_REG_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+a1,#01#,#02#,24
+46,25,00,26
+df,2c
+a2,25,2a
+30,26,03
+c6,27,00
+41,fe,ff,2a,28
+88,20,26
+d7,04
+a1,..,..,26
+88,28,26
+db,07
+17,05
+c2,27,00
+27,eb
+30,2a,04
+c7,2a,ff,00
+27,ce
+a1,#03#,#04#,26
+b2,27,29
+99,ff,29
+df,13
+b2,27,2a
+17,05
+b2,27,28
+b2,27,2b
+c6,28,2b
+e0,2a,f4
+27,e5
+f3
+f0</Signature>
+      <Label>Core Registers Initialization</Label>
+      <Comments>CORE_REG_INIT - Core Registers Initialization</Comments>
+      <SignatureLabel>Core Registers Initialization (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_Registers</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures processing.
+Specific to some strategies which use it for constant registers.</SignatureComments>
+      <InternalStructures>
+        <InternalStructure UniqueKey="Sa002" VariableBankNum="1" VariableAddress="#02##01#" Number="0" ShortLabel="CORE_REG_INIT_ST1" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+          <StructDef>"Reg ", WordHex, "Reg ", WordHex</StructDef>
+          <Label>Core Registers Initialization Structure 1</Label>
+          <Comments>CORE_REG_INIT_ST1 - Core Registers Initialization Structure 1</Comments>
+        </InternalStructure>
+        <InternalStructure UniqueKey="Sa003" VariableBankNum="1" VariableAddress="#04##03#" Number="0" ShortLabel="CORE_REG_INIT_ST2" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+          <StructDef>"Reg ", WordHex, "Reg ", WordHex</StructDef>
+          <Label>Core Registers Initialization Structure 2</Label>
+          <Comments>CORE_REG_INIT_ST2 - Core Registers Initialization Structure 2</Comments>
+        </InternalStructure>
+      </InternalStructures>
+    </Signature>
+    <Signature UniqueKey="ECT_CLIP_8065_01" Skip="false" Forced="true" ShortLabel="ECT_CLIP" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+89,..,..,..
+d6,05
+b1,..,..
+20,09
+89,..,..,..
+da,03
+b1,..,..
+f3
+f0</Signature>
+      <Label>ECT Clip</Label>
+      <Comments>ECT_CLIP - ECT Clip</Comments>
+      <SignatureLabel>ECT Clip 8065 (01 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="ECT_CLIP_8065_02" Skip="false" Forced="true" ShortLabel="ECT_CLIP" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+89,..,..,..
+da,06
+a1,..,..,..
+20,0b
+89,c1,ff,..
+d6,05
+b1,..,..
+11,..
+f3
+f0</Signature>
+      <Label>ECT Clip</Label>
+      <Comments>ECT_CLIP - ECT Clip</Comments>
+      <SignatureLabel>ECT Clip 8065 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="ECT_CLIPW_8065_02" Skip="false" Forced="true" ShortLabel="ECT_CLIPW" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+89,..,..,..
+da,06
+a1,..,..,..
+20,0a
+89,c1,ff,..
+d6,04
+a1,..,..,..
+f3
+f0</Signature>
+      <Label>ECT Clip W</Label>
+      <Comments>ECT_CLIPW - ECT Clip W</Comments>
+      <SignatureLabel>ECT ClipW 8065 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="ECT_INIT_8061_01" Skip="false" Forced="true" ShortLabel="ECT_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for806x="for8061Only">
+      <Signature>c7,..,..,..,..
+b0,..,..
+b3,..,..,..
+fe,5c,..,..,..
+13,..
+75,..,..
+fe,7c,..,..
+64,..,..
+c3,..,..,..,..</Signature>
+      <Label>ECT Initialization</Label>
+      <Comments>ECT_INIT - ECT Initialization</Comments>
+      <SignatureLabel>ECT Initialization 8061 (01 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="ECT_INIT_8061_02" Skip="false" Forced="true" ShortLabel="BASE_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for806x="for8061Only">
+      <Signature>ef,..,..
+3d,..,19
+a3,..,..,..
+8b,..,..,..
+d9,0f
+8b,..,..,..
+d3,09
+ef,..,..
+..,..,..,..
+20,16
+3a,..,..
+9b,..,..,..
+df,05
+b0,..,..
+20,08</Signature>
+      <Label>Base Initialization</Label>
+      <Comments>BASE_INIT - Base Initialization</Comments>
+      <SignatureLabel>ECT Initialization 8061 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDI_CNT_3D_01" Skip="false" Forced="true" ShortLabel="OBDI_COUNT_3D" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>fa
+ff
+a2,..,..
+c2,..,00
+fb45,..,..,..,..
+64,..,..
+5e,..,..,..
+ac,..,..
+68,..,..
+db,..</Signature>
+      <Label>OBDI Count 3 Digits</Label>
+      <Comments>OBDI_COUNT_3D - OBDI Count 3 Digits</Comments>
+      <SignatureLabel>OBDI Count 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Second part for OBDI 3 Digits codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDI_COD_2D_01" Skip="false" Forced="true" ShortLabel="OBDI_CODES_2D" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>af,01,..,..,..
+a0,..,..
+08,03,..
+af,..,..,..,..
+3f,..,..
+af,..,..,..,..
+b2,..,..
+a0,..,..
+9d,08,..
+18,..,..</Signature>
+      <Label>OBDI Codes 2 Digits</Label>
+      <Comments>OBDI_CODES_2D - OBDI Codes 2 Digits</Comments>
+      <SignatureLabel>OBDI Codes 2 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+First part for OBDI 2 Digits codes identification. European version.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDI_COD_3D_01" Skip="false" Forced="true" ShortLabel="OBDI_CODES_3D" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>01,..
+89,..,..,..
+db,..
+88,..,00
+d7,..
+a1,12,05,..
+3e,..,..
+a1,11,01,..
+a0,..,..
+08,03,..
+b3,..,..,..,..
+51,07,..,..
+b1,08,..
+78,..,..18,..,..</Signature>
+      <Label>OBDI Codes 3 Digits</Label>
+      <Comments>OBDI_CODES_3D - OBDI Codes 3 Digits</Comments>
+      <SignatureLabel>OBDI Codes 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+First part for OBDI 3 Digits codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDI_MALFUNC" Skip="false" Forced="true" ShortLabel="MALFUNC" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>ef,..,..
+02
+c3,31,..,..,1a
+89,26,00,30
+db,04
+07,30
+07,30
+f0</Signature>
+      <Label>Malfunction Routine</Label>
+      <Comments>MALFUNC - Malfunction Routine
+1st Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDI Malfunction 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDI 3 Digits registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDI_MALFUNC_BT" Skip="false" Forced="true" ShortLabel="MALFUNC_BT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>ef,..,..
+08
+2.,..
+1c,00
+2.,..
+1e,00
+a2,1a,42
+8a,1c,42
+d3,05
+8a,1e,42
+d1,05
+a0,20,1a
+2f,d2
+f0</Signature>
+      <Label>Malfunction Between Routine</Label>
+      <Comments>MALFUNC_BT - Malfunction Between Routine
+1st Param should be between 2nd and 3rd values (scalar or register)
+2nd Param should be the lowest value for comparison (scalar or register)
+3rd Param should be the highest value for comparison (scalar or register)
+4th Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDI Malfunction Between 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDI 3 Digits registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra002" Position="2" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra003" Position="3" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra004" Position="4" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDI_MALFUNC_EX" Skip="false" Forced="true" ShortLabel="MALFUNC_EX" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>ef,..,..
+0a
+ef,..,..
+1c,00
+ef,..,..
+1e,00
+a2,1a,42
+01,1a
+8a,1d,42
+db,0e
+a1,27,03,1a
+8a,1e,42
+d1,17
+a0,20,1a
+20,12</Signature>
+      <Label>Malfunction Extended Routine</Label>
+      <Comments>MALFUNC_EX - Malfunction Extended Routine
+1st Param should be higher than 2nd and 3rd values (scalar or register)
+2nd Param should be the first lowest value for comparison (scalar or register)
+3rd Param should be the second lowest value for comparison (scalar or register)
+4th &amp; 5th Params are OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDI Malfunction Extended 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDI 3 Digits registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra002" Position="2" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra003" Position="3" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra004" Position="4" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra005" Position="5" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDI_MALFUNC_LW" Skip="false" Forced="true" ShortLabel="MALFUNC_LW" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>2d,..
+06
+71,fd,2c
+20,1e
+f8
+20,01
+f9
+cc,18
+b2,19,1a
+b2,19,1b
+b2,19,1c
+b2,19,1d
+d3,05
+c9,..,..
+20,02</Signature>
+      <Label>Malfunction Lower Routine</Label>
+      <Comments>MALFUNC_LW - Malfunction Lower Routine
+1st Param should be lower than 2nd value (scalar or register)
+2nd Param should be higher than 1st value (scalar or register)
+3rd Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDI Malfunction Lower 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDI 3 Digits registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra002" Position="2" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra003" Position="3" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDI_MALFUNC_SB" Skip="false" Forced="true" ShortLabel="MALFUNC_SB" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>c3,31,..,..,1a
+89,26,00,30
+db,04
+07,30
+07,30
+f0</Signature>
+      <Label>Malfunction Sub Routine</Label>
+      <Comments>MALFUNC_SB - Malfunction Sub Routine
+Used to push an OBD Error Code into a rolling error register.</Comments>
+      <SignatureLabel>OBDI Malfunction Sub 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3>Registers_Args</SignatureCategory3>
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDI 3 Digits registers identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDI_TIM_2D_01" Skip="false" Forced="true" ShortLabel="OBDI_TIMINGS_2D" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>ac,..,..
+64,..,..
+38,..,..
+3a,..,..
+4f,..,..,..,..,..
+0d,..,..
+20,..
+4f,..,..,..,..,..
+0d,06,..
+20,..
+4f,..,..,..,..,..</Signature>
+      <Label>OBDI Timings 2 Digits</Label>
+      <Comments>OBDI_TIMINGS_3D - OBDI Timings 2 Digits</Comments>
+      <SignatureLabel>OBDI Timings 2 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Second part for OBDI 2 Digits codes identification. European version.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_CLEAR_MALF_01" Skip="false" Forced="true" ShortLabel="CLEAR_MALF" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>f2
+2.,..
+00
+f2
+a2,2a,3e
+37,3e,06
+71,7f,3e
+c2,2a,3e
+f3
+f0</Signature>
+      <Label>Clear Malfunction Routine</Label>
+      <Comments>CLEAR_MALF - Clear Malfunction Routine
+1st Param is OBD Error Code to be deleted.</Comments>
+      <SignatureLabel>OBDII Clear Malfunction (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDII registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDII_CLEAR_MALF_02" Skip="false" Forced="true" ShortLabel="CLEAR_MALF" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>f2
+2.,..
+2.,..
+28,0d
+2.,..
+f3
+f0
+f2
+2.,..
+28,04
+2.,..
+f3
+f0
+a2,2a,3e
+37,3e,06
+71,7f,3e
+c2,2a,3e
+f0
+</Signature>
+      <Label>Clear Malfunction Routine</Label>
+      <Comments>CLEAR_MALF - Clear Malfunction Routine
+1st Param is OBD Error Code to be deleted.</Comments>
+      <SignatureLabel>OBDII Clear Malfunction (02 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDII registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDII_MALFUNCTION_01" Skip="false" Forced="true" ShortLabel="MALFUNCTION" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>f2
+2f,de
+00
+f2
+a2,2a,3e
+28,05
+c2,2a,3e
+f3
+f0
+f2
+</Signature>
+      <Label>Malfunction Routine</Label>
+      <Comments>MALFUNCTION - Malfunction Routine
+1st Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDII Malfunction (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDII registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDII_MALFUNCTION_02" Skip="false" Forced="true" ShortLabel="MALFUNCTION" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>f2
+2.,..
+2.,..
+20,03
+f2
+2.,..
+b3,..,..,..,3e
+3.,3e,02
+20,26
+49,..,..,2a,3e
+45,..,..,3e,26
+a2,26,26
+b2,26,26
+99,02,26
+df,0f
+99,01,26
+d7,0c
+a2,2a,3e
+2.,..
+c2,2a,3e
+20,02
+28,04
+2f,..
+f3
+f0
+</Signature>
+      <Label>Malfunction Routine</Label>
+      <Comments>MALFUNCTION - Malfunction Routine
+1st Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDII Malfunction (02 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDII registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDII_MALFUNCTION_02_01" Skip="false" Forced="true" ShortLabel="MALFUNCTION" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>f2
+2.,..
+2.,..
+20,03
+f2
+2.,..
+b0,..,3e
+3.,3e,02
+20,26
+49,..,..,2a,3e
+45,..,..,3e,26
+a2,26,26
+b2,26,26
+99,02,26
+df,0f
+99,01,26
+d7,0c
+a2,2a,3e
+2.,..
+c2,2a,3e
+20,02
+28,04
+2f,..
+f3
+f0
+</Signature>
+      <Label>Malfunction Routine</Label>
+      <Comments>MALFUNCTION - Malfunction Routine
+1st Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDII Malfunction (02bis forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDII registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_FLAGS_02" Skip="false" Forced="true" ShortLabel="OBDII_REG_FLAGS" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>49,..,..,..,..
+08,01,..
+65,..,..,..
+b2,..,..
+99,..,..
+d7,..
+b3,01,..,..,..
+91,..,..
+c7,01,..,..,..
+20,..</Signature>
+      <Label>OBDII Registers Flags</Label>
+      <Comments>OBDII_REG_FLAGS - OBDII Registers Flags</Comments>
+      <SignatureLabel>OBDII Registers Flags Signature (02 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Third part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_FLAGS_02_01" Skip="false" Forced="true" ShortLabel="OBDII_REG_FLAGS" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>49,..,..,..,..
+08,01,..
+65,..,..,..
+99,..,..
+d7,..
+b3,01,..,..,..
+91,..,..
+c7,01,..,..,..
+20,..</Signature>
+      <Label>OBDII Registers Flags</Label>
+      <Comments>OBDII_REG_FLAGS - OBDII Registers Flags</Comments>
+      <SignatureLabel>OBDII Registers Flags Signature (02bis forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Third part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_INIT_01" Skip="false" Forced="true" ShortLabel="OBDII_REG_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>c7,..,..,00
+71,..,..
+c3,..,..,00
+a1,..,..,..
+89,..,..,..
+db,..</Signature>
+      <Label>OBDII Registers Initialization</Label>
+      <Comments>OBDII_REG_INIT - OBDII Registers Initialization</Comments>
+      <SignatureLabel>OBDII Registers Initialization (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+First part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_INIT_01_01" Skip="false" Forced="true" ShortLabel="OBDII_REG_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>c7,..,..,..,00
+71,..,..
+c3,..,..,..,00
+a1,..,..,..
+89,..,..,..
+db,..</Signature>
+      <Label>OBDII Registers Initialization</Label>
+      <Comments>OBDII_REG_INIT - OBDII Registers Initialization</Comments>
+      <SignatureLabel>OBDII Registers Initialization (01bis Forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+First part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_INIT_02" Skip="false" Forced="true" ShortLabel="OBDII_REG_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>f2
+b3,01,..,..,..
+71,7f,..
+c7,01,..,..,..
+c3,01,..,..,00
+c3,01,..,..,00
+c7,01,..,..,00
+b3,01,..,..,..
+71,..,..
+c7,01,..,..,..
+b3,01,..,..,..
+71,..,..
+c7,01,..,..,..
+*
+11,3e
+b1,28,3f
+a1,..,..,2a</Signature>
+      <Label>OBDII Registers Initialization</Label>
+      <Comments>OBDII_REG_INIT - OBDII Registers Initialization</Comments>
+      <SignatureLabel>OBDII Registers Initialization (02 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+First part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_RESET_01" Skip="false" Forced="true" ShortLabel="OBDII_REG_RESET" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>a2,..,..
+3f,..,..
+91,..,..
+c2,..,..
+49,..,..,..,..
+65,..,..,..
+a2,..,..
+99,..,..
+d7,..
+8b,..,..,..
+d7,..
+8b,..,..,..</Signature>
+      <Label>OBDII Registers Reset</Label>
+      <Comments>OBDII_REG_RESET - OBDII Registers Reset</Comments>
+      <SignatureLabel>OBDII Registers Reset Signature (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Second part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_RESET_01_01" Skip="false" Forced="true" ShortLabel="OBDII_REG_RESET" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>b1,..,..
+49,..,..,..,..
+65,..,..,..
+a2,..,..
+c6,..,..
+c6,..,..
+79,..,..
+df,..
+88,..,..
+d9,..
+c6,..,00</Signature>
+      <Label>OBDII Registers Reset</Label>
+      <Comments>OBDII_REG_RESET - OBDII Registers Reset</Comments>
+      <SignatureLabel>OBDII Registers Reset Signature (01bis forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Second part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_RESET_02" Skip="false" Forced="true" ShortLabel="OBDII_REG_RESET" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0">
+      <Signature>f2
+28,..
+49,..,..,..,..
+65,..,..,..
+a2,..,..
+b2,..,..
+99,..,..
+d7,..
+a2,..,..
+ef,..,..</Signature>
+      <Label>OBDII Registers Reset</Label>
+      <Comments>OBDII_REG_RESET - OBDII Registers Reset</Comments>
+      <SignatureLabel>OBDII Registers Reset Signature (02 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Second part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8061_01" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for806x="for8061Only">
+      <Signature>01,..
+37,..,..
+3a,..,..
+20,..
+71,..,..
+a1,..,..,..
+01,..
+8f,..,..,..
+09,..,..
+a3,..,..,..,..
+89,..,..,..
+db,..</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8061 (01 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8061</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8061_02" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for806x="for8061Only">
+      <Signature>a3,..,..,..
+89,..,..,..
+d3,..
+fa
+b1,01,32
+c7,..,..,32
+c7,..,..,32
+71,..,..
+71,..,..
+71,..,..
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8061 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8061</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8065_01" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+b0,..,..
+a3,..,..,..,..
+89,..,..,..
+d3,..
+91,..,..
+fa
+71,..,..
+71,..,..
+71,..,..
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8065 (01 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8065_01_01" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+b0,..,..
+a3,..,..,..,..
+89,..,..,..
+d3,..
+91,..,..
+fa
+71,..,..
+71,..,..
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8065 (01bis forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8065_02" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+b0,..,..
+a3,..,..,..,..
+89,..,..,..
+db,..
+99,..,..
+df,..
+48,..,..,..
+89,..,..,..
+d1,..
+91,..,..
+fa
+71,..,..
+71,..,..
+*
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8065 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8065_03" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+b3,..,..,..
+a3,..,..,..
+89,..,..,..
+db,..
+99,..,..
+df,..
+48,..,..,..
+89,..,..,..
+d1,..
+91,..,..
+fa
+71,..,..
+71,..,..
+*
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8065 (03 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8065_03_01" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+b3,..,..,..
+a3,..,..,..,..
+89,..,..,..
+d3,..
+91,..,..
+fa
+71,..,..
+71,..,..
+*
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8065 (03bis forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+  </Signatures>
+  <ElementsSignatures>
+    <ElementSignature UniqueKey="FN036_61" Skip="false" Forced="true" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for8061="true" forBankNum="">
+      <Signature>#EAOP#
+A3,..,..,..
+88,..,..
+D9,12
+45,78,00,..,..
+88,..,..
+D3,08
+94,..,..
+71,03,..
+DF,04
+C3,..,..,..
+71,..,..
+F0</Signature>
+      <SignatureLabel>MAF Transfer 8061</SignatureLabel>
+      <SignatureCategory>FN036</SignatureCategory>
+      <SignatureCategory2>8061</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>MAF Transfer Signature for 8061</SignatureComments>
+      <SignatureOpeIncludingElemAddress>#EAOP#</SignatureOpeIncludingElemAddress>
+      <Function ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="0" ShortLabel="FN036" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+        <Label>MAF Transfer</Label>
+        <Comments />
+        <InputScaleExpression>X</InputScaleExpression>
+        <OutputScaleExpression>X</OutputScaleExpression>
+      </Function>
+    </ElementSignature>
+    <ElementSignature UniqueKey="FN036_65_01" Skip="false" Forced="true" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for8061="false" forBankNum="">
+      <Signature>#EAOP#
+A3,..,..,..
+88,..,..
+D9,12
+45,78,00,..,..
+88,..,..
+D3,08
+94,..,..
+71,03,..
+DF,04
+C3,..,..,..
+71,..,..
+F0</Signature>
+      <SignatureLabel>MAF Transfer 8065 01</SignatureLabel>
+      <SignatureCategory>FN036</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>MAF Transfer Signature for 8065 01</SignatureComments>
+      <SignatureOpeIncludingElemAddress>#EAOP#</SignatureOpeIncludingElemAddress>
+      <Function ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="0" ShortLabel="FN036" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+        <Label>MAF Transfer</Label>
+        <Comments />
+        <InputScaleExpression>X</InputScaleExpression>
+        <OutputScaleExpression>X</OutputScaleExpression>
+      </Function>
+    </ElementSignature>
+    <ElementSignature UniqueKey="FN036_65_02" Skip="false" Forced="true" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for8061="false" forBankNum="">
+      <Signature>#EAOP#
+A3,..,..,..,..
+88,..,..
+D9,14
+45,78,00,..,..
+8B,..,..,..,..
+D3,08
+94,..,..
+71,03,..
+DF,05
+C3,..,..,..,..
+71,..,..
+F0</Signature>
+      <SignatureLabel>MAF Transfer 8065 02</SignatureLabel>
+      <SignatureCategory>FN036</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>MAF Transfer Signature for 8065 02</SignatureComments>
+      <SignatureOpeIncludingElemAddress>#EAOP#</SignatureOpeIncludingElemAddress>
+      <Function ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="0" ShortLabel="FN036" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+        <Label>MAF Transfer</Label>
+        <Comments />
+        <InputScaleExpression>X</InputScaleExpression>
+        <OutputScaleExpression>X</OutputScaleExpression>
+      </Function>
+    </ElementSignature>
+    <ElementSignature UniqueKey="FN036_65_03" Skip="false" Forced="true" DateCreated="2023-09-10T09:33:40.2316543Z" DateUpdated="2023-09-10T09:33:40.2316543Z" IdentificationStatus="0" for8061="false" forBankNum="">
+      <Signature>#EAOP#
+A3,..,..,..
+88,..,..
+D9,13
+45,78,00,..,..
+8B,..,..,..
+D3,08
+94,..,..
+71,03,..
+DF,04
+C3,..,..,..
+F0</Signature>
+      <SignatureLabel>MAF Transfer 8065 03</SignatureLabel>
+      <SignatureCategory>FN036</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>MAF Transfer Signature for 8065 03</SignatureComments>
+      <SignatureOpeIncludingElemAddress>#EAOP#</SignatureOpeIncludingElemAddress>
+      <Function ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="0" ShortLabel="FN036" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+        <Label>MAF Transfer</Label>
+        <Comments />
+        <InputScaleExpression>X</InputScaleExpression>
+        <OutputScaleExpression>X</OutputScaleExpression>
+      </Function>
+    </ElementSignature>
+  </ElementsSignatures>
+  <DupTables />
+  <DupFunctions />
+  <DupScalars />
+  <DupStructures />
+</S6x>

@@ -1,0 +1,343 @@
+----- Commands ------
+opts   :C P N S
+bank 8 00000 0dfff
+
+rbase f0 8b00
+rbase f2 8ec6
+rbase f4 920e
+rbase f6 94a8
+rbase f8 9704
+rbase fa 9b9a
+rbase fc 9d1a
+rbase fe 9d54
+
+struct 4078 4078 :Y X
+sym 4078 "OSt8_010"
+
+struct 407e 407e :Y X
+sym 407e "OSt8_011"
+
+word 52e9 52ea :V 1024.00 P 5
+sym 52e9 "PYM_FPPRT"
+
+word 69fa 69fb :P 5
+sym 69fa "P_49FA"
+
+function 8b2e 8b51 :W V 4.00 P 5 :W V 128.00 P 5
+sym 8b2e "FN303"
+
+function 8b52 8b5f :Y P 3 :Y V 128.00 P 3
+sym 8b52 "FN310"
+
+function 8b60 8b77 :W P 5 :W V 256.00 P 5
+sym 8b60 "FN005"
+
+function 8b78 8b8b :W V 1024.00 P 5 :W V 256.00 P 5
+sym 8b78 "FN007"
+
+function 8b8c 8b9f :W P 5 :W V 256.00 P 5
+sym 8b8c "FN008"
+
+function 8ba0 8bb3 :W P 5 :W V 256.00 P 5
+sym 8ba0 "FN023"
+
+function 8bb4 8bcb :W P 5 :W V 256.00 P 5
+sym 8bb4 "FN024"
+
+table 8bcc 8be4 :O 5 Y V 64.00 P 3
+sym 8bcc "FN1348"
+
+table 8be5 8bfd :O 5 Y V 64.00 P 3
+sym 8be5 "FN1349"
+
+table 8bfe 8c16 :O 5 Y V 64.00 P 3
+sym 8bfe "FN1350"
+
+function 8c18 8c2b :W V 64.00 P 5 :W V 128.00 P 5
+sym 8c18 "FN331A"
+
+function 8c2c 8c43 :W V 4.00 P 5 :W V 64.00 P 5
+sym 8c2c "FN379"
+
+function 8c44 8c67 :W V 64.00 P 5 :W V 256.00 P 5
+sym 8c44 "FN091"
+
+function 8c68 8c83 :W V 12800.00 P 5 :W V 256.00 P 5
+sym 8c68 "FN092"
+
+function 8c91 8c9c :Y P 3 :Y V 128.00 P 3
+sym 8c91 "FN875D"
+
+function 8c9d 8ca8 :Y P 3 :Y V 128.00 P 3
+sym 8c9d "FN875HN"
+
+function 8d32 8d4d :W P 5 :W V 256.00 P 5
+sym 8d32 "FN018A"
+
+function 8d4e 8d61 :W P 5 :W V 256.00 P 5
+sym 8d4e "FN019A"
+
+function 8d62 8d81 :W V 64.00 P 5 :W V 256.00 P 5
+sym 8d62 "FN020C"
+
+function 8d82 8da1 :W V 128.00 P 5 :W V 256.00 P 5
+sym 8d82 "FN021V"
+
+function 8da2 8dc9 :W V 64.00 P 5 :W V 256.00 P 5
+sym 8da2 "FN022A"
+
+function 8dca 8de5 :W V 4.00 P 5 :W V 256.00 P 5
+sym 8dca "FN070"
+
+function 8de6 8e09 :W V 4.00 P 5 :W V 256.00 P 5
+sym 8de6 "FN070V"
+
+function 8e0a 8e25 :W V 128.00 P 5 :W V 256.00 P 5
+sym 8e0a "FN072D"
+
+function 8e26 8e41 :W V 8.00 P 5 :W V 256.00 P 5
+sym 8e26 "FN071"
+
+byte 8ed1 8ed1 :P 3
+sym 8ed1 "P_006ED1"
+
+byte 8ed7 8ed7 :P 3
+sym 8ed7 "NUMOUT"
+
+byte 8edc 8edc :P 3
+sym 8edc "DFMIN0"
+
+byte 8edd 8edd :P 3
+sym 8edd "DFMIN1"
+
+word 8ede 8edf :P 5
+sym 8ede "P_6EDE"
+
+word 8ee0 8ee1 :P 5
+sym 8ee0 "P_6EE0"
+
+table 8ee5 8f44 :O 12 Y V 256.00 P 3
+sym 8ee5 "FN1320"
+
+word 8f4c 8f4d :V 582.53 P 5
+sym 8f4c "AHISL"
+
+word 8f5c 8f5d :P 5
+sym 8f5c "P_6F5C"
+
+word 8f5e 8f5f :P 5
+sym 8f5e "P_6F5E"
+
+word 8f64 8f65 :P 5
+sym 8f64 "P_6F64"
+
+word 8f66 8f67 :P 5
+sym 8f66 "P_6F66"
+
+word 8f6a 8f6b :P 5
+sym 8f6a "P_6F6A"
+
+table 8f94 8fe3 :O 10 Y V 8.00 P 3
+sym 8f94 "FN1321"
+
+table 8fe4 9033 :O 10 Y V 8.00 P 3
+sym 8fe4 "FN1322"
+
+byte 9046 9046 :V 128.00 P 3
+sym 9046 "P_7046"
+
+byte 906a 906a :P 3
+sym 906a "Sc0339"
+
+word 9076 9077 :V 65536.00 P 5
+sym 9076 "SSFCTR"
+
+word 9078 9079 :V 65536.00 P 5
+sym 9078 "FKSKAY"
+
+word 907a 907b :V 32768.00 P 5
+sym 907a "SIGKLL"
+
+word 907c 907d :V 32768.00 P 5
+sym 907c "SIGKLU"
+
+function 9092 90a9 :W P 5 :W V 256.00 P 5
+sym 9092 "FN018B"
+
+table 90aa 90d3 :O 7 Y V 64.00 P 3
+sym 90aa "FN1861"
+
+byte 91db 91db :P 3
+sym 91db "P_71DB"
+
+byte 91dc 91dc :P 3
+sym 91dc "P_71DC"
+
+byte 91dd 91dd :P 3
+sym 91dd "P_71DD"
+
+byte 91de 91de :P 3
+sym 91de "P_0071DE"
+
+function 92d8 92ff :W V 64.00 P 5 :W V 32768.00 P 5
+sym 92d8 "FN219"
+
+function 9328 9343 :W P 5 :W P 5
+sym 9328 "FN239"
+
+function 94ab 94b4 :Y V 0.50 P 3 :Y V 128.00 P 3
+sym 94ab "FN305"
+
+function 94b5 94be :Y V 0.50 P 3 :Y V 128.00 P 3
+sym 94b5 "FN326"
+
+function 94bf 94d0 :Y V 16.00 P 3 :Y V 32.00 P 3
+sym 94bf "FN367"
+
+function 9560 9569 :Y P 3 :Y P 3
+sym 9560 "FN332"
+
+function 956a 9573 :Y V 8.00 P 3 :Y V 128.00 P 3
+sym 956a "FN378"
+
+function 9574 95a7 :W V 0.50 P 5 :W V 655.36 P 5
+sym 9574 "FNCRK_LAMS"
+
+table 9706 9755 :O 10 Y V 128.00 P 3
+sym 9706 "FN1362"
+
+table 9756 97a5 :O 10 Y V 128.00 P 3
+sym 9756 "FN1361_H_RES"
+
+table 97a6 97f5 :O 10 Y V 128.00 P 3
+sym 97a6 "FN1462"
+
+table 97f6 982d :O 8 Y P 3
+sym 97f6 "FN1303"
+
+table 982e 987d :O 10 Y P 3
+sym 982e "Tb012"
+
+table 987e 98cd :O 10 Y V 4.00 P 3
+sym 987e "FN1120"
+
+table 98ce 991d :O 10 Y V 32.00 P 3
+sym 98ce "FN1121"
+
+table 991e 996d :O 10 Y V 4.00 P 3
+sym 991e "FN1122"
+
+table 996e 99bd :O 10 Y P 3
+sym 996e "Tb016"
+
+table 99be 9a0d :O 10 Y V 4.00 P 3
+sym 99be "FN1126"
+
+table 9a0e 9a5d :O 10 Y V 4.00 P 3
+sym 9a0e "FN1127"
+
+table 9a5e 9aad :O 10 Y V 64.00 P 3
+sym 9a5e "FN1128"
+
+table 9aae 9afd :O 10 Y V 32.00 P 3
+sym 9aae "FN1129"
+
+table 9b40 9b99 :O 10 Y S P 3
+sym 9b40 "FN1325"
+
+word 9ba2 9ba3 :V 65535.00 P 5
+sym 9ba2 "Sc0210"
+
+byte 9bc5 9bc5 :P 3
+sym 9bc5 "TFCTM"
+
+byte 9bc8 9bc8 :V 128.00 P 3
+sym 9bc8 "MEFTRD"
+
+function 9bcb 9bd8 :Y P 3 :Y V 32.00 P 3
+sym 9bcb "FN307"
+
+byte 9bee 9bee :P 3
+sym 9bee "P_7BEE"
+
+byte 9bef 9bef :P 3
+sym 9bef "P_7BEF"
+
+byte 9c15 9c15 :P 3
+sym 9c15 "P_7C15"
+
+byte 9c16 9c16 :P 3
+sym 9c16 "P_7C16"
+
+byte 9c19 9c19 :P 3
+sym 9c19 "P_007C19"
+
+byte 9c2e 9c2e :P 3
+sym 9c2e "P_7C2E"
+
+word 9c42 9c43 :P 5
+sym 9c42 "P_7C42"
+
+word 9c82 9c83 :P 5
+sym 9c82 "P_7c82"
+
+word 9c9a 9c9b :P 5
+sym 9c9a "P_7C9A"
+
+word 9c9c 9c9d :P 5
+sym 9c9c "P_7C9C"
+
+function 9d1c 9d29 :Y V 0.50 P 3 :Y V 128.00 P 3
+sym 9d1c "FN211"
+
+function 9d2a 9d37 :Y V 0.50 P 3 :Y V 128.00 P 3
+sym 9d2a "FN220"
+
+byte 9d66 9d66 :P 3
+sym 9d66 "P_7D66"
+
+function 9d6b 9d74 :Y V 8.00 P 3 :Y V 128.00 P 3
+sym 9d6b "FN212A"
+
+table 9d75 9dc4 :O 10 Y V 16.00 P 3
+sym 9d75 "FN1220"
+
+table 9dc5 9e14 :O 10 Y V 16.00 P 3
+sym 9dc5 "FN1222"
+
+word 9e1c 9e1d :P 5
+sym 9e1c "P_7E1C"
+
+word 9e1e 9e1f :P 5
+sym 9e1e "P_7E1E"
+
+sym b8 "wRPM"
+
+sym ba "bECT"
+
+sym bb "bACT"
+
+sym d7 "bATMR1"
+
+sym f0 "Rf0"
+
+sym f2 "Rf2"
+
+sym f4 "Rf4"
+
+sym f6 "Rf6"
+
+sym f8 "Rf8"
+
+sym fa "Rfa"
+
+sym fc "Rfc"
+
+sym fe "Rfe"
+
+sym 25a "wBG_TMR"
+
+sym 2e6 "LOAD_FN071SC"
+
+sym 2e8 "RPM_FN070SC"
+
