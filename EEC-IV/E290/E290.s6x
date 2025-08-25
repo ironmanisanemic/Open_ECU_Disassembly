@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<S6x version="1.00" generated="2025-03-27 21:47:15">
-  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="false" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="2000" XdfBaseOffsetSubtract="true" DateCreated="2024-12-29T12:45:55.8911004" DateUpdated="2025-03-28T04:35:02.7515367Z" IdentificationStatus="0">
+<S6x version="1.00" generated="2025-08-24 23:26:00">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="false" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="2000" XdfBaseOffsetSubtract="true" DateCreated="2024-12-29T12:45:55.8911004" DateUpdated="2025-08-25T06:25:06.136503Z" IdentificationStatus="0">
     <Label>E290.s6x</Label>
     <Comments />
     <Header />
@@ -14,6 +14,293 @@
     </SyncStates>
   </Properties>
   <Tables>
+    <Table BankNum="8" AddressInt="27596" DuplicateNum="0" AddressBinInt="27596" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="5" RowsNumber="5" ShortLabel="FN1348" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:55:48.0645882Z" IdentificationStatus="0">
+      <Label>Hot Injector Comp Time Multiplier</Label>
+      <Comments>FN1348 - Hot Injector Comp Time Multiplier</Comments>
+      <CellsScaleExpression>X/64</CellsScaleExpression>
+      <ColsScalerAddress>8 27532</ColsScalerAddress>
+      <RowsScalerAddress>8 27512</RowsScalerAddress>
+      <ColsUnits>ATMR3</ColsUnits>
+      <RowsUnits>AirMass</RowsUnits>
+      <CellsUnits>xMult</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="27621" DuplicateNum="0" AddressBinInt="27621" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="5" RowsNumber="5" ShortLabel="FN1349" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:55:50.4810274Z" IdentificationStatus="0">
+      <Label>Hot Injector Comp Fuel enrichment factor</Label>
+      <Comments>FN1349 - Hot Injector Comp Fuel enrichment factor</Comments>
+      <CellsScaleExpression>X/64</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsUnits>°F ECT</ColsUnits>
+      <RowsUnits>°F ACSTRT</RowsUnits>
+      <CellsUnits>xMult</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="27646" DuplicateNum="0" AddressBinInt="27646" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="5" RowsNumber="5" ShortLabel="FN1350" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:55:52.4174032Z" IdentificationStatus="0">
+      <Label>Crank PW Multiplier</Label>
+      <Comments>FN1350 - Crank PW Multiplier
+
+Crank mode Fuel Air ratio multiplier used to taper crank fuel command during start/runup.
+PURPOSE:   Crank mode Fuel Air ratio multiplier
+X INPUT:   Normalized CRKPIP_CTR_BW - FN023
+Y INPUT:   Normalized ACT - FN024
+OUTPUT:	 Multiplier</Comments>
+      <CellsScaleExpression>X/64</CellsScaleExpression>
+      <ColsScalerAddress>8 27552</ColsScalerAddress>
+      <RowsScalerAddress>8 27572</RowsScalerAddress>
+      <ColsUnits>CRKPIP</ColsUnits>
+      <RowsUnits>°F</RowsUnits>
+      <CellsUnits />
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="28389" DuplicateNum="0" AddressBinInt="28389" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="12" RowsNumber="8" ShortLabel="FN1320" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:55:44.440475Z" IdentificationStatus="0">
+      <Label>VE Table Air (Fuel)</Label>
+      <Comments>FN1320 - VE Table Air (Fuel)
+
+Primary fueling table in speed density ecu
+
+y = mapope
+x = n</Comments>
+      <CellsScaleExpression>X / 256</CellsScaleExpression>
+      <ColsScalerAddress>8 28134</ColsScalerAddress>
+      <RowsScalerAddress>8 28034</RowsScalerAddress>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>VE</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="28564" DuplicateNum="0" AddressBinInt="28564" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1321" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:55:55.3345624Z" IdentificationStatus="0">
+      <Label>Equlibrium intake surface fuel</Label>
+      <Comments>FN1321 - Equlibrium intake surface fuel</Comments>
+      <CellsScaleExpression>X/8</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress>8 28198</RowsScalerAddress>
+      <ColsUnits>°F</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits />
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="28644" DuplicateNum="0" AddressBinInt="28644" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1322" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:55:57.6404546Z" IdentificationStatus="0">
+      <Label>Equilibrium fuel transfer time</Label>
+      <Comments>FN1322 - Equilibrium fuel transfer time
+
+OUTPUT:  Fractional value of injection</Comments>
+      <CellsScaleExpression>X/8</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress>8 28198</RowsScalerAddress>
+      <ColsUnits>°F</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>xMult</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="28842" DuplicateNum="0" AddressBinInt="28842" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="7" RowsNumber="6" ShortLabel="FN1861" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:55:59.5472764Z" IdentificationStatus="0">
+      <Label>ISC Multiplier (Drive)</Label>
+      <Comments>FN1861 - ISC Multiplier (Drive)</Comments>
+      <CellsScaleExpression>X / 64</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress>8 28818</RowsScalerAddress>
+      <ColsUnits>°F</ColsUnits>
+      <RowsUnits>Secs</RowsUnits>
+      <CellsUnits>xISC</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="30470" DuplicateNum="0" AddressBinInt="30470" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1362" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:56:01.5228254Z" IdentificationStatus="0">
+      <Label>Base OL Fuel</Label>
+      <Comments>FN1362 - Base OL Fuel
+
+On older FN1362 Tables size is 8x10
+
+Base Open Loop Fuel table = a 12 x 8 table of lambda values as a function of temperature and load.
+X INPUT: NORMALIZED FRCBFT * ACT + (1 - FRCBFT) * ECT - FN022BX
+Y INPUT: NORMALIZED PERLOAD - FN072
+OUTPUT:  BASE OPEN LOOP FUEL</Comments>
+      <CellsScaleExpression>X/128</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress>8 28170</RowsScalerAddress>
+      <ColsUnits>°F</ColsUnits>
+      <RowsUnits>PERLOAD</RowsUnits>
+      <CellsUnits>-LAMBSE</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="30550" DuplicateNum="0" AddressBinInt="30550" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1361_H_RES" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:56:03.6366529Z" IdentificationStatus="0">
+      <Label>Startup Enrichment Lambse Subtractor</Label>
+      <Comments>FN1361_H_RES - Startup Enrichment Lambse Subtractor
+
+older strats with FN1361_H_RES are 8x10
+
+STARTUP OPEN LOOP enleanment table for exhaust warm-up	X INPUT: NORMALIZED FRCSFT * ACT + (1 - FRCSFT) * ECT - FN022BX
+Y INPUT: NORMALIZED TIME SINCE START - FN018C
+OUTPUT:	 STARTUP OPEN LOOP FUEL</Comments>
+      <CellsScaleExpression>X/128</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress>8 27954</RowsScalerAddress>
+      <ColsUnits>°F</ColsUnits>
+      <RowsUnits>Secs</RowsUnits>
+      <CellsUnits>-LAMBSE</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="30630" DuplicateNum="0" AddressBinInt="30630" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1462" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:56:06.1238139Z" IdentificationStatus="0">
+      <Label>Base CL Fuel (MPG Mode)</Label>
+      <Comments>FN1462 - Base OL Fuel  (MPG Mode)
+
+On older FN1362 Tables size is 8x10
+
+Base Open Loop Fuel table = a 12 x 8 table of lambda values as a function of temperature and load.
+X INPUT: NORMALIZED FRCBFT * ACT + (1 - FRCBFT) * ECT - FN022BX
+Y INPUT: NORMALIZED PERLOAD - FN072
+OUTPUT:  BASE OPEN LOOP FUEL</Comments>
+      <CellsScaleExpression>X/128</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress>8 28170</RowsScalerAddress>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>PERLOAD</RowsUnits>
+      <CellsUnits>-LAMBSE</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="30710" DuplicateNum="0" AddressBinInt="30710" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="8" RowsNumber="7" ShortLabel="FN1303" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:56:12.0875707Z" IdentificationStatus="0">
+      <Label>Desired Accel Enrichment fuel flow</Label>
+      <Comments>FN1303 - Desired Accel Enrichment fuel flow</Comments>
+      <CellsScaleExpression>X</CellsScaleExpression>
+      <ColsScalerAddress>8 27982</ColsScalerAddress>
+      <RowsScalerAddress />
+      <ColsUnits>TAR</ColsUnits>
+      <RowsUnits>°F</RowsUnits>
+      <CellsUnits>lbm/hr</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="30766" DuplicateNum="0" AddressBinInt="30766" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="Tb012" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:56:17.5891896Z" IdentificationStatus="0">
+      <Label>Table 012</Label>
+      <Comments>Tb012 - Table 012</Comments>
+      <CellsScaleExpression>X</CellsScaleExpression>
+      <ColsScalerAddress>8 28106</ColsScalerAddress>
+      <RowsScalerAddress>8 28198</RowsScalerAddress>
+      <ColsUnits>rpm</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits />
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="30846" DuplicateNum="0" AddressBinInt="30846" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1120" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:56:19.454155Z" IdentificationStatus="0">
+      <Label>Base MBT Spark Table</Label>
+      <Comments>FN1120 - Base MBT Spark Table
+
+8x10 in older strats; MAP vs RPM
+
+MBT spark at stoichiometry and 0% EGR
+X INPUT:   Normalized N - FN070	
+Y INPUT:   Normalized LOAD - FN071
+OUTPUT:	   Spark advance (deg BTDC)</Comments>
+      <CellsScaleExpression>X/4</CellsScaleExpression>
+      <ColsScalerAddress>8 28106</ColsScalerAddress>
+      <RowsScalerAddress>8 28198</RowsScalerAddress>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>SpkAdv</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="30926" DuplicateNum="0" AddressBinInt="30926" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1121" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:56:21.702784Z" IdentificationStatus="0">
+      <Label>MBT Spark EGR Adder</Label>
+      <Comments>FN1121 - MBT Spark EGR Adder
+
+~8x10 in older strats
+Increase in mbt spark for each % EGR
+X INPUT:   Normalized RPM - FN070
+Y INPUT:   Normalized LOAD - FN071
+OUTPUT:    Spark adder (degrees)</Comments>
+      <CellsScaleExpression>X/32</CellsScaleExpression>
+      <ColsScalerAddress>8 28106</ColsScalerAddress>
+      <RowsScalerAddress>8 28198</RowsScalerAddress>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>SpkAdv</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="31006" DuplicateNum="0" AddressBinInt="31006" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1122" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:56:24.3074363Z" IdentificationStatus="0">
+      <Label>Spark Advance Reduction Table for Octane</Label>
+      <Comments>FN1122 - Spark Advance Reduction Table for Octane
+
+~in older strats FN1122 is 8x10
+
+FN2225
+PURPOSE:   Borderline detonation adjustment for octane bar
+X INPUT:   Normalized RPM - FN070
+Y INPUT:   Normalized LOAD - FN071
+OUTPUT:  Octane switch adjustment to Borderline spark advance(degrees)</Comments>
+      <CellsScaleExpression>X/4</CellsScaleExpression>
+      <ColsScalerAddress>8 28106</ColsScalerAddress>
+      <RowsScalerAddress>8 28198</RowsScalerAddress>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>SpkAdv</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="31086" DuplicateNum="0" AddressBinInt="31086" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="Tb016" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:56:26.7752947Z" IdentificationStatus="0">
+      <Label>Table 016</Label>
+      <Comments>Tb016 - Table 016</Comments>
+      <CellsScaleExpression>X</CellsScaleExpression>
+      <ColsScalerAddress>8 28106</ColsScalerAddress>
+      <RowsScalerAddress>8 28198</RowsScalerAddress>
+      <ColsUnits>rpm</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits />
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="31166" DuplicateNum="0" AddressBinInt="31166" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1126" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:56:34.7797626Z" IdentificationStatus="0">
+      <Label>Base MBT Spark Table (MPG Mode)</Label>
+      <Comments>FN1126 - Base MBT Spark Table (MPG Mode)
+
+8x10 in older strats; MAP vs RPM
+
+MBT spark at stoichiometry and 0% EGR
+X INPUT:   Normalized N - FN070	
+Y INPUT:   Normalized LOAD - FN071
+OUTPUT:	   Spark advance (deg BTDC)</Comments>
+      <CellsScaleExpression>X/4</CellsScaleExpression>
+      <ColsScalerAddress>8 28106</ColsScalerAddress>
+      <RowsScalerAddress>8 28198</RowsScalerAddress>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>SpkAdv</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="31246" DuplicateNum="0" AddressBinInt="31246" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1127" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:56:38.4458124Z" IdentificationStatus="0">
+      <Label>Spark Advance  Adder  Table  for  Cold  Temperatures  and Tip-ins</Label>
+      <Comments>FN1127 - Spark Advance  Adder  Table  for  Cold  Temperatures  and Tip-ins</Comments>
+      <CellsScaleExpression>X/4</CellsScaleExpression>
+      <ColsScalerAddress>8 28106</ColsScalerAddress>
+      <RowsScalerAddress>8 28198</RowsScalerAddress>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>SpkAdv</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="31326" DuplicateNum="0" AddressBinInt="31326" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1128" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:56:42.2635718Z" IdentificationStatus="0">
+      <Label>Spark Cold Temperature Multiplier</Label>
+      <Comments>FN1128 - Spark Cold Temperature Multiplier</Comments>
+      <CellsScaleExpression>X/64</CellsScaleExpression>
+      <ColsScalerAddress>8 27716</ColsScalerAddress>
+      <RowsScalerAddress>8 27752</RowsScalerAddress>
+      <ColsUnits>°F ECT / ACT</ColsUnits>
+      <RowsUnits>TP_REL</RowsUnits>
+      <CellsUnits>xMult</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="31406" DuplicateNum="0" AddressBinInt="31406" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1129" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:56:47.0816236Z" IdentificationStatus="0">
+      <Label>MBT Spark EGR Adder (MPG Mode)</Label>
+      <Comments>FN1129 - MBT Spark EGR Adder (MPG Mode)
+
+~8x10 in older strats
+Increase in mbt spark for each % EGR
+X INPUT:   Normalized RPM - FN070
+Y INPUT:   Normalized LOAD - FN071
+OUTPUT:    Spark adder (degrees)</Comments>
+      <CellsScaleExpression>X/32</CellsScaleExpression>
+      <ColsScalerAddress>8 28106</ColsScalerAddress>
+      <RowsScalerAddress>8 28198</RowsScalerAddress>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>SpkAdv</CellsUnits>
+      <IdentificationDetails />
+    </Table>
     <Table BankNum="8" AddressInt="31552" DuplicateNum="0" AddressBinInt="31552" XdfUniqueId="" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="true" ColsNumber="10" RowsNumber="9" ShortLabel="ADAPTIVE_FUEL_TABLE" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-03-28T04:27:44.9562509Z" DateUpdated="2025-03-28T04:27:44.9562532Z" IdentificationStatus="0">
       <Label>ADAPTIVE_FUEL_TABLE</Label>
       <Comments>FN1325-</Comments>
@@ -29,8 +316,159 @@
       <Category2 />
       <Category3 />
     </Table>
+    <Table BankNum="8" AddressInt="32117" DuplicateNum="0" AddressBinInt="32117" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1220" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:57:02.5015484Z" IdentificationStatus="0">
+      <Label>EGR Rate</Label>
+      <Comments>FN1220 - EGR Rate
+
+If EGR is enabled, the base amount of EGR to  be  added.
+The base amount of EGR can be adjusted by ECT, ACT, and BP to reflect special engine operating conditions.</Comments>
+      <CellsScaleExpression>X/16</CellsScaleExpression>
+      <ColsScalerAddress>8 28106</ColsScalerAddress>
+      <RowsScalerAddress>8 28198</RowsScalerAddress>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>xMult</CellsUnits>
+      <IdentificationDetails />
+    </Table>
+    <Table BankNum="8" AddressInt="32197" DuplicateNum="0" AddressBinInt="32197" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="10" RowsNumber="8" ShortLabel="FN1222" OutputComments="false" CellsScalePrecision="2" CellsMin="" CellsMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:57:05.9199934Z" IdentificationStatus="0">
+      <Label>EGR Rate (MPG Mode)</Label>
+      <Comments>FN1222 - EGR Rate (MPG Mode)
+
+If EGR is enabled, the base amount of EGR to  be  added.
+The base amount of EGR can be adjusted by ECT, ACT, and BP to reflect special engine operating conditions.</Comments>
+      <CellsScaleExpression>X/16</CellsScaleExpression>
+      <ColsScalerAddress>8 28106</ColsScalerAddress>
+      <RowsScalerAddress>8 28198</RowsScalerAddress>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MAPOPE</RowsUnits>
+      <CellsUnits>xMult</CellsUnits>
+      <IdentificationDetails />
+    </Table>
   </Tables>
   <Functions>
+    <Function BankNum="8" AddressInt="27438" DuplicateNum="0" AddressBinInt="27438" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="9" ShortLabel="FN303" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:57:31.512117Z" IdentificationStatus="0">
+      <Label>WOT Lambse Multiplier</Label>
+      <Comments>FN303 - WOT Lambse Multiplier</Comments>
+      <InputScaleExpression>X/4</InputScaleExpression>
+      <OutputScaleExpression>X/128</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <OutputUnits>xLambse</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27474" DuplicateNum="0" AddressBinInt="27474" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN310" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:57:34.7732978Z" IdentificationStatus="0">
+      <Label>WOT Time Lambse Multiplier</Label>
+      <Comments>FN310 - WOT Time Lambse Multiplier</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>WOT_Tmr</InputUnits>
+      <OutputUnits>xLambse</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27488" DuplicateNum="0" AddressBinInt="27488" XdfUniqueId="" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN005" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T06:10:01.8746773Z" DateUpdated="2025-08-25T06:10:01.8746773Z" IdentificationStatus="0">
+      <Label>ECT Scaler for Hot Injector Comp</Label>
+      <Comments>FN005 - ECT Scaler for Hot Injector Comp</Comments>
+      <InputScaleExpression>X*2</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>°F</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27512" DuplicateNum="0" AddressBinInt="27512" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN007" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:57:38.8813822Z" IdentificationStatus="0">
+      <Label>AM Scaler for Hot Injector Comp</Label>
+      <Comments>FN007 - AM Scaler for Hot Injector Comp</Comments>
+      <InputScaleExpression>X/1024</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>lb/min AM</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27532" DuplicateNum="0" AddressBinInt="27532" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN008" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:57:42.6180091Z" IdentificationStatus="0">
+      <Label>ATMR3 Sclaer for Hot Injector Comp</Label>
+      <Comments>FN008 - ATMR3 Sclaer for Hot Injector Comp</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>Secs ATMR3</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27552" DuplicateNum="0" AddressBinInt="27552" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN023" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:57:47.7942027Z" IdentificationStatus="0">
+      <Label>Cranking Fuel PW Crank PIP Scaler</Label>
+      <Comments>FN023 - Cranking Fuel PW Crank PIP Scaler
+
+FN023 - Do not edit first or last entries. Provides column scaling for the following table;
+
+'Cranking Fuel PW' (aka FN1350)</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>PIP</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27572" DuplicateNum="0" AddressBinInt="27572" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN024" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:57:51.2398306Z" IdentificationStatus="0">
+      <Label>Cranking Fuel PW ACT Scaler</Label>
+      <Comments>FN024 - Cranking Fuel PW ACT Scaler
+
+FN024 - Do not edit first or last entries. Provides row scaling for the following table;
+
+'Cranking Fuel PW' (aka FN1350)</Comments>
+      <InputScaleExpression>X*2</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>°F</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27672" DuplicateNum="0" AddressBinInt="27672" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN331A" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:57:56.8961282Z" IdentificationStatus="0">
+      <Label>AEM TPREL Multiplier</Label>
+      <Comments />
+      <InputScaleExpression>X / 64</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>TPREL</InputUnits>
+      <OutputUnits>xMul</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="27692" DuplicateNum="0" AddressBinInt="27692" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN379" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:58:01.5819578Z" IdentificationStatus="0">
+      <Label>AE RPM Multiplier</Label>
+      <Comments />
+      <InputScaleExpression>X / 4</InputScaleExpression>
+      <OutputScaleExpression>X / 64</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <OutputUnits>xMul</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="27716" DuplicateNum="0" AddressBinInt="27716" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="9" ShortLabel="FN091" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:58:05.7886137Z" IdentificationStatus="0">
+      <Label>Spark TEMP_FRAC Scaler</Label>
+      <Comments>FN091 - TEMP_FRAC Scaler for Spark</Comments>
+      <InputScaleExpression>X/64</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>°F ECT-ACT</InputUnits>
+      <OutputUnits />
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27752" DuplicateNum="0" AddressBinInt="27752" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN092" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:58:09.7128591Z" IdentificationStatus="0">
+      <Label>Spark TP_REL Scaler</Label>
+      <Comments>FN092 - Spark TP_REL Scaler</Comments>
+      <InputScaleExpression>X/12800</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>TP_REL</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27793" DuplicateNum="0" AddressBinInt="27793" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN875D" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:58:18.9586738Z" IdentificationStatus="0">
+      <Label>AM Drive</Label>
+      <Comments />
+      <InputScaleExpression>X * 64</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>DSDRPM</InputUnits>
+      <OutputUnits>lbs/hr</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27805" DuplicateNum="0" AddressBinInt="27805" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN875HN" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:58:23.4402945Z" IdentificationStatus="0">
+      <Label>Idle AM Neutral</Label>
+      <Comments />
+      <InputScaleExpression>X * 64</InputScaleExpression>
+      <OutputScaleExpression>X/128</OutputScaleExpression>
+      <InputUnits>DSDRPM</InputUnits>
+      <OutputUnits>LBS/MIN</OutputUnits>
+      <IdentificationDetails />
+    </Function>
     <Function BankNum="8" AddressInt="27914" DuplicateNum="0" AddressBinInt="27914" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="true" RowsNumber="10" ShortLabel="TEMP_SENS_TRANSFER_FUNC" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2024-12-30T07:10:27.3576987Z" DateUpdated="2024-12-31T05:59:47.1600002Z" IdentificationStatus="0">
       <Label>TEMP_SENS_TRANSFER_FUNC</Label>
       <Comments>Fc022 - Function 022</Comments>
@@ -42,6 +480,98 @@
       <Category />
       <Category2 />
       <Category3 />
+    </Function>
+    <Function BankNum="8" AddressInt="27954" DuplicateNum="0" AddressBinInt="27954" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN018A" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:58:37.7947843Z" IdentificationStatus="0">
+      <Label>Fuel ATMR1 Scaler</Label>
+      <Comments>FN018A - Fuel ATMR1 Scaler</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>ATMR1</InputUnits>
+      <OutputUnits>Row</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="27982" DuplicateNum="0" AddressBinInt="27982" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN019A" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="0" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:58:41.7189703Z" IdentificationStatus="0">
+      <Label>Accel Enrichment TAR Scaler</Label>
+      <Comments>FN019A - Accel Enrichment TAR Scaler
+
+Throttle Angle Rate for Accel Enrichment.</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>TAR</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="28002" DuplicateNum="0" AddressBinInt="28002" XdfUniqueId="" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="8" ShortLabel="FN020C" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T06:10:26.4192932Z" DateUpdated="2025-08-25T06:10:26.4192932Z" IdentificationStatus="0">
+      <Label>ISC ECT Scaler</Label>
+      <Comments>FN020C - ISC ECT Scaler</Comments>
+      <InputScaleExpression>X / 64</InputScaleExpression>
+      <OutputScaleExpression>X / 256</OutputScaleExpression>
+      <InputUnits>°F</InputUnits>
+      <OutputUnits />
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="28034" DuplicateNum="0" AddressBinInt="28034" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="8" ShortLabel="FN021V" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:58:45.0807664Z" IdentificationStatus="0">
+      <Label>VE Table MAPOPE Scaler</Label>
+      <Comments>FN021V - VE Table MAPOPE Scaler</Comments>
+      <InputScaleExpression>X / 128</InputScaleExpression>
+      <OutputScaleExpression>X / 256</OutputScaleExpression>
+      <InputUnits>MAPOPE</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="28066" DuplicateNum="0" AddressBinInt="28066" XdfUniqueId="" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN022A" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T06:10:32.7493106Z" DateUpdated="2025-08-25T06:10:32.7493106Z" IdentificationStatus="0">
+      <Label>Fuel ECT Scaler</Label>
+      <Comments>FN022A - Fuel ECT Scaler
+
+5 rows for older functions</Comments>
+      <InputScaleExpression>X / 64</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>°F</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="28106" DuplicateNum="0" AddressBinInt="28106" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN070" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:58:48.9015758Z" IdentificationStatus="0">
+      <Label>RPM Scaler</Label>
+      <Comments>FN070 - RPM Scaler</Comments>
+      <InputScaleExpression>X / 4</InputScaleExpression>
+      <OutputScaleExpression>X / 256</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="28134" DuplicateNum="0" AddressBinInt="28134" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="9" ShortLabel="FN070V" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:58:52.6617265Z" IdentificationStatus="0">
+      <Label>VE Table RPM Scaler</Label>
+      <Comments>FN070V - Lambda / VE Table RPM Scaler</Comments>
+      <InputScaleExpression>X / 4</InputScaleExpression>
+      <OutputScaleExpression>X / 256</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="28170" DuplicateNum="0" AddressBinInt="28170" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN072D" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:58:56.1334434Z" IdentificationStatus="0">
+      <Label>Fuel PERLOAD Scaler</Label>
+      <Comments>FN072D - Fuel LOAD Scaler</Comments>
+      <InputScaleExpression>X / 128</InputScaleExpression>
+      <OutputScaleExpression>X / 256</OutputScaleExpression>
+      <InputUnits>PERLOAD</InputUnits>
+      <OutputUnits>Row</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="28198" DuplicateNum="0" AddressBinInt="28198" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN071" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:58:59.0297386Z" IdentificationStatus="0">
+      <Label>Fuel/Spark LOAD (MAP) Scaler</Label>
+      <Comments>FN071 - Fuel/Spark LOAD (MAP) Scaler
+
+this function also provides scaling for the base spark table on older 1980s speed density ecu's
+
+LOAD NORMALIZING FUNCTION
+PURPOSE:  USE FOR TABLE LOOKUP
+INPUT:  LOAD
+OUTPUT: NORMALIZED LOAD</Comments>
+      <InputScaleExpression>X / 8</InputScaleExpression>
+      <OutputScaleExpression>X / 256</OutputScaleExpression>
+      <InputUnits>MAPOPE</InputUnits>
+      <OutputUnits>SC</OutputUnits>
+      <IdentificationDetails />
     </Function>
     <Function BankNum="8" AddressInt="28310" DuplicateNum="0" AddressBinInt="28310" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN160A" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2024-12-29T20:02:52.7601688" DateUpdated="2024-12-29T20:08:04.0804471" IdentificationStatus="0">
       <Label>MIN_DWELL_TIME_VS_VBAT_HIGH_TEMP</Label>
@@ -67,6 +597,121 @@
       <Category2 />
       <Category3 />
     </Function>
+    <Function BankNum="8" AddressInt="28818" DuplicateNum="0" AddressBinInt="28818" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN018B" OutputComments="false" InputScalePrecision="0" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T05:59:08.9425666Z" IdentificationStatus="0">
+      <Label>ISC ATMR3 Scaler</Label>
+      <Comments>FN018B - ISC ATMR3 Scaler</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X/256</OutputScaleExpression>
+      <InputUnits>Seconds</InputUnits>
+      <OutputUnits />
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="29400" DuplicateNum="0" AddressBinInt="29400" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN219" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:59:24.7871224Z" IdentificationStatus="0">
+      <Label>EGR Mass Flow Transfer</Label>
+      <Comments />
+      <InputScaleExpression>X / 64</InputScaleExpression>
+      <OutputScaleExpression>X / 32768</OutputScaleExpression>
+      <InputUnits>iEVP</InputUnits>
+      <OutputUnits>lbs/min</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="29480" DuplicateNum="0" AddressBinInt="29480" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN239" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:59:33.0826248Z" IdentificationStatus="0">
+      <Label>EGR Flow Error Correction</Label>
+      <Comments>egr dutycycle adder vs egr error</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits>EGRDC</InputUnits>
+      <OutputUnits>correction</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="29867" DuplicateNum="0" AddressBinInt="29867" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN305" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T05:59:58.5892973Z" IdentificationStatus="0">
+      <Label>ACT AM Multiplier VE</Label>
+      <Comments>FN305 - ACT AM Multiplier VE
+
+lower value richens
+higher value leans</Comments>
+      <InputScaleExpression>X / 0.5</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>°F ACT</InputUnits>
+      <OutputUnits>xVE</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="29877" DuplicateNum="0" AddressBinInt="29877" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN326" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:00:02.7225973Z" IdentificationStatus="0">
+      <Label>ECT AM Multiplier VE</Label>
+      <Comments>lower value richens
+higher value leans</Comments>
+      <InputScaleExpression>X / 0.5</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>ECT</InputUnits>
+      <OutputUnits>xVE</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="29887" DuplicateNum="0" AddressBinInt="29887" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="9" ShortLabel="FN367" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:00:05.7927567Z" IdentificationStatus="0">
+      <Label>Injector Offset Voltage</Label>
+      <Comments />
+      <InputScaleExpression>X / 16</InputScaleExpression>
+      <OutputScaleExpression>X / 32</OutputScaleExpression>
+      <InputUnits>VBAT</InputUnits>
+      <OutputUnits>PW</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="30048" DuplicateNum="0" AddressBinInt="30048" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN332" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:00:18.7995454Z" IdentificationStatus="0">
+      <Label>AE Pulse Period</Label>
+      <Comments>FN332 - AE Pulse Period</Comments>
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X</OutputScaleExpression>
+      <InputUnits>mass</InputUnits>
+      <OutputUnits>xx</OutputUnits>
+      <IdentificationDetails />
+    </Function>
+    <Function BankNum="8" AddressInt="30058" DuplicateNum="0" AddressBinInt="30058" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN378" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:00:23.1370449Z" IdentificationStatus="0">
+      <Label>AE BP Multiplier</Label>
+      <Comments />
+      <InputScaleExpression>X / 8</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>in hg</InputUnits>
+      <OutputUnits>xMul</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="30068" DuplicateNum="0" AddressBinInt="30068" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="13" ShortLabel="FNCRK_LAMS" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:00:28.7068727Z" IdentificationStatus="0">
+      <Label>Cranking Lambse (FN348X Crank PW)</Label>
+      <Comments />
+      <InputScaleExpression>X / 0.5</InputScaleExpression>
+      <OutputScaleExpression>X / 655.36</OutputScaleExpression>
+      <InputUnits>ECT</InputUnits>
+      <OutputUnits>PW</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="31691" DuplicateNum="0" AddressBinInt="31691" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN307" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:01:14.4882946Z" IdentificationStatus="0">
+      <Label>Transient Constant  Multiplier</Label>
+      <Comments />
+      <InputScaleExpression>X</InputScaleExpression>
+      <OutputScaleExpression>X / 32</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <OutputUnits>xMul</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="32028" DuplicateNum="0" AddressBinInt="32028" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN211" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:01:19.3107773Z" IdentificationStatus="0">
+      <Label>ECT EGR Multiplier</Label>
+      <Comments />
+      <InputScaleExpression>X / 0.5</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>ECT</InputUnits>
+      <OutputUnits>X</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="32042" DuplicateNum="0" AddressBinInt="32042" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="7" ShortLabel="FN220" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:01:22.5715049Z" IdentificationStatus="0">
+      <Label>ACT EGR Multiplier</Label>
+      <Comments />
+      <InputScaleExpression>X / 0.5</InputScaleExpression>
+      <OutputScaleExpression>X / 128</OutputScaleExpression>
+      <InputUnits>ACT</InputUnits>
+      <OutputUnits>X</OutputUnits>
+    </Function>
+    <Function BankNum="8" AddressInt="32107" DuplicateNum="0" AddressBinInt="32107" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="5" ShortLabel="FN212A" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" InputMin="" InputMax="" OutputMin="" OutputMax="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:01:26.201503Z" IdentificationStatus="0">
+      <Label>BP EGR Multiplier</Label>
+      <Comments>FN212A - BP EGR Multiplier
+
+EGR rate multiplier as a function of Barometric Pressure BP.</Comments>
+      <InputScaleExpression>X/8</InputScaleExpression>
+      <OutputScaleExpression>X/128</OutputScaleExpression>
+      <InputUnits>BP</InputUnits>
+      <OutputUnits>xMult</OutputUnits>
+      <IdentificationDetails />
+    </Function>
   </Functions>
   <Scalars>
     <Scalar BankNum="8" AddressInt="1052" DuplicateNum="0" AddressBinInt="1052" isCalibrationElement="false" Skip="true" Byte="true" Signed="false" ShortLabel="Rbase R90 end next address" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-12-31T17:46:07.383609Z" DateUpdated="2024-12-31T18:26:53.221815Z" IdentificationStatus="0">
@@ -78,6 +723,12 @@
       <Category />
       <Category2 />
       <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="13033" DuplicateNum="0" AddressBinInt="13033" XdfUniqueId="" isCalibrationElement="false" Skip="false" Byte="false" Signed="false" ShortLabel="PYM_FPPRT" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-08-25T06:01:39.3870015Z" DateUpdated="2025-08-25T06:01:39.3870015Z" IdentificationStatus="0">
+      <Label>Fuel Pump Prime Time</Label>
+      <Comments>PYM_FPPRT - Fuel Pump Prime Time</Comments>
+      <ScaleExpression>X / 1024</ScaleExpression>
+      <Units>Seconds</Units>
     </Scalar>
     <Scalar BankNum="8" AddressInt="27792" DuplicateNum="0" AddressBinInt="27792" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="Sc0004" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-12-29T17:58:31.5056362" DateUpdated="2024-12-29T18:48:13.8367919" IdentificationStatus="0">
       <Label>Rf0+190</Label>
@@ -192,6 +843,13 @@ If TEMDWL&lt;=DWLTBP, then function FN160A is used, else FN160B is used. </Comme
       <Category2 />
       <Category3 />
     </Scalar>
+    <Scalar BankNum="8" AddressInt="28369" DuplicateNum="0" AddressBinInt="28369" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_006ED1" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:02:10.7172523Z" IdentificationStatus="0">
+      <Label>spark_torque_reduction_sw</Label>
+      <Comments>P_006ED1 - spark_torque_reduction_sw
+spark_torque_reduction_sw</Comments>
+      <ScaleExpression />
+      <Units>1=Enable;0=Disable</Units>
+    </Scalar>
     <Scalar BankNum="8" AddressInt="28375" DuplicateNum="0" AddressBinInt="28375" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="ENGCYL" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-12-29T20:02:52.7607656" DateUpdated="2024-12-29T20:14:49.751798" IdentificationStatus="0">
       <Label>PIP_PER_REV</Label>
       <Comments>8ed7</Comments>
@@ -201,6 +859,82 @@ If TEMDWL&lt;=DWLTBP, then function FN160A is used, else FN160B is used. </Comme
       <Category />
       <Category2 />
       <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28380" DuplicateNum="0" AddressBinInt="28380" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="DFMIN0" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:02:29.9529784Z" IdentificationStatus="0">
+      <Label>Transient Spark Flag Hi Lo Changes</Label>
+      <Comments>DFMIN0 - Transient Spark Flag Hi Lo Changes</Comments>
+      <ScaleExpression>X</ScaleExpression>
+      <Units>#</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28381" DuplicateNum="0" AddressBinInt="28381" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="DFMIN1" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:02:39.7945259Z" IdentificationStatus="0">
+      <Label>Transient Spark Flag Lo Hi Changes</Label>
+      <Comments>DFMIN1 - Transient Spark Flag Lo Hi Changes</Comments>
+      <ScaleExpression>X</ScaleExpression>
+      <Units>#</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28382" DuplicateNum="0" AddressBinInt="28382" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_6EDE" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:02:49.6063427Z" IdentificationStatus="0">
+      <Label>fuel_ve_cid_multiplier</Label>
+      <Comments>P_6EDE - fuel_ve_cid_multiplier
+fuel_ve_cid_multiplier</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28384" DuplicateNum="0" AddressBinInt="28384" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_6EE0" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:02:51.8321905Z" IdentificationStatus="0">
+      <Label>fuel_ve_multiplier</Label>
+      <Comments>P_6EE0 - fuel_ve_multiplier
+fuel_ve_multiplier</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28492" DuplicateNum="0" AddressBinInt="28492" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="AHISL" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:03:00.1120209Z" IdentificationStatus="0">
+      <Label>LBS/HR - Injector High Slope</Label>
+      <Comments>AHISL - LBS/HR - Injector High Slope
+</Comments>
+      <ScaleExpression>X/582.53333333333</ScaleExpression>
+      <Units>LBS/HR</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28508" DuplicateNum="0" AddressBinInt="28508" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_6F5C" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:03:12.0919496Z" IdentificationStatus="0">
+      <Label>fuel_adapt_max</Label>
+      <Comments>P_6F5C - fuel_adapt_max
+fuel_adapt_max</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28510" DuplicateNum="0" AddressBinInt="28510" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_6F5E" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:03:14.4237027Z" IdentificationStatus="0">
+      <Label>fuel_adapt_min</Label>
+      <Comments>P_6F5E - fuel_adapt_min
+fuel_adapt_min</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28516" DuplicateNum="0" AddressBinInt="28516" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_6F64" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:03:19.7411094Z" IdentificationStatus="0">
+      <Label>rev_limit</Label>
+      <Comments>P_6F64 - rev_limit
+rev_limit</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28518" DuplicateNum="0" AddressBinInt="28518" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_6F66" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:03:22.0741021Z" IdentificationStatus="0">
+      <Label>rev_limit_hysterisis</Label>
+      <Comments>P_6F66 - rev_limit_hysterisis
+rev_limit_hysterisis</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28522" DuplicateNum="0" AddressBinInt="28522" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_6F6A" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:03:26.2579866Z" IdentificationStatus="0">
+      <Label>rev_limit2</Label>
+      <Comments>P_6F6A - rev_limit2
+rev_limit2</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="28742" DuplicateNum="0" AddressBinInt="28742" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_7046" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:03:56.7396815Z" IdentificationStatus="0">
+      <Label>ACT to ECT Percentage</Label>
+      <Comments>P_7046 - ACT to ECT Percentage
+0 == ACT
+1 == ECT</Comments>
+      <ScaleExpression>X / 128</ScaleExpression>
+      <Units>Act/Ect</Units>
     </Scalar>
     <Scalar BankNum="8" AddressInt="28747" DuplicateNum="0" AddressBinInt="28747" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="PIP_COUNT" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-12-30T06:14:38.3599902Z" DateUpdated="2024-12-30T06:22:02.7671863Z" IdentificationStatus="0">
       <Label>PIP_COUNT</Label>
@@ -222,29 +956,33 @@ If TEMDWL&lt;=DWLTBP, then function FN160A is used, else FN160B is used. </Comme
       <Category2 />
       <Category3 />
     </Scalar>
-    <Scalar BankNum="8" AddressInt="28790" DuplicateNum="0" AddressBinInt="28790" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="Ssfctr" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-03-28T04:22:01.6646412Z" DateUpdated="2025-03-28T04:37:17.290651Z" IdentificationStatus="0">
-      <Label>Ssfctr</Label>
-      <Comments>8c0a</Comments>
-      <ScaleExpression>X</ScaleExpression>
-      <Units />
+    <Scalar BankNum="8" AddressInt="28790" DuplicateNum="0" AddressBinInt="28790" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="SSFCTR" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-03-28T04:22:01.6646412Z" DateUpdated="2025-08-25T06:04:41.8296777Z" IdentificationStatus="0">
+      <Label>Steady State Factor</Label>
+      <Comments>SSFCTR - Steady State Factor
+SSFCTR - Used in MKAY and signature KAY calculations.</Comments>
+      <ScaleExpression>X/65536</ScaleExpression>
+      <Units>multiplier</Units>
     </Scalar>
-    <Scalar BankNum="8" AddressInt="28792" DuplicateNum="0" AddressBinInt="28254" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="Fkskay" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-03-28T04:22:01.6646563Z" DateUpdated="2025-03-28T04:37:22.2944849Z" IdentificationStatus="0">
-      <Label>Fkskay</Label>
-      <Comments>8e5e</Comments>
-      <ScaleExpression>X</ScaleExpression>
-      <Units />
+    <Scalar BankNum="8" AddressInt="28792" DuplicateNum="0" AddressBinInt="28792" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="FKSKAY" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-03-28T04:22:01.6646563Z" DateUpdated="2025-08-25T06:04:52.1053081Z" IdentificationStatus="0">
+      <Label>Signature PIP Half Period Multiplier Filter Constant</Label>
+      <Comments>FKSKAY - Signature PIP Half Period Multiplier Filter Constant
+FKSKAY</Comments>
+      <ScaleExpression>X/65536</ScaleExpression>
+      <Units>x</Units>
     </Scalar>
-    <Scalar BankNum="8" AddressInt="28794" DuplicateNum="0" AddressBinInt="28256" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="Sigkll" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-03-28T04:22:01.6646718Z" DateUpdated="2025-03-28T04:37:34.551717Z" IdentificationStatus="0">
-      <Label>Sigkll</Label>
-      <Comments>8e60</Comments>
-      <ScaleExpression>X</ScaleExpression>
-      <Units />
+    <Scalar BankNum="8" AddressInt="28794" DuplicateNum="0" AddressBinInt="28794" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="SIGKLL" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-03-28T04:22:01.6646718Z" DateUpdated="2025-08-25T06:04:57.7984771Z" IdentificationStatus="0">
+      <Label>Signature PIP Multiplier Lowest Value</Label>
+      <Comments>SIGKLL - Signature PIP Multiplier Lowest Value
+SIGKLL - 1.42857 for 30% dutycycle signature PIP, 1.25000 for 35% dutycycle signature PIP.</Comments>
+      <ScaleExpression>X/32768</ScaleExpression>
+      <Units>multiplier</Units>
     </Scalar>
-    <Scalar BankNum="8" AddressInt="28796" DuplicateNum="0" AddressBinInt="28258" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="Sigklu" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-03-28T04:22:01.6646867Z" DateUpdated="2025-03-28T04:37:37.5839532Z" IdentificationStatus="0">
-      <Label>Sigklu</Label>
-      <Comments>8e62</Comments>
-      <ScaleExpression>X</ScaleExpression>
-      <Units />
+    <Scalar BankNum="8" AddressInt="28796" DuplicateNum="0" AddressBinInt="28796" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="SIGKLU" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-03-28T04:22:01.6646867Z" DateUpdated="2025-08-25T06:05:03.1301825Z" IdentificationStatus="0">
+      <Label>Signature PIP Multiplier Highest Value</Label>
+      <Comments>SIGKLU - Signature PIP Multiplier Highest Value
+SIGKLU - 1.99996 for 30% dutycycle signature PIP, 1.66666 for 35% dutycycle signature PIP.</Comments>
+      <ScaleExpression>X/32768</ScaleExpression>
+      <Units>multiplier</Units>
     </Scalar>
     <Scalar BankNum="8" AddressInt="28922" DuplicateNum="0" AddressBinInt="28922" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="FAIL_MANAGEMENT_ACT_MIN" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-12-30T07:10:27.3620981Z" DateUpdated="2024-12-31T05:58:45.2631433Z" IdentificationStatus="0">
       <Label>FAIL_MANAGEMENT_ACT_MIN</Label>
@@ -286,6 +1024,34 @@ If TEMDWL&lt;=DWLTBP, then function FN160A is used, else FN160B is used. </Comme
       <Category2 />
       <Category3 />
     </Scalar>
+    <Scalar BankNum="8" AddressInt="29147" DuplicateNum="0" AddressBinInt="29147" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_71DB" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:05:43.0873508Z" IdentificationStatus="0">
+      <Label>fuel_adapt_ect_min</Label>
+      <Comments>P_71DB - fuel_adapt_ect_min
+fuel_adapt_ect_min</Comments>
+      <ScaleExpression />
+      <Units>F</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="29148" DuplicateNum="0" AddressBinInt="29148" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_71DC" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:05:46.0090131Z" IdentificationStatus="0">
+      <Label>fuel_adapt_ect_max</Label>
+      <Comments>P_71DC - fuel_adapt_ect_max
+fuel_adapt_ect_max</Comments>
+      <ScaleExpression />
+      <Units>F</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="29149" DuplicateNum="0" AddressBinInt="29149" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_71DD" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:05:49.0472198Z" IdentificationStatus="0">
+      <Label>fuel_adapt_act_max</Label>
+      <Comments>P_71DD - fuel_adapt_act_max
+fuel_adapt_act_max</Comments>
+      <ScaleExpression />
+      <Units>F</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="29150" DuplicateNum="0" AddressBinInt="29150" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_0071DE" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.0908293Z" DateUpdated="2025-08-25T06:05:51.2237614Z" IdentificationStatus="0">
+      <Label>fuel_adapt_act_min</Label>
+      <Comments>P_0071DE - fuel_adapt_act_min
+fuel_adapt_act_min</Comments>
+      <ScaleExpression />
+      <Units>F</Units>
+    </Scalar>
     <Scalar BankNum="8" AddressInt="29190" DuplicateNum="0" AddressBinInt="29190" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="HEGO_HOT_START_DELAY_WARM_FLG" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-03-06T06:10:14.0168302Z" DateUpdated="2025-03-06T06:12:25.5681615Z" IdentificationStatus="0">
       <Label>HEGO_HOT_START_DELAY_WARM_FLG</Label>
       <Comments>9206</Comments>
@@ -295,6 +1061,46 @@ If TEMDWL&lt;=DWLTBP, then function FN160A is used, else FN160B is used. </Comme
       <Category />
       <Category2 />
       <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31650" DuplicateNum="0" AddressBinInt="31650" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="Sc0210" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:06:55.1033061Z" IdentificationStatus="0">
+      <Label>Signature PIP Difference Value - MHPFD</Label>
+      <Comments>Sc0210 - Signature PIP Difference Value - MHPFD
+MHPFD - Permitted values are;
+
+8 cylinder, signature dutycycle &lt;= 35% = 0.20
+6 cylinder, signature dutycycle &lt;= 30% = 0.24
+4 cylinder, signature dutycycle &lt;= 30% = 0.29
+Signature PIP distributor not present = 0.99</Comments>
+      <ScaleExpression>X / 65535</ScaleExpression>
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31685" DuplicateNum="0" AddressBinInt="31685" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="TFCTM" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:07:22.8396292Z" IdentificationStatus="0">
+      <Label>Transient Fuel Delay Startup</Label>
+      <Comments>TFCTM - Transient Fuel Delay Startup
+time to delay transient fuel compensation since time engine running</Comments>
+      <ScaleExpression>X</ScaleExpression>
+      <Units>sec</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31688" DuplicateNum="0" AddressBinInt="31688" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="MEFTRD" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:07:28.6133937Z" IdentificationStatus="0">
+      <Label>Transient Fuel Decel Multiplier</Label>
+      <Comments>MEFTRD - Transient Fuel Decel Multiplier
+</Comments>
+      <ScaleExpression>X / 128</ScaleExpression>
+      <Units>%</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31726" DuplicateNum="0" AddressBinInt="31726" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_7BEE" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:07:33.5863504Z" IdentificationStatus="0">
+      <Label>mph_limiter</Label>
+      <Comments>P_7BEE - mph_limiter
+mph_limiter</Comments>
+      <ScaleExpression />
+      <Units>MPH</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31727" DuplicateNum="0" AddressBinInt="31727" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_7BEF" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:07:36.4738722Z" IdentificationStatus="0">
+      <Label>mph_limiter_hysteris</Label>
+      <Comments>P_7BEF - mph_limiter_hysteris
+mph_limiter_hysteris</Comments>
+      <ScaleExpression />
+      <Units>MPH</Units>
     </Scalar>
     <Scalar BankNum="8" AddressInt="31744" DuplicateNum="0" AddressBinInt="31744" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="UNDERSPEED_RPM" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-12-30T06:14:38.3638436Z" DateUpdated="2024-12-30T06:30:40.2306742Z" IdentificationStatus="0">
       <Label>UNDERSPEED_RPM</Label>
@@ -316,6 +1122,34 @@ If TEMDWL&lt;=DWLTBP, then function FN160A is used, else FN160B is used. </Comme
       <Category2 />
       <Category3 />
     </Scalar>
+    <Scalar BankNum="8" AddressInt="31765" DuplicateNum="0" AddressBinInt="31765" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_7C15" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:07:47.0730382Z" IdentificationStatus="0">
+      <Label>spark_min_allowed</Label>
+      <Comments>P_7C15 - spark_min_allowed
+spark_min_allowed</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31766" DuplicateNum="0" AddressBinInt="31766" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_7C16" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:07:49.3143493Z" IdentificationStatus="0">
+      <Label>spark_max_allowed</Label>
+      <Comments>P_7C16 - spark_max_allowed
+spark_max_allowed</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31769" DuplicateNum="0" AddressBinInt="31769" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_007C19" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:07:51.4367092Z" IdentificationStatus="0">
+      <Label>spark_torque_reduction2_sw</Label>
+      <Comments>P_007C19 - spark_torque_reduction2_sw
+spark_torque_reduction2_sw</Comments>
+      <ScaleExpression />
+      <Units>1=Enable;0=Disable</Units>
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31790" DuplicateNum="0" AddressBinInt="31790" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_7C2E" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:08:09.5029751Z" IdentificationStatus="0">
+      <Label>spark_max_retard_control</Label>
+      <Comments>P_7C2E - spark_max_retard_control
+spark_max_retard_control</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
     <Scalar BankNum="8" AddressInt="31792" DuplicateNum="0" AddressBinInt="31792" isCalibrationElement="true" Skip="false" Byte="true" Signed="true" ShortLabel="RET_LIM" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-12-31T19:56:41.2431994Z" DateUpdated="2024-12-31T20:00:23.5702509Z" IdentificationStatus="0">
       <Label>RET_LIM</Label>
       <Comments>9c30</Comments>
@@ -336,17 +1170,31 @@ If TEMDWL&lt;=DWLTBP, then function FN160A is used, else FN160B is used. </Comme
       <Category2 />
       <Category3 />
     </Scalar>
-    <Scalar BankNum="8" AddressInt="31812" DuplicateNum="0" AddressBinInt="29812" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="RPMCNL" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-03-28T04:22:01.6685629Z" DateUpdated="2025-03-28T04:37:39.9654553Z" IdentificationStatus="0">
+    <Scalar BankNum="8" AddressInt="31810" DuplicateNum="0" AddressBinInt="31810" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_7C42" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:08:23.0220718Z" IdentificationStatus="0">
+      <Label>spark_wot_global_adder</Label>
+      <Comments>P_7C42 - spark_wot_global_adder
+spark_wot_global_adder</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="31812" DuplicateNum="0" AddressBinInt="31812" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="RPMCNL" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-03-28T04:22:01.6685629Z" DateUpdated="2025-03-28T04:37:39.9654553Z" IdentificationStatus="0">
       <Label>RPMCNL</Label>
       <Comments>9474</Comments>
       <ScaleExpression>X</ScaleExpression>
       <Units />
     </Scalar>
-    <Scalar BankNum="8" AddressInt="31814" DuplicateNum="0" AddressBinInt="29817" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="WINCLD" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-03-28T04:22:01.6685814Z" DateUpdated="2025-03-28T04:37:43.2165841Z" IdentificationStatus="0">
+    <Scalar BankNum="8" AddressInt="31814" DuplicateNum="0" AddressBinInt="31814" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="WINCLD" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-03-28T04:22:01.6685814Z" DateUpdated="2025-03-28T04:37:43.2165841Z" IdentificationStatus="0">
       <Label>WINCLD</Label>
       <Comments>9479</Comments>
       <ScaleExpression>X</ScaleExpression>
       <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="32102" DuplicateNum="0" AddressBinInt="32102" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="P_7D66" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:09:26.5319393Z" IdentificationStatus="0">
+      <Label>fuel_accel_enrichment_tps_min_active_tar</Label>
+      <Comments>P_7D66 - fuel_accel_enrichment_tps_min_active_tar
+fuel_accel_enrichment_tps_min_active_tar</Comments>
+      <ScaleExpression />
+      <Units>DEG/SEC</Units>
     </Scalar>
     <Scalar BankNum="8" AddressInt="32104" DuplicateNum="0" AddressBinInt="32104" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="CRANK_MODE_EXIT" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2024-12-30T06:14:38.3656539Z" DateUpdated="2024-12-30T06:20:54.1803677Z" IdentificationStatus="0">
       <Label>CRANK_MODE_EXIT</Label>
@@ -357,6 +1205,20 @@ If TEMDWL&lt;=DWLTBP, then function FN160A is used, else FN160B is used. </Comme
       <Category />
       <Category2 />
       <Category3 />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="32284" DuplicateNum="0" AddressBinInt="32284" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_7E1C" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:09:34.16218Z" IdentificationStatus="0">
+      <Label>fuel_cl_lambda_min</Label>
+      <Comments>P_7E1C - fuel_cl_lambda_min
+fuel_cl_lambda_min</Comments>
+      <ScaleExpression />
+      <Units />
+    </Scalar>
+    <Scalar BankNum="8" AddressInt="32286" DuplicateNum="0" AddressBinInt="32286" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="P_7E1E" OutputComments="false" InlineComments="false" ScalePrecision="0" Min="" Max="" DateCreated="2025-08-25T05:54:01.09183Z" DateUpdated="2025-08-25T06:09:38.3447878Z" IdentificationStatus="0">
+      <Label>fuel_cl_lambda_max</Label>
+      <Comments>P_7E1E - fuel_cl_lambda_max
+fuel_cl_lambda_max</Comments>
+      <ScaleExpression />
+      <Units />
     </Scalar>
     <Scalar BankNum="8" AddressInt="32294" DuplicateNum="0" AddressBinInt="32294" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="SELF_TEST_DESIRED_RPM" OutputComments="false" InlineComments="false" ScalePrecision="2" Min="" Max="" DateCreated="2025-03-28T04:22:01.6702663Z" DateUpdated="2025-03-28T04:27:13.056255Z" IdentificationStatus="0">
       <Label>SELF_TEST_DESIRED_RPM</Label>
@@ -466,7 +1328,7 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Routine>
-    <Routine BankNum="8" AddressInt="1441" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="SEND_HSO_CMD" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="2024-01-14T03:35:21.4434136Z" IdentificationStatus="0" Skip="false">
+    <Routine BankNum="8" AddressInt="1441" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="SEND_HSO_CMD" OutputComments="false" DateCreated="2024-12-29T12:45:55.8911004" DateUpdated="2024-01-14T03:35:21.4434136Z" IdentificationStatus="0" Skip="false">
       <Label>SEND_HSO_CMD</Label>
       <Comments />
       <IdentificationDetails />
@@ -605,6 +1467,14 @@ WordHex:1}</StructDef>
     <Routine BankNum="8" AddressInt="7191" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="UPDATE_AD" OutputComments="false" DateCreated="2024-12-29T12:45:55.8911004Z" DateUpdated="2024-12-31T06:03:51.3882073Z" IdentificationStatus="0" Skip="false">
       <Label>UPDATE_AD</Label>
       <Comments>8 3c17</Comments>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Routine>
+    <Routine BankNum="8" AddressInt="9118" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="SYSTEM_EQUATIONS_EQUA_LH" OutputComments="false" DateCreated="2024-12-29T12:45:55.8911004Z" DateUpdated="2025-08-25T06:25:06.136503Z" IdentificationStatus="0" Skip="false">
+      <Label>SYSTEM_EQUATIONS_EQUA_LH</Label>
+      <Comments>8 439e</Comments>
       <IdentificationDetails />
       <Category />
       <Category2 />
@@ -810,70 +1680,6 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Routine>
-    <Routine BankNum="8" AddressInt="24440" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="Sub0209" OutputComments="false" DateCreated="2025-01-03T08:16:30.7626864Z" DateUpdated="2025-01-03T08:16:35.9310575Z" IdentificationStatus="0" Skip="false">
-      <Label>New Element</Label>
-      <Comments />
-      <IdentificationDetails />
-      <Category />
-      <Category2 />
-      <Category3 />
-    </Routine>
-    <Routine BankNum="8" AddressInt="24455" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="Sub0210" OutputComments="false" DateCreated="2025-01-03T08:18:02.772446Z" DateUpdated="2025-01-03T08:18:08.0236863Z" IdentificationStatus="0" Skip="false">
-      <Label>New Element</Label>
-      <Comments />
-      <IdentificationDetails />
-      <Category />
-      <Category2 />
-      <Category3 />
-    </Routine>
-    <Routine BankNum="8" AddressInt="24474" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="Sub0211" OutputComments="false" DateCreated="2025-01-03T08:18:56.6112719Z" DateUpdated="2025-01-03T08:19:01.8374311Z" IdentificationStatus="0" Skip="false">
-      <Label>New Element</Label>
-      <Comments />
-      <IdentificationDetails />
-      <Category />
-      <Category2 />
-      <Category3 />
-    </Routine>
-    <Routine BankNum="8" AddressInt="24504" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="Sub0212" OutputComments="false" DateCreated="2025-01-03T08:19:34.1758294Z" DateUpdated="2025-01-03T08:19:38.0787391Z" IdentificationStatus="0" Skip="false">
-      <Label>New Element</Label>
-      <Comments />
-      <IdentificationDetails />
-      <Category />
-      <Category2 />
-      <Category3 />
-    </Routine>
-    <Routine BankNum="8" AddressInt="24518" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="Sub0213" OutputComments="false" DateCreated="2025-01-03T08:20:14.3309133Z" DateUpdated="2025-01-03T08:20:19.300063Z" IdentificationStatus="0" Skip="false">
-      <Label>New Element</Label>
-      <Comments />
-      <IdentificationDetails />
-      <Category />
-      <Category2 />
-      <Category3 />
-    </Routine>
-    <Routine BankNum="8" AddressInt="24548" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="Sub0214" OutputComments="false" DateCreated="2025-01-03T08:20:42.5295089Z" DateUpdated="2025-01-03T08:20:46.6383695Z" IdentificationStatus="0" Skip="false">
-      <Label>New Element</Label>
-      <Comments />
-      <IdentificationDetails />
-      <Category />
-      <Category2 />
-      <Category3 />
-    </Routine>
-    <Routine BankNum="8" AddressInt="24586" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="Sub0215" OutputComments="false" DateCreated="2025-01-03T08:21:16.1364727Z" DateUpdated="2025-01-03T08:21:20.0483791Z" IdentificationStatus="0" Skip="false">
-      <Label>New Element</Label>
-      <Comments />
-      <IdentificationDetails />
-      <Category />
-      <Category2 />
-      <Category3 />
-    </Routine>
-    <Routine BankNum="8" AddressInt="24617" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="Sub0218" OutputComments="false" DateCreated="2025-01-03T08:21:40.4055296Z" DateUpdated="2025-01-03T08:21:44.6874802Z" IdentificationStatus="0" Skip="false">
-      <Label>New Element</Label>
-      <Comments />
-      <IdentificationDetails />
-      <Category />
-      <Category2 />
-      <Category3 />
-    </Routine>
     <Routine BankNum="8" AddressInt="24913" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="HW_CHECK" OutputComments="false" DateCreated="2024-12-29T12:45:55.8911004" DateUpdated="2024-12-29T12:49:52.6633269" IdentificationStatus="0" Skip="false">
       <Label>HW_CHECK</Label>
       <Comments />
@@ -909,6 +1715,14 @@ WordHex:1}</StructDef>
     <Routine BankNum="8" AddressInt="25607" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="CHECK_CONSOLE_D" OutputComments="false" DateCreated="2024-12-29T12:45:55.8911004" DateUpdated="2024-12-29T13:03:55.012237" IdentificationStatus="0" Skip="false">
       <Label>CHECK_CONSOLE_D</Label>
       <Comments>8 8407</Comments>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Routine>
+    <Routine BankNum="8" AddressInt="25770" ByteArgumentsNum="0" ByteArgumentsNumOverride="false" ShortLabel="INFERRED_BAROMETRIC_PRESSURE_STRATEGY" OutputComments="false" DateCreated="2024-12-29T12:45:55.8911004Z" DateUpdated="2025-08-25T06:24:03.0117459Z" IdentificationStatus="0" Skip="false">
+      <Label>INFERRED_BAROMETRIC_PRESSURE_STRATEGY</Label>
+      <Comments>8 84aa</Comments>
       <IdentificationDetails />
       <Category />
       <Category2 />
@@ -2287,6 +3101,18 @@ WordHex:1}</StructDef>
       <Category2 />
       <Category3 />
     </Register>
+    <Register AddressInt="215" AdditionalAddress10="" Skip="false" SizeStatus="Byte" SignedStatus="Unsigned" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="2025-08-25T06:16:30.4351502Z" IdentificationStatus="0">
+      <Label>bATMR1</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments />
+      <ScaleExpression>X</ScaleExpression>
+      <Units>Seconds</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
     <Register AddressInt="232" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-03-28T04:40:00.5831289Z" DateUpdated="2025-03-28T04:40:00.5831291Z" IdentificationStatus="0">
       <Label>Vip_code</Label>
       <Comments />
@@ -2379,7 +3205,7 @@ WordHex:1}</StructDef>
       <Label>C14FIL</Label>
       <Comments />
     </Register>
-    <Register AddressInt="434" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="2025-03-28T04:36:05.4919236Z" IdentificationStatus="0">
+    <Register AddressInt="434" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-12-29T12:45:55.8911004" DateUpdated="2025-03-28T04:36:05.4919236Z" IdentificationStatus="0">
       <Label>HIGH_TIME_BETA</Label>
       <ByteLabel />
       <WordLabel />
@@ -2710,6 +3536,30 @@ WordHex:1}</StructDef>
     <Register AddressInt="740" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2025-03-28T04:41:03.2981429Z" DateUpdated="2025-03-28T04:41:03.2981431Z" IdentificationStatus="0">
       <Label>Dtsig</Label>
       <Comments />
+    </Register>
+    <Register AddressInt="742" AdditionalAddress10="" Skip="false" SizeStatus="Word" SignedStatus="Unsigned" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="2025-08-25T06:17:02.8847259Z" IdentificationStatus="0">
+      <Label>LOAD_FN071SC</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments>LOAD (MAP) Scaler (FN071)</Comments>
+      <ScaleExpression>X/8</ScaleExpression>
+      <Units>MAPOPE</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
+    </Register>
+    <Register AddressInt="744" AdditionalAddress10="" Skip="false" SizeStatus="Word" SignedStatus="Unsigned" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="2025-08-25T06:17:06.8370294Z" IdentificationStatus="0">
+      <Label>RPM_FN070SC</Label>
+      <ByteLabel />
+      <WordLabel />
+      <Comments>RPM Scaler (FN070)</Comments>
+      <ScaleExpression>X/4</ScaleExpression>
+      <Units>RPM</Units>
+      <IdentificationDetails />
+      <Category />
+      <Category2 />
+      <Category3 />
     </Register>
     <Register AddressInt="752" AdditionalAddress10="" Skip="false" SizeStatus="" SignedStatus="" isRBase="false" isRConst="false" ScalePrecision="2" DateCreated="2024-12-30T06:27:38.5189612Z" DateUpdated="2024-12-30T06:28:01.3015814Z" IdentificationStatus="0">
       <Label>PIP_COUNT</Label>
