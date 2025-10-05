@@ -1,0 +1,1931 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<S6x version="1.00" generated="2025-10-05 11:27:30">
+  <Properties NoNumbering="false" NoNumberingShortFormat="false" RegListOutput="false" Ignore8065RegShortcut0x100="false" Ignore8065RegShortcut0x100SFR="false" OutputHeader="false" XdfBaseOffset="0000" XdfBaseOffsetSubtract="false" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+    <Label>Exported</Label>
+    <BanksProperties>
+      <BankProperties BankNum="1" AddressBin="00000" />
+      <BankProperties BankNum="8" AddressBin="08000" />
+    </BanksProperties>
+    <IdentificationDetails />
+  </Properties>
+  <Tables>
+    <Table BankNum="1" AddressInt="1484" DuplicateNum="0" AddressBinInt="1484" XdfUniqueId="0x6B" isCalibrationElement="true" Skip="false" WordOutput="true" SignedOutput="false" ColsNumber="16" RowsNumber="3" ShortLabel="FN1020-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1383179Z" IdentificationStatus="0">
+      <Label>Fuel Limit Based On EOT</Label>
+      <Comments>FN1020-</Comments>
+      <CellsScaleExpression>X /16</CellsScaleExpression>
+      <ColsScalerAddress>1   160</ColsScalerAddress>
+      <RowsScalerAddress>1   716</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0x17</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0x24</RowsScalerXdfUniqueId>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>EOT</RowsUnits>
+      <Category>Diesel Fuel</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="1580" DuplicateNum="0" AddressBinInt="1580" XdfUniqueId="0x6F" isCalibrationElement="true" Skip="false" WordOutput="true" SignedOutput="false" ColsNumber="13" RowsNumber="13" ShortLabel="FN1101-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1383179Z" IdentificationStatus="0">
+      <Label>Fuel Pulsewidth</Label>
+      <Comments>FN1101-</Comments>
+      <CellsScaleExpression>X /1</CellsScaleExpression>
+      <ColsScalerAddress>1   424</ColsScalerAddress>
+      <RowsScalerAddress>1   476</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0x3D</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0x43</RowsScalerXdfUniqueId>
+      <ColsUnits>fuel_volume</ColsUnits>
+      <RowsUnits>ICP</RowsUnits>
+      <Category>Diesel Fuel</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="1918" DuplicateNum="0" AddressBinInt="1918" XdfUniqueId="0x60" isCalibrationElement="true" Skip="false" WordOutput="true" SignedOutput="false" ColsNumber="16" RowsNumber="11" ShortLabel="FN1104-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1373179Z" IdentificationStatus="0">
+      <Label>Fuel Pulsewidth Multiplier EOT</Label>
+      <Comments>FN1104-</Comments>
+      <CellsScaleExpression>X /4096</CellsScaleExpression>
+      <ColsScalerAddress>1   356</ColsScalerAddress>
+      <RowsScalerAddress>1   580</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0x4E</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0x4</RowsScalerXdfUniqueId>
+      <ColsUnits>EOT</ColsUnits>
+      <RowsUnits>ICP</RowsUnits>
+      <Category>Diesel Fuel</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="2270" DuplicateNum="0" AddressBinInt="2270" XdfUniqueId="0x70" isCalibrationElement="true" Skip="false" WordOutput="true" SignedOutput="true" ColsNumber="16" RowsNumber="12" ShortLabel="FN1105-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1383179Z" IdentificationStatus="0">
+      <Label>Adder to Pulsewidth Multipler</Label>
+      <Comments>FN1105-</Comments>
+      <CellsScaleExpression>X /4096</CellsScaleExpression>
+      <ColsScalerAddress>1 12962</ColsScalerAddress>
+      <RowsScalerAddress>1 12910</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0xE</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0xC</RowsScalerXdfUniqueId>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MGP</RowsUnits>
+      <Category>Diesel Fuel</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="2654" DuplicateNum="0" AddressBinInt="2654" XdfUniqueId="0x6C" isCalibrationElement="true" Skip="false" WordOutput="true" SignedOutput="true" ColsNumber="16" RowsNumber="15" ShortLabel="FN1108-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1383179Z" IdentificationStatus="0">
+      <Label>Pedal MAP</Label>
+      <Comments>FN1108-</Comments>
+      <CellsScaleExpression>X /16</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress />
+      <ColsScalerXdfUniqueId>0x39</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0x4C</RowsScalerXdfUniqueId>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>PPS</RowsUnits>
+      <Category>Diesel Pedal MAP</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="3134" DuplicateNum="0" AddressBinInt="3134" XdfUniqueId="0x64" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="11" RowsNumber="10" ShortLabel="FN1120-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1383179Z" IdentificationStatus="0">
+      <Label>Fuel Limit Based On Boost</Label>
+      <Comments>FN1120-</Comments>
+      <CellsScaleExpression>X /1</CellsScaleExpression>
+      <ColsScalerAddress>1    80</ColsScalerAddress>
+      <RowsScalerAddress>1   632</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0x46</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0x2F</RowsScalerXdfUniqueId>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MGP</RowsUnits>
+      <Category>Diesel Fuel</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="3244" DuplicateNum="0" AddressBinInt="3244" XdfUniqueId="0x65" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="11" RowsNumber="10" ShortLabel="FN1121-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1383179Z" IdentificationStatus="0">
+      <Label>Fuel Limit Based On Boost Altitude</Label>
+      <Comments>FN1121-</Comments>
+      <CellsScaleExpression>X /1</CellsScaleExpression>
+      <ColsScalerAddress>1    80</ColsScalerAddress>
+      <RowsScalerAddress>1   632</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0x46</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0x2F</RowsScalerXdfUniqueId>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>MGP</RowsUnits>
+      <Category>Diesel Fuel</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="3572" DuplicateNum="0" AddressBinInt="3572" XdfUniqueId="0x5F" isCalibrationElement="true" Skip="false" WordOutput="true" SignedOutput="true" ColsNumber="11" RowsNumber="10" ShortLabel="FN1200-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:20:58.1373179Z" DateUpdated="2025-10-05T18:20:58.1373179Z" IdentificationStatus="0">
+      <Label>Injection Timing Sea Level</Label>
+      <Comments>FN1200-</Comments>
+      <CellsScaleExpression>X /64</CellsScaleExpression>
+      <ColsScalerAddress>1   244</ColsScalerAddress>
+      <RowsScalerAddress>1   116</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0x53</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0xD</RowsScalerXdfUniqueId>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>Mass_fuel_ds</RowsUnits>
+      <Category>Diesel Injection Timing</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="3794" DuplicateNum="0" AddressBinInt="3794" XdfUniqueId="0x66" isCalibrationElement="true" Skip="false" WordOutput="true" SignedOutput="false" ColsNumber="16" RowsNumber="11" ShortLabel="FN1204-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1383179Z" IdentificationStatus="0">
+      <Label>Fuel Injection Delay</Label>
+      <Comments>FN1204-</Comments>
+      <CellsScaleExpression>X /1</CellsScaleExpression>
+      <ColsScalerAddress>1   356</ColsScalerAddress>
+      <RowsScalerAddress>1   580</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0x4E</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0x4</RowsScalerXdfUniqueId>
+      <ColsUnits>EOT</ColsUnits>
+      <RowsUnits>ICP</RowsUnits>
+      <Category>Diesel Injection Timing</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="4146" DuplicateNum="0" AddressBinInt="4146" XdfUniqueId="0x68" isCalibrationElement="true" Skip="false" WordOutput="true" SignedOutput="true" ColsNumber="7" RowsNumber="7" ShortLabel="FN1205-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1383179Z" IdentificationStatus="0">
+      <Label>Injection Timing with Oil Temp</Label>
+      <Comments>FN1205-</Comments>
+      <CellsScaleExpression>X /64</CellsScaleExpression>
+      <ColsScalerAddress>1   748</ColsScalerAddress>
+      <RowsScalerAddress />
+      <ColsScalerXdfUniqueId>0x21</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0x3C</RowsScalerXdfUniqueId>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>EOT</RowsUnits>
+      <Category>Diesel Injection Timing</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="4244" DuplicateNum="0" AddressBinInt="4244" XdfUniqueId="0x63" isCalibrationElement="true" Skip="false" WordOutput="true" SignedOutput="true" ColsNumber="11" RowsNumber="7" ShortLabel="FN1300-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1383179Z" IdentificationStatus="0">
+      <Label>Injection Control Pressure In MPa</Label>
+      <Comments>FN1300-</Comments>
+      <CellsScaleExpression>X /256</CellsScaleExpression>
+      <ColsScalerAddress>1  4474</ColsScalerAddress>
+      <RowsScalerAddress>1   116</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0x48</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0xD</RowsScalerXdfUniqueId>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>Mass_fuel_ds</RowsUnits>
+      <Category>Diesel ICP</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="5760" DuplicateNum="0" AddressBinInt="5760" XdfUniqueId="0x61" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="true" ColsNumber="11" RowsNumber="7" ShortLabel="FN1900-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1383179Z" IdentificationStatus="0">
+      <Label>Desired Exhaust Backpressure KPa</Label>
+      <Comments>FN1900-</Comments>
+      <CellsScaleExpression>X /0.5</CellsScaleExpression>
+      <ColsScalerAddress>1  4526</ColsScalerAddress>
+      <RowsScalerAddress>1  4586</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0x32</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0x42</RowsScalerXdfUniqueId>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>mass_fuel</RowsUnits>
+      <Category>Diesel EBP</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="5837" DuplicateNum="0" AddressBinInt="5837" XdfUniqueId="0x67" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="9" RowsNumber="7" ShortLabel="FN1901-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1383179Z" IdentificationStatus="0">
+      <Label>Desired Exhaust Backpressure Feed Forward</Label>
+      <Comments>FN1901-</Comments>
+      <CellsScaleExpression>X /256</CellsScaleExpression>
+      <ColsScalerAddress>1  5220</ColsScalerAddress>
+      <RowsScalerAddress>1  5280</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0x2C</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0x33</RowsScalerXdfUniqueId>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>EOT</RowsUnits>
+      <Category>Diesel EBP</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="6054" DuplicateNum="0" AddressBinInt="6054" XdfUniqueId="0x62" isCalibrationElement="true" Skip="false" WordOutput="true" SignedOutput="false" ColsNumber="11" RowsNumber="6" ShortLabel="FN7000-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1383179Z" IdentificationStatus="0">
+      <Label>Glow Plug Lamp On Time</Label>
+      <Comments>FN7000-</Comments>
+      <CellsScaleExpression>X /8</CellsScaleExpression>
+      <ColsScalerAddress>1  5140</ColsScalerAddress>
+      <RowsScalerAddress>1  5188</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0x27</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0x3F</RowsScalerXdfUniqueId>
+      <ColsUnits>EOT</ColsUnits>
+      <RowsUnits>voltage</RowsUnits>
+      <Category>Diesel Glow Plug</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="7208" DuplicateNum="0" AddressBinInt="7208" XdfUniqueId="0x6A" isCalibrationElement="true" Skip="false" WordOutput="false" SignedOutput="false" ColsNumber="16" RowsNumber="9" ShortLabel="FN3000-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1383179Z" IdentificationStatus="0">
+      <Label>Torque Table</Label>
+      <Comments>FN3000-</Comments>
+      <CellsScaleExpression>X /0.5</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress>1 11894</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0x1B</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0x19</RowsScalerXdfUniqueId>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>mass_fuel</RowsUnits>
+      <Category>Diesel Torque Calculation</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="13328" DuplicateNum="0" AddressBinInt="13328" XdfUniqueId="0x6E" isCalibrationElement="true" Skip="false" WordOutput="true" SignedOutput="false" ColsNumber="11" RowsNumber="11" ShortLabel="FN2002-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1383179Z" IdentificationStatus="0">
+      <Label>Desired MAP Pressure</Label>
+      <Comments>FN2002-</Comments>
+      <CellsScaleExpression>X /4</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress>1  6280</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0x45</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0x58</RowsScalerXdfUniqueId>
+      <ColsUnits>rpm</ColsUnits>
+      <RowsUnits>ICP</RowsUnits>
+      <Category>Diesel Wastegate</Category>
+    </Table>
+    <Table BankNum="1" AddressInt="13570" DuplicateNum="0" AddressBinInt="13570" XdfUniqueId="0x6D" isCalibrationElement="true" Skip="false" WordOutput="true" SignedOutput="false" ColsNumber="16" RowsNumber="15" ShortLabel="FN1108C-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1383179Z" IdentificationStatus="0">
+      <Label>Inferred Pedal Position</Label>
+      <Comments>FN1108C-</Comments>
+      <CellsScaleExpression>X /1</CellsScaleExpression>
+      <ColsScalerAddress />
+      <RowsScalerAddress>1 12074</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0x39</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0x30</RowsScalerXdfUniqueId>
+      <ColsUnits>RPM</ColsUnits>
+      <RowsUnits>Fuel</RowsUnits>
+      <Category>Diesel Pedal MAP</Category>
+    </Table>
+  </Tables>
+  <Functions>
+    <Function BankNum="1" AddressInt="80" DuplicateNum="0" AddressBinInt="80" XdfUniqueId="0x46" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="9" ShortLabel="FN012" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel Fuel 14</Label>
+      <Comments>FN012 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <Category>Diesel Fuel</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="116" DuplicateNum="0" AddressBinInt="116" XdfUniqueId="0xD" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="11" ShortLabel="FN013" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Ynorm Diesel Injection Timing 10</Label>
+      <Comments>FN013 - </Comments>
+      <InputScaleExpression>X /16</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>Mass_fuel_ds</InputUnits>
+      <Category>Diesel Injection Timing</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="160" DuplicateNum="0" AddressBinInt="160" XdfUniqueId="0x17" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="16" ShortLabel="FN014" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel Fuel 13</Label>
+      <Comments>FN014 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <Category>Diesel Fuel</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="244" DuplicateNum="0" AddressBinInt="244" XdfUniqueId="0x53" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="12" ShortLabel="FN019" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel Injection Timing 10</Label>
+      <Comments>FN019 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <Category>Diesel Injection Timing</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="356" DuplicateNum="0" AddressBinInt="356" XdfUniqueId="0x4E" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="17" ShortLabel="FN027" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel Injection Timing 12</Label>
+      <Comments>FN027 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>EOT</InputUnits>
+      <Category>Diesel Injection Timing</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="424" DuplicateNum="0" AddressBinInt="424" XdfUniqueId="0x3D" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="13" ShortLabel="FN028" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel Fuel 16</Label>
+      <Comments>FN028 - </Comments>
+      <InputScaleExpression>X /16</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>fuel_volume</InputUnits>
+      <Category>Diesel Fuel</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="476" DuplicateNum="0" AddressBinInt="476" XdfUniqueId="0x43" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="13" ShortLabel="FN029" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Ynorm Diesel Fuel 16</Label>
+      <Comments>FN029 - </Comments>
+      <InputScaleExpression>X /256</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>ICP</InputUnits>
+      <Category>Diesel Fuel</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="580" DuplicateNum="0" AddressBinInt="580" XdfUniqueId="0x4" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="13" ShortLabel="FN029B" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Ynorm Diesel Injection Timing 12</Label>
+      <Comments>FN029B - </Comments>
+      <InputScaleExpression>X /256</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>ICP</InputUnits>
+      <Category>Diesel Injection Timing</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="632" DuplicateNum="0" AddressBinInt="632" XdfUniqueId="0x2F" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="12" ShortLabel="FN030" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Ynorm Diesel Fuel 14</Label>
+      <Comments>FN030 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>MGP</InputUnits>
+      <Category>Diesel Fuel</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="716" DuplicateNum="0" AddressBinInt="716" XdfUniqueId="0x24" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="7" ShortLabel="FN015" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Ynorm Diesel Fuel 13</Label>
+      <Comments>FN015 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>EOT</InputUnits>
+      <Category>Diesel Fuel</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="748" DuplicateNum="0" AddressBinInt="748" XdfUniqueId="0x21" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="8" ShortLabel="FN033" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel Injection Timing 11</Label>
+      <Comments>FN033 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <Category>Diesel Injection Timing</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="780" DuplicateNum="0" AddressBinInt="780" XdfUniqueId="0x35" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="true" RowsNumber="8" ShortLabel="FN100" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Crank Fuel for Startup</Label>
+      <Comments>FN100 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /16</OutputScaleExpression>
+      <InputUnits>EOT</InputUnits>
+      <Category>Diesel</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="4474" DuplicateNum="0" AddressBinInt="4474" XdfUniqueId="0x48" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="13" ShortLabel="FN011" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel ICP 17</Label>
+      <Comments>FN011 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <Category>Diesel ICP</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="4526" DuplicateNum="0" AddressBinInt="4526" XdfUniqueId="0x32" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="15" ShortLabel="FN024" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel EBP 19</Label>
+      <Comments>FN024 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <Category>Diesel EBP</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="4586" DuplicateNum="0" AddressBinInt="4586" XdfUniqueId="0x42" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="10" ShortLabel="FN025" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Ynorm Diesel EBP 18</Label>
+      <Comments>FN025 - </Comments>
+      <InputScaleExpression>X /16</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>mass_fuel</InputUnits>
+      <Category>Diesel EBP</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="4626" DuplicateNum="0" AddressBinInt="4626" XdfUniqueId="0x15" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="8" ShortLabel="FN110" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Fuel Density Multiplier</Label>
+      <Comments>FN110 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>EOT</InputUnits>
+      <Category>Diesel Fuel</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="4754" DuplicateNum="0" AddressBinInt="4754" XdfUniqueId="0x1E" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="true" RowsNumber="8" ShortLabel="FN901" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Proportional Correction for EBPC</Label>
+      <Comments>FN901 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /65536</OutputScaleExpression>
+      <InputUnits>EBP_error</InputUnits>
+      <Category>Diesel EBP</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="5140" DuplicateNum="0" AddressBinInt="5140" XdfUniqueId="0x27" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="12" ShortLabel="FN022" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel Glow Plug 22</Label>
+      <Comments>FN022 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>EOT</InputUnits>
+      <Category>Diesel Glow Plug</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="5188" DuplicateNum="0" AddressBinInt="5188" XdfUniqueId="0x3F" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="8" ShortLabel="FN023" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Ynorm Diesel Glow Plug 22</Label>
+      <Comments>FN023 - </Comments>
+      <InputScaleExpression>X /2048</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>voltage</InputUnits>
+      <Category>Diesel Glow Plug</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="5220" DuplicateNum="0" AddressBinInt="5220" XdfUniqueId="0x2C" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="15" ShortLabel="FN044" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel EBP 20</Label>
+      <Comments>FN044 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <Category>Diesel EBP</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="5280" DuplicateNum="0" AddressBinInt="5280" XdfUniqueId="0x33" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="10" ShortLabel="FN045" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Ynorm Diesel EBP 19</Label>
+      <Comments>FN045 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>EOT</InputUnits>
+      <Category>Diesel EBP</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="5320" DuplicateNum="0" AddressBinInt="5320" XdfUniqueId="0x5C" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="15" ShortLabel="FN036" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel 25</Label>
+      <Comments>FN036 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <Category>Diesel</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="5468" DuplicateNum="0" AddressBinInt="5468" XdfUniqueId="0x49" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="6" ShortLabel="FN205" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Injection Timing RPM Modifier</Label>
+      <Comments>FN205 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /1</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <Category>Diesel Injection Timing</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="5492" DuplicateNum="0" AddressBinInt="5492" XdfUniqueId="0x2D" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="12" ShortLabel="FN700LOALT" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Glow Plug On Time Low Altitude</Label>
+      <Comments>FN700LOALT - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /32</OutputScaleExpression>
+      <InputUnits>EOT</InputUnits>
+      <Category>Diesel Glow Plug</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="5540" DuplicateNum="0" AddressBinInt="5540" XdfUniqueId="0x36" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="8" ShortLabel="FN701" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Glow Plug Duty Cycle</Label>
+      <Comments>FN701 - </Comments>
+      <InputScaleExpression>X /2048</InputScaleExpression>
+      <OutputScaleExpression>X /65536</OutputScaleExpression>
+      <InputUnits>voltage</InputUnits>
+      <Category>Diesel Glow Plug</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="5572" DuplicateNum="0" AddressBinInt="5572" XdfUniqueId="0x4B" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="8" ShortLabel="FN702" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Glow Plug Duty Cycle Period</Label>
+      <Comments>FN702 - </Comments>
+      <InputScaleExpression>X /2048</InputScaleExpression>
+      <OutputScaleExpression>X /1</OutputScaleExpression>
+      <InputUnits>voltage</InputUnits>
+      <Category>Diesel Glow Plug</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="6236" DuplicateNum="0" AddressBinInt="6236" XdfUniqueId="0x1F" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="11" ShortLabel="FN046" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Ynorm Diesel ICP 17</Label>
+      <Comments>FN046 - </Comments>
+      <InputScaleExpression>X /64</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>reg_flow_L</InputUnits>
+      <Category>Diesel ICP</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="6280" DuplicateNum="0" AddressBinInt="6280" XdfUniqueId="0x58" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="11" ShortLabel="FN047" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel ICP 18</Label>
+      <Comments>FN047 - </Comments>
+      <InputScaleExpression>X /256</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>ICP</InputUnits>
+      <Category>Diesel ICP</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="9500" DuplicateNum="0" AddressBinInt="9500" XdfUniqueId="0x5" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN12S" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Shift Schedule 12</Label>
+      <Comments>FN12S - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /2</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Shift/lock Schedule</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="9588" DuplicateNum="0" AddressBinInt="9588" XdfUniqueId="0x34" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN23S" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Shift Schedule 23</Label>
+      <Comments>FN23S - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /2</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Shift/lock Schedule</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="9676" DuplicateNum="0" AddressBinInt="9676" XdfUniqueId="0x1C" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN34S" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Shift Schedule 34</Label>
+      <Comments>FN34S - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /2</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Shift/lock Schedule</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="9716" DuplicateNum="0" AddressBinInt="9716" XdfUniqueId="0x40" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN21S" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Shift Schedule 21</Label>
+      <Comments>FN21S - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /2</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Shift/lock Schedule</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="9756" DuplicateNum="0" AddressBinInt="9756" XdfUniqueId="0x28" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN32S" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Shift Schedule 32</Label>
+      <Comments>FN32S - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /2</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Shift/lock Schedule</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="9796" DuplicateNum="0" AddressBinInt="9796" XdfUniqueId="0x52" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN43S" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Shift Schedule 43</Label>
+      <Comments>FN43S - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /2</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Shift/lock Schedule</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="9864" DuplicateNum="0" AddressBinInt="9864" XdfUniqueId="0x1D" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN2LS" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Converter Lock 2nd</Label>
+      <Comments>FN2LS - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /2</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Shift/lock Schedule</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="9884" DuplicateNum="0" AddressBinInt="9884" XdfUniqueId="0x2A" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN3LS" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Converter Lock 3rd</Label>
+      <Comments>FN3LS - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /2</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Shift/lock Schedule</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="9904" DuplicateNum="0" AddressBinInt="9904" XdfUniqueId="0x3A" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="4" ShortLabel="FN4LS" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Converter Lock 4th</Label>
+      <Comments>FN4LS - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /2</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Shift/lock Schedule</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="9960" DuplicateNum="0" AddressBinInt="9960" XdfUniqueId="0x56" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN2US" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Converter Unlock 2nd</Label>
+      <Comments>FN2US - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /2</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Shift/lock Schedule</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="9980" DuplicateNum="0" AddressBinInt="9980" XdfUniqueId="0xF" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="10" ShortLabel="FN3US" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Converter Unlock 3rd</Label>
+      <Comments>FN3US - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /2</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Shift/lock Schedule</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="10000" DuplicateNum="0" AddressBinInt="10000" XdfUniqueId="0xB" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="false" RowsNumber="4" ShortLabel="FN4US" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Converter Unlock 4th</Label>
+      <Comments>FN4US - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /2</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Shift/lock Schedule</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="10268" DuplicateNum="0" AddressBinInt="10268" XdfUniqueId="0x59" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="4" ShortLabel="FN21_DC" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Tv Pressure 21</Label>
+      <Comments>FN21_DC - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /1</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Trans Pressure</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="10276" DuplicateNum="0" AddressBinInt="10276" XdfUniqueId="0x5B" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="10" ShortLabel="FN12_DC" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Tv Pressure 12</Label>
+      <Comments>FN12_DC - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /1</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Trans Pressure</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="10296" DuplicateNum="0" AddressBinInt="10296" XdfUniqueId="0x8" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="4" ShortLabel="FN32_DC" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Tv Pressure 32</Label>
+      <Comments>FN32_DC - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /1</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Trans Pressure</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="10304" DuplicateNum="0" AddressBinInt="10304" XdfUniqueId="0x9" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="10" ShortLabel="FN23_DC" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Tv Pressure 23</Label>
+      <Comments>FN23_DC - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /1</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Trans Pressure</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="10324" DuplicateNum="0" AddressBinInt="10324" XdfUniqueId="0x57" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="4" ShortLabel="FN43_DC" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Tv Pressure 43</Label>
+      <Comments>FN43_DC - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /1</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Trans Pressure</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="10332" DuplicateNum="0" AddressBinInt="10332" XdfUniqueId="0x5D" isCalibrationElement="true" Skip="false" ByteInput="true" ByteOutput="true" SignedInput="false" SignedOutput="true" RowsNumber="10" ShortLabel="FN34_DC" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Trans Tv Pressure 34</Label>
+      <Comments>FN34_DC - </Comments>
+      <InputScaleExpression>X /0.25</InputScaleExpression>
+      <OutputScaleExpression>X /1</OutputScaleExpression>
+      <InputUnits>TP</InputUnits>
+      <Category>Trans Pressure</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="11894" DuplicateNum="0" AddressBinInt="11894" XdfUniqueId="0x19" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="9" ShortLabel="FN0X2" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Ynorm Diesel Torque Calculation 25</Label>
+      <Comments>FN0X2 - </Comments>
+      <InputScaleExpression>X /16</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>mass_fuel</InputUnits>
+      <Category>Diesel Torque Calculation</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="12074" DuplicateNum="0" AddressBinInt="12074" XdfUniqueId="0x30" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="15" ShortLabel="FN028_IPP" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Ynorm Diesel Pedal MAP 24</Label>
+      <Comments>FN028_IPP - </Comments>
+      <InputScaleExpression>X /16</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>Fuel</InputUnits>
+      <Category>Diesel Pedal MAP</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="12910" DuplicateNum="0" AddressBinInt="12910" XdfUniqueId="0xC" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="13" ShortLabel="FN042" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Ynorm Diesel Fuel 15</Label>
+      <Comments>FN042 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>MGP</InputUnits>
+      <Category>Diesel Fuel</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="12962" DuplicateNum="0" AddressBinInt="12962" XdfUniqueId="0xE" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="17" ShortLabel="FN043" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel Fuel 15</Label>
+      <Comments>FN043 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <Category>Diesel Fuel</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="13030" DuplicateNum="0" AddressBinInt="13030" XdfUniqueId="0x26" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="8" ShortLabel="FN122" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.132779Z" IdentificationStatus="0">
+      <Label>Multiplier to Pulsewidth Adder</Label>
+      <Comments>FN122 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /4096</OutputScaleExpression>
+      <InputUnits>EOT</InputUnits>
+      <Category>Diesel Fuel</Category>
+    </Function>
+  </Functions>
+  <Scalars>
+    <Scalar BankNum="1" AddressInt="16" DuplicateNum="0" AddressBinInt="16" XdfUniqueId="0x3" isCalibrationElement="true" Skip="false" Byte="false" Signed="true" ShortLabel="DITDES_LMN" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Min Desired Injection Timing</Label>
+      <Comments>DITDES_LMN - </Comments>
+      <ScaleExpression>X /64</ScaleExpression>
+      <Category>Diesel Injection Timing</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="18" DuplicateNum="0" AddressBinInt="18" XdfUniqueId="0x22" isCalibrationElement="true" Skip="false" Byte="false" Signed="true" ShortLabel="DITDES_LMX" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Max Desired Injection Timing</Label>
+      <Comments>DITDES_LMX - </Comments>
+      <ScaleExpression>X /64</ScaleExpression>
+      <Category>Diesel Injection Timing</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="38" DuplicateNum="0" AddressBinInt="38" XdfUniqueId="0x20" isCalibrationElement="true" Skip="false" Byte="false" Signed="true" ShortLabel="ICP_DTY_LMX" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:19:14.3079887Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>ICP Max Duty Cycle</Label>
+      <Comments>ICP_DTY_LMX - </Comments>
+      <ScaleExpression>X /1024</ScaleExpression>
+      <Category>Diesel ICP</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="4402" DuplicateNum="0" AddressBinInt="4402" XdfUniqueId="0x23" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="DENSITY" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Fuel Density</Label>
+      <Comments>DENSITY - </Comments>
+      <ScaleExpression>X /256</ScaleExpression>
+      <Category>Diesel Fuel</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="4404" DuplicateNum="0" AddressBinInt="4404" XdfUniqueId="0x2B" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="MFMTQ_LMX" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Max Clip Of Fuel Limit Based On EOT</Label>
+      <Comments>MFMTQ_LMX - </Comments>
+      <ScaleExpression>X /16</ScaleExpression>
+      <Category>Diesel Fuel</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="5096" DuplicateNum="0" AddressBinInt="5096" XdfUniqueId="0x54" isCalibrationElement="true" Skip="false" Byte="false" Signed="true" ShortLabel="EBPG_DES_LMX" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Max Desired Exhaust Backpressure</Label>
+      <Comments>EBPG_DES_LMX - </Comments>
+      <ScaleExpression>X /4</ScaleExpression>
+      <Category>Diesel EBP</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="5098" DuplicateNum="0" AddressBinInt="5098" XdfUniqueId="0x3E" isCalibrationElement="true" Skip="false" Byte="false" Signed="true" ShortLabel="EBPG_DES_LMN" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Min Desired Exhaust Backpressure</Label>
+      <Comments>EBPG_DES_LMN - </Comments>
+      <ScaleExpression>X /4</ScaleExpression>
+      <Category>Diesel EBP</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="5100" DuplicateNum="0" AddressBinInt="5100" XdfUniqueId="0x18" isCalibrationElement="true" Skip="false" Byte="false" Signed="true" ShortLabel="EBPG_XS" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Max Exhaust Backpressure</Label>
+      <Comments>EBPG_XS - </Comments>
+      <ScaleExpression>X /4</ScaleExpression>
+      <Category>Diesel EBP</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="5132" DuplicateNum="0" AddressBinInt="5132" XdfUniqueId="0x0" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="GPC_TM_MAX" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Glow Plug Max On Time</Label>
+      <Comments>GPC_TM_MAX - </Comments>
+      <ScaleExpression>X /8</ScaleExpression>
+      <Category>Diesel Glow Plug</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="6788" DuplicateNum="0" AddressBinInt="6788" XdfUniqueId="0x25" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="RDSP_LMX" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Speed Limit</Label>
+      <Comments>RDSP_LMX - </Comments>
+      <ScaleExpression>X /16</ScaleExpression>
+      <Category>Diesel Limiter</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="6830" DuplicateNum="0" AddressBinInt="6830" XdfUniqueId="0x3B" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="ICP_XS_MAX" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:19:14.3200845Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Max Injection Control Pressure</Label>
+      <Comments>ICP_XS_MAX - </Comments>
+      <ScaleExpression>X /256</ScaleExpression>
+      <Category>Diesel ICP</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8272" DuplicateNum="0" AddressBinInt="8272" XdfUniqueId="0x4F" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="NE12S" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1423179Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Trans WOT Shift RPM 12</Label>
+      <Comments>NE12S - </Comments>
+      <ScaleExpression>X /4</ScaleExpression>
+      <Category>Shift/lock Schedule</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8276" DuplicateNum="0" AddressBinInt="8276" XdfUniqueId="0x10" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="NE23S" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1413178Z" DateUpdated="2025-10-05T18:20:58.1413178Z" IdentificationStatus="0">
+      <Label>Trans WOT Shift RPM 23</Label>
+      <Comments>NE23S - </Comments>
+      <ScaleExpression>X /4</ScaleExpression>
+      <Category>Shift/lock Schedule</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8280" DuplicateNum="0" AddressBinInt="8280" XdfUniqueId="0x12" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="NE34S" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1413178Z" DateUpdated="2025-10-05T18:20:58.1413178Z" IdentificationStatus="0">
+      <Label>Trans WOT Shift RPM 34</Label>
+      <Comments>NE34S - </Comments>
+      <ScaleExpression>X /4</ScaleExpression>
+      <Category>Shift/lock Schedule</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8316" DuplicateNum="0" AddressBinInt="8316" XdfUniqueId="0x47" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="GRRAT1" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1423179Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>1st Gear Ratio</Label>
+      <Comments>GRRAT1 - </Comments>
+      <ScaleExpression>X /16384</ScaleExpression>
+      <Category>Auto Trans Gear Ratio</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8318" DuplicateNum="0" AddressBinInt="8318" XdfUniqueId="0x16" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="GRRAT2" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1413178Z" DateUpdated="2025-10-05T18:20:58.1413178Z" IdentificationStatus="0">
+      <Label>2nd Gear Ratio</Label>
+      <Comments>GRRAT2 - </Comments>
+      <ScaleExpression>X /16384</ScaleExpression>
+      <Category>Auto Trans Gear Ratio</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8320" DuplicateNum="0" AddressBinInt="8320" XdfUniqueId="0x51" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="GRRAT3" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1423179Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>3rd Gear Ratio</Label>
+      <Comments>GRRAT3 - </Comments>
+      <ScaleExpression>X /16384</ScaleExpression>
+      <Category>Auto Trans Gear Ratio</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8322" DuplicateNum="0" AddressBinInt="8322" XdfUniqueId="0x14" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="GRRAT4" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1413178Z" DateUpdated="2025-10-05T18:20:58.1413178Z" IdentificationStatus="0">
+      <Label>4th Gear Ratio</Label>
+      <Comments>GRRAT4 - </Comments>
+      <ScaleExpression>X /16384</ScaleExpression>
+      <Category>Auto Trans Gear Ratio</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8416" DuplicateNum="0" AddressBinInt="8416" XdfUniqueId="0x44" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="SCSLP1" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1423179Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Nonshift Slope 1</Label>
+      <Comments>SCSLP1 - </Comments>
+      <ScaleExpression>X /256</ScaleExpression>
+      <Category>Trans Pressure</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8417" DuplicateNum="0" AddressBinInt="8417" XdfUniqueId="0x4A" isCalibrationElement="true" Skip="false" Byte="true" Signed="true" ShortLabel="SCINT1" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1423179Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Pressure Offset 1st Gear</Label>
+      <Comments>SCINT1 - </Comments>
+      <ScaleExpression>X /1</ScaleExpression>
+      <Category>Trans Pressure</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8418" DuplicateNum="0" AddressBinInt="8418" XdfUniqueId="0x2" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="SCSLP2" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1413178Z" DateUpdated="2025-10-05T18:20:58.1413178Z" IdentificationStatus="0">
+      <Label>Nonshift Slope 2</Label>
+      <Comments>SCSLP2 - </Comments>
+      <ScaleExpression>X /256</ScaleExpression>
+      <Category>Trans Pressure</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8419" DuplicateNum="0" AddressBinInt="8419" XdfUniqueId="0x11" isCalibrationElement="true" Skip="false" Byte="true" Signed="true" ShortLabel="SCINT2" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1413178Z" DateUpdated="2025-10-05T18:20:58.1413178Z" IdentificationStatus="0">
+      <Label>Pressure Offset 2nd Gear</Label>
+      <Comments>SCINT2 - </Comments>
+      <ScaleExpression>X /1</ScaleExpression>
+      <Category>Trans Pressure</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8420" DuplicateNum="0" AddressBinInt="8420" XdfUniqueId="0x31" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="SCSLP3" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1423179Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Nonshift Slope 3</Label>
+      <Comments>SCSLP3 - </Comments>
+      <ScaleExpression>X /256</ScaleExpression>
+      <Category>Trans Pressure</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8421" DuplicateNum="0" AddressBinInt="8421" XdfUniqueId="0x13" isCalibrationElement="true" Skip="false" Byte="true" Signed="true" ShortLabel="SCINT3" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1413178Z" DateUpdated="2025-10-05T18:20:58.1413178Z" IdentificationStatus="0">
+      <Label>Pressure Offset 3rd Gear</Label>
+      <Comments>SCINT3 - </Comments>
+      <ScaleExpression>X /1</ScaleExpression>
+      <Category>Trans Pressure</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8422" DuplicateNum="0" AddressBinInt="8422" XdfUniqueId="0x1" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="SCSLP4" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1413178Z" DateUpdated="2025-10-05T18:20:58.1413178Z" IdentificationStatus="0">
+      <Label>Nonshift Slope 4</Label>
+      <Comments>SCSLP4 - </Comments>
+      <ScaleExpression>X /256</ScaleExpression>
+      <Category>Trans Pressure</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8423" DuplicateNum="0" AddressBinInt="8423" XdfUniqueId="0x6" isCalibrationElement="true" Skip="false" Byte="true" Signed="true" ShortLabel="SCINT4" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1413178Z" DateUpdated="2025-10-05T18:20:58.1413178Z" IdentificationStatus="0">
+      <Label>Pressure Offset 4th Gear</Label>
+      <Comments>SCINT4 - </Comments>
+      <ScaleExpression>X /1</ScaleExpression>
+      <Category>Trans Pressure</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8424" DuplicateNum="0" AddressBinInt="8424" XdfUniqueId="0xA" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="SCSLP1SD" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1413178Z" DateUpdated="2025-10-05T18:20:58.1413178Z" IdentificationStatus="0">
+      <Label>Downshift Slope Into 1</Label>
+      <Comments>SCSLP1SD - </Comments>
+      <ScaleExpression>X /256</ScaleExpression>
+      <Category>Trans Pressure</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8425" DuplicateNum="0" AddressBinInt="8425" XdfUniqueId="0x4D" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="SCSLP2SD" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1423179Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Downshift Slope Into 2</Label>
+      <Comments>SCSLP2SD - </Comments>
+      <ScaleExpression>X /256</ScaleExpression>
+      <Category>Trans Pressure</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8426" DuplicateNum="0" AddressBinInt="8426" XdfUniqueId="0x2E" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="SCSLP3SD" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1423179Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Downshift Slope Into 3</Label>
+      <Comments>SCSLP3SD - </Comments>
+      <ScaleExpression>X /256</ScaleExpression>
+      <Category>Trans Pressure</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8427" DuplicateNum="0" AddressBinInt="8427" XdfUniqueId="0x1A" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="SCSLP4SU" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1413178Z" DateUpdated="2025-10-05T18:20:58.1413178Z" IdentificationStatus="0">
+      <Label>Upshift Slope Into 4</Label>
+      <Comments>SCSLP4SU - </Comments>
+      <ScaleExpression>X /256</ScaleExpression>
+      <Category>Trans Pressure</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8428" DuplicateNum="0" AddressBinInt="8428" XdfUniqueId="0x41" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="SCSLP3SU" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1423179Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Upshift Slope Into 3</Label>
+      <Comments>SCSLP3SU - </Comments>
+      <ScaleExpression>X /256</ScaleExpression>
+      <Category>Trans Pressure</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8429" DuplicateNum="0" AddressBinInt="8429" XdfUniqueId="0x7" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="SCSLP2SU" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1413178Z" DateUpdated="2025-10-05T18:20:58.1413178Z" IdentificationStatus="0">
+      <Label>Upshift Slope Into 2</Label>
+      <Comments>SCSLP2SU - </Comments>
+      <ScaleExpression>X /256</ScaleExpression>
+      <Category>Trans Pressure</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8448" DuplicateNum="0" AddressBinInt="8448" XdfUniqueId="0x55" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="SARCHG" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1423179Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Engine Displacement</Label>
+      <Comments>SARCHG - </Comments>
+      <ScaleExpression>X /16777216</ScaleExpression>
+      <Category>Misc</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8718" DuplicateNum="0" AddressBinInt="8718" XdfUniqueId="0x38" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="TSTRAT" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1423179Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Trans Type</Label>
+      <Comments>TSTRAT - </Comments>
+      <ScaleExpression>X /1</ScaleExpression>
+      <Category>System Switches</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8719" DuplicateNum="0" AddressBinInt="8719" XdfUniqueId="0x5E" isCalibrationElement="true" Skip="false" Byte="true" Signed="false" ShortLabel="TRLOAD" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1423179Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Trans Load Switch</Label>
+      <Comments>TRLOAD - </Comments>
+      <ScaleExpression>X /1</ScaleExpression>
+      <Category>System Switches</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8900" DuplicateNum="0" AddressBinInt="8900" XdfUniqueId="0x37" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="NE12S4L" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1423179Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Trans WOT Shift RPM 12 4x4 Low</Label>
+      <Comments>NE12S4L - </Comments>
+      <ScaleExpression>X /4</ScaleExpression>
+      <Category>Shift/lock Schedule</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8902" DuplicateNum="0" AddressBinInt="8902" XdfUniqueId="0x29" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="NE23S4L" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1413178Z" DateUpdated="2025-10-05T18:20:58.1413178Z" IdentificationStatus="0">
+      <Label>Trans WOT Shift RPM 23 4x4 Low</Label>
+      <Comments>NE23S4L - </Comments>
+      <ScaleExpression>X /4</ScaleExpression>
+      <Category>Shift/lock Schedule</Category>
+    </Scalar>
+    <Scalar BankNum="1" AddressInt="8904" DuplicateNum="0" AddressBinInt="8904" XdfUniqueId="0x50" isCalibrationElement="true" Skip="false" Byte="false" Signed="false" ShortLabel="NE34S4L" OutputComments="false" InlineComments="false" ScalePrecision="2" DateCreated="2025-10-05T18:20:58.1423179Z" DateUpdated="2025-10-05T18:20:58.1423179Z" IdentificationStatus="0">
+      <Label>Trans WOT Shift RPM 34 4x4 Low</Label>
+      <Comments>NE34S4L - </Comments>
+      <ScaleExpression>X /4</ScaleExpression>
+      <Category>Shift/lock Schedule</Category>
+    </Scalar>
+  </Scalars>
+  <Structures />
+  <Routines />
+  <Operations />
+  <Registers />
+  <OtherAddresses />
+  <Signatures>
+    <Signature UniqueKey="CHT_CLIPW_8065_02" Skip="false" Forced="true" ShortLabel="CHT_CLIPW" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+89,..,..,..
+da,06
+a1,..,..,..
+20,0a
+89,00,ff,..
+d6,04
+a1,..,..,..
+f3
+f0</Signature>
+      <Label>CHT Clip W</Label>
+      <Comments>CHT_CLIPW - CHT Clip W</Comments>
+      <SignatureLabel>CHT ClipW 8065 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="CORE_REG_INIT_8065_01" Skip="false" Forced="true" ShortLabel="CORE_REG_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+a1,#01#,#02#,24
+46,25,00,26
+df,2c
+a2,25,2a
+30,26,03
+c6,27,00
+41,fe,ff,2a,28
+88,20,26
+d7,04
+a1,..,..,26
+88,28,26
+db,07
+17,05
+c2,27,00
+27,eb
+30,2a,04
+c7,2a,ff,00
+27,ce
+a1,#03#,#04#,26
+b2,27,29
+99,ff,29
+df,13
+b2,27,2a
+17,05
+b2,27,28
+b2,27,2b
+c6,28,2b
+e0,2a,f4
+27,e5
+f3
+f0</Signature>
+      <Label>Core Registers Initialization</Label>
+      <Comments>CORE_REG_INIT - Core Registers Initialization</Comments>
+      <SignatureLabel>Core Registers Initialization (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_Registers</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures processing.
+Specific to some strategies which use it for constant registers.</SignatureComments>
+      <InternalStructures>
+        <InternalStructure UniqueKey="Sa002" VariableBankNum="1" VariableAddress="#02##01#" Number="0" ShortLabel="CORE_REG_INIT_ST1" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+          <StructDef>"Reg ", WordHex, "Reg ", WordHex</StructDef>
+          <Label>Core Registers Initialization Structure 1</Label>
+          <Comments>CORE_REG_INIT_ST1 - Core Registers Initialization Structure 1</Comments>
+        </InternalStructure>
+        <InternalStructure UniqueKey="Sa003" VariableBankNum="1" VariableAddress="#04##03#" Number="0" ShortLabel="CORE_REG_INIT_ST2" OutputComments="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+          <StructDef>"Reg ", WordHex, "Reg ", WordHex</StructDef>
+          <Label>Core Registers Initialization Structure 2</Label>
+          <Comments>CORE_REG_INIT_ST2 - Core Registers Initialization Structure 2</Comments>
+        </InternalStructure>
+      </InternalStructures>
+    </Signature>
+    <Signature UniqueKey="ECT_CLIP_8065_01" Skip="false" Forced="true" ShortLabel="ECT_CLIP" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+89,..,..,..
+d6,05
+b1,..,..
+20,09
+89,..,..,..
+da,03
+b1,..,..
+f3
+f0</Signature>
+      <Label>ECT Clip</Label>
+      <Comments>ECT_CLIP - ECT Clip</Comments>
+      <SignatureLabel>ECT Clip 8065 (01 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="ECT_CLIP_8065_02" Skip="false" Forced="true" ShortLabel="ECT_CLIP" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+89,..,..,..
+da,06
+a1,..,..,..
+20,0b
+89,c1,ff,..
+d6,05
+b1,..,..
+11,..
+f3
+f0</Signature>
+      <Label>ECT Clip</Label>
+      <Comments>ECT_CLIP - ECT Clip</Comments>
+      <SignatureLabel>ECT Clip 8065 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="ECT_CLIPW_8065_02" Skip="false" Forced="true" ShortLabel="ECT_CLIPW" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+89,..,..,..
+da,06
+a1,..,..,..
+20,0a
+89,c1,ff,..
+d6,04
+a1,..,..,..
+f3
+f0</Signature>
+      <Label>ECT Clip W</Label>
+      <Comments>ECT_CLIPW - ECT Clip W</Comments>
+      <SignatureLabel>ECT ClipW 8065 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="ECT_INIT_8061_01" Skip="false" Forced="true" ShortLabel="ECT_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for806x="for8061Only">
+      <Signature>c7,..,..,..,..
+b0,..,..
+b3,..,..,..
+fe,5c,..,..,..
+13,..
+75,..,..
+fe,7c,..,..
+64,..,..
+c3,..,..,..,..</Signature>
+      <Label>ECT Initialization</Label>
+      <Comments>ECT_INIT - ECT Initialization</Comments>
+      <SignatureLabel>ECT Initialization 8061 (01 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="ECT_INIT_8061_02" Skip="false" Forced="true" ShortLabel="BASE_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for806x="for8061Only">
+      <Signature>ef,..,..
+3d,..,19
+a3,..,..,..
+8b,..,..,..
+d9,0f
+8b,..,..,..
+d3,09
+ef,..,..
+..,..,..,..
+20,16
+3a,..,..
+9b,..,..,..
+df,05
+b0,..,..
+20,08</Signature>
+      <Label>Base Initialization</Label>
+      <Comments>BASE_INIT - Base Initialization</Comments>
+      <SignatureLabel>ECT Initialization 8061 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_ECT_ACT</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For ECT/ACT registers identification and other related elements.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDI_CNT_3D_01" Skip="false" Forced="true" ShortLabel="OBDI_COUNT_3D" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>fa
+ff
+a2,..,..
+c2,..,00
+fb45,..,..,..,..
+64,..,..
+5e,..,..,..
+ac,..,..
+68,..,..
+db,..</Signature>
+      <Label>OBDI Count 3 Digits</Label>
+      <Comments>OBDI_COUNT_3D - OBDI Count 3 Digits</Comments>
+      <SignatureLabel>OBDI Count 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Second part for OBDI 3 Digits codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDI_COD_2D_01" Skip="false" Forced="true" ShortLabel="OBDI_CODES_2D" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>af,01,..,..,..
+a0,..,..
+08,03,..
+af,..,..,..,..
+3f,..,..
+af,..,..,..,..
+b2,..,..
+a0,..,..
+9d,08,..
+18,..,..</Signature>
+      <Label>OBDI Codes 2 Digits</Label>
+      <Comments>OBDI_CODES_2D - OBDI Codes 2 Digits</Comments>
+      <SignatureLabel>OBDI Codes 2 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+First part for OBDI 2 Digits codes identification. European version.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDI_COD_3D_01" Skip="false" Forced="true" ShortLabel="OBDI_CODES_3D" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>01,..
+89,..,..,..
+db,..
+88,..,00
+d7,..
+a1,12,05,..
+3e,..,..
+a1,11,01,..
+a0,..,..
+08,03,..
+b3,..,..,..,..
+51,07,..,..
+b1,08,..
+78,..,..18,..,..</Signature>
+      <Label>OBDI Codes 3 Digits</Label>
+      <Comments>OBDI_CODES_3D - OBDI Codes 3 Digits</Comments>
+      <SignatureLabel>OBDI Codes 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+First part for OBDI 3 Digits codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDI_MALFUNC" Skip="false" Forced="true" ShortLabel="MALFUNC" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>ef,..,..
+02
+c3,31,..,..,1a
+89,26,00,30
+db,04
+07,30
+07,30
+f0</Signature>
+      <Label>Malfunction Routine</Label>
+      <Comments>MALFUNC - Malfunction Routine
+1st Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDI Malfunction 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDI 3 Digits registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDI_MALFUNC_BT" Skip="false" Forced="true" ShortLabel="MALFUNC_BT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>ef,..,..
+08
+2.,..
+1c,00
+2.,..
+1e,00
+a2,1a,42
+8a,1c,42
+d3,05
+8a,1e,42
+d1,05
+a0,20,1a
+2f,d2
+f0</Signature>
+      <Label>Malfunction Between Routine</Label>
+      <Comments>MALFUNC_BT - Malfunction Between Routine
+1st Param should be between 2nd and 3rd values (scalar or register)
+2nd Param should be the lowest value for comparison (scalar or register)
+3rd Param should be the highest value for comparison (scalar or register)
+4th Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDI Malfunction Between 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDI 3 Digits registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra002" Position="2" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra003" Position="3" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra004" Position="4" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDI_MALFUNC_EX" Skip="false" Forced="true" ShortLabel="MALFUNC_EX" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>ef,..,..
+0a
+ef,..,..
+1c,00
+ef,..,..
+1e,00
+a2,1a,42
+01,1a
+8a,1d,42
+db,0e
+a1,27,03,1a
+8a,1e,42
+d1,17
+a0,20,1a
+20,12</Signature>
+      <Label>Malfunction Extended Routine</Label>
+      <Comments>MALFUNC_EX - Malfunction Extended Routine
+1st Param should be higher than 2nd and 3rd values (scalar or register)
+2nd Param should be the first lowest value for comparison (scalar or register)
+3rd Param should be the second lowest value for comparison (scalar or register)
+4th &amp; 5th Params are OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDI Malfunction Extended 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDI 3 Digits registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra002" Position="2" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra003" Position="3" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra004" Position="4" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra005" Position="5" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDI_MALFUNC_LW" Skip="false" Forced="true" ShortLabel="MALFUNC_LW" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>2d,..
+06
+71,fd,2c
+20,1e
+f8
+20,01
+f9
+cc,18
+b2,19,1a
+b2,19,1b
+b2,19,1c
+b2,19,1d
+d3,05
+c9,..,..
+20,02</Signature>
+      <Label>Malfunction Lower Routine</Label>
+      <Comments>MALFUNC_LW - Malfunction Lower Routine
+1st Param should be lower than 2nd value (scalar or register)
+2nd Param should be higher than 1st value (scalar or register)
+3rd Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDI Malfunction Lower 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDI 3 Digits registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra002" Position="2" Encryption="5" Word="true" Pointer="true" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+        <InputArgument UniqueKey="Ra003" Position="3" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDI_MALFUNC_SB" Skip="false" Forced="true" ShortLabel="MALFUNC_SB" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>c3,31,..,..,1a
+89,26,00,30
+db,04
+07,30
+07,30
+f0</Signature>
+      <Label>Malfunction Sub Routine</Label>
+      <Comments>MALFUNC_SB - Malfunction Sub Routine
+Used to push an OBD Error Code into a rolling error register.</Comments>
+      <SignatureLabel>OBDI Malfunction Sub 3 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3>Registers_Args</SignatureCategory3>
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDI 3 Digits registers identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDI_TIM_2D_01" Skip="false" Forced="true" ShortLabel="OBDI_TIMINGS_2D" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>ac,..,..
+64,..,..
+38,..,..
+3a,..,..
+4f,..,..,..,..,..
+0d,..,..
+20,..
+4f,..,..,..,..,..
+0d,06,..
+20,..
+4f,..,..,..,..,..</Signature>
+      <Label>OBDI Timings 2 Digits</Label>
+      <Comments>OBDI_TIMINGS_3D - OBDI Timings 2 Digits</Comments>
+      <SignatureLabel>OBDI Timings 2 Digits (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8061_OBDI</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Second part for OBDI 2 Digits codes identification. European version.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_CLEAR_MALF_01" Skip="false" Forced="true" ShortLabel="CLEAR_MALF" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>f2
+2.,..
+00
+f2
+a2,2a,3e
+37,3e,06
+71,7f,3e
+c2,2a,3e
+f3
+f0</Signature>
+      <Label>Clear Malfunction Routine</Label>
+      <Comments>CLEAR_MALF - Clear Malfunction Routine
+1st Param is OBD Error Code to be deleted.</Comments>
+      <SignatureLabel>OBDII Clear Malfunction (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDII registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDII_CLEAR_MALF_02" Skip="false" Forced="true" ShortLabel="CLEAR_MALF" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>f2
+2.,..
+2.,..
+28,0d
+2.,..
+f3
+f0
+f2
+2.,..
+28,04
+2.,..
+f3
+f0
+a2,2a,3e
+37,3e,06
+71,7f,3e
+c2,2a,3e
+f0
+</Signature>
+      <Label>Clear Malfunction Routine</Label>
+      <Comments>CLEAR_MALF - Clear Malfunction Routine
+1st Param is OBD Error Code to be deleted.</Comments>
+      <SignatureLabel>OBDII Clear Malfunction (02 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDII registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDII_MALFUNCTION_01" Skip="false" Forced="true" ShortLabel="MALFUNCTION" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>f2
+2f,de
+00
+f2
+a2,2a,3e
+28,05
+c2,2a,3e
+f3
+f0
+f2
+</Signature>
+      <Label>Malfunction Routine</Label>
+      <Comments>MALFUNCTION - Malfunction Routine
+1st Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDII Malfunction (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDII registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDII_MALFUNCTION_02" Skip="false" Forced="true" ShortLabel="MALFUNCTION" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>f2
+2.,..
+2.,..
+20,03
+f2
+2.,..
+b3,..,..,..,3e
+3.,3e,02
+20,26
+49,..,..,2a,3e
+45,..,..,3e,26
+a2,26,26
+b2,26,26
+99,02,26
+df,0f
+99,01,26
+d7,0c
+a2,2a,3e
+2.,..
+c2,2a,3e
+20,02
+28,04
+2f,..
+f3
+f0
+</Signature>
+      <Label>Malfunction Routine</Label>
+      <Comments>MALFUNCTION - Malfunction Routine
+1st Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDII Malfunction (02 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDII registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDII_MALFUNCTION_02_01" Skip="false" Forced="true" ShortLabel="MALFUNCTION" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>f2
+2.,..
+2.,..
+20,03
+f2
+2.,..
+b0,..,3e
+3.,3e,02
+20,26
+49,..,..,2a,3e
+45,..,..,3e,26
+a2,26,26
+b2,26,26
+99,02,26
+df,0f
+99,01,26
+d7,0c
+a2,2a,3e
+2.,..
+c2,2a,3e
+20,02
+28,04
+2f,..
+f3
+f0
+</Signature>
+      <Label>Malfunction Routine</Label>
+      <Comments>MALFUNCTION - Malfunction Routine
+1st Param is OBD Error Code to be pushed.</Comments>
+      <SignatureLabel>OBDII Malfunction (02bis forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2>Registers_Args</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Part of OBDII registers identification.</SignatureComments>
+      <InputArguments>
+        <InputArgument UniqueKey="Ra001" Position="1" Encryption="1" Word="true" Pointer="false" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" />
+      </InputArguments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_FLAGS_02" Skip="false" Forced="true" ShortLabel="OBDII_REG_FLAGS" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>49,..,..,..,..
+08,01,..
+65,..,..,..
+b2,..,..
+99,..,..
+d7,..
+b3,01,..,..,..
+91,..,..
+c7,01,..,..,..
+20,..</Signature>
+      <Label>OBDII Registers Flags</Label>
+      <Comments>OBDII_REG_FLAGS - OBDII Registers Flags</Comments>
+      <SignatureLabel>OBDII Registers Flags Signature (02 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Third part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_FLAGS_02_01" Skip="false" Forced="true" ShortLabel="OBDII_REG_FLAGS" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>49,..,..,..,..
+08,01,..
+65,..,..,..
+99,..,..
+d7,..
+b3,01,..,..,..
+91,..,..
+c7,01,..,..,..
+20,..</Signature>
+      <Label>OBDII Registers Flags</Label>
+      <Comments>OBDII_REG_FLAGS - OBDII Registers Flags</Comments>
+      <SignatureLabel>OBDII Registers Flags Signature (02bis forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Third part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_INIT_01" Skip="false" Forced="true" ShortLabel="OBDII_REG_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>c7,..,..,00
+71,..,..
+c3,..,..,00
+a1,..,..,..
+89,..,..,..
+db,..</Signature>
+      <Label>OBDII Registers Initialization</Label>
+      <Comments>OBDII_REG_INIT - OBDII Registers Initialization</Comments>
+      <SignatureLabel>OBDII Registers Initialization (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+First part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_INIT_01_01" Skip="false" Forced="true" ShortLabel="OBDII_REG_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>c7,..,..,..,00
+71,..,..
+c3,..,..,..,00
+a1,..,..,..
+89,..,..,..
+db,..</Signature>
+      <Label>OBDII Registers Initialization</Label>
+      <Comments>OBDII_REG_INIT - OBDII Registers Initialization</Comments>
+      <SignatureLabel>OBDII Registers Initialization (01bis Forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+First part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_INIT_02" Skip="false" Forced="true" ShortLabel="OBDII_REG_INIT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>f2
+b3,01,..,..,..
+71,7f,..
+c7,01,..,..,..
+c3,01,..,..,00
+c3,01,..,..,00
+c7,01,..,..,00
+b3,01,..,..,..
+71,..,..
+c7,01,..,..,..
+b3,01,..,..,..
+71,..,..
+c7,01,..,..,..
+*
+11,3e
+b1,28,3f
+a1,..,..,2a</Signature>
+      <Label>OBDII Registers Initialization</Label>
+      <Comments>OBDII_REG_INIT - OBDII Registers Initialization</Comments>
+      <SignatureLabel>OBDII Registers Initialization (02 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+First part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_RESET_01" Skip="false" Forced="true" ShortLabel="OBDII_REG_RESET" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>a2,..,..
+3f,..,..
+91,..,..
+c2,..,..
+49,..,..,..,..
+65,..,..,..
+a2,..,..
+99,..,..
+d7,..
+8b,..,..,..
+d7,..
+8b,..,..,..</Signature>
+      <Label>OBDII Registers Reset</Label>
+      <Comments>OBDII_REG_RESET - OBDII Registers Reset</Comments>
+      <SignatureLabel>OBDII Registers Reset Signature (01 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Second part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_RESET_01_01" Skip="false" Forced="true" ShortLabel="OBDII_REG_RESET" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>b1,..,..
+49,..,..,..,..
+65,..,..,..
+a2,..,..
+c6,..,..
+c6,..,..
+79,..,..
+df,..
+88,..,..
+d9,..
+c6,..,00</Signature>
+      <Label>OBDII Registers Reset</Label>
+      <Comments>OBDII_REG_RESET - OBDII Registers Reset</Comments>
+      <SignatureLabel>OBDII Registers Reset Signature (01bis forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Second part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="OBDII_REG_RESET_02" Skip="false" Forced="true" ShortLabel="OBDII_REG_RESET" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0">
+      <Signature>f2
+28,..
+49,..,..,..,..
+65,..,..,..
+a2,..,..
+b2,..,..
+99,..,..
+d7,..
+a2,..,..
+ef,..,..</Signature>
+      <Label>OBDII Registers Reset</Label>
+      <Comments>OBDII_REG_RESET - OBDII Registers Reset</Comments>
+      <SignatureLabel>OBDII Registers Reset Signature (02 forced signature)</SignatureLabel>
+      <SignatureCategory>8065_OBDII</SignatureCategory>
+      <SignatureCategory2 />
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+Second part for OBDII codes identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8061_01" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for806x="for8061Only">
+      <Signature>01,..
+37,..,..
+3a,..,..
+20,..
+71,..,..
+a1,..,..,..
+01,..
+8f,..,..,..
+09,..,..
+a3,..,..,..,..
+89,..,..,..
+db,..</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8061 (01 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8061</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8061_02" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for806x="for8061Only">
+      <Signature>a3,..,..,..
+89,..,..,..
+d3,..
+fa
+b1,01,32
+c7,..,..,32
+c7,..,..,32
+71,..,..
+71,..,..
+71,..,..
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8061 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8061</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8065_01" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+b0,..,..
+a3,..,..,..,..
+89,..,..,..
+d3,..
+91,..,..
+fa
+71,..,..
+71,..,..
+71,..,..
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8065 (01 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8065_01_01" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+b0,..,..
+a3,..,..,..,..
+89,..,..,..
+d3,..
+91,..,..
+fa
+71,..,..
+71,..,..
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8065 (01bis forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8065_02" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+b0,..,..
+a3,..,..,..,..
+89,..,..,..
+db,..
+99,..,..
+df,..
+48,..,..,..
+89,..,..,..
+d1,..
+91,..,..
+fa
+71,..,..
+71,..,..
+*
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8065 (02 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8065_03" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+b3,..,..,..
+a3,..,..,..
+89,..,..,..
+db,..
+99,..,..
+df,..
+48,..,..,..
+89,..,..,..
+d1,..
+91,..,..
+fa
+71,..,..
+71,..,..
+*
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8065 (03 forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+    <Signature UniqueKey="RPM_MNGT_8065_03_01" Skip="false" Forced="true" ShortLabel="RPM_MNGT" OutputComments="false" RoutineDateCreated="0001-01-01T00:00:00" RoutineDateUpdated="0001-01-01T00:00:00" RoutineIdentificationStatus="0" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for806x="for8065Only">
+      <Signature>f2
+b3,..,..,..
+a3,..,..,..,..
+89,..,..,..
+d3,..
+91,..,..
+fa
+71,..,..
+71,..,..
+*
+01,..
+fb</Signature>
+      <Label>RPM Management</Label>
+      <Comments>RPM_MNGT - RPM Management</Comments>
+      <SignatureLabel>RPM Management 8065 (03bis forced signature)</SignatureLabel>
+      <SignatureCategory>Registers_RPM</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>Automatically added for signatures post processing.
+For RPM register identification.</SignatureComments>
+    </Signature>
+  </Signatures>
+  <ElementsSignatures>
+    <ElementSignature UniqueKey="FN036_61" Skip="false" Forced="true" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for8061="true" forBankNum="">
+      <Signature>#EAOP#
+A3,..,..,..
+88,..,..
+D9,12
+45,78,00,..,..
+88,..,..
+D3,08
+94,..,..
+71,03,..
+DF,04
+C3,..,..,..
+71,..,..
+F0</Signature>
+      <SignatureLabel>MAF Transfer 8061</SignatureLabel>
+      <SignatureCategory>FN036</SignatureCategory>
+      <SignatureCategory2>8061</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>MAF Transfer Signature for 8061</SignatureComments>
+      <SignatureOpeIncludingElemAddress>#EAOP#</SignatureOpeIncludingElemAddress>
+      <Function ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="0" ShortLabel="FN036" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+        <Label>MAF Transfer</Label>
+        <Comments />
+        <InputScaleExpression>X</InputScaleExpression>
+        <OutputScaleExpression>X</OutputScaleExpression>
+      </Function>
+    </ElementSignature>
+    <ElementSignature UniqueKey="FN036_65_01" Skip="false" Forced="true" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for8061="false" forBankNum="">
+      <Signature>#EAOP#
+A3,..,..,..
+88,..,..
+D9,12
+45,78,00,..,..
+88,..,..
+D3,08
+94,..,..
+71,03,..
+DF,04
+C3,..,..,..
+71,..,..
+F0</Signature>
+      <SignatureLabel>MAF Transfer 8065 01</SignatureLabel>
+      <SignatureCategory>FN036</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>MAF Transfer Signature for 8065 01</SignatureComments>
+      <SignatureOpeIncludingElemAddress>#EAOP#</SignatureOpeIncludingElemAddress>
+      <Function ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="0" ShortLabel="FN036" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+        <Label>MAF Transfer</Label>
+        <Comments />
+        <InputScaleExpression>X</InputScaleExpression>
+        <OutputScaleExpression>X</OutputScaleExpression>
+      </Function>
+    </ElementSignature>
+    <ElementSignature UniqueKey="FN036_65_02" Skip="false" Forced="true" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for8061="false" forBankNum="">
+      <Signature>#EAOP#
+A3,..,..,..,..
+88,..,..
+D9,14
+45,78,00,..,..
+8B,..,..,..,..
+D3,08
+94,..,..
+71,03,..
+DF,05
+C3,..,..,..,..
+71,..,..
+F0</Signature>
+      <SignatureLabel>MAF Transfer 8065 02</SignatureLabel>
+      <SignatureCategory>FN036</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>MAF Transfer Signature for 8065 02</SignatureComments>
+      <SignatureOpeIncludingElemAddress>#EAOP#</SignatureOpeIncludingElemAddress>
+      <Function ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="0" ShortLabel="FN036" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+        <Label>MAF Transfer</Label>
+        <Comments />
+        <InputScaleExpression>X</InputScaleExpression>
+        <OutputScaleExpression>X</OutputScaleExpression>
+      </Function>
+    </ElementSignature>
+    <ElementSignature UniqueKey="FN036_65_03" Skip="false" Forced="true" DateCreated="2025-10-05T18:19:08.5467838Z" DateUpdated="2025-10-05T18:19:08.5467838Z" IdentificationStatus="0" for8061="false" forBankNum="">
+      <Signature>#EAOP#
+A3,..,..,..
+88,..,..
+D9,13
+45,78,00,..,..
+8B,..,..,..
+D3,08
+94,..,..
+71,03,..
+DF,04
+C3,..,..,..
+F0</Signature>
+      <SignatureLabel>MAF Transfer 8065 03</SignatureLabel>
+      <SignatureCategory>FN036</SignatureCategory>
+      <SignatureCategory2>8065</SignatureCategory2>
+      <SignatureCategory3 />
+      <SignatureComments>MAF Transfer Signature for 8065 03</SignatureComments>
+      <SignatureOpeIncludingElemAddress>#EAOP#</SignatureOpeIncludingElemAddress>
+      <Function ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="0" ShortLabel="FN036" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="0001-01-01T00:00:00" DateUpdated="0001-01-01T00:00:00" IdentificationStatus="0">
+        <Label>MAF Transfer</Label>
+        <Comments />
+        <InputScaleExpression>X</InputScaleExpression>
+        <OutputScaleExpression>X</OutputScaleExpression>
+      </Function>
+    </ElementSignature>
+  </ElementsSignatures>
+  <DupTables>
+    <Table BankNum="1" AddressInt="3572" DuplicateNum="1" AddressBinInt="3572" XdfUniqueId="0x69" isCalibrationElement="true" Skip="false" WordOutput="true" SignedOutput="false" ColsNumber="11" RowsNumber="11" ShortLabel="FN1400-" OutputComments="false" CellsScalePrecision="2" DateCreated="2025-10-05T18:20:58.1373179Z" DateUpdated="2025-10-05T18:20:58.1373179Z" IdentificationStatus="0">
+      <Label>Injection Control Pressure Duty Cycle</Label>
+      <Comments>FN1400-</Comments>
+      <CellsScaleExpression>X /1024</CellsScaleExpression>
+      <ColsScalerAddress>1  6280</ColsScalerAddress>
+      <RowsScalerAddress>1  6236</RowsScalerAddress>
+      <ColsScalerXdfUniqueId>0x58</ColsScalerXdfUniqueId>
+      <RowsScalerXdfUniqueId>0x1F</RowsScalerXdfUniqueId>
+      <ColsUnits>ICP</ColsUnits>
+      <RowsUnits>reg_flow_L</RowsUnits>
+      <Category>Diesel ICP</Category>
+    </Table>
+  </DupTables>
+  <DupFunctions>
+    <Function BankNum="1" AddressInt="160" DuplicateNum="1" AddressBinInt="160" XdfUniqueId="0x39" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="16" ShortLabel="FN021" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel Pedal MAP 23</Label>
+      <Comments>FN021 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <Category>Diesel Pedal MAP</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="716" DuplicateNum="1" AddressBinInt="716" XdfUniqueId="0x3C" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="8" ShortLabel="FN032" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Ynorm Diesel Injection Timing 11</Label>
+      <Comments>FN032 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>EOT</InputUnits>
+      <Category>Diesel Injection Timing</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="4526" DuplicateNum="1" AddressBinInt="4526" XdfUniqueId="0x45" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="11" ShortLabel="FN092A" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel Wastegate 22</Label>
+      <Comments>FN092A - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>rpm</InputUnits>
+      <Category>Diesel Wastegate</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="5492" DuplicateNum="1" AddressBinInt="5492" XdfUniqueId="0x5A" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="true" SignedOutput="false" RowsNumber="6" ShortLabel="FN202" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Injection Timing Air Temp Modifier</Label>
+      <Comments>FN202 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /64</OutputScaleExpression>
+      <InputUnits>Air_temp</InputUnits>
+      <Category>Diesel Injection Timing</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="12074" DuplicateNum="1" AddressBinInt="12074" XdfUniqueId="0x4C" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="15" ShortLabel="FN035" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Ynorm Diesel Pedal MAP 23</Label>
+      <Comments>FN035 - </Comments>
+      <InputScaleExpression>X /1</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>PPS</InputUnits>
+      <Category>Diesel Pedal MAP</Category>
+    </Function>
+    <Function BankNum="1" AddressInt="12962" DuplicateNum="1" AddressBinInt="12962" XdfUniqueId="0x1B" isCalibrationElement="true" Skip="false" ByteInput="false" ByteOutput="false" SignedInput="false" SignedOutput="false" RowsNumber="16" ShortLabel="FN0X1" OutputComments="false" InputScalePrecision="2" OutputScalePrecision="2" DateCreated="2025-10-05T18:20:58.1312627Z" DateUpdated="2025-10-05T18:20:58.1312627Z" IdentificationStatus="0">
+      <Label>Xnorm Diesel Torque Calculation 26</Label>
+      <Comments>FN0X1 - </Comments>
+      <InputScaleExpression>X /4</InputScaleExpression>
+      <OutputScaleExpression>X /256</OutputScaleExpression>
+      <InputUnits>RPM</InputUnits>
+      <Category>Diesel Torque Calculation</Category>
+    </Function>
+  </DupFunctions>
+  <DupScalars />
+  <DupStructures />
+</S6x>
